@@ -1,0 +1,74 @@
+{
+  "docs": {
+    "Setup": [
+      "setup/get_started",
+      "setup/win32",
+      "setup/linux",
+      "setup/macos",
+      "setup/android",
+      "setup/ios",
+      "setup/rpi",
+      "setup/nx",
+      "setup/custom_settings"
+    ],
+    "Tutorials": [
+      "tutorials/beginners_guide",
+      "tutorials/oop_tutorial",
+      "tutorials/network_programming",
+      "tutorials/tcp_tutorial"
+    ],
+    "Language": [
+      "language/arrays",
+      "language/basic_compatibility",
+      "language/collections",
+      "language/comments",
+      "language/conditional_compiling",
+      "language/constants",
+      "language/data_types",
+      "language/debugging",
+      "language/exceptions",
+      "language/expressions",
+      "language/functions",
+      "language/identifiers",
+      "language/keywords",
+      "language/literals",
+      "language/variables"
+    ],
+    "Tools": [
+      "tools/maxide",
+      "tools/bmk",
+      "tools/bcc"
+    ]
+  },
+  "community": {
+    "Community": [
+      "community/resources",
+      "community/collections",
+      "community/2d_frameworks",
+      "community/2d_drivers",
+      "community/3d_engines",
+      "community/3d_libraries",
+      "community/3d_physics",
+      "community/2d_audio",
+      "community/3d_audio",
+      "community/applications",
+      "community/controllers",
+      "community/database",
+      "community/file_formats",
+      "community/gui",
+      "community/gui_builders",
+      "community/gui_drivers",
+      "community/gui_gadgets",
+      "community/ides",
+      "community/networking",
+      "community/open_source_games",
+      "community/particles"
+    ]
+  },
+  "about": {
+    "About": [
+      "site/about",
+      "site/credits"
+    ]
+  }
+}
