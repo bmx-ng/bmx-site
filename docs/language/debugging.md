@@ -6,8 +6,9 @@ sidebar_label: Debugging
 
 BlitzMax provides several commands to help with debugging your programs:
 
-| `DebugStop`  | In debug mode, causes the program to stop executing and activates the debugger. In release mode, no effect.  |
+| Command | Description |
 |---|---|
+| `DebugStop`  | In debug mode, causes the program to stop executing and activates the debugger. In release mode, no effect.  |
 | `DebugLog` StringExpression  | In debug mode, causes ```StringExpression``` to be printed to the debugger output window. In release mode, no effect.  |
 | `RuntimeError` StringExpression  | Causes a runtime error exception (see: `exceptions`) to be thrown with the specified string.  |
 | `Assert` Expression `Else` StringExpression  | In debug mode, causes a `RuntimeError` if ``Expression`` evaluates to false. No effect in release mode.  |

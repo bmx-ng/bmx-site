@@ -69,36 +69,21 @@ Once declared, a variable's value may be changed using an assignment statement:
 ```blitzmax
 Variable = Expression
 ```
-You can also perform **modifying** assignments, which are shorthand for ```Variable = Variable Operator Expression```.
+You can also perform **modifying** assignments, which are shorthand for `Variable = Variable Operator Expression`.
 The syntax for modifying assignments is:
 
-.. list-table::
-    :widths: 10 30
-    :header-rows: 1
+| Syntax | Operator |
+|---|---|
+| `:+`  | Addition  |
+| `:-`  | Subtraction  |
+| `:*`  | Multiplication  |
+| `:/`  | Division  |
+| `:Mod`  | Remainder  |
+| `:&`  | Bitwise and  |
+| `:|`  | Bitwise or  |
+| `:~`  | Bitwise exclusive or  |
+| `:Shl`  | Bitwise shift left  |
+| `:Shr`  | Bitwise shift right  |
+| `:Sar`  | Arithmetic shift right  |
 
-    * - Syntax
-      - Operator
-    * - :+
-      - Addition
-    * - :-
-      - Subtraction
-    * - :*
-      - Multiplication
-    * - :/
-      - Division
-    * - :Mod
-      - Remainder
-    * - :&
-      - Bitwise and
-    * - :|
-      - Bitwise or
-    * - :~
-      - Bitwise exclusive or
-    * - :Shl
-      - Bitwise shift left
-    * - :Shr
-      - Bitwise shift right
-    * - :Sar
-      - Arithmetic shift right
-
-For example, the code ````my_var :+ 1```` can be used in place of ````my_var = my_var + 1````.
+For example, the code `my_var :+ 1` can be used in place of `my_var = my_var + 1`.
