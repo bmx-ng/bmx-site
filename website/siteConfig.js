@@ -67,7 +67,89 @@ const siteConfig = {
 
     highlight: {
         // Highlight.js theme to use for syntax highlighting in code blocks.
-        theme: 'default',
+        theme: 'hybrid',
+        hljs: function (hljs) {
+            hljs.registerLanguage('blitzmax', function (hljs) {
+                var NUMBER = {
+                    className: 'number', relevance: 0,
+                    variants: [
+                        {
+                            begin: '[$][a-fA-F0-9]+'
+                        },
+                        hljs.NUMBER_MODE
+                    ]
+                };
+
+                return {
+                    case_insensitive: true,
+                    keywords: {
+                        keyword: 'strict superstrict public private protected short int float double long string object ptr var varptr ' +
+                            'mod continue exit include import module extern framework new self super eachin true false ' +
+                            'null not extends abstract select case default const local global field method function type ' +
+                            'and or shl shr sar end if then else elseif endif while wend repeat until forever for to step ' +
+                            'next return alias rem endrem throw assert try catch finally nodebug incbin endselect endmethod ' +
+                            'endfunction endtype endextern endtry endwhile pi release defdata readdata restoredata interface ' +
+                            'endinterface implements size_t uint ulong struct endstruct operator where readonly export',
+
+                        built_in: 'DebugLog DebugStop',
+
+                        literal: 'true false null'
+                    },
+                    illegal: /\/\*/,
+                    contains: [
+                        hljs.COMMENT('rem', '(endrem|end rem)'),
+                        hljs.COMMENT(
+                            "'",
+                            '$',
+                            {
+                                relevance: 0
+                            }
+                        ),
+                        {
+                            className: 'function',
+                            beginKeywords: 'function method', end: '[(=:]|$',
+                            illegal: /\n/,
+                            contains: [
+                                hljs.UNDERSCORE_TITLE_MODE
+                            ]
+                        },
+                        {
+                            className: 'type',
+                            beginKeywords: 'type interface struct', end: '$',
+                            contains: [
+                                {
+                                    beginKeywords: 'extends implements'
+                                },
+                                hljs.UNDERSCORE_TITLE_MODE
+                            ]
+                        },
+                        {
+                            className: 'new',
+                            beginKeywords: 'new', end: '$',
+                            contains: [
+                                hljs.UNDERSCORE_TITLE_MODE
+                            ]
+                        },
+                        {
+                            className: 'built_in',
+                            begin: '\\b(self|super)\\b'
+                        },
+                        {
+                            className: 'meta',
+                            begin: '^\\s*(strict|superstrict)\\b'
+                        },
+                        {
+                            className: 'meta',
+                            begin: '\\s*\\?', end: '$',
+                            keywords: {'meta-keyword': 'not and or'}
+                        },
+                        hljs.QUOTE_STRING_MODE,
+                        NUMBER
+                    ]
+                }
+            });
+
+        }
     },
 
     // Add custom scripts here that would be placed in <script> tags.
@@ -86,7 +168,7 @@ const siteConfig = {
     // template. For example, if you need your repo's URL...
     repoUrl: 'https://github.com/bmx-ng/bmx-ng',
 
-    editUrl: 'https://github.com/bmx-ng/bmx-site/docs/',
+    editUrl: 'https://github.com/bmx-ng/bmx-site/edit/master/docs/',
 
     useEnglishUrl: true,
 };
