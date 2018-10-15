@@ -29,9 +29,10 @@ const siteConfig = {
 
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
-        {doc: 'setup/get_started', label: 'Docs'},
         {page: 'downloads', label: 'Downloads'},
-        {doc: 'community/resources', label: 'Community'},
+        {doc: 'setup/get_started', label: 'Docs'},
+        {doc: 'api/intro', label: 'API'},
+        {doc: 'community/resources', label: 'Resources'},
         {doc: 'site/about', label: 'About'},
     ],
 
@@ -154,9 +155,12 @@ const siteConfig = {
 
     // Add custom scripts here that would be placed in <script> tags.
     scripts: [
-        'https://buttons.github.io/buttons.js'
+        'https://buttons.github.io/buttons.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+        '/js/code-blocks-buttons.js'
     ],
 
+    stylesheets: ['/css/code-blocks-buttons.css'],
 
     // On page navigation for the current documentation page.
     onPageNav: 'separate',

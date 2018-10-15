@@ -41,7 +41,7 @@
     ]
   },
   "community": {
-    "Community": [
+    "Resources": [
       "community/resources",
       "community/collections",
       "community/2d_frameworks",
@@ -69,6 +69,86 @@
     "About": [
       "site/about",
       "site/credits"
+    ]
+  },
+  "api": {
+    "BlitzMax API" : ["api/intro"],
+    "BRL": [
+      "api/brl/brl.audio",
+      "api/brl/brl.audiosample",
+      "api/brl/brl.bank",
+      "api/brl/brl.bankstream",
+      "api/brl/brl.blitz",
+      "api/brl/brl.bmploader",
+      "api/brl/brl.d3d7max2d",
+      "api/brl/brl.d3d9max2d",
+      "api/brl/brl.directsoundaudio",
+      "api/brl/brl.endianstream",
+      "api/brl/brl.event",
+      "api/brl/brl.eventqueue",
+      "api/brl/brl.filesystem",
+      "api/brl/brl.freeaudioaudio",
+      "api/brl/brl.glgraphics",
+      "api/brl/brl.glmax2d",
+      "api/brl/brl.gnet",
+      "api/brl/brl.graphics",
+      "api/brl/brl.hook",
+      "api/brl/brl.jpgloader",
+      "api/brl/brl.keycodes",
+      "api/brl/brl.linkedlist",
+      "api/brl/brl.map",
+      "api/brl/brl.math",
+      "api/brl/brl.max2d",
+      "api/brl/brl.maxlua",
+      "api/brl/brl.oggloader",
+      "api/brl/brl.openalaudio",
+      "api/brl/brl.pixmap",
+      "api/brl/brl.pngloader",
+      "api/brl/brl.polledinput",
+      "api/brl/brl.ramstream",
+      "api/brl/brl.random",
+      "api/brl/brl.reflection",
+      "api/brl/brl.retro",
+      "api/brl/brl.socket",
+      "api/brl/brl.socketstream",
+      "api/brl/brl.standardio",
+      "api/brl/brl.stream",
+      "api/brl/brl.stringbuilder",
+      "api/brl/brl.system",
+      "api/brl/brl.systemdefault",
+      "api/brl/brl.textstream",
+      "api/brl/brl.tgaloader",
+      "api/brl/brl.threadpool",
+      "api/brl/brl.threads",
+      "api/brl/brl.timer",
+      "api/brl/brl.timerdefault",
+      "api/brl/brl.wavloader"
+    ],
+    "MaxGUI": [
+      "api/maxgui/maxgui.maxgui",
+      "api/maxgui/maxgui.drivers",
+      "api/maxgui/maxgui.localization",
+      "api/maxgui/maxgui.proxygadgets",
+      "api/maxgui/maxgui.cocoamaxgui",
+      "api/maxgui/maxgui.win32maxguiex"
+    ],
+    "PUB": [
+      "api/pub/pub.freejoy",
+      "api/pub/pub.freeprocess",
+      "api/pub/pub.glad",
+      "api/pub/pub.glew",
+      "api/pub/pub.joystick",
+      "api/pub/pub.lua",
+      "api/pub/pub.openal",
+      "api/pub/pub.opengles",
+      "api/pub/pub.xmmintrin",
+      "api/pub/pub.zlib"
+    ]
+  },
+  "brl_audio": {
+    "BRL.Audio": [
+      "api/brl/brl.audio/tchannel",
+      "api/brl/brl.audio/tsound"
     ]
   }
 }
