@@ -17,14 +17,14 @@ For k=1 To 10
 Next
 Print sum
 ```
-This program automatically creates 2 local variables: ```k``` and ```sum```. However, this behaviour can often lead to
-unexpected bugs. For example, if you mistyped one of the ```sum``` variables, the program would not work as expected.
+This program automatically creates 2 local variables: `k` and `sum`. However, this behaviour can often lead to
+unexpected bugs. For example, if you mistyped one of the `sum` variables, the program would not work as expected.
 No error would be given - a new variable would simply be created.
 
-By default, BlitzMax NG implements what is known as `Strict` mode to override this behaviour.
+By default, BlitzMax NG implements what is known as [Strict] mode to override this behaviour.
 
-`Strict` must appear at the top of your program before any actual program code and puts your program into **strict mode**.
-`Strict` mode forces you to declare all variables before use. For example, rewriting the above program in strict mode
+[Strict] must appear at the top of your program before any actual program code and puts your program into **strict mode**.
+[Strict] mode forces you to declare all variables before use. For example, rewriting the above program in strict mode
 results in:
 
 ```blitzmax
@@ -38,15 +38,15 @@ Print sum
 If you were to mistype one of the variable names in this program, you would receive an **identifier not found** error
 when compiling, allowing you to easily find and correct the problem.
 
-In `Strict` mode, a variable whose type is not declared is assumed to be an `Int`.
+In [Strict] mode, a variable whose type is not declared is assumed to be an [Int].
 
 ## SuperStrict mode
 
-For even greater strictness, there is also `SuperStrict` mode.
-`SuperStrict` mode forces you to declare the type of each of your variables, as well as the return types of functions
+For even greater strictness, there is also [SuperStrict] mode.
+[SuperStrict] mode forces you to declare the type of each of your variables, as well as the return types of functions
 and methods. This can further assist in solving issues in your program by eliminating potential variable type confusion.
 
-Rewriting the above program in `SuperStrict` mode results in:
+Rewriting the above program in [SuperStrict] mode results in:
 
 ```blitzmax
 SuperStrict
@@ -81,7 +81,7 @@ my_array=my_array[..200]    ' now a 200 element array!
 
 ## Data, Read and Restore
 
-Data, Read and Restore are supported but have been renamed to `DefData`, `ReadData` and `RestoreData`. Data labels must
+Data, Read and Restore are supported but have been renamed to [DefData], [ReadData] and [RestoreData]. Data labels must
 also be prefixed with a ```#``` character.
 
 ## Type tag shortcuts
@@ -91,10 +91,10 @@ follows:
 
 | Type tag  | Equivalent type  |
 |---|---|
-| %  | `Int`  |
-| #  | `Float`  |
-| !  | `Double`  |
-| $  | `String`  |
+| %  | [Int]  |
+| #  | [Float]  |
+| !  | [Double]  |
+| $  | [String]  |
 
 For example, a string variable can be declared in two ways:
 
@@ -103,3 +103,13 @@ Local a_string:String
 Local another_string$
 ```
 Mac users whose keyboards do not feature the ```#``` character should use ```Alt 3```.
+
+[DefData]: ../../api/brl/brl.blitz/#defdata
+[ReadData]: ../../api/brl/brl.blitz/#readdata
+[RestoreData]: ../../api/brl/brl.blitz/#restoredata
+[Strict]: ../../api/brl/brl.blitz/#strict
+[SuperStrict]: ../../api/brl/brl.blitz/#superstrict
+[Int]: ../../api/brl/brl.blitz/#int
+[Float]: ../../api/brl/brl.blitz/#float
+[Double]: ../../api/brl/brl.blitz/#double
+[String]: ../../api/brl/brl.blitz/#string

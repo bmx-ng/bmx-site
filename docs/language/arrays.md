@@ -35,7 +35,7 @@ Arrays may also be created 'on the fly' using the syntax:
 New [ Dimension1 , Dimension2 etc... ]
 ```
 
-This returns an array of the specified dimension(s) with each element initialized to #Null. For example:
+This returns an array of the specified dimension(s) with each element initialized to [Null]. For example:
 
 ```blitzmax
 Local int_array:Int[]
@@ -91,3 +91,5 @@ For Local i = EachIn arr2.Dimensions()
     Print i
 Next
 ```
+
+[Null]: ../../api/brl/brl.blitz/#null

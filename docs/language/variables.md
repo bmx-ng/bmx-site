@@ -16,9 +16,9 @@ Declaration Identifier : Type = Expression
 ```
 Multiple variables may be declared in one statement using the comma separator.
 
-In `Strict` mode, if the type of a variable is omitted, the variable defaults to being of type `Int`. In `SuperStrict`
+In [Strict] mode, if the type of a variable is omitted, the variable defaults to being of type [Int]. In [SuperStrict]
 mode the type is mandatory. If the initial value expression is omitted, the variable is assigned an initial value of
-`Null`.
+[Null].
 
 There are 3 kinds of variable, each of which differs by how and where the variable is stored:
 
@@ -35,7 +35,7 @@ represented by one of the following:
 * The body of a case or default statement
 
 
-To declare a local variable, use a `Local` declaration:
+To declare a local variable, use a [Local] declaration:
 
 ```blitzmax
 Local int_var
@@ -46,7 +46,7 @@ Local string_var:String = "Str", float_var:Float = 10.5
 
 Global variables are variables that exist for the entire lifetime of a program.
 
-To declare a global variable, use a `Global` declaration:
+To declare a global variable, use a [Global] declaration:
 
 ```blitzmax
 Global int_var
@@ -54,7 +54,7 @@ Global string_var:String = "Str", float_var:Float = 10.5
 ```
 ## Field Variables
 
-Field variables are declared within user-defined types using a `Field` declaration:
+Field variables are declared within user-defined types using a [Field] declaration:
 
 ```blitzmax
 Field int_var
@@ -80,10 +80,17 @@ The syntax for modifying assignments is:
 | `:/`  | Division  |
 | `:Mod`  | Remainder  |
 | `:&`  | Bitwise and  |
-| `:|`  | Bitwise or  |
+| <code>:&#124;</code>  | Bitwise or  |
 | `:~`  | Bitwise exclusive or  |
 | `:Shl`  | Bitwise shift left  |
 | `:Shr`  | Bitwise shift right  |
 | `:Sar`  | Arithmetic shift right  |
 
 For example, the code `my_var :+ 1` can be used in place of `my_var = my_var + 1`.
+
+[Int]: ../../api/brl/brl.blitz/#int
+[Null]: ../../api/brl/brl.blitz/#null
+[SuperStrict]: ../../api/brl/brl.blitz/#superstrict
+[Local]: ../../api/brl/brl.blitz/#local
+[Global]: ../../api/brl/brl.blitz/#global
+[Field]: ../../api/brl/brl.blitz/#field

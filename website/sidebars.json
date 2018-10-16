@@ -30,7 +30,6 @@
       "language/expressions",
       "language/functions",
       "language/identifiers",
-      "language/keywords",
       "language/literals",
       "language/variables"
     ],

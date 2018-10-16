@@ -7,13 +7,13 @@ sidebar_label: Conditional Compiling
 Conditional compiling allows you to turn compiling on or off from within your program depending on the environment
 the program is being compiled for.
 
-Conditional compiling works a bit like an `If` statement, but takes the form:
+Conditional compiling works a bit like an [If] statement, but takes the form:
 
 ```blitzmax
 ?Identifier
 ```
 
-The ```?``` must appear at the start of a new line, and ```Identifier``` should be one of the following:
+The `?` must appear at the start of a new line, and `Identifier` should be one of the following:
 
 | Name  | Meaning  |
 |---|---|
@@ -69,11 +69,11 @@ The ```?``` must appear at the start of a new line, and ```Identifier``` should 
 | opengles  | True if program is being compiled for platform that uses OpenGL ES  |
 | bmxng  | True if program is being compiled using BlitzMax-NG  |
 
-```Identifier``` may also be preceded by `Not` to invert the result.
+`Identifier` may also be preceded by [Not] to invert the result.
 
-An ```?``` on its own always turns compiling on.
+An `?` on its own always turns compiling on.
 
-BlitzMax-NG also allows for **conditional expressions** such as ```?x64 and raspberrypi```
+BlitzMax-NG also allows for **conditional expressions** such as `?x64 and raspberrypi`
 
 For example:
 
@@ -87,3 +87,6 @@ For example:
 ?
     ' Code here is always compiled.
 ```
+
+[If]: ../../api/brl/brl.blitz/#if
+[Not]: ../../api/brl/brl.blitz/#not

@@ -14,15 +14,18 @@ Function Identifier:ReturnType(Parameters)
     Function statements...
 End Function
 ```
-If ReturnType is omitted, the function defaults to returning an `Int`.
+If ReturnType is omitted, the function defaults to returning an [Int].
 
-%Parameters is a comma separated list of parameters for the function. The syntax
-of each parameter is similar to a variable declaration: ``Identifier : Type``.
+`Parameters` is a comma separated list of parameters for the function. The syntax
+of each parameter is similar to a variable declaration: `Identifier : Type`.
 Function parameters may be used inside a function in the same way as local
 variables.
 
-The `Return` statement is used to return a value from a function.
+The [Return] statement is used to return a value from a function.
 
 Here is an example of a simple function that adds 2 integers and returns their sum:
 
 <TODO>
+
+
+[Return]: ../../api/brl/brl.blitz/#return

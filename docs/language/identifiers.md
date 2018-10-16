@@ -14,8 +14,8 @@ player1_up
 your_name
 _hello_world_
 ```
-Identifiers in BlitzMax are case-insensitive. This means that the identifiers ```hello```, ```Hello```
-and ```HELLO``` are all treated as the same identifier.
+Identifiers in BlitzMax are case-insensitive. This means that the identifiers `hello`, `Hello`
+and `HELLO` are all treated as the same identifier.
 
 The following identifiers are reserved for use by the BlitzMax language, and can not be used as general
 purpose identifiers:

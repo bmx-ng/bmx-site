@@ -8,21 +8,21 @@ All constants, variables, functions and expressions have an associated type. Bli
 
 |  Description | Syntax  | Minimum value  |  Maximum value |
 |---|---|---|---|
-| 8 bit unsigned integer | `Byte` | 0  | 255  |
-| 16 bit unsigned integer |  `Short` | 0  | 65535  |
-| 32 bit signed integer | `Int`  |  -2^31 | +2^31-1  |
-| 32 bit unsigned integer |  `UInt` |  0 |  +2^32-1 |
-| 64 bit signed integer |  `Long` | -2^63  | +2^63-1  |
-| 64 bit unsigned integer | `ULong`  | 0  | +2^64-1  |
-| 32 bit floating point  | `Float`  | (+/-)10^-38  | (+/-)10^38  |
-| 64 bit floating point  | `Double`  | (+/-)10^-308  | (+/-)10^308  |
-| 16 bit unicode string  | `String`  |   |   |
-| Unsigned integer (32 bit arch)  | `Size_T`  | 0  | +2^32-1  |
-| Unsigned integer (64 bit arch)  | `Size_T`  | 0  | +2^64-1  |
-| 64 bit SIMD float  | `Float64`  |   |   |
-| 128 bit SIMD integer  | `Int128`  |   |   |
-| 128 bit SIMD float  | `Float128`  |   |   |
-| 128 bit SIMD double  | `Double128`  |   |   |
+| 8 bit unsigned integer | [Byte] | 0  | 255  |
+| 16 bit unsigned integer |  [Short] | 0  | 65535  |
+| 32 bit signed integer | [Int]  |  -2^31 | +2^31-1  |
+| 32 bit unsigned integer |  [UInt] |  0 |  +2^32-1 |
+| 64 bit signed integer |  [Long] | -2^63  | +2^63-1  |
+| 64 bit unsigned integer | [ULong]  | 0  | +2^64-1  |
+| 32 bit floating point  | [Float]  | (+/-)10^-38  | (+/-)10^38  |
+| 64 bit floating point  | [Double]  | (+/-)10^-308  | (+/-)10^308  |
+| 16 bit unicode string  | [String]  |   |   |
+| Unsigned integer (32 bit arch)  | [Size_T]  | 0  | +2^32-1  |
+| Unsigned integer (64 bit arch)  | [Size_T]  | 0  | +2^64-1  |
+| 64 bit SIMD float  | [Float64]  |   |   |
+| 128 bit SIMD integer  | [Int128]  |   |   |
+| 128 bit SIMD float  | [Float128]  |   |   |
+| 128 bit SIMD double  | [Double128]  |   |   |
 | Object  | Typename  |   |   |
 | Array  | ElementType [ ]  |   |   |
 | Function  | ReturnType ( Parameters )  |   |   |
@@ -84,22 +84,39 @@ The rules governing type balancing are:
 
 
 
-    If either argument is `Double`, then result is `Double`
+> If either argument is [Double], then result is [Double]
+>
+> else if either argument is [Float], then result is [Float]
+>
+> else if either argument is [ULong], then result is [ULong]
+>
+> else if either argument is [Size_T], then result is [Size_T]
+>
+> else if either argument is [WParam], then result is [WParam]
+>
+> else if one argument is [Long] and the other [UInt], then result is [ULong]
+>
+> else if either argument is [LParam], then result is [LParam]
+>
+> else if either argument is [Long], then result is [Long]
+>
+> else if either argument is [UInt], then result is [UInt]
+>
+> else result is [Int]
 
-    else if either argument is `Float`, then result is `Float`
-
-    else if either argument is `ULong`, then result is `ULong`
-
-    else if either argument is `Size_T`, then result is `Size_T`
-
-    else if either argument is `WParam`, then result is `WParam`
-
-    else if one argument is `Long` and the other `UInt`, then result is `ULong`
-
-    else if either argument is `LParam`, then result is `LParam`
-
-    else if either argument is `Long`, then result is `Long`
-
-    else if either argument is `UInt`, then result is `UInt`
-
-    else result is `Int`
+[Byte]: ../../api/brl/brl.blitz/#byte
+[Short]: ../../api/brl/brl.blitz/#short
+[Int]: ../../api/brl/brl.blitz/#int
+[UInt]: ../../api/brl/brl.blitz/#uint
+[Long]: ../../api/brl/brl.blitz/#long
+[ULong]: ../../api/brl/brl.blitz/#ulong
+[Float]: ../../api/brl/brl.blitz/#float
+[Double]: ../../api/brl/brl.blitz/#double
+[String]: ../../api/brl/brl.blitz/#string
+[Size_T]: ../../api/brl/brl.blitz/#size-t
+[Float64]: ../../api/brl/brl.blitz/#float64
+[Int128]: ../../api/brl/brl.blitz/#int128
+[Float128]: ../../api/brl/brl.blitz/#float128
+[Double128]: ../../api/brl/brl.blitz/#double128
+[LParam]: ../../api/brl/brl.blitz/#lparam
+[WParam]: ../../api/brl/brl.blitz/#wparam

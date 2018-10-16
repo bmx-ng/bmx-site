@@ -6,8 +6,8 @@ sidebar_label: Exceptions
 
 BlitzMax provides a mechanism for handling runtime errors known as **exception handling**.
 
-An exception is actually just an object. You can **throw** and **catch** exceptions using the `Throw` command and a `Try` /
-`Catch` block. Here is a simple example:
+An exception is actually just an object. You can **throw** and **catch** exceptions using the [Throw] command and a [Try] /
+[Catch] block. Here is a simple example:
 
 ```blitzmax
 Function ExTest()
@@ -20,9 +20,9 @@ Catch ex:Object
     Print ex.ToString()
 End Try
 ```
-Throwing an exception causes the program to jump to the most recent `Catch` block. You can provide multiple catch blocks
-for catching exceptions of different types. If there is no appropriate `Catch` block for the exception, then the program
-jumps to the %next most recent `Catch` block. If no catch block can be found to deal with the exception, the program
+Throwing an exception causes the program to jump to the most recent [Catch] block. You can provide multiple catch blocks
+for catching exceptions of different types. If there is no appropriate [Catch] block for the exception, then the program
+jumps to the %next most recent [Catch] block. If no catch block can be found to deal with the exception, the program
 will end.
 
 BlitzMax has several built-in exception types, all of which extend type TBlitzException. These are:
@@ -33,4 +33,10 @@ BlitzMax has several built-in exception types, all of which extend type TBlitzEx
 | TNullFunctionException  | Thrown when a program attempts to call a null function.  |
 | TNullObjectException  | Thrown when a program attempts to access a null object (only thrown in debug mode).  |
 | TArrayBoundsException  | Thrown when a program attempts to access an array element outside of an array's bounds (only thrown in debug mode).  |
-| TRuntimeException  | Thrown by the `RuntimeError` or `Assert` commands.  |
+| TRuntimeException  | Thrown by the [RuntimeError] or [Assert] commands.  |
+
+[Throw]: ../../api/brl/brl.blitz/#throw
+[Try]: ../../api/brl/brl.blitz/#try
+[Catch]: ../../api/brl/brl.blitz/#catch
+[RuntimeError]: ../../api/brl/brl.blitz/#function-runtimeerror-message
+[Assert]: ../../api/brl/brl.blitz/#assert
