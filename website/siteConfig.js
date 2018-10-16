@@ -14,7 +14,7 @@ const users = [];
 const siteConfig = {
     title: 'BlitzMax', // Title for your website.
     tagline: 'Code. Build. Play.',
-    url: 'https://localhost', // Your website URL
+    url: 'https://blitzmax.org', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
