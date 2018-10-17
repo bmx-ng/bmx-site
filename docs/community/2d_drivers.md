@@ -5,7 +5,7 @@ sidebar_label: 2D Drivers
 ---
 
 ## DX9 Max2D driver
-Topic: http://wasted.nz/posts.php?topic=84089
+Topic: http://mojolabs.nz/posts.php?topic=84089
 
 Repo: http://code.google.com/p/max2ddx9
 
@@ -15,6 +15,6 @@ Repo: https://github.com/davecamp/srs.mod
 Old Repo: https://github.com/SRSSoftware/srs.mod
 
 ## Odd2d module
-Topic: http://wasted.nz/posts.php?topic=90436
+Topic: http://mojolabs.nz/posts.php?topic=90436
 
 Site: http://www.gooeyblob.com/mods/odd2dmodule.zip

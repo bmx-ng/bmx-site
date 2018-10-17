@@ -5,7 +5,7 @@ sidebar_label: 3D Libraries
 ---
 
 ## Assimp wrapper - Open Asset Import Library
-Topic: http://wasted.nz/posts.php?topic=82586
+Topic: http://mojolabs.nz/posts.php?topic=82586
 
 Repo: http://code.google.com/p/blitzmax-assimp
 

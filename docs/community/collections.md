@@ -20,7 +20,7 @@ Repo: https://github.com/nitrologic
 ## BaH modules
 appstub, avbin, barcode, base64, bass, bigint, boost, box2d, cairo, cegui, chipmunk, clearsilver, crypto, curses, database, datetime, dbgp, dbmysql, dbodbc, dboracle, dbpostgresql, dbsqlite, dbxbase, diff, escapi, expat, filesystemex, fit, flickcurl, fmod, format, freeimage, freetypegl, ftpparser, gdal, glslopt, gme, gmp, graphviz, growl, gtkmaxgui, gtkwebkitgtk, inet, interprocess, irrklang, jansson, keychain, leptonica, libarchive, libcurl, libiconv, libnotify, libsmbclient, libssh2, libtcod, libtorrent, libusb, libwebsockets, libxml, libxslt, locale, magick, mapm, mathtoolkit, maxguitextareascintilla, maxunit, muparser, oggvorbis, opencl, osmesa, persistence, protobuf, qrencode, raknet, ramsstream, random, raptor, rational, regex, registry, rtl, rtmidi, scriptingbridge, serial, sfxr, sid, sparkle, speech, sstream, streamhtmlparser, stringbuffer, taglib, tesseract, textsstream, theoraplayer, tmx, unimotion, uuid, volumes, wiringpi, xcb, xls, xlwriter, xz
 
-Topic: http://wasted.nz/posts.php?topic=75695
+Topic: http://mojolabs.nz/posts.php?topic=75695
 
 Site: http://brucey.net/programming/blitz/index.php
 
@@ -117,7 +117,7 @@ Site: http://www.pantson.com/mods
 ## Perturbatio modules
 appfuncs, cgi, html, stringlist
 
-Mirror: http://wasted.nz/userlog.php?user=8652&log=1737
+Mirror: http://mojolabs.nz/userlog.php?user=8652&log=1737
 
 ## Spacerat modules
 advtext, colour, logprintstream, riff, snarl, threadedio, tiles

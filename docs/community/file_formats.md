@@ -5,12 +5,12 @@ sidebar_label: File Formats
 ---
 
 ## MaXML - XML module
-Topic: http://wasted.nz/posts.php?topic=53834
+Topic: http://mojolabs.nz/posts.php?topic=53834
 
-Download: http://wasted.nz/userlog.php?user=8652&log=1737
+Download: http://mojolabs.nz/userlog.php?user=8652&log=1737
 
 ## ZipStream module
-Topic: http://wasted.nz/posts.php?topic=71734
+Topic: http://mojolabs.nz/posts.php?topic=71734
 
 Repo: https://github.com/maxmods/koriolis.mod
 
@@ -24,12 +24,12 @@ Repo: https://github.com/Trylobot/bmx-rjson
 Repo: https://github.com/FWeinb/injection.mod
 
 ## ParserGen and Coocoo - parser/compiler generators
-Topic: http://wasted.nz/posts.php?topic=66735
+Topic: http://mojolabs.nz/posts.php?topic=66735
 
 Site: http://sites.google.com/site/grable0
 
 ## Blitz Lua
-Topic: http://wasted.nz/posts.php?topic=68845
+Topic: http://mojolabs.nz/posts.php?topic=68845
 
 Wiki: http://lua-users.org/wiki/BlitzLua
 

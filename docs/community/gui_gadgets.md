@@ -5,7 +5,7 @@ sidebar_label: GUI Gadgets
 ---
 
 ## Scintilla - TextArea replacement (Win)
-Topic: http://wasted.nz/posts.php?topic=85716
+Topic: http://mojolabs.nz/posts.php?topic=85716
 
 Repo: http://code.google.com/p/scintillabmx
 

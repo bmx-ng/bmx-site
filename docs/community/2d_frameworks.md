@@ -8,7 +8,7 @@ sidebar_label: 2D Frameworks
 Repo: http://code.google.com/p/retroremakes-framework
 
 ## Planiax 2D Framework
-Topic: http://wasted.nz/posts.php?topic=88042
+Topic: http://mojolabs.nz/posts.php?topic=88042
 
 Site: http://www.playniax.com
 
@@ -19,15 +19,15 @@ Repo: http://github.com/GWRon
 Repo: http://code.google.com/p/dwlab/
 
 ## BMax 2D Framework
-Topic: http://wasted.nz/posts.php?topic=83888
+Topic: http://mojolabs.nz/posts.php?topic=83888
 
 Repo: http://code.google.com/p/bmax2dframework
 
 ## Public Domain part of Grey Alien Framework
-Topic: http://wasted.nz/posts.php?topic=82765
+Topic: http://mojolabs.nz/posts.php?topic=82765
 
 ## OFXMax - OpenFrameworks
-Topic: http://wasted.nz/posts.php?topic=84991
+Topic: http://mojolabs.nz/posts.php?topic=84991
 
 Repo: http://code.google.com/p/ofxmax
 
