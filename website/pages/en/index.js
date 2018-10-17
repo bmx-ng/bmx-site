@@ -40,7 +40,7 @@ class HomeSplash extends React.Component {
                         </div>
                         <div className="inner">
                             <h2 className="projectTitle">
-                                <img src={siteConfig.baseUrl + 'img/max_logo.png'}/>
+                                <img src={siteConfig.baseUrl + 'img/blitzmax.svg'}/>
                                 <small>{siteConfig.tagline}</small>
                             </h2>
                             <div className="section promoSection">

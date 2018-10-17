@@ -40,9 +40,9 @@ const siteConfig = {
     users,
 
     /* path to images for header/footer */
-    headerIcon: 'img/max_logo.png',
-    footerIcon: 'img/max_logo.png',
-    favicon: 'img/favicon.png',
+    headerIcon: 'img/rocket.png',
+    footerIcon: 'img/rocket.png',
+    favicon: 'img/rocket.png',
 
     /* Colors for website */
     colors: {
