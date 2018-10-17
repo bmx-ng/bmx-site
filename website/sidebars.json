@@ -31,6 +31,12 @@
       "language/functions",
       "language/identifiers",
       "language/literals",
+      "language/modules",
+      "language/objects",
+      "language/program_flow",
+      "language/slices",
+      "language/strings",
+      "language/user_defined_types",
       "language/variables"
     ],
     "Tools": [
