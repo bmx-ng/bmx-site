@@ -17,7 +17,7 @@ understanding of the use and benefits of OOP techniques.
 
 > If you are already familiar with the use of custom Types with Fields, you can skip this section.
 
-A custom `Type` definition is a handy way to define your own custom variable types. A custom `Type` is
+A custom [Type] definition is a handy way to define your own custom variable types. A custom [Type] is
 basically a group of variables all bundled into one. For example:
 
 ```blitzmax
@@ -33,11 +33,11 @@ Local a:Int, b:Float, car:TCar
 ```
 
 Try running the above example. You may be surprised that it actually works. Yes - ''TCar'' is now a valid
-variable type! You can pass it to functions, set its value, etc. just like any other variable. The `Field` lines supply
+variable type! You can pass it to functions, set its value, etc. just like any other variable. The [Field] lines supply
 variables which TCar variables include internally; these internal variables are technically called "members" of TCar.
 A custom Type is really just a handy way to group variables.
 
-> The **T** prefix is just a way of indicating that it is a `Type`, and is a standard convention used in BlitzMax.
+> The **T** prefix is just a way of indicating that it is a [Type], and is a standard convention used in BlitzMax.
 > You are free to name your Types in any way you like, with or without a **T** prefix. It's entirely up to you!
 
 Accessing a member of a TCar variable is very easy. Simply use the dot (.) operator like this:
@@ -66,15 +66,15 @@ not actually a variable – imagine the TCar variable in this example as a handl
 to get a grip on it. Through this handle (the **car** variable), you can access any of the TCar's data (such as
 `car.name`). However, a handle on its own is worthless; it must first be attached to something. To attach this
 handle (the **car** variable) to something, simply assign it to a real object. And, to create a real object, you use the
-**New** keyword. The `car = New TCar` line in the example above creates a new TCar object and assigns it to **car**. Without
+**[New]** keyword. The `car = New TCar` line in the example above creates a new TCar object and assigns it to **car**. Without
 this line, the `car.name` code below will cause a runtime error since it is trying to access nothingness.
 
 
-> When a custom type variable is attached to nothing, its value is called `Null`. If you want to
-> detach a **handle** (custom type variable) from an object, simply set the variable's value to `Null` (such as `car = Null`).
+> When a custom type variable is attached to nothing, its value is called [Null]. If you want to
+> detach a **handle** (custom type variable) from an object, simply set the variable's value to [Null] (such as `car = Null`).
 > You should always detach variables from real objects when you no longer need access to it.
 
-A real object (created with **New**) will always remain in memory until all "handles" have been detached from it. Take a look
+A real object (created with **[New]**) will always remain in memory until all "handles" have been detached from it. Take a look
 at this example:
 
 ```blitzmax
@@ -177,9 +177,9 @@ The above example simply creates an extremely simple type which contains a singl
 demonstrates the operation of the function and type.
 
 Now, to convert this example into a more object-oriented program (OOP), only a few small changes would be
-made. Since OOP allows you to insert procedures within a `Type` definition (just as you are allowed to insert
-variables within them), `IncrementCounter()` can be moved inside the type definition (however, this `Function`
-will now be called a `Method`). For example:
+made. Since OOP allows you to insert procedures within a [Type] definition (just as you are allowed to insert
+variables within them), `IncrementCounter()` can be moved inside the type definition (however, this [Function]
+will now be called a [Method]). For example:
 
 ```blitzmax
 SuperStrict
@@ -210,8 +210,8 @@ As you can see, the Increment() method is accessed the same way the Value variab
 set to 5 (`test.value = 5`). Then, test's `Increment()` method is executed (`test.Increment()`).
 
 You may have noticed that the `Increment()` Method definition has a few differences from the
-`IncrementCounter()` function in the other example; the keyword **Self** is used in place of the `counter:TCounter`
-parameter. Because `Increment()` is a member of TCounter, you can use **Self** to refer to whichever object is
+`IncrementCounter()` function in the other example; the keyword **[Self]** is used in place of the `counter:TCounter`
+parameter. Because `Increment()` is a member of TCounter, you can use [Self] to refer to whichever object is
 being manipulated. For example:
 
 ```blitzmax
@@ -224,10 +224,10 @@ Method Increment()
     Self.value :+ 1
 End Method
 ```
-Now, since `test.Increment()` was just called, **Self** is actually referring to **test**, so `Self.value :+ 1` is effectively
+Now, since `test.Increment()` was just called, [Self] is actually referring to **test**, so `Self.value :+ 1` is effectively
 performing this operation: `test.Value :+ 1`.
 
-> The **Self** keyword is completely optional, and most programmers omit it entirely. For example,
+> The **[Self]** keyword is completely optional, and most programmers omit it entirely. For example,
 > the Method `Increment()` could be written like this:
 > `Method Increment()`
 > `    value :+ 1`
@@ -288,7 +288,7 @@ Wend
 ```
 First, this example creates a New TRobot object (called **robot**). `robot.SetName("XB-75b")` executes the
 TRobot `SetName()` Method (the `SetName()` Method is a little redundant here, since you could just as easily say
-`robot.name = "XB-75b"`; However, it can be useful, and we will look into :ref:`oop_access_modifiers` later which will hopefully explain why).
+`robot.name = "XB-75b"`; However, it can be useful, and we will look into **[access modifiers]** later which will hopefully explain why).
 
 The main While loop simply calls `robot.Move(1, 1)` and `robot.Draw()` each frame. The `Move()` method
 moves the robot 1 unit to the right, and 1 unit down. The `Draw()` method draws the "robot" to the screen.
@@ -361,7 +361,7 @@ Local obj:TPlayer = New TPlayer
 obj.x = 1
 obj.y = 2
 ```
-In this example, the **Extends** keyword after TPlayer, for example, tells BlitzMax that TPlayer not only
+In this example, the **[Extends]** keyword after TPlayer, for example, tells BlitzMax that TPlayer not only
 contains `Field health:Int`, but everything else that TEntity has as well. The result is that any TPlayer objects
 will now automatically have **x** and **y** variables (notice that `obj.x = 1` works just fine, even though the
 TPlayer Type doesn't specifically include **x**).
@@ -473,8 +473,8 @@ When BlitzMax executes `obj.Draw()`, it uses the most appropriate Method. In thi
 
 If you do not want TEntity to provide a **default** draw method (as it is now, it just draws a dot if no
 specific `Draw()` Method is provided), you can delete TEntity's `Draw()` Method, and `obj.Draw` will still work,
-since TPlayer contains a `Draw()` Method. However, a better way to do this is to add an **Abstract** `Draw()`
-Method to TEntity. Making a Method **Abstract** is really just a way of saying that this Method is blank, and sub-
+since TPlayer contains a `Draw()` Method. However, a better way to do this is to add an **[Abstract]** `Draw()`
+Method to TEntity. Making a Method [Abstract] is really just a way of saying that this Method is blank, and sub-
 Types (such as TBuilding and TPlayer) must provide one (or else you'll get a compile error). For example:
 
 ```blitzmax
@@ -526,8 +526,8 @@ Flip
 WaitKey
 ```
 You may notice that `Method Draw() Abstract` in TEntity has no `End Method` statement. This is
-because an Abstract Method is always blank, and contains no data. This abstract method definition is really just
-saying "all Types which inherit TEntity must have a Draw() Method". Try deleting TPlayer's `Draw()` Method, and
+because an [Abstract] [Method] is always blank, and contains no data. This abstract method definition is really just
+saying "*all Types which inherit TEntity must have a Draw() Method*". Try deleting TPlayer's `Draw()` Method, and
 run the program. A compile error occurs, enforcing the rule that inheritors of TEntity must have a `Draw()`
 Method.
 
@@ -549,7 +549,7 @@ fruit = apple
 fruit = orange
 ```
 
-The `fruit:TFruit` variable, has the capability to store apples, oranges, or any other Type which `Extends`
+The `fruit:TFruit` variable, has the capability to store apples, oranges, or any other [Type] which [Extends]
 TFruit. In other words, with a generalized variable (a TFruit variable or TEntity variable, for example), you can
 store any sub-Type object. This means that a TPlayer, TRobot, or TBuilding object can be stored in a TEntity
 variable. This is called polymorphism. For example, you could do this:
@@ -612,7 +612,7 @@ Flip
 WaitKey
 ```
 
-> In case you are not familiar with BlitzMax's TList Module, it simply provides an easy way to
+> In case you are not familiar with BlitzMax's [TList Module], it simply provides an easy way to
 > manage a list of objects, similarly to storing them in an array.
 
 Polymorphism is useful in any case where generalization would benefit. For example, if you have a
@@ -726,9 +726,9 @@ obj2.x = 15
 obj2.y = 3
 ```
 It would be much easier if these objects could automatically add themselves to a list somewhere.
-Fortunately, this can be done in OOP! Any Type can have a special "constructor" Method which is automatically
+Fortunately, this can be done in OOP! Any [Type] can have a special "*constructor*" [Method] which is automatically
 called just as the object is created. The constructor can do anything you like, just as any other Method can (in
-this case, it will be adding the TEntity to a list). To add a constructor to a Type, simply add a Method named
+this case, it will be adding the TEntity to a list). To add a constructor to a [Type], simply add a Method named
 `New()`. The `New()` Method will be executed whenever an object of that type is created.
 
 In the example above, the best place to put the constructor is in TEntity; this way, TPlayer, TBuilding,
@@ -905,7 +905,7 @@ Of course, the use of a constructor here is only a small example of what you can
 Basically, any initialization code you want to be performed to new objects can be automated with constructors.
 
 In addition to constructors, there are also destructors. A destructor is done exactly like a constructor,
-except **Delete** is used instead of **New** as the Method's name. Destructors in BlitzMax can be used to perform
+except **[Delete]** is used instead of **[New]** as the Method's name. Destructors in BlitzMax can be used to perform
 some final steps before an object is deleted.
 
 > Since BlitzMax uses a garbage collection system to delete objects, don't rely on a destructor being called at any
@@ -916,7 +916,7 @@ some final steps before an object is deleted.
 As you know, a Type is a group of Methods and Fields. The value of Fields, and the operation of
 Methods depends entirely on which object you are working with. For example, `car1.x` may be different than
 `car2.x`. In OOP, you can also include what is called static methods and variables. A static variable is shared by
-all objects of that type. Static variables in Type's are really no different from a standard `Global` variable, but with the
+all objects of that type. Static variables in Type's are really no different from a standard [Global] variable, but with the
 added benefit of keeping your code more object-oriented. For example, look at the example from the last
 section:
 
@@ -990,7 +990,7 @@ Flip
 
 WaitKey
 ```
-Now, the “Global entityList:TList = New Tlist” line can be moved inside the TEntity Type:
+Now, the `Global entityList:TList = New Tlist` line can be moved inside the TEntity Type:
 
 ```blitzmax
 SuperStrict
@@ -1061,14 +1061,14 @@ Flip
 
 WaitKey
 ```
-This is how static fields work in BlitzMax; instead of using the **Field** keyword to define the variable,
-**Global** is used. Below, you may notice the use of `TEntity.entityList` below. Since the static field **entityList** is
+This is how static fields work in BlitzMax; instead of using the [Field] keyword to define the variable,
+**[Global]** is used. Below, you may notice the use of `TEntity.entityList` below. Since the static field **entityList** is
 shared by all TEntity's, you can even use "TEntity." to access it. This comes in handy especially when you don't
 know if there are any TEntity objects existing (yes - static fields can be accessed, even when there are no
 objects of their type in existence).
 
-Static fields are really just a nice way to categorize your Global variables, keeping everything object oriented.
-BlitzMax also supports static methods. Just as static fields are simply Global variables associated with a
+Static fields are really just a nice way to categorize your [Global] variables, keeping everything object oriented.
+BlitzMax also supports static methods. Just as static fields are simply [Global] variables associated with a
 Type, static methods are simply Functions associated with a Type. Static method can be used for a variety of
 purposes, although the most common is a form of initialization. For example, you could make the functions
 CreatePlayer(), CreateRobot(), and CreateBuilding() to make it easier to initialize certain properties of objects
@@ -1339,7 +1339,7 @@ WaitKey
 ## Encapsulation & Access Modifiers
 
 By default, all of a Type's Fields and Methods are visible (or accessible) from everywhere. This is all great, but sometimes
-it would be nice if there were a way to "hide" specific implementation details of your Type, and only allow access to
+it would be nice if there were a way to "*hide*" specific implementation details of your Type, and only allow access to
 them through the Object's own methods. This is called "Encapsulation". By using access modifiers, you can do just that -
 hide functionality so that it is only visible from inside your Type.
 
@@ -1366,7 +1366,7 @@ counter.Increment()
 counter.value = 50
 ```
 Here, we've overriden the current value of our counter, and set it to 50. To prevent this, we can tell BlitzMax to change
-the level of access to different parts of the Type, by utilising the **Private**, **Protected** and **Public** keywords.
+the level of access to different parts of the Type, by utilising the **[Private]**, **[Protected]** and **[Public]** keywords.
 Let's now lock down our TCounter Type so that we can arbitrarily change its value:
 
 ```blitzmax
@@ -1387,12 +1387,12 @@ With this minor change to the code, our previous attempt to modify the value (`c
 warning us that **value** is not visible from that part of the program.
 
 All Type members declared after an access modifier inherit that level of privacy, which gives you a fair amount of flexibility
-in designing your Types with the levels of access that you desire. For example, if we neglected to add **Public** before
+in designing your Types with the levels of access that you desire. For example, if we neglected to add [Public] before
 `Method Increment()` then BlitzMax would assume that you wanted the `Increment()` method to be Private too. In which case,
 a call to `counter.Increment()` would not compile either for the same reasons as above.
 
-When considering how to apply access modifiers to Types using inheritance, you will find the **Protected** modifier useful.
-**Protected** allows access within a Type hierarchy but not outside of it. This means that a **Protected** member variable is
+When considering how to apply access modifiers to Types using inheritance, you will find the [Protected] modifier useful.
+[Protected] allows access within a Type hierarchy but not outside of it. This means that a [Protected] member variable is
 only visible to its Type and any sub-Types, and not to your program in general. Let's have a look at an example of the
 different levels of accessibility we can play with:
 
@@ -1462,8 +1462,8 @@ Type TPlayer Extends TEntity
 End Type
 ```
 That looks great; access to **x**, **y** and **health** are now Private. But wait. If you attempt to compile this, BlitzMax
-will complain about the line `DrawOval x, y, 5, 5`, because TPlayer no longer has access to the Private members of TEntity.
-We can fix this by changing access to those members to **Protected**:
+will complain about the line `DrawOval x, y, 5, 5`, because TPlayer no longer has access to the [Private] members of TEntity.
+We can fix this by changing access to those members to [Protected]:
 
 ```blitzmax
 SuperStrict
@@ -1514,7 +1514,7 @@ no implementation or body:
 ```blitzmax
 Method Sleep(time:Int) Abstract
 ```
-An abstract type is one which is either explicitly declared abstract using the **Abstract** keyword, or is a type that
+An abstract type is one which is either explicitly declared abstract using the **[Abstract]** keyword, or is a type that
 has an abstract method.
 
 You cannot create an instance of an abstract type, but you can **Extend** it with another custom type and implement any
@@ -1578,7 +1578,7 @@ By using interfaces, you may include behaviour from multiple sources in your cus
 doesn't support multiple inheritance of types (i.e. a type can only **Extend** a single type, but it can **Implement**
 many interfaces).
 
-You define an interface with the **Interface** keyword :
+You define an interface with the **[Interface]** keyword :
 
 ```blitzmax
 Interface ISerializable
@@ -1718,7 +1718,7 @@ Although you still need to write the equivalent of the "Add" method above, the m
 an arguably cleaner way in your program. Operator overloading is "syntactic sugar", in that it can make your code easier to
 read, perhaps therefore easier maintain and spot bugs.
 
-To overload an operator, we use a specially named method, called **Operator**, followed by the operator symbol we are
+To overload an operator, we use a specially named method, called **[Operator]**, followed by the operator symbol we are
 overloading (for example, `+`), and then the rest of the method as normal.
 
 To add an addition overload for our example above, we could write the following method :
@@ -1785,7 +1785,7 @@ Method Operator=:Int(other:TCalc)
     Return value = other.value
 End Method
 ```
-This time we declare a return type of **Int** (for True or False), and inside the method we perform the actual comparison
+This time we declare a return type of **[Int]** (for [True] or [False]), and inside the method we perform the actual comparison
 test.
 
 Here's our program with the new methods added:
@@ -1875,3 +1875,25 @@ how to use them. Object-oriented programming is an extremely useful tool which m
 programs easier to make than ever. The entire purpose of OOP is to allow you take your mind off the inner
 working of your program (the parts you already completed), and lets you focus on more high-level tasks, as you
 continue to create your program.
+
+[Type]: ../../api/brl/brl.blitz/#type
+[Field]: ../../api/brl/brl.blitz/#field
+[New]: ../../api/brl/brl.blitz/#new
+[Null]: ../../api/brl/brl.blitz/#null
+[Function]: ../../api/brl/brl.blitz/#function
+[Method]: ../../api/brl/brl.blitz/#method
+[Self]: ../../api/brl/brl.blitz/#self
+[access modifiers]: #encapsulation-access-modifiers
+[Extends]: ../../api/brl/brl.blitz/#extends
+[Abstract]: ../../api/brl/brl.blitz/#abstract
+[TList Module]: ../../api/brl/brl.linkedlist
+[Delete]: ../../api/brl/brl.blitz/#delete
+[Global]: ../../api/brl/brl.blitz/#global
+[Private]: ../../api/brl/brl.blitz/#private
+[Protected]: ../../api/brl/brl.blitz/#protected
+[Public]: ../../api/brl/brl.blitz/#public
+[Interface]: ../../api/brl/brl.blitz/#interface
+[Operator]: ../../api/brl/brl.blitz/#operator
+[Int]: ../../api/brl/brl.blitz/#int
+[True]: ../../api/brl/brl.blitz/#true
+[False]: ../../api/brl/brl.blitz/#false
