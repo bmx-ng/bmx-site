@@ -60,8 +60,8 @@ Arrays also provide the following methods:
 
 | Method  | Description  |
 |---|---|
-| ```Sort( ascending = True )``` | Sort the array.  |
-| ```Dimensions:Int[]()```  | Get array dimensions.  |
+| `Sort( ascending = True )` | Sort the array.  |
+| `Dimensions:Int[]()`  | Get array dimensions.  |
 
 Arrays also provide a read-only **length** field that returns the total number of elements in the array.
 

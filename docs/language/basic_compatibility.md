@@ -82,7 +82,7 @@ my_array=my_array[..200]    ' now a 200 element array!
 ## Data, Read and Restore
 
 Data, Read and Restore are supported but have been renamed to [DefData], [ReadData] and [RestoreData]. Data labels must
-also be prefixed with a ```#``` character.
+also be prefixed with a `#` character.
 
 ## Type tag shortcuts
 
@@ -102,7 +102,7 @@ For example, a string variable can be declared in two ways:
 Local a_string:String
 Local another_string$
 ```
-Mac users whose keyboards do not feature the ```#``` character should use ```Alt 3```.
+Mac users whose keyboards do not feature the `#` character should use `Alt 3`.
 
 [DefData]: ../../api/brl/brl.blitz/#defdata
 [ReadData]: ../../api/brl/brl.blitz/#readdata
