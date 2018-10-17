@@ -19,3 +19,14 @@ a, a:hover {
     color: #4f62be;
     text-decoration: none;
 }
+
+ul.toc-headings > li {
+    padding-bottom: 0px;
+}
+.toc-headings > li > a {
+    display: block;
+    padding: 4px;
+}
+.toc-headings > li > a.active {
+    font-weight: bold;
+}
