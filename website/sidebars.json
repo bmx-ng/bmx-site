@@ -37,7 +37,17 @@
       "language/slices",
       "language/strings",
       "language/user_defined_types",
-      "language/variables"
+      "language/variables",
+      {
+        "type": "subcategory",
+        "label": "Advanced Topics",
+        "ids": [
+          "language/interfacing_with_c",
+          "language/memory_management",
+          "language/pointers",
+          "language/pre_post_compilation_scripts"
+        ]
+      }
     ],
     "Tools": [
       "tools/maxide",
