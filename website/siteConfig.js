@@ -98,7 +98,7 @@ const siteConfig = {
                     },
                     illegal: /\/\*/,
                     contains: [
-                        hljs.COMMENT('rem', '(endrem|end rem)'),
+                        hljs.COMMENT('^\\s*rem\\b', '^\\s*(endrem|end rem)\\b'),
                         hljs.COMMENT(
                             "'",
                             '$',
