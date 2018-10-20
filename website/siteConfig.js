@@ -77,6 +77,12 @@ const siteConfig = {
                         {
                             begin: '[$][a-fA-F0-9]+'
                         },
+                        {
+                            begin: '[%][10]+'
+                        },
+                        {
+                            begin: '\\b[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?'
+                        },
                         hljs.NUMBER_MODE
                     ]
                 };
