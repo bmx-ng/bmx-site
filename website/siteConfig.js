@@ -167,7 +167,7 @@ const siteConfig = {
         '/js/scrollspy.js'
     ],
 
-    stylesheets: ['/css/code-blocks-buttons.css'],
+    separateCss: ['static/css/code-blocks-buttons.css'],
 
     // On page navigation for the current documentation page.
     onPageNav: 'separate',
