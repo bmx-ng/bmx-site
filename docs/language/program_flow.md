@@ -42,7 +42,7 @@ For IndexVariable = FirstValue To LastValue Step StepValue
    Statements
 Next
 ```
-The 'Step' part is optional, in which case the index variable will step in increments of 1. The step
+The [Step] part is optional, in which case the index variable will step in increments of 1. The step
 value must also be constant.
 
 The exit value is only evaluated once at the start of the loop. This means it is safe to use complex
