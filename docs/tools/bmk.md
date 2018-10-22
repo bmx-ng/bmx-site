@@ -25,6 +25,10 @@ Builds an application from a single root source file.
 
 Builds a set of modules.
 
+#### `makelib`
+
+On Win32, builds a dynamic linked library (DLL) from the source file.
+
 ### Options
 
 
