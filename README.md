@@ -1,2 +1,4 @@
-# bmx-site
-BlitzMax website source
+# The BlitzMax Website sources
+
+see https://blitzmax.org
+
