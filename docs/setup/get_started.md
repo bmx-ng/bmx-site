@@ -55,7 +55,7 @@ First, we need to create a new, empty BlitzMax source (`.bmx`) file. There are s
 you can do this.
  * Choosing `New` from the File Menu
  * Clicking on the New file icon (the first on the left) on the toolbar.
- * Using the keyboard shortcut, Ctrl-N (or ![](assets/command-symbol.svg)-N on macOS)
+ * Using the keyboard shortcut, Ctrl-N (or &#8984;-N on macOS)
 
 Enter the following text into the editor :
 ```blitzmax
@@ -67,7 +67,7 @@ With that done, we're all set to run it now.
 Again, there are several ways you can accomplish this :
  * Choosing `Build and Run` from the Program Menu.
  * Clicking on Build and Run icon (the tilted rocket) on the toolbar.
- * Using the keyboard shortcut, Ctrl-R (or ![](assets/command-symbol.svg)-R on macOS)
+ * Using the keyboard shortcut, Ctrl-R (or &#8984;-R on macOS)
 
 The `Output` window will appear, and a fair amount of text will spew forth. Don't be alarmed.
 On your very first build, BlitzMax needs to compile the core modules. But generally, once
