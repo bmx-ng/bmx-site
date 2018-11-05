@@ -29,7 +29,7 @@ When it's time to save your hard work, you can select **Save** (Ctrl-S or &#8984
 from either the Menu or the Toolbar. For Untitled files, you will also be prompted to specify a location and a new name
 for your source.
 
-Untitled files are, by default, Blitzmax (.bmx) source files. Before you start editing, if you plan on using the
+Untitled files are, by default, BlitzMax (.bmx) source files. Before you start editing, if you plan on using the
 source file with a different extension and you have syntax-highlighting enabled, it's recommended that you save
 it first with the new filename, then **Close** (Ctrl-W or &#8984;-W)
 and **Open** (Ctrl-O or &#8984;-O) it again - otherwise MaxIDE will
@@ -149,7 +149,7 @@ the last entry of an array of size `10`, is actually at index `9`.
 
 ### Stepping Through Your Code
 
-MaxIDE also allows you to **step** through the statemnts of your running application in Debug mode.
+MaxIDE also allows you to **step** through the statements of your running application in Debug mode.
 To do this, you need to add a special command in your source called `DebugStop`.
 
 Here's an example of a program ready to be debugged:
@@ -179,7 +179,7 @@ If you use **Step In** on a function call, the first line *inside* the function 
 can then step through each line of the function.
 
 Whilst stepping, the Debug panel will show the values of all of the variables in the current scope, as well as those variables
-in scope down the call stack. You can example the call stack by openining the individual listed functions in the
+in scope down the call stack. You can example the call stack by opening the individual listed functions in the
 Debug pane.
 
 ## Toolbar
@@ -253,11 +253,11 @@ Debug pane.
 | Block Outdent | Ctrl-] | Unindents the currently highlighted block. |
 |  |  |  |
 | Find... | Ctrl-F | Finds text in the current source file. |
-| Find Next | F3 | Finds the next occurance of text. |
+| Find Next | F3 | Finds the next occurrence of text. |
 | Replace | Ctrl-H | Finds and replaces text. |
 | Goto Line... | Ctrl-G | Go to a line in the current source file. |
 |  |  |  |
-| Find in Files | Ctrl-Shift-F | Search many files for an occurance of text. |
+| Find in Files | Ctrl-Shift-F | Search many files for an occurrence of text. |
 
 ### Program Menu
 
