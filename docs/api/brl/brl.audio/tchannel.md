@@ -69,8 +69,8 @@ cause the audio channel to play at double speed (ie: an octave up).
 Determine whether audio channel is playing
 
 
-[Playing](../../brl/brl.audio/#method-playing-int) will return False if the audio channel is either paused, or has been stopped
-using [Stop](../../brl/brl.audio/#method-stop).
+[Playing](../../../brl/brl.audio/#method-playing-int) will return False if the audio channel is either paused, or has been stopped
+using [Stop](../../../brl/brl.audio/#method-stop).
 
 
 #### Returns

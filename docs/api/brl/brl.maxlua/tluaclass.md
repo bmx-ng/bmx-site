@@ -10,7 +10,7 @@ The TLuaClass type is used to contain lua source code.
 
 The source code should consist of a series of one or more lua functions.
 
-To actually invoke these functions a lua object must first be created - see [TLuaObject](../../brl/brl.maxlua/tluaobject).
+To actually invoke these functions a lua object must first be created - see [TLuaObject](../../../brl/brl.maxlua/tluaobject).
 
 
 ## Methods

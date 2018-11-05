@@ -6,7 +6,7 @@ sidebar_label: TStream
 
 
 
-[TStream](../../brl/brl.stream/tstream) extends [TIO](../../brl/brl.stream/tio) to provide methods for reading and writing various types of values
+[TStream](../../../brl/brl.stream/tstream) extends [TIO](../../../brl/brl.stream/tio) to provide methods for reading and writing various types of values
 to and from a stream.
 
 Note that methods dealing with strings - ReadLine, WriteLine, ReadString and WriteString -
@@ -21,9 +21,9 @@ TextStream type will be added capable of decoding text streams in multiple forma
 Reads bytes from a stream
 
 
-[ReadBytes](../../brl/brl.stream/#method-readbytes-long-buf-byte-ptr-count-long) reads <b>count</b> bytes from the stream into the memory block specified by <b>buf</b>.
+[ReadBytes](../../../brl/brl.stream/#method-readbytes-long-buf-byte-ptr-count-long) reads <b>count</b> bytes from the stream into the memory block specified by <b>buf</b>.
 
-If <b>count</b> bytes were not successfully read, a [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown. This typically
+If <b>count</b> bytes were not successfully read, a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown. This typically
 occurs due to end of file.
 
 
@@ -33,9 +33,9 @@ occurs due to end of file.
 Writes bytes to a stream
 
 
-[WriteBytes](../../brl/brl.stream/#method-writebytes-long-buf-byte-ptr-count-long) writes <b>count</b> bytes from the memory block specified by <b>buf</b> to the stream.
+[WriteBytes](../../../brl/brl.stream/#method-writebytes-long-buf-byte-ptr-count-long) writes <b>count</b> bytes from the memory block specified by <b>buf</b> to the stream.
 
-If <b>count</b> bytes were not successfully written, a [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown. This typically
+If <b>count</b> bytes were not successfully written, a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown. This typically
 occurs due to end of file.
 
 
@@ -45,9 +45,9 @@ occurs due to end of file.
 Skip bytes in a stream
 
 
-[SkipBytes](../../brl/brl.stream/#method-skipbytes-long-count-long) read <b>count</b> bytes from the stream and throws them away.
+[SkipBytes](../../../brl/brl.stream/#method-skipbytes-long-count-long) read <b>count</b> bytes from the stream and throws them away.
 
-If <b>count</b> bytes were not successfully read, a [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown. This typically
+If <b>count</b> bytes were not successfully read, a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown. This typically
 occurs due to end of file.
 
 
@@ -57,7 +57,7 @@ occurs due to end of file.
 Read a byte from the stream
 
 
-If a value could not be read (possibly due to end of file), a [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown.
+If a value could not be read (possibly due to end of file), a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown.
 
 
 #### Returns
@@ -70,7 +70,7 @@ The read value
 Write a byte to the stream
 
 
-If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown.
+If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
 
@@ -79,7 +79,7 @@ If the value could not be written (possibly due to end of file), a [TStreamWrite
 Read a short (two bytes) from the stream
 
 
-If a value could not be read (possibly due to end of file), a [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown.
+If a value could not be read (possibly due to end of file), a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown.
 
 
 #### Returns
@@ -92,7 +92,7 @@ The read value
 Write a short (two bytes) to the stream
 
 
-If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown.
+If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
 
@@ -101,7 +101,7 @@ If the value could not be written (possibly due to end of file), a [TStreamWrite
 Read an int (four bytes) from the stream
 
 
-If a value could not be read (possibly due to end of file), a [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown.
+If a value could not be read (possibly due to end of file), a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown.
 
 
 #### Returns
@@ -114,7 +114,7 @@ The read value
 Write an int (four bytes) to the stream
 
 
-If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown.
+If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
 
@@ -123,7 +123,7 @@ If the value could not be written (possibly due to end of file), a [TStreamWrite
 Read a long (eight bytes) from the stream
 
 
-If a value could not be read (possibly due to end of file), a [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown.
+If a value could not be read (possibly due to end of file), a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown.
 
 
 #### Returns
@@ -136,7 +136,7 @@ The read value
 Write a long (eight bytes) to the stream
 
 
-If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown.
+If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
 
@@ -145,7 +145,7 @@ If the value could not be written (possibly due to end of file), a [TStreamWrite
 Read a float (four bytes) from the stream
 
 
-If a value could not be read (possibly due to end of file), a [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown.
+If a value could not be read (possibly due to end of file), a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown.
 
 
 #### Returns
@@ -158,7 +158,7 @@ The read value
 Write a float (four bytes) to the stream
 
 
-If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown.
+If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
 
@@ -167,7 +167,7 @@ If the value could not be written (possibly due to end of file), a [TStreamWrite
 Read a double (eight bytes) from the stream
 
 
-If a value could not be read (possibly due to end of file), a [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown.
+If a value could not be read (possibly due to end of file), a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown.
 
 
 #### Returns
@@ -180,7 +180,7 @@ The read value
 Write a double (eight bytes) to the stream
 
 
-If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown.
+If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
 
@@ -217,7 +217,7 @@ True if line successfully written, else False
 Read characters from the stream
 
 
-A [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown if not all bytes could be read.
+A [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown if not all bytes could be read.
 
 
 #### Returns
@@ -230,7 +230,7 @@ A string composed of <b>length</b> bytes read from the stream
 Write characters to the stream
 
 
-A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
+A [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
 
 
 

@@ -6,7 +6,7 @@ sidebar_label: TStreamFactory
 
 
 
-Stream factories are used by the [OpenStream](../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../brl/brl.stream/#function-readstream-tstream-url-object) and [WriteStream](../../brl/brl.stream/#function-writestream-tstream-url-object) functions
+Stream factories are used by the [OpenStream](../../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../../brl/brl.stream/#function-readstream-tstream-url-object) and [WriteStream](../../../brl/brl.stream/#function-writestream-tstream-url-object) functions
 to create streams based on a 'url object'.
 
 Url objects are usually strings, in which case the url is divided into 2 parts - a
@@ -27,8 +27,8 @@ Create a stream based on a url object
 
 Types which extends TStreamFactory must implement this method.
 
-<b>url</b> contains the original url object as supplied to [OpenStream](../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../brl/brl.stream/#function-readstream-tstream-url-object) or
-[WriteStream](../../brl/brl.stream/#function-writestream-tstream-url-object).
+<b>url</b> contains the original url object as supplied to [OpenStream](../../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../../brl/brl.stream/#function-readstream-tstream-url-object) or
+[WriteStream](../../../brl/brl.stream/#function-writestream-tstream-url-object).
 
 If <b>url</b> is a string, <b>proto</b> contains the url protocol - for example, the "incbin" part
 of "incbin::myfile".

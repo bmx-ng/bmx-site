@@ -6,7 +6,7 @@ sidebar_label: TStreamWrapper
 
 
 
-[TStreamWrapper](../../brl/brl.stream/tstreamwrapper) 'wraps' an existing stream, redirecting all TIO method calls to the wrapped
+[TStreamWrapper](../../../brl/brl.stream/tstreamwrapper) 'wraps' an existing stream, redirecting all TIO method calls to the wrapped
 stream.
 
 This can be useful for writing stream 'filters' that modify the behaviour of existing

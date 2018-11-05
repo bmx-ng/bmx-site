@@ -22,7 +22,7 @@ Lock the mutex
 Try to lock the mutex
 
 #### Returns
-[True](../../brl/brl.blitz/#true) if mutex was successfully locked; [False](../../brl/brl.blitz/#false) if mutex was already locked by another thread.
+[True](../../../brl/brl.blitz/#true) if mutex was successfully locked; [False](../../../brl/brl.blitz/#false) if mutex was already locked by another thread.
 
 
 

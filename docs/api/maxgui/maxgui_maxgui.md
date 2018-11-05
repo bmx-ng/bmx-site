@@ -3318,3 +3318,11 @@ Return internal gadget handle.
 
 
 
+### `Function GadgetScaleFactor:Int( gadget:TGadget )`
+
+Returns the gadget scale factor that maps from window coordiantes to the actual device pixels.
+
+On traditional systems this is 1, but on very high density outputs this can be a higher value (often 2).
+
+
+

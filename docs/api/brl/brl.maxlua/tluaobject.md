@@ -36,7 +36,7 @@ Create a lua object
 
 
 Once a lua object has been created, object methods (actually lua functions defined in the
-class) can be invoked using the [Invoke](../../brl/brl.maxlua/#method-invoke-object-name-args-object) method.
+class) can be invoked using the [Invoke](../../../brl/brl.maxlua/#method-invoke-object-name-args-object) method.
 
 
 
