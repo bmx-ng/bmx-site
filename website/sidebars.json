@@ -158,12 +158,62 @@
       "api/pub/pub.opengles",
       "api/pub/pub.xmmintrin",
       "api/pub/pub.zlib"
+    ],
+    "SDL": [
+      "api/sdl/sdl.sdl",
+      "api/sdl/sdl.sdlsystem",
+      "api/sdl/sdl.sdlvideo",
+      "api/sdl/sdl.sdlrender",
+      "api/sdl/sdl.sdltimer",
+      "api/sdl/sdl.sdlhaptic",
+      "api/sdl/sdl.sdlsensor",
+      "api/sdl/sdl.sdlfreeaudio",
+      "api/sdl/sdl.sdlglsdlmax2d",
+      "api/sdl/sdl.sdlgl2sdlmax2d",
+      "api/sdl/sdl.sdld3d9sdlmax2d",
+      "api/sdl/sdl.sdlvirtualjoystick"
     ]
   },
   "brl_audio": {
     "BRL.Audio": [
       "api/brl/brl.audio/tchannel",
       "api/brl/brl.audio/tsound"
+    ]
+  },
+  "brl_stream": {
+    "BRL.Stream": [
+      "api/brl/brl.stream/tcstream",
+      "api/brl/brl.stream/tio",
+      "api/brl/brl.stream/tstream",
+      "api/brl/brl.stream/tstreamexception",
+      "api/brl/brl.stream/tstreamfactory",
+      "api/brl/brl.stream/tstreamreadexception",
+      "api/brl/brl.stream/tstreamwrapper",
+      "api/brl/brl.stream/tstreamwriteexception"
+    ]
+  },
+  "sdl_sdl": {
+    "SDL.SDL": [
+      "api/sdl/sdl.sdl/tsdlstream"
+    ]
+  },
+  "sdl_sdlhaptic": {
+    "SDL.SDLHaptic": [
+      "api/sdl/sdl.sdlhaptic/tsdlhaptic",
+      "api/sdl/sdl.sdlhaptic/tsdlhapticcondition",
+      "api/sdl/sdl.sdlhaptic/tsdlhapticconstant",
+      "api/sdl/sdl.sdlhaptic/tsdlhapticcustom",
+      "api/sdl/sdl.sdlhaptic/tsdlhapticdirection",
+      "api/sdl/sdl.sdlhaptic/tsdlhapticreflect",
+      "api/sdl/sdl.sdlhaptic/tsdlhapticleftright",
+      "api/sdl/sdl.sdlhaptic/tsdlhapticperiodic",
+      "api/sdl/sdl.sdlhaptic/tsdlhapticramp"
+    ]
+  },
+  "sdl_sdlrender": {
+    "SDL.SDLRender": [
+      "api/sdl/sdl.sdlrender/tsdlrenderer",
+      "api/sdl/sdl.sdlrender/tsdltexture"
     ]
   }
 }
