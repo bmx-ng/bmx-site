@@ -67,7 +67,7 @@ Remove a key/value pair from the map.
 
 Gets the map keys.
 
-The object returned by [Keys](../../../brl/brl.map/#method-keys-tptrmapenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the keys in the map.
+The object returned by [Keys](../../../brl/brl.map/tptrmap/#method-keys-tptrmapenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the keys in the map.
 
 
 #### Returns
@@ -79,7 +79,7 @@ An enumeration object
 
 Get the map values.
 
-The object returned by [Values](../../../brl/brl.map/#method-values-tptrmapenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the values in the map.
+The object returned by [Values](../../../brl/brl.map/tptrmap/#method-values-tptrmapenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the values in the map.
 
 
 #### Returns
@@ -96,7 +96,7 @@ Returns a copy the contents of this map.
 
 Returns a node enumeration object.
 
-The object returned by [ObjectEnumerator](../../../brl/brl.map/#method-objectenumerator-tptrnodeenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the nodes in the map.
+The object returned by [ObjectEnumerator](../../../brl/brl.map/tptrmap/#method-objectenumerator-tptrnodeenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the nodes in the map.
 
 
 

@@ -14,7 +14,7 @@ Memory bank
 Get a bank's memory pointer
 
 
-Please use [Lock](../../../brl/brl.bank/#method-lock-byte-ptr) and [Unlock](../../../brl/brl.bank/#method-unlock) instead of this method.
+Please use [Lock](../../../brl/brl.bank/tbank/#method-lock-byte-ptr) and [Unlock](../../../brl/brl.bank/tbank/#method-unlock) instead of this method.
 
 
 #### Returns
@@ -29,7 +29,7 @@ Lock a bank's memory block
 
 While locked, a bank cannot be resized.
 
-After you have finished with a bank's memory block, you must use [Unlock](../../../brl/brl.bank/#method-unlock)
+After you have finished with a bank's memory block, you must use [Unlock](../../../brl/brl.bank/tbank/#method-unlock)
 to return it to the bank.
 
 
@@ -43,7 +43,7 @@ A byte pointer to the memory block controlled by the bank
 Unlock a bank's memory pointer
 
 
-After you have finished with a bank's memory block, you must use [Unlock](../../../brl/brl.bank/#method-unlock)
+After you have finished with a bank's memory block, you must use [Unlock](../../../brl/brl.bank/tbank/#method-unlock)
 to return it to the bank.
 
 

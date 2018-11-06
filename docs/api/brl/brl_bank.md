@@ -12,9 +12,9 @@ of a binary file.
 
 To create a bank, use the [CreateBank](../../brl/brl.bank/#function-createbank-tbank-size-int-0) command.
 
-To write data to a bank, use one of 'Poke' style commands, such as [PokeByte](../../brl/brl.bank/#method-pokebyte-offset-size-t-value).
+To write data to a bank, use one of 'Poke' style commands, such as [PokeByte](../../brl/brl.bank/tbank/#method-pokebyte-offset-size-t-value).
 
-To read data from a bank, use one of the 'Peek' style commands, such as [PeekByte](../../brl/brl.bank/#method-peekbyte-offset-size-t).
+To read data from a bank, use one of the 'Peek' style commands, such as [PeekByte](../../brl/brl.bank/tbank/#method-peekbyte-offset-size-t).
 
 In addition, banks can be loaded or saved using [LoadBank](../../brl/brl.bank/#function-loadbank-tbank-url-object) or [SaveBank](../../brl/brl.bank/#function-savebank-bank-tbank-url-object).
 

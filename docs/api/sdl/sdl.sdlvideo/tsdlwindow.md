@@ -23,7 +23,7 @@ Returns the display containing the center of the window on success or Null on fa
 Sets the display mode to use when the window is visible at fullscreen.
 
 This only affects the display mode used when the window is fullscreen. To change the window size when the window is not fullscreen,
-use [SetSize](../../../sdl/sdl.sdlvideo/#method-setsize-w-int-h-int)().
+use [SetSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-setsize-w-int-h-int)().
 
 
 #### Returns
@@ -87,7 +87,7 @@ Sets the size of the window's client area.
 
 The window size in screen coordinates may differ from the size in pixels, if the window was created with
 [SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdl-window-allow-highdpi-uint-00002000) on a platform with high-dpi support (e.g. iOS or OS X).
-Use [GLGetDrawableSize](../../../sdl/sdl.sdlvideo/#method-glgetdrawablesize-w-int-var-h-int-var)() or SDLGetRendererOutputSize() to get the real client area size in pixels.
+Use [GLGetDrawableSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-glgetdrawablesize-w-int-var-h-int-var)() or SDLGetRendererOutputSize() to get the real client area size in pixels.
 Fullscreen windows automatically match the size of the display mode, and you should use SetWindowDisplayMode() to change their size.
 
 
@@ -98,7 +98,7 @@ Gets the size of the window's client area.
 
 The window size in screen coordinates may differ from the size in pixels, if the window was created with
 [SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdl-window-allow-highdpi-uint-00002000) on a platform with high-dpi support (e.g. iOS or OS X).
-Use [GLGetDrawableSize](../../../sdl/sdl.sdlvideo/#method-glgetdrawablesize-w-int-var-h-int-var)() or SDLGetRendererOutputSize() to get the real client area size in pixels.
+Use [GLGetDrawableSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-glgetdrawablesize-w-int-var-h-int-var)() or SDLGetRendererOutputSize() to get the real client area size in pixels.
 
 
 
@@ -246,7 +246,7 @@ Sets the brightness (gamma multiplier) for the display that owns the window.
 
 Despite the name and signature, this method sets the brightness of the entire display, not an individual window.
 A window is considered to be owned by the display that contains the window's center pixel. (The index of this display can be
-retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/#method-getdisplay-tsdldisplay)().) The brightness set will not follow the window if it is moved to another display
+retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-getdisplay-tsdldisplay)().) The brightness set will not follow the window if it is moved to another display
 
 
 #### Returns
@@ -260,7 +260,7 @@ Gets the brightness (gamma multiplier) for the display that owns the window.
 
 Despite the name and signature, this method sets the brightness of the entire display, not an individual window.
 A window is considered to be owned by the display that contains the window's center pixel. (The index of this display can be
-retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/#method-getdisplay-tsdldisplay)().) The brightness set will not follow the window if it is moved to another display
+retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-getdisplay-tsdldisplay)().) The brightness set will not follow the window if it is moved to another display
 
 
 #### Returns
@@ -312,7 +312,7 @@ This function is only supported on X11.
 
 Explicitly sets input focus to the window.
 
-You almost certainly want [Raise](../../../sdl/sdl.sdlvideo/#method-raise)() instead of this function. Use this with caution, as you might give
+You almost certainly want [Raise](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-raise)() instead of this function. Use this with caution, as you might give
 focus to a window that is completely obscured by other windows.
 This method is only supported on X11.
 
@@ -331,7 +331,7 @@ array of 256 16-bit quantities, representing a mapping between the input and out
 the index into the array, and the output is the 16-bit gamma value at that index, scaled to the output color precision.
 Despite the name and signature, this method sets the gamma ramp of the entire display, not an individual window.
 A window is considered to be owned by the display that contains the window's center pixel. (The index of this display
-can be retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/#method-getdisplay-tsdldisplay)().) The gamma ramp set will not follow the window if it is moved to another display.
+can be retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-getdisplay-tsdldisplay)().) The gamma ramp set will not follow the window if it is moved to another display.
 
 
 #### Returns
@@ -345,7 +345,7 @@ Gets the gamma ramp for the display that owns the window.
 
 Despite the name and signature, this method sets the gamma ramp of the entire display, not an individual window.
 A window is considered to be owned by the display that contains the window's center pixel. (The index of this display
-can be retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/#method-getdisplay-tsdldisplay)().) The gamma ramp set will not follow the window if it is moved to another display.
+can be retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-getdisplay-tsdldisplay)().) The gamma ramp set will not follow the window if it is moved to another display.
 
 
 #### Returns
@@ -376,7 +376,7 @@ The OpenGL context associated with window or Null on error.
 
 Gets the size of a window's underlying drawable in pixels (for use with glViewport).
 
-This may differ from [GetSize](../../../sdl/sdl.sdlvideo/#method-getsize-w-int-var-h-int-var)() if we're rendering to a high-DPI drawable, i.e. the window was created with
+This may differ from [GetSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-getsize-w-int-var-h-int-var)() if we're rendering to a high-DPI drawable, i.e. the window was created with
 [SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdl-window-allow-highdpi-uint-00002000) on a platform with high-DPI support (Apple calls this "Retina"), and not disabled by
 the SDL_HINT_VIDEO_HIGHDPI_DISABLED hint.
 

@@ -9,7 +9,7 @@ sidebar_label: BRL.Pixmap
 Pixmaps provide storage for rectangular regions of pixels.
 
 You can create a new pixmap using the [CreatePixmap](../../brl/brl.pixmap/#function-createpixmap-tpixmap-width-height-format-align-bytes-4) command, or load a pixmap 
-using [LoadPixmap](../../brl/brl.pixmap/#method-loadpixmap-tpixmap-stream-tstream-abstract).
+using [LoadPixmap](../../brl/brl.pixmap/tpixmaploader/#method-loadpixmap-tpixmap-stream-tstream-abstract).
 
 Pixmaps have 5 properties: width, height, a byte pointer to the pixmap's pixels, pitch and
 format.
@@ -46,7 +46,7 @@ Create a pixmap
 <table><tr><td> <b>Format</b></td><td><b>Description</b></td></tr><tr><td>  PF_A8</td><td>8 bit alpha</td></tr><tr><td>  PF_I8</td><td>8 bit intensity</td></tr><tr><td>  PF_RGB888</td><td>24 bit big endian RGB</td></tr><tr><td>  PF_BGR888</td><td>24 bit little endian RGB</td></tr><tr><td>  PF_RGBA8888</td><td>32 bit big endian RGB with alpha</td></tr><tr><td>  PF_BGRA8888</td><td>32 bit little endian RGB with alpha</table>
 
 
-Note that the newly created pixmap will contain random data. [ClearPixels](../../brl/brl.pixmap/#method-clearpixels-argb) can
+Note that the newly created pixmap will contain random data. [ClearPixels](../../brl/brl.pixmap/tpixmap/#method-clearpixels-argb) can
 be used to set all pixels to a known value prior to use.
 
 

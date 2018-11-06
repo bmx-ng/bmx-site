@@ -29,9 +29,9 @@ from a binary file that has been embedded in an application using the [Incbin](.
 Other protocols include "http::" for reading and writing data over a network, and 
 "littleendian::" and "bigendian::" for swapping the byte order of streams.
 
-To write to a stream, use one of the 'Write' style commands, such as [WriteByte](../../brl/brl.stream/#method-writebyte-n-int).
+To write to a stream, use one of the 'Write' style commands, such as [WriteByte](../../brl/brl.stream/tstream/#method-writebyte-n-int).
 
-To read from a stream, use one of the 'Read' style commands, such as [ReadByte](../../brl/brl.stream/#method-readbyte-int).
+To read from a stream, use one of the 'Read' style commands, such as [ReadByte](../../brl/brl.stream/tstream/#method-readbyte-int).
 
 Some kinds of streams (for example, file streams and bank streams) support <i>random access</i>.
 This means that you can modify where in the stream the next read or write is to occur using
@@ -195,7 +195,7 @@ Closing a stream also flushes the stream before it closes.
 
 Read a Byte from a stream
 
-[ReadByte](../../brl/brl.stream/#method-readbyte-int) reads a single Byte from <b>stream</b>.
+[ReadByte](../../brl/brl.stream/tstream/#method-readbyte-int) reads a single Byte from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -208,7 +208,7 @@ A Byte value
 
 Read a Short from a stream
 
-[ReadShort](../../brl/brl.stream/#method-readshort-int) reads 2 bytes from <b>stream</b>.
+[ReadShort](../../brl/brl.stream/tstream/#method-readshort-int) reads 2 bytes from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -221,7 +221,7 @@ A Short value
 
 Read an Int from a stream
 
-[ReadInt](../../brl/brl.stream/#method-readint-int) reads 4 bytes from <b>stream</b>.
+[ReadInt](../../brl/brl.stream/tstream/#method-readint-int) reads 4 bytes from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -234,7 +234,7 @@ An Int value
 
 Read a Long from a stream
 
-[ReadLong](../../brl/brl.stream/#method-readlong-long) reads 8 bytes from <b>stream</b>.
+[ReadLong](../../brl/brl.stream/tstream/#method-readlong-long) reads 8 bytes from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -247,7 +247,7 @@ A Long value
 
 Read a Float from a stream
 
-[ReadFloat](../../brl/brl.stream/#method-readfloat) reads 4 bytes from <b>stream</b>.
+[ReadFloat](../../brl/brl.stream/tstream/#method-readfloat) reads 4 bytes from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -260,7 +260,7 @@ A Float value
 
 Read a Double from a stream
 
-[ReadDouble](../../brl/brl.stream/#method-readdouble) reads 8 bytes from <b>stream</b>.
+[ReadDouble](../../brl/brl.stream/tstream/#method-readdouble) reads 8 bytes from <b>stream</b>.
 A TStreamWriteException is thrown If there is not enough data available.
 
 
@@ -273,7 +273,7 @@ A Double value
 
 Write a Byte to a stream
 
-[WriteByte](../../brl/brl.stream/#method-writebyte-n-int) writes a single Byte to <b>stream</b>.
+[WriteByte](../../brl/brl.stream/tstream/#method-writebyte-n-int) writes a single Byte to <b>stream</b>.
 A TStreamWriteException is thrown If the Byte could Not be written
 
 
@@ -282,7 +282,7 @@ A TStreamWriteException is thrown If the Byte could Not be written
 
 Write a Short to a stream
 
-[WriteShort](../../brl/brl.stream/#method-writeshort-n-int) writes 2 bytes to <b>stream</b>.
+[WriteShort](../../brl/brl.stream/tstream/#method-writeshort-n-int) writes 2 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -291,7 +291,7 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 Write an Int to a stream
 
-[WriteInt](../../brl/brl.stream/#method-writeint-n-int) writes 4 bytes to <b>stream</b>.
+[WriteInt](../../brl/brl.stream/tstream/#method-writeint-n-int) writes 4 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -300,7 +300,7 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 Write a Long to a stream
 
-[WriteLong](../../brl/brl.stream/#method-writelong-n-long) writes 8 bytes to <b>stream</b>.
+[WriteLong](../../brl/brl.stream/tstream/#method-writelong-n-long) writes 8 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -309,7 +309,7 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 Write a Float to a stream
 
-[WriteFloat](../../brl/brl.stream/#method-writefloat-n) writes 4 bytes to <b>stream</b>.
+[WriteFloat](../../brl/brl.stream/tstream/#method-writefloat-n) writes 4 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -318,7 +318,7 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 Write a Double to a stream
 
-[WriteDouble](../../brl/brl.stream/#method-writedouble-n) writes 8 bytes to <b>stream</b>.
+[WriteDouble](../../brl/brl.stream/tstream/#method-writedouble-n) writes 8 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 

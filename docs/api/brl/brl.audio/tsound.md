@@ -15,7 +15,7 @@ Play the sound
 
 
 Starts a sound playing through an audio channel.
-If no channel is specified, [Play](../../../brl/brl.audio/#method-play-tchannel-alloced-channel-tchannel-null) automatically allocates a channel for you.
+If no channel is specified, [Play](../../../brl/brl.audio/tsound/#method-play-tchannel-alloced-channel-tchannel-null) automatically allocates a channel for you.
 
 
 #### Returns
@@ -29,10 +29,10 @@ Cue the sound for playback
 
 
 Prepares an audio channel for playback of a sound.
-To actually start the sound, you must use the channel's [SetPaused](../../../brl/brl.audio/#method-setpaused-paused-int) method.
-If no channel is specified, [Cue](../../../brl/brl.audio/#method-cue-tchannel-alloced-channel-tchannel-null) automatically allocates a channel for you.
+To actually start the sound, you must use the channel's [SetPaused](../../../brl/brl.audio/tchannel/#method-setpaused-paused-int) method.
+If no channel is specified, [Cue](../../../brl/brl.audio/tsound/#method-cue-tchannel-alloced-channel-tchannel-null) automatically allocates a channel for you.
 
-[Cue](../../../brl/brl.audio/#method-cue-tchannel-alloced-channel-tchannel-null) allows you to setup various audio channel states such as volume, pan, depth and rate before a sound
+[Cue](../../../brl/brl.audio/tsound/#method-cue-tchannel-alloced-channel-tchannel-null) allows you to setup various audio channel states such as volume, pan, depth and rate before a sound
 actually starts playing.
 
 
@@ -49,7 +49,7 @@ Load sound
 
 
 <b>url</b> can be either a string, a stream or an audio sample object.
-The returned sound object can be played using [Play](../../../brl/brl.audio/#method-play-tchannel-alloced-channel-tchannel-null) or [Cue](../../../brl/brl.audio/#method-cue-tchannel-alloced-channel-tchannel-null).
+The returned sound object can be played using [Play](../../../brl/brl.audio/tsound/#method-play-tchannel-alloced-channel-tchannel-null) or [Cue](../../../brl/brl.audio/tsound/#method-cue-tchannel-alloced-channel-tchannel-null).
 
 
 #### Returns

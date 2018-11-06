@@ -53,6 +53,6 @@ The closest mode or Null if no matching display mode was available.
 
 ### `Function Create:TSDLDisplayMode(format:UInt, width:Int, height:Int, refreshRate:Int)`
 
-Creates a new custom display mode, useful for calling [GetClosestDisplayMode](../../../sdl/sdl.sdlvideo/#method-getclosestdisplaymode-tsdldisplaymode-display-tsdldisplay).
+Creates a new custom display mode, useful for calling [GetClosestDisplayMode](../../../sdl/sdl.sdlvideo/tsdldisplaymode/#method-getclosestdisplaymode-tsdldisplaymode-display-tsdldisplay).
 
 
