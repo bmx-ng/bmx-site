@@ -72,15 +72,17 @@ update.Invoke obj,[String( .25 )]
 
 This example uses <b>FindMethod</b> to locate a type method and <b>Invoke</b> to call it. Arguments to the method are contained in an object array, and again the float argument is converted to a string.
 
-In addition to the TTypeId, TField and TMethod types, the BlitzMax reflection module also declares a number of global TTypeId objects: 
-* <b>ByteTypeId</b>
-* <b>ShortTypeId</b>
-* <b>IntTypeId</b>
-* <b>LongTypeId</b>
-* <b>FloatTypeId</b>
-* <b>DoubleTypeId</b>
-* <b>StringTypeId</b>
-* <b>ObjectTypeId</b>
+In addition to the TTypeId, TField and TMethod types, the BlitzMax reflection module also declares a number of global TTypeId objects:
+
+ * <b>ByteTypeId</b>
+ * <b>ShortTypeId</b>
+ * <b>IntTypeId</b>
+ * <b>LongTypeId</b>
+ * <b>FloatTypeId</b>
+ * <b>DoubleTypeId</b>
+ * <b>StringTypeId</b>
+ * <b>ObjectTypeId</b>
+
 These may be used instead of the corresponding TTypeId.ForName call. For example, <b>TTypeId.ForName( "Int" )</b> and <b>IntTypeId</b> will return the same object.
 
 

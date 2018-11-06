@@ -11,7 +11,10 @@ hooks into your own code.
 
 The following hook ids are currently used by BlitzMax modules:
 
-<table><tr><td> <b>Hook id</b></td><td><b>Description</b></td><td><b>Data</b></td></tr><tr><td>  FlipHook</td><td>A Max2D [Flip](../../brl/brl.graphics/#function-flip-sync-1) is about to occur</td><td>Null</td></tr><tr><td>  EmitEventHook</td><td>An event has been emitted by a call to [EmitEvent](../../brl/brl.event/#function-emitevent-event-tevent)</td><td>A [TEvent](../../brl/brl.event/tevent) object</table>
+| Hook id | Description | Data |
+| --- | --- | --- |
+| FlipHook | A Max2D [Flip](../../brl/brl.graphics/#function-flip-sync-1) is about to occur | Null |
+| EmitEventHook | An event has been emitted by a call to [EmitEvent](../../brl/brl.event/#function-emitevent-event-tevent) | A [TEvent](../../brl/brl.event/tevent) object |
 
 To hook into any of these functions, use [AddHook](../../brl/brl.hook/#function-addhook-id-func-object-id-data-object-context-object-context-object-null-priority-0) with the specified hook id and your hook function.
 

@@ -55,7 +55,13 @@ of the available hardware's capabilities. This is achieved by using software tim
 techniques when necessary.
 
 The <b>flags</b> parameter can be any combination of the following:
-<table><tr><td> <b>Flags</b></td><td><b>Meaning</b></td></tr><tr><td>  GRAPHICS_BACKBUFFER</td><td>Create graphics with a back buffer</td></tr><tr><td>  GRAPHICS_ALPHABUFFER</td><td>Create graphics with an alpha buffer</td></tr><tr><td>  GRAPHICS_DEPTHBUFFER</td><td>Create graphics with a depth buffer</td></tr><tr><td>  GRAPHICS_STENCILBUFFER</td><td>Create graphics with a stencil buffer</td></tr><tr><td>  GRAPHICS_ACCUMBUFFER</td><td>Create graphics with an accumulation buffer</table>
+| Flags | Meaning |
+| --- | --- |
+| GRAPHICS_BACKBUFFER | Create graphics with a back buffer |
+| GRAPHICS_ALPHABUFFER | Create graphics with an alpha buffer |
+| GRAPHICS_DEPTHBUFFER | Create graphics with a depth buffer |
+| GRAPHICS_STENCILBUFFER | Create graphics with a stencil buffer |
+| GRAPHICS_ACCUMBUFFER | Create graphics with an accumulation buffer |
 
 Flags can be combined with the | (or) operator. For example, GRAPHICS_BACKBUFFER|GRAPHICS_DEPTHBUFFER
 can be used to create graphics which has both a back buffer and a depth buffer.
