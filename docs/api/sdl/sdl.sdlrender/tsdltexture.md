@@ -4,6 +4,8 @@ title: TSDLTexture
 sidebar_label: TSDLTexture
 ---
 
+An efficient driver-specific representation of pixel data.
+
 
 ## Methods
 

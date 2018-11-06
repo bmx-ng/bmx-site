@@ -4,6 +4,8 @@ title: TGlobal
 sidebar_label: TGlobal
 ---
 
+Type global
+
 
 ## Methods
 

@@ -4,6 +4,8 @@ title: TStream
 sidebar_label: TStream
 ---
 
+Data stream type
+
 
 
 [TStream](../../../brl/brl.stream/tstream) extends [TIO](../../../brl/brl.stream/tio) to provide methods for reading and writing various types of values

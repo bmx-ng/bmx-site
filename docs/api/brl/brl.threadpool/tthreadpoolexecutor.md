@@ -4,6 +4,8 @@ title: TThreadPoolExecutor
 sidebar_label: TThreadPoolExecutor
 ---
 
+An executor that executes each submitted task using one of possibly several pooled threads.
+
 
 ## Methods
 

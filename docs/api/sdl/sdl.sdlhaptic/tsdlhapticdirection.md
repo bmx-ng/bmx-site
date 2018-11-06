@@ -4,6 +4,8 @@ title: TSDLHapticDirection
 sidebar_label: TSDLHapticDirection
 ---
 
+The direction where the force comes from, instead of the direction in which the force is exerted.
+
 
 Cardinal directions of the haptic device are relative to the positioning of the device. North is
 considered to be away from the user. South is toward the user, east is right, and west is left of the user.

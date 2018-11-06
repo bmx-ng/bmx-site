@@ -4,6 +4,8 @@ title: TEvent
 sidebar_label: TEvent
 ---
 
+Event object type
+
 
 ## Fields
 

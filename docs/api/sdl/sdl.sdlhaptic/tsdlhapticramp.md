@@ -4,6 +4,8 @@ title: TSDLHapticRamp
 sidebar_label: TSDLHapticRamp
 ---
 
+A template for a ramp effect.
+
 
 The ramp effect starts at start strength and ends at end strength.
 It augments in linear fashion. If you use attack and fade with a ramp the effects get added to the ramp effect

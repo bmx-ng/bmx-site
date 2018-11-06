@@ -4,6 +4,8 @@ title: TLink
 sidebar_label: TLink
 ---
 
+Link Object used by TList
+
 
 ## Methods
 

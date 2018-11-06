@@ -4,6 +4,8 @@ title: TCStream
 sidebar_label: TCStream
 ---
 
+Standard C file stream type
+
 
 
 

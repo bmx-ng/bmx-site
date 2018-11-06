@@ -4,6 +4,8 @@ title: TStreamWriteException
 sidebar_label: TStreamWriteException
 ---
 
+Exception type thrown by streams in the event of write errors
+
 
 
 [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is usually thrown when a stream operation failed to write enough

@@ -4,6 +4,8 @@ title: TLuaObject
 sidebar_label: TLuaObject
 ---
 
+A Lua 'object'
+
 
 ## Methods
 

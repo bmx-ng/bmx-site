@@ -4,6 +4,8 @@ title: TMap
 sidebar_label: TMap
 ---
 
+An key/value (Object/Object) map backed by a Red/Black tree.
+
 
 ## Methods
 

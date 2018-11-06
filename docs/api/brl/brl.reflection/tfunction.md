@@ -4,6 +4,8 @@ title: TFunction
 sidebar_label: TFunction
 ---
 
+Type function
+
 
 ## Methods
 

@@ -4,6 +4,8 @@ title: TSDLGLContext
 sidebar_label: TSDLGLContext
 ---
 
+An Open GL context.
+
 
 ## Methods
 

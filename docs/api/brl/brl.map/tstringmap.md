@@ -4,6 +4,8 @@ title: TStringMap
 sidebar_label: TStringMap
 ---
 
+A key/value (String/Object) map.
+
 
 ## Methods
 

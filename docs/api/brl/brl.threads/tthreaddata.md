@@ -4,6 +4,8 @@ title: TThreadData
 sidebar_label: TThreadData
 ---
 
+ThreadData type
+
 
 ## Methods
 

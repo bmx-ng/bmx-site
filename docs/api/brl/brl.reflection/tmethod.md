@@ -4,6 +4,8 @@ title: TMethod
 sidebar_label: TMethod
 ---
 
+Type method
+
 
 ## Methods
 

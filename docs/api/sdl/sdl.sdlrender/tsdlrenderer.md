@@ -4,6 +4,8 @@ title: TSDLRenderer
 sidebar_label: TSDLRenderer
 ---
 
+A 2D rendering context.
+
 
 ## Methods
 

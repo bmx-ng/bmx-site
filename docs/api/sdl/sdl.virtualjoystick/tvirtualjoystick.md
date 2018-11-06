@@ -4,6 +4,8 @@ title: TVirtualJoystick
 sidebar_label: TVirtualJoystick
 ---
 
+A virtual touch joystick.
+
 
 Can be extended to implement your own rendering of it.
 

@@ -4,6 +4,8 @@ title: TStringBuilder
 sidebar_label: TStringBuilder
 ---
 
+A modifiable String.
+
 
 A string builder provides functionality to efficiently insert, replace, remove, append and reverse.
 It is an order of magnitude faster to append Strings to a TStringBuilder than it is to append Strings to Strings.

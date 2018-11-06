@@ -4,6 +4,8 @@ title: TChannel
 sidebar_label: TChannel
 ---
 
+Audio channel Type
+
 
 ## Methods
 

@@ -4,6 +4,8 @@ title: TCondVar
 sidebar_label: TCondVar
 ---
 
+CondVar type
+
 
 ## Methods
 

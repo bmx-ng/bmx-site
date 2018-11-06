@@ -4,6 +4,8 @@ title: TPtrMap
 sidebar_label: TPtrMap
 ---
 
+A key/value (Byte Ptr/Object) map.
+
 
 ## Methods
 

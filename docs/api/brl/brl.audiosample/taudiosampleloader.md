@@ -4,6 +4,8 @@ title: TAudioSampleLoader
 sidebar_label: TAudioSampleLoader
 ---
 
+Audio sample loader type
+
 
 To create your own audio sample loaders, you should extend this type and
 provide a <b>LoadAudioSample</b> method. To add your audio sample loader to the system,

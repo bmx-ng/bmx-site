@@ -4,6 +4,8 @@ title: TMember
 sidebar_label: TMember
 ---
 
+Type member - Field Or Method.
+
 
 ## Methods
 

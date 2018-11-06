@@ -4,6 +4,8 @@ title: TSDLHapticLeftRight
 sidebar_label: TSDLHapticLeftRight
 ---
 
+Controls the large and small motors, commonly found in modern game controllers.
+
 
 One motor is high frequency, the other is low frequency.
 

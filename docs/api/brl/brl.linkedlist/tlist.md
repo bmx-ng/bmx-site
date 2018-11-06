@@ -4,6 +4,8 @@ title: TList
 sidebar_label: TList
 ---
 
+Linked List
+
 
 ## Methods
 

@@ -4,6 +4,8 @@ title: TIO
 sidebar_label: TIO
 ---
 
+Base input/output type
+
 
 
 To create your own stream types, you should extend TStream and implement

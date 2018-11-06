@@ -4,6 +4,8 @@ title: TMutex
 sidebar_label: TMutex
 ---
 
+Mutex type
+
 
 ## Methods
 

@@ -4,6 +4,8 @@ title: TSDLHapticCustom
 sidebar_label: TSDLHapticCustom
 ---
 
+A custom force feedback effect.
+
 
 The effect is much like a periodic effect, where the application can define its exact shape.
 You will have to allocate the data yourself. data should consist of channels * samples Short samples.

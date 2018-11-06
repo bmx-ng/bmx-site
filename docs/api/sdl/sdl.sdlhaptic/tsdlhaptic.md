@@ -4,6 +4,8 @@ title: TSDLHaptic
 sidebar_label: TSDLHaptic
 ---
 
+A haptic device.
+
 
 ## Methods
 

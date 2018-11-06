@@ -4,6 +4,8 @@ title: TSDLHapticCondition
 sidebar_label: TSDLHapticCondition
 ---
 
+A template for a condition effect.
+
 
 ## Methods
 

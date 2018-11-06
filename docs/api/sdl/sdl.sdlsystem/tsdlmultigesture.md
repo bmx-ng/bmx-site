@@ -4,6 +4,8 @@ title: TSDLMultiGesture
 sidebar_label: TSDLMultiGesture
 ---
 
+Information about multiple finger gestures.
+
 
 ## Fields
 

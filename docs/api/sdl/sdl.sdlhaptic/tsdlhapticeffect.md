@@ -4,6 +4,8 @@ title: TSDLHapticEffect
 sidebar_label: TSDLHapticEffect
 ---
 
+A generic template for any haptic effect.
+
 
 ## Methods
 

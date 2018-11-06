@@ -4,6 +4,8 @@ title: TStreamFactory
 sidebar_label: TStreamFactory
 ---
 
+Base stream factory type
+
 
 
 Stream factories are used by the [OpenStream](../../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../../brl/brl.stream/#function-readstream-tstream-url-object) and [WriteStream](../../../brl/brl.stream/#function-writestream-tstream-url-object) functions

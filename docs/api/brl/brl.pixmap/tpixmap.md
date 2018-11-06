@@ -4,6 +4,8 @@ title: TPixmap
 sidebar_label: TPixmap
 ---
 
+The Pixmap type
+
 
 ## Fields
 

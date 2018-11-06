@@ -4,6 +4,8 @@ title: TThread
 sidebar_label: TThread
 ---
 
+Thread type
+
 
 ## Methods
 

@@ -4,6 +4,8 @@ title: TSDLHapticConstant
 sidebar_label: TSDLHapticConstant
 ---
 
+A constant effect applies a constant force to the joystick in the specified direction.
+
 
 ## Methods
 

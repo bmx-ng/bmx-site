@@ -4,6 +4,8 @@ title: TSDLDisplay
 sidebar_label: TSDLDisplay
 ---
 
+Represents an indexed video display.
+
 
 ## Methods
 

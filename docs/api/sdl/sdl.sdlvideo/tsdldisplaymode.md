@@ -4,6 +4,8 @@ title: TSDLDisplayMode
 sidebar_label: TSDLDisplayMode
 ---
 
+The description of a display mode.
+
 
 ## Methods
 

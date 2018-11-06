@@ -4,6 +4,8 @@ title: TConstant
 sidebar_label: TConstant
 ---
 
+Type constant
+
 
 ## Methods
 

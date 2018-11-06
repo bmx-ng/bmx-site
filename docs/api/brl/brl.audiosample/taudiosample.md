@@ -4,6 +4,8 @@ title: TAudioSample
 sidebar_label: TAudioSample
 ---
 
+Audio sample type
+
 
 ## Fields
 

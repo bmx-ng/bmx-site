@@ -4,6 +4,8 @@ title: TSDLWindow
 sidebar_label: TSDLWindow
 ---
 
+An SDL Window.
+
 
 ## Methods
 

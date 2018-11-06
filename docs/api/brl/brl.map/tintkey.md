@@ -4,6 +4,8 @@ title: TIntKey
 sidebar_label: TIntKey
 ---
 
+Int holder for key returned by TIntMap.Keys() enumerator.
+
 
 Because a single instance of [TIntKey](../../../brl/brl.map/tintkey) is used during enumeration, [value](../../../brl/brl.map/TIntKey/#field-value-int) changes on each iteration.
 

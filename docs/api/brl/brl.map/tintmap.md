@@ -4,6 +4,8 @@ title: TIntMap
 sidebar_label: TIntMap
 ---
 
+A key/value (Int/Object) map.
+
 
 ## Methods
 

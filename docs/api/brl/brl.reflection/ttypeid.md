@@ -4,6 +4,8 @@ title: TTypeId
 sidebar_label: TTypeId
 ---
 
+Type id
+
 
 ## Methods
 

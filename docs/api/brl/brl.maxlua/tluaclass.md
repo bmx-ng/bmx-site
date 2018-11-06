@@ -4,6 +4,8 @@ title: TLuaClass
 sidebar_label: TLuaClass
 ---
 
+A Lua 'class'
+
 
 
 The TLuaClass type is used to contain lua source code.

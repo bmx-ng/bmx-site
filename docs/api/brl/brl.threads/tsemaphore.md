@@ -4,6 +4,8 @@ title: TSemaphore
 sidebar_label: TSemaphore
 ---
 
+Semaphore type
+
 
 ## Methods
 

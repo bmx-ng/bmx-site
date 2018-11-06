@@ -4,6 +4,8 @@ title: TSplitBuffer
 sidebar_label: TSplitBuffer
 ---
 
+An array of split text from a TStringBuilder.
+
 
 Note that the TSplitBuffer is only valid while its parent TStringBuilder is unchanged.
 Once you modify the TStringBuffer you should call Split() again.

@@ -4,6 +4,8 @@ title: TSound
 sidebar_label: TSound
 ---
 
+Audio sound type
+
 
 ## Methods
 

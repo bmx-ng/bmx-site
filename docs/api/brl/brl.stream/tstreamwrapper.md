@@ -4,6 +4,8 @@ title: TStreamWrapper
 sidebar_label: TStreamWrapper
 ---
 
+Utility stream wrapper type
+
 
 
 [TStreamWrapper](../../../brl/brl.stream/tstreamwrapper) 'wraps' an existing stream, redirecting all TIO method calls to the wrapped

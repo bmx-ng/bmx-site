@@ -4,6 +4,8 @@ title: TBankStream
 sidebar_label: TBankStream
 ---
 
+BankStream Object
+
 
 ## Functions
 
