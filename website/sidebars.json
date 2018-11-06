@@ -168,10 +168,10 @@
       "api/sdl/sdl.sdlhaptic",
       "api/sdl/sdl.sdlsensor",
       "api/sdl/sdl.sdlfreeaudio",
-      "api/sdl/sdl.sdlglsdlmax2d",
-      "api/sdl/sdl.sdlgl2sdlmax2d",
-      "api/sdl/sdl.sdld3d9sdlmax2d",
-      "api/sdl/sdl.sdlvirtualjoystick"
+      "api/sdl/sdl.glsdlmax2d",
+      "api/sdl/sdl.gl2sdlmax2d",
+      "api/sdl/sdl.d3d9sdlmax2d",
+      "api/sdl/sdl.virtualjoystick"
     ]
   },
   "brl_audio": {
@@ -298,6 +298,11 @@
       "api/sdl/sdl.sdlsystem/tsdlmultigesture"
     ]
   },
+  "sdl_sdltimer": {
+    "SDL.SDLTimer": [
+      "api/sdl/sdl.sdltimer/tsdltimer"
+    ]
+  },
   "sdl_sdlvideo": {
     "SDL.SDLVideo": [
       "api/sdl/sdl.sdlvideo/tsdldisplay",
@@ -308,7 +313,7 @@
   },
   "sdl_sdlvirtualjoystick": {
     "SDL.SDLVirtualJoystick": [
-      "api/sdl/sdl.sdlvirtualjoystick/tsdlvirtualjoystick"
+      "api/sdl/sdl.virtualjoystick/tvirtualjoystick"
     ]
   }
 }
