@@ -8,14 +8,18 @@ sidebar_label: BRL.Map
 ## Types
 | Type | Description |
 |---|---|
+| [TIntMap](../../brl/brl.map/tintmap) | A key/value (Int/Object) map. |
 | [TIntKey](../../brl/brl.map/tintkey) | Int holder for key returned by TIntMap.Keys() enumerator. |
+| [TPtrMap](../../brl/brl.map/tptrmap) | A key/value (Byte Ptr/Object) map. |
 | [TPtrKey](../../brl/brl.map/tptrkey) | Byte Ptr holder for key returned by TPtrMap.Keys() enumerator. |
+| [TStringMap](../../brl/brl.map/tstringmap) | A key/value (String/Object) map. |
+| [TMap](../../brl/brl.map/tmap) | An key/value (Object/Object) map backed by a Red/Black tree. |
 
 ## Functions
 
 ### `Function CreateMap:TMap()`
 
-Create a map
+Creates a map
 
 #### Returns
 A new map object
@@ -24,7 +28,7 @@ A new map object
 
 ### `Function ClearMap( map:TMap )`
 
-Clear a map
+Clears a map
 
 
 [ClearMap](../../brl/brl.map/#function-clearmap-map-tmap) removes all keys and values from <b>map</b>
@@ -33,7 +37,7 @@ Clear a map
 
 ### `Function MapIsEmpty( map:TMap )`
 
-Check if a map is empty
+Checks if a map is empty
 
 #### Returns
 True if <b>map</b> is empty, otherwise false
@@ -42,7 +46,7 @@ True if <b>map</b> is empty, otherwise false
 
 ### `Function MapInsert( map:TMap,key:Object,value:Object )`
 
-Insert a key/value pair into a map
+Inserts a key/value pair into a map
 
 
 If <b>map</b> already contained <b>key</b>, it's value is overwritten with <b>value</b>.
@@ -51,7 +55,7 @@ If <b>map</b> already contained <b>key</b>, it's value is overwritten with <b>va
 
 ### `Function MapValueForKey:Object( map:TMap,key:Object )`
 
-Find a value given a key
+Finds a value given a key
 
 
 If <b>map</b> does not contain <b>key</b>, a [Null](../../brl/brl.blitz/#null) object is returned.
@@ -64,7 +68,7 @@ The value associated with <b>key</b>
 
 ### `Function MapContains( map:TMap,key:Object )`
 
-Check if a map contains a key
+Checks if a map contains a key
 
 #### Returns
 True if <b>map</b> contains <b>key</b>
@@ -73,12 +77,12 @@ True if <b>map</b> contains <b>key</b>
 
 ### `Function MapRemove( map:TMap,key:Object )`
 
-Remove a key/value pair from a map
+Removes a key/value pair from a map
 
 
 ### `Function MapKeys:TMapEnumerator( map:TMap )`
 
-Get map keys
+Gets map keys
 
 
 The object returned by [MapKeys](../../brl/brl.map/#function-mapkeys-tmapenumerator-map-tmap) can be used with [EachIn](../../brl/brl.blitz/#eachin) to iterate through
@@ -92,7 +96,7 @@ An iterator object
 
 ### `Function MapValues:TMapEnumerator( map:TMap )`
 
-Get map values
+Gets map values
 
 
 The object returned by [MapValues](../../brl/brl.map/#function-mapvalues-tmapenumerator-map-tmap) can be used with [EachIn](../../brl/brl.blitz/#eachin) to iterate through
@@ -106,7 +110,7 @@ An iterator object
 
 ### `Function CopyMap:TMap( map:TMap )`
 
-Copy a map
+Copies a map
 
 #### Returns
 A copy of <b>map</b>

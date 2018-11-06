@@ -180,6 +180,72 @@
       "api/brl/brl.audio/tsound"
     ]
   },
+  "brl_audiosample": {
+    "BRL.AudioSample": [
+      "api/brl/brl.audiosample/taudiosample",
+      "api/brl/brl.audiosample/taudiosampleloader"
+    ]
+  },
+  "brl_bank": {
+    "BRL.Bank": [
+      "api/brl/brl.bank/tbank"
+    ]
+  },
+  "brl_bankstream": {
+    "BRL.BankStream": [
+      "api/brl/brl.bankstream/tbankstream"
+    ]
+  },
+  "brl_blitz": {
+    "BRL.Blitz": [
+      "api/brl/brl.blitz/arrayboundsexception",
+      "api/brl/brl.blitz/tblitzexception",
+      "api/brl/brl.blitz/tnullfunctionexception",
+      "api/brl/brl.blitz/tnullmethodexception",
+      "api/brl/brl.blitz/tnullobjectexception",
+      "api/brl/brl.blitz/toutofdataexception",
+      "api/brl/brl.blitz/truntimeexception"
+    ]
+  },
+  "brl_event": {
+    "BRL.Event": [
+      "api/brl/brl.event/tevent"
+    ]
+  },
+  "brl_linkedlist": {
+    "BRL.LinkedList": [
+      "api/brl/brl.linkedlist/tlink",
+      "api/brl/brl.linkedlist/tlist",
+      "api/brl/brl.linkedlist/tlistenum"
+    ]
+  },
+  "brl_map": {
+    "BRL.Map": [
+      "api/brl/brl.map/tmap",
+      "api/brl/brl.map/tintmap",
+      "api/brl/brl.map/tintkey",
+      "api/brl/brl.map/tptrmap",
+      "api/brl/brl.map/tptrkey",
+      "api/brl/brl.map/tstringmap"
+    ]
+  },
+  "brl_max2d": {
+    "BRL.Max2D": [
+      "api/brl/brl.max2d/timage"
+    ]
+  },
+  "brl_maxlua": {
+    "BRL.MaxLua": [
+      "api/brl/brl.maxlua/tluaclass",
+      "api/brl/brl.maxlua/tluaobject"
+    ]
+  },
+  "brl_pixmap": {
+    "BRL.Pixmap": [
+      "api/brl/brl.pixmap/tpixmap",
+      "api/brl/brl.pixmap/tpixmaploader"
+    ]
+  },
   "brl_stream": {
     "BRL.Stream": [
       "api/brl/brl.stream/tcstream",
@@ -190,6 +256,12 @@
       "api/brl/brl.stream/tstreamreadexception",
       "api/brl/brl.stream/tstreamwrapper",
       "api/brl/brl.stream/tstreamwriteexception"
+    ]
+  },
+  "brl_stringbuilder": {
+    "BRL.StringBuilder": [
+      "api/brl/brl.stringbuilder/tstringbuilder",
+      "api/brl/brl.stringbuilder/tsplitbuffer"
     ]
   },
   "sdl_sdl": {
@@ -214,6 +286,29 @@
     "SDL.SDLRender": [
       "api/sdl/sdl.sdlrender/tsdlrenderer",
       "api/sdl/sdl.sdlrender/tsdltexture"
+    ]
+  },
+  "sdl_sdlsensor": {
+    "SDL.SDLSensor": [
+      "api/sdl/sdl.sdlsensor/tsdlsensor"
+    ]
+  },
+  "sdl_sdlsystem": {
+    "SDL.SDLSystem": [
+      "api/sdl/sdl.sdlsystem/tsdlmultigesture"
+    ]
+  },
+  "sdl_sdlvideo": {
+    "SDL.SDLVideo": [
+      "api/sdl/sdl.sdlvideo/tsdldisplay",
+      "api/sdl/sdl.sdlvideo/tsdldisplaymode",
+      "api/sdl/sdl.sdlvideo/tsdlglcontext",
+      "api/sdl/sdl.sdlvideo/tsdlwindow"
+    ]
+  },
+  "sdl_sdlvirtualjoystick": {
+    "SDL.SDLVirtualJoystick": [
+      "api/sdl/sdl.sdlvirtualjoystick/tsdlvirtualjoystick"
     ]
   }
 }
