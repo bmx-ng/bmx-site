@@ -117,11 +117,16 @@ class Downloads extends React.Component {
                                 {},
                                 {
                                     content:
-                                        `Coming soon...
+                                        `<strong>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.98.3.29.macos/BlitzMax_macos_0.98.3.29.zip">BlitzMax_macos_0.98.3.29.zip</a>
+                                         </strong>
+                                        <br/><br/>
+                                        BlitzMax, 64-bit macOS edition.
+                                        Includes SDL backend and mojo2.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/apple.svg`,
                                     imageAlign: "top",
-                                    //imageLink: `${siteConfig.baseUrl}docs/setup/${this.props.language}/platforms.html`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.98.3.29.macos/BlitzMax_macos_0.98.3.29.zip`,
                                     title: "macOS"
                                 },
                                 {},
