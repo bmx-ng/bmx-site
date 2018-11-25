@@ -117,7 +117,7 @@ class Index extends React.Component {
 `,
                                     image: `${siteConfig.baseUrl}img/devices.svg`,
                                     imageAlign: "top",
-                                    imageLink: `${siteConfig.baseUrl}docs/setup/${this.props.language}/platforms.html`,
+                                    imageLink: `${siteConfig.baseUrl}docs/setup/${this.props.language}/get_started/`,
                                     title: "Cross-platform"
                                 },
                                 {
@@ -132,7 +132,7 @@ class Index extends React.Component {
                                         `BlitzMax users are friendly, creative, helpful and welcoming to all.<br/>`,
                                     image: `${siteConfig.baseUrl}img/group.svg`,
                                     imageAlign: "top",
-                                    imageLink: `${siteConfig.baseUrl}docs/${this.props.language}/architecture-remote-local.html`,
+                                    imageLink: `${siteConfig.baseUrl}docs/${this.props.language}/community/resources/`,
                                     title: "Community"
                                 },
                             ]}
