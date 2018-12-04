@@ -89,6 +89,8 @@ graphics created with [CreateGraphics](../../brl/brl.graphics/#function-creategr
 
 #### Example
 ```blitzmax
+SuperStrict
+
 SetGraphicsDriver GLMax2DDriver()
 
 Graphics 640,480
@@ -134,11 +136,13 @@ An array of TGraphicsMode objects
 
 #### Example
 ```blitzmax
+SuperStrict
+
 Print "Available graphics modes:"
 
-For mode:TGraphicsMode=EachIn GraphicsModes()
+For Local Mode:TGraphicsMode=EachIn GraphicsModes()
 
-	Print mode.width+","+mode.height+","+mode.depth+","+mode.hertz
+	Print Mode.width+","+Mode.height+","+Mode.depth+","+Mode.hertz
 
 Next
 ```

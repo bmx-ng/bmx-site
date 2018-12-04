@@ -109,8 +109,13 @@ Clears the graphics buffer to the current cls color as determined by [SetClsColo
 ' remove the call to cls to illustrate the
 ' need for clearing the screen every frame
 
+SuperStrict
+
 Graphics 640,480
 SetOrigin 320,240
+
+Local frame:Float
+
 While Not KeyHit(KEY_ESCAPE)
 	Cls 
 	SetRotation frame
@@ -157,13 +162,16 @@ defined with the [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blu
 ' plots a cosine graph
 ' scrolls along the graph using an incrementing frame variable 
 
+SuperStrict
+
 Graphics 640,480
 
+Local frame:Int
 While Not KeyHit(KEY_ESCAPE)
 	Cls
-	For x=0 To 640
-		theta=x+frame
-		y=240-Cos(theta)*240
+	For Local x:Int = 0 To 640
+		Local theta:Int = x + frame
+		Local y:Int = 240-Cos(theta)*240
 		Plot x,y
 	Next
 	frame=frame+1
@@ -193,15 +201,18 @@ Other commands that affect the operation of [DrawRect](../../brl/brl.max2d/#func
 ' uses the frame variable to cycle through the values 0..9 for
 ' an animation effect between frames 
 
+SuperStrict
+
 Graphics 640,480
 
 SetBlend ALPHABLEND
 SetAlpha 0.2
 
+Local t:Int
 While Not KeyHit(KEY_ESCAPE)
 	Cls
 	DrawText "DrawRect Example",0,0
-	For r=t To t+500 Step 10
+	For Local r:Int = t To t+500 Step 10
 		SetRotation r
 		SetScale r/5,r/5
 		DrawRect r,r,2,2
@@ -231,14 +242,16 @@ Not drawing the last pixel can be useful if you are using certain blending modes
 
 ' draws a cross hair at the mouse position using DrawLine
 
+SuperStrict
+
 Graphics 640,480
 
 HideMouse 
 
 While Not KeyHit(KEY_ESCAPE)
 	Cls
-	x=MouseX()
-	y=MouseY()
+	Local x:Int = MouseX()
+	Local y:Int = MouseY()
 	DrawLine 320,240,x,y
 	DrawLine x-2,y,x-10,y
 	DrawLine x+2,y,x+10,y
@@ -267,6 +280,8 @@ BlitzMax commands that affect the drawing of ovals include [SetColor](../../brl/
 ' draws a pair of eyes using 4 DrawOval commands, 2 white, 2 blue
 ' positions the blue ovals so the eyes track the mouse
 
+SuperStrict
+
 Graphics 640,480
 While Not KeyHit(KEY_ESCAPE)
 	Cls
@@ -274,8 +289,8 @@ While Not KeyHit(KEY_ESCAPE)
 	DrawOval 0,0,320,200
 	DrawOval 320,0,320,200
 	SetColor 0,0,255
-	x=(MouseX()-320)/10
-	y=(MouseY()-240)/10
+	Local x:Int = (MouseX()-320)/10
+	Local y:Int = (MouseY()-240)/10
 	DrawOval 220-32+x,100+y,64,40
 	DrawOval 420-32+x,100+y,64,40
 	Flip
@@ -301,6 +316,8 @@ BlitzMax commands that affect the drawing of polygons include [SetColor](../../b
 ' DrawPoly command and an array of
 ' floats listed as 3 pairs of x,y
 ' coordinates
+
+SuperStrict
 
 Local tri#[]=[0.0,0.0,100.0,100.0,0.0,100.0]
 
@@ -335,20 +352,22 @@ style to benefit from mip-mapped filtering, see [LoadImageFont](../../brl/brl.ma
 
 ' scrolls a large text string across the screen by decrementing the tickerx variable
 
+SuperStrict
+
 Graphics 640,480
 
-Local tickerx#=640
+Local tickerx:Int = 640
 
-text$="Yo to all the Apple, Windows and Linux BlitzMax programmers in the house! "
-text:+"Game development is the most fun, most advanced and definitely most cool "
-text:+"software programming there is!"
+Local Text:String = "Yo to all the Apple, Windows and Linux BlitzMax programmers in the house! "
+Text:+"Game development is the most fun, most advanced and definitely most cool "
+Text:+"software programming there is!"
 
 While Not KeyHit(KEY_ESCAPE)
 	Cls
 	DrawText "Scrolling Text Demo",0,0
-	DrawText text,tickerx#,400
+	DrawText Text,tickerx#,400
 	tickerx=tickerx-1
-	If tickerx<-TextWidth(text) tickerx=640
+	If tickerx<-TextWidth(Text) tickerx=640
 	Flip	
 Wend
 
@@ -856,13 +875,15 @@ A new image object
 
 ' creates a 256x1 image with a black to blue color gradient
 
-Const ALPHABITS=$ff000000
+SuperStrict
 
-Graphics 640,480,32
+Const ALPHABITS:Int=$ff000000
 
-image=CreateImage(256,1)
-map=LockImage(image)
-For i=0 To 255
+Graphics 640,480,0
+
+Local image:TImage = CreateImage(256,1)
+Local map:TPixmap = LockImage(image)
+For Local i:Int = 0 To 255
 	WritePixel(map,i,0,ALPHABITS|i)
 Next
 UnlockImage(image)
@@ -921,6 +942,8 @@ Only images created with the DYNAMICIMAGE flag can be grabbed.
 ' created for the grabbed where any pixels unset on the backbuffer
 ' become transparent in the grabbed image
 
+SuperStrict
+
 Graphics 640,480
 
 Cls
@@ -929,12 +952,12 @@ DrawLine 0,0,32,32
 DrawLine 32,0,0,32
 DrawOval 0,0,32,32
 
-Local image=CreateImage(640,480,1,DYNAMICIMAGE|MASKEDIMAGE)
+Local image:TImage = CreateImage(640,480,1,DYNAMICIMAGE|MASKEDIMAGE)
 GrabImage image,0,0
 
 Cls
-For i=1 To 100
-	DrawImage image,Rnd(640),Rnd(480)
+For Local i:Int = 1 To 100
+	DrawImage image,Float(Rnd(640)),Float(Rnd(480))
 Next
 Flip
 
@@ -1009,9 +1032,9 @@ The id specifies an object to be returned to future [CollideImage](../../brl/brl
 
 #### Example
 ```blitzmax
-Strict
+SuperStrict
 
-Local rot,x,y
+Local rot:Int,x:Int,y:Int
 
 Graphics 640,480
 

@@ -75,26 +75,26 @@ A random double in the range 0 (inclusive) to 1 (exclusive)
 ' Player 1 hits 30% of the time, player 2 hits 40%.
 ' What is the probability that player 1 wins?
 
-Function winner()   ' play game once, return winner 1 or 2
+SuperStrict
+
+Function winner:Int()   ' play game once, return winner 1 or 2
     Repeat
         If RndDouble() < 0.3 Then Return 1
         If RndDouble() < 0.4 Then Return 2
     Forever
 End Function
 
-Local count[3]
+Local count:Int[3]
 
-trials = 1000000
+Local trials:Int = 1000000
 
-For n = 1 to trials
+For Local n:Int = 1 To trials
     count[ winner() ] :+ 1
 Next
 
 Print "Estimated probability = " + ( Double( count[1] ) / Double( trials ) )
 Print
 Print "    Exact probability = " + ( 15.0 / 29.0 )
-
-Input ; End
 ```
 
 ### `Function Rnd!( min_value!=1,max_value!=0 )`
@@ -117,11 +117,14 @@ A random double in the range min (inclusive) to max (exclusive)
 ' Rnd.bmx
 ' Use Rnd() to estimate area inside the unit circle x^2 + y^2 = 1.
 
-totalpoints = 1000000
+SuperStrict
 
-For n = 1 to totalpoints
-    x! = Rnd( -1.0, 1.0 )               ' Generate random point in 2 by 2 square.
-    y! = Rnd( -1.0, 1.0 )
+Local totalpoints:Int = 1000000
+Local inpoints:Int
+
+For Local n:Int = 1 To totalpoints
+    Local x:Double = Rnd( -1.0, 1.0 )               ' Generate random point in 2 by 2 square.
+    Local y:Double = Rnd( -1.0, 1.0 )
 
     If x*x + y*y < 1.0 Then inpoints :+ 1     ' point is inside the circle
 Next
@@ -131,8 +134,6 @@ Next
 Print "Estimated area = " + ( 4.0 * Double(inpoints)/Double(totalpoints) )
 Print
 Print "    Exact area = " + Pi     '  4 * Pi/4, compare with estimate
-
-Input ; End
 ```
 
 ### `Function Rand:Int( min_value:Int,max_value:Int=1 )`
@@ -156,14 +157,16 @@ A random integer in the range min (inclusive) to max (inclusive)
 ' Toss a pair of dice. Result is in the range 1+1 to 6+6.
 ' Count how many times each result appears.
 
-Local count[13]
+SuperStrict
 
-For n = 1 To 3600
-    toss = Rand(1,6) + Rand(1,6)
+Local count:Int[13]
+
+For Local n:Int = 1 To 3600
+    Local toss:Int = Rand(1,6) + Rand(1,6)
     count[toss] :+ 1
 Next
 
-For toss = 2 To 12
+For Local toss:Int = 2 To 12
     Print LSet(toss, 5)+count[toss]
 Next
 ```
@@ -177,13 +180,15 @@ Set random number generator seed
 ' RndSeed.bmx and SeedRnd.bmx ( one example for both )
 ' Get/Set random number seed.
 
+SuperStrict
+
 SeedRnd MilliSecs()
 
-seed=RndSeed()
+Local seed:Int = RndSeed()
 
 Print "Initial seed="+seed
 
-For k=1 To 10
+For Local k:Int = 1 To 10
 Print Rand(10)
 Next
 
@@ -191,7 +196,7 @@ Print "Restoring seed"
 
 SeedRnd seed
 
-For k=1 To 10
+For Local k:Int = 1 To 10
 Print Rand(10)
 Next
 ```

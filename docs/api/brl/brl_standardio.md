@@ -25,6 +25,8 @@ Rem
 Use the Print command to output BlitzMax strings to the Console window.
 End Rem
 
+SuperStrict
+
 Print "Hello World"
 ```
 
@@ -41,8 +43,10 @@ Rem
 Use the Input command to read user input from the console to a BlitzMax String.
 End Rem
 
-name$=Input("What is your name")
-print "Hello "+name
+SuperStrict
+
+Local name:String = Input("What is your name")
+Print "Hello "+name
 ```
 
 ## Globals

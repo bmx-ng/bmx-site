@@ -33,6 +33,8 @@ True if user has requested to terminate application
 
 #### Example
 ```blitzmax
+SuperStrict
+
 Graphics 640,480,0
 
 While Not AppTerminate() Or Not Confirm( "Terminate?" )
@@ -68,12 +70,14 @@ Number of times <b>key</b> has been hit.
 ' and exits when it detects the ESCAPE key has
 ' been pressed
 
-graphics 640,480
-while not keyhit(KEY_ESCAPE)
-	cls
-	if keyhit(KEY_SPACE) drawoval 0,0,640,480
-	flip
-wend
+SuperStrict
+
+Graphics 640,480
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	If KeyHit(KEY_SPACE) DrawOval 0,0,640,480
+	Flip
+Wend
 ```
 
 ### `Function KeyDown( key )`
@@ -96,6 +100,8 @@ See the key codes module for a list of valid keycodes.
 ' program detects the spacebar is pressed
 ' and exits when it detects the ESCAPE key has
 ' been pressed
+
+SuperStrict
 
 Graphics 640,480
 While Not KeyHit(KEY_ESCAPE)
@@ -151,12 +157,14 @@ Mouse x axis location
 
 ' the following tracks the position of the mouse
 
-graphics 640,480
-while not keyhit(KEY_ESCAPE)
-	cls
-	drawoval mousex()-10,mousey()-10,20,20
-	flip
-wend
+SuperStrict
+
+Graphics 640,480
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	DrawOval MouseX()-10,MouseY()-10,20,20
+	Flip
+Wend
 ```
 
 ### `Function MouseY()`
@@ -177,12 +185,14 @@ Mouse y axis location
 
 ' the following tracks the position of the mouse
 
-graphics 640,480
-while not keyhit(KEY_ESCAPE)
-	cls
-	drawrect mousex()-10,mousey()-10,20,20
-	flip
-wend
+SuperStrict
+
+Graphics 640,480
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	DrawRect MouseX()-10,MouseY()-10,20,20
+	Flip
+Wend
 ```
 
 ### `Function MouseZ()`
@@ -204,11 +214,13 @@ Mouse wheel value
 
 ' prints mousez() the mousewheel position
 
+SuperStrict
+
 Graphics 640,480
-While Not keyhit(KEY_ESCAPE)
-	cls
-	drawtext "MouseZ()="+MouseZ(),0,0
-	flip
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	DrawText "MouseZ()="+MouseZ(),0,0
+	Flip
 Wend
 ```
 
@@ -268,15 +280,17 @@ Number of times <b>button</b> has been clicked.
 ```blitzmax
 ' mousehit.bmx
 
-graphics 640,480
+SuperStrict
 
-while not keyhit(KEY_ESCAPE)
-	cls
-	if mousehit(1) drawrect 0,0,200,200
-	if mousehit(2) drawrect 200,0,200,200
-	if mousehit(3) drawrect 400,0,200,200
-	flip
-wend
+Graphics 640,480
+
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	If MouseHit(1) DrawRect 0,0,200,200
+	If MouseHit(2) DrawRect 200,0,200,200
+	If MouseHit(3) DrawRect 400,0,200,200
+	Flip
+Wend
 ```
 
 ### `Function MouseDown( button )`
@@ -296,15 +310,17 @@ middle mouse button.
 ```blitzmax
 ' mousedown.bmx
 
-graphics 640,480
+SuperStrict
 
-while not keyhit(KEY_ESCAPE)
-	cls
-	if mousedown(1) drawrect 0,0,200,200
-	if mousedown(2) drawrect 200,0,200,200
-	if mousedown(3) drawrect 400,0,200,200
-	flip
-wend
+Graphics 640,480
+
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	If MouseDown(1) DrawRect 0,0,200,200
+	If MouseDown(2) DrawRect 200,0,200,200
+	If MouseDown(3) DrawRect 400,0,200,200
+	Flip
+Wend
 ```
 
 ### `Function WaitKey()`

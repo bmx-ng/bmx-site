@@ -89,7 +89,9 @@ A stream object
 ' opens a read stream to the blitzbasic.com website and
 ' dumps the homepage to the console using readline and print
 
-in=ReadStream("http::blitzbasic.com")
+SuperStrict
+
+Local in:TStream = ReadStream("http::blitzmax.org")
 
 If Not in RuntimeError "Failed to open a ReadStream to file http::www.blitzbasic.com"
 
@@ -118,9 +120,11 @@ A stream object
 ' opens a write stream to the file mygame.ini and
 ' outputs a simple text file using WriteLine
 
-out=WriteStream("mygame.ini")
+SuperStrict
 
-if not out RuntimeError "Failed to open a WriteStream to file mygame.ini"
+Local out:TStream = WriteStream("mygame.ini")
+
+If Not out RuntimeError "Failed to open a WriteStream to file mygame.ini"
 
 WriteLine out,"[display]"
 WriteLine out,"width=800"
@@ -134,7 +138,7 @@ WriteLine out,"MAK=920"
 
 CloseStream out
 
-print "File mygame.ini created, bytes="+FileSize("mygame.ini")
+Print "File mygame.ini created, bytes="+FileSize("mygame.ini")
 ```
 
 ### `Function Eof:Int( stream:TStream )`

@@ -55,7 +55,9 @@ Rem
 Load and Play a small example wav file.
 End Rem
 
-sound=LoadSound("shoot.wav")
+SuperStrict
+
+Local sound:TSound = LoadSound("shoot.wav")
 PlaySound sound
 
 Input "Press any key to continue"
@@ -80,7 +82,9 @@ Rem
 Load and Play a small example wav file with looping.
 End Rem
 
-sound=LoadSound("shoot.wav",true)
+SuperStrict
+
+Local sound:TSound = LoadSound("shoot.wav",True)
 PlaySound sound
 
 Input "Press any key to continue"
@@ -109,8 +113,10 @@ Rem
 CueSound example
 End Rem
 
-sound=LoadSound("shoot.wav")
-channel=CueSound(sound)
+SuperStrict
+
+Local sound:TSound = LoadSound("shoot.wav")
+Local channel:TChannel = CueSound(sound)
 
 Input "Press return key to play cued sound"
 
@@ -136,15 +142,17 @@ An audio channel object
 ```blitzmax
 'AllocChannel.bmx
 
-timer=createtimer(20)
+SuperStrict
 
-sound=LoadSound ("shoot.wav")
-channel=AllocChannel()
+Local timer:TTimer = CreateTimer(20)
 
-for i=1 to 20
-	waittimer timer
-	playsound sound,channel
-next
+Local sound:TSound = LoadSound ("shoot.wav")
+Local channel:TChannel = AllocChannel()
+
+For Local i:Int = 1 To 20
+	WaitTimer timer
+	PlaySound sound,channel
+Next
 ```
 
 ### `Function StopChannel( channel:TChannel )`
@@ -161,10 +169,12 @@ Rem
 StopChannel example
 End Rem
 
-sound=LoadSound("shoot.wav",true)
-channel=PlaySound(sound)
+SuperStrict
 
-print "channel="+channel
+Local sound:TSound = LoadSound("shoot.wav",True)
+Local channel:TChannel = PlaySound(sound)
+
+Print "channel="+channel
 
 Input "Press return key to stop sound"
 
@@ -190,14 +200,16 @@ or stopped using [StopChannel](../../brl/brl.audio/#function-stopchannel-channel
 ```blitzmax
 ' channelplaying.bmx
 
-sound = LoadSound ("shoot.wav")
+SuperStrict
+
+Local sound:TSound = LoadSound ("shoot.wav")
 
 Input "Hit return to begin channelplaying test, use ctrl-C to exit"
 
-channel=playsound (sound)
-while true
-	print "ChannelPlaying(channel)="+ChannelPlaying(channel)
-wend
+Local channel:TChannel = PlaySound (sound)
+While True
+	Print "ChannelPlaying(channel)="+ChannelPlaying(channel)
+Wend
 ```
 
 ### `Function SetChannelVolume( channel:TChannel,volume# )`
@@ -212,13 +224,15 @@ Set playback volume of an audio channel
 ```blitzmax
 ' setchannelvolume.bmx
 
-timer=CreateTimer(20)
+SuperStrict
 
-sound = LoadSound ("shoot.wav")
+Local timer:TTimer = CreateTimer(20)
 
-For volume#=.1 To 2 Step .05
+Local sound:TSound = LoadSound ("shoot.wav")
+
+For Local volume#=.1 To 2 Step .05
 	WaitTimer timer
-	channel=CueSound(sound)
+	Local channel:TChannel = CueSound(sound)
 	SetChannelVolume channel,volume
 	ResumeChannel channel
 Next
@@ -236,16 +250,18 @@ Set stereo balance of an audio channel
 ```blitzmax
 ' setchannelpan.bmx
 
+SuperStrict
+
 Graphics 640, 480
 
-channel = AllocChannel ()
-sound = LoadSound ("shoot.wav") ' Use a short sample...
+Local channel:TChannel = AllocChannel ()
+Local sound:TSound = LoadSound ("shoot.wav") ' Use a short sample...
 
 Repeat
 	If MouseHit(1) PlaySound sound,channel
 	
-	pan# = MouseX () / (GraphicsWidth () / 2.0) - 1
-	vol# = 1 - MouseY () / 480.0
+	Local pan# = MouseX () / (GraphicsWidth () / 2.0) - 1
+	Local vol# = 1 - MouseY () / 480.0
 	SetChannelPan channel, pan
 	SetChannelVolume channel, vol*2
 
@@ -272,16 +288,18 @@ Set surround sound depth of an audio channel
 ```blitzmax
 ' setchanneldepth.bmx
 
+SuperStrict
+
 Graphics 640, 480
 
-channel = AllocChannel ()
-sound = LoadSound ("shoot.wav") ' Use a short sample...
+Local channel:TChannel = AllocChannel ()
+Local sound:TSound = LoadSound ("shoot.wav") ' Use a short sample...
 
 Repeat
 	If MouseHit(1) PlaySound sound,channel
 	
-	pan# = MouseX () / (640 / 2.0) - 1
-	depth# = MouseY () / (480 /2.0) -1
+	Local pan# = MouseX () / (640 / 2.0) - 1
+	Local depth# = MouseY () / (480 /2.0) -1
 	
 	SetChannelPan channel,pan
 	SetChannelDepth channel,depth
@@ -312,13 +330,15 @@ cause the audio channel to play at double speed (ie: an octave up).
 ```blitzmax
 ' setchannelrate.bmx
 
-timer=CreateTimer(20)
+SuperStrict
 
-sound = LoadSound ("shoot.wav",True)
-channel=CueSound(sound)
+Local timer:TTimer = CreateTimer(20)
+
+Local sound:TSound = LoadSound ("shoot.wav",True)
+Local channel:TChannel = CueSound(sound)
 ResumeChannel channel
 
-For rate#=1.0 To 4 Step 0.01
+For Local rate#=1.0 To 4 Step 0.01
 	WaitTimer timer
 	SetChannelRate channel,rate
 Next

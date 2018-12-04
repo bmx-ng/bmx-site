@@ -34,6 +34,10 @@ Throws a [TRuntimeException](../../brl/brl.blitz/truntimeexception).
 ```blitzmax
 ' runtimeerror.bmx
 
+SuperStrict
+
+Local a:Int
+
 If a=0 RuntimeError "This program has failed badly."
 ```
 
@@ -65,8 +69,10 @@ in the reverse order to that in which they were added.
 ```blitzmax
 ' onend.bmx
 
+SuperStrict
+
 Function cleanup()
-Print "cleaning up"
+	Print "cleaning up"
 End Function
 
 OnEnd cleanup
@@ -305,9 +311,11 @@ when an application starts.
 ' appdir.bmx
 ' requests the user to select a file from the application's directory
 
-Print "Application Directory="+AppDir$
+SuperStrict
 
-file$=RequestFile("Select File to Open","",False,AppDir$)
+Print "Application Directory="+AppDir
+
+Local file:String = RequestFile("Select File to Open","",False,AppDir)
 
 Print "file selected was :"+file
 ```
@@ -324,7 +332,9 @@ executing application.
 ```blitzmax
 ' appfile.bmx
 
-Print "This program's executable is located at "+AppFile$
+SuperStrict
+
+Print "This program's executable is located at "+AppFile
 ```
 
 ### `Global AppTitle$="bbAppTitle"`
@@ -356,10 +366,12 @@ or directory.
 ' appargs.bmx
 ' print the command line arguments passed to the program at runtime
 
+SuperStrict
+
 Print "Number of arguments = "+AppArgs.length
 
-For a$=EachIn AppArgs
-Print a$
+For Local a:String = EachIn AppArgs
+	Print a
 Next
 ```
 
@@ -375,6 +387,8 @@ access the 'shell' current directory as opposed to the application directory.
 #### Example
 ```blitzmax
 ' launchdir.bmx
+
+SuperStrict
 
 Print "This program was launched from "+LaunchDir$
 ```
@@ -417,6 +431,8 @@ Rem
 The End command causes a program to exit immediately.
 End Rem
 
+SuperStrict
+
 Print "Hello!"
 End
 Print "This line will never be printed as the program has already been ended."
@@ -436,6 +452,8 @@ First created 9th August, 2004
 (C)2050 Blitz Intergalactic Software Corporation
 
 End Rem
+
+SuperStrict
 
 Print "This program has no useful function"
 
@@ -464,6 +482,8 @@ All code between Rem and EndRem is ignored by the BlitzMax compiler.
 Print "hello"
 End Rem
 
+SuperStrict
+
 Print "goodbye"
 ```
 
@@ -476,6 +496,8 @@ Constant integer of value 1
 Rem
 True is a Constant Integer assigned the value 1.
 End Rem
+
+SuperStrict
 
 Print "True="+True
 
@@ -498,11 +520,13 @@ Rem
 False is a Constant Integer assigned the value 0.
 End Rem
 
+SuperStrict
+
 Print "False="+False
 
 If False
 	Print "This code will never be executed"
-Endif
+EndIf
 ```
 
 ### `Pi`
@@ -514,6 +538,8 @@ Constant pi value: 3.1415926535897932384626433832795
 Rem
 Pi is a Constant Double assigned the value 3.1415926535897932384626433832795
 End Rem
+
+SuperStrict
 
 Print "Pi="+Pi
 ```
@@ -528,15 +554,17 @@ Rem
 Null is a BlitzMax Constant representing an empty Object reference.
 End Rem
 
+SuperStrict
+
 Type mytype
-	Field	atypevariable
+	Field atypevariable:Int
 End Type
 
 Global a:mytype
 
-if a=null Print "a is uninitialized"
-a=new mytype
-if a<>null Print "a is initialized"
+If a=Null Print "a is uninitialized"
+a=New mytype
+If a<>Null Print "a is initialized"
 ```
 
 ### `Byte`
@@ -549,10 +577,12 @@ Rem
 Byte is an unsigned 8 bit integer BlitzMax primitive type.
 End Rem
 
-Local a:byte
+SuperStrict
 
-a=512;print "a="+a	'prints 0
-a=-1;print "a="+a	'prints 255
+Local a:Byte
+
+a=512;Print "a="+a	'prints 0
+a=-1;Print "a="+a	'prints 255
 ```
 
 ### `Short`
@@ -565,10 +595,12 @@ Rem
 Short is an unsigned 16 bit integer BlitzMax primitive type.
 End Rem
 
-Local a:short
+SuperStrict
 
-a=65536;print "a="+a	'prints 0
-a=-1;print "a="+a	'prints 65535
+Local a:Short
+
+a=65536;Print "a="+a	'prints 0
+a=-1;Print "a="+a	'prints 65535
 ```
 
 ### `Int`
@@ -581,15 +613,17 @@ Rem
 Int is a signed 32 bit integer BlitzMax primitive type.
 End Rem
 
+SuperStrict
+
 Local a:Int
 
 ' the following values all print 0 as BlitzMax "rounds to zero"
 ' when converting from floating point to integer
 
-a=0.1;print a
-a=0.9;print a
-a=-0.1;print a
-a=-0.9;print a
+a=0.1;Print a
+a=0.9;Print a
+a=-0.1;Print a
+a=-0.9;Print a
 ```
 
 ### `UInt`
@@ -606,6 +640,8 @@ Signed 64 bit integer type
 Rem
 Long is a signed 64 bit integer BlitzMax primitive type.
 End Rem
+
+SuperStrict
 
 Const MAXLONG:Long=$7fffffffffffffff:Long
 Const MINLONG:Long=$8000000000000000:Long
@@ -650,19 +686,21 @@ Rem
 Float is a 32 bit floating point BlitzMax primitive type.
 End Rem
 
-Local a:float
+SuperStrict
+
+Local a:Float
 
 a=1
 
-for i=1 to 8
-	print a
+For Local i:Int = 1 To 8
+	Print a
 	a=a*0.1
-next
+Next
 
-for i=1 to 8
+For Local i:Int = 1 To 8
 	a=a*10
-	print a
-next
+	Print a
+Next
 ```
 
 ### `Double`
@@ -674,6 +712,8 @@ next
 Rem
 Double is a 64 bit floating point BlitzMax primitive type.
 End Rem
+
+SuperStrict
 
 Local speedoflight:Double
 Local distance:Double
@@ -729,7 +769,9 @@ Rem
 String is a BlitzMax container type containing a sequence of unicode characters.
 End Rem
 
-quote:String=Chr(34)
+SuperStrict
+
+Local quote:String=Chr(34)
 Print quote+"Hello World!"+quote
 ```
 
@@ -748,8 +790,10 @@ is an instance of TImage or an instance of a &Type derived
 from TImage.
 End Rem
 
+SuperStrict
+
 Function IsImage(obj:Object)
-	If TImage(obj) return True
+	If TImage(obj) Return True
 	Return False
 End Function
 ```
@@ -765,16 +809,18 @@ Var is a composite type containing a reference to a variable of the
 specified Type.
 End Rem
 
+SuperStrict
+
 ' the following illustrates parsing function parameters by reference
 
-Function ReturnMultiplevalues(a Var,b Var,c Var)
+Function ReturnMultiplevalues(a:Int Var,b:Int Var,c:Int Var)
 	a=10
 	b=20
 	c=30
 	Return
 End Function
 
-Local x,y,z
+Local x:Int,y:Int,z:Int
 
 ReturnMultipleValues(x,y,z)
 
@@ -795,7 +841,9 @@ End Rem
 
 ' the following illustrates the use of traditional c style pointers
 
-Local c[]=[1,2,3,4]
+SuperStrict
+
+Local c:Int[]=[1,2,3,4]
 Local p:Int Ptr
 
 p=c
@@ -821,6 +869,8 @@ Rem
 If begins a conditional block.
 End Rem
 
+SuperStrict
+
 If 3<5 Print "3<5"	'single line if
 
 If 5<7				'if block
@@ -838,6 +888,8 @@ Rem
 Then is an optional separator between the condition and the block of code following an If statement.
 End Rem
 
+SuperStrict
+
 If 3<5 Then Print "3<5"
 ```
 
@@ -851,7 +903,9 @@ Rem
 Else provides the ability for an If Then construct to execute a second block of code when the If condition is false.
 End Rem
 
-i=3
+SuperStrict
+
+Local i:Int = 3
 
 If i<5 Print "i<5" Else Print "i>=5"	' single line If Else
 
@@ -872,7 +926,9 @@ Rem
 ElseIf provides the ability to test and execute a section of code if the initial condition failed.
 End Rem
 
-age=Int( Input("How old Are You?") )
+SuperStrict
+
+Local age:Int = Int( Input("How old Are You?") )
 
 If age<13
 	Print "You are young"
@@ -893,7 +949,9 @@ Rem
 EndIf marks the end of an If Then block.
 End Rem
 
-i=5
+SuperStrict
+
+Local i:Int = 5
 
 If i<10
 	Print "i<10"
@@ -912,7 +970,9 @@ End Rem
 
 ' print 5 times table
 
-For i=1 to 12
+SuperStrict
+
+For Local i:Int = 1 To 12
 	Print "5*"+i+"="+5*i
 Next
 ```
@@ -927,8 +987,10 @@ Rem
 Followed by a constant which is used to calculate when to exit a For..Next loop.
 End Rem
 
-For i=1 To 5
-	print i
+SuperStrict
+
+For Local i:Int = 1 To 5
+	Print i
 Next
 ```
 
@@ -944,7 +1006,9 @@ End Rem
 
 ' count backwards from 10 to 0
 
-For i=10 to 0 step -1
+SuperStrict
+
+For Local i:Int = 10 To 0 Step -1
 	Print i
 Next
 ```
@@ -959,7 +1023,11 @@ Rem
 Marks the end of a For section.
 End Rem
 
-For i=1 to 5;print i;Next
+SuperStrict
+
+For Local i:Int = 1 To 5
+	Print i
+Next
 ```
 
 ### `EachIn`
@@ -972,11 +1040,13 @@ Rem
 Specifies a BlitzMax collection type whose values are assigned sequentially to the For iterator.
 End Rem
 
-Local a[]=[0,5,12,13,20]
+SuperStrict
 
-for b=eachin a
-	print b
-next
+Local a:Int[]=[0,5,12,13,20]
+
+For Local b:Int = EachIn a
+	Print b
+Next
 ```
 
 ### `While`
@@ -989,11 +1059,13 @@ Rem
 While executes the following section of code repeatedly while a given condition is true.
 End Rem
 
+SuperStrict
+
 Graphics 640,480
 While Not KeyHit(KEY_ESCAPE)	'loop until escape key is pressed
 	Cls
-	For i=1 to 200
-		DrawLine rnd(640),rnd(480),rnd(640),rnd(480)
+	For Local i:Int = 1 To 200
+		DrawLine Rnd(640),Rnd(480),Rnd(640),Rnd(480)
 	Next
 	Flip
 Wend
@@ -1009,8 +1081,12 @@ Rem
 Wend marks the end of a While section.
 End Rem
 
+SuperStrict
+
+Local i:Int
+
 While i<5
-	print i
+	Print i
 	i:+1
 Wend
 ```
@@ -1030,8 +1106,12 @@ Rem
 Repeat executes the following section of code until a terminating condition is true.
 End Rem
 
+SuperStrict
+
+Local i:Int
+
 Repeat
-	print i
+	Print i
 	i:+1
 Until i=5
 ```
@@ -1046,9 +1126,11 @@ Rem
 Until marks the end of a Repeat block and is followed by a terminating condition.
 End Rem
 
-i=2
+SuperStrict
+
+Local i:Int = 2
 Repeat
-	print i
+	Print i
 	i:*2
 Until i>1000000
 ```
@@ -1063,6 +1145,9 @@ Rem
 Forever is an alternate ending to a Repeat block that will cause the loop to always repeat.
 End Rem
 
+SuperStrict
+
+Local i:Int
 Repeat
 	Print i+" Ctrl-C to End!" 
 	i:+1
@@ -1079,7 +1164,9 @@ Rem
 Select begins a block featuring a sequence of multiple comparisons with a single value.
 End Rem
 
-a=Int( Input("Enter Your Country Code ") )
+SuperStrict
+
+Local a:Int = Int( Input("Enter Your Country Code ") )
 
 Select a
 	Case 1
@@ -1105,9 +1192,10 @@ Rem
 EndSelect marks the end of a Select block.
 End Rem
 
+SuperStrict
 SeedRnd MilliSecs()
 
-a=Rand(5)
+Local a:Int = Rand(5)
 
 Select a
 	Case 1 Print "one"
@@ -1130,7 +1218,9 @@ Conditional code inside a Select block
 ' Case performs a comparison with the preceeding value(s) and that
 ' listed in the enclosing Select statement:
 
-a=Int( Input("Enter a number between 1 and 5 ") )
+SuperStrict
+
+Local a:Int=Int( Input("Enter a number between 1 and 5 ") )
 
 Select a
 	Case 1 Print "You think small"
@@ -1151,14 +1241,16 @@ Rem
 Default is used in a Select block to mark a code section that is executed if all prior Case statements fail.
 End Rem
 
-a$=Input("What is your favorite color?")
-a$=lower(a$)	'make sure the answer is lower case
+SuperStrict
 
-Select a$
-	case "yellow" Print "You a bright and breezy"
-	case "blue" Print "You are a typical boy"
-	case "pink" Print "You are a typical girl"
-	default Print "You are quite unique!"
+Local a:String = Input("What is your favorite color?")
+a=Lower(a)	'make sure the answer is lower case
+
+Select a
+	Case "yellow" Print "You a bright and breezy"
+	Case "blue" Print "You are a typical boy"
+	Case "pink" Print "You are a typical girl"
+	Default Print "You are quite unique!"
 End Select
 ```
 
@@ -1172,6 +1264,9 @@ Rem
 Exit causes program flow to exit the enclosing While, Repeat or For loop.
 End Rem
 
+SuperStrict
+
+Local n:Int
 Repeat
 	Print n
 	n:+1
@@ -1189,7 +1284,9 @@ Rem
 Continue causes program flow to return to the start of the enclosing While, Repeat or For program loop
 End Rem
 
-For i=1 To 20
+SuperStrict
+
+For Local i:Int = 1 To 20
 	If i Mod 2 Continue
 	Print i
 Next
@@ -1205,12 +1302,14 @@ Rem
 Const defines the preceeding variable declaration as constant.
 End Rem
 
-Const ON=TRUE
-Const OFF=FALSE
+SuperStrict
 
-Const TWOPI#=2*PI
+Const ON:Int=True
+Const OFF:Int=False
 
-print TWOPI
+Const TWOPI:Float=2*Pi
+
+Print TWOPI
 ```
 
 ### `Local`
@@ -1223,15 +1322,17 @@ Rem
 Local defines a variable as local to the Method or Function it is defined meaning it is automatically released when the function returns.
 End Rem
 
+SuperStrict
+
 Function TestLocal()
-	Local	a
+	Local a:Int
 	a=20
-	print "a="+a
+	Print "a="+a
 	Return
 End Function
 
 TestLocal
-print "a="+a	'prints 0 or if in Strict mode is an error as a is only local to the TestLocal function
+Print "a="+a	'prints an error as a is only local to the TestLocal function
 ```
 
 ### `Global`
@@ -1244,14 +1345,16 @@ Rem
 Global defines a variable as Global allowing it be accessed from within Methods and Functions.
 End Rem
 
-Global a=20
+SuperStrict
+
+Global a:Int = 20
 
 Function TestGlobal()
-	print "a="+a
+	Print "a="+a
 End Function
 
 TestGlobal
-print "a="+a
+Print "a="+a
 ```
 
 ### `Field`
@@ -1264,11 +1367,13 @@ Rem
 Field is used to declare the member variable(s) of a type.
 End Rem
 
+SuperStrict
+
 Type TVector
-	Field	x,y,z
+	Field	x:Int,y:Int,z:Int
 End Type
 
-Local a:TVector=new TVector
+Local a:TVector=New TVector
 
 a.x=10
 a.y=20
@@ -1288,15 +1393,17 @@ When a function does not return a value the use of brackets when
 calling the function is optional.
 End Rem
 
-Function NextArg(a$)
-	Local	p
-	p=instr(a$,",")
-	if p 
-		NextArg a$[p..]
-		print a$[..p-1]
-	else
-		print a$
-	endif
+SuperStrict
+
+Function NextArg(a:String)
+	Local p:Int
+	p=Instr(a,",")
+	If p 
+		NextArg a[p..]
+		Print a[..p-1]
+	Else
+		Print a
+	EndIf
 End Function
 
 NextArg("one,two,three,four")
@@ -1314,12 +1421,14 @@ Rem
 Function marks the end of a BlitzMax function declaration.
 End Rem
 
+SuperStrict
+
 Function RandomName$()
-	local a$[]=["Bob","Joe","Bill"]
+	Local a$[]=["Bob","Joe","Bill"]
 	Return a[Rnd(Len a)]
 End Function
 
-For i=1 To 5
+For Local i:Int = 1 To 5
 	Print RandomName$()
 Next
 ```
@@ -1334,16 +1443,18 @@ Rem
 Method marks the beginning of a BlitzMax custom type member function.
 End Rem
 
-Type TPoint
-	field	x,y
+SuperStrict
 
-	Method ToString$()
-		return x+","+y
+Type TPoint
+	Field x:Int,y:Int
+
+	Method ToString:String()
+		Return x+","+y
 	End Method
 End Type
 
-a:TPoint=new TPoint
-print a.ToString()
+Local a:TPoint=New TPoint
+Print a.ToString()
 ```
 
 ### `EndMethod`
@@ -1356,16 +1467,18 @@ Rem
 EndMethod marks the end of a BlitzMax Method declaration.
 End Rem
 
-Type TPoint
-	field	x,y
+SuperStrict
 
-	Method ToString$()
-		return x+","+y
+Type TPoint
+	Field x:Int,y:Int
+
+	Method ToString:String()
+		Return x+","+y
 	End Method
 End Type
 
-a:TPoint=new TPoint
-print a.ToString()
+Local p:TPoint = New TPoint
+Print p.ToString()
 ```
 
 ### `Return`
@@ -1379,14 +1492,16 @@ Return exits a BlitzMax function or method with an optional value.
 The type of return value is dictated by the type of the function.
 End Rem
 
+SuperStrict
+
 Function CrossProduct#(x0#,y0#,z0#,x1#,y1#,z1#)
 	Return x0*x1+y0*y1+z0*z1
 End Function
 
 Print "(0,1,2)x(2,3,4)="+CrossProduct(0,1,2,2,3,4)
 
-Function LongRand:long()
-	Return (rand($80000000,$7fffffff) shl 32)|(rand($80000000,$7fffffff))
+Function LongRand:Long()
+	Return (Rand($80000000,$7fffffff) Shl 32)|(Rand($80000000,$7fffffff))
 End Function
 
 Print "LongRand()="+LongRand()
@@ -1407,11 +1522,13 @@ convention to differentiate themselves from standard
 BlitzMax variable names.
 End Rem
 
+SuperStrict
+
 Type TVector
-	Field	x,y,z
+	Field x:Int,y:Int,z:Int
 End Type
 
-Local a:TVector=new TVector
+Local a:TVector=New TVector
 
 a.x=10
 a.y=20
@@ -1428,11 +1545,13 @@ Rem
 EndType marks the end of a BlitzMax custom type.
 End Rem
 
+SuperStrict
+
 Type TVector
-	Field	x,y,z
+	Field x:Int,y:Int,z:Int
 End Type
 
-Local a:TVector=new TVector
+Local a:TVector=New TVector
 
 a.x=10
 a.y=20
@@ -1469,18 +1588,20 @@ Rem
 Extends is used in a BlitzMax Type declaration to derive the Type from a specified base class.
 End Rem
 
+SuperStrict
+
 Type TShape
-	Field	xpos,ypos
+	Field xpos:Int,ypos:Int
 	Method Draw() Abstract
 End Type
 
-Type TCircle extends TShape
-	Field	radius
+Type TCircle Extends TShape
+	Field radius:Int
 	
-	Function Create:TCircle(x,y,r)
-		local c:TCircle=new TCircle
+	Function Create:TCircle(x:Int,y:Int,r:Int)
+		Local c:TCircle=New TCircle
 		c.xpos=x;c.ypos=y;c.radius=r
-		return c
+		Return c
 	End Function
 	
 	Method Draw()
@@ -1488,13 +1609,13 @@ Type TCircle extends TShape
 	End Method
 End Type
 
-Type TRect extends TShape
-	Field	width,height
+Type TRect Extends TShape
+	Field width:Int,height:Int
 	
-	Function Create:TRect(x,y,w,h)
-		local r:TRect=new TRect
+	Function Create:TRect(x:Int,y:Int,w:Int,h:Int)
+		Local r:TRect=New TRect
 		r.xpos=x;r.ypos=y;r.width=w;r.height=h
-		return r
+		Return r
 	End Function
 	
 	Method Draw()
@@ -1502,23 +1623,23 @@ Type TRect extends TShape
 	End Method
 End Type
 
-local 	shapelist:TShape[4]
-local	shape:TShape
+Local shapelist:TShape[4]
+Local shape:TShape
 
 shapelist[0]=TCircle.Create(200,50,50)
 shapelist[1]=TRect.Create(300,50,40,40)
 shapelist[2]=TCircle.Create(400,50,50)
 shapelist[3]=TRect.Create(200,180,250,20)
 
-graphics 640,480
-while not keyhit(KEY_ESCAPE)
-	cls
-	for shape=eachin shapelist
+Graphics 640,480
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	For shape=EachIn shapelist
 		shape.draw
-	next
-	flip
-wend
-end
+	Next
+	Flip
+Wend
+End
 ```
 
 ### `Implements`
@@ -1542,18 +1663,20 @@ create a TShape but anything extending a TShape must implement a Draw()
 method.
 End Rem
 
+SuperStrict
+
 Type TShape
-	Field	xpos,ypos
+	Field xpos:Int,ypos:Int
 	Method Draw() Abstract
 End Type
 
-Type TCircle extends TShape
-	Field	radius
+Type TCircle Extends TShape
+	Field radius:Int
 	
-	Function Create:TCircle(x,y,r)
-		local c:TCircle=new TCircle
+	Function Create:TCircle(x:Int,y:Int,r:Int)
+		Local c:TCircle = New TCircle
 		c.xpos=x;c.ypos=y;c.radius=r
-		return c
+		Return c
 	End Function
 	
 	Method Draw()
@@ -1561,13 +1684,13 @@ Type TCircle extends TShape
 	End Method
 End Type
 
-Type TRect extends TShape
-	Field	width,height
+Type TRect Extends TShape
+	Field width:Int,height:Int
 	
-	Function Create:TRect(x,y,w,h)
-		local r:TRect=new TRect
+	Function Create:TRect(x:Int,y:Int,w:Int,h:Int)
+		Local r:TRect = New TRect
 		r.xpos=x;r.ypos=y;r.width=w;r.height=h
-		return r
+		Return r
 	End Function
 	
 	Method Draw()
@@ -1575,23 +1698,23 @@ Type TRect extends TShape
 	End Method
 End Type
 
-local 	shapelist:TShape[4]
-local	shape:TShape
+Local shapelist:TShape[4]
+Local shape:TShape
 
 shapelist[0]=TCircle.Create(200,50,50)
 shapelist[1]=TRect.Create(300,50,40,40)
 shapelist[2]=TCircle.Create(400,50,50)
 shapelist[3]=TRect.Create(200,180,250,20)
 
-graphics 640,480
-while not keyhit(KEY_ESCAPE)
-	cls
-	for shape=eachin shapelist
+Graphics 640,480
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	For shape=EachIn shapelist
 		shape.draw
-	next
-	flip
-wend
-end
+	Next
+	Flip
+Wend
+End
 ```
 
 ### `Final`
@@ -1604,16 +1727,18 @@ Rem
 Final stops methods from being redefined in super classes.
 End Rem
 
+SuperStrict
+
 Type T1
-	Method ToString$() Final
-		return "T1"
-	end method
+	Method ToString:String() Final
+		Return "T1"
+	End Method
 End Type
 
-Type T2 extends T1
-	method ToString$()	'compile time error "Final methods cannot be overridden"
-		return "T2"
-	end method
+Type T2 Extends T1
+	Method ToString:String()	'compile time error "Final methods cannot be overridden"
+		Return "T2"
+	End Method
 End Type
 ```
 
@@ -1642,29 +1767,43 @@ Rem
 New creates a BlitzMax variable of the Type specified.
 End Rem
 
+SuperStrict
+
 Type MyType
-	Field	a,b,c
+	Field a:Int,b:Int,c:Int
 End Type
 
 Local t:MyType
 t=New MyType
 t.a=20
 
-print t.a
+Print t.a
 
 ' if a new method is defined for the type it will also be called
 
 Type MyClass
-	Field	a,b,c
+	Field a:Int,b:Int,c:Int
 	Method New()
-		print "Constructor invoked!"
+		Print "Constructor invoked!"
 		a=10
+	End Method
+	
+	' the new method can be overridden to provide even more construction options
+	Method New(b:Int, c:Int)
+		New() ' the default new can also be called from inside this one
+		Self.b = b
+		Self.c = c
 	End Method
 End Type
 
 Local c:MyClass
-c=new MyClass
-print c.a
+c=New MyClass
+Print c.a
+
+c = New MyClass(5, 15)
+Print c.a
+Print c.b
+Print c.c
 ```
 
 ### `Delete`
@@ -1688,30 +1827,32 @@ Rem
 Self is used in BlitzMax Methods to reference the invoking variable.
 End Rem
 
+SuperStrict
+
 Type MyClass
-	Global	count	
-	Field	id
+	Global count:Int
+	Field id:Int
 	
-	Method new()
+	Method New()
 		id=count
 		count:+1
-		ClassList.AddLast(self)	'adds this new instance to a global list		
+		ClassList.AddLast(Self)	'adds this new instance to a global list		
 	End Method
 End Type
 
 Global ClassList:TList
 
-classlist=new TList
+classlist=New TList
 
-local c:MyClass
+Local c:MyClass
 
-c=new MyClass
-c=new MyClass
-c=new MyClass
+c=New MyClass
+c=New MyClass
+c=New MyClass
 
-for c=eachin ClassList
-	print c.id
-next
+For c=EachIn ClassList
+	Print c.id
+Next
 ```
 
 ### `Super`
@@ -1724,20 +1865,22 @@ Rem
 Super evaluates to Self cast to the method's immediate base class.
 End Rem
 
+SuperStrict
+
 Type TypeA
 	Method Report()
-		print "TypeA reporting"
+		Print "TypeA reporting"
 	End Method
 End Type
 
-Type TypeB extends TypeA
+Type TypeB Extends TypeA
 	Method Report()
 		Print "TypeB Reporting"
-		super.Report()
+		Super.Report()
 	End Method
 End Type
 
-b:TypeB=new TypeB
+Local b:TypeB=New TypeB
 b.Report()
 ```
 
@@ -1777,13 +1920,15 @@ Rem
 Public makes a variable, function or method accessible from outside the current source file (default).
 End Rem
 
+SuperStrict
+
 Public
 
-Global	Score,Lives,Health
+Global Score:Int,Lives:Int,Health:Int
 
 Private
 
-Global	posx,posy,posz
+Global posx:Int,posy:Int,posz:Int
 ```
 
 ### `Private`
@@ -1797,13 +1942,15 @@ Private makes a variable, function or method only accessible from within the
 current source file.
 End Rem
 
+SuperStrict
+
 Public
 
-Global	Score,Lives,Health
+Global Score:Int,Lives:Int,Health:Int
 
 Private
 
-Global	posx,posy,posz
+Global posx:Int,posy:Int,posz:Int
 ```
 
 ### `Protected`
@@ -1828,6 +1975,8 @@ Rem
 Extern marks the beginning of an external list of function declarations.
 End Rem
 
+SuperStrict
+
 Extern 
 	Function puts( str$z )
 	Function my_puts( str$z )="puts"
@@ -1846,6 +1995,8 @@ End an Extern section
 Rem
 EndExtern marks the end of an Extern section.
 End Rem
+
+SuperStrict
 
 Extern 
 	Function puts( str$z )
@@ -1869,6 +2020,8 @@ The Module keyword advises the BlitzMax program maker BMK to create a code
 module from the source file.
 End Rem
 
+SuperStrict
+
 Module PUB.Sequencer
 
 ModuleInfo "Framework: Audio Sequencer for use with FreeAudio"
@@ -1886,6 +2039,8 @@ Define module properties
 Rem
 ModuleInfo allows properties such as Author and Copyright to be included in a module file.
 End Rem
+
+SuperStrict
 
 Module PUB.Sequencer
 
@@ -1908,9 +2063,11 @@ End Rem
 
 ' code snippet from demos/firepaint/firepaint.bmx
 
+SuperStrict
+
 Incbin "stars.png"
 
-Local stars=LoadImage( "incbin::stars.png" )
+Local stars:TImage = LoadImage( "incbin::stars.png" )
 ```
 
 ### `IncbinPtr`
@@ -1923,14 +2080,16 @@ Rem
 IncBinPtr returns a byte pointer to the specified embedded binary file.
 End Rem
 
+SuperStrict
+
 Incbin "incbinptr.bmx"
 
-Local p:Byte Ptr=IncbinPtr("incbinptr.bmx")
-Local bytes=IncbinLen("incbinptr.bmx")
+Local p:Byte Ptr = IncbinPtr("incbinptr.bmx")
+Local bytes:Int = IncbinLen("incbinptr.bmx")
 
-Local s$=String.FromBytes(p,bytes)
+Local s:String = String.FromBytes(p,bytes)
 
-Print "StringFromBytes(p,bytes)="+s$
+Print "StringFromBytes(p,bytes)="+s
 ```
 
 ### `IncbinLen`
@@ -1943,14 +2102,16 @@ Rem
 IncBinLen returns the size in bytes of the specified embedded binary file.
 End Rem
 
-incbin "incbinlen.bmx"
+SuperStrict
 
-local p:byte ptr=IncBinPtr("incbinlen.bmx")
-local bytes=incbinlen("incbinlen.bmx")
+Incbin "incbinlen.bmx"
 
-local s$=StringFromBytes(p,bytes)
+Local p:Byte Ptr = IncbinPtr("incbinlen.bmx")
+Local bytes:Int = IncbinLen("incbinlen.bmx")
 
-Print "StringFromBytes(p,bytes)="+s$
+Local s:String=String.FromBytes(p,bytes)
+
+Print "StringFromBytes(p,bytes)="+s
 ```
 
 ### `Include`
@@ -1972,6 +2133,8 @@ Import declarations from a module or source file
 Rem
 :Import specifies the external BlitzMax modules and source files used by the program.
 End Rem
+
+SuperStrict
 
 Framework BRL.GlMax2D
 
@@ -1996,7 +2159,9 @@ Rem
 Assert generates a BlitzMax runtime error if the specified condition is false.
 End Rem
 
-a=LoadImage("nonexistant image file")
+SuperStrict
+
+Local a:TImage = LoadImage("nonexistant image file")
 Assert a,"Image Failed to Load"
 ```
 
@@ -2027,14 +2192,18 @@ Rem
 Begin declaration of a Try block.
 End Rem
 
+SuperStrict
+
+Local a:Int
+
 Try
-	repeat
+	Repeat
 		a:+1
-		print a
-		if a>20 throw "chunks"
-	forever
-Catch a$
-	print "caught exception "+a$
+		Print a
+		If a>20 Throw "chunks"
+	Forever
+Catch e:String
+	Print "caught exception "+e
 EndTry
 ```
 
@@ -2048,14 +2217,17 @@ Rem
 Catch defines an exception handler following a Try..EndTry Block.
 End Rem
 
+SuperStrict
+
+Local a:Int
 Try
-	repeat
+	Repeat
 		a:+1
-		print a
-		if a>20 throw "chunks"
-	forever
-Catch a$
-	print "caught exception "+a$
+		Print a
+		If a>20 Throw "chunks"
+	Forever
+Catch e:String
+	Print "caught exception "+e
 EndTry
 ```
 
@@ -2086,14 +2258,17 @@ Rem
 Throw generates a BlitzMax exception.
 End Rem
 
+SuperStrict
+
+Local a:Int
 Try
-	repeat
+	Repeat
 		a:+1
-		print a
-		if a>20 throw "chunks"
-	forever
-Catch a$
-	print "caught exception "+a$
+		Print a
+		If a>20 Throw "chunks"
+	Forever
+Catch e:String
+	Print "caught exception "+e
 EndTry
 ```
 
@@ -2105,7 +2280,12 @@ Define classic BASIC style data
 ```blitzmax
 ' defdata.bmx
 
-ReadData name$
+SuperStrict
+
+Local name:String
+Local age:Int, skill:Int
+
+ReadData name
 ReadData age,skill
 
 Print "name="+name+" age="+age+" skill="+skill
@@ -2126,9 +2306,13 @@ Restore classic BASIC style data
 ```blitzmax
 ' restoredata.bmx
 
-For i=1 To 5
+SuperStrict
+
+Local name:String, age:Int, skill:Int
+
+For Local i:Int = 1 To 5
 	RestoreData mydata	'reset the data pointer everly loop so we don't read past the end
-	ReadData name$,age,skill
+	ReadData name,age,skill
 	Print "name="+name+" age="+age+" skill="+skill
 Next
 
@@ -2147,7 +2331,9 @@ Rem
 And is a boolean operator that performs the AND function.
 End Rem
 
-For i=1 To 10
+SuperStrict
+
+For Local i:Int = 1 To 10
 	If i>3 And i<6 Print "!" Else Print i
 Next
 ```
@@ -2162,7 +2348,9 @@ Rem
 Or is a boolean operator that performs the OR function.
 End Rem
 
-For i=1 To 5
+SuperStrict
+
+For Local i:Int = 1 To 5
 	If i=2 Or i=4 Print "!" Else Print i
 Next
 ```
@@ -2176,6 +2364,8 @@ Conditional 'Not' binary operator
 Rem
 Not is a boolean unary operator that performs the NOT function.
 End Rem
+
+SuperStrict
 
 Print Not 0			'prints 1 (TRUE)
 Print Not 20		'prints 0 (FALSE)
@@ -2191,11 +2381,13 @@ Rem
 Shl is a binary operator that performs the shift to left function.
 End Rem
 
-b=1
-for i=1 to 32
-	print bin(b)
-	b=b shl 1
-next
+SuperStrict
+
+Local b:Int = 1
+For Local i:Int = 1 To 32
+	Print Bin(b)
+	b=b Shl 1
+Next
 ```
 
 ### `Shr`
@@ -2208,11 +2400,13 @@ Rem
 Shr is a binary operator that performs the shift to right function.
 End Rem
 
-b=-1
-for i=1 to 32
-	print bin(b)
-	b=b shr 1
-next
+SuperStrict
+
+Local b:Int = -1
+For Local i:Int = 1 To 32
+	Print Bin(b)
+	b=b Shr 1
+Next
 ```
 
 ### `Sar`
@@ -2225,11 +2419,13 @@ Rem
 Sar is a binary operator that performs the arithmetic shift to right function.
 End Rem
 
-b=$f0f0f0f0
-for i=1 to 32
-	print bin(b)
-	b=b sar 1
-next
+SuperStrict
+
+Local b:Int = $f0f0f0f0
+For Local i:Int = 1 To 32
+	Print Bin(b)
+	b=b Sar 1
+Next
 ```
 
 ### `Len`
@@ -2242,13 +2438,15 @@ Rem
 Len is a BlitzMax operator that returns the number of elements in a container Type.
 End Rem
 
-a$="BlitzMax Rocks"
-Print Len a$	'prints 14
+SuperStrict
 
-Local b[]
+Local a:String = "BlitzMax Rocks"
+Print Len a	'prints 14
+
+Local b:Int[]
 Print Len b		'prints 0
 
-b=new Int[20]
+b=New Int[20]
 Print Len b		'prints 20
 ```
 
@@ -2262,7 +2460,9 @@ Rem
 Abs is a mathematical operator that performs the Absolute function.
 End Rem
 
-For f#=-1 To 1 Step 0.125
+SuperStrict
+
+For Local f:Float = -1 To 1 Step 0.125
 	Print "Abs "+f+"="+Abs f
 Next
 ```
@@ -2277,7 +2477,9 @@ Rem
 Mod is a mathematical operator that performs the Modulo function.
 End Rem
 
-For i=6 to -6 Step -1
+SuperStrict
+
+For Local i:Int = 6 To -6 Step -1
 	Print i+" Mod 3="+(i Mod 3)
 Next
 ```
@@ -2292,6 +2494,8 @@ Rem
 Sgn is a mathematical operator that returns the sign of a value.
 End Rem
 
+SuperStrict
+
 Print Sgn 50	'1
 Print Sgn 0		'0
 Print Sgn -50	'-1
@@ -2305,6 +2509,17 @@ Numeric 'minimum' builtin function
 The lesser of the two numeric arguments
 
 
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
 
 ### `Max`
 
@@ -2314,6 +2529,18 @@ Numeric 'maximum' builtin function
 The larger of the two numeric arguments
 
 
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
 
 ### `Varptr`
 
@@ -2325,12 +2552,14 @@ Rem
 Varptr returns the address of a variable in system memory.
 End Rem
 
-Local a:int
-Local p:int ptr
+SuperStrict
+
+Local a:Int
+Local p:Int Ptr
 
 a=20
-p=varptr a
-print p[0]
+p=Varptr a
+Print p[0]
 ```
 
 ### `SizeOf`
@@ -2343,24 +2572,26 @@ Rem
 SizeOf returns the number of bytes of system memory used to store the variable.
 End Rem
 
+SuperStrict
+
 Type MyType
-	Field a,b,c
+	Field a:Int,b:Int,c:Int
 End Type
 
 Local t:MyType
-print sizeof t	'prints 12
+Print SizeOf t	'prints 12
 
 Local f!
-print sizeof f	'prints 8
+Print SizeOf f	'prints 8
 
-Local i
-print sizeof i	'prints 4
+Local i:Int
+Print SizeOf i	'prints 4
 
 Local b:Byte
-print sizeof b	'prints 1
+Print SizeOf b	'prints 1
 
-a$="Hello World"
-print sizeof a	'prints 22 (unicode characters take 2 bytes each)
+Local a:String="Hello World"
+Print SizeOf a	'prints 22 (unicode characters take 2 bytes each)
 ```
 
 ### `Asc`
@@ -2373,7 +2604,9 @@ Rem
 Asc returns the unicode value of the first character of a string.
 End Rem
 
-print Asc("A")	'65
+SuperStrict
+
+Print Asc("A")	'65
 Print "A"[0]	'65 - equivalent index style implementation
 ```
 
@@ -2387,6 +2620,8 @@ Rem
 Chr returns a String of length 1 containing the unicode character of the value.
 End Rem
 
-print Chr(65)	'A
+SuperStrict
+
+Print Chr(65)	'A
 ```
 

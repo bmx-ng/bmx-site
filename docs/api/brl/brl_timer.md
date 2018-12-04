@@ -44,7 +44,12 @@ The number of ticks since the last call to [WaitTimer](../../brl/brl.timer/#func
 
 #### Example
 ```blitzmax
-timer=CreateTimer( 10 )
+SuperStrict
+
+Framework BRL.StandardIO
+Import BRL.TimerDefault
+
+Local timer:TTimer = CreateTimer( 10 )
 
 Repeat
 	Print "Ticks="+WaitTimer( timer )
