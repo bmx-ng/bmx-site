@@ -38,26 +38,26 @@ A random float in the range 0 (inclusive) to 1 (exclusive)
 ' Player 1 hits 30% of the time, player 2 hits 40%.
 ' What is the probability that player 1 wins?
 
-Function winner()   ' play game once, return winner 1 or 2
+SuperStrict
+
+Function winner:Int()   ' play game once, return winner 1 or 2
     Repeat
         If RndFloat() < 0.3 Then Return 1
         If RndFloat() < 0.4 Then Return 2
     Forever
 End Function
 
-Local count[3]
+Local count:Int[3]
 
-trials = 1000000
+Local trials:Int = 1000000
 
-For n = 1 to trials
+For Local n:Int = 1 To trials
     count[ winner() ] :+ 1
 Next
 
 Print "Estimated probability = " + ( Float( count[1] ) / Float( trials ) )
 Print
 Print "    Exact probability = " + ( 15.0 / 29.0 )
-
-Input ; End
 ```
 
 ### `Function RndDouble!()`
@@ -218,22 +218,24 @@ The current random number generator seed
 ' RndSeed.bmx and SeedRnd.bmx ( one example for both )
 ' Get/Set random number seed.
 
+SuperStrict
+
 SeedRnd MilliSecs()
 
-seed=RndSeed()
+local seed:int = RndSeed()
 
 Print "Initial seed="+seed
 
-For k=1 To 10
-Print Rand(10)
+For local k:int = 1 To 10
+	Print Rand(10)
 Next
 
 Print "Restoring seed"
 
 SeedRnd seed
 
-For k=1 To 10
-Print Rand(10)
+For local k:int = 1 To 10
+	Print Rand(10)
 Next
 ```
 

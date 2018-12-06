@@ -7,6 +7,34 @@ sidebar_label: TSound
 Audio sound type
 
 
+#### Example
+```blitzmax
+' TSound has three methods Play and Cue and a Load Function
+SuperStrict
+
+Graphics 640 , 480
+
+Local Sound:TSound = TSound.Load(blitzmaxpath()+"\samples\hitoro\sounds\gameover.ogg",0)
+Local Channel:TChannel = Sound.Cue() ' cue to a channel
+
+Repeat
+	DrawText "Press P to play, C to Cue and R to Resume sound",10,10
+	
+	If KeyHit(KEY_P) Then
+		Sound.Play()
+	End If
+	
+	If KeyHit(KEY_C) Then
+		Channel=Sound.Cue()
+	End If
+	
+	If KeyHit(KEY_R) Then
+		ResumeChannel(Channel)
+	End If
+	
+	Flip
+Until AppTerminate() Or KeyHit(KEY_ESCAPE)
+```
 ## Methods
 
 ### `Method Play:TChannel( alloced_channel:TChannel=Null )`
@@ -22,6 +50,25 @@ If no channel is specified, [Play](../../../brl/brl.audio/tsound/#method-play-tc
 An audio channel object
 
 
+#### Example
+```blitzmax
+' Play method example
+SuperStrict
+
+Graphics 640, 480
+
+Local noise:TSound = TSound.Load(blitzmaxpath()+"\samples\hitoro\sounds\gameover.ogg",0)
+
+Repeat
+	DrawText "Press P to play sound",10,10
+	
+	If KeyHit(KEY_P) Then
+		noise.Play
+	End If
+	
+	Flip
+Until AppTerminate() Or KeyHit(KEY_ESCAPE)
+```
 
 ### `Method Cue:TChannel( alloced_channel:TChannel=Null )`
 
@@ -40,6 +87,32 @@ actually starts playing.
 An audio channel object
 
 
+#### Example
+```blitzmax
+'Cue Method
+
+SuperStrict
+
+Graphics 640 , 480
+
+Local sound:TSound = TSound.Load(blitzmaxpath()+"\samples\hitoro\sounds\gameover.ogg",0)
+Local channel:TChannel = CueSound(sound)
+
+Repeat
+	DrawText "Press A to play sound",10,10
+	DrawText "Press C to Cue sound",10,30
+	
+	If KeyHit(KEY_A) Then
+		ResumeChannel channel
+	End If
+	
+	If KeyHit(KEY_C) Then
+		channel = sound.Cue()
+	End If
+
+	Flip
+Until AppTerminate() Or KeyHit(KEY_ESCAPE)
+```
 
 ## Functions
 
@@ -56,4 +129,30 @@ The returned sound object can be played using [Play](../../../brl/brl.audio/tsou
 A sound object
 
 
+#### Example
+```blitzmax
+' load function
+
+SuperStrict
+
+Graphics 640 ,480
+
+Local Sound:TSound = TSound.Load(blitzmaxpath()+"\samples\hitoro\sounds\gameover.ogg",0)
+Local Channel:TChannel = CueSound(sound)
+
+Repeat
+	DrawText "Press A to play sound",10,10
+	DrawText "Press C to Cue sound",10,30
+
+	If KeyHit(KEY_A) Then
+		ResumeChannel channel
+	End If
+	
+	If KeyHit(KEY_C) Then
+		channel = sound.Cue()
+	End If
+
+	Flip
+Until AppTerminate() Or KeyHit(KEY_ESCAPE)
+```
 

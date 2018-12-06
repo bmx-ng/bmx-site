@@ -36,7 +36,9 @@ Strip directory from a file path
 ```blitzmax
 ' stripdir.bmx
 
-print stripdir("mypath/myfile.bmx")	'prints myfile.bmx
+SuperStrict
+
+Print StripDir("mypath/myfile.bmx")	' prints myfile.bmx
 ```
 
 ### `Function StripExt$( path$ )`
@@ -47,7 +49,9 @@ Strip extension from a file path
 ```blitzmax
 ' stripext.bmx
 
-print stripext("mypath/myfile.bmx")	'prints mypath/myfile
+SuperStrict
+
+Print StripExt("mypath/myfile.bmx")	' prints mypath/myfile
 ```
 
 ### `Function StripAll$( path$ )`
@@ -58,7 +62,9 @@ Strip directory and extension from a file path
 ```blitzmax
 ' stripall.bmx
 
-print stripall("mypath/myfile.bmx")	'prints myfile
+SuperStrict
+
+Print StripAll("mypath/myfile.bmx")	' prints myfile
 ```
 
 ### `Function StripSlash$( path$ )`
@@ -73,8 +79,9 @@ or (on Win32 only) "C:/".
 #### Example
 ```blitzmax
 ' stripslash.bmx
+SuperStrict
 
-print stripslash("mypath/")	'prints mypath
+Print StripSlash("mypath/")	' prints mypath
 ```
 
 ### `Function ExtractDir$( path$ )`
@@ -85,7 +92,9 @@ Extract directory from a file path
 ```blitzmax
 ' extractdir.bmx
 
-print extractdir("mypath/myfile.bmx")	'prints mypath
+SuperStrict
+
+Print ExtractDir("mypath/myfile.bmx")	' prints mypath
 ```
 
 ### `Function ExtractExt$( path$ )`
@@ -96,7 +105,9 @@ Extract extension from a file path
 ```blitzmax
 ' extractext.bmx
 
-print extractext("mypath/myfile.bmx")	'prints bmx
+SuperStrict
+
+Print ExtractExt("mypath/myfile.bmx")	' prints bmx
 ```
 
 ### `Function CurrentDir$()`
@@ -110,9 +121,10 @@ The current directory
 #### Example
 ```blitzmax
 ' currentdir.bmx
+SuperStrict
 
-cd$=currentdir()
-print "CurrentDir()="+cd$
+Local cd:String = CurrentDir()
+Print "CurrentDir()="+cd
 ```
 
 ### `Function RealPath$( path$ )`
@@ -123,9 +135,11 @@ Get real, absolute path of a file path
 ```blitzmax
 ' realpath.bmx
 
-print realpath("realpath.bmx")	'prints full path of this source
+SuperStrict
 
-print realpath("..") 'prints full path of parent directory
+Print RealPath("realpath.bmx")	'prints full path of this source
+
+Print RealPath("..") 'prints full path of parent directory
 ```
 
 ### `Function FileType:Int( path$ )`
@@ -140,9 +154,11 @@ Get file type
 ```blitzmax
 ' filetype.bmx
 
-print filetype(".")		'prints 2 for directory type
-print filetype("filetype.bmx")	'prints 1 for file type
-print filetype("notfound.file")	'prints 0 for doesn't exist
+SuperStrict
+
+Print FileType(".")		' prints 2 for directory type
+Print FileType("filetype.bmx")	' prints 1 for file type
+Print FileType("notfound.file")	' prints 0 for doesn't exist
 ```
 
 ### `Function FileTime:Int( path$, timetype:Int=FILETIME_MODIFIED )`
@@ -157,7 +173,9 @@ The time the file at <b>path</b> was last modified
 ```blitzmax
 ' filetime.bmx
 
-print filetime("filetime.bmx")
+SuperStrict
+
+Print FileTime("filetime.bmx")
 ```
 
 ### `Function FileSize:Long( path$ )`
@@ -172,9 +190,11 @@ Size, in bytes, of the file at <b>path</b>, or -1 if the file does not exist
 ```blitzmax
 ' filesize.bmx
 
+SuperStrict
+
 ' the following prints the size of this source file in bytes
 
-print filesize("filesize.bmx")
+Print FileSize("filesize.bmx")
 ```
 
 ### `Function FileMode:Int( path$ )`
@@ -188,24 +208,30 @@ file mode flags
 #### Example
 ```blitzmax
 ' filemode.bmx
+SuperStrict
 
 ' the following function converts the file mode to 
 ' the standard unix permission bits string
 
-Function Permissions$(mode)
-	local	testbit,pos
-	local	p$="rwxrwxrwx"
-	testbit=%100000000
-	pos=1
-	while (testbit)
-		if mode & testbit res$:+mid$(p$,pos,1) else res$:+"-"
-		testbit=testbit shr 1
-		pos:+1	
-	wend
-	return res
+Function Permissions:String(mode:Int)
+	Local testbit:Int, pos:Int
+	Local p:String = "rwxrwxrwx"
+	testbit = <i>100000000</i>
+	pos = 1
+	Local res:String
+	While (testbit)
+		If mode & testbit 
+			res :+ Mid(p, pos, 1)
+		Else 
+			res :+ "-"
+		EndIf
+		testbit = testbit Shr 1
+		pos :+ 1
+	Wend
+	Return res
 End Function
 
-print Permissions$(filemode("filemode.bmx"))
+Print Permissions(FileMode("filemode.bmx"))
 ```
 
 ### `Function SetFileMode( path$,Mode:Int )`
@@ -215,22 +241,19 @@ Set file mode
 #### Example
 ```blitzmax
 ' setfilemode.bmx
+SuperStrict
 
 ' the following makes this source file readonly
-
-writebits=%010010010
+Local writebits:Int = <i>010010010</i>
 
 ' read the file mode
-
-mode=filemode("setfilemode.bmx")
+Local mode:Int = FileMode("setfilemode.bmx")
 
 'mask out the write bits to make readonly
-
-mode=mode & writebits
+mode = mode & writebits
 
 'set the new file mode
-
-setfilemode("setfilemode.bmx",mode)
+SetFileMode("setfilemode.bmx",mode)
 ```
 
 ### `Function CreateFile:Int( path$ )`
@@ -244,9 +267,12 @@ True if successful
 #### Example
 ```blitzmax
 ' createfile.bmx
+SuperStrict
 
-success=createfile("myfile")
-if not success runtimeerror "error creating file"
+Local success:Int = CreateFile("myfile")
+If Not success Then
+	RuntimeError "error creating file"
+End If
 ```
 
 ### `Function CreateDir:Int( path$,recurse:Int=False )`
@@ -264,9 +290,12 @@ True if successful
 #### Example
 ```blitzmax
 ' createdir.bmx
+SuperStrict
 
-success=createdir("myfolder")
-if not success runtimeerror "error creating directory"
+Local success:Int = CreateDir("myfolder")
+If Not success Then
+	RuntimeError "error creating directory"
+End If
 ```
 
 ### `Function DeleteFile:Int( path$ )`
@@ -280,9 +309,10 @@ True if successful
 #### Example
 ```blitzmax
 ' deletefile.bmx
+SuperStrict
 
-success=deletefile("myfile")
-if not success runtimeerror "error deleting file"
+Local success:Int = DeleteFile("myfile")
+If Not success RuntimeError "error deleting file"
 ```
 
 ### `Function RenameFile:Int( oldpath$,newpath$ )`
@@ -293,6 +323,22 @@ Renames a file
 True if successful
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local result:Int = CopyFile(BlitzMaxPath() + "\versions.txt", BlitzMaxPath() + "\versions2.txt")
+
+If result = 0 Then
+	RuntimeError "CopyFile not successful..."
+End If
+
+result = RenameFile(BlitzMaxPath() + "\versions.txt", BlitzMaxPath() + "\versions2.txt")
+
+If result = 0 Then
+	RuntimeError "Rename not successful..." ' as file already exist
+End If
+```
 
 ### `Function CopyFile:Int( src$,dst$ )`
 
@@ -302,6 +348,22 @@ Copy a file
 True if successful
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local result:Int = CopyFile(BlitzMaxPath() + "\versions.txt",  BlitzMaxPath() + "\versions2.txt")
+
+If result = 0 Then	
+	RuntimeError "CopyFile not successful..."
+End If
+
+result = RenameFile(BlitzMaxPath() + "\versions.txt", BlitzMaxPath() + "\versions2.txt")
+
+If result = 0 Then
+	RuntimeError "Rename not successful..." ' as file already exists
+End If
+```
 
 ### `Function CopyDir:Int( src$,dst$ )`
 
@@ -327,9 +389,12 @@ True if successful
 #### Example
 ```blitzmax
 ' deletedir.bmx
+SuperStrict
 
-success=deletedir("myfolder")
-if not success runtimeerror "error deleting directory"
+Local success:Int = DeleteDir("myfolder")
+If Not success Then
+	RuntimeError "error deleting directory"
+End If
 ```
 
 ### `Function ChangeDir:Int( path$ )`
@@ -344,15 +409,17 @@ True if successful
 ```blitzmax
 ' changedir.bmx
 
-print "CurrentDir()="+currentdir()
+SuperStrict
+
+Print "CurrentDir()="+CurrentDir()
 
 ' change current folder to the parent folder
 
-changedir ".."
+ChangeDir ".."
 
 ' print new CurrentDir()
 
-print "CurrentDir()="+currentdir()
+Print "CurrentDir()="+CurrentDir()
 ```
 
 ### `Function ReadDir:Byte Ptr( path$ )`
@@ -366,13 +433,14 @@ A directory handle, or 0 if the directory does not exist
 #### Example
 ```blitzmax
 ' readdir.bmx
+SuperStrict
 
-dir=ReadDir(CurrentDir())
+Local dir:Byte Ptr = ReadDir(CurrentDir())
 
 If Not dir RuntimeError "failed to read current directory"
 
 Repeat
-	t$=NextFile( dir )
+	Local t:String = NextFile( dir )
 	If t="" Exit
 	If t="." Or t=".." Continue
 	Print t	
@@ -389,11 +457,55 @@ Return next file in a directory
 File name of next file in directory opened using [ReadDir](../../brl/brl.filesystem/#function-readdir-byte-ptr-path), or an empty string if there are no more files to read.
 
 
+#### Example
+```blitzmax
+'File System Example
+
+SuperStrict
+
+Local dir:Byte Ptr = ReadDir(BlitzMaxPath() )
+
+If Not dir Then
+	RuntimeError "Cannot open folder"
+End If
+
+Local file:String
+Repeat
+	
+	file = NextFile(Dir) ' Get the filenames in folder
+	Print file
+	
+Until file = ""
+
+CloseDir(dir)
+```
 
 ### `Function CloseDir( dir:Byte Ptr )`
 
 Close a directory
 
+#### Example
+```blitzmax
+'File System Example
+
+SuperStrict
+
+Local dir:Byte Ptr = ReadDir(BlitzMaxPath())
+
+If Not dir Then
+	RuntimeError "Cannot open folder"
+End If
+
+Local file:String
+Repeat
+	
+	file = NextFile(dir) ' Get the filenames in folder
+	Print file
+	
+Until Not file
+
+CloseDir(dir)
+```
 
 ### `Function LoadDir$[]( dir$,skip_dots:Int=True )`
 
@@ -410,16 +522,15 @@ A string array containing contents of <b>dir</b>
 #### Example
 ```blitzmax
 ' loaddir.bmx
+SuperStrict
 
 ' declare a string array
+Local files:String[] 
+files = LoadDir(CurrentDir())
 
-local files$[]
-
-files=loaddir(currentdir())
-
-for t$=eachin files
-	print t	
-next
+For Local t:String = EachIn files
+	Print t	
+Next
 ```
 
 ### `Function OpenFile:TStream( url:Object,readable:Int=True,writeable:Int=True )`
@@ -436,17 +547,18 @@ finished reading and or writing to a Stream returned by [OpenFile](../../brl/brl
 #### Example
 ```blitzmax
 ' openfile.bmx
+SuperStrict
 
 ' the following prints the contents of this source file 
 
-file=openfile("openfile.bmx")
+Local file:TStream = OpenFile("openfile.bmx")
 
-if not file runtimeerror "could not open file openfile.bmx"
+If Not file RuntimeError "could not open file openfile.bmx"
 
-while not eof(file)
-	print readline(file)
-wend
-closestream file
+While Not Eof(file)
+	Print ReadLine(file)
+Wend
+CloseStream file
 ```
 
 ### `Function ReadFile:TStream( url:Object )`
@@ -463,18 +575,19 @@ finished reading and or writing to a Stream returned by [OpenFile](../../brl/brl
 #### Example
 ```blitzmax
 ' readfile.bmx
-
 ' the following prints the contents of this source file 
 
-file=readfile("readfile.bmx")
+SuperStrict
 
-if not file runtimeerror "could not open file openfile.bmx"
+Local file:TStream = ReadFile("readfile.bmx")
 
-while not eof(file)
-	print readline(file)
-wend
+If Not file RuntimeError "could not open file openfile.bmx"
 
-closestream file
+While Not Eof(file)
+	Print ReadLine(file)
+Wend
+
+CloseStream file
 ```
 
 ### `Function WriteFile:TStream( url:Object )`
@@ -488,14 +601,15 @@ This command is identical to the [WriteStream](../../brl/brl.stream/#function-wr
 #### Example
 ```blitzmax
 ' writefile.bmx
+SuperStrict
 
-file=writefile("test.txt")
+Local file:TStream = WriteFile("test.txt")
 
-if not file runtimeerror "failed to open test.txt file" 
+If Not file Then RuntimeError "failed to open test.txt file" 
 
-writeline file,"hello world"
+WriteLine file,"hello world"
 
-closestream file
+CloseStream file
 ```
 
 ### `Function CloseFile( stream:TStream )`
@@ -508,4 +622,18 @@ close the file stream with either [CloseFile](../../brl/brl.filesystem/#function
 [CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream) command.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local in:TStream = OpenFile(BlitzMaxPath() + "\versions.txt")
+Local line:String
+
+While Not Eof(in)
+	line = ReadLine(in)
+	Print line
+Wend
+
+CloseFile(in) ' can also use CloseStream(in)
+```
 

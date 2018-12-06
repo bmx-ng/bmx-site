@@ -12,11 +12,11 @@ of a binary file.
 
 To create a bank, use the [CreateBank](../../brl/brl.bank/#function-createbank-tbank-size-int-0) command.
 
-To write data to a bank, use one of 'Poke' style commands, such as [PokeByte](../../brl/brl.bank/tbank/#method-pokebyte-offset-size-t-value).
+To write data to a bank, use one of 'Poke' style commands, such as [PokeByte](../../brl/brl.bank/tbank/#method-pokebyte-offset-size-t-value-int).
 
-To read data from a bank, use one of the 'Peek' style commands, such as [PeekByte](../../brl/brl.bank/tbank/#method-peekbyte-offset-size-t).
+To read data from a bank, use one of the 'Peek' style commands, such as [PeekByte](../../brl/brl.bank/tbank/#method-peekbyte-int-offset-size-t).
 
-In addition, banks can be loaded or saved using [LoadBank](../../brl/brl.bank/#function-loadbank-tbank-url-object) or [SaveBank](../../brl/brl.bank/#function-savebank-bank-tbank-url-object).
+In addition, banks can be loaded or saved using [LoadBank](../../brl/brl.bank/#function-loadbank-tbank-url-object) or [SaveBank](../../brl/brl.bank/#function-savebank-int-bank-tbank-url-object).
 
 
 ## Types
@@ -40,6 +40,16 @@ Peek commands.
 A bank object with an initial size of <b>size</b> bytes
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local myBank:TBank = CreateBank(16)
+
+For Local t:Int = 0 Until BankSize(myBank)
+	Print PeekByte(myBank,t)
+Next
+```
 
 ### `Function CreateStaticBank:TBank( buf:Byte Ptr,size:Int )`
 
@@ -68,13 +78,32 @@ created bank with a size matching that of the file.
 A bank containing the binary contents of <b>url</b>, or null if <b>url</b> could not be opened
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function SaveBank( bank:TBank,url:Object )`
+Local myBank:TBank=CreateBank(16)
+
+For Local t:Int=0 Until BankSize(myBank)
+	PokeByte mybank,t,Int(Rnd(255))
+	Print PeekByte(myBank,t)
+Next
+
+SaveBank myBank,"mybank.dat"
+
+Local myNextBank:TBank=LoadBank("mybank.dat")
+
+For Local t:Int = 0 Until BankSize(myNextBank)
+	Print PeekByte(myNextBank,t)
+Next
+```
+
+### `Function SaveBank:Int( bank:TBank,url:Object )`
 
 Save a bank
 
 
-[SaveBank](../../brl/brl.bank/#function-savebank-bank-tbank-url-object) writes it's entire contents to a <b>url</b>. If the <b>url</b> is a file path a new
+[SaveBank](../../brl/brl.bank/#function-savebank-int-bank-tbank-url-object) writes it's entire contents to a <b>url</b>. If the <b>url</b> is a file path a new
 file is created.
 
 
@@ -82,6 +111,19 @@ file is created.
 True if successful.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(16)
+
+For Local t:Int = 0 Until BankSize(myBank)
+	PokeByte mybank,t,Int(Rnd(255))
+	Print PeekByte(myBank,t)
+Next
+
+SaveBank MyBank,"mybank.dat"
+```
 
 ### `Function BankBuf:Byte Ptr( bank:TBank )`
 
@@ -95,6 +137,18 @@ Please use [LockBank](../../brl/brl.bank/#function-lockbank-byte-ptr-bank-tbank)
 A byte pointer to the bank's internal memory buffer
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local bank:TBank = CreateBank(100)
+PokeByte bank, 10, 255
+ 
+Local bptr:Byte Ptr = BankBuf(bank)
+
+Print PeekByte(bank , 10)
+Print bptr[10]
+```
 
 ### `Function LockBank:Byte Ptr( bank:TBank )`
 
@@ -130,6 +184,14 @@ Get size of bank
 The size, in bytes, of the bank's internal memory buffer
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local bank:TBank = CreateBank( Int(10 + Rnd(40)) )
+
+Print "size of the bank is: "+BankSize(bank)
+```
 
 ### `Function BankCapacity:Long( bank:TBank )`
 
@@ -146,6 +208,15 @@ Capacity never decreases.
 The capacity, in bytes, of the bank's internal memory buffer
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local bank:TBank = CreateBank( Int(20 + Rnd(40)) )
+
+Print "size of the bank is: "+BankSize(bank)
+Print "capacity of the bank is: "+BankCapacity(bank)
+```
 
 ### `Function ResizeBank( bank:TBank,size:Size_T )`
 
@@ -167,8 +238,30 @@ Copy bank contents
 in <b>dst_bank</b>.
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PeekByte( bank:TBank,offset:Size_T )`
+Local bank:TBank = CreateBank(100)
+
+For Local i:Int = 0 Until 100
+	PokeByte bank, i ,i
+Next
+
+Print "Original Bank Values..."
+For Local i:Int = 0 To 10
+	Print PeekByte(bank , 50 + i)
+Next
+
+Local copiedbank:TBank = CreateBank(100)
+CopyBank(bank, 50, copiedBank, 0, 10+1) 
+Print "Copied Bank Values..."
+For Local i:Int = 0 To 10
+	Print PeekByte(CopiedBank , i)
+Next
+```
+
+### `Function PeekByte:Int( bank:TBank,offset:Size_T )`
 
 Peek a byte from a bank
 
@@ -180,121 +273,320 @@ A byte is an unsigned 8 bit value with a range of 0..255.
 The byte value at the specified byte offset within the bank
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PokeByte( bank:TBank,offset:Size_T,value )`
+Local myBank:TBank=CreateBank(16)
+
+For Local t:Int = 0 Until BankSize(myBank)
+	PokeByte mybank,t,Int(Rnd(255))
+Next
+
+Print PeekByte(myBank,0)
+Print PeekByte(myBank,1)
+
+End
+```
+
+### `Function PokeByte( bank:TBank,offset:Size_T,value:Int )`
 
 Poke a byte into a bank
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PeekShort( bank:TBank,offset:Size_T )`
+Local myBank:TBank=CreateBank(16)
 
-Peek a short from a bank
+PokeByte myBank,0,123
+PokeByte myBank,15,234
+
+For Local t:Int = 0 Until BankSize(myBank)
+	Print PeekByte(myBank,t)
+Next
+```
+
+### `Function PeekShort:Int( bank:TBank,offset:Size_T )`
+
+Reads an unsigned short value (2 bytes) from a bank, at a given address.
 
 
-A short is an unsigned 16 bit (2 bytes) value with a range of 0..65535.
+Take notice not to exceed the boundaries of the bank.
+
+> A short value should not be read from the last possible byte address of the bank.
 
 
 #### Returns
 The short value at the specified byte offset within the bank
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PokeShort( bank:TBank,offset:Size_T,value )`
+Local myBank:TBank=CreateBank(16)
 
-Poke a short into a bank
+For Local t:Int = 0 Until BankSize(myBank)
+	PokeByte mybank,t,Int(Rnd(255))
+	Print PeekByte(myBank,t)
+Next
+
+Print
+Print PeekShort(myBank,0)
+Print PeekShort(myBank,1)
+Print PeekShort(myBank,14)
+
+End
+```
+
+### `Function PokeShort( bank:TBank,offset:Size_T,value:Int )`
+
+Writes an unsigned short value (2 bytes) into a bank, at a given address.
 
 
-An short is an unsigned 16 bit value that requires 2 bytes of storage.
+Take notice not to exceed the boundaries of the bank.
+
+> A short value should not be poked at the last possible byte address of the bank.
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PeekInt( bank:TBank,offset:Size_T )`
+Local myBank:TBank=CreateBank(16)
 
-Peek an int from a bank
+PokeShort myBank,0,256
+PokeShort myBank,14,32768+1
+
+For Local t:Int = 0 Until BankSize(myBank)
+	Print PeekByte(myBank,t)
+Next
+```
+
+### `Function PeekInt:Int( bank:TBank,offset:Size_T )`
+
+Reads a signed int value (4 bytes) from a bank, at a given address.
 
 
-An int is a signed 32 bit value (4 bytes).
+Take notice not to exceed the boundaries of the bank.
+
+> An int value should not be read from the last possible byte or short address of the bank.
 
 
 #### Returns
 The int value at the specified byte offset within the bank
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PokeInt( bank:TBank,offset:Size_T,value )`
+Local myBank:TBank=CreateBank(16)
 
-Poke an int into a bank
+For Local t:Int = 0 Until BankSize(myBank)
+	PokeByte mybank,t,Int(Rnd(255))
+	Print PeekByte(myBank,t)
+Next
+
+Print
+Print PeekInt(myBank,0)
+Print PeekInt(myBank,1)
+Print PeekInt(myBank,12)
+```
+
+### `Function PokeInt( bank:TBank,offset:Size_T,value:Int )`
+
+Writes a signed int value (4 bytes) into a bank, at a given address.
 
 
-An int is a signed 32 bit value that requires 4 bytes of storage.
+Take notice not to exceed the boundaries of the bank.
+
+> An int value should not be poked at the last possible byte or short address of the bank.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(16)
+
+PokeInt myBank,0,-10000001
+PokeInt myBank,12,31415926
+
+For Local t:Int = 0 Until BankSize(myBank)
+	Print PeekByte(myBank,t)
+Next
+```
 
 ### `Function PeekLong:Long( bank:TBank,offset:Size_T )`
 
-Peek a long integer from a bank
+Reads a signed long value (8 bytes) from a bank, at a given address.
 
 
-A long is a 64 bit integer that requires 8 bytes of memory.
+Take notice not to exceed the boundaries of the bank.
+
+> A long value should not be read from the last possible byte, short or int address of the bank.
 
 
 #### Returns
 The long integer value at the specified byte offset within the bank
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(16)
+
+For Local t:Int = 0 Until BankSize(myBank)
+	PokeByte mybank,t,Int(Rnd(255))
+	Print PeekByte(myBank,t)
+Next
+
+Print
+Print PeekLong(myBank,0)
+Print PeekLong(myBank,1)
+Print PeekLong(myBank,8)
+```
 
 ### `Function PokeLong( bank:TBank,offset:Size_T,value:Long )`
 
-Poke a long integer int into a bank
+Writes a signed long value (8 bytes) into a bank, at a given address.
 
 
-A long is a 64 bit integer that requires 8 bytes of storage.
+Take notice not to exceed the boundaries of the bank.
+
+> A long value should not be poked at the last possible byte, short or int address of the bank.
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PeekFloat#( bank:TBank,offset:Size_T )`
+Local myBank:TBank=CreateBank(16)
 
-Peek a float from a bank
+PokeLong myBank,0,-10000001234567
+PokeLong myBank,8,31415926000000
+
+For Local t:Int = 0 Until BankSize(myBank)
+	Print PeekByte(myBank,t)
+Next
+```
+
+### `Function PeekFloat:Float( bank:TBank,offset:Size_T )`
+
+Reads a signed float value (4 bytes) from a bank, at a given address.
 
 
-A float requires 4 bytes of storage
+Take notice not to exceed the boundaries of the bank.
+
+> A float value should not be read from the last possible byte or short address of the bank.
 
 
 #### Returns
 The float value at the specified byte offset within the bank
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PokeFloat( bank:TBank,offset:Size_T,value# )`
+Local myBank:TBank=CreateBank(16)
 
-Poke a float into a bank
+For Local t:Int = 0 Until BankSize(myBank)
+	PokeByte mybank,t,Int(Rnd(255))
+	Print PeekByte(myBank,t)
+Next
+
+Print
+Print PeekFloat(myBank,0)
+Print PeekFloat(myBank,1)
+Print PeekFloat(myBank,12)
+
+End
+```
+
+### `Function PokeFloat( bank:TBank,offset:Size_T,value:Float )`
+
+Writes a signed float value (4 bytes) into a bank, at a given address.
 
 
-A float requires 4 bytes of storage
+Take notice not to exceed the boundaries of the bank.
+
+> A float value should not be poked at the last possible byte or short address of the bank.
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PeekDouble!( bank:TBank,offset:Size_T )`
+Local myBank:TBank=CreateBank(16)
 
-Peek a double from a bank
+PokeFloat myBank,0,0.123456
+PokeFloat myBank,12,1234.5678
+
+For Local t:Int = 0 ubtil BankSize(myBank)
+	Print PeekByte(myBank,t)
+Next
+```
+
+### `Function PeekDouble:Double( bank:TBank,offset:Size_T )`
+
+Reads a signed double value (8 bytes) from a bank, at a given address.
 
 
-A double requires 8 bytes of storage
+Take notice not to exceed the boundaries of the bank.
+
+> A double value should not be read from the last possible byte, short, int or long address of the bank.
 
 
 #### Returns
 The double value at the specified byte offset within the bank
 
 
+#### Example
+```blitzmax
+SuperStrict
 
-### `Function PokeDouble( bank:TBank,offset:Size_T,value! )`
+Local myBank:TBank=CreateBank(16)
 
-Poke a double into a bank
+For Local t:Int = 0 Until BankSize(myBank)
+	PokeByte mybank,t,Int(Rnd(255))
+	Print PeekByte(myBank,t)
+Next
+
+Print
+Print PeekDouble(myBank,0)
+Print PeekDouble(myBank,1)
+Print PeekDouble(myBank,8)
+
+End
+```
+
+### `Function PokeDouble( bank:TBank,offset:Size_T,value:Double )`
+
+Writes a signed double value (8 bytes) into a bank, at a given address.
 
 
-A double requires 8 bytes of storage
+Take notice not to exceed the boundaries of the bank.
+
+> A double value should not be poked at the last possible byte, short, int or float address of the bank.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(16)
+
+PokeDouble myBank,0,123495543.12342345123:Double
+PokeDouble myBank,8,121235567.89015678123:Double
+
+For Local t:Int = 0 Until BankSize(myBank)
+	Print PeekByte(myBank,t)
+Next
+```
 
 ### `Function ReadBank:Long( bank:TBank,stream:TStream,offset:Size_T,count:Long )`
 
@@ -313,4 +605,26 @@ Write bytes from a Bank to a Stream
 The number of bytes successfully written to the Stream
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(8)
+
+Print "Created Bank..."
+For Local t:Int = 0 Until BankSize(MyBank)
+	PokeByte mybank,t,Int(Rnd(255))
+	Print PeekByte(myBank,t)
+Next
+
+Local bankStream:TStream=WriteStream("mybank.dat")
+WriteBank(myBank,bankStream,0,BankSize(myBank))
+CloseStream(bankStream)
+
+Local myNextBank:TBank=TBank.Load("mybank.dat")
+Print "Loaded Bank..."
+For Local t:Int = 0 Until BankSize(MyNextBank)
+	Print PeekByte(MyNextBank,t)
+Next
+```
 

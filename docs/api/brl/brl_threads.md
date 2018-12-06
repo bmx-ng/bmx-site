@@ -57,10 +57,10 @@ A new thread object.
 ```blitzmax
 'Make sure to have 'Threaded build' enabled!
 '
-Strict
+SuperStrict
 
 'Custom print that shows which thread is doing the printing
-Function MyPrint( t$ )
+Function MyPrint( t:String )
 	If CurrentThread()=MainThread() 
 		Print "Main thread: "+t
 	Else
@@ -75,7 +75,7 @@ Function MyThread:Object( data:Object )
 	Myprint data.ToString()
 
 	'do some work
-	For Local i=1 To 1000
+	For Local i:Int = 1 To 1000
 		MyPrint "i="+i
 	Next
 	
@@ -181,7 +181,7 @@ A new mutex object
 ```blitzmax
 'Make sure to have 'Threaded build' enabled!
 '
-Strict
+SuperStrict
 
 'a global list that multiple threads want to modify
 Global list:TList=New TList
@@ -191,7 +191,7 @@ Global listMutex:TMutex=CreateMutex()
 
 Function MyThread:Object( data:Object )
 
-	For Local item=1 To 10
+	For Local item:Int = 1 To 10
 		'simulate 'other' processing...
 		Delay Rand( 10,50 )
 
@@ -210,14 +210,14 @@ End Function
 Local threads:TThread[10]
 
 'Create worker threads
-For Local i=0 Until 10
+For Local i:Int = 0 Until 10
 	threads[i]=CreateThread( MyThread,String( i+1 ) )
 Next
 
 Print "Waiting for worker threads..."
 
 'Wait for worker threads to finish
-For Local i=0 Until 10
+For Local i:Int = 0 Until 10
 	WaitThread threads[i]
 Next
 
@@ -268,10 +268,10 @@ A new semaphore object
 ```blitzmax
 'Make sure to have 'Threaded build' enabled!
 '
-Strict
+SuperStrict
 
 'a simple queue
-Global queue$[100],put,get
+Global queue:String[100],put:Int,get:Int
 
 'a counter semaphore
 Global counter:TSemaphore=CreateSemaphore( 0 )
@@ -279,7 +279,7 @@ Global counter:TSemaphore=CreateSemaphore( 0 )
 Function MyThread:Object( data:Object )
 
 	'process 100 items
-	For Local item=1 To 100
+	For Local item:Int = 1 To 100
 	
 		'add an item to the queue
 		queue[put]="Item "+item
@@ -296,13 +296,13 @@ End Function
 Local thread:TThread=CreateThread( MyThread,Null )
 
 'receive 100 items
-For Local i=1 To 100
+For Local i:Int = 1 To 100
 
 	'Wait for semaphore count to be non-0, then decrement.
 	WaitSemaphore counter
 	
 	'Get an item from the queue
-	Local item$=queue[get]
+	Local item:String = queue[get]
 	get:+1
 	
 	Print item

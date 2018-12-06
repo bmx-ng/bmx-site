@@ -109,9 +109,7 @@ An audio channel object
 
 #### Example
 ```blitzmax
-Rem
-CueSound example
-End Rem
+' CueSound example
 
 SuperStrict
 
@@ -165,16 +163,12 @@ Shuts down an audio channel. Further commands using this channel will have no ef
 
 #### Example
 ```blitzmax
-Rem
-StopChannel example
-End Rem
+' StopChannel example
 
 SuperStrict
 
 Local sound:TSound = LoadSound("shoot.wav",True)
 Local channel:TChannel = PlaySound(sound)
-
-Print "channel="+channel
 
 Input "Press return key to stop sound"
 
@@ -258,7 +252,9 @@ Local channel:TChannel = AllocChannel ()
 Local sound:TSound = LoadSound ("shoot.wav") ' Use a short sample...
 
 Repeat
-	If MouseHit(1) PlaySound sound,channel
+	If MouseHit(1) Then
+		PlaySound sound,channel
+	End If
 	
 	Local pan# = MouseX () / (GraphicsWidth () / 2.0) - 1
 	Local vol# = 1 - MouseY () / 480.0
@@ -296,7 +292,9 @@ Local channel:TChannel = AllocChannel ()
 Local sound:TSound = LoadSound ("shoot.wav") ' Use a short sample...
 
 Repeat
-	If MouseHit(1) PlaySound sound,channel
+	If MouseHit(1) Then
+		PlaySound sound,channel
+	End If
 	
 	Local pan# = MouseX () / (640 / 2.0) - 1
 	Local depth# = MouseY () / (480 /2.0) -1
@@ -352,6 +350,32 @@ Pause audio channel playback
 Pauses audio channel playback.
 
 
+#### Example
+```blitzmax
+' PauseChannel Example
+
+SuperStrict
+
+Graphics 640 , 480
+
+Local noise:TSound = TSound.Load(blitzmaxpath()+"\samples\hitoro\sounds\gameover.ogg",0)
+Local channel:TChannel = PlaySound(noise)
+Local elapsed:Int = MilliSecs()
+
+Repeat
+	Cls
+	DrawText "Press P to play sound" , 10 , 10
+	If (MilliSecs() - elapsed) > 500
+		PauseChannel(channel) ' pause after 0.5 secs played
+	End If
+	
+	If KeyHit(KEY_P) Then
+		channel = PlaySound(noise)
+		elapsed = MilliSecs() 
+	End If
+	Flip
+Until AppTerminate() Or KeyHit(KEY_ESCAPE)
+```
 
 ### `Function ResumeChannel( channel:TChannel )`
 
@@ -361,6 +385,31 @@ Resume audio channel playback
 Resumes audio channel playback after it has been paused by [CueSound](../../brl/brl.audio/#function-cuesound-tchannel-sound-tsound-channel-tchannel-null) or [PauseChannel](../../brl/brl.audio/#function-pausechannel-channel-tchannel).
 
 
+#### Example
+```blitzmax
+' ResumeChannel example
+SuperStrict
+
+Graphics 640, 480
+
+Local sound:TSound = LoadSound(blitzmaxpath()+"\samples\hitoro\sounds\gameover.ogg")
+Local channel:TChannel = CueSound(sound)
+
+Repeat
+	DrawText "Press A to play sound",10,10
+	DrawText "Press C to Cue sound",10,30
+	
+	If KeyHit(KEY_A) Then
+		ResumeChannel channel
+	End If
+	
+	If KeyHit(KEY_C) Then
+		Channel=CueSound(sound)
+	End If
+
+	Flip
+Until AppTerminate() Or KeyHit(KEY_ESCAPE)
+```
 
 ### `Function AudioDrivers$[]()`
 
@@ -370,6 +419,15 @@ Get audio drivers
 Returns an array of strings, where each string describes an audio driver.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+'Iterate through every available audio driver on your system
+For Local a:String = EachIn AudioDrivers()
+	Print a
+Next
+```
 
 ### `Function AudioDriverExists:Int( name$ )`
 
@@ -379,6 +437,18 @@ Determine if an audio driver exists
 Returns True if the audio drvier specified by <b>driver</b> exists.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+'Iterate through every available audio driver on your system
+For Local a:String = EachIn AudioDrivers()
+	Print a + ":"+AudioDriverExists(a)
+Next
+
+Local a:String ="imaginary driver"
+Print a+":"+AudioDriverExists(a)
+```
 
 ### `Function SetAudioDriver:Int( name$ )`
 
@@ -388,4 +458,34 @@ Set current audio driver
 Returns true if the audio driver was successfully set.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Repeat
+	Print "Select Audio Driver:"
+	Print "1) FreeAudio"
+	Print "2) OpenAL"
+	Print "3) DirectSound"
+
+	Local n:Int
+	Select Input( ">" )
+		Case 1
+			n = SetDriver( "FreeAudio" )
+		Case 2
+			n = SetDriver( "OpenAL" )
+		Case 3
+			n = SetDriver( "DirectSound" )
+	End Select
+	If n Exit
+Forever
+
+Function SetDriver:Int(d:String)
+	If AudioDriverExists(d) Then
+		Return SetAudioDriver(d)
+	Else
+		RuntimeError "Cannot set " + d
+	EndIf
+End Function
+```
 
