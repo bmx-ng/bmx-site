@@ -48,6 +48,21 @@ Stop program execution and enter debugger
 If there is no debugger present, this command is ignored.
 
 
+#### Example
+```blitzmax
+'
+' Run in debug mode
+'
+SuperStrict
+
+Graphics 640,480
+Local a:Int
+
+Repeat
+	a = Rnd(20)
+Until KeyDown(KEY_ESCAPE)
+DebugStop
+```
 
 ### `Function DebugLog( message$ )`
 
@@ -56,6 +71,15 @@ Write a string to debug log
 If there is no debugger present, this command is ignored.
 
 
+#### Example
+```blitzmax
+'
+' Run in debug mode to see the output
+'
+SuperStrict
+
+DebugLog "My debug text"
+```
 
 ### `Function OnEnd( fun() )`
 
@@ -115,6 +139,19 @@ Wait for a given number of milliseconds
 A millisecond is one thousandth of a second.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Print "This is a test line."
+
+Delay 3000
+
+Print "This line was printed 3000 milliseconds later."
+Print "This program will end in 2000 milliseconds."
+
+Delay 2000
+```
 
 ### `Function MilliSecs:Int()`
 
@@ -131,6 +168,16 @@ A millisecond is one thousandth of a second.
 Milliseconds since computer turned on.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local start:Int = MilliSecs()
+
+Input("Type Anything >")
+
+Print "You took "+(MilliSecs()-start)+" milliseconds to type that."
+```
 
 ### `Function MemAlloc:Byte Ptr( size:Size_T )`
 
@@ -349,6 +396,20 @@ Initially, [AppTitle](../../brl/brl.blitz/#global-apptitle-bbapptitle) is set to
 [AppTitle](../../brl/brl.blitz/#global-apptitle-bbapptitle) at any time with a simple assignment.
 
 
+#### Example
+```blitzmax
+'Apptitle Example
+
+SuperStrict
+
+AppTitle = "Just a TITLE"
+Graphics 400, 400
+
+Repeat
+	DrawText "Hello World", 10, 20
+	Flip
+Until AppTerminate()
+```
 
 ### `Global AppArgs$[]="bbAppArgs"`
 
@@ -1095,6 +1156,17 @@ Wend
 
 End a While block
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local i:Int=0
+
+While i < 5
+  Print i
+  i :+ 1
+EndWhile  'can also use Wend
+```
 
 ### `Repeat`
 
@@ -2123,6 +2195,18 @@ Include effectively 'inserts' the specified file into the file being compiled.
 
 Framework builds the BlitzMax application with only the module(s) specified rather than the standard set of modules.
 
+#### Example
+```blitzmax
+' Use the Framework and Import functions to only include the function sets
+' that you want to use
+'
+SuperStrict
+
+Framework Brl.standardio ' so we can use print
+Import Brl.random ' so we can use the Rnd Function
+
+Print Rnd(255)
+```
 
 ### `Import`
 

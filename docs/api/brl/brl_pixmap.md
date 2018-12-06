@@ -78,6 +78,27 @@ Copy a pixmap
 A new pixmap object
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640 , 480
+
+Local pix:TPixmap=LoadPixmap(blitzmaxpath()+"\samples\hitoro\gfx\boing.png")
+If pix = Null Then
+	RuntimeError ("Error Loading Image")
+End If
+
+
+Local newPix:TPixmap=CopyPixmap(pix)
+
+Repeat
+	Cls
+	DrawPixmap pix, 50, 50
+	DrawPixmap newPix, MouseX(), MouseY()
+	Flip
+Until KeyHit(key_escape) Or AppTerminate()
+```
 
 ### `Function ConvertPixmap:TPixmap( pixmap:TPixmap,format )`
 
@@ -100,6 +121,26 @@ Get pixmap width
 The width, in pixels, of <b>pixmap</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+Local pix:TPixmap=LoadPixmap(blitzmaxpath()+"\samples\hitoro\gfx\boing.png")
+
+If pix = Null Then
+	RuntimeError ("Error Loading Image")
+End If
+
+Repeat
+	Cls
+	' Display Information
+	DrawText "Image Width:"+PixmapWidth(pix)+"  Image Height:"+PixmapHeight(pix),0,0 
+
+	DrawPixmap pix,100,100
+	Flip
+Until KeyHit(key_escape) Or AppTerminate()
+```
 
 ### `Function PixmapHeight( pixmap:TPixmap )`
 
@@ -109,6 +150,28 @@ Get pixmap width
 The height, in pixels, of <b>pixmap</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+Local pix:TPixmap = LoadPixmap(blitzmaxpath()+"\samples\hitoro\gfx\boing.png")
+
+If pix = Null Then
+	RuntimeError ("Error Loading Image")
+End If
+
+Repeat
+	Cls
+	
+	' Display Information
+	DrawText "Image Width:"+PixmapWidth(pix)+"  Image Height:"+PixmapHeight(pix),0,0 
+
+	DrawPixmap pix,100,100
+	Flip
+Until KeyHit(key_escape) Or AppTerminate()
+```
 
 ### `Function PixmapPitch( pixmap:TPixmap )`
 
@@ -179,6 +242,35 @@ Flip a pixmap horizontally
 A new pixmap object
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+Local pix:TPixmap=LoadPixmap(blitzmaxpath()+"\samples\hitoro\gfx\boing.png")
+
+If pix = Null Then
+	RuntimeError ("Error Loading Image")
+End If
+
+Repeat
+	Cls
+	DrawText "Press Key X or Y to change Orientation" , 10 , 10
+	
+	' Change pixmap orientation
+	If KeyHit(KEY_X) Then
+		pix = XFlipPixmap(pix)
+	End If
+	
+	If KeyHit(KEY_Y) Then
+		pix = YFlipPixmap(pix)
+	End If
+	
+	DrawPixmap pix,50,50
+	Flip
+Until KeyHit(key_escape) Or AppTerminate()
+```
 
 ### `Function YFlipPixmap:TPixmap( pixmap:TPixmap ) NoDebug`
 
@@ -188,6 +280,35 @@ Flip a pixmap vertically
 A new pixmap object
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+Local pix:TPixmap=LoadPixmap(blitzmaxpath()+"\samples\hitoro\gfx\boing.png")
+
+If pix = Null Then
+	RuntimeError ("Error Loading Image")
+End If
+
+Repeat
+	Cls
+	DrawText "Press Key X or Y to change Orientation" , 10 , 10
+	
+	' Change pixmap orientation
+	If KeyHit(KEY_X) Then
+		pix = XFlipPixmap(pix)
+	End If
+	
+	If KeyHit(KEY_Y) Then
+		pix = YFlipPixmap(pix)
+	End If
+	
+	DrawPixmap pix,50,50
+	Flip
+Until KeyHit(key_escape) Or AppTerminate()
+```
 
 ### `Function ResizePixmap:TPixmap( pixmap:TPixmap,width,height ) NoDebug`
 
@@ -197,6 +318,28 @@ Resize a pixmap
 A new pixmap object of the specified <b>width</b> and <b>height</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640 , 480
+
+Local pix:TPixmap=LoadPixmap(blitzmaxpath()+"\samples\hitoro\gfx\boing.png")
+
+If pix = Null Then
+	RuntimeError ("Error Loading Image")
+End If
+
+'Reduce Image by 50%
+Local newPix:TPixmap=ResizePixmap(pix, Int(PixmapWidth(pix)*.5), Int(PixmapHeight(pix)*.5))
+
+Repeat
+	Cls
+	DrawPixmap pix, 50, 50
+	DrawPixmap newPix, MouseX() , MouseY()
+	Flip
+Until KeyHit(key_escape) Or AppTerminate()
+```
 
 ### `Function LoadPixmap:TPixmap( url:Object )`
 
@@ -206,6 +349,23 @@ Load a pixmap
 A pixmap object
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+Local player:TPixmap=LoadPixmap(blitzmaxpath()+"\samples\hitoro\gfx\boing.png")
+
+If player = Null Then
+	RuntimeError ("Error Loading Image")
+End If
+
+Repeat
+	Cls
+	DrawPixmap Player,10,10
+	Flip
+Until KeyHit(key_escape) Or AppTerminate()
+```
 
 ### `Function ReadPixel( pixmap:TPixmap,x,y )`
 
@@ -248,4 +408,26 @@ The 32 bit <b>argb</b> value contains the following components:
 
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 800 , 600
+
+Local mypix:TPixmap = LoadPixmap(BlitzMaxPath()+"/samples/hitoro/gfx/boing.png")
+If mypix = Null Then
+	RuntimeError ("Error Loading Image")
+End If
+
+DrawPixmap mypix, 0, 0
+
+ClearPixels(mypix, $FFFFFF)
+ 
+
+DrawPixmap mypix, 300, 0
+
+Flip
+
+WaitKey
+```
 

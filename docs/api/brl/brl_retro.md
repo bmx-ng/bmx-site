@@ -42,6 +42,13 @@ For compatibility with classic BASIC, the <b>pos</b> parameter is 'one based'.
 A sequence of characters from <b>str</b> starting at position <b>pos</b> and of length <b>size</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local a:String = "abcd1234efgh"
+Print Mid(a,5,5)   ' prints 1234e
+```
 
 ### `Function Instr( str$,sub$,start=1 )`
 
@@ -58,6 +65,20 @@ are both 'one based'.
 The position within <b>str</b> of the first matching occurance of <b>sub</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local mystring:String = "*sniffage*, I need more media!"
+
+' check for the position
+Print Instr(mystring,"more")
+
+If Instr(mystring,"new PC") Print "large!"
+If Not Instr(mystring,"new PC") Print "*sniff*"
+
+If Instr(mystring,"media") Print "large!"
+```
 
 ### `Function Left$( str$,n )`
 
@@ -73,6 +94,12 @@ characters from the start of the String in a new String.
 <b>size</b> leftmost characers of <b>str</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Print Left("12345678",4)   ' prints 1234
+```
 
 ### `Function Right$( str$,n )`
 
@@ -88,6 +115,12 @@ characters from the end of the String.
 <b>size</b> rightmost characters of <b>str</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Print Right("12345678",4)   ' prints 5678
+```
 
 ### `Function LSet$( str$,n )`
 
@@ -97,6 +130,18 @@ Left justify string
 A string of length <b>n</b>, padded with spaces
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Print LSet("12345678",3)
+Print "["+LSet("12345678",10)+"]"
+
+' ==============
+' Output
+' 123
+' [12345678  ]
+```
 
 ### `Function RSet$( str$,n )`
 
@@ -106,6 +151,18 @@ Right justify string
 A string of length <b>n</b>, padded with spaces
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Print RSet("12345678",3)
+Print "["+RSet("12345678",10)+"]"
+
+' ==============
+' Output
+' 678
+' [  12345678]
+```
 
 ### `Function Replace$( str$,sub$,replaceWith$ )`
 
@@ -119,6 +176,17 @@ The Replace$ command replaces all instances of one string with another.
 A string with all instances of <b>sub</b>$ replaced by <b>replace</b>$
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Local str:String = "This is a test of the Replace command."
+Print "Original: "+str
+
+str = Replace(str,"e","*")
+
+Print "Altered: "+str
+```
 
 ### `Function Trim$( str$ )`
 
@@ -137,6 +205,12 @@ Convert string to lowercase
 Lowercase equivalent of <b>str</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Print Lower("abcdEFGH")     ' prints abcdefgh
+```
 
 ### `Function Upper$( str$ )`
 
@@ -146,6 +220,12 @@ Convert string to uppercase
 Uppercase equivalent of <b>str</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Print Upper("Hello World") ' prints HELLO WORLD
+```
 
 ### `Function Hex$( val )`
 
@@ -155,6 +235,15 @@ Convert an integer value to a hexadecimal string
 The hexadecimal string representation of <b>val</b>
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+For Local t:Int=0 To 255
+	If Not(t Mod 16) Print
+	Print "decimal: "+RSet(t,3)+" | hex: "+Hex(t)
+Next
+```
 
 ### `Function Bin$( val )`
 
@@ -164,6 +253,16 @@ Convert an integer value to a binary string
 The binary string representation of <b>val</b>
 
 
+#### Example
+```blitzmax
+' Prints the binary representation of a number
+
+SuperStrict
+
+Print Bin(1)
+Print Bin(554)
+Print Bin(1 | 554) ' OR in action
+```
 
 ### `Function LongHex$( val:Long )`
 

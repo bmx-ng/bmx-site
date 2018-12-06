@@ -22,6 +22,23 @@ Get app suspended state
 True if application is currently suspended.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+SetGraphicsDriver GLMax2DDriver()
+Graphics 800,600
+
+While Not KeyHit(KEY_ESCAPE)
+	Cls
+	If AppSuspended() = True
+		DrawText "Application Suspended!",10,10
+	Else
+		DrawText "Application Running...",10,10
+	EndIf
+	Flip
+Wend
+```
 
 ### `Function AppTerminate()`
 
@@ -338,6 +355,16 @@ See the key codes module for a list of valid keycodes.
 The keycode of the pressed key
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+DrawText "Press any key to end this program.", 10 , 10
+Flip
+WaitKey()
+```
 
 ### `Function WaitChar()`
 
@@ -368,6 +395,19 @@ clicked or 3 if the middle mouse button was clicked.
 The clicked button
 
 
+#### Example
+```blitzmax
+'detects which mouse button was pressed 
+
+SuperStrict
+
+Graphics 640,480
+
+Repeat
+	DrawText "Click Mouse to exit" , 200 , 200
+	Flip 
+Until WaitMouse()
+```
 
 ### `Function SetAutoPoll(value:Int)`
 

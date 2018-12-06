@@ -24,6 +24,22 @@ If <b>event</b> is Null, an event with an <b>id</b> equal to EVENT_TIMERTICK and
 A new timer object
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+'Maximum allowable Timer is 16
+Global timers:TTimer[500]
+
+For Local n:Int = 0 Until 18
+	timers[n] = CreateTimer(1)
+	If timers[n] = Null
+		Print "Cannot create timer "+n
+	Else
+		Print "Successfully created timer "+n
+	EndIf
+Next
+```
 
 ### `Function TimerTicks:Int( timer:TTimer )`
 
