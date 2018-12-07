@@ -29,6 +29,7 @@ If <b>count</b> bytes were not successfully read, a [TStreamReadException](../..
 occurs due to end of file.
 
 
+<br/>
 
 ### `Method WriteBytes:Long( buf:Byte Ptr,count:Long )`
 
@@ -41,6 +42,7 @@ If <b>count</b> bytes were not successfully written, a [TStreamWriteException](.
 occurs due to end of file.
 
 
+<br/>
 
 ### `Method SkipBytes:Long( count:Long )`
 
@@ -53,6 +55,7 @@ If <b>count</b> bytes were not successfully read, a [TStreamReadException](../..
 occurs due to end of file.
 
 
+<br/>
 
 ### `Method ReadByte:Int()`
 
@@ -66,6 +69,7 @@ If a value could not be read (possibly due to end of file), a [TStreamReadExcept
 The read value
 
 
+<br/>
 
 ### `Method WriteByte( n:Int )`
 
@@ -75,6 +79,7 @@ Write a byte to the stream
 If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
+<br/>
 
 ### `Method ReadShort:Int()`
 
@@ -88,6 +93,7 @@ If a value could not be read (possibly due to end of file), a [TStreamReadExcept
 The read value
 
 
+<br/>
 
 ### `Method WriteShort( n:Int )`
 
@@ -97,6 +103,7 @@ Write a short (two bytes) to the stream
 If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
+<br/>
 
 ### `Method ReadInt:Int()`
 
@@ -110,6 +117,7 @@ If a value could not be read (possibly due to end of file), a [TStreamReadExcept
 The read value
 
 
+<br/>
 
 ### `Method WriteInt( n:Int )`
 
@@ -119,6 +127,7 @@ Write an int (four bytes) to the stream
 If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
+<br/>
 
 ### `Method ReadLong:Long()`
 
@@ -132,6 +141,7 @@ If a value could not be read (possibly due to end of file), a [TStreamReadExcept
 The read value
 
 
+<br/>
 
 ### `Method WriteLong( n:Long )`
 
@@ -141,6 +151,7 @@ Write a long (eight bytes) to the stream
 If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
+<br/>
 
 ### `Method ReadFloat#()`
 
@@ -154,6 +165,7 @@ If a value could not be read (possibly due to end of file), a [TStreamReadExcept
 The read value
 
 
+<br/>
 
 ### `Method WriteFloat( n# )`
 
@@ -163,6 +175,7 @@ Write a float (four bytes) to the stream
 If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
+<br/>
 
 ### `Method ReadDouble!()`
 
@@ -176,6 +189,7 @@ If a value could not be read (possibly due to end of file), a [TStreamReadExcept
 The read value
 
 
+<br/>
 
 ### `Method WriteDouble( n! )`
 
@@ -185,6 +199,7 @@ Write a double (eight bytes) to the stream
 If the value could not be written (possibly due to end of file), a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown.
 
 
+<br/>
 
 ### `Method ReadLine$()`
 
@@ -200,6 +215,7 @@ The bytes read are returned in the form of a string, excluding any terminating n
 or null character.
 
 
+<br/>
 
 ### `Method WriteLine:Int( str$ )`
 
@@ -213,6 +229,7 @@ followed by the line terminating sequence "rn".
 True if line successfully written, else False
 
 
+<br/>
 
 ### `Method ReadString$( length:Int )`
 
@@ -226,6 +243,7 @@ A [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown
 A string composed of <b>length</b> bytes read from the stream
 
 
+<br/>
 
 ### `Method WriteString( str$ )`
 
@@ -235,4 +253,5 @@ Write characters to the stream
 A [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
 
 
+<br/>
 

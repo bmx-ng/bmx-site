@@ -59,6 +59,7 @@ Print "Estimated probability = " + ( Float( count[1] ) / Float( trials ) )
 Print
 Print "    Exact probability = " + ( 15.0 / 29.0 )
 ```
+<br/>
 
 ### `Function RndDouble!()`
 
@@ -96,6 +97,7 @@ Print "Estimated probability = " + ( Double( count[1] ) / Double( trials ) )
 Print
 Print "    Exact probability = " + ( 15.0 / 29.0 )
 ```
+<br/>
 
 ### `Function Rnd!( min_value!=1,max_value!=0 )`
 
@@ -135,6 +137,7 @@ Print "Estimated area = " + ( 4.0 * Double(inpoints)/Double(totalpoints) )
 Print
 Print "    Exact area = " + Pi     '  4 * Pi/4, compare with estimate
 ```
+<br/>
 
 ### `Function Rand:Int( min_value:Int,max_value:Int=1 )`
 
@@ -170,6 +173,7 @@ For Local toss:Int = 2 To 12
     Print LSet(toss, 5)+count[toss]
 Next
 ```
+<br/>
 
 ### `Function SeedRnd( seed:Int )`
 
@@ -200,6 +204,7 @@ For Local k:Int = 1 To 10
 Print Rand(10)
 Next
 ```
+<br/>
 
 ### `Function RndSeed:Int()`
 
@@ -238,4 +243,5 @@ For local k:int = 1 To 10
 	Print Rand(10)
 Next
 ```
+<br/>
 

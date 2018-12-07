@@ -20,4 +20,5 @@ Sets the type of encoding.
 One of [SDL_HAPTIC_POLAR](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-polar-int-0), [SDL_HAPTIC_CARTESIAN](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-cartesian-int-1) or [SDL_HAPTIC_SPHERICAL](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-spherical-int-2).
 
 
+<br/>
 

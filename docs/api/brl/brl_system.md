@@ -24,11 +24,13 @@ Initialises the BlitzMax system driver.
 There can only be one system driver initialised. A second call to this function will result in an exception.
 
 
+<br/>
 
 ### `Function SystemDriver:TSystemDriver()`
 
 Returns the BlitzMax system driver, or throws an exception if [InitSystemDriver](../../brl/brl.system/#function-initsystemdriver-driver-tsystemdriver)() hasn't been called with one.
 
+<br/>
 
 ### `Function PollSystem()`
 
@@ -44,6 +46,7 @@ event, an equivalent [TEvent](../../brl/brl.event/tevent) object event will be g
 the [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid) hook.
 
 
+<br/>
 
 ### `Function WaitSystem()`
 
@@ -61,6 +64,7 @@ event, an equivalent [TEvent](../../brl/brl.event/tevent) object will be generat
 the [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid) hook.
 
 
+<br/>
 
 ### `Function CurrentDate$(_format$="%d <i>b</i> <i>Y</i>")`
 
@@ -85,6 +89,7 @@ The current date as a string
 
 Print "The date is "+CurrentDate$()
 ```
+<br/>
 
 ### `Function CurrentTime$()`
 
@@ -104,6 +109,7 @@ The current time as a string
 
 Print "The time is "+CurrentTime$()
 ```
+<br/>
 
 ### `Function MoveMouse( x,y )`
 
@@ -114,16 +120,19 @@ Move mouse pointer
 the current window or graphics display.
 
 
+<br/>
 
 ### `Function ShowMouse()`
 
 Make the mouse pointer visible
 
+<br/>
 
 ### `Function HideMouse()`
 
 Make the mouse pointer invisible
 
+<br/>
 
 ### `Function Notify( text$,serious=False )`
 
@@ -142,6 +151,7 @@ Note that a user interface may not be available when in graphics mode on some pl
 
 Notify "Hello World"
 ```
+<br/>
 
 ### `Function Confirm( text$,serious=False )`
 
@@ -167,6 +177,7 @@ result=Confirm("Are you sure?")
 
 print result
 ```
+<br/>
 
 ### `Function Proceed( text$,serious=False )`
 
@@ -192,6 +203,7 @@ result=Proceed("Are you sure you want to continue?")
 
 print result
 ```
+<br/>
 
 ### `Function RequestFile$( text$,extensions$="",save_flag=False,initial_path$="" )`
 
@@ -223,6 +235,7 @@ filename$=RequestFile( "Select graphic file to open",filter$ )
 
 Print filename
 ```
+<br/>
 
 ### `Function RequestDir$( text$,initial_path$="" )`
 
@@ -248,6 +261,7 @@ path$=RequestDir("Select a Folder",CurrentDir())
 
 Print "directory selected was "+path
 ```
+<br/>
 
 ### `Function OpenURL( url$ )`
 
@@ -256,6 +270,7 @@ Opens a URL with the system's default web browser.
 Note that a user interface may not be available when in graphics mode on some platforms.
 
 
+<br/>
 
 ### `Function DesktopWidth()`
 
@@ -265,6 +280,7 @@ Get desktop width
 Width of the desktop, in pixels
 
 
+<br/>
 
 ### `Function DesktopHeight()`
 
@@ -274,6 +290,7 @@ Get desktop height
 Height of the desktop, in pixels
 
 
+<br/>
 
 ### `Function DesktopDepth()`
 
@@ -289,6 +306,7 @@ Note that on some platforms this function may return 0 if the desktop depth cann
 Bits per pixel depth of the desktop
 
 
+<br/>
 
 ### `Function DesktopHertz()`
 
@@ -302,4 +320,5 @@ Note that on some platforms this function may return 0 if the desktop refresh ra
 Refresh rate, in cycles per second, of the desktop
 
 
+<br/>
 

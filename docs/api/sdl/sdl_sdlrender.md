@@ -35,6 +35,7 @@ For advanced functionality like particle effects or actual 3D you should use SDL
 
 Gets the number of 2D rendering drivers available for the current display.
 
+<br/>
 
 ## Consts
 
@@ -42,49 +43,59 @@ Gets the number of 2D rendering drivers available for the current display.
 
 changes rarely, not lockable
 
+<br/>
 
 ### `Const SDL_TEXTUREACCESS_STREAMING:Int = 1`
 
 changes frequently, lockable
 
+<br/>
 
 ### `Const SDL_TEXTUREACCESS_TARGET:Int = 2`
 
 can be used as a render target
 
+<br/>
 
 ### `Const SDL_FLIP_NONE:Int = 0`
 
 do not flip
 
+<br/>
 
 ### `Const SDL_FLIP_HORIZONTAL:Int = 1`
 
 flip horizontally
 
+<br/>
 
 ### `Const SDL_FLIP_VERTICAL:Int = 2`
 
 flip vertically
 
+<br/>
 
 ### `Const SDL_RENDERER_SOFTWARE:Int = $01`
 
 the renderer is a software fallback
 
+<br/>
 
 ### `Const SDL_RENDERER_ACCELERATED:Int = $02`
 
 the renderer uses hardware acceleration
 
+<br/>
 
 ### `Const SDL_RENDERER_PRESENTVSYNC:Int = $04`
 
 present is synchronized with the refresh rate
 
+<br/>
 
 ### `Const SDL_RENDERER_TARGETTEXTURE:Int = $08`
 
 the renderer supports rendering to texture
 
+<br/>
 

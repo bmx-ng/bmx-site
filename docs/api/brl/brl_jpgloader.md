@@ -21,6 +21,7 @@ Load a Pixmap in JPeg format
 If the pixmap cannot be loaded, Null is returned.
 
 
+<br/>
 
 ### `Function SavePixmapJPeg( pixmap:TPixmap,url:Object,quality=75 )`
 
@@ -34,4 +35,5 @@ The optional <b>quality</b> parameter should be in the range 0 to 100, where
 0 indicates poor quality (smallest) and 100 indicates best quality (largest).
 
 
+<br/>
 

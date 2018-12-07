@@ -62,6 +62,7 @@ PlaySound sound
 
 Input "Press any key to continue"
 ```
+<br/>
 
 ### `Function PlaySound:TChannel( sound:TSound,channel:TChannel=Null )`
 
@@ -89,6 +90,7 @@ PlaySound sound
 
 Input "Press any key to continue"
 ```
+<br/>
 
 ### `Function CueSound:TChannel( sound:TSound,channel:TChannel=Null )`
 
@@ -122,6 +124,7 @@ ResumeChannel channel
 
 Input "Press return key to quit"
 ```
+<br/>
 
 ### `Function AllocChannel:TChannel()`
 
@@ -152,6 +155,7 @@ For Local i:Int = 1 To 20
 	PlaySound sound,channel
 Next
 ```
+<br/>
 
 ### `Function StopChannel( channel:TChannel )`
 
@@ -176,6 +180,7 @@ StopChannel channel
 
 Input "Press return key to quit"
 ```
+<br/>
 
 ### `Function ChannelPlaying:Int( channel:TChannel )`
 
@@ -205,6 +210,7 @@ While True
 	Print "ChannelPlaying(channel)="+ChannelPlaying(channel)
 Wend
 ```
+<br/>
 
 ### `Function SetChannelVolume( channel:TChannel,volume# )`
 
@@ -231,6 +237,7 @@ For Local volume#=.1 To 2 Step .05
 	ResumeChannel channel
 Next
 ```
+<br/>
 
 ### `Function SetChannelPan( channel:TChannel,pan# )`
 
@@ -271,6 +278,7 @@ Until KeyHit (KEY_ESCAPE)
 
 End
 ```
+<br/>
 
 ### `Function SetChannelDepth( channel:TChannel,depth# )`
 
@@ -312,6 +320,7 @@ Until KeyHit (KEY_ESCAPE)
 
 End
 ```
+<br/>
 
 ### `Function SetChannelRate( channel:TChannel,rate# )`
 
@@ -341,6 +350,7 @@ For Local rate#=1.0 To 4 Step 0.01
 	SetChannelRate channel,rate
 Next
 ```
+<br/>
 
 ### `Function PauseChannel( channel:TChannel )`
 
@@ -376,6 +386,7 @@ Repeat
 	Flip
 Until AppTerminate() Or KeyHit(KEY_ESCAPE)
 ```
+<br/>
 
 ### `Function ResumeChannel( channel:TChannel )`
 
@@ -410,6 +421,7 @@ Repeat
 	Flip
 Until AppTerminate() Or KeyHit(KEY_ESCAPE)
 ```
+<br/>
 
 ### `Function AudioDrivers$[]()`
 
@@ -428,6 +440,7 @@ For Local a:String = EachIn AudioDrivers()
 	Print a
 Next
 ```
+<br/>
 
 ### `Function AudioDriverExists:Int( name$ )`
 
@@ -449,6 +462,7 @@ Next
 Local a:String ="imaginary driver"
 Print a+":"+AudioDriverExists(a)
 ```
+<br/>
 
 ### `Function SetAudioDriver:Int( name$ )`
 
@@ -488,4 +502,5 @@ Function SetDriver:Int(d:String)
 	EndIf
 End Function
 ```
+<br/>
 

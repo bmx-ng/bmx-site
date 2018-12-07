@@ -16,19 +16,23 @@ One motor is high frequency, the other is low frequency.
 
 Creates a new instance of the effect.
 
+<br/>
 
 ### `Method SetLength(value:UInt)`
 
 Sets the duration of the effect.
 
+<br/>
 
 ### `Method SetLargeMagnitude(value:Short)`
 
 Sets the control of the large controller motor.
 
+<br/>
 
 ### `Method SetSmallMagnitude(value:Short)`
 
 Sets the control of the small controller motor.
 
+<br/>
 

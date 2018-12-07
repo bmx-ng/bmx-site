@@ -57,6 +57,7 @@ PlaySound(sound)
 
 Input
 ```
+<br/>
 
 ### `Function CreateStaticAudioSample:TAudioSample( samples:Byte Ptr,length,hertz,format )`
 
@@ -73,6 +74,7 @@ See [CreateAudioSample](../../brl/brl.audiosample/#function-createaudiosample-ta
 An audio sample object that references an existing block of memory
 
 
+<br/>
 
 ### `Function LoadAudioSample:TAudioSample( url:Object )`
 
@@ -82,4 +84,5 @@ Load an audio sample
 An audio sample object
 
 
+<br/>
 

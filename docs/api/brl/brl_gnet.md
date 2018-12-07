@@ -45,6 +45,7 @@ connect to other hosts with [GNetConnect](../../brl/brl.gnet/#function-gnetconne
 A new GNet host
 
 
+<br/>
 
 ### `Function CloseGNetHost( host:TGNetHost )`
 
@@ -54,6 +55,7 @@ Close a GNet host
 Once closed, a GNet host cannot be reopened.
 
 
+<br/>
 
 ### `Function GNetSync( host:TGNetHost )`
 
@@ -65,6 +67,7 @@ use the [GNetObjects](../../brl/brl.gnet/#function-gnetobjects-tlist-host-tgneth
 or closed.
 
 
+<br/>
 
 ### `Function GNetListen( host:TGNetHost,port )`
 
@@ -82,6 +85,7 @@ is already listening or has already connected to a remote host using [GNetConnec
 True if successful, otherwise false
 
 
+<br/>
 
 ### `Function GNetConnect( host:TGNetHost,address$,port,timeout_ms=10000 )`
 
@@ -98,6 +102,7 @@ connection to succeed.
 True if connection successful, otherwise false
 
 
+<br/>
 
 ### `Function GNetObjects:TList( host:TGNetHost,state=GNET_ALL )`
 
@@ -116,6 +121,7 @@ Note that with the exception of &GNET_ALL, the returned lists will only ever con
 A linked list
 
 
+<br/>
 
 ### `Function GNetMessages:TList( host:TGNetHost )`
 
@@ -125,6 +131,7 @@ Get a list of GNet messages sent to local objects
 A linked list
 
 
+<br/>
 
 ### `Function CreateGNetObject:TGNetObject( host:TGNetHost )`
 
@@ -134,6 +141,7 @@ Create a GNet object
 A new GNet object
 
 
+<br/>
 
 ### `Function CreateGNetMessage:TGNetObject( host:TGNetHost )`
 
@@ -143,11 +151,13 @@ Create a GNet message object
 A new GNet object
 
 
+<br/>
 
 ### `Function SendGNetMessage( msg:TGNetObject,toObject:TGNetObject )`
 
 Send a GNet message to a remote object
 
+<br/>
 
 ### `Function GNetMessageObject:TGNetObject( msg:TGNetObject )`
 
@@ -157,6 +167,7 @@ Get message target object
 The object that <b>msg</b> was sent to
 
 
+<br/>
 
 ### `Function GNetObjectState( obj:TGNetObject )`
 
@@ -181,6 +192,7 @@ by GameNet. Therefore, such objects will never appear in any list returned by th
 An integer state
 
 
+<br/>
 
 ### `Function GNetObjectLocal( obj:TGNetObject )`
 
@@ -190,6 +202,7 @@ Determine whether a GNet object is local
 True if object is a local object
 
 
+<br/>
 
 ### `Function GNetObjectRemote( obj:TGNetObject )`
 
@@ -199,36 +212,43 @@ Determine whether a GNet object is remote
 True if object is a remote object
 
 
+<br/>
 
 ### `Function SetGNetInt( obj:TGNetObject,index,value )`
 
 Set GNet object int data
 
+<br/>
 
 ### `Function SetGNetFloat( obj:TGNetObject,index,value# )`
 
 Set GNet object float data
 
+<br/>
 
 ### `Function SetGNetString( obj:TGNetObject,index,value$ )`
 
 Set GNet object string data
 
+<br/>
 
 ### `Function GetGNetInt( obj:TGNetObject,index )`
 
 Get GNet object int data
 
+<br/>
 
 ### `Function GetGNetFloat#( obj:TGNetObject,index )`
 
 Get GNet object float data
 
+<br/>
 
 ### `Function GetGNetString$( obj:TGNetObject,index )`
 
 Get GNet object string data
 
+<br/>
 
 ### `Function SetGNetTarget( obj:TGNetObject,target:Object )`
 
@@ -238,6 +258,7 @@ Set a GNet object's target object
 This command allows you to bind an abitrary object to a GNet object.
 
 
+<br/>
 
 ### `Function GetGNetTarget:Object( obj:TGNetObject )`
 
@@ -247,9 +268,11 @@ Get a GNet object's target object
 The currently bound target object
 
 
+<br/>
 
 ### `Function CloseGNetObject( obj:TGNetObject )`
 
 Close a GNet object
 
+<br/>
 

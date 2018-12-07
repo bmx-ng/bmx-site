@@ -55,6 +55,7 @@ For Local a:String = EachIn list
 	Print a
 Next
 ```
+<br/>
 
 ### `Function ClearList( list:TList )`
 
@@ -63,6 +64,7 @@ Clear a linked list
 Removes all objects from <b>list</b>.
 
 
+<br/>
 
 ### `Function CountList( list:TList )`
 
@@ -72,6 +74,7 @@ Count list length
 The numbers of objects in <b>list</b>.
 
 
+<br/>
 
 ### `Function ListIsEmpty( list:TList )`
 
@@ -81,6 +84,7 @@ Check if list is empty
 True if list is empty, else false
 
 
+<br/>
 
 ### `Function ListContains( list:TList,value:Object )`
 
@@ -90,11 +94,13 @@ Check if list contains a value
 True if list contains <b>value</b>, else false
 
 
+<br/>
 
 ### `Function SortList( list:TList,ascending=True,compareFunc( o1:Object,o2:Object ) )`
 
 Sort a list
 
+<br/>
 
 ### `Function ListFromArray:TList( arr:Object[] )`
 
@@ -104,6 +110,7 @@ Create a list from an array
 A new linked list
 
 
+<br/>
 
 ### `Function ListToArray:Object[]( list:TList )`
 
@@ -113,16 +120,19 @@ convert a list to an array
 An array of objects
 
 
+<br/>
 
 ### `Function SwapLists( list_x:TList,list_y:TList )`
 
 Swap the contents of 2 lists
 
+<br/>
 
 ### `Function ReverseList( list:TList )`
 
 Reverse the order of elements of a list
 
+<br/>
 
 ### `Function ListFindLink:TLink( list:TList,value:Object )`
 
@@ -132,6 +142,7 @@ Find a link in a list
 The link containting <b>value</b>
 
 
+<br/>
 
 ### `Function ListAddLast:TLink( list:TList,value:Object )`
 
@@ -141,6 +152,7 @@ Add an object to a linked list
 A link object
 
 
+<br/>
 
 ### `Function ListAddFirst:TLink( list:TList,value:Object )`
 
@@ -150,6 +162,7 @@ Add an object to a linked list
 A link object
 
 
+<br/>
 
 ### `Function ListRemove( list:TList,value:Object )`
 
@@ -158,6 +171,7 @@ Remove an object from a linked list
 [ListRemove](../../brl/brl.linkedlist/#function-listremove-list-tlist-value-object) scans a list for the specified value and removes its link.
 
 
+<br/>
 
 ### `Function RemoveLink( link:TLink )`
 
@@ -166,4 +180,5 @@ Remove an object from a linked list
 [RemoveLink](../../brl/brl.linkedlist/#function-removelink-link-tlink) is more efficient than [ListRemove](../../brl/brl.linkedlist/#function-listremove-list-tlist-value-object).
 
 
+<br/>
 

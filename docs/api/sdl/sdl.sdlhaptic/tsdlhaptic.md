@@ -17,11 +17,13 @@ Gets the haptic device's supported features in bitwise manner.
 A list of supported haptic features in bitwise manner (OR'd), or 0 on failure.
 
 
+<br/>
 
 ### `Method Index:Int()`
 
 Gets the index of the haptic device.
 
+<br/>
 
 ### `Method Pause:Int()`
 
@@ -31,6 +33,7 @@ Pauses the haptic device.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method Unpause:Int()`
 
@@ -39,6 +42,7 @@ Unpauses the haptic device.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method StopAll:Int()`
 
@@ -48,6 +52,7 @@ Stops all the currently playing effects on the haptic device.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method NumAxes:Int()`
 
@@ -56,6 +61,7 @@ Gets the number of haptic axes the device has.
 The number of haptic axes might be useful if working with the [Direction](../../../sdl/sdl.sdlhaptic/tsdlhapticconstant/#method-direction-tsdlhapticdirection) effect.
 
 
+<br/>
 
 ### `Method EffectSupported:Int(effect:TSDLHapticEffect)`
 
@@ -64,6 +70,7 @@ Checks to see if an effect is supported by a haptic device.
 True if effect is supported, False if it isn't, or a negative error code on failure.
 
 
+<br/>
 
 ### `Method NumEffects:Int()`
 
@@ -73,6 +80,7 @@ On some platforms this isn't fully supported, and therefore is an approximation.
 Always check to see if your created effect was actually created and do not rely solely on [NumEffects](../../../sdl/sdl.sdlhaptic/tsdlhaptic/#method-numeffects-int)().
 
 
+<br/>
 
 ### `Method NumEffectsPlaying:Int()`
 
@@ -81,6 +89,7 @@ Gets the number of effects a haptic device can play at the same time.
 This is not supported on all platforms, but will always return a value. Added here for the sake of completeness.
 
 
+<br/>
 
 ### `Method NewEffect:Int(effect:TSDLHapticEffect)`
 
@@ -90,6 +99,7 @@ Creates a new haptic effect on the device.
 The ID of the effect on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method RunEffect:Int(effect:Int, iterations:UInt)`
 
@@ -103,6 +113,7 @@ If you only want the effect to last forever, set SDL_HAPTIC_INFINITY in the effe
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method StopEffect:Int(effect:Int)`
 
@@ -112,6 +123,7 @@ Stops the haptic effect on the device.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method EffectStatus:Int(effect:Int)`
 
@@ -124,6 +136,7 @@ Device must support the [SDL_HAPTIC_STATUS](../../../sdl/sdl.sdlhaptic/#const-sd
 0 if it isn't playing, 1 if it is playing, or a negative error code on failure.
 
 
+<br/>
 
 ### `Method DestroyEffect(effect:Int)`
 
@@ -132,6 +145,7 @@ Destroys the haptic effect on the device.
 This will stop the effect if it's running. Effects are automatically destroyed when the device is closed.
 
 
+<br/>
 
 ### `Method RumbleInit:Int()`
 
@@ -141,11 +155,13 @@ Initializes the haptic device for simple rumble playback.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method RumblePlay:Int(strength:Float, length:UInt)`
 
 Runs a simple rumble effect on a haptic device.
 
+<br/>
 
 ### `Method RumbleStop:Int()`
 
@@ -155,11 +171,13 @@ Stops the simple rumble on the haptic device.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method RumbleSupported:Int()`
 
 Checks whether rumble is supported on the haptic device.
 
+<br/>
 
 ### `Method SetAutocenter:Int(value:Int)`
 
@@ -169,16 +187,19 @@ Sets the global autocenter of the haptic device.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method SetGain:Int(value:Int)`
 
 Sets the global gain of the haptic device.
 
+<br/>
 
 ### `Method Close()`
 
 Closes the haptic device.
 
+<br/>
 
 ## Functions
 
@@ -191,6 +212,7 @@ When opening a haptic device, its gain will be set to maximum and autocenter wil
 To modify these values use SetGain() and SetAutocenter().
 
 
+<br/>
 
 ### `Function OpenFromJoystick:TSDLHaptic(joystick:TSDLJoystick)`
 
@@ -205,11 +227,13 @@ If not, on some implementations the haptic device will also get unallocated and 
 Aa valid haptic device on success or NULL on failure.
 
 
+<br/>
 
 ### `Function MouseIsHaptic:Int()`
 
 Gets whether or not the current mouse has haptic capabilities.
 
+<br/>
 
 ### `Function OpenFromMouse:TSDLHaptic()`
 
@@ -219,16 +243,19 @@ Opens a haptic device from the current mouse.
 The haptic device or NULL on failure.
 
 
+<br/>
 
 ### `Function NumHaptics:Int()`
 
 Counts the number of haptic devices attached to the system.
 
+<br/>
 
 ### `Function Name:String(device:Int)`
 
 Gets the implementation dependent name of the haptic device.
 
+<br/>
 
 ### `Function Opened:Int(device:Int)`
 
@@ -238,4 +265,5 @@ Checks if the haptic device at the designated index has been opened.
 Returns True if it has been opened, False if it hasn't or on failure.
 
 
+<br/>
 

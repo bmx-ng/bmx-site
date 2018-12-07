@@ -69,6 +69,7 @@ Repeat
 	Flip
 Until AppTerminate() Or KeyHit(KEY_ESCAPE)
 ```
+<br/>
 
 ### `Method Cue:TChannel( alloced_channel:TChannel=Null )`
 
@@ -113,6 +114,7 @@ Repeat
 	Flip
 Until AppTerminate() Or KeyHit(KEY_ESCAPE)
 ```
+<br/>
 
 ## Functions
 
@@ -155,4 +157,5 @@ Repeat
 	Flip
 Until AppTerminate() Or KeyHit(KEY_ESCAPE)
 ```
+<br/>
 

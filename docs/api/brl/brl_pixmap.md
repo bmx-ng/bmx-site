@@ -54,6 +54,7 @@ be used to set all pixels to a known value prior to use.
 A new pixmap object of the specified <b>width</b> and <b>height</b>
 
 
+<br/>
 
 ### `Function CreateStaticPixmap:TPixmap( pixels:Byte Ptr,width,height,pitch,format )`
 
@@ -69,6 +70,7 @@ See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmap-tpixmap-width-hei
 A new pixmap object that references an existing block of memory
 
 
+<br/>
 
 ### `Function CopyPixmap:TPixmap( pixmap:TPixmap )`
 
@@ -99,6 +101,7 @@ Repeat
 	Flip
 Until KeyHit(key_escape) Or AppTerminate()
 ```
+<br/>
 
 ### `Function ConvertPixmap:TPixmap( pixmap:TPixmap,format )`
 
@@ -112,6 +115,7 @@ See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmap-tpixmap-width-hei
 A new pixmap object with the specified pixel format
 
 
+<br/>
 
 ### `Function PixmapWidth( pixmap:TPixmap )`
 
@@ -141,6 +145,7 @@ Repeat
 	Flip
 Until KeyHit(key_escape) Or AppTerminate()
 ```
+<br/>
 
 ### `Function PixmapHeight( pixmap:TPixmap )`
 
@@ -172,6 +177,7 @@ Repeat
 	Flip
 Until KeyHit(key_escape) Or AppTerminate()
 ```
+<br/>
 
 ### `Function PixmapPitch( pixmap:TPixmap )`
 
@@ -185,6 +191,7 @@ Pitch refers to the difference, in bytes, between the start of one row of pixels
 The pitch, in bytes, of <b>pixmap</b>
 
 
+<br/>
 
 ### `Function PixmapFormat( pixmap:TPixmap )`
 
@@ -198,6 +205,7 @@ See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmap-tpixmap-width-hei
 The format of the pixels stored in <b>pixmap</b>
 
 
+<br/>
 
 ### `Function PixmapPixelPtr:Byte Ptr( pixmap:TPixmap,x=0,y=0 )`
 
@@ -207,6 +215,7 @@ Get pixmap pixels
 A byte pointer to the pixels stored in <b>pixmap</b>
 
 
+<br/>
 
 ### `Function PixmapWindow:TPixmap( pixmap:TPixmap,x,y,width,height )`
 
@@ -219,6 +228,7 @@ Create a pixmap window
 A new pixmap object
 
 
+<br/>
 
 ### `Function MaskPixmap:TPixmap( pixmap:TPixmap,mask_red,mask_green,mask_blue ) NoDebug`
 
@@ -233,6 +243,7 @@ should be in the range 0 to 255.
 A new pixmap object
 
 
+<br/>
 
 ### `Function XFlipPixmap:TPixmap( pixmap:TPixmap ) NoDebug`
 
@@ -271,6 +282,7 @@ Repeat
 	Flip
 Until KeyHit(key_escape) Or AppTerminate()
 ```
+<br/>
 
 ### `Function YFlipPixmap:TPixmap( pixmap:TPixmap ) NoDebug`
 
@@ -309,6 +321,7 @@ Repeat
 	Flip
 Until KeyHit(key_escape) Or AppTerminate()
 ```
+<br/>
 
 ### `Function ResizePixmap:TPixmap( pixmap:TPixmap,width,height ) NoDebug`
 
@@ -340,6 +353,7 @@ Repeat
 	Flip
 Until KeyHit(key_escape) Or AppTerminate()
 ```
+<br/>
 
 ### `Function LoadPixmap:TPixmap( url:Object )`
 
@@ -366,6 +380,7 @@ Repeat
 	Flip
 Until KeyHit(key_escape) Or AppTerminate()
 ```
+<br/>
 
 ### `Function ReadPixel( pixmap:TPixmap,x,y )`
 
@@ -382,6 +397,7 @@ The returned 32 bit value contains the following components:
 A 32 bit pixel value
 
 
+<br/>
 
 ### `Function WritePixel( pixmap:TPixmap,x,y,argb )`
 
@@ -394,6 +410,7 @@ The 32 bit <b>argb</b> value contains the following components:
 
 
 
+<br/>
 
 ### `Function ClearPixels( pixmap:TPixmap,argb=0 )`
 
@@ -430,4 +447,5 @@ Flip
 
 WaitKey
 ```
+<br/>
 

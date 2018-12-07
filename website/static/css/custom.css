@@ -25,8 +25,22 @@ ul.toc-headings > li {
 }
 .toc-headings > li > a {
     display: block;
-    padding: 4px;
 }
 .toc-headings > li > a.active {
     font-weight: bold;
+}
+
+.hljs {
+    border: 1px solid #ccc;
+}
+
+h3 > code {
+    background-color: transparent;
+    padding: 0;
+    font-size: 100%;
+}
+
+.toc-headings > li > a > code {
+    background-color: transparent;
+    padding: 0;
 }

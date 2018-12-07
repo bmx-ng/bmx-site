@@ -25,6 +25,7 @@ Creates a map
 A new map object
 
 
+<br/>
 
 ### `Function ClearMap( map:TMap )`
 
@@ -34,6 +35,7 @@ Clears a map
 [ClearMap](../../brl/brl.map/#function-clearmap-map-tmap) removes all keys and values from <b>map</b>
 
 
+<br/>
 
 ### `Function MapIsEmpty( map:TMap )`
 
@@ -43,6 +45,7 @@ Checks if a map is empty
 True if <b>map</b> is empty, otherwise false
 
 
+<br/>
 
 ### `Function MapInsert( map:TMap,key:Object,value:Object )`
 
@@ -52,6 +55,7 @@ Inserts a key/value pair into a map
 If <b>map</b> already contained <b>key</b>, it's value is overwritten with <b>value</b>.
 
 
+<br/>
 
 ### `Function MapValueForKey:Object( map:TMap,key:Object )`
 
@@ -65,6 +69,7 @@ If <b>map</b> does not contain <b>key</b>, a [Null](../../brl/brl.blitz/#null) o
 The value associated with <b>key</b>
 
 
+<br/>
 
 ### `Function MapContains( map:TMap,key:Object )`
 
@@ -74,11 +79,13 @@ Checks if a map contains a key
 True if <b>map</b> contains <b>key</b>
 
 
+<br/>
 
 ### `Function MapRemove( map:TMap,key:Object )`
 
 Removes a key/value pair from a map
 
+<br/>
 
 ### `Function MapKeys:TMapEnumerator( map:TMap )`
 
@@ -93,6 +100,7 @@ the keys in <b>map</b>.
 An iterator object
 
 
+<br/>
 
 ### `Function MapValues:TMapEnumerator( map:TMap )`
 
@@ -107,6 +115,7 @@ the values in <b>map</b>.
 An iterator object
 
 
+<br/>
 
 ### `Function CopyMap:TMap( map:TMap )`
 
@@ -116,4 +125,5 @@ Copies a map
 A copy of <b>map</b>
 
 
+<br/>
 

@@ -13,36 +13,43 @@ Event object type
 
 Event identifier
 
+<br/>
 
 ### `Field source:Object`
 
 Event source object
 
+<br/>
 
 ### `Field data:Int`
 
 Event specific data
 
+<br/>
 
 ### `Field mods:Int`
 
 Event specific modifiers
 
+<br/>
 
 ### `Field x:Int`
 
 Event specific position data
 
+<br/>
 
 ### `Field y:Int`
 
 Event specific position data
 
+<br/>
 
 ### `Field extra:Object`
 
 Event specific extra information
 
+<br/>
 
 ## Methods
 
@@ -55,6 +62,7 @@ This method runs all [EmitEventHook](../../../brl/brl.event/#global-emiteventhoo
 the hook data.
 
 
+<br/>
 
 ### `Method ToString$()`
 
@@ -64,6 +72,7 @@ Convert event to a string
 This method is mainly useful for debugging purposes.
 
 
+<br/>
 
 ## Functions
 
@@ -75,6 +84,7 @@ Create an event object
 A new event object
 
 
+<br/>
 
 ### `Function AllocUserId:Int()`
 
@@ -84,4 +94,5 @@ Allocate a user event id
 A new user event id
 
 
+<br/>
 

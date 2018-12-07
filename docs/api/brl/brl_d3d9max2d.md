@@ -19,4 +19,5 @@ Get Direct3D9 Max2D Driver
 The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-driver-tgraphicsdriver-defaultflags-graphics-backbuffer) to enable Direct3D9 Max2D rendering.
 
 
+<br/>
 

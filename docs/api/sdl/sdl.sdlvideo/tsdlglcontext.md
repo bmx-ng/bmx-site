@@ -13,6 +13,7 @@ An Open GL context.
 
 Frees the GL Context.
 
+<br/>
 
 ## Functions
 
@@ -31,6 +32,7 @@ the GL context and save that information somewhere instead of calling the method
 True if the extension is supported, False otherwise.
 
 
+<br/>
 
 ### `Function GetAttribute:Int(attr:Int, value:Int Var)`
 
@@ -40,6 +42,7 @@ Gets the actual value for an attribute from the current context.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Function GetCurrentContext:TSDLGLContext()`
 
@@ -49,6 +52,7 @@ Gets the currently active OpenGL context.
 The currently active OpenGL context or Null on failure.
 
 
+<br/>
 
 ### `Function GetCurrentWindow:TSDLWindow()`
 
@@ -58,6 +62,7 @@ Gets the currently active OpenGL window.
 The currently active OpenGL window on success or Null on failure.
 
 
+<br/>
 
 ### `Function GetProcAddress:Byte Ptr(proc:String)`
 
@@ -71,6 +76,7 @@ Usually this is used to retrieve function pointers to OpenGL extensions.
 A pointer to the named OpenGL function. The returned pointer should be cast to the appropriate function signature.
 
 
+<br/>
 
 ### `Function LoadLibrary:Int(path:String)`
 
@@ -85,6 +91,7 @@ If you do this, you need to retrieve all of the GL functions used in your progra
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Function GetSwapInterval:Int()`
 
@@ -97,6 +104,7 @@ If the system can't determine the swap interval, or there isn't a valid current 
 0 if there is no vertical retrace synchronization, 1 if the buffer swap is synchronized with the vertical retrace, and -1 if late swaps happen immediately instead of waiting for the next retrace.
 
 
+<br/>
 
 ### `Function SetSwapInterval:Int(value:Int)`
 
@@ -113,11 +121,13 @@ Late swap tearing is implemented for some glX drivers with GLX_EXT_swap_control_
 0 on success or -1 if setting the swap interval is not supported.
 
 
+<br/>
 
 ### `Function ResetAttributes()`
 
 Resets all previously set OpenGL context attributes to their default values.
 
+<br/>
 
 ### `Function SetAttribute:Int(attr:Int, value:Int)`
 
@@ -132,9 +142,11 @@ the requested ones.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Function UnloadLibrary()`
 
 Unloads the OpenGL library previously loaded by [LoadLibrary](../../../sdl/sdl.sdlvideo/tsdlglcontext/#function-loadlibrary-int-path-string)()
 
+<br/>
 

@@ -20,6 +20,7 @@ If the object was created with the TLuaObject.Create function, you do not need t
 this method.
 
 
+<br/>
 
 ### `Method Invoke:Object( name$,args:Object[] )`
 
@@ -29,6 +30,7 @@ Invoke an object method
 <b>name</b> should refer to a function within the object's classes' source code.
 
 
+<br/>
 
 ## Functions
 
@@ -41,4 +43,5 @@ Once a lua object has been created, object methods (actually lua functions defin
 class) can be invoked using the [Invoke](../../../brl/brl.maxlua/tluaobject/#method-invoke-object-name-args-object) method.
 
 
+<br/>
 

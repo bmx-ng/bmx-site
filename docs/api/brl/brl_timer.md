@@ -40,6 +40,7 @@ For Local n:Int = 0 Until 18
 	EndIf
 Next
 ```
+<br/>
 
 ### `Function TimerTicks:Int( timer:TTimer )`
 
@@ -49,6 +50,7 @@ Get timer tick counter
 The number of times <b>timer</b> has ticked over
 
 
+<br/>
 
 ### `Function WaitTimer:Int( timer:TTimer )`
 
@@ -71,6 +73,7 @@ Repeat
 	Print "Ticks="+WaitTimer( timer )
 Forever
 ```
+<br/>
 
 ### `Function StopTimer( timer:TTimer )`
 
@@ -79,4 +82,5 @@ Stop a timer
 Once stopped, a timer can no longer be used.
 
 
+<br/>
 

@@ -13,14 +13,17 @@ Type member - Field Or Method.
 
 Get member name
 
+<br/>
 
 ### `Method TypeId:TTypeId()`
 
 Get member type
 
+<br/>
 
 ### `Method MetaData$( key$="" )`
 
 Get member meta data
 
+<br/>
 

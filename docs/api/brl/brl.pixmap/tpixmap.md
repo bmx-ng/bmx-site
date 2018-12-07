@@ -46,31 +46,37 @@ Until KeyDown(KEY_ESCAPE) Or AppTerminate()
 
 A byte pointer to the pixmap's pixels
 
+<br/>
 
 ### `Field width`
 
 The width, in pixels, of the pixmap
 
+<br/>
 
 ### `Field height`
 
 The height, in pixels, of the pixmap
 
+<br/>
 
 ### `Field pitch`
 
 The pitch, in bytes, of the pixmap
 
+<br/>
 
 ### `Field format`
 
 The pixel format of the pixmap
 
+<br/>
 
 ### `Field capacity`
 
 The capacity, in bytes, of the pixmap, or -1 for a static pixmap
 
+<br/>
 
 ## Methods
 
@@ -82,6 +88,7 @@ Get memory address of a pixel
 A byte pointer to the pixel at coordinates <b>x</b>, <b>y</b>
 
 
+<br/>
 
 ### `Method Window:TPixmap( x,y,width,height )`
 
@@ -91,6 +98,7 @@ Create a virtual window into a pixmap
 A static pixmap that references the specified rectangle.
 
 
+<br/>
 
 ### `Method Copy:TPixmap()`
 
@@ -100,11 +108,13 @@ Duplicate a pixmap
 A new TPixmap object.
 
 
+<br/>
 
 ### `Method Paste( source:TPixmap,x,y )`
 
 Paste a pixmap
 
+<br/>
 
 ### `Method Convert:TPixmap( format )`
 
@@ -114,6 +124,7 @@ Convert a pixmap
 A new TPixmap object in the specified format
 
 
+<br/>
 
 ### `Method ReadPixel( x,y )`
 
@@ -123,11 +134,13 @@ Read a pixel from a pixmap
 The pixel at the specified coordinates packed into an integer
 
 
+<br/>
 
 ### `Method WritePixel( x,y,argb )`
 
 Write a pixel to a pixmap
 
+<br/>
 
 ### `Method ClearPixels( argb )`
 
@@ -155,6 +168,7 @@ Flip
 
 WaitKey
 ```
+<br/>
 
 ## Functions
 
@@ -166,6 +180,7 @@ Create a pixmap
 A new TPixmap object
 
 
+<br/>
 
 ### `Function CreateStatic:TPixmap( pixels:Byte Ptr,width,height,pitch,format )`
 
@@ -175,4 +190,5 @@ Create a static pixmap
 A new TPixmap object
 
 
+<br/>
 

@@ -23,6 +23,7 @@ a later time.
 A new socket stream
 
 
+<br/>
 
 ### `Function SocketStreamSocket:TSocket( stream:TSocketStream )`
 
@@ -32,4 +33,5 @@ Get underlying socket from a socket stream
 The socket used to create the socket stream
 
 
+<br/>
 

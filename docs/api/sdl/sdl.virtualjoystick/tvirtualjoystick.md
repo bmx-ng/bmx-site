@@ -16,6 +16,7 @@ Can be extended to implement your own rendering of it.
 
 Creates a new virtual joystick instance, using the specified configuration.
 
+<br/>
 
 ### `Method AddButton:Int(x:Int, y:Int, radius:Int)`
 
@@ -25,6 +26,7 @@ Adds a button at the specified location.
 The button id.
 
 
+<br/>
 
 ### `Method GetX:Float()`
 
@@ -34,6 +36,7 @@ Reports the horizontal position of the joystick.
 Zero if the joystick is centered, -1 if Left, 1 if Right or a value in between.
 
 
+<br/>
 
 ### `Method GetY:Float()`
 
@@ -43,6 +46,7 @@ Reports the vertical position of the joystick.
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value in between.
 
 
+<br/>
 
 ### `Method ButtonDown:Int(button:Int)`
 
@@ -52,6 +56,7 @@ Test the status of a joystick button.
 [True](../../../brl/brl.blitz/#true) if the button is pressed.
 
 
+<br/>
 
 ### `Method ButtonHit:Int(button:Int)`
 
@@ -64,4 +69,5 @@ The returned value represents the number of the times <b>button</b> has been hit
 Number of times <b>button</b> has been hit.
 
 
+<br/>
 

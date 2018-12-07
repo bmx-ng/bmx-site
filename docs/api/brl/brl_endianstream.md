@@ -38,6 +38,7 @@ BigEndianStream
 A big endian stream
 
 
+<br/>
 
 ### `Function LittleEndianStream:TStream( stream:TStream )`
 
@@ -47,4 +48,5 @@ LittleEndianStream
 A little endian stream
 
 
+<br/>
 

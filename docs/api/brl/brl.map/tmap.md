@@ -16,6 +16,7 @@ Clears the map.
 Removes all keys and values.
 
 
+<br/>
 
 ### `Method IsEmpty()`
 
@@ -24,6 +25,7 @@ Checks if the map is empty.
 [True](../../../brl/brl.blitz/#true) if <b>map</b> is empty, otherwise [False](../../../brl/brl.blitz/#false).
 
 
+<br/>
 
 ### `Method Insert( key:Object,value:Object )`
 
@@ -32,6 +34,7 @@ Inserts a key/value pair into the map.
 If the map already contains <b>key</b>, its value is overwritten with <b>value</b>.
 
 
+<br/>
 
 ### `Method Contains( key:Object )`
 
@@ -41,6 +44,7 @@ Checks if the map contains <b>key</b>.
 [True](../../../brl/brl.blitz/#true) if the map contains <b>key</b>.
 
 
+<br/>
 
 ### `Method ValueForKey:Object( key:Object )`
 
@@ -53,6 +57,7 @@ If the map does not contain <b>key</b>, a [Null](../../../brl/brl.blitz/#null) o
 The value associated with <b>key</b>.
 
 
+<br/>
 
 ### `Method Remove( key:Object )`
 
@@ -62,6 +67,7 @@ Remove a key/value pair from the map.
 [True](../../../brl/brl.blitz/#true) if <b>key</b> was removed, or [False](../../../brl/brl.blitz/#false) otherwise.
 
 
+<br/>
 
 ### `Method Keys:TMapEnumerator()`
 
@@ -74,6 +80,7 @@ The object returned by [Keys](../../../brl/brl.map/tmap/#method-keys-tmapenumera
 An enumeration object
 
 
+<br/>
 
 ### `Method Values:TMapEnumerator()`
 
@@ -86,11 +93,13 @@ The object returned by [Values](../../../brl/brl.map/tmap/#method-values-tmapenu
 An enumeration object.
 
 
+<br/>
 
 ### `Method Copy:TMap()`
 
 Returns a copy the contents of this map.
 
+<br/>
 
 ### `Method ObjectEnumerator:TNodeEnumerator()`
 
@@ -99,4 +108,5 @@ Returns a node enumeration object.
 The object returned by [ObjectEnumerator](../../../brl/brl.map/tmap/#method-objectenumerator-tnodeenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the nodes in the map.
 
 
+<br/>
 

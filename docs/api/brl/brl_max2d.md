@@ -124,6 +124,7 @@ While Not KeyHit(KEY_ESCAPE)
 	frame:+1
 Wend
 ```
+<br/>
 
 ### `Function SetClsColor( red,green,blue )`
 
@@ -135,6 +136,7 @@ The <b>red</b>, <b>green</b> and <b>blue</b> parameters should be in the range o
 The default cls color is black.
 
 
+<br/>
 
 ### `Function GetClsColor( red Var,green Var,blue Var )`
 
@@ -144,6 +146,7 @@ Get red, green and blue component of current cls color.
 Red, green and blue values in the range 0..255 in the variables supplied.
 
 
+<br/>
 
 ### `Function Plot( x#,y# )`
 
@@ -178,6 +181,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function DrawRect( x#,y#,width#,height# )`
 
@@ -222,6 +226,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip	
 Wend
 ```
+<br/>
 
 ### `Function DrawLine( x#,y#,x2#,y2#,draw_last_pixel=True )`
 
@@ -260,6 +265,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function DrawOval( x#,y#,width#,height# )`
 
@@ -296,6 +302,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function DrawPoly( xy#[] )`
 
@@ -328,6 +335,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function DrawText( t$,x#,y# )`
 
@@ -373,6 +381,7 @@ Wend
 
 End
 ```
+<br/>
 
 ### `Function DrawImage( image:TImage,x#,y#,frame=0 )`
 
@@ -385,6 +394,7 @@ If the blend mode is ALPHABLEND the image is affected by the current alpha value
 and images with alpha channels are blended correctly with the background.
 
 
+<br/>
 
 ### `Function DrawImageRect( image:TImage,x#,y#,w#,h#,frame=0 )`
 
@@ -400,6 +410,7 @@ Drawing is affected by the current blend mode, color, scale and rotation.
 If the blend mode is ALPHABLEND, then the image is also affected by the current alpha value.
 
 
+<br/>
 
 ### `Function DrawSubImageRect( image:TImage,x#,y#,w#,h#,sx#,sy#,sw#,sh#,hx#=0,hy#=0,frame=0 )`
 
@@ -419,6 +430,7 @@ Drawing is affected by the current blend mode, color, scale and rotation.
 If the blend mode is ALPHABLEND, then the image is also affected by the current alpha value.
 
 
+<br/>
 
 ### `Function TileImage( image:TImage,x#=0#,y#=0#,frame=0 )`
 
@@ -428,6 +440,7 @@ Draw an image in a tiled pattern
 [TileImage](../../brl/brl.max2d/#function-tileimage-image-timage-x-0-y-0-frame-0) draws an image in a repeating, tiled pattern, filling the current viewport.
 
 
+<br/>
 
 ### `Function SetColor( red,green,blue )`
 
@@ -440,6 +453,7 @@ The [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blue) command af
 The <b>red</b>, <b>green</b> and <b>blue</b> parameters should be in the range of 0 to 255.
 
 
+<br/>
 
 ### `Function GetColor( red Var,green Var,blue Var )`
 
@@ -449,6 +463,7 @@ Get red, green and blue component of current color.
 Red, green and blue values in the range 0..255 in the variables supplied.
 
 
+<br/>
 
 ### `Function SetBlend( blend )`
 
@@ -464,6 +479,7 @@ commands are used in BlitzMax.
 
 
 
+<br/>
 
 ### `Function GetBlend()`
 
@@ -477,6 +493,7 @@ See [SetBlend](../../brl/brl.max2d/#function-setblend-blend) for possible return
 The current blend mode.
 
 
+<br/>
 
 ### `Function SetAlpha( alpha# )`
 
@@ -490,6 +507,7 @@ The range from 0.0 to 1.0 allows a range of transparancy from completely transpa
 to completely solid.
 
 
+<br/>
 
 ### `Function GetAlpha#()`
 
@@ -499,11 +517,13 @@ Get current alpha setting.
 the current alpha value in the range 0..1.0
 
 
+<br/>
 
 ### `Function SetLineWidth( width# )`
 
 Sets pixel width of lines drawn with the [DrawLine](../../brl/brl.max2d/#function-drawline-x-y-x2-y2-draw-last-pixel-true) command
 
+<br/>
 
 ### `Function GetLineWidth#()`
 
@@ -513,6 +533,7 @@ Get line width
 Current line width, in pixels
 
 
+<br/>
 
 ### `Function SetMaskColor( red,green,blue )`
 
@@ -523,6 +544,7 @@ The current mask color is used to build an alpha mask when images are loaded or 
 The <b>red</b>, <b>green</b> and <b>blue</b> parameters should be in the range of 0 to 255.
 
 
+<br/>
 
 ### `Function GetMaskColor( red Var,green Var,blue Var )`
 
@@ -532,6 +554,7 @@ Get red, green and blue component of current mask color
 Red, green and blue values in the range 0..255
 
 
+<br/>
 
 ### `Function SetVirtualResolution( width#,height# )`
 
@@ -544,41 +567,49 @@ This allows you to design an application to work at a fixed resolution, say 640 
 at any graphics resolution.
 
 
+<br/>
 
 ### `Function VirtualResolutionWidth#()`
 
 Get virtual graphics resolution width
 
+<br/>
 
 ### `Function VirtualResolutionHeight#()`
 
 Get virtual graphics resolution height
 
+<br/>
 
 ### `Function VirtualMouseX#()`
 
 Get virtual mouse X coordinate
 
+<br/>
 
 ### `Function VirtualMouseY#()`
 
 Get virtual mouse Y coordinate
 
+<br/>
 
 ### `Function VirtualMouseXSpeed#()`
 
 Get virtual mouse X speed
 
+<br/>
 
 ### `Function VirtualMouseYSpeed#()`
 
 Get virtual mouse Y speed
 
+<br/>
 
 ### `Function MoveVirtualMouse( x#,y# )`
 
 Move virtual mouse
 
+<br/>
 
 ### `Function SetViewport( x,y,width,height )`
 
@@ -589,6 +620,7 @@ The current ViewPort defines an area within the back buffer that all drawing is 
 regions of a DrawCommand that fall outside the current ViewPort are not drawn.
 
 
+<br/>
 
 ### `Function GetViewport( x Var,y Var,width Var,height Var )`
 
@@ -598,6 +630,7 @@ Get dimensions of current Viewport.
 The horizontal, vertical, width and height values of the current Viewport in the variables supplied.
 
 
+<br/>
 
 ### `Function SetOrigin( x#,y# )`
 
@@ -607,6 +640,7 @@ Set drawing origin
 The current Origin is an x,y coordinate added to all drawing x,y coordinates after any rotation or scaling.
 
 
+<br/>
 
 ### `Function GetOrigin( x# Var,y# Var )`
 
@@ -616,6 +650,7 @@ Get current origin position.
 The horizontal and vertical position of the current origin.
 
 
+<br/>
 
 ### `Function SetHandle( x#,y# )`
 
@@ -629,6 +664,7 @@ Unlike [SetOrigin](../../brl/brl.max2d/#function-setorigin-x-y) the drawing hand
 are applied providing a 'local' origin.
 
 
+<br/>
 
 ### `Function GetHandle( x# Var,y# Var )`
 
@@ -638,6 +674,7 @@ Get current drawing handle.
 The horizontal and vertical position of the current drawing handle.
 
 
+<br/>
 
 ### `Function SetRotation( rotation# )`
 
@@ -647,6 +684,7 @@ Set current rotation
 <b>rotation</b> is given in degrees and should be in the range 0 to 360.
 
 
+<br/>
 
 ### `Function GetRotation#()`
 
@@ -656,6 +694,7 @@ Get current Max2D rotation setting.
 The rotation in degrees.
 
 
+<br/>
 
 ### `Function SetScale( scale_x#,scale_y# )`
 
@@ -667,6 +706,7 @@ commands where 0.5 will half the size of the drawing and 2.0 is equivalent
 to doubling the size.
 
 
+<br/>
 
 ### `Function GetScale( scale_x# Var,scale_y# Var )`
 
@@ -676,6 +716,7 @@ Get current Max2D scale settings.
 The current x and y scale values in the variables supplied.
 
 
+<br/>
 
 ### `Function SetTransform( rotation#=0,scale_x#=1,scale_y#=1 )`
 
@@ -686,6 +727,7 @@ SetTransform is a shortcut for setting both the rotation and
 scale parameters in Max2D with a single function call.
 
 
+<br/>
 
 ### `Function LoadImageFont:TImageFont( url:Object,size,style=SMOOTHFONT )`
 
@@ -701,6 +743,7 @@ scaled.
 An image font object
 
 
+<br/>
 
 ### `Function SetImageFont( font:TImageFont )`
 
@@ -713,6 +756,7 @@ command with a font handle returned by the [LoadImageFont](../../brl/brl.max2d/#
 Use &{SetImageFont Null} to select the default, built-in font.
 
 
+<br/>
 
 ### `Function GetImageFont:TImageFont()`
 
@@ -722,6 +766,7 @@ Get current image font.
 The current image font.
 
 
+<br/>
 
 ### `Function TextWidth( Text$ )`
 
@@ -736,6 +781,7 @@ the [DrawText](../../brl/brl.max2d/#function-drawtext-t-x-y) command.
 the width, in pixels, of <b>text</b> based on the current image font.
 
 
+<br/>
 
 ### `Function TextHeight( Text$ )`
 
@@ -750,6 +796,7 @@ the [DrawText](../../brl/brl.max2d/#function-drawtext-t-x-y) command.
 the height, in pixels, of <b>text</b> based on the current image font.
 
 
+<br/>
 
 ### `Function LoadImage:TImage( url:Object,flags=-1 )`
 
@@ -781,6 +828,7 @@ To combine flags, use the | (boolean OR) operator.
 A new image object
 
 
+<br/>
 
 ### `Function LoadAnimImage:TImage( url:Object,cell_width,cell_height,first_cell,cell_count,flags=-1 )`
 
@@ -797,6 +845,7 @@ See [LoadImage](../../brl/brl.max2d/#function-loadimage-timage-url-object-flags-
 An image object
 
 
+<br/>
 
 ### `Function SetImageHandle( image:TImage,x#,y# )`
 
@@ -807,6 +856,7 @@ An image's handle is subtracted from the coordinates of [DrawImage](../../brl/br
 rotation and scale are applied.
 
 
+<br/>
 
 ### `Function AutoMidHandle( enable )`
 
@@ -819,6 +869,7 @@ when they are created. If auto midhandle mode is disabled, images are handled by
 AutoMidHandle defaults to False after calling [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0).
 
 
+<br/>
 
 ### `Function AutoImageFlags( flags )`
 
@@ -830,11 +881,13 @@ flags are specified. See [LoadImage](../../brl/brl.max2d/#function-loadimage-tim
 AutoImageFlags defaults to MASKEDIMAGE | FILTEREDIMAGE.
 
 
+<br/>
 
 ### `Function MidHandleImage( image:TImage )`
 
 Set an image's handle to its center
 
+<br/>
 
 ### `Function ImageWidth( image:TImage )`
 
@@ -844,6 +897,7 @@ Get width of an image
 The width, in pixels, of <b>image</b>
 
 
+<br/>
 
 ### `Function ImageHeight( image:TImage )`
 
@@ -853,6 +907,7 @@ Get height of an image
 The height, in pixels, of <b>image</b>
 
 
+<br/>
 
 ### `Function CreateImage:TImage( width,height,frames=1,flags=-1 )`
 
@@ -895,6 +950,7 @@ Flip
 
 WaitKey
 ```
+<br/>
 
 ### `Function LockImage:TPixmap( image:TImage,frame=0,read_lock=True,write_lock=True )`
 
@@ -912,6 +968,7 @@ Locked images must eventually be unlocked with [UnlockImage](../../brl/brl.max2d
 A pixmap representing the image contents
 
 
+<br/>
 
 ### `Function UnlockImage( image:TImage,frame=0 )`
 
@@ -921,6 +978,7 @@ Unlock an image
 Unlocks an image previously locked with [LockImage](../../brl/brl.max2d/#function-lockimage-tpixmap-image-timage-frame-0-read-lock-true-write-lock-true).
 
 
+<br/>
 
 ### `Function GrabImage( image:TImage,x,y,frame=0 )`
 
@@ -963,16 +1021,19 @@ Flip
 
 WaitKey
 ```
+<br/>
 
 ### `Function DrawPixmap( pixmap:TPixmap,x,y )`
 
 Draw pixmap
 
+<br/>
 
 ### `Function GrabPixmap:TPixmap( x,y,width,height )`
 
 Grab pixmap
 
+<br/>
 
 ### `Function ImagesCollide(image1:TImage,x1,y1,frame1,image2:TImage,x2,y2,frame2)`
 
@@ -987,6 +1048,7 @@ call to [SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y) and [
 True if any pixels of the two images specified at the given location overlap.
 
 
+<br/>
 
 ### `Function ImagesCollide2(image1:TImage,x1,y1,frame1,rot1#,scalex1#,scaley1#,image2:TImage,x2,y2,frame2,rot2#,scalex2#,scaley2#)`
 
@@ -1001,6 +1063,7 @@ to calculate at a pixel level if the two images collide (overlap).
 True if any pixels of the two images specified at the given location overlap.
 
 
+<br/>
 
 ### `Function ResetCollisions(mask%=0)`
 
@@ -1017,6 +1080,7 @@ Note: COLLISION_LAYER_32 is used by the [ImagesCollide](../../brl/brl.max2d/#fun
 
 
 
+<br/>
 
 ### `Function CollideImage:Object[](image:TImage,x,y,frame,collidemask%,writemask%,id:Object=Null)`
 
@@ -1083,6 +1147,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function CollideRect:Object[](x,y,w,h,collidemask%,writemask%,id:Object=Null)`
 
@@ -1096,4 +1161,5 @@ The <b>writemask</b> specifies which if any collision layers the <b>image</b> is
 The <b>id</b> specifies an object to be returned to future [CollideImage](../../brl/brl.max2d/#function-collideimage-object-image-timage-x-y-frame-collidemask-writemask-id-object-null) calls when collisions occur.
 
 
+<br/>
 

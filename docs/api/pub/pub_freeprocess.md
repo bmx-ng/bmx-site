@@ -52,6 +52,7 @@ Else
 	Print("notepad has been closed")
 EndIf
 ```
+<br/>
 
 ### `Function ProcessStatus:Int(process:TProcess)`
 
@@ -95,6 +96,7 @@ Else
 	Print("notepad has been closed")
 EndIf
 ```
+<br/>
 
 ### `Function DetachProcess:Int(process:TProcess)`
 
@@ -127,6 +129,7 @@ Delay(1000)
 Print("Program ending, notepad should close with it, calculator should stay open")
 End
 ```
+<br/>
 
 ### `Function AttachProcess:Int(process:TProcess)`
 
@@ -159,6 +162,7 @@ Delay(1000)
 Print("Program ending, notepad should close with it, calculator should stay open")
 End
 ```
+<br/>
 
 ### `Function TerminateProcess:Int(process:TProcess)`
 
@@ -202,4 +206,5 @@ Else
 	Print("notepad has been closed")
 EndIf
 ```
+<br/>
 

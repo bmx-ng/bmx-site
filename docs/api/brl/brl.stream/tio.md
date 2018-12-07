@@ -35,6 +35,7 @@ no more bytes can be read from or written to the stream.
 True for end of file reached, otherwise False
 
 
+<br/>
 
 ### `Method Pos:Long()`
 
@@ -44,6 +45,7 @@ Get position of seekable stream
 Stream position as a byte offset, or -1 if stream is not seekable
 
 
+<br/>
 
 ### `Method Size:Long()`
 
@@ -53,6 +55,7 @@ Get size of seekable stream
 Size, in bytes, of seekable stream, or 0 if stream is not seekable
 
 
+<br/>
 
 ### `Method Seek:Long( pos:Long, whence:Int = SEEK_SET_ )`
 
@@ -62,6 +65,7 @@ Seek to position in seekable stream
 New stream position, or -1 if stream is not seekable
 
 
+<br/>
 
 ### `Method Flush()`
 
@@ -71,6 +75,7 @@ Flush stream
 Flushes any internal stream buffers.
 
 
+<br/>
 
 ### `Method Close()`
 
@@ -80,6 +85,7 @@ Close stream
 Closes the stream after flushing any internal stream buffers.
 
 
+<br/>
 
 ### `Method Read:Long( buf:Byte Ptr,count:Long )`
 
@@ -96,6 +102,7 @@ If this method returns 0, the stream has reached end of file.
 Number of bytes successfully read
 
 
+<br/>
 
 ### `Method Write:Long( buf:Byte Ptr,count:Long )`
 
@@ -112,4 +119,5 @@ If this method returns 0, the stream has reached end of file.
 Number of bytes successfully written
 
 
+<br/>
 

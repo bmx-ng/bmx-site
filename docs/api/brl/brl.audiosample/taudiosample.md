@@ -13,21 +13,25 @@ Audio sample type
 
 Byte pointer to sample data
 
+<br/>
 
 ### `Field length`
 
 Length, in samples, of the sample data
 
+<br/>
 
 ### `Field hertz`
 
 Sample rate
 
+<br/>
 
 ### `Field format`
 
 Sample format
 
+<br/>
 
 ## Methods
 
@@ -39,6 +43,7 @@ Copy audio sample
 A new audio sample object
 
 
+<br/>
 
 ### `Method Convert:TAudioSample( to_format )`
 
@@ -48,6 +53,7 @@ Convert audio sample
 A new audio sample object in the specified format
 
 
+<br/>
 
 ## Functions
 
@@ -59,6 +65,7 @@ Create an audio sample
 A new audio sample object
 
 
+<br/>
 
 ### `Function CreateStatic:TAudioSample( samples:Byte Ptr,length,hertz,format )`
 
@@ -68,4 +75,5 @@ Create a static audio sample
 A new audio sample object that references an existing block of memory
 
 
+<br/>
 

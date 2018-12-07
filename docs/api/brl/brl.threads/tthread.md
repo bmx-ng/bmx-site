@@ -13,6 +13,7 @@ Thread type
 
 Detach this thread
 
+<br/>
 
 ### `Method Wait:Object()`
 
@@ -22,11 +23,13 @@ Wait for this thread to finish
 The object returned by the thread.
 
 
+<br/>
 
 ### `Method Running:Int()`
 
 Check if this thread is running
 
+<br/>
 
 ## Functions
 
@@ -34,6 +37,7 @@ Check if this thread is running
 
 Create a new thread
 
+<br/>
 
 ### `Function Main:TThread()`
 
@@ -43,6 +47,7 @@ Get main thread
 A thread object representing the main application thread.
 
 
+<br/>
 
 ### `Function Current:TThread()`
 
@@ -52,4 +57,5 @@ Get current thread
 A thread object representing the current thread.
 
 
+<br/>
 

@@ -103,39 +103,47 @@ These may be used instead of the corresponding TTypeId.ForName call. For example
 
 Primitive byte type
 
+<br/>
 
 ### `Global ShortTypeId:TTypeId`
 
 Primitive short type
 
+<br/>
 
 ### `Global IntTypeId:TTypeId`
 
 Primitive int type
 
+<br/>
 
 ### `Global UIntTypeId:TTypeId`
 
 Primitive unsigned int type
 
+<br/>
 
 ### `Global LongTypeId:TTypeId`
 
 Primitive long type
 
+<br/>
 
 ### `Global ULongTypeId:TTypeId`
 
 Primitive unsigned long type
 
+<br/>
 
 ### `Global FloatTypeId:TTypeId`
 
 Primitive float type
 
+<br/>
 
 ### `Global DoubleTypeId:TTypeId`
 
 Primitive double type
 
+<br/>
 

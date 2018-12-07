@@ -33,6 +33,7 @@ Local bptr:Byte Ptr = bank.Buf()
 Print PeekByte(bank , 10)
 Print bptr[10]
 ```
+<br/>
 
 ### `Method Lock:Byte Ptr()`
 
@@ -49,6 +50,7 @@ to return it to the bank.
 A byte pointer to the memory block controlled by the bank
 
 
+<br/>
 
 ### `Method Unlock()`
 
@@ -59,6 +61,7 @@ After you have finished with a bank's memory block, you must use [Unlock](../../
 to return it to the bank.
 
 
+<br/>
 
 ### `Method Size:Size_T()`
 
@@ -68,6 +71,7 @@ Get a bank's size
 The size, in bytes, of the memory block controlled by the bank
 
 
+<br/>
 
 ### `Method Capacity:Size_T()`
 
@@ -86,21 +90,25 @@ Local bank:TBank=CreateBank( Int(20 + Rnd(40)) )
 Print "size of the bank is: "+BankSize(bank)
 Print "capacity of the bank is: "+Bank.Capacity()
 ```
+<br/>
 
 ### `Method IsStatic:Int()`
 
 Returns True if the bank is static.
 
+<br/>
 
 ### `Method Resize( size:Size_T )`
 
 Resize a bank
 
+<br/>
 
 ### `Method Read:Long( stream:TStream,offset:Long,count:Long )`
 
 Read bytes from a stream into a bank
 
+<br/>
 
 ### `Method Write:Long( stream:TStream,offset:Long,count:Long )`
 
@@ -128,6 +136,7 @@ For Local t:Int = 0 Until BankSize(myNextBank)
 	Print PeekByte(myNextBank,t)
 Next
 ```
+<br/>
 
 ### `Method PeekByte:Int( offset:Size_T )`
 
@@ -152,6 +161,7 @@ Print PeekByte(myBank,1)
 
 End
 ```
+<br/>
 
 ### `Method PokeByte( offset:Size_T,value:Int )`
 
@@ -170,6 +180,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Method PeekShort:Int( offset:Size_T )`
 
@@ -197,6 +208,7 @@ Print PeekShort(myBank,14)
 
 End
 ```
+<br/>
 
 ### `Method PokeShort( offset:Size_T,value:Int )`
 
@@ -215,6 +227,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Method PeekInt:Int( offset:Size_T )`
 
@@ -240,6 +253,7 @@ Print PeekInt(myBank,0)
 Print PeekInt(myBank,1)
 Print PeekInt(myBank,12)
 ```
+<br/>
 
 ### `Method PokeInt( offset:Size_T,value:Int )`
 
@@ -258,6 +272,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Method PeekLong:Long( offset:Size_T )`
 
@@ -283,6 +298,7 @@ Print PeekLong(myBank,0)
 Print PeekLong(myBank,1)
 Print PeekLong(myBank,8)
 ```
+<br/>
 
 ### `Method PokeLong( offset:Size_T,value:Long )`
 
@@ -301,6 +317,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Method PeekFloat:Float( offset:Size_T )`
 
@@ -328,6 +345,7 @@ Print PeekFloat(myBank,12)
 
 End
 ```
+<br/>
 
 ### `Method PokeFloat( offset:Size_T,value:Float )`
 
@@ -346,6 +364,7 @@ For Local t:Int = 0 ubtil BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Method PeekDouble:Double( offset:Size_T )`
 
@@ -373,6 +392,7 @@ Print PeekDouble(myBank,8)
 
 End
 ```
+<br/>
 
 ### `Method PokeDouble( offset:Size_T,value:Double )`
 
@@ -391,6 +411,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Method Save:Int( url:Object )`
 
@@ -420,6 +441,7 @@ For Local t:Int = 0 Until BankSize(myNextBank)
 	Print PeekByte(myNextBank,t)
 Next
 ```
+<br/>
 
 ## Functions
 
@@ -455,6 +477,7 @@ For Local t:Int = 0 Until BankSize(myNextBank)
 	Print PeekByte(myNextBank,t)
 Next
 ```
+<br/>
 
 ### `Function Create:TBank( size:Int )`
 
@@ -479,9 +502,11 @@ For Local i:Int = 0 Until 10
 	Print PeekByte(Bank , 50 + i)
 Next
 ```
+<br/>
 
 ### `Function CreateStatic:TBank( buf:Byte Ptr,size:Int )`
 
 Create a bank from an existing block of memory
 
+<br/>
 

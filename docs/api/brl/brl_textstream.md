@@ -40,6 +40,7 @@ A [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown if
 A string containing the text
 
 
+<br/>
 
 ### `Function SaveText:Int( str$,url:Object )`
 
@@ -54,4 +55,5 @@ then <b>str</b> is saved in UTF16 format. Otherwise, <b>str</b> is saved in LATI
 A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
 
 
+<br/>
 

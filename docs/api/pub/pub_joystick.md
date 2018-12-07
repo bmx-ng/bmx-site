@@ -8,7 +8,7 @@ sidebar_label: Pub.Joystick
 ## Types
 | Type | Description |
 |---|---|
-| [TJoystickDriver](../../pub/pub.joystick/tjoystickdriver) | Abstract base type for pixmap loaders |
+| [TJoystickDriver](../../pub/pub.joystick/tjoystickdriver) | Abstract base type for joystick drivers. |
 
 ## Functions
 
@@ -20,6 +20,7 @@ Available buttons (on/off controls) on a joystick.
 A bitfield representing which buttons are present.
 
 
+<br/>
 
 ### `Function JoyAxisCaps:Int(port:Int)`
 
@@ -44,6 +45,7 @@ in the FreeJoy module: Const JOY_X=0
 A bitfield representing which axis are available.
 
 
+<br/>
 
 ### `Function JoyDown:Int( button:Int, port:Int=0 )`
 
@@ -53,6 +55,7 @@ Test the status of a joystick button.
 True if the button is pressed.
 
 
+<br/>
 
 ### `Function JoyHit:Int( button:Int, port:Int=0 )`
 
@@ -67,6 +70,7 @@ the last call to [JoyHit](../../pub/pub.joystick/#function-joyhit-int-button-int
 Number of times <b>button</b> has been hit.
 
 
+<br/>
 
 ### `Function JoyX#( port:Int=0 )`
 
@@ -76,6 +80,7 @@ Reports the horizontal position of the joystick.
 Zero if the joystick is centered, -1 if Left, 1 if Right or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyY#( port:Int=0 )`
 
@@ -85,6 +90,7 @@ Reports the vertical position of the joystick.
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyZ#( port:Int=0 )`
 
@@ -94,6 +100,7 @@ Reports the position of the joystick's Z axis if supported.
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyR#( port:Int=0 )`
 
@@ -103,6 +110,7 @@ Reports the position of the joystick's R axis if supported.
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyU#( port:Int=0 )`
 
@@ -116,6 +124,7 @@ The U value of a joystick usually corresponds to a joystick's 'slider' or 'throt
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyV#( port:Int=0 )`
 
@@ -129,6 +138,7 @@ The V value of a joystick usually corresponds to a joystick's 'slider' or 'throt
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyYaw#( port:Int=0 )`
 
@@ -138,6 +148,7 @@ Reports the position of the joystick's YAW axis if supported.
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyPitch#( port:Int=0 )`
 
@@ -147,6 +158,7 @@ Reports the position of the joystick's PITCH axis if supported.
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyRoll#( port:Int=0 )`
 
@@ -156,6 +168,7 @@ Reports the position of the joystick's ROLL axis if supported.
 Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 
+<br/>
 
 ### `Function JoyHat#( port:Int=0 )`
 
@@ -165,6 +178,7 @@ Reports the position of the joystick's HAT controller if supported.
 -1.0 if the joystick is centered, and values between 0.0, 0.25, 0.5 and 0.75 for the directions Up, Right, Down, Left respectively.
 
 
+<br/>
 
 ### `Function JoyWheel#( port:Int=0 )`
 
@@ -174,9 +188,11 @@ Reports the position of the joystick's WHEEL controller if supported.
 Zero if the joystick is centered, -1.0 if Left, 1.0 if Right or a value inbetween.
 
 
+<br/>
 
 ### `Function FlushJoy( port_mask:Int=0 )`
 
 Flush joystick button states.
 
+<br/>
 

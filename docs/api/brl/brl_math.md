@@ -34,6 +34,7 @@ Next
 ' Square Root of  0.000000000 = 0.00000000000000000
 ' Square Root of  0.200000003 = 0.44721359883195888
 ```
+<br/>
 
 ### `Function IsInf( x:Double )`
 
@@ -62,6 +63,7 @@ Next
 ' Divide by Zero
 ' inverse of 0.200000003 = 5.00000000
 ```
+<br/>
 
 ### `Function Sqr:Double( x:Double )`
 
@@ -87,6 +89,7 @@ Next
 ' Square Root of  0.000000000 = 0.00000000000000000
 ' Square Root of  0.200000003 = 0.44721359883195888
 ```
+<br/>
 
 ### `Function Sin:Double( x:Double )`
 
@@ -104,6 +107,7 @@ For Local d:Int = 0 To 360 Step 45
 	Print "Sin("+d+")="+Sin(d)
 Next
 ```
+<br/>
 
 ### `Function Cos:Double( x:Double )`
 
@@ -121,6 +125,7 @@ For Local d:Int = 0 To 360 Step 45
 	Print "Cos("+d+")="+Cos(d)
 Next
 ```
+<br/>
 
 ### `Function Tan:Double( x:Double )`
 
@@ -138,6 +143,7 @@ For Local d:Int = 0 To 360 Step 45
 	Print "Tan("+d+")="+Float(Tan(d))
 Next
 ```
+<br/>
 
 ### `Function ASin:Double( x:Double )`
 
@@ -155,6 +161,7 @@ For Local d:Double = -1.0 To 1.0 Step 0.125
 	Print "ASin("+d+")="+ASin(d)
 Next
 ```
+<br/>
 
 ### `Function ACos:Double( x:Double )`
 
@@ -172,6 +179,7 @@ For Local d:Double = -1.0 To 1.0 Step 0.125
 	Print "ACos("+d+")="+ACos(d)
 Next
 ```
+<br/>
 
 ### `Function ATan:Double( x:Double )`
 
@@ -189,6 +197,7 @@ For Local d:Double = -1.0 To 1.0 Step 0.125
 	Print "ATan("+d+")="+ATan(d)
 Next
 ```
+<br/>
 
 ### `Function ATan2:Double( y:Double,x:Double )`
 
@@ -216,6 +225,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function Sinh:Double( x:Double )`
 
@@ -238,6 +248,7 @@ Flip
 
 Repeat Until KeyDown(KEY_ESCAPE) Or AppTerminate()
 ```
+<br/>
 
 ### `Function Cosh:Double( x:Double )`
 
@@ -263,6 +274,7 @@ Flip
 
 Repeat Until KeyDown(KEY_ESCAPE) Or AppTerminate()
 ```
+<br/>
 
 ### `Function Tanh:Double( x:Double )`
 
@@ -287,6 +299,7 @@ Flip
 
 Repeat Until KeyDown(KEY_ESCAPE) Or AppTerminate()
 ```
+<br/>
 
 ### `Function Exp:Double( x:Double )`
 
@@ -310,6 +323,7 @@ Flip
 
 Repeat Until KeyDown(KEY_ESCAPE) Or AppTerminate()
 ```
+<br/>
 
 ### `Function Log:Double( x:Double )`
 
@@ -327,6 +341,7 @@ For n:Float = 1 To 20
 	Print "Log("+n+")="+Log(n)
 Next
 ```
+<br/>
 
 ### `Function Log10:Double( x:Double )`
 
@@ -344,6 +359,7 @@ For Local n:Float = 0 To 100 Step 10
 	Print "Log10("+n+")="+Log10(n)
 Next
 ```
+<br/>
 
 ### `Function Ceil:Double( x:Double )`
 
@@ -361,6 +377,7 @@ For Local i:Float = -1 To 1 Step .2
 	Print "Ceil("+i+")="+Ceil(i)
 Next
 ```
+<br/>
 
 ### `Function Floor:Double( x:Double )`
 
@@ -378,4 +395,5 @@ For Local i:Double = -1 To 1 Step .2
 	Print "Floor("+i+")="+Floor(i)
 Next
 ```
+<br/>
 

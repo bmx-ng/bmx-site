@@ -25,6 +25,7 @@ Get source code
 The lua source code for the class.
 
 
+<br/>
 
 ### `Method SetSourceCode:TLuaClass( source$ )`
 
@@ -37,6 +38,7 @@ If the class was created with the TLuaClass.Create function, you do not need to 
 method.
 
 
+<br/>
 
 ## Functions
 
@@ -55,4 +57,5 @@ These functions can later be invoked by using the TLuaObject.Invoke method.
 A new lua class object.
 
 
+<br/>
 

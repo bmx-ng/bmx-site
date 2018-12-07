@@ -40,6 +40,7 @@ SuperStrict
 
 Print StripDir("mypath/myfile.bmx")	' prints myfile.bmx
 ```
+<br/>
 
 ### `Function StripExt$( path$ )`
 
@@ -53,6 +54,7 @@ SuperStrict
 
 Print StripExt("mypath/myfile.bmx")	' prints mypath/myfile
 ```
+<br/>
 
 ### `Function StripAll$( path$ )`
 
@@ -66,6 +68,7 @@ SuperStrict
 
 Print StripAll("mypath/myfile.bmx")	' prints myfile
 ```
+<br/>
 
 ### `Function StripSlash$( path$ )`
 
@@ -83,6 +86,7 @@ SuperStrict
 
 Print StripSlash("mypath/")	' prints mypath
 ```
+<br/>
 
 ### `Function ExtractDir$( path$ )`
 
@@ -96,6 +100,7 @@ SuperStrict
 
 Print ExtractDir("mypath/myfile.bmx")	' prints mypath
 ```
+<br/>
 
 ### `Function ExtractExt$( path$ )`
 
@@ -109,6 +114,7 @@ SuperStrict
 
 Print ExtractExt("mypath/myfile.bmx")	' prints bmx
 ```
+<br/>
 
 ### `Function CurrentDir$()`
 
@@ -126,6 +132,7 @@ SuperStrict
 Local cd:String = CurrentDir()
 Print "CurrentDir()="+cd
 ```
+<br/>
 
 ### `Function RealPath$( path$ )`
 
@@ -141,6 +148,7 @@ Print RealPath("realpath.bmx")	'prints full path of this source
 
 Print RealPath("..") 'prints full path of parent directory
 ```
+<br/>
 
 ### `Function FileType:Int( path$ )`
 
@@ -160,6 +168,7 @@ Print FileType(".")		' prints 2 for directory type
 Print FileType("filetype.bmx")	' prints 1 for file type
 Print FileType("notfound.file")	' prints 0 for doesn't exist
 ```
+<br/>
 
 ### `Function FileTime:Int( path$, timetype:Int=FILETIME_MODIFIED )`
 
@@ -177,6 +186,7 @@ SuperStrict
 
 Print FileTime("filetime.bmx")
 ```
+<br/>
 
 ### `Function FileSize:Long( path$ )`
 
@@ -196,6 +206,7 @@ SuperStrict
 
 Print FileSize("filesize.bmx")
 ```
+<br/>
 
 ### `Function FileMode:Int( path$ )`
 
@@ -233,6 +244,7 @@ End Function
 
 Print Permissions(FileMode("filemode.bmx"))
 ```
+<br/>
 
 ### `Function SetFileMode( path$,Mode:Int )`
 
@@ -255,6 +267,7 @@ mode = mode & writebits
 'set the new file mode
 SetFileMode("setfilemode.bmx",mode)
 ```
+<br/>
 
 ### `Function CreateFile:Int( path$ )`
 
@@ -274,6 +287,7 @@ If Not success Then
 	RuntimeError "error creating file"
 End If
 ```
+<br/>
 
 ### `Function CreateDir:Int( path$,recurse:Int=False )`
 
@@ -297,6 +311,7 @@ If Not success Then
 	RuntimeError "error creating directory"
 End If
 ```
+<br/>
 
 ### `Function DeleteFile:Int( path$ )`
 
@@ -314,6 +329,7 @@ SuperStrict
 Local success:Int = DeleteFile("myfile")
 If Not success RuntimeError "error deleting file"
 ```
+<br/>
 
 ### `Function RenameFile:Int( oldpath$,newpath$ )`
 
@@ -339,6 +355,7 @@ If result = 0 Then
 	RuntimeError "Rename not successful..." ' as file already exist
 End If
 ```
+<br/>
 
 ### `Function CopyFile:Int( src$,dst$ )`
 
@@ -364,6 +381,7 @@ If result = 0 Then
 	RuntimeError "Rename not successful..." ' as file already exists
 End If
 ```
+<br/>
 
 ### `Function CopyDir:Int( src$,dst$ )`
 
@@ -373,6 +391,7 @@ Copy a directory
 True if successful
 
 
+<br/>
 
 ### `Function DeleteDir:Int( path$,recurse:Int=False )`
 
@@ -396,6 +415,7 @@ If Not success Then
 	RuntimeError "error deleting directory"
 End If
 ```
+<br/>
 
 ### `Function ChangeDir:Int( path$ )`
 
@@ -421,6 +441,7 @@ ChangeDir ".."
 
 Print "CurrentDir()="+CurrentDir()
 ```
+<br/>
 
 ### `Function ReadDir:Byte Ptr( path$ )`
 
@@ -448,6 +469,7 @@ Forever
 
 CloseDir dir
 ```
+<br/>
 
 ### `Function NextFile$( dir:Byte Ptr )`
 
@@ -479,6 +501,7 @@ Until file = ""
 
 CloseDir(dir)
 ```
+<br/>
 
 ### `Function CloseDir( dir:Byte Ptr )`
 
@@ -506,6 +529,7 @@ Until Not file
 
 CloseDir(dir)
 ```
+<br/>
 
 ### `Function LoadDir$[]( dir$,skip_dots:Int=True )`
 
@@ -532,6 +556,7 @@ For Local t:String = EachIn files
 	Print t	
 Next
 ```
+<br/>
 
 ### `Function OpenFile:TStream( url:Object,readable:Int=True,writeable:Int=True )`
 
@@ -560,6 +585,7 @@ While Not Eof(file)
 Wend
 CloseStream file
 ```
+<br/>
 
 ### `Function ReadFile:TStream( url:Object )`
 
@@ -589,6 +615,7 @@ Wend
 
 CloseStream file
 ```
+<br/>
 
 ### `Function WriteFile:TStream( url:Object )`
 
@@ -611,6 +638,7 @@ WriteLine file,"hello world"
 
 CloseStream file
 ```
+<br/>
 
 ### `Function CloseFile( stream:TStream )`
 
@@ -636,4 +664,5 @@ Wend
 
 CloseFile(in) ' can also use CloseStream(in)
 ```
+<br/>
 

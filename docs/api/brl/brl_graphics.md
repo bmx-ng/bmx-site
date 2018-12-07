@@ -107,6 +107,7 @@ GLDrawText "'Raw' OpenGL Graphics! Hit any key...",0,0
 Flip
 WaitKey
 ```
+<br/>
 
 ### `Function GetGraphicsDriver:TGraphicsDriver()`
 
@@ -116,11 +117,13 @@ Get current graphics driver
 Returns the current graphics driver as selected by [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-driver-tgraphicsdriver-defaultflags-graphics-backbuffer)
 
 
+<br/>
 
 ### `Function DefaultGraphicsFlags()`
 
 Get current default graphics flags
 
+<br/>
 
 ### `Function GraphicsModes:TGraphicsMode[]()`
 
@@ -146,6 +149,7 @@ For Local Mode:TGraphicsMode=EachIn GraphicsModes()
 
 Next
 ```
+<br/>
 
 ### `Function CountGraphicsModes()`
 
@@ -159,6 +163,7 @@ Use [GetGraphicsMode](../../brl/brl.graphics/#function-getgraphicsmode-index-wid
 Number of available Graphics modes
 
 
+<br/>
 
 ### `Function GetGraphicsMode( index,width Var,height Var,depth Var,hertz Var )`
 
@@ -169,6 +174,7 @@ Get information about a graphics mode
 in the range 0 (inclusive) to the value returned by [CountGraphicsModes](../../brl/brl.graphics/#function-countgraphicsmodes) (exclusive).
 
 
+<br/>
 
 ### `Function GraphicsModeExists( width,height,depth=0,hertz=0 )`
 
@@ -183,6 +189,7 @@ parameter to be ignored.
 True if a matching graphics mode is found
 
 
+<br/>
 
 ### `Function CreateGraphics:TGraphics( width,height,depth,hertz,flags )`
 
@@ -200,6 +207,7 @@ The kind of graphics object returned depends upon the current graphics driver as
 A graphics object
 
 
+<br/>
 
 ### `Function CloseGraphics( g:TGraphics )`
 
@@ -209,6 +217,7 @@ Close a graphics object
 Once closed, a graphics object can no longer be used.
 
 
+<br/>
 
 ### `Function SetGraphics( g:TGraphics )`
 
@@ -249,11 +258,13 @@ Repeat
 
 Until AppTerminate()
 ```
+<br/>
 
 ### `Function GraphicsResize( width:Int, height:Int )`
 
 Resize the current graphics object to <b>width</b>, <b>height</b>.
 
+<br/>
 
 ### `Function GraphicsWidth()`
 
@@ -280,6 +291,7 @@ DrawText "Graphics Hertz: "+GraphicsHertz(), 10 , 70
 Flip
 WaitKey()
 ```
+<br/>
 
 ### `Function GraphicsHeight()`
 
@@ -306,6 +318,7 @@ DrawText "Graphics Hertz: "+GraphicsHertz(), 10 , 70
 Flip
 WaitKey()
 ```
+<br/>
 
 ### `Function GraphicsDepth()`
 
@@ -332,6 +345,7 @@ DrawText "Graphics Hertz: "+GraphicsHertz(), 10 , 70
 Flip
 WaitKey()
 ```
+<br/>
 
 ### `Function GraphicsHertz()`
 
@@ -358,6 +372,7 @@ DrawText "Graphics Hertz: "+GraphicsHertz(), 10 , 70
 Flip
 WaitKey()
 ```
+<br/>
 
 ### `Function GraphicsFlags()`
 
@@ -371,6 +386,7 @@ The current graphics object can be changed using [SetGraphics](../../brl/brl.gra
 The flags of the current graphics object
 
 
+<br/>
 
 ### `Function Flip( sync=-1 )`
 
@@ -413,6 +429,7 @@ While Not (KeyHit(KEY_ESCAPE) Or AppTerminate())
   Flip sync
 Wend
 ```
+<br/>
 
 ### `Function Graphics:TGraphics( width,height,depth=0,hertz=60,flags=0 )`
 
@@ -444,6 +461,7 @@ Flip
 Repeat
 Until KeyDown(KEY_ESCAPE) Or AppTerminate()
 ```
+<br/>
 
 ### `Function EndGraphics()`
 
@@ -453,6 +471,7 @@ End graphics
 [EndGraphics](../../brl/brl.graphics/#function-endgraphics) closes the graphics object returned by [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0).
 
 
+<br/>
 
 ## Globals
 
@@ -465,4 +484,5 @@ Use this id with [AddHook](../../brl/brl.hook/#function-addhook-id-func-object-i
 is called every [Flip](../../brl/brl.graphics/#function-flip-sync-1).
 
 
+<br/>
 

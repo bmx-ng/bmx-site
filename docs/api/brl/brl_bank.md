@@ -50,6 +50,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Function CreateStaticBank:TBank( buf:Byte Ptr,size:Int )`
 
@@ -64,6 +65,7 @@ A static bank cannot be resized.
 A bank object that references an existing block of memory
 
 
+<br/>
 
 ### `Function LoadBank:TBank( url:Object )`
 
@@ -97,6 +99,7 @@ For Local t:Int = 0 Until BankSize(myNextBank)
 	Print PeekByte(myNextBank,t)
 Next
 ```
+<br/>
 
 ### `Function SaveBank:Int( bank:TBank,url:Object )`
 
@@ -124,6 +127,7 @@ Next
 
 SaveBank MyBank,"mybank.dat"
 ```
+<br/>
 
 ### `Function BankBuf:Byte Ptr( bank:TBank )`
 
@@ -149,6 +153,7 @@ Local bptr:Byte Ptr = BankBuf(bank)
 Print PeekByte(bank , 10)
 Print bptr[10]
 ```
+<br/>
 
 ### `Function LockBank:Byte Ptr( bank:TBank )`
 
@@ -165,6 +170,7 @@ to return it to the bank.
 A byte pointer to the memory block controlled by the bank.
 
 
+<br/>
 
 ### `Function UnlockBank( bank:TBank )`
 
@@ -175,6 +181,7 @@ After you have finished with a bank's memory block, you must use [UnlockBank](..
 to return it to the bank.
 
 
+<br/>
 
 ### `Function BankSize:Long( bank:TBank )`
 
@@ -192,6 +199,7 @@ Local bank:TBank = CreateBank( Int(10 + Rnd(40)) )
 
 Print "size of the bank is: "+BankSize(bank)
 ```
+<br/>
 
 ### `Function BankCapacity:Long( bank:TBank )`
 
@@ -217,6 +225,7 @@ Local bank:TBank = CreateBank( Int(20 + Rnd(40)) )
 Print "size of the bank is: "+BankSize(bank)
 Print "capacity of the bank is: "+BankCapacity(bank)
 ```
+<br/>
 
 ### `Function ResizeBank( bank:TBank,size:Size_T )`
 
@@ -228,6 +237,7 @@ allocated if the requested size is greater than the bank's current capacity,
 see [BankCapacity](../../brl/brl.bank/#function-bankcapacity-long-bank-tbank) for more information.
 
 
+<br/>
 
 ### `Function CopyBank( src_bank:TBank,src_offset:Size_T,dst_bank:TBank,dst_offset:Size_T,count:Size_T )`
 
@@ -260,6 +270,7 @@ For Local i:Int = 0 To 10
 	Print PeekByte(CopiedBank , i)
 Next
 ```
+<br/>
 
 ### `Function PeekByte:Int( bank:TBank,offset:Size_T )`
 
@@ -288,6 +299,7 @@ Print PeekByte(myBank,1)
 
 End
 ```
+<br/>
 
 ### `Function PokeByte( bank:TBank,offset:Size_T,value:Int )`
 
@@ -306,6 +318,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Function PeekShort:Int( bank:TBank,offset:Size_T )`
 
@@ -339,6 +352,7 @@ Print PeekShort(myBank,14)
 
 End
 ```
+<br/>
 
 ### `Function PokeShort( bank:TBank,offset:Size_T,value:Int )`
 
@@ -363,6 +377,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Function PeekInt:Int( bank:TBank,offset:Size_T )`
 
@@ -394,6 +409,7 @@ Print PeekInt(myBank,0)
 Print PeekInt(myBank,1)
 Print PeekInt(myBank,12)
 ```
+<br/>
 
 ### `Function PokeInt( bank:TBank,offset:Size_T,value:Int )`
 
@@ -418,6 +434,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Function PeekLong:Long( bank:TBank,offset:Size_T )`
 
@@ -449,6 +466,7 @@ Print PeekLong(myBank,0)
 Print PeekLong(myBank,1)
 Print PeekLong(myBank,8)
 ```
+<br/>
 
 ### `Function PokeLong( bank:TBank,offset:Size_T,value:Long )`
 
@@ -473,6 +491,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Function PeekFloat:Float( bank:TBank,offset:Size_T )`
 
@@ -506,6 +525,7 @@ Print PeekFloat(myBank,12)
 
 End
 ```
+<br/>
 
 ### `Function PokeFloat( bank:TBank,offset:Size_T,value:Float )`
 
@@ -530,6 +550,7 @@ For Local t:Int = 0 ubtil BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Function PeekDouble:Double( bank:TBank,offset:Size_T )`
 
@@ -563,6 +584,7 @@ Print PeekDouble(myBank,8)
 
 End
 ```
+<br/>
 
 ### `Function PokeDouble( bank:TBank,offset:Size_T,value:Double )`
 
@@ -587,6 +609,7 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+<br/>
 
 ### `Function ReadBank:Long( bank:TBank,stream:TStream,offset:Size_T,count:Long )`
 
@@ -596,6 +619,7 @@ Read bytes from a Stream to a Bank
 The number of bytes successfully read from the Stream
 
 
+<br/>
 
 ### `Function WriteBank:Long( bank:TBank,stream:TStream,offset:Size_T,count:Long )`
 
@@ -627,4 +651,5 @@ For Local t:Int = 0 Until BankSize(MyNextBank)
 	Print PeekByte(MyNextBank,t)
 Next
 ```
+<br/>
 

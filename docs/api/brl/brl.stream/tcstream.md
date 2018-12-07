@@ -16,9 +16,11 @@ Standard C file stream type
 
 Create a TCStream from a 'C' filename
 
+<br/>
 
 ### `Function CreateWithCStream:TCStream( cstream:Byte Ptr,Mode:Int )`
 
 Create a TCStream from a 'C' stream handle
 
+<br/>
 

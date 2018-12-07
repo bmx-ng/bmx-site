@@ -16,6 +16,7 @@ Clears the map.
 Removes all keys and values.
 
 
+<br/>
 
 ### `Method IsEmpty()`
 
@@ -24,6 +25,7 @@ Checks if the map is empty.
 [True](../../../brl/brl.blitz/#true) if <b>map</b> is empty, otherwise [False](../../../brl/brl.blitz/#false).
 
 
+<br/>
 
 ### `Method Insert( key:Byte Ptr,value:Object )`
 
@@ -32,6 +34,7 @@ Inserts a key/value pair into the map.
 If the map already contains <b>key</b>, its value is overwritten with <b>value</b>.
 
 
+<br/>
 
 ### `Method Contains:Int( key:Byte Ptr )`
 
@@ -41,6 +44,7 @@ Checks if the map contains <b>key</b>.
 [True](../../../brl/brl.blitz/#true) if the map contains <b>key</b>.
 
 
+<br/>
 
 ### `Method ValueForKey:Object( key:Byte Ptr )`
 
@@ -53,6 +57,7 @@ If the map does not contain <b>key</b>, a [Null](../../../brl/brl.blitz/#null) o
 The value associated with <b>key</b>.
 
 
+<br/>
 
 ### `Method Remove( key:Byte Ptr )`
 
@@ -62,6 +67,7 @@ Remove a key/value pair from the map.
 [True](../../../brl/brl.blitz/#true) if <b>key</b> was removed, or [False](../../../brl/brl.blitz/#false) otherwise.
 
 
+<br/>
 
 ### `Method Keys:TPtrMapEnumerator()`
 
@@ -74,6 +80,7 @@ The object returned by [Keys](../../../brl/brl.map/tptrmap/#method-keys-tptrmape
 An enumeration object
 
 
+<br/>
 
 ### `Method Values:TPtrMapEnumerator()`
 
@@ -86,11 +93,13 @@ The object returned by [Values](../../../brl/brl.map/tptrmap/#method-values-tptr
 An enumeration object.
 
 
+<br/>
 
 ### `Method Copy:TPtrMap()`
 
 Returns a copy the contents of this map.
 
+<br/>
 
 ### `Method ObjectEnumerator:TPtrNodeEnumerator()`
 
@@ -99,4 +108,5 @@ Returns a node enumeration object.
 The object returned by [ObjectEnumerator](../../../brl/brl.map/tptrmap/#method-objectenumerator-tptrnodeenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the nodes in the map.
 
 
+<br/>
 

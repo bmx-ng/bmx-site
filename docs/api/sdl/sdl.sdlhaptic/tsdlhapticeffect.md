@@ -13,4 +13,5 @@ A generic template for any haptic effect.
 
 Frees the effect.
 
+<br/>
 

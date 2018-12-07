@@ -21,6 +21,7 @@ Load a Pixmap in PNG format
 If the pixmap cannot be loaded, Null is returned.
 
 
+<br/>
 
 ### `Function SavePixmapPNG( pixmap:TPixmap,url:Object,compression=5 )`
 
@@ -34,4 +35,5 @@ The optional <b>compression</b> parameter should be in the range 0 to 9, where
 0 indicates no compression (fastest) and 9 indicates full compression (slowest).
 
 
+<br/>
 

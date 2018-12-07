@@ -92,6 +92,7 @@ Local thread:TThread=CreateThread( MyThread,"Data passed to child thread." )
 'wait for thread to finish and print value returned from thread
 MyPrint WaitThread( Thread ).ToString()
 ```
+<br/>
 
 ### `Function MainThread:TThread()`
 
@@ -101,6 +102,7 @@ Get main thread
 A thread object representing the main application thread.
 
 
+<br/>
 
 ### `Function CurrentThread:TThread()`
 
@@ -110,6 +112,7 @@ Get current thread
 A thread object representing the current thread.
 
 
+<br/>
 
 ### `Function DetachThread( thread:TThread )`
 
@@ -123,6 +126,7 @@ Once one a thread has been detached, it wil no longer be possible to use [WaitTh
 This allows the thread to run without your program having to continually check whether it has completedin order to close it.
 
 
+<br/>
 
 ### `Function WaitThread:Object( thread:TThread )`
 
@@ -140,6 +144,7 @@ The returned object is the object returned by the thread's entry routine, as pas
 The object returned by the thread entry routine.
 
 
+<br/>
 
 ### `Function ThreadRunning:Int( thread:TThread )`
 
@@ -149,6 +154,7 @@ Check if a thread is running
 [True](../../brl/brl.blitz/#true) if <b>thread</b> is still running, otherwise [False](../../brl/brl.blitz/#false).
 
 
+<br/>
 
 ### `Function CreateThreadData:TThreadData()`
 
@@ -158,16 +164,19 @@ Create thread data
 A new thread data object.
 
 
+<br/>
 
 ### `Function SetThreadDataValue( data:TThreadData,value:Object )`
 
 Set thread data value
 
+<br/>
 
 ### `Function GetThreadDataValue:Object( data:TThreadData )`
 
 Get thread data value
 
+<br/>
 
 ### `Function CreateMutex:TMutex()`
 
@@ -231,16 +240,19 @@ For Local t:String = EachIn list
 Next
 UnlockMutex listMutex
 ```
+<br/>
 
 ### `Function CloseMutex( mutex:TMutex )`
 
 Close a mutex
 
+<br/>
 
 ### `Function LockMutex( mutex:TMutex )`
 
 Lock a mutex
 
+<br/>
 
 ### `Function TryLockMutex:Int( mutex:TMutex )`
 
@@ -250,11 +262,13 @@ Try to lock a mutex
 [True](../../brl/brl.blitz/#true) if <b>mutex</b> was successfully locked; [False](../../brl/brl.blitz/#false) if <b>mutex</b> was already locked by another thread.
 
 
+<br/>
 
 ### `Function UnlockMutex( mutex:TMutex )`
 
 Unlock a mutex
 
+<br/>
 
 ### `Function CreateSemaphore:TSemaphore( count:Int )`
 
@@ -309,21 +323,25 @@ For Local i:Int = 1 To 100
 
 Next
 ```
+<br/>
 
 ### `Function CloseSemaphore( semaphore:TSemaphore )`
 
 Close a semaphore
 
+<br/>
 
 ### `Function WaitSemaphore( semaphore:TSemaphore )`
 
 Wait for a semaphore
 
+<br/>
 
 ### `Function PostSemaphore( semaphore:TSemaphore )`
 
 Post a semaphore
 
+<br/>
 
 ### `Function CreateCondVar:TCondVar()`
 
@@ -333,26 +351,31 @@ Create a condvar
 A new condvar object
 
 
+<br/>
 
 ### `Function CloseCondVar( condvar:TCondVar )`
 
 Close a condvar
 
+<br/>
 
 ### `Function WaitCondVar( condvar:TCondVar,mutex:TMutex )`
 
 Wait for a condvar
 
+<br/>
 
 ### `Function SignalCondVar( condvar:TCondVar )`
 
 Signal a condvar
 
+<br/>
 
 ### `Function BroadcastCondVar( condvar:TCondVar )`
 
 Broadcast a condvar
 
+<br/>
 
 ### `Function CompareAndSwap:Int( target:Int Var,oldValue:Int,newValue:Int )`
 
@@ -366,6 +389,7 @@ Atomically replace <b>target</b> with <b>new_value</b> if <b>target</b> equals <
 <b>True</b> if target was updated
 
 
+<br/>
 
 ### `Function AtomicAdd:Int( target:Int Var,value:Int )`
 
@@ -379,6 +403,7 @@ Atomically add <b>value</b> to <b>target</b>.
 Previuous value of target
 
 
+<br/>
 
 ### `Function AtomicSwap:Int( target:Int Var,value:Int )`
 
@@ -388,4 +413,5 @@ Atomically swap values
 The old value of <b>target</b>
 
 
+<br/>
 

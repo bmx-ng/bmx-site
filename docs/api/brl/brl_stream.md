@@ -69,6 +69,7 @@ closed using [CloseStream](../../brl/brl.stream/#function-closestream-stream-tst
 A stream object
 
 
+<br/>
 
 ### `Function ReadStream:TStream( url:Object )`
 
@@ -100,6 +101,7 @@ While Not Eof(in)
 Wend
 CloseStream in
 ```
+<br/>
 
 ### `Function WriteStream:TStream( url:Object )`
 
@@ -140,6 +142,7 @@ CloseStream out
 
 Print "File mygame.ini created, bytes="+FileSize("mygame.ini")
 ```
+<br/>
 
 ### `Function Eof:Int( stream:TStream )`
 
@@ -149,6 +152,7 @@ Get stream end of file status
 True If stream is at end of file
 
 
+<br/>
 
 ### `Function StreamPos:Long( stream:TStream )`
 
@@ -158,6 +162,7 @@ Get current position of seekable stream
 Current stream position, or -1 If stream is not seekable
 
 
+<br/>
 
 ### `Function StreamSize:Long( stream:TStream )`
 
@@ -167,6 +172,7 @@ Get current size of seekable stream
 Current stream size in bytes, or -1 If stream is not seekable
 
 
+<br/>
 
 ### `Function SeekStream:Long( stream:TStream, pos:Long, whence:Int = SEEK_SET_ )`
 
@@ -176,6 +182,7 @@ Set stream position of seekable stream
 New stream position, or -1 If stream is not seekable
 
 
+<br/>
 
 ### `Function FlushStream( stream:TStream )`
 
@@ -184,6 +191,7 @@ Flush a stream
 [FlushStream](../../brl/brl.stream/#function-flushstream-stream-tstream) writes any outstanding buffered data to <b>stream</b>.
 
 
+<br/>
 
 ### `Function CloseStream( stream:TStream )`
 
@@ -194,6 +202,7 @@ All streams should be closed when they are no longer required.
 Closing a stream also flushes the stream before it closes.
 
 
+<br/>
 
 ### `Function ReadByte:Int( stream:TStream )`
 
@@ -207,6 +216,7 @@ A TStreamReadException is thrown If there is not enough data available.
 A Byte value
 
 
+<br/>
 
 ### `Function ReadShort:Int( stream:TStream )`
 
@@ -220,6 +230,7 @@ A TStreamReadException is thrown If there is not enough data available.
 A Short value
 
 
+<br/>
 
 ### `Function ReadInt:Int( stream:TStream )`
 
@@ -233,6 +244,7 @@ A TStreamReadException is thrown If there is not enough data available.
 An Int value
 
 
+<br/>
 
 ### `Function ReadLong:Long( stream:TStream )`
 
@@ -246,6 +258,7 @@ A TStreamReadException is thrown If there is not enough data available.
 A Long value
 
 
+<br/>
 
 ### `Function ReadFloat#( stream:TStream )`
 
@@ -259,6 +272,7 @@ A TStreamReadException is thrown If there is not enough data available.
 A Float value
 
 
+<br/>
 
 ### `Function ReadDouble!( stream:TStream )`
 
@@ -272,6 +286,7 @@ A TStreamWriteException is thrown If there is not enough data available.
 A Double value
 
 
+<br/>
 
 ### `Function WriteByte( stream:TStream,n:Int )`
 
@@ -281,6 +296,7 @@ Write a Byte to a stream
 A TStreamWriteException is thrown If the Byte could Not be written
 
 
+<br/>
 
 ### `Function WriteShort( stream:TStream,n:Int )`
 
@@ -290,6 +306,7 @@ Write a Short to a stream
 A TStreamWriteException is thrown if not all bytes could be written
 
 
+<br/>
 
 ### `Function WriteInt( stream:TStream,n:Int )`
 
@@ -299,6 +316,7 @@ Write an Int to a stream
 A TStreamWriteException is thrown if not all bytes could be written
 
 
+<br/>
 
 ### `Function WriteLong( stream:TStream,n:Long )`
 
@@ -308,6 +326,7 @@ Write a Long to a stream
 A TStreamWriteException is thrown if not all bytes could be written
 
 
+<br/>
 
 ### `Function WriteFloat( stream:TStream,n# )`
 
@@ -317,6 +336,7 @@ Write a Float to a stream
 A TStreamWriteException is thrown if not all bytes could be written
 
 
+<br/>
 
 ### `Function WriteDouble( stream:TStream,n! )`
 
@@ -326,6 +346,7 @@ Write a Double to a stream
 A TStreamWriteException is thrown if not all bytes could be written
 
 
+<br/>
 
 ### `Function ReadString$( stream:TStream,length:Int )`
 
@@ -339,6 +360,7 @@ A [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown if
 A String of length <b>length</b>
 
 
+<br/>
 
 ### `Function WriteString( stream:TStream,str$ )`
 
@@ -350,6 +372,7 @@ Each character in <b>str</b> is written to <b>stream</b>.
 A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
 
 
+<br/>
 
 ### `Function ReadLine$( stream:TStream )`
 
@@ -369,6 +392,7 @@ or null character.
 A string
 
 
+<br/>
 
 ### `Function WriteLine:Int( stream:TStream,str$ )`
 
@@ -383,6 +407,7 @@ followed by the line terminating sequence "rn".
 True if line successfully written, else False
 
 
+<br/>
 
 ### `Function LoadString$( url:Object )`
 
@@ -399,6 +424,7 @@ A [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown if
 A String
 
 
+<br/>
 
 ### `Function SaveString( str$,url:Object )`
 
@@ -411,6 +437,7 @@ resultant stream.
 A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
 
 
+<br/>
 
 ### `Function LoadByteArray:Byte[]( url:Object )`
 
@@ -425,6 +452,7 @@ The specified <b>url</b> is opened for reading, and each byte in the resultant s
 A Byte array
 
 
+<br/>
 
 ### `Function SaveByteArray( byteArray:Byte[],url:Object )`
 
@@ -437,6 +465,7 @@ resultant stream.
 A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
 
 
+<br/>
 
 ### `Function CopyStream( fromStream:TStream,toStream:TStream,bufSize:Int=4096 )`
 
@@ -449,6 +478,7 @@ of file.
 A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
 
 
+<br/>
 
 ### `Function CopyBytes( fromStream:TStream,toStream:TStream,count:Int,bufSize:Int=4096 )`
 
@@ -461,9 +491,11 @@ A [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown if
 [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
 
 
+<br/>
 
 ### `Function CasedFileName$(path$)`
 
 Returns a case sensitive filename if it exists from a case insensitive file path.
 
+<br/>
 

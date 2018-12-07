@@ -13,11 +13,13 @@ An executor that executes each submitted task using one of possibly several pool
 
 Executes the given command at some time in the future.
 
+<br/>
 
 ### `Method shutdown()`
 
 Initiates an orderly shutdown in which previously submitted tasks are executed, but no new tasks will be accepted.
 
+<br/>
 
 ## Functions
 
@@ -25,6 +27,7 @@ Initiates an orderly shutdown in which previously submitted tasks are executed, 
 
 Creates an executor that uses a single worker thread operating off an unbounded queue.
 
+<br/>
 
 ### `Function newFixedThreadPool:TThreadPoolExecutor(threads:Int)`
 
@@ -34,4 +37,5 @@ At any point, at most <b>threads</b> threads will be active processing tasks. If
 submitted when all threads are active, they will wait in the queue until a thread is available.
 
 
+<br/>
 

@@ -93,6 +93,7 @@ This function allows you to determine whether OpenAL is installed on the current
 True if OpenAL is installed.
 
 
+<br/>
 
 ## Globals
 
@@ -107,6 +108,7 @@ The return value will be NULL if there is an error.<br><br>
 Returns a pointer to the opened device. Will return NULL if a device can not be opened.
 
 
+<br/>
 
 ### `Global alcCloseDevice( device:Byte Ptr )`
 
@@ -120,6 +122,7 @@ This function closes a device by name.
 Any contexts and buffers within the device will be destroyed when the device is closed, and ALC_TRUE will be returned on success or ALC_FALSE on failure.
 
 
+<br/>
 
 ### `Global alcGetError( device:Byte Ptr )`
 
@@ -130,6 +133,7 @@ This function retrieves the current context error state.
 <tr><td>device</td><td>a pointer to the device to retrieve the error state from</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alcGetString:Byte Ptr( device:Byte Ptr,param )`
 
@@ -148,6 +152,7 @@ ALC_CAPTURE_DEVICE_SPECIFIER will return the name of the specified capture devic
 ALC_EXTENSIONS returns a list of available context extensions, with each extension separated by a space and the list terminated by a NULL character.<br><br>
 
 
+<br/>
 
 ### `Global alcGetIntegerv( device:Byte Ptr,param,size,data:Int Ptr )`
 
@@ -167,6 +172,7 @@ This function returns integers related to the context.
 The versions returned refer to the specification version that the implementation meets.
 
 
+<br/>
 
 ### `Global alcCreateContext:Byte Ptr( device:Byte Ptr,attrlist:Int Ptr )`
 
@@ -185,6 +191,7 @@ This function creates a context using a specified device.
 A pointer to the new context (NULL on failure).
 
 
+<br/>
 
 ### `Global alcMakeContextCurrent( context:Byte Ptr )`
 
@@ -198,6 +205,7 @@ This function makes a specified context the current context.
 Returns ALC_TRUE on success, or ALC_FALSE on failure.
 
 
+<br/>
 
 ### `Global alcProcessContext( context:Byte Ptr )`
 
@@ -211,6 +219,7 @@ This function tells a context to begin processing.
 When a context is suspended, changes in OpenAL state will be accepted but will not be processed. [alcSuspendContext](../../pub/pub.openal/#global-alcsuspendcontext-context-byte-ptr) can be used to suspend a context, and then all the OpenAL state changes can be applied at once, followed by a call to alcProcessContext to apply all the state changes immediately. In some cases, this procedure may be more efficient than application of properties in a non-suspended state. In some implementations, process and suspend calls are each a NOP.
 
 
+<br/>
 
 ### `Global alcSuspendContext( context:Byte Ptr )`
 
@@ -224,6 +233,7 @@ This function suspends processing on a specified context.
 When a context is suspended, changes in OpenAL state will be accepted but will not be processed. A typical use of alcSuspendContext would be to suspend a context, apply all the OpenAL state changes at once, and then call [alcProcessContext](../../pub/pub.openal/#global-alcprocesscontext-context-byte-ptr) to apply all the state changes at once. In some cases, this procedure may be more efficient than application of properties in a non-suspended state. In some implementations, process and suspend calls are each a NOP.
 
 
+<br/>
 
 ### `Global alcDestroyContext( context:Byte Ptr )`
 
@@ -237,6 +247,7 @@ This function destroys a context.
 A context which is not current can be destroyed at any time (all sources within that context will also be deleted - buffers are not affected). [alcMakeContextCurrent](../../pub/pub.openal/#global-alcmakecontextcurrent-context-byte-ptr) should be used to make sure the context to be destroyed is not current (NULL is valid for [alcMakeContextCurrent](../../pub/pub.openal/#global-alcmakecontextcurrent-context-byte-ptr)).
 
 
+<br/>
 
 ### `Global alcGetCurrentContext:Byte Ptr()`
 
@@ -246,6 +257,7 @@ This function retrieves the current context.
 a pointer to the current context.
 
 
+<br/>
 
 ### `Global alcGetContextsDevice:Byte Ptr( context:Byte Ptr )`
 
@@ -262,6 +274,7 @@ This function retrieves a context's device pointer.
 a pointer to the specified context's device.
 
 
+<br/>
 
 ### `Global alcIsExtensionPresent( device:Byte Ptr,extName$z )`
 
@@ -276,6 +289,7 @@ This function queries if a specified context extension is available.
 Returns ALC_TRUE if the extension is available, ALC_FALSE if the extension is not available.
 
 
+<br/>
 
 ### `Global alcGetProcAddress:Byte Ptr( device:Byte Ptr,funcName$z )`
 
@@ -290,6 +304,7 @@ This function retrieves the address of a specified context extension function.
 Returns the address of the function, or NULL if it is not found.
 
 
+<br/>
 
 ### `Global alcGetEnumValue( device:Byte Ptr,enumName$z )`
 
@@ -304,6 +319,7 @@ This function retrieves the enum value for a specified enumeration name.
 Returns the enum value described by the enumName string. This is most often used for querying an enum value for an ALC extension.
 
 
+<br/>
 
 ### `Global alcCaptureOpenDevice:Byte Ptr( devicename$z,frequency,format,buffersize )`
 
@@ -321,6 +337,7 @@ This function opens a capture device by name.
 Returns the capture device pointer, or NULL on failure.
 
 
+<br/>
 
 ### `Global alcCaptureCloseDevice( device:Byte Ptr )`
 
@@ -334,6 +351,7 @@ This function closes the specified capture device.
 Returns ALC_TRUE if the close operation was successful, ALC_FALSE on failure.
 
 
+<br/>
 
 ### `Global alcCaptureStart( device:Byte Ptr )`
 
@@ -347,6 +365,7 @@ This function begins a capture operation.
 alcCaptureStart will begin recording to an internal ring buffer of the size specified when opening the capture device. The application can then retrieve the number of samples currently available using the ALC_CAPTURE_SAPMPLES token with [alcGetIntegerv](../../pub/pub.openal/#global-alcgetintegerv-device-byte-ptr-param-size-data-int-ptr). When the application determines that enough samples are available for processing, then it can obtain them with a call to [alcCaptureSamples](../../pub/pub.openal/#global-alccapturesamples-device-byte-ptr-buffer-byte-ptr-samples).
 
 
+<br/>
 
 ### `Global alcCaptureStop( device:Byte Ptr )`
 
@@ -359,6 +378,7 @@ This function stops a capture operation.
 <tr><td>ALC_INVALID_DEVICE</td><td>The specified device is not a valid capture device.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alcCaptureSamples( device:Byte Ptr,buffer:Byte Ptr,samples )`
 
@@ -374,6 +394,7 @@ This function completes a capture operation.
 <tr><td>ALC_INVALID_DEVICE</td><td>The specified device is not a valid capture device.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alEnable( capability )`
 
@@ -388,6 +409,7 @@ This function enables a feature of the OpenAL driver.
 There are no capabilities defined in OpenAL 1.1 to be used with this function, but it may be used by an extension.
 
 
+<br/>
 
 ### `Global alDisable( capability )`
 
@@ -402,6 +424,7 @@ This function disables a feature of the OpenAL driver.
 There are no capabilities defined in OpenAL 1.1 to be used with this function, but it may be used by an extension.
 
 
+<br/>
 
 ### `Global alIsEnabled( capability )`
 
@@ -416,6 +439,7 @@ This function returns a boolean indicating if a specific feature is enabled in t
 Returns AL_TRUE if the capability is enabled, AL_FALSE if the capability is disabled. There are no capabilities defined in OpenAL 1.1 to be used with this function, but it may be used by an extension.
 
 
+<br/>
 
 ### `Global alGetString:Byte Ptr( param )`
 
@@ -429,6 +453,7 @@ This function retrieves an OpenAL string property.
 Returns a pointer to a null-terminated string.
 
 
+<br/>
 
 ### `Global alGetBooleanv( param,data:Byte Ptr )`
 
@@ -444,6 +469,7 @@ This function retrieves a boolean OpenAL state.
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetIntegerv( param,data:Int Ptr )`
 
@@ -459,6 +485,7 @@ This function retrieves an integer OpenAL state.
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetFloatv( param,data:Float Ptr )`
 
@@ -474,6 +501,7 @@ This function retrieves a floating point OpenAL state.
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetDoublev( param,data:Double Ptr )`
 
@@ -489,6 +517,7 @@ This function retrieves a double precision floating point OpenAL state.
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetBoolean( param )`
 
@@ -503,6 +532,7 @@ This function returns a boolean OpenAL state.
 The boolean state described by param will be returned.
 
 
+<br/>
 
 ### `Global alGetInteger( param )`
 
@@ -517,6 +547,7 @@ This function returns an integer OpenAL state.
 The integer state described by param will be returned.
 
 
+<br/>
 
 ### `Global alGetFloat#( param )`
 
@@ -531,6 +562,7 @@ This function returns a floating point OpenAL state.
 The floating point state described by param will be returned.
 
 
+<br/>
 
 ### `Global alGetDouble!( param )`
 
@@ -545,6 +577,7 @@ This function returns a double precision floating point OpenAL state.
 The double value described by param will be returned.
 
 
+<br/>
 
 ### `Global alGetError()`
 
@@ -553,6 +586,7 @@ This function returns the current error state and then clears the error state.
 Returns an Alenum representing the error state. When an OpenAL error occurs, the error state is set and will not be changed until the error state is retrieved using alGetError. Whenever alGetError is called, the error state is cleared and the last state (the current state when the call was made) is returned. To isolate error detection to a specific portion of code, alGetError should be called before the isolated section to clear the current error state.
 
 
+<br/>
 
 ### `Global alIsExtensionPresent( extname$z )`
 
@@ -566,6 +600,7 @@ This function tests if a specific extension is available for the OpenAL driver.
 Returns AL_TRUE if the extension is available, AL_FALSE if the extension is not available.
 
 
+<br/>
 
 ### `Global alGetProcAddress:Byte Ptr( fname$z )`
 
@@ -577,6 +612,7 @@ This function returns the address of an OpenAL extension function.
 The return value is a pointer to the specified function. The return value will be NULL if the function is not found.
 
 
+<br/>
 
 ### `Global alGetEnumValue( ename$z )`
 
@@ -588,6 +624,7 @@ This function returns the enumeration value of an OpenAL enum described by a str
 Returns the actual ALenum described by a string. Returns NULL if the string doesnt describe a valid OpenAL enum.
 
 
+<br/>
 
 ### `Global alListenerf( param,value# )`
 
@@ -603,6 +640,7 @@ This function sets a floating point property for the listener. The relevant prop
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alListener3f( param,value1#,value2#,value3# )`
 
@@ -618,6 +656,7 @@ This function sets a floating point property for the listener. The relevant prop
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alListenerfv( param,values:Float Ptr )`
 
@@ -633,6 +672,7 @@ This function sets a floating point-vector property of the listener. The relevan
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alListeneri( param,value )`
 
@@ -649,6 +689,7 @@ This function sets an integer property of the listener.
 There are no integer listener attributes defined for OpenAL 1.1, but this function may be used by an extension.
 
 
+<br/>
 
 ### `Global alListener3i( param,value1,value2,value3 )`
 
@@ -664,6 +705,7 @@ This function sets an integer property of the listener. The relevant properties 
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alListeneriv( param,values:Int Ptr )`
 
@@ -679,6 +721,7 @@ This function sets an integer property of the listener. The relevant properties 
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetListenerf( param,value:Float Ptr )`
 
@@ -694,6 +737,7 @@ This function retrieves a floating point property of the listener. The relevant 
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetListener3f( param,value1:Float Ptr,value2:Float Ptr,value3:Float Ptr )`
 
@@ -709,6 +753,7 @@ This function retrieves a set of three floating point values from a property of 
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetListenerfv( param,values:Float Ptr )`
 
@@ -724,6 +769,7 @@ This function retrieves a floating point-vector property of the listener. The re
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetListeneri( param,value:Int Ptr )`
 
@@ -740,6 +786,7 @@ This function retrieves an integer property of the listener.
 There are no integer listener attributes defined for OpenAL 1.1, but this function may be used by an extension.
 
 
+<br/>
 
 ### `Global alGetListener3i( param,value1:Int Ptr,value2:Int Ptr,value3:Int Ptr )`
 
@@ -755,6 +802,7 @@ This function retrieves an integer property of the listener. The relevant proper
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetListeneriv( param,values:Int Ptr )`
 
@@ -770,6 +818,7 @@ This function retrieves an integer property of the listener. The relevant proper
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGenBuffers( n,buffers:Int Ptr )`
 
@@ -785,6 +834,7 @@ This Function generates one or more buffers, which contain audio data (see [alBu
 If the requested number of buffers cannot be created, an error will be generated which can be detected with [alGetError](../../pub/pub.openal/#global-algeterror). If an error occurs, no buffers will be generated. If n equals zero, [alGenBuffers](../../pub/pub.openal/#global-algenbuffers-n-buffers-int-ptr) does nothing and does not Return an error.
 
 
+<br/>
 
 ### `Global alDeleteBuffers( n,buffers:Int Ptr )`
 
@@ -801,6 +851,7 @@ This function deletes one or more buffers, freeing the resources used by the buf
 If the requested number of buffers cannot be deleted, an error will be generated which can be detected with [alGetError](../../pub/pub.openal/#global-algeterror). If an error occurs, no buffers will be deleted. If n equals zero, [alDeleteBuffers](../../pub/pub.openal/#global-aldeletebuffers-n-buffers-int-ptr) does nothing and will not return an error.
 
 
+<br/>
 
 ### `Global alIsBuffer( bid )`
 
@@ -812,6 +863,7 @@ This function tests if a buffer name is valid, returning AL_TRUE if valid, AL_FA
 The NULL buffer is always valid (see [alSourcei](../../pub/pub.openal/#global-alsourcei-sid-param-value) for information on how the NULL buffer is used).
 
 
+<br/>
 
 ### `Global alBufferData( bid,format,data:Byte Ptr,size,freq )`
 
@@ -831,6 +883,7 @@ This function fills a buffer with audio data. All the pre-defined formats are PC
 8-bit PCM data is expressed as an unsigned value over the range 0 to 255, 128 being an audio output level of zero. 16-bit PCM data is expressed as a signed value over the range -32768 to 32767, 0 being an audio output level of zero. Stereo data is expressed in interleaved format, left channel first. Buffers containing more than one channel of data will be played without 3D spatialization.
 
 
+<br/>
 
 ### `Global alBufferf( bid,param,value# )`
 
@@ -847,6 +900,7 @@ This Function sets a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be affected by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alBuffer3f( bid,param,value1#,value2#,value3# )`
 
@@ -863,6 +917,7 @@ This function sets a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be affected by this call, but this function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alBufferfv( bid,param,values:Float Ptr )`
 
@@ -879,6 +934,7 @@ This function sets a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be affected by this call, but this function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alBufferi( bid,param,value )`
 
@@ -895,6 +951,7 @@ This Function sets a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be affected by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alBuffer3i( bid,param,value1,value2,value3 )`
 
@@ -911,6 +968,7 @@ This Function sets a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be affected by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alBufferiv( bid,param,values:Int Ptr )`
 
@@ -927,6 +985,7 @@ This Function sets a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be affected by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alGetBufferf( bid,param,value:Float Ptr )`
 
@@ -944,6 +1003,7 @@ This Function retrieves a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be retrieved by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alGetBuffer3f( bid,param,value1:Float Ptr,value2:Float Ptr,value3:Float Ptr )`
 
@@ -961,6 +1021,7 @@ This Function retrieves a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be retrieved by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alGetBufferfv( bid,param,values:Float Ptr )`
 
@@ -978,6 +1039,7 @@ This Function retrieves a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be retrieved by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alGetBufferi( bid,param,value:Int Ptr )`
 
@@ -995,6 +1057,7 @@ This Function retrieves a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be retrieved by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alGetBuffer3i( bid,param,value1:Int Ptr,value2:Int Ptr,value3:Int Ptr )`
 
@@ -1012,6 +1075,7 @@ This Function retrieves a floating point property of a buffer.
 There are no relevant buffer properties defined in OpenAL 1.1 which can be retrieved by this call, but this Function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alGetBufferiv( bid,param,values:Int Ptr )`
 
@@ -1029,6 +1093,7 @@ This Function retrieves a floating point property of a buffer. The relevant prop
 There are no relevant buffer properties defined in OpenAL 1.1 which can be retrieved by this call, but this function may be used by OpenAL extensions.
 
 
+<br/>
 
 ### `Global alGenSources( n,sources:Int Ptr )`
 
@@ -1045,6 +1110,7 @@ This Function generates one or more sources. References To sources are ALuint va
 If the requested number of sources cannot be created, an error will be generated which can be detected with [alGetError](../../pub/pub.openal/#global-algeterror). If an error occurs, no sources will be generated. If n equals zero, [alGenSources](../../pub/pub.openal/#global-algensources-n-sources-int-ptr) does nothing and does not Return an error.
 
 
+<br/>
 
 ### `Global alDeleteSources( n,sources:Int Ptr )`
 
@@ -1061,6 +1127,7 @@ If the requested number of sources cannot be deleted, an error will be generated
 A playing source can be deleted - the source will be stopped and then deleted.
 
 
+<br/>
 
 ### `Global alIsSource( sid )`
 
@@ -1074,6 +1141,7 @@ This function tests if a source name is valid, returning AL_TRUE if valid and AL
 <tr><td></td><td></td></tr></table><br>
 
 
+<br/>
 
 ### `Global alSourcef( sid,param,value# )`
 
@@ -1091,6 +1159,7 @@ This function sets a floating point property of a source. The relevant propertie
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alSource3f( sid,param,value1#,value2#,value3# )`
 
@@ -1109,6 +1178,7 @@ This function sets a source property requiring three floating point values. The 
 This function is an alternative to alSourcefv.
 
 
+<br/>
 
 ### `Global alSourcefv( sid,param,values:Float Ptr )`
 
@@ -1127,6 +1197,7 @@ This function sets a source property requiring three floating point values. The 
 This function is an alternative to alSource3f.
 
 
+<br/>
 
 ### `Global alSourcei( sid,param,value )`
 
@@ -1145,6 +1216,7 @@ This function sets an integer property of a source. The relevant properties are 
 The buffer name zero is reserved as a "NULL Buffer" and is accepted by alSourcei(..., AL_BUFFER, ...) as a valid buffer of zero length. The NULL Buffer is extremely useful for detaching buffers from a source which were attached using this call or with alSourceQueueBuffers.
 
 
+<br/>
 
 ### `Global alSource3i( sid,param,value1,value2,value3 )`
 
@@ -1162,6 +1234,7 @@ This function sets an integer property of a source. The relevant properties are 
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alSourceiv( sid,param,values:Int Ptr )`
 
@@ -1179,6 +1252,7 @@ This function sets an integer property of a source. The relevant properties are 
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetSourcef( sid,param,value:Float Ptr )`
 
@@ -1196,6 +1270,7 @@ This function retrieves a floating point property of a source. The relevant prop
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetSource3f( sid,param,value1:Float Ptr,value2:Float Ptr,value3:Float Ptr )`
 
@@ -1213,6 +1288,7 @@ This function retrieves three floating point values representing a property of a
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetSourcefv( sid,param,values:Float Ptr )`
 
@@ -1230,6 +1306,7 @@ This function retrieves a floating point-vector property of a source. The releva
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetSourcei( sid,param,value:Int Ptr )`
 
@@ -1247,6 +1324,7 @@ This function retrieves an integer property of a source. The relevant properties
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetSource3i( sid,param,value1:Int Ptr,value2:Int Ptr,value3:Int Ptr )`
 
@@ -1264,6 +1342,7 @@ This function retrieves an integer property of a source. The relevant properties
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alGetSourceiv( sid,param,values:Int Ptr )`
 
@@ -1281,6 +1360,7 @@ This function retrieves an integer property of a source. The relevant properties
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alSourcePlayv( ns,sids:Int Ptr )`
 
@@ -1297,6 +1377,7 @@ This function plays a set of sources.
 The playing sources will have their state changed to AL_PLAYING. When called on a source which is already playing, the source will restart at the beginning. When the attached buffer(s) are done playing, the source will progress to the AL_STOPPED state.
 
 
+<br/>
 
 ### `Global alSourceStopv( ns,sids:Int Ptr )`
 
@@ -1313,6 +1394,7 @@ This function stops a set of sources.
 The stopped sources will have their state changed to AL_STOPPED.
 
 
+<br/>
 
 ### `Global alSourceRewindv( ns,sids:Int Ptr )`
 
@@ -1328,6 +1410,7 @@ This function stops a set of sources and sets all their states to AL_INITIAL.
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alSourcePausev( ns,sids:Int Ptr )`
 
@@ -1344,6 +1427,7 @@ This function pauses a set of sources.
 The paused sources will have their state changed to AL_PAUSED.
 
 
+<br/>
 
 ### `Global alSourcePlay( sid )`
 
@@ -1358,6 +1442,7 @@ This function plays a source.
 The playing source will have its state changed to AL_PLAYING. When called on a source which is already playing, the source will restart at the beginning. When the attached buffer(s) are done playing, the source will progress to the AL_STOPPED state.
 
 
+<br/>
 
 ### `Global alSourceStop( sid )`
 
@@ -1372,6 +1457,7 @@ This function stops a source.
 The stopped source will have its state changed to AL_STOPPED.
 
 
+<br/>
 
 ### `Global alSourceRewind( sid )`
 
@@ -1385,6 +1471,7 @@ This function stops the source and sets its state to AL_INITIAL.
 <tr><td>AL_INVALID_OPERATION</td><td>There is no current context.</td></tr></table><br>
 
 
+<br/>
 
 ### `Global alSourcePause( sid )`
 
@@ -1399,6 +1486,7 @@ This function pauses a source.
 The paused source will have its state changed to AL_PAUSED.
 
 
+<br/>
 
 ### `Global alSourceQueueBuffers( sid,numEntries,bids:Int Ptr )`
 
@@ -1415,6 +1503,7 @@ This function queues a set of buffers on a source. All buffers attached to a sou
 When first created, a source will be of type AL_UNDETERMINED. A successful [alSourceQueueBuffers](../../pub/pub.openal/#global-alsourcequeuebuffers-sid-numentries-bids-int-ptr) call will change the source type to AL_STREAMING.
 
 
+<br/>
 
 ### `Global alSourceUnqueueBuffers( sid,numEntries,bids:Int Ptr )`
 
@@ -1432,6 +1521,7 @@ This function unqueues a set of buffers attached to a source. The number of proc
 The unqueue operation will only take place if all n buffers can be removed from the queue.
 
 
+<br/>
 
 ### `Global alDopplerFactor( value# )`
 
@@ -1446,6 +1536,7 @@ This function selects the OpenAL Doppler factor value.
 The default Doppler factor value is 1.0.
 
 
+<br/>
 
 ### `Global alDopplerVelocity( value# )`
 
@@ -1460,6 +1551,7 @@ This function selects the speed of sound for use in Doppler calculations.
 The default speed of sound value is 343.3.
 
 
+<br/>
 
 ### `Global alSpeedOfSound( value# )`
 
@@ -1474,6 +1566,7 @@ This function selects the speed of sound for use in Doppler calculations.
 The default speed of sound value is 343.3.
 
 
+<br/>
 
 ### `Global alDistanceModel( distanceModel )`
 
@@ -1488,4 +1581,5 @@ This function selects the OpenAL distance model.<br><br>The AL_INVERSE_DISTANCE 
 The default distance model in OpenAL is AL_INVERSE_DISTANCE_CLAMPED.
 
 
+<br/>
 

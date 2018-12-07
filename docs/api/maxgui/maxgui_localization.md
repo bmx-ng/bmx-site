@@ -80,6 +80,7 @@ Repeat
 	EndSelect
 Forever
 ```
+<br/>
 
 ### `Function LoadLanguage:TMaxGuiLanguage( url:Object )`
 
@@ -190,6 +191,7 @@ To construct a new language from scratch, use the [CreateLanguage](../../maxgui/
 See Also: [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage), [SaveLanguage](../../maxgui/maxgui.localization/#function-savelanguage-language-tmaxguilanguage-url-object), [LocalizeString](../../maxgui/maxgui.localization/#function-localizestring-localizationstring) and [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip).
 
 
+<br/>
 
 ### `Function SaveLanguage( language:TMaxGuiLanguage, url:Object )`
 
@@ -210,6 +212,7 @@ WARNING: This command will automatically overwrite any existing file at the supp
 See Also: [LoadLanguage](../../maxgui/maxgui.localization/#function-loadlanguage-tmaxguilanguage-url-object), [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage), [LocalizeString](../../maxgui/maxgui.localization/#function-localizestring-localizationstring) and [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip).
 
 
+<br/>
 
 ### `Function SetLanguageName( language:TMaxGuiLanguage, name$ )`
 
@@ -218,6 +221,7 @@ Redefine a language's name.
 See Also: [LanguageName](../../maxgui/maxgui.localization/#function-languagename-language-tmaxguilanguage), [LoadLanguage](../../maxgui/maxgui.localization/#function-loadlanguage-tmaxguilanguage-url-object), [CreateLanguage](../../maxgui/maxgui.localization/#function-createlanguage-tmaxguilanguage-name) and [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage).
 
 
+<br/>
 
 ### `Function LanguageName$( language:TMaxGuiLanguage )`
 
@@ -226,6 +230,7 @@ Returns a language's name.
 See Also: [SetLanguageName](../../maxgui/maxgui.localization/#function-setlanguagename-language-tmaxguilanguage-name), [LoadLanguage](../../maxgui/maxgui.localization/#function-loadlanguage-tmaxguilanguage-url-object), [CreateLanguage](../../maxgui/maxgui.localization/#function-createlanguage-tmaxguilanguage-name) and [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage).
 
 
+<br/>
 
 ### `Function DefineLanguageToken( language:TMaxGuiLanguage, token$, value$ )`
 
@@ -237,6 +242,7 @@ the token value will be overwritten with this most recent <b>value$</b>.
 See Also: [LoadLanguage](../../maxgui/maxgui.localization/#function-loadlanguage-tmaxguilanguage-url-object), [CreateLanguage](../../maxgui/maxgui.localization/#function-createlanguage-tmaxguilanguage-name), [SaveLanguage](../../maxgui/maxgui.localization/#function-savelanguage-language-tmaxguilanguage-url-object) and [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage).
 
 
+<br/>
 
 ### `Function LanguageTokenDefinition$( language:TMaxGuiLanguage, token$ )`
 
@@ -250,6 +256,7 @@ If an explicit token definition is not found in the language, the <b>token$</b> 
 See Also: [LoadLanguage](../../maxgui/maxgui.localization/#function-loadlanguage-tmaxguilanguage-url-object), [CreateLanguage](../../maxgui/maxgui.localization/#function-createlanguage-tmaxguilanguage-name), [SaveLanguage](../../maxgui/maxgui.localization/#function-savelanguage-language-tmaxguilanguage-url-object) and [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage).
 
 
+<br/>
 
 ### `Function RemoveLanguageToken( language:TMaxGuiLanguage, token$ )`
 
@@ -271,6 +278,7 @@ RemoveLanguageToken( language, "WeLcOmEmEsSaGe" )
 See Also: [ClearLanguageTokens](../../maxgui/maxgui.localization/#function-clearlanguagetokens-language-tmaxguilanguage), [DefineLanguageToken](../../maxgui/maxgui.localization/#function-definelanguagetoken-language-tmaxguilanguage-token-value), [LoadLanguage](../../maxgui/maxgui.localization/#function-loadlanguage-tmaxguilanguage-url-object), [CreateLanguage](../../maxgui/maxgui.localization/#function-createlanguage-tmaxguilanguage-name), [SaveLanguage](../../maxgui/maxgui.localization/#function-savelanguage-language-tmaxguilanguage-url-object) and [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage).
 
 
+<br/>
 
 ### `Function ClearLanguageTokens( language:TMaxGuiLanguage )`
 
@@ -282,6 +290,7 @@ it defines the language name.
 See Also: [RemoveLanguageToken](../../maxgui/maxgui.localization/#function-removelanguagetoken-language-tmaxguilanguage-token), [DefineLanguageToken](../../maxgui/maxgui.localization/#function-definelanguagetoken-language-tmaxguilanguage-token-value), [LoadLanguage](../../maxgui/maxgui.localization/#function-loadlanguage-tmaxguilanguage-url-object), [CreateLanguage](../../maxgui/maxgui.localization/#function-createlanguage-tmaxguilanguage-name), [SaveLanguage](../../maxgui/maxgui.localization/#function-savelanguage-language-tmaxguilanguage-url-object) and [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage).
 
 
+<br/>
 
 ### `Function LocalizeString$( localizationstring$ )`
 
@@ -334,6 +343,7 @@ the function will simply return <b>localizationstring$</b> exactly as it was pas
 See Also: [SetLocalizationMode](../../maxgui/maxgui.localization/#function-setlocalizationmode-mode-int-localization-on), [LocalizationMode](../../maxgui/maxgui.localization/#function-localizationmode-int), [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage) and [LocalizationLanguage](../../maxgui/maxgui.localization/#function-localizationlanguage-tmaxguilanguage).
 
 
+<br/>
 
 ### `Function SetLocalizationMode( Mode:Int = LOCALIZATION_ON )`
 
@@ -354,6 +364,7 @@ to be visible.
 See Also: [LocalizationMode](../../maxgui/maxgui.localization/#function-localizationmode-int), [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage), [LocalizationLanguage](../../maxgui/maxgui.localization/#function-localizationlanguage-tmaxguilanguage) and [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip).
 
 
+<br/>
 
 ### `Function LocalizationMode:Int()`
 
@@ -364,6 +375,7 @@ The default value for a MaxGUI program is LOCALIZATION_OFF.
 See [SetLocalizationMode](../../maxgui/maxgui.localization/#function-setlocalizationmode-mode-int-localization-on) for valid modes, and their corresponding constants.
 
 
+<br/>
 
 ### `Function SetLocalizationLanguage( language:TMaxGUILanguage )`
 
@@ -380,6 +392,7 @@ to be visible.
 See Also: [LocalizationLanguage](../../maxgui/maxgui.localization/#function-localizationlanguage-tmaxguilanguage), [SetLocalizationMode](../../maxgui/maxgui.localization/#function-setlocalizationmode-mode-int-localization-on), [LocalizationMode](../../maxgui/maxgui.localization/#function-localizationmode-int) and [LocalizeString](../../maxgui/maxgui.localization/#function-localizestring-localizationstring).
 
 
+<br/>
 
 ### `Function LocalizationLanguage:TMaxGUILanguage()`
 
@@ -388,4 +401,5 @@ Returns the current language used by MaxGUI's localization system.
 See Also: [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage), [SetLocalizationMode](../../maxgui/maxgui.localization/#function-setlocalizationmode-mode-int-localization-on), [LocalizationMode](../../maxgui/maxgui.localization/#function-localizationmode-int) and [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip).
 
 
+<br/>
 

@@ -62,6 +62,7 @@ Emit an event
 Runs all [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid) hooks, passing <b>event</b> as the hook data.
 
 
+<br/>
 
 ### `Function CreateEvent:TEvent( id:Int,source:Object=Null,data:Int=0,mods:Int=0,x:Int=0,y:Int=0,extra:Object=Null)`
 
@@ -89,6 +90,7 @@ Repeat
 	Flip
 Until AppTerminate()
 ```
+<br/>
 
 ### `Function AllocUserEventId:Int( description$="" )`
 
@@ -98,6 +100,7 @@ Allocate a user event id
 A new user event id
 
 
+<br/>
 
 ## Globals
 
@@ -112,4 +115,5 @@ Each time [EmitEvent](../../brl/brl.event/#function-emitevent-event-tevent) is c
 hook functions by means of the hook function <b>data</b> parameter.
 
 
+<br/>
 

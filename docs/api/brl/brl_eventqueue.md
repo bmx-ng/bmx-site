@@ -28,6 +28,7 @@ event queue or modifying the [CurrentEvent](../../brl/brl.eventqueue/#global-cur
 If there are no events in the event queue, [PeekEvent](../../brl/brl.eventqueue/#function-peekevent-tevent) returns [Null](../../brl/brl.blitz/#null).
 
 
+<br/>
 
 ### `Function PollEvent:Int()`
 
@@ -44,6 +45,7 @@ If there are no events in the event queue, [PollEvent](../../brl/brl.eventqueue/
 The id of the next event in the event queue, or 0 if the event queue is empty
 
 
+<br/>
 
 ### `Function WaitEvent:Int()`
 
@@ -61,6 +63,7 @@ an event is available.
 The id of the next event in the event queue
 
 
+<br/>
 
 ### `Function PostEvent( event:TEvent,update:Int=False )`
 
@@ -75,6 +78,7 @@ being added to the event queue. This can be useful to prevent high frequency
 events such as timer events from flooding the event queue.
 
 
+<br/>
 
 ### `Function EventID:Int()`
 
@@ -101,6 +105,7 @@ Repeat
    End Select
 Forever
 ```
+<br/>
 
 ### `Function EventData:Int()`
 
@@ -130,6 +135,7 @@ Repeat
 	End Select
 Forever
 ```
+<br/>
 
 ### `Function EventMods:Int()`
 
@@ -139,6 +145,7 @@ Get current event modifiers
 The <b>mods</b> field of the [CurrentEvent](../../brl/brl.eventqueue/#global-currentevent-tevent-nullevent) global variable
 
 
+<br/>
 
 ### `Function EventX:Int()`
 
@@ -167,6 +174,7 @@ Repeat
 	EndIf
 Forever
 ```
+<br/>
 
 ### `Function EventY:Int()`
 
@@ -195,6 +203,7 @@ Repeat
 	EndIf
 Forever
 ```
+<br/>
 
 ### `Function EventExtra:Object()`
 
@@ -204,6 +213,7 @@ Get current event extra value
 The <b>extra</b> field of the [CurrentEvent](../../brl/brl.eventqueue/#global-currentevent-tevent-nullevent) global variable
 
 
+<br/>
 
 ### `Function EventText$()`
 
@@ -233,6 +243,7 @@ Repeat
 	EndIf
 Forever
 ```
+<br/>
 
 ### `Function EventSource:Object()`
 
@@ -267,6 +278,7 @@ Repeat
    End Select
 Forever
 ```
+<br/>
 
 ### `Function EventSourceHandle:Size_T()`
 
@@ -276,6 +288,7 @@ Get current event source object handle
 The <b>source</b> field of the [CurrentEvent](../../brl/brl.eventqueue/#global-currentevent-tevent-nullevent) global variable converted to an integer handle
 
 
+<br/>
 
 ## Globals
 
@@ -287,4 +300,5 @@ The [CurrentEvent](../../brl/brl.eventqueue/#global-currentevent-tevent-nulleven
 [PollEvent](../../brl/brl.eventqueue/#function-pollevent-int) or [WaitEvent](../../brl/brl.eventqueue/#function-waitevent-int).
 
 
+<br/>
 

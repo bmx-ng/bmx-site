@@ -68,7 +68,7 @@ const siteConfig = {
 
     highlight: {
         // Highlight.js theme to use for syntax highlighting in code blocks.
-        theme: 'hybrid',
+        theme: 'github',
         hljs: function (hljs) {
             hljs.registerLanguage('blitzmax', function (hljs) {
                 var NUMBER = {
@@ -140,10 +140,6 @@ const siteConfig = {
                         {
                             className: 'built_in',
                             begin: '\\b(self|super)\\b'
-                        },
-                        {
-                            className: 'meta',
-                            begin: '^\\s*(strict|superstrict)\\b'
                         },
                         {
                             className: 'meta',

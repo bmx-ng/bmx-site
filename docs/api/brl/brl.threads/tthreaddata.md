@@ -13,11 +13,13 @@ ThreadData type
 
 Set thread data value
 
+<br/>
 
 ### `Method GetValue:Object()`
 
 Get thread data value
 
+<br/>
 
 ## Functions
 
@@ -25,4 +27,5 @@ Get thread data value
 
 Create thread data
 
+<br/>
 

@@ -39,6 +39,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function AppTerminate()`
 
@@ -62,6 +63,7 @@ While Not AppTerminate() Or Not Confirm( "Terminate?" )
 
 Wend
 ```
+<br/>
 
 ### `Function KeyHit( key )`
 
@@ -96,6 +98,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function KeyDown( key )`
 
@@ -127,6 +130,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function GetChar()`
 
@@ -145,6 +149,7 @@ If the character queue is empty, 0 is returned.
 The character code of the next character.
 
 
+<br/>
 
 ### `Function FlushKeys(resetStates:Int = True)`
 
@@ -155,6 +160,7 @@ Flush key states and character queue.
 used by [GetChar](../../brl/brl.polledinput/#function-getchar).
 
 
+<br/>
 
 ### `Function MouseX()`
 
@@ -183,6 +189,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function MouseY()`
 
@@ -211,6 +218,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function MouseZ()`
 
@@ -240,6 +248,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function MouseXSpeed()`
 
@@ -249,6 +258,7 @@ Get mouse x speed
 Mouse x speed
 
 
+<br/>
 
 ### `Function MouseYSpeed()`
 
@@ -258,6 +268,7 @@ Get mouse y speed
 Mouse y speed
 
 
+<br/>
 
 ### `Function MouseZSpeed()`
 
@@ -267,6 +278,7 @@ Get mouse z speed
 Mouse z speed
 
 
+<br/>
 
 ### `Function FlushMouse()`
 
@@ -276,6 +288,7 @@ Flush mouse button states
 [FlushMouse](../../brl/brl.polledinput/#function-flushmouse) resets the state of all mouse buttons to 'off'.
 
 
+<br/>
 
 ### `Function MouseHit( button )`
 
@@ -309,6 +322,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function MouseDown( button )`
 
@@ -339,6 +353,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Function WaitKey()`
 
@@ -365,6 +380,7 @@ DrawText "Press any key to end this program.", 10 , 10
 Flip
 WaitKey()
 ```
+<br/>
 
 ### `Function WaitChar()`
 
@@ -379,6 +395,7 @@ character is then returned to the application.
 The character code of the pressed key
 
 
+<br/>
 
 ### `Function WaitMouse()`
 
@@ -408,9 +425,11 @@ Repeat
 	Flip 
 Until WaitMouse()
 ```
+<br/>
 
 ### `Function SetAutoPoll(value:Int)`
 
 Enables or disables autopolling.
 
+<br/>
 

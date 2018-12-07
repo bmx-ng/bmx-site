@@ -49,6 +49,7 @@ SuperStrict
 Local a:String = "abcd1234efgh"
 Print Mid(a,5,5)   ' prints 1234e
 ```
+<br/>
 
 ### `Function Instr( str$,sub$,start=1 )`
 
@@ -79,6 +80,7 @@ If Not Instr(mystring,"new PC") Print "*sniff*"
 
 If Instr(mystring,"media") Print "large!"
 ```
+<br/>
 
 ### `Function Left$( str$,n )`
 
@@ -100,6 +102,7 @@ SuperStrict
 
 Print Left("12345678",4)   ' prints 1234
 ```
+<br/>
 
 ### `Function Right$( str$,n )`
 
@@ -121,6 +124,7 @@ SuperStrict
 
 Print Right("12345678",4)   ' prints 5678
 ```
+<br/>
 
 ### `Function LSet$( str$,n )`
 
@@ -142,6 +146,7 @@ Print "["+LSet("12345678",10)+"]"
 ' 123
 ' [12345678  ]
 ```
+<br/>
 
 ### `Function RSet$( str$,n )`
 
@@ -163,6 +168,7 @@ Print "["+RSet("12345678",10)+"]"
 ' 678
 ' [  12345678]
 ```
+<br/>
 
 ### `Function Replace$( str$,sub$,replaceWith$ )`
 
@@ -187,6 +193,7 @@ str = Replace(str,"e","*")
 
 Print "Altered: "+str
 ```
+<br/>
 
 ### `Function Trim$( str$ )`
 
@@ -196,6 +203,7 @@ Remove unprintable characters from ends a string
 <b>str</b> with leading and trailing unprintable characters removed
 
 
+<br/>
 
 ### `Function Lower$( str$ )`
 
@@ -211,6 +219,7 @@ SuperStrict
 
 Print Lower("abcdEFGH")     ' prints abcdefgh
 ```
+<br/>
 
 ### `Function Upper$( str$ )`
 
@@ -226,6 +235,7 @@ SuperStrict
 
 Print Upper("Hello World") ' prints HELLO WORLD
 ```
+<br/>
 
 ### `Function Hex$( val )`
 
@@ -244,6 +254,7 @@ For Local t:Int=0 To 255
 	Print "decimal: "+RSet(t,3)+" | hex: "+Hex(t)
 Next
 ```
+<br/>
 
 ### `Function Bin$( val )`
 
@@ -263,6 +274,7 @@ Print Bin(1)
 Print Bin(554)
 Print Bin(1 | 554) ' OR in action
 ```
+<br/>
 
 ### `Function LongHex$( val:Long )`
 
@@ -272,6 +284,7 @@ Convert a 64 bit long integer value to a hexadecimal string
 The hexadecimal string representation of <b>val</b>
 
 
+<br/>
 
 ### `Function LongBin$( val:Long )`
 
@@ -281,4 +294,5 @@ Convert a 64 bit long integer value to a binary string
 The binary string representation of <b>val</b>
 
 
+<br/>
 

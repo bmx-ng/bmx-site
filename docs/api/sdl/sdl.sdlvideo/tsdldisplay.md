@@ -13,11 +13,13 @@ Represents an indexed video display.
 
 Gets the name of the display.
 
+<br/>
 
 ### `Method GetBounds:Int(w:Int Var, h:Int Var)`
 
 Gets the desktop area represented by the display, with the primary display located at 0,0.
 
+<br/>
 
 ### `Method GetDPI:Int(ddpi:Float Var, hdpi:Float Var, vdpi:Float Var)`
 
@@ -27,6 +29,7 @@ Gets the diagonal, horizontal and vertical dots/pixels-per-inch for the display.
 0 on success, or -1 if no DPI information is available.
 
 
+<br/>
 
 ### `Method GetUsableBounds:Int(w:Int Var, h:Int Var)`
 
@@ -38,11 +41,13 @@ Setting a window to be fullscreen generally bypasses these unusable areas, so th
 maximum space available to a non-fullscreen window.
 
 
+<br/>
 
 ### `Method GetNumDisplayModes:Int()`
 
 Returns the number of available display modes.
 
+<br/>
 
 ### `Method GetDisplayMode:TSDLDisplayMode(modeIndex:Int)`
 
@@ -52,6 +57,7 @@ Gets information about a specific display mode.
 A display mode or Null on failure.
 
 
+<br/>
 
 ### `Method GetDesktopDisplayMode:TSDLDisplayMode()`
 
@@ -61,6 +67,7 @@ Gets information about the desktop display mode.
 A display mode or Null on failure.
 
 
+<br/>
 
 ### `Method GetCurrentDisplayMode:TSDLDisplayMode()`
 
@@ -70,4 +77,5 @@ Gets information about the current display mode.
 A display mode or Null on failure.
 
 
+<br/>
 

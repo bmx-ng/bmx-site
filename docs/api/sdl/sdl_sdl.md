@@ -31,6 +31,7 @@ Opens an SDL stream for reading/writing.
 A stream object.
 
 
+<br/>
 
 ### `Function SDLGetBasePath:String()`
 
@@ -43,6 +44,7 @@ Mac OS X and iOS Specific Functionality: If the application is in a ".app" bundl
 the name SDL_FILESYSTEM_BASE_DIR_TYPE with a supported value will change the behaviour.
 
 
+<br/>
 
 ### `Function SDLGetPrefPath:String(org:String, app:String)`
 
@@ -59,6 +61,7 @@ Both the org and app strings may become part of a directory name, so please foll
 * Only use letters, numbers, and spaces. Avoid punctuation like "Game Name 2: Bad Guy's Revenge!" ... "Game Name 2" is sufficient.
 
 
+<br/>
 
 ### `Function SDLAndroidGetExternalStoragePath:String()`
 
@@ -72,6 +75,7 @@ Your external storage path is typically: /storage/sdcard0/Android/data/your.app.
 The path used for external storage for this application on success or NULL on failure; call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterror-string)() for more information.
 
 
+<br/>
 
 ### `Function SDLAndroidGetExternalStorageState:Int()`
 
@@ -81,6 +85,7 @@ The current state of external storage, a bitmask of these values: SDL_ANDROID_EX
 If external storage is currently unavailable, this will return 0.
 
 
+<br/>
 
 ### `Function SDLAndroidGetInternalStoragePath:String()`
 
@@ -94,16 +99,19 @@ Your internal storage path is typically: /data/data/your.app.package/files.
 The path used for internal storage or NULL on failure; call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterror-string)() for more information.
 
 
+<br/>
 
 ### `Function SDLHasClipboardText:Int()`
 
 Return a flag indicating whether the clipboard exists and contains a text string that is non-empty.
 
+<br/>
 
 ### `Function SDLGetClipboardText:String()`
 
 Returns the clipboard text.
 
+<br/>
 
 ### `Function SDLSetClipboardText:Int(Text:String)`
 
@@ -113,41 +121,49 @@ Puts text into the clipboard.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Function SDLLogAppInfo(Text:String)`
 
 Logs a message with [SDL_LOG_CATEGORY_APPLICATION](../../sdl/sdl.sdl/#const-sdl-log-category-application-int-0) and [SDL_LOG_PRIORITY_INFO](../../sdl/sdl.sdl/#const-sdl-log-priority-info-int-3).
 
+<br/>
 
 ### `Function SDLLogDebug(category:Int, Text:String)`
 
 Logs a message with [SDL_LOG_PRIORITY_DEBUG](../../sdl/sdl.sdl/#const-sdl-log-priority-debug-int-2).
 
+<br/>
 
 ### `Function SDLLogError(category:Int, Text:String)`
 
 Logs a message with [SDL_LOG_PRIORITY_ERROR](../../sdl/sdl.sdl/#const-sdl-log-priority-error-int-5).
 
+<br/>
 
 ### `Function SDLLogCritical(category:Int, Text:String)`
 
 Logs a message with [SDL_LOG_PRIORITY_CRITICAL](../../sdl/sdl.sdl/#const-sdl-log-priority-critical-int-6).
 
+<br/>
 
 ### `Function SDLLogInfo(category:Int, Text:String)`
 
 Logs a message with [SDL_LOG_PRIORITY_INFO](../../sdl/sdl.sdl/#const-sdl-log-priority-info-int-3).
 
+<br/>
 
 ### `Function SDLLogVerbose(category:Int, Text:String)`
 
 Logs a message with [SDL_LOG_PRIORITY_VERBOSE](../../sdl/sdl.sdl/#const-sdl-log-priority-verbose-int-1).
 
+<br/>
 
 ### `Function SDLLogWarn(category:Int, Text:String)`
 
 Logs a message with [SDL_LOG_PRIORITY_WARN](../../sdl/sdl.sdl/#const-sdl-log-priority-warn-int-4).
 
+<br/>
 
 ### `Function SDLLogSetAllPriority(priority:Int)`
 
@@ -156,6 +172,7 @@ Sets the priority of all log categories.
 If you are debugging SDL, you might want to call this with [SDL_LOG_PRIORITY_WARN](../../sdl/sdl.sdl/#const-sdl-log-priority-warn-int-4).
 
 
+<br/>
 
 ### `Function SDLGetPowerInfo:Int(seconds:Int Var, percent:Int Var)`
 
@@ -172,11 +189,13 @@ and perhaps ignore changes until they seem to be stable for a few seconds.
 One of [SDL_POWERSTATE_UNKNOWN](../../sdl/sdl.sdl/#const-sdl-powerstate-unknown-int-0), [SDL_POWERSTATE_ON_BATTERY](../../sdl/sdl.sdl/#const-sdl-powerstate-on-battery-int-1), [SDL_POWERSTATE_NO_BATTERY](../../sdl/sdl.sdl/#const-sdl-powerstate-no-battery-int-2), [SDL_POWERSTATE_CHARGING](../../sdl/sdl.sdl/#const-sdl-powerstate-charging-int-3), or [SDL_POWERSTATE_CHARGED](../../sdl/sdl.sdl/#const-sdl-powerstate-charged-int-4).
 
 
+<br/>
 
 ### `Function SDLGetPixelFormatName:String(format:UInt)`
 
 Gets the human readable name of a pixel format
 
+<br/>
 
 ### `Function SDLGetTicks:UInt()`
 
@@ -189,6 +208,7 @@ This value wraps if the program runs for more than 49 days.
 A value representing the number of milliseconds since the SDL library initialized.
 
 
+<br/>
 
 ### `Function SDLGetError:String()`
 
@@ -198,11 +218,13 @@ Retrieves a message about the last error that occurred.
 A message with information about the specific error that occurred, or an empty string if there hasn't been an error message set since the last call to [SDLClearError](../../sdl/sdl.sdl/#function-sdlclearerror)(). The message is only applicable when an SDL function has signaled an error. You must check the return values of SDL function calls to determine when to appropriately call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterror-string)().
 
 
+<br/>
 
 ### `Function SDLClearError()`
 
 Clears any previous error message.
 
+<br/>
 
 ## Consts
 
@@ -214,6 +236,7 @@ Called on iOS in applicationWillTerminate().
 Called on Android in onDestroy()
 
 
+<br/>
 
 ### `Const SDL_APP_LOWMEMORY:Int           = $102`
 
@@ -223,6 +246,7 @@ Called on iOS in applicationDidReceiveMemoryWarning().
 Called on Android in onLowMemory()
 
 
+<br/>
 
 ### `Const SDL_APP_WILLENTERBACKGROUND:Int = $103`
 
@@ -232,6 +256,7 @@ Called on iOS in applicationWillResignActive().
 Called on Android in onPause()
 
 
+<br/>
 
 ### `Const SDL_APP_DIDENTERBACKGROUND:Int  = $104`
 
@@ -241,6 +266,7 @@ Called on iOS in applicationDidEnterBackground().
 Called on Android in onPause()
 
 
+<br/>
 
 ### `Const SDL_APP_WILLENTERFOREGROUND:Int = $105`
 
@@ -250,6 +276,7 @@ Called on iOS in applicationWillEnterForeground().
 Called on Android in onResume()
 
 
+<br/>
 
 ### `Const SDL_APP_DIDENTERFOREGROUND:Int  = $106`
 
@@ -259,6 +286,7 @@ Called on iOS in applicationDidBecomeActive().
 Called on Android in onResume()
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_APPLICATION:Int = 0`
 
@@ -267,6 +295,7 @@ Application log category.
 Has a default log priority of SDL_LOG_PRIORITY_INFO.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_ERROR:Int = 1`
 
@@ -275,6 +304,7 @@ Error log category.
 Has a default log priority of SDL_LOG_PRIORITY_CRITICAL.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_ASSERT:Int = 2`
 
@@ -283,6 +313,7 @@ Assertion log category.
 Has a default log priority of SDL_LOG_PRIORITY_WARN.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_SYSTEM:Int = 3`
 
@@ -291,6 +322,7 @@ System log category.
 Has a default log priority of SDL_LOG_PRIORITY_CRITICAL.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_AUDIO:Int = 4`
 
@@ -299,6 +331,7 @@ Audio log category.
 Has a default log priority of SDL_LOG_PRIORITY_CRITICAL.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_VIDEO:Int = 5`
 
@@ -307,6 +340,7 @@ Video log category.
 Has a default log priority of SDL_LOG_PRIORITY_CRITICAL.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_RENDER:Int = 6`
 
@@ -315,6 +349,7 @@ Render log category.
 Has a default log priority of SDL_LOG_PRIORITY_CRITICAL.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_INPUT:Int = 7`
 
@@ -323,6 +358,7 @@ Input log category.
 Has a default log priority of SDL_LOG_PRIORITY_CRITICAL.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_TEST:Int = 8`
 
@@ -331,6 +367,7 @@ Test log category.
 Has a default log priority of SDL_LOG_PRIORITY_VERBOSE.
 
 
+<br/>
 
 ### `Const SDL_LOG_CATEGORY_CUSTOM:Int = 19`
 
@@ -339,59 +376,71 @@ Application defined starting category.
 An application can use subsequent category numbers as required, e.g. SDL_LOG_CATEGORY_CUSTOM + 1, etc.
 
 
+<br/>
 
 ### `Const SDL_LOG_PRIORITY_VERBOSE:Int = 1`
 
 Verbose log priority.
 
+<br/>
 
 ### `Const SDL_LOG_PRIORITY_DEBUG:Int = 2`
 
 Debug log priority.
 
+<br/>
 
 ### `Const SDL_LOG_PRIORITY_INFO:Int = 3`
 
 Info log priority.
 
+<br/>
 
 ### `Const SDL_LOG_PRIORITY_WARN:Int = 4`
 
 Warn log priority.
 
+<br/>
 
 ### `Const SDL_LOG_PRIORITY_ERROR:Int = 5`
 
 Error log priority.
 
+<br/>
 
 ### `Const SDL_LOG_PRIORITY_CRITICAL:Int = 6`
 
 Critical log priority.
 
+<br/>
 
 ### `Const SDL_POWERSTATE_UNKNOWN:Int = 0`
 
 Cannot determine power status
 
+<br/>
 
 ### `Const SDL_POWERSTATE_ON_BATTERY:Int = 1`
 
 Not plugged in, running on the battery
 
+<br/>
 
 ### `Const SDL_POWERSTATE_NO_BATTERY:Int = 2`
 
 Plugged in, no battery available
 
+<br/>
 
 ### `Const SDL_POWERSTATE_CHARGING:Int = 3`
 
 Plugged in, charging battery
 
+<br/>
 
 ### `Const SDL_POWERSTATE_CHARGED:Int = 4`
 
 Plugged in, battery charged
 
+<br/>
 

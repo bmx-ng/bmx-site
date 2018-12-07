@@ -25,4 +25,5 @@ Extending types must implement this method.
 A new audio sample object, or Null if sample could not be loaded
 
 
+<br/>
 

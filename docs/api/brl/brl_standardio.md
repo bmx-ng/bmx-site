@@ -29,6 +29,7 @@ SuperStrict
 
 Print "Hello World"
 ```
+<br/>
 
 ### `Function Input$( prompt$=">" )`
 
@@ -48,6 +49,7 @@ SuperStrict
 Local name:String = Input("What is your name")
 Print "Hello "+name
 ```
+<br/>
 
 ## Globals
 
@@ -58,4 +60,5 @@ BlitzMax Stream object used for Print and Input
 The [Print](../../brl/brl.standardio/#function-print-str) and [Input](../../brl/brl.standardio/#function-input-prompt) commands can be redirected by setting the <b>StandardIOStream</b> Global to an alternative Stream Object.
 
 
+<br/>
 

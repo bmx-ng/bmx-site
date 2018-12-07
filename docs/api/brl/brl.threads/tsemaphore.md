@@ -13,16 +13,19 @@ Semaphore type
 
 Close the semaphore
 
+<br/>
 
 ### `Method Wait()`
 
 Wait for the semaphore
 
+<br/>
 
 ### `Method Post()`
 
 Post the semaphore
 
+<br/>
 
 ## Functions
 
@@ -30,4 +33,5 @@ Post the semaphore
 
 Create a new semaphore
 
+<br/>
 

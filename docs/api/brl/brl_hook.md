@@ -70,6 +70,7 @@ While Not KeyHit( KEY_ESCAPE )
 
 Wend
 ```
+<br/>
 
 ### `Function AddHook( id,func:Object( id,data:Object,context:Object ),context:Object=Null,priority=0 )`
 
@@ -112,6 +113,7 @@ While Not KeyHit( KEY_ESCAPE )
 
 Wend
 ```
+<br/>
 
 ### `Function RunHooks:Object( id,data:Object )`
 
@@ -129,6 +131,7 @@ Therefore, hook functions should generally return the <b>data</b> parameter when
 The data produced by the last hook function
 
 
+<br/>
 
 ### `Function RemoveHook( id,func:Object( id,data:Object,context:Object ),context:Object=Null )`
 
@@ -138,4 +141,5 @@ Remove a hook function
 Removes the hook function specified by <b>id</b>, <b>func</b> and <b>context</b>.
 
 
+<br/>
 

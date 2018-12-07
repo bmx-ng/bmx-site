@@ -19,6 +19,7 @@ The new socket is not bound to any local or remote address.
 A new socket
 
 
+<br/>
 
 ### `Function CreateTCPSocket:TSocket()`
 
@@ -32,6 +33,7 @@ The new socket is not bound to any local or remote address.
 A new socket
 
 
+<br/>
 
 ### `Function CloseSocket( socket:TSocket )`
 
@@ -42,6 +44,7 @@ All sockets should eventually be closed. Once closed, a socket can no longer
 be used.
 
 
+<br/>
 
 ### `Function BindSocket( socket:TSocket, localPort, family:Int = AF_INET_)`
 
@@ -56,6 +59,7 @@ If <b>localPort</b> is 0, a new local port will be allocated. If <b>localPort</b
 True if successful, otherwise false
 
 
+<br/>
 
 ### `Function ConnectSocket( socket:TSocket, AddrInfo:TAddrInfo )`
 
@@ -73,6 +77,7 @@ no application listening at the remote port.
 True if successful, otherwise false
 
 
+<br/>
 
 ### `Function SocketListen( socket:TSocket,backlog=0 )`
 
@@ -82,6 +87,7 @@ Start listening at a socket
 The specified socket must be a TCP socket, and must already be bound to a local port.
 
 
+<br/>
 
 ### `Function SocketAccept:TSocket( socket:TSocket,timeout=0 )`
 
@@ -95,6 +101,7 @@ The specified socket must be a TCP socket, and must be listening.
 A new socket, or Null if no connection was made in the specified timeout
 
 
+<br/>
 
 ### `Function SocketConnected( socket:TSocket )`
 
@@ -112,6 +119,7 @@ connected via [ConnectSocket](../../brl/brl.socket/#function-connectsocket-socke
 True if socket is connected
 
 
+<br/>
 
 ### `Function SocketReadAvail( socket:TSocket )`
 
@@ -121,26 +129,31 @@ Get number of bytes available for reading from a socket
 Number of bytes that may be read without causing the socket to block
 
 
+<br/>
 
 ### `Function SocketLocalIP:String( socket:TSocket )`
 
 Get local ip of a socket
 
+<br/>
 
 ### `Function SocketLocalPort( socket:TSocket )`
 
 Get local port of a socket
 
+<br/>
 
 ### `Function SocketRemoteIP:String( socket:TSocket )`
 
 Get remote ip of a socket
 
+<br/>
 
 ### `Function SocketRemotePort( socket:TSocket )`
 
 Get remote port of a socket
 
+<br/>
 
 ### `Function DottedIP$( ip:Int )`
 
@@ -150,6 +163,7 @@ Convert an ip address to a dotted string
 Dotted string version of ip address
 
 
+<br/>
 
 ### `Function DottedIPToInt:Int(addr:String)`
 
@@ -159,6 +173,7 @@ Converts a dotted IPv4 string to an ip address.
 An integer version of an ip address.
 
 
+<br/>
 
 ### `Function InetPton:Int(family:Int, src:String, dst:Byte Ptr)`
 
@@ -168,6 +183,7 @@ For AF_INET_, <b>dst</b> should be an Int or 32-bit (4 bytes) in size.
 For AF_INET6_, <b>dst</b> should be 128-bits (16 bytes) in size.
 
 
+<br/>
 
 ### `Function HostIp:String( HostName$, index:Int=0, family:Int = AF_UNSPEC_ )`
 
@@ -177,6 +193,7 @@ Convert a host name to an ip address
 Host ip address, or 0 if host not found
 
 
+<br/>
 
 ### `Function HostIps:String[]( HostName$, family:Int = AF_UNSPEC_ )`
 
@@ -186,6 +203,7 @@ Get all ip addresses for a host name
 Array of host ips, or Null if host not found
 
 
+<br/>
 
 ### `Function HostName$( HostIp:String, family:Int = AF_UNSPEC_ )`
 
@@ -195,9 +213,11 @@ Convert a host ip address to a name
 Name of host, or Null if host not found
 
 
+<br/>
 
 ### `Function AddrInfo:TAddrInfo[](host:String, service:String, hints:TAddrInfo)`
 
 Returns an array of TAddrInfo objects.
 
+<br/>
 

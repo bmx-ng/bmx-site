@@ -55,7 +55,7 @@ state, of a gadget. Any changes made to gadget through MaxGUI command calls (suc
 not result in events being emitted. 
 
 <h2>Windows</h2>
-![](assets/maxgui/win32window.png)![](assets/maxgui/fltkwindow.png)![](assets/maxgui/osxwindow.png)
+![](assets/win32window.png)![](assets/fltkwindow.png)![](assets/osxwindow.png)
 
 A Window is used to contain a collection of gadgets that make up the user interface of an application. The [CreateWindow](../../maxgui/maxgui.maxgui/#function-createwindow-tgadget-titletext-x-y-w-h-group-tgadget-null-style-window-default) 
 command creates a window of a specified size that can then be used as the <b>group</b> parameter for the other gadget creation
@@ -71,7 +71,7 @@ If a window is created with the WINDOW_RESIZABLE style, its sizing can be restra
 [RestoreWindow](../../maxgui/maxgui.maxgui/#function-restorewindow-window-tgadget) commands. The state of a window can be dermined using [WindowMinimized](../../maxgui/maxgui.maxgui/#function-windowminimized-window-tgadget) and [WindowMaximized](../../maxgui/maxgui.maxgui/#function-windowmaximized-window-tgadget).
 
 <h2>Menus</h2>
-![](assets/maxgui/win32menu.png)![](assets/maxgui/fltkmenu.png)![](assets/maxgui/osxmenu.png)
+![](assets/win32menu.png)![](assets/fltkmenu.png)![](assets/osxmenu.png)
 
 The [CreateMenu](../../maxgui/maxgui.maxgui/#function-createmenu-tgadget-text-tag-parent-tgadget-hotkey-0-modifier-0) command is used to create menu-items. Menus can be attached either to a window's menu-bar by parenting them to a 
 [WindowMenu](../../maxgui/maxgui.maxgui/#function-windowmenu-tgadget-window-tgadget) or can popup at the current mouse location if used with the [PopupWindowMenu](../../maxgui/maxgui.maxgui/#function-popupwindowmenu-window-tgadget-menu-tgadget-extra-object-null) command.
@@ -80,7 +80,7 @@ The [CreateMenu](../../maxgui/maxgui.maxgui/#function-createmenu-tgadget-text-ta
 being chosen by the user. [EnableGadget](../../maxgui/maxgui.maxgui/#function-enablegadget-gadget-tgadget) reverses this operation.
 
 <h2>Buttons</h2>
-![](assets/maxgui/win32buttons.png)![](assets/maxgui/fltkbuttons.png)![](assets/maxgui/osxbuttons.png)
+![](assets/win32buttons.png)![](assets/fltkbuttons.png)![](assets/osxbuttons.png)
 
 The [CreateButton](../../maxgui/maxgui.maxgui/#function-createbutton-tgadget-label-x-y-w-h-group-tgadget-style-button-push) command is used to add buttons to a group gadget. Buttons can be standard push buttons that emit a single
 event whenever clicked, or they can be created with the BUTTON_CHECKBOX or BUTTON_RADIO styles
@@ -88,7 +88,7 @@ in which case they can be toggled by the user (or programatically with the [SetB
 Their current state can be found with the help of the [ButtonState](../../maxgui/maxgui.maxgui/#function-buttonstate-button-tgadget) function.
 
 <h2>Panels</h2>
-![](assets/maxgui/win32panels.png)![](assets/maxgui/fltkpanels.png)![](assets/maxgui/osxpanels.png)
+![](assets/win32panels.png)![](assets/fltkpanels.png)![](assets/osxpanels.png)
 
 The [CreatePanel](../../maxgui/maxgui.maxgui/#function-createpanel-tgadget-x-y-w-h-group-tgadget-style-0-title) command is used to to create a Panel gadget. Panels can be used to group other gadgets together and
 can be optionally assigned a background color or image using the [SetPanelColor](../../maxgui/maxgui.maxgui/#function-setpanelcolor-panel-tgadget-r-g-b) or [SetPanelPixmap](../../maxgui/maxgui.maxgui/#function-setpanelpixmap-panel-tgadget-pixmap-tpixmap-flags-panelpixmap-tile) commands.  They can
@@ -96,14 +96,14 @@ be created with or without a border. Panels were one of the first gadgets that c
 specifying the optional PANEL_ACTIVE style upon creation.
 
 <h2>Text Fields</h2>
-![](assets/maxgui/win32textfield.png)![](assets/maxgui/fltktextfield.png)![](assets/maxgui/osxtextfield.png)
+![](assets/win32textfield.png)![](assets/fltktextfield.png)![](assets/osxtextfield.png)
 
 A text-field allows the users to enter a single line of text. A text-field's characters can be masked by specifying an 
 optional TEXTFIELD_PASSWORD style flag upon the call to [CreateTextField](../../maxgui/maxgui.maxgui/#function-createtextfield-tgadget-x-y-w-h-group-tgadget-style-0).  This is useful for creating password-entry
 forms.  As with all other gadgets, [GadgetText](../../maxgui/maxgui.maxgui/#function-gadgettext-gadget-tgadget) and [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text) can be used to set and retrieve the text in the field.
 
 <h2>Text Areas</h2>
-![](assets/maxgui/win32textarea.png)![](assets/maxgui/fltktextarea.png)![](assets/maxgui/osxtextarea.png)
+![](assets/win32textarea.png)![](assets/fltktextarea.png)![](assets/osxtextarea.png)
 
 The [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0) command creates a gadget for displaying formatted text, with optional TEXTAREA_WORDWRAP and 
 TEXTAREA_READONLY styles.  
@@ -124,7 +124,7 @@ The MaxGUI commands specific to text-areas are summarised below:
 of the gadget.
 
 <h2>Combo Boxes</h2>
-![](assets/maxgui/win32combobox.png)![](assets/maxgui/fltkcombobox.png)![](assets/maxgui/osxcombobox.png)
+![](assets/win32combobox.png)![](assets/fltkcombobox.png)![](assets/osxcombobox.png)
 
 Combo-boxes provide a dropdown list of options to the user with an optional style that allows the user to enter 
 their own text in a similar manner to the TextField gadget. [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0) creates a ComboBox and the standard
@@ -132,14 +132,14 @@ list based gadget commands [ClearGadgetItems](../../maxgui/maxgui.maxgui/#functi
 [SelectedGadgetItem](../../maxgui/maxgui.maxgui/#function-selectedgadgetitem-gadget-tgadget), [CountGadgetItems](../../maxgui/maxgui.maxgui/#function-countgadgetitems-gadget-tgadget) and [GadgetItemText](../../maxgui/maxgui.maxgui/#function-gadgetitemtext-gadget-tgadget-index) can be used to manage the items contained by the ComboBox gadget.
 
 <h2>List Boxes</h2>
-![](assets/maxgui/win32listbox.png)![](assets/maxgui/fltklistbox.png)![](assets/maxgui/osxlistbox.png)
+![](assets/win32listbox.png)![](assets/fltklistbox.png)![](assets/osxlistbox.png)
 
 List-boxes are similiar to ComboBoxes but features a scrolling list rather than a drop-down selection mechanism.
 The [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0) command is used to create a ListBox gadget while the standard list based gadget commands listed
 in the previous ComboBox section are used to manage the items.
 
 <h2>Toolbars</h2>
-![](assets/maxgui/win32toolbar.png)
+![](assets/win32toolbar.png)
 
 Toolbars display a row of clickable icons at the top of a window. The [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) command creates a window toolbar 
 using a previously loaded <b>TIconStrip</b> or using a specified image file containing a strip of icons.
@@ -154,7 +154,7 @@ It is important to note that Toolbars should only ever be added to <b>Window</b>
 cause your program to crash on some platforms.
 
 <h2>Tabbers</h2>
-![](assets/maxgui/win32tabber.png)![](assets/maxgui/fltktabber.png)![](assets/maxgui/osxtabber.png)
+![](assets/win32tabber.png)![](assets/fltktabber.png)![](assets/osxtabber.png)
 
 The [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0) command creates a tab control gadget commonly used to group gadgets into a collection of pages. 
 The standard list based gadget commands [ClearGadgetItems](../../maxgui/maxgui.maxgui/#function-cleargadgetitems-gadget-tgadget), [AddGadgetItem](../../maxgui/maxgui.maxgui/#function-addgadgetitem-gadget-tgadget-text-flags-0-icon-1-tip-extra-object-null), [ModifyGadgetItem](../../maxgui/maxgui.maxgui/#function-modifygadgetitem-gadget-tgadget-index-text-flags-0-icon-1-tip-extra-object-null), [RemoveGadgetItem](../../maxgui/maxgui.maxgui/#function-removegadgetitem-gadget-tgadget-index), 
@@ -162,7 +162,7 @@ The standard list based gadget commands [ClearGadgetItems](../../maxgui/maxgui.m
 in a Tabber gadget.
 
 <h2>TreeViews</h2>
-![](assets/maxgui/win32treeview.png)![](assets/maxgui/fltktreeview.png)![](assets/maxgui/osxtreeview.png)
+![](assets/win32treeview.png)![](assets/fltktreeview.png)![](assets/osxtreeview.png)
 
 A TreeView is used to display hierarchical data where items are contained in nodes that can be children of other nodes.
 The [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0) command creates a new TreeView gadget that provides a [TreeViewRoot](../../maxgui/maxgui.maxgui/#function-treeviewroot-tgadget-treeview-tgadget) used to create a tree of nodes.
@@ -175,7 +175,7 @@ The [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget
 can be used to remove nodes previously added to a TreeView gadget.
 
 <h2>HtmlViews</h2>
-![](assets/maxgui/win32htmlview.png)
+![](assets/win32htmlview.png)
 
 An HTMLView is a gadget containing a complete web browser display. The [CreateHTMLView](../../maxgui/maxgui.maxgui/#function-createhtmlview-tgadget-x-y-w-h-group-tgadget-style-0) command creates an HTMLView gadget
 while [HtmlViewGo](../../maxgui/maxgui.maxgui/#function-htmlviewgo-view-tgadget-url), [HtmlViewBack](../../maxgui/maxgui.maxgui/#function-htmlviewback-view-tgadget) and [HtmlViewForward](../../maxgui/maxgui.maxgui/#function-htmlviewforward-view-tgadget) control the page being displayed.
@@ -188,7 +188,7 @@ Labels are read-only regions of text on a user inteface that do not have a backg
 [CreateLabel](../../maxgui/maxgui.maxgui/#function-createlabel-tgadget-name-x-y-w-h-group-tgadget-style-label-left) command.
 
 <h2>Sliders</h2>
-![](assets/maxgui/win32sliders.png)![](assets/maxgui/fltksliders.png)![](assets/maxgui/osxsliders.png)
+![](assets/win32sliders.png)![](assets/fltksliders.png)![](assets/osxsliders.png)
 
 Sliders allow the user to control a numerical value by dragging a control inside a container. [CreateSlider](../../maxgui/maxgui.maxgui/#function-createslider-tgadget-x-y-w-h-group-tgadget-style-0) can create 
 both a scroll-bar type slider (where the size of the knob represents the portion of the document being viewed) and 
@@ -198,7 +198,7 @@ allowed by the control).
 [SetSliderValue](../../maxgui/maxgui.maxgui/#function-setslidervalue-slider-tgadget-value) and [SliderValue](../../maxgui/maxgui.maxgui/#function-slidervalue-slider-tgadget) set and retrieve the position of a Slider control.
 
 <h2>Progress Bars</h2>
-![](assets/maxgui/win32progbar.png)![](assets/maxgui/fltkprogbar.png)![](assets/maxgui/osxprogbar.png)
+![](assets/win32progbar.png)![](assets/fltkprogbar.png)![](assets/osxprogbar.png)
 
 [CreateProgBar](../../maxgui/maxgui.maxgui/#function-createprogbar-tgadget-x-y-w-h-group-tgadget-style-0) creates a progress bar gadget commonly used to display the progress of an operation. The 
 [UpdateProgBar](../../maxgui/maxgui.maxgui/#function-updateprogbar-progbar-tgadget-value) command is used to update the progress bar with a floating point value between 0.0 and 1.0 and
@@ -229,6 +229,7 @@ to <b>key</b> and <b>mods</b> equal to <b>mods</b> will be emitted.
 Please refer to the Key Codes module for valid key and modifier codes.
 
 
+<br/>
 
 ### `Function RemoveHotKey(hotkey:THotKey)`
 
@@ -238,6 +239,7 @@ Remove a hotkey event.
 Clears a hotkey object created with [SetHotKeyEvent](../../maxgui/maxgui.maxgui/#function-sethotkeyevent-thotkey-key-mods-event-tevent-null-owner-byte-ptr-0).
 
 
+<br/>
 
 ### `Function LookupGuiColor( colorindex, red:Byte Var, green:Byte Var, blue:Byte Var )`
 
@@ -297,6 +299,7 @@ Repeat
 	EndSelect
 Forever
 ```
+<br/>
 
 ### `Function RequestColor(r,g,b)`
 
@@ -346,6 +349,7 @@ While True
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function RequestedRed()`
 
@@ -354,6 +358,7 @@ Get the red component of the color previously chosen by the user.
 See [RequestColor](../../maxgui/maxgui.maxgui/#function-requestcolor-r-g-b) for more information.
 
 
+<br/>
 
 ### `Function RequestedGreen()`
 
@@ -362,6 +367,7 @@ Get the green component of the color previously chosen by the user.
 See [RequestColor](../../maxgui/maxgui.maxgui/#function-requestcolor-r-g-b) for more information.
 
 
+<br/>
 
 ### `Function RequestedBlue()`
 
@@ -370,6 +376,7 @@ Get the blue component of the color previously chosen by the user.
 See [RequestColor](../../maxgui/maxgui.maxgui/#function-requestcolor-r-g-b) for more information.
 
 
+<br/>
 
 ### `Function RequestFont:TGuiFont(font:TGuiFont=Null)`
 
@@ -397,7 +404,7 @@ AppTitle = "RequestFont() Example"
 
 Const teststring:String = "The quick brown fox jumps over the lazy dog."
 
-Local window:TGadget = CreateWindow(AppTitle,50,50,300,300,Null,WINDOW_TITLEBAR|WINDOW_STATUS|WINDOW_RESIZABLE)
+Local window:TGadget = CreateWindow(AppTitle,50,50,300,200,Null,WINDOW_TITLEBAR|WINDOW_STATUS|WINDOW_RESIZABLE)
 	SetMinWindowSize window, GadgetWidth(window), GadgetHeight(window)
 	
 	Local label:TGadget = CreateLabel(teststring,0,0,ClientWidth(window),ClientHeight(window)-26,window)
@@ -415,13 +422,13 @@ Repeat
 		Case EVENT_GADGETACTION
 			font = RequestFont(font)
 			If font Then
-			'DebugStop
 				SetGadgetFont label, font
 				SetStatusText window,FontName(font) + ": " + Int(FontSize(font)+0.5) + "pt"
 			EndIf
 	End Select
 Forever
 ```
+<br/>
 
 ### `Function LoadGuiFont:TGuiFont(name$,height:Double,bold=False,italic=False,underline=False,strikethrough=False)`
 
@@ -440,6 +447,7 @@ See Also: [RequestFont](../../maxgui/maxgui.maxgui/#function-requestfont-tguifon
 A <b>TGuiFont</b> object, or [Null](../../brl/brl.blitz/#null) if a suitable matching font was not found on the system.
 
 
+<br/>
 
 ### `Function LookupGuiFont:TGuiFont( pFontType% = GUIFONT_SYSTEM, pFontSize:Double = 0, pFontStyle% = 0 )`
 
@@ -524,6 +532,7 @@ Function ChooseFont( pFont:TGuiFont )
 	strFontString$ = FontName(pFont) + ", " + Int(FontSize(pFont)) + "pt"
 EndFunction
 ```
+<br/>
 
 ### `Function FontName$(font:TGuiFont)`
 
@@ -536,6 +545,7 @@ See Also: [LoadGuiFont](../../maxgui/maxgui.maxgui/#function-loadguifont-tguifon
 A string representing the name of the font.
 
 
+<br/>
 
 ### `Function FontSize:Double(font:TGuiFont)`
 
@@ -548,6 +558,7 @@ See Also: [LoadGuiFont](../../maxgui/maxgui.maxgui/#function-loadguifont-tguifon
 A double representing the size (in points) of the font.
 
 
+<br/>
 
 ### `Function FontStyle(font:TGuiFont)`
 
@@ -567,6 +578,7 @@ See Also: [LoadGuiFont](../../maxgui/maxgui.maxgui/#function-loadguifont-tguifon
 An integer representing the style of the font (e.g. Bold, Underlined, Italics, Strikethrough).
 
 
+<br/>
 
 ### `Function SetPointer(shape)`
 
@@ -625,11 +637,13 @@ While True
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function FreeGadget( gadget:TGadget )`
 
 Remove a gadget and free its resources.
 
+<br/>
 
 ### `Function ClientWidth( gadget:TGadget )`
 
@@ -639,6 +653,7 @@ Client area dimensions of a gadget.
 The width of the client area (in pixels) of the specified container gadget.
 
 
+<br/>
 
 ### `Function ClientHeight( gadget:TGadget )`
 
@@ -648,6 +663,7 @@ Client area dimensions of a gadget.
 The height of the client area (in pixels) of the specified container gadget.
 
 
+<br/>
 
 ### `Function GadgetX( gadget:TGadget )`
 
@@ -657,6 +673,7 @@ Horizontal position of gadget.
 The horizontal position (in pixels) of a gadget relative to the top-left corner of the parent's client area.
 
 
+<br/>
 
 ### `Function GadgetY( gadget:TGadget )`
 
@@ -666,6 +683,7 @@ Vertical position of gadget.
 The vertical position (in pixels) of a gadget relative to the top-left corner of the parent's client area.
 
 
+<br/>
 
 ### `Function GadgetWidth( gadget:TGadget )`
 
@@ -675,6 +693,7 @@ Gadget width.
 The current width (in pixels) of a gadget.
 
 
+<br/>
 
 ### `Function GadgetHeight( gadget:TGadget )`
 
@@ -684,6 +703,7 @@ Gadget height.
 The current height (in pixels) of a gadget.
 
 
+<br/>
 
 ### `Function GadgetGroup:TGadget( gadget:TGadget )`
 
@@ -693,6 +713,7 @@ Return a gadget's group or parent.
 The <b>TGadget</b> instance of the parent or group gadget.
 
 
+<br/>
 
 ### `Function GadgetClass( gadget:TGadget )`
 
@@ -744,6 +765,7 @@ Repeat
 	
 Forever
 ```
+<br/>
 
 ### `Function ShowGadget( gadget:TGadget )`
 
@@ -752,6 +774,7 @@ Make a gadget visible.
 See Also: [HideGadget](../../maxgui/maxgui.maxgui/#function-hidegadget-gadget-tgadget) and [GadgetHidden](../../maxgui/maxgui.maxgui/#function-gadgethidden-gadget-tgadget-recursive-false).
 
 
+<br/>
 
 ### `Function HideGadget( gadget:TGadget )`
 
@@ -760,6 +783,7 @@ Hide a gadget.
 See Also: [ShowGadget](../../maxgui/maxgui.maxgui/#function-showgadget-gadget-tgadget) and [GadgetHidden](../../maxgui/maxgui.maxgui/#function-gadgethidden-gadget-tgadget-recursive-false).
 
 
+<br/>
 
 ### `Function EnableGadget( gadget:TGadget )`
 
@@ -768,6 +792,7 @@ Enable a gadget, allowing user interaction.
 See Also: [DisableGadget](../../maxgui/maxgui.maxgui/#function-disablegadget-gadget-tgadget) and [GadgetDisabled](../../maxgui/maxgui.maxgui/#function-gadgetdisabled-gadget-tgadget-recursive-false).
 
 
+<br/>
 
 ### `Function DisableGadget( gadget:TGadget )`
 
@@ -776,6 +801,7 @@ Disable a gadget, blocking user interaction.
 See Also: [EnableGadget](../../maxgui/maxgui.maxgui/#function-enablegadget-gadget-tgadget) and [GadgetDisabled](../../maxgui/maxgui.maxgui/#function-gadgetdisabled-gadget-tgadget-recursive-false).
 
 
+<br/>
 
 ### `Function GadgetHidden( gadget:TGadget, recursive% = False )`
 
@@ -792,6 +818,7 @@ See Also: [ShowGadget](../../maxgui/maxgui.maxgui/#function-showgadget-gadget-tg
 [True](../../brl/brl.blitz/#true) if the gadget is set to be hidden, [False](../../brl/brl.blitz/#false) otherwise.
 
 
+<br/>
 
 ### `Function GadgetDisabled( gadget:TGadget, recursive% = False )`
 
@@ -808,6 +835,7 @@ See Also: [EnableGadget](../../maxgui/maxgui.maxgui/#function-enablegadget-gadge
 [True](../../brl/brl.blitz/#true) if the gadget is set to be disabled, [False](../../brl/brl.blitz/#false) otherwise.
 
 
+<br/>
 
 ### `Function SetGadgetShape( gadget:TGadget,x,y,w,h )`
 
@@ -819,6 +847,7 @@ The <b>w</b> and <b>h</b> parameters set the gadget width or height, unless the 
 in which case, they represent the client-area dimensions.
 
 
+<br/>
 
 ### `Function SetGadgetLayout( gadget:TGadget,Left,Right,Top,Bottom )`
 
@@ -837,6 +866,7 @@ Each edge of a <b>Gadget</b> has an alignment setting that fixes it in place in 
 The default behaviour may vary between platforms, so it is highly recommended that you set this for gadgets on resizable windows.
 
 
+<br/>
 
 ### `Function SetGadgetSensitivity( gadget:TGadget, flags )`
 
@@ -874,6 +904,7 @@ It is therefore recommended that this function is only used by advanced MaxGUI u
 See Also: [GadgetSensitivity](../../maxgui/maxgui.maxgui/#function-gadgetsensitivity-gadget-tgadget)
 
 
+<br/>
 
 ### `Function GadgetSensitivity( gadget:TGadget )`
 
@@ -887,6 +918,7 @@ The function will return a combination of the following flags:
 See [SetGadgetSensitivity](../../maxgui/maxgui.maxgui/#function-setgadgetsensitivity-gadget-tgadget-flags) for more information.
 
 
+<br/>
 
 ### `Function SetGadgetExtra( gadget:TGadget, extra:Object )`
 
@@ -901,11 +933,13 @@ which will only be released when a new object or [Null](../../brl/brl.blitz/#nul
 using [FreeGadget](../../maxgui/maxgui.maxgui/#function-freegadget-gadget-tgadget).
 
 
+<br/>
 
 ### `Function GadgetExtra:Object( gadget:TGadget )`
 
 Retrieves the object instance previously stored using [SetGadgetExtra](../../maxgui/maxgui.maxgui/#function-setgadgetextra-gadget-tgadget-extra-object).
 
+<br/>
 
 ### `Function ActivateGadget( gadget:TGadget )`
 
@@ -914,6 +948,7 @@ Request focus for a gadget.
 See Also: [ActiveGadget](../../maxgui/maxgui.maxgui/#function-activegadget-tgadget)()
 
 
+<br/>
 
 ### `Function ActiveGadget:TGadget()`
 
@@ -926,6 +961,7 @@ See Also: [ActivateGadget](../../maxgui/maxgui.maxgui/#function-activategadget-g
 The gadget that currently has the keyboard focus. Returns [Null](../../brl/brl.blitz/#null) if no MaxGUI gadget has focus.
 
 
+<br/>
 
 ### `Function GadgetCut( gadget:TGadget )`
 
@@ -934,6 +970,7 @@ Perform a cut operation on a gadget.
 This is most commonly used on <b>TextAreas</b> to cut text that is currently selected.
 
 
+<br/>
 
 ### `Function GadgetCopy( gadget:TGadget )`
 
@@ -942,6 +979,7 @@ Perform a copy operation on a gadget.
 This is most commonly used on <b>TextAreas</b> to copy text that is currently selected.
 
 
+<br/>
 
 ### `Function GadgetPaste( gadget:TGadget )`
 
@@ -950,6 +988,7 @@ Perform a paste operation on a gadget.
 This is most commonly used on <b>TextAreas</b> to paste text into the gadget from the clipboard.
 
 
+<br/>
 
 ### `Function GadgetPrint( gadget:TGadget )`
 
@@ -958,6 +997,7 @@ Perform a print operation on a gadget.
 This function is currently only supported on <b>TextAreas</b> and <b>HTMLViews</b>.
 
 
+<br/>
 
 ### `Function RedrawGadget( gadget:TGadget )`
 
@@ -1064,6 +1104,7 @@ Repeat
 	WaitSystem()
 Forever
 ```
+<br/>
 
 ### `Function SetGadgetPixmap( gadget:TGadget, pixmap:TPixmap, flags% = GADGETPIXMAP_ICON )`
 
@@ -1091,6 +1132,7 @@ are also not supported for radio buttons or checkbox style buttons.
 Passing [Null](../../brl/brl.blitz/#null) as the value for the <b>pixmap</b> parameter will remove the pixmap from the gadget.
 
 
+<br/>
 
 ### `Function SetGadgetAlpha( gadget:TGadget,alpha# )`
 
@@ -1105,6 +1147,7 @@ Using the function on windows with <b>Canvases</b> on them may cause undesired e
 because of conflicts between the software based window manager and the hardware accelerated graphics contexts.
 
 
+<br/>
 
 ### `Function SetGadgetText( gadget:TGadget,Text$ )`
 
@@ -1119,6 +1162,7 @@ should be used to independently set the status bar text.
 This command will automatically delocalize the gadget - to set localized gadget text, see [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip).
 
 
+<br/>
 
 ### `Function GadgetText$( gadget:TGadget )`
 
@@ -1130,6 +1174,7 @@ of the gadget are returned with the new gadget's text.
 For a <b>Window</b> gadget, [GadgetText](../../maxgui/maxgui.maxgui/#function-gadgettext-gadget-tgadget) returns the title of the <b>Window</b>.
 
 
+<br/>
 
 ### `Function SetGadgetToolTip( gadget:TGadget, tip$ )`
 
@@ -1150,6 +1195,7 @@ This command will automatically delocalize the gadget - to set a localized gadge
 See Also: [GadgetTooltip](../../maxgui/maxgui.maxgui/#function-gadgettooltip-gadget-tgadget)()
 
 
+<br/>
 
 ### `Function GadgetTooltip$( gadget:TGadget )`
 
@@ -1168,6 +1214,7 @@ Returns the tooltip for a <i>non-item based</i> positionable MaxGUI gadget. As s
 See Also: [SetGadgetTooltip](../../maxgui/maxgui.maxgui/#function-setgadgettooltip-gadget-tgadget-tip)()
 
 
+<br/>
 
 ### `Function SetGadgetFont( gadget:TGadget,font:TGuiFont, applyToChildren:Int = False )`
 
@@ -1176,6 +1223,7 @@ Set a gadget's font.
 See [LoadGuiFont](../../maxgui/maxgui.maxgui/#function-loadguifont-tguifont-name-height-double-bold-false-italic-false-underline-false-strikethrough-false) and [RequestFont](../../maxgui/maxgui.maxgui/#function-requestfont-tguifont-font-tguifont-null) for creating a <b>TGuiFont</b>.
 
 
+<br/>
 
 ### `Function SetGadgetTextColor( gadget:TGadget,r,g,b )`
 
@@ -1185,6 +1233,7 @@ The <b>r</b>ed, <b>g</b>reen and <b>b</b>lue components should be in the range 0
 See Also: [SetGadgetColor](../../maxgui/maxgui.maxgui/#function-setgadgetcolor-gadget-tgadget-r-g-b-bg-true)()
 
 
+<br/>
 
 ### `Function SetGadgetColor( gadget:TGadget,r,g,b,bg=True )`
 
@@ -1195,6 +1244,7 @@ This command is not supported for all Gadget types on all platforms.
 See Also: [SetGadgetTextColor](../../maxgui/maxgui.maxgui/#function-setgadgettextcolor-gadget-tgadget-r-g-b)() [SetGadgetAlpha](../../maxgui/maxgui.maxgui/#function-setgadgetalpha-gadget-tgadget-alpha) [RemoveGadgetColor](../../maxgui/maxgui.maxgui/#function-removegadgetcolor-gadget-tgadget)
 
 
+<br/>
 
 ### `Function RemoveGadgetColor( gadget:TGadget )`
 
@@ -1204,11 +1254,13 @@ Restores a gadget to it's default color.
 See Also: [SetGadgetColor](../../maxgui/maxgui.maxgui/#function-setgadgetcolor-gadget-tgadget-r-g-b-bg-true)()
 
 
+<br/>
 
 ### `Function SetGadgetHotKey( gadget:TGadget,hotkey,modifier )`
 
 Set the hot-key combination for a gadget.
 
+<br/>
 
 ### `Function SetGadgetFilter( gadget:TGadget,callback(event:TEvent,context:Object),context:Object=Null )`
 
@@ -1273,6 +1325,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function LocalizeGadget( gadget:TGadget, localizationtext$, localizationtooltip$ = "" )`
 
@@ -1291,6 +1344,7 @@ GADGETITEM_LOCALIZED flag.  See the <b>flags</b> parameter of the [AddGadgetItem
 See Also: [GadgetLocalized](../../maxgui/maxgui.maxgui/#function-gadgetlocalized-int-gadget-tgadget), [SetLocalizationMode](../../maxgui/maxgui.localization/#function-setlocalizationmode-mode-int-localization-on) and [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage).
 
 
+<br/>
 
 ### `Function GadgetLocalized:Int( gadget:TGadget )`
 
@@ -1299,6 +1353,7 @@ Determines whether a gadget is registered as being 'localized'.
 See [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip) and [SetLocalizationMode](../../maxgui/maxgui.localization/#function-setlocalizationmode-mode-int-localization-on) for more information.
 
 
+<br/>
 
 ### `Function DelocalizeGadget( gadget:TGadget )`
 
@@ -1307,6 +1362,7 @@ Delocalizes a gadget so that it's no longer updated if the localization language
 See Also: [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip), [SetLocalizationLanguage](../../maxgui/maxgui.localization/#function-setlocalizationlanguage-language-tmaxguilanguage) and [SetLocalizationMode](../../maxgui/maxgui.localization/#function-setlocalizationmode-mode-int-localization-on).
 
 
+<br/>
 
 ### `Function CreateMenu:TGadget( Text$,tag,parent:TGadget,hotkey=0,modifier=0 )`
 
@@ -1396,6 +1452,7 @@ While True
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function FreeMenu( menu:TGadget )`
 
@@ -1404,6 +1461,7 @@ Remove a menu.
 This function has been superseded by [FreeGadget](../../maxgui/maxgui.maxgui/#function-freegadget-gadget-tgadget), but is available for backwards compatability.
 
 
+<br/>
 
 ### `Function SetMenuText( menu:TGadget,Text$ )`
 
@@ -1412,6 +1470,7 @@ Modify a menu's text.
 This function has been superseded by [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text), but is available for backwards compatability.
 
 
+<br/>
 
 ### `Function CheckMenu( menu:TGadget )`
 
@@ -1421,6 +1480,7 @@ Set a menu's checked state.
 to become visible.
 
 
+<br/>
 
 ### `Function UncheckMenu( menu:TGadget )`
 
@@ -1430,6 +1490,7 @@ Clear a menu's checked state.
 to become visible.
 
 
+<br/>
 
 ### `Function EnableMenu( menu:TGadget )`
 
@@ -1439,6 +1500,7 @@ Enable a menu for selection.
 to become visible.
 
 
+<br/>
 
 ### `Function DisableMenu( menu:TGadget )`
 
@@ -1448,6 +1510,7 @@ Disable a menu so it cannot be selected.
 to become visible.
 
 
+<br/>
 
 ### `Function MenuText$( menu:TGadget )`
 
@@ -1456,16 +1519,19 @@ Return a menu's text.
 This function has been superseded by [GadgetText](../../maxgui/maxgui.maxgui/#function-gadgettext-gadget-tgadget), but is available for backwards compatability.
 
 
+<br/>
 
 ### `Function MenuChecked( menu:TGadget )`
 
 Return a menu's checked state.
 
+<br/>
 
 ### `Function MenuEnabled( menu:TGadget )`
 
 Return a menu's enabled state.
 
+<br/>
 
 ### `Function Desktop:TGadget()`
 
@@ -1474,6 +1540,7 @@ Return a gadget representing the system's desktop.
 This is particularly useful for finding the resolution of the desktop using [GadgetWidth](../../maxgui/maxgui.maxgui/#function-gadgetwidth-gadget-tgadget) / [ClientWidth](../../maxgui/maxgui.maxgui/#function-clientwidth-gadget-tgadget) or [GadgetHeight](../../maxgui/maxgui.maxgui/#function-gadgetheight-gadget-tgadget) / [ClientHeight](../../maxgui/maxgui.maxgui/#function-clientheight-gadget-tgadget).
 
 
+<br/>
 
 ### `Function CreateWindow:TGadget( titletext$,x,y,w,h,group:TGadget=Null,style=WINDOW_DEFAULT )`
 
@@ -1544,6 +1611,7 @@ Repeat
 	End Select
 Forever
 ```
+<br/>
 
 ### `Function WindowMenu:TGadget( window:TGadget )`
 
@@ -1561,6 +1629,7 @@ style flag.
 See Also: [CreateMenu](../../maxgui/maxgui.maxgui/#function-createmenu-tgadget-text-tag-parent-tgadget-hotkey-0-modifier-0) and [UpdateWindowMenu](../../maxgui/maxgui.maxgui/#function-updatewindowmenu-window-tgadget)
 
 
+<br/>
 
 ### `Function UpdateWindowMenu( window:TGadget )`
 
@@ -1574,6 +1643,7 @@ style flag.
 See Also: [WindowMenu](../../maxgui/maxgui.maxgui/#function-windowmenu-tgadget-window-tgadget) and [CreateMenu](../../maxgui/maxgui.maxgui/#function-createmenu-tgadget-text-tag-parent-tgadget-hotkey-0-modifier-0)
 
 
+<br/>
 
 ### `Function PopupWindowMenu( window:TGadget,menu:TGadget,extra:Object=Null )`
 
@@ -1615,6 +1685,7 @@ While True
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function ActivateWindow( window:TGadget )`
 
@@ -1623,6 +1694,7 @@ Activate a window gadget.
 This function has been superseded by [ActivateGadget](../../maxgui/maxgui.maxgui/#function-activategadget-gadget-tgadget), but is available for backwards compatability.
 
 
+<br/>
 
 ### `Function WindowStatusText$( window:TGadget )`
 
@@ -1632,6 +1704,7 @@ Can only be used with windows created with the WINDOW_STATUS flag (see [CreateWi
 delimit between the three alignments of text.  See [SetStatusText](../../maxgui/maxgui.maxgui/#function-setstatustext-window-tgadget-text) for more information.
 
 
+<br/>
 
 ### `Function SetStatusText( window:TGadget,Text$ )`
 
@@ -1651,6 +1724,7 @@ SetStatusText( window, "~t~tRight Aligned Only" )
 See Also: [WindowStatusText](../../maxgui/maxgui.maxgui/#function-windowstatustext-window-tgadget)
 
 
+<br/>
 
 ### `Function SetMinWindowSize( window:TGadget,w,h )`
 
@@ -1659,6 +1733,7 @@ Set a window's minimum size.
 Only useful for resizable windows (i.e. windows created with the WINDOW_RESIZABLE flag, see [CreateWindow](../../maxgui/maxgui.maxgui/#function-createwindow-tgadget-titletext-x-y-w-h-group-tgadget-null-style-window-default)).
 
 
+<br/>
 
 ### `Function SetMaxWindowSize( window:TGadget,w,h )`
 
@@ -1669,6 +1744,7 @@ Only useful for resizable windows (i.e. windows created with the WINDOW_RESIZABL
 Calling this function will disable the Maximize button window hint on Windows, and will limit the window zoom size on Mac OS X.
 
 
+<br/>
 
 ### `Function MinimizeWindow( window:TGadget )`
 
@@ -1680,6 +1756,7 @@ of the window in the taskbar or dock.  The same effect can be obtained programat
 See Also: [WindowMinimized](../../maxgui/maxgui.maxgui/#function-windowminimized-window-tgadget).
 
 
+<br/>
 
 ### `Function MaximizeWindow( window:TGadget )`
 
@@ -1692,6 +1769,7 @@ programatically restore a window to its previous unmaximized state, although the
 See Also: [WindowMaximized](../../maxgui/maxgui.maxgui/#function-windowmaximized-window-tgadget).
 
 
+<br/>
 
 ### `Function RestoreWindow( window:TGadget )`
 
@@ -1700,6 +1778,7 @@ Restore a window from a minimized or maximized state.
 See Also: [MinimizeWindow](../../maxgui/maxgui.maxgui/#function-minimizewindow-window-tgadget) and [MaximizeWindow](../../maxgui/maxgui.maxgui/#function-maximizewindow-window-tgadget).
 
 
+<br/>
 
 ### `Function WindowMinimized( window:TGadget )`
 
@@ -1709,6 +1788,7 @@ Detect if a window is minimized.
 [True](../../brl/brl.blitz/#true) if the window is currently minimized, [False](../../brl/brl.blitz/#false) if not.
 
 
+<br/>
 
 ### `Function WindowMaximized( window:TGadget )`
 
@@ -1723,6 +1803,7 @@ be maximized with the [MaximizeWindow](../../maxgui/maxgui.maxgui/#function-maxi
 [True](../../brl/brl.blitz/#true) if the window is currently maximized, [False](../../brl/brl.blitz/#false) if not.
 
 
+<br/>
 
 ### `Function CreateButton:TGadget(label$,x,y,w,h,group:TGadget,style=BUTTON_PUSH)`
 
@@ -1781,6 +1862,7 @@ Function FillPanelWithButtons( pPanel:TGadget, pStyle%, pText$ = "Button" )
 	Next
 EndFunction
 ```
+<br/>
 
 ### `Function SetButtonState( button:TGadget,checked )`
 
@@ -1794,6 +1876,7 @@ of a checked state through the use of the CHECK_INDETERMINATE (-1) constant, dep
 See Also: [CreateButton](../../maxgui/maxgui.maxgui/#function-createbutton-tgadget-label-x-y-w-h-group-tgadget-style-button-push), [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text), [ButtonState](../../maxgui/maxgui.maxgui/#function-buttonstate-button-tgadget) and [SetGadgetPixmap](../../maxgui/maxgui.maxgui/#function-setgadgetpixmap-gadget-tgadget-pixmap-tpixmap-flags-gadgetpixmap-icon).
 
 
+<br/>
 
 ### `Function ButtonState( button:TGadget )`
 
@@ -1806,6 +1889,7 @@ state (CHECK_INDETERMINATE), then this function will return CHECK_INDETERMINATE 
 See Also: [CreateButton](../../maxgui/maxgui.maxgui/#function-createbutton-tgadget-label-x-y-w-h-group-tgadget-style-button-push), [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text), [SetButtonState](../../maxgui/maxgui.maxgui/#function-setbuttonstate-button-tgadget-checked) and [SetGadgetPixmap](../../maxgui/maxgui.maxgui/#function-setgadgetpixmap-gadget-tgadget-pixmap-tpixmap-flags-gadgetpixmap-icon).
 
 
+<br/>
 
 ### `Function CreatePanel:TGadget(x,y,w,h,group:TGadget,style=0,title$="")`
 
@@ -1870,6 +1954,7 @@ Repeat
 	End Select
 Forever
 ```
+<br/>
 
 ### `Function SetPanelColor( panel:TGadget,r,g,b )`
 
@@ -1879,6 +1964,7 @@ This function has been superseded by [SetGadgetColor](../../maxgui/maxgui.maxgui
 See Also: [CreatePanel](../../maxgui/maxgui.maxgui/#function-createpanel-tgadget-x-y-w-h-group-tgadget-style-0-title) and [SetPanelPixmap](../../maxgui/maxgui.maxgui/#function-setpanelpixmap-panel-tgadget-pixmap-tpixmap-flags-panelpixmap-tile)
 
 
+<br/>
 
 ### `Function SetPanelPixmap( panel:TGadget,pixmap:TPixmap,flags=PANELPIXMAP_TILE)`
 
@@ -1894,6 +1980,7 @@ The function can be passed 'Null' as the parameter for <b>pixmap</b>, in which c
 See Also: [CreatePanel](../../maxgui/maxgui.maxgui/#function-createpanel-tgadget-x-y-w-h-group-tgadget-style-0-title) and [SetPanelColor](../../maxgui/maxgui.maxgui/#function-setpanelcolor-panel-tgadget-r-g-b)
 
 
+<br/>
 
 ### `Function CreateTextField:TGadget(x,y,w,h,group:TGadget,style=0)`
 
@@ -1953,6 +2040,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function TextFieldText$( textfield:TGadget )`
 
@@ -1962,6 +2050,7 @@ This function has been superseded by [GadgetText](../../maxgui/maxgui.maxgui/#fu
 See Also: [CreateTextField](../../maxgui/maxgui.maxgui/#function-createtextfield-tgadget-x-y-w-h-group-tgadget-style-0) and [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text)
 
 
+<br/>
 
 ### `Function CreateTextArea:TGadget(x,y,w,h,group:TGadget,style=0)`
 
@@ -2022,6 +2111,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function SetTextAreaText( textarea:TGadget,Text$,pos=0,length=TEXTAREA_ALL,units=TEXTAREA_CHARS )`
 
@@ -2031,6 +2121,7 @@ Set the contents of a TextArea gadget.
 See Also: [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0), [AddTextAreaText](../../maxgui/maxgui.maxgui/#function-addtextareatext-textarea-tgadget-text) and [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text)
 
 
+<br/>
 
 ### `Function AddTextAreaText( textarea:TGadget,Text$ )`
 
@@ -2040,6 +2131,7 @@ Append text to the contents of a TextArea gadget.
 See Also: [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0), [SetTextAreaText](../../maxgui/maxgui.maxgui/#function-settextareatext-textarea-tgadget-text-pos-0-length-textarea-all-units-textarea-chars) and [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text)
 
 
+<br/>
 
 ### `Function TextAreaText$( textarea:TGadget,pos=0,length=TEXTAREA_ALL,units=TEXTAREA_CHARS )`
 
@@ -2049,6 +2141,7 @@ Get the contents of a TextArea gadget.
 See Also: [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0), [AddTextAreaText](../../maxgui/maxgui.maxgui/#function-addtextareatext-textarea-tgadget-text), [SetTextAreaText](../../maxgui/maxgui.maxgui/#function-settextareatext-textarea-tgadget-text-pos-0-length-textarea-all-units-textarea-chars) and [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text)
 
 
+<br/>
 
 ### `Function TextAreaLen( textarea:TGadget,units=TEXTAREA_CHARS )`
 
@@ -2058,6 +2151,7 @@ Get the number of characters in a TextArea gadget.
 See Also: [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function LockTextArea( textarea:TGadget )`
 
@@ -2067,6 +2161,7 @@ Lock a TextArea gadget for improved performance when formatting.
 See Also: [UnlockTextArea](../../maxgui/maxgui.maxgui/#function-unlocktextarea-textarea-tgadget) and [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function UnlockTextArea( textarea:TGadget )`
 
@@ -2076,6 +2171,7 @@ Unlock a previously locked TextArea gadget.
 See Also: [LockTextArea](../../maxgui/maxgui.maxgui/#function-locktextarea-textarea-tgadget) and [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function SetTextAreaTabs( textarea:TGadget,tabwidth )`
 
@@ -2085,6 +2181,7 @@ Set the tab stops of a TextArea gadget measured in pixels.
 See Also: [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0) SetIndents
 
 
+<br/>
 
 ### `Function SetMargins( textarea:TGadget,leftmargin )`
 
@@ -2094,6 +2191,7 @@ Set left margin of a TextArea measured in pixels.
 See Also: [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0) and [SetTextAreaTabs](../../maxgui/maxgui.maxgui/#function-settextareatabs-textarea-tgadget-tabwidth)
 
 
+<br/>
 
 ### `Function SetTextAreaFont( textarea:TGadget,font:TGuiFont )`
 
@@ -2103,6 +2201,7 @@ This function has been superseded by [SetGadgetFont](../../maxgui/maxgui.maxgui/
 See Also: [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function SetTextAreaColor( textarea:TGadget,r,g,b,bg=False )`
 
@@ -2112,6 +2211,7 @@ This function has been superseded by [SetGadgetColor](../../maxgui/maxgui.maxgui
 See Also: [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function TextAreaCursor( textarea:TGadget,units=TEXTAREA_CHARS )`
 
@@ -2125,6 +2225,7 @@ which line (row) the cursor is on.
 See Also: [TextAreaSelLen](../../maxgui/maxgui.maxgui/#function-textareasellen-textarea-tgadget-units-textarea-chars) and [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function TextAreaSelLen( textarea:TGadget,units=TEXTAREA_CHARS )`
 
@@ -2138,6 +2239,7 @@ function returns the number of lines selected.
 See Also: [TextAreaCursor](../../maxgui/maxgui.maxgui/#function-textareacursor-textarea-tgadget-units-textarea-chars) and [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function FormatTextAreaText( textarea:TGadget,r,g,b,flags,pos=0,length=TEXTAREA_ALL,units=TEXTAREA_CHARS )`
 
@@ -2160,6 +2262,7 @@ of lines that FormatTextAreaText will modify.
 See Also: [LockTextArea](../../maxgui/maxgui.maxgui/#function-locktextarea-textarea-tgadget) and [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function SelectTextAreaText( textarea:TGadget,pos=0,length=TEXTAREA_ALL,units=TEXTAREA_CHARS )`
 
@@ -2173,16 +2276,19 @@ of lines that SelextTextAreaText will highlight.
 See Also: [TextAreaCursor](../../maxgui/maxgui.maxgui/#function-textareacursor-textarea-tgadget-units-textarea-chars), [TextAreaSelLen](../../maxgui/maxgui.maxgui/#function-textareasellen-textarea-tgadget-units-textarea-chars) and [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function TextAreaChar( textarea:TGadget,Line )`
 
 Find the character position of a given line in a TextArea gadget.
 
+<br/>
 
 ### `Function TextAreaLine( textarea:TGadget,index )`
 
 Find the line of a given character position in a TextArea gadget.
 
+<br/>
 
 ### `Function TextAreaCharX( textarea:TGadget, char )`
 
@@ -2192,6 +2298,7 @@ The returned value may be greater than the width of the gadget (or even negative
 index is positioned outside the immediately visible area of a scrollable TextArea.
 
 
+<br/>
 
 ### `Function TextAreaCharY( textarea:TGadget, char )`
 
@@ -2201,6 +2308,7 @@ The returned value may be greater than the height of the gadget (or even negativ
 index is positioned outside the immediately visible area of a scrollable TextArea.
 
 
+<br/>
 
 ### `Function SetTextAreaCaretWidth( textarea:TGadget, width:Int )`
 
@@ -2209,6 +2317,7 @@ Sets the caret width in a TextArea gadget.
 
 
 
+<br/>
 
 ### `Function SetTextAreaCaretColor( textarea:TGadget, r:Int, g:Int, b:Int )`
 
@@ -2217,6 +2326,79 @@ Sets the caret color in a TextArea gadget.
 
 
 
+<br/>
+
+### `Function TextAreaHasUndoRedo:Int(textarea:TGadget)`
+
+The TextArea gadget provides its own Undo/Redo facility.
+
+
+
+
+<br/>
+
+### `Function TextAreaEnableUndoRedo(textarea:TGadget, enable:Int)`
+
+Enables or disables undo/redo actions for the specified TextArea gadget.
+
+
+
+
+<br/>
+
+### `Function TextAreaUndoRedoEnabled:Int(textarea:TGadget)`
+
+Returns whether undo/redo actions for the specified TextArea gadget are enabled.
+
+
+
+
+<br/>
+
+### `Function TextAreaUndo(textarea:TGadget)`
+
+Performs an undo action for the given TextArea gadget.
+
+
+
+
+<br/>
+
+### `Function TextAreaRedo(textarea:TGadget)`
+
+Performs a redo action for the given TextArea gadget.
+
+
+
+
+<br/>
+
+### `Function TextAreaCanUndo:Int(textarea:TGadget)`
+
+Returns [True](../../brl/brl.blitz/#true) if the TextArea can perform an undo action.
+
+
+
+
+<br/>
+
+### `Function TextAreaCanRedo:Int(textarea:TGadget)`
+
+Returns [True](../../brl/brl.blitz/#true) if the TextArea can perform a redo action.
+
+
+
+
+<br/>
+
+### `Function TextAreaClearUndoRedo(textarea:TGadget)`
+
+Clears any cached undo/redo actions for the TextArea.
+
+
+
+
+<br/>
 
 ### `Function CreateComboBox:TGadget(x,y,w,h,group:TGadget,style=0)`
 
@@ -2293,6 +2475,7 @@ Repeat
 	EndSelect
 Forever
 ```
+<br/>
 
 ### `Function CreateListBox:TGadget(x,y,w,h,group:TGadget,style=0)`
 
@@ -2347,6 +2530,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function CreateTabber:TGadget(x,y,w,h,group:TGadget,style=0)`
 
@@ -2440,6 +2624,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function ClearGadgetItems(gadget:TGadget)`
 
@@ -2449,6 +2634,7 @@ Remove all items added to a list based gadget.
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function AddGadgetItem(gadget:TGadget,Text$,flags=0,icon=-1,tip$="",extra:Object=Null)`
 
@@ -2473,6 +2659,7 @@ The <b>extra</b> parameter is supplied in the EventExtra field of any Event gene
 See Also: [InsertGadgetItem](../../maxgui/maxgui.maxgui/#function-insertgadgetitem-gadget-tgadget-index-text-flags-0-icon-1-tip-extra-object-null), [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0), [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) and [SetGadgetIconStrip](../../maxgui/maxgui.maxgui/#function-setgadgeticonstrip-gadget-tgadget-iconstrip-ticonstrip).
 
 
+<br/>
 
 ### `Function InsertGadgetItem(gadget:TGadget,index,Text$,flags=0,icon=-1,tip$="",extra:Object=Null)`
 
@@ -2486,6 +2673,7 @@ See [AddGadgetItem](../../maxgui/maxgui.maxgui/#function-addgadgetitem-gadget-tg
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0) and [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0)
 
 
+<br/>
 
 ### `Function ModifyGadgetItem( gadget:TGadget,index,Text$,flags=0,icon=-1,tip$="",extra:Object=Null )`
 
@@ -2497,6 +2685,7 @@ See [AddGadgetItem](../../maxgui/maxgui.maxgui/#function-addgadgetitem-gadget-tg
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0) and [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0)
 
 
+<br/>
 
 ### `Function RemoveGadgetItem( gadget:TGadget,index )`
 
@@ -2506,6 +2695,7 @@ Remove a gadget-item from a list based gadget.
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0) and [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0)
 
 
+<br/>
 
 ### `Function EnableGadgetItem( gadget:TGadget,index )`
 
@@ -2515,6 +2705,7 @@ Typically, this can only be used on toolbars.
 See Also: [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0)
 
 
+<br/>
 
 ### `Function DisableGadgetItem( gadget:TGadget,index )`
 
@@ -2524,6 +2715,7 @@ Typically, this can only be used on toolbars.
 See Also: [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0)
 
 
+<br/>
 
 ### `Function SelectGadgetItem(gadget:TGadget,index)`
 
@@ -2533,6 +2725,7 @@ Select an item in a list based gadget.
 See Also: [DeselectGadgetItem](../../maxgui/maxgui.maxgui/#function-deselectgadgetitem-gadget-tgadget-index), [ToggleGadgetItem](../../maxgui/maxgui.maxgui/#function-togglegadgetitem-gadget-tgadget-index), [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function DeselectGadgetItem(gadget:TGadget,index)`
 
@@ -2542,6 +2735,7 @@ Deselect an item in a list based gadget.
 See Also: [SelectGadgetItem](../../maxgui/maxgui.maxgui/#function-selectgadgetitem-gadget-tgadget-index), [ToggleGadgetItem](../../maxgui/maxgui.maxgui/#function-togglegadgetitem-gadget-tgadget-index), [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function ToggleGadgetItem(gadget:TGadget,index)`
 
@@ -2551,6 +2745,7 @@ Invert the selected state of an item in a list based gadget.
 See Also: [SelectGadgetItem](../../maxgui/maxgui.maxgui/#function-selectgadgetitem-gadget-tgadget-index), [DeselectGadgetItem](../../maxgui/maxgui.maxgui/#function-deselectgadgetitem-gadget-tgadget-index) and [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0)
 
 
+<br/>
 
 ### `Function SelectedGadgetItem(gadget:TGadget)`
 
@@ -2562,6 +2757,7 @@ SelectedGadgetItem will return -1 if the list based gadget has no selected items
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function SelectedGadgetItems[](gadget:TGadget)`
 
@@ -2571,6 +2767,7 @@ Returns an integer array of the selected item indexes in a list based gadget.
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function CountGadgetItems( gadget:TGadget )`
 
@@ -2580,6 +2777,7 @@ Get the number of items in a list based gadget.
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0) and [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0)
 
 
+<br/>
 
 ### `Function GadgetItemText$( gadget:TGadget,index )`
 
@@ -2589,6 +2787,7 @@ Get the text of a given item in a list based gadget.
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function GadgetItemTooltip$( gadget:TGadget,index )`
 
@@ -2598,6 +2797,7 @@ Get the tooltip of a given item in a list based gadget.
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function GadgetItemIcon( gadget:TGadget,index )`
 
@@ -2607,6 +2807,7 @@ Get the icon of a given item in a list based gadget.
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function GadgetItemExtra:Object( gadget:TGadget,index )`
 
@@ -2616,6 +2817,7 @@ Get the extra data of a given item in a list based gadget.
 See Also: [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0), [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) and [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function GadgetItemFlags( gadget:TGadget,index )`
 
@@ -2625,6 +2827,7 @@ Get the flags parameter of a given item in a list based gadget.
 See Also: [AddGadgetItem](../../maxgui/maxgui.maxgui/#function-addgadgetitem-gadget-tgadget-text-flags-0-icon-1-tip-extra-object-null)
 
 
+<br/>
 
 ### `Function CreateToolBar:TGadget(source:Object,x,y,w,h,window:TGadget,style=0)`
 
@@ -2704,6 +2907,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function SetToolBarTips( toolbar:TGadget,tips$[] )`
 
@@ -2713,6 +2917,7 @@ Simply provides a quick way to set the tooltips of a toolbar's items after them 
 See Also: [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0)
 
 
+<br/>
 
 ### `Function CreateTreeView:TGadget(x,y,w,h,group:TGadget,style=0)`
 
@@ -2767,6 +2972,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function AddTreeViewNode:TGadget( Text$,node:TGadget,icon=-1,extra:Object=Null )`
 
@@ -2778,6 +2984,7 @@ The optional <b>extra</b> parameter is for convenience and is equivalent to call
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0), [InsertTreeViewNode](../../maxgui/maxgui.maxgui/#function-inserttreeviewnode-tgadget-index-text-node-tgadget-icon-1-extra-object-null)
 
 
+<br/>
 
 ### `Function InsertTreeViewNode:TGadget( index,Text$,node:TGadget,icon=-1,extra:Object=Null )`
 
@@ -2789,6 +2996,7 @@ The optional <b>extra</b> parameter is for convenience and is equivalent to call
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0), [AddTreeViewNode](../../maxgui/maxgui.maxgui/#function-addtreeviewnode-tgadget-text-node-tgadget-icon-1-extra-object-null)
 
 
+<br/>
 
 ### `Function ModifyTreeViewNode( node:TGadget,Text$,icon=-1 )`
 
@@ -2798,6 +3006,7 @@ Modify a node.
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function ClearTreeView( treeview:TGadget )`
 
@@ -2807,6 +3016,7 @@ Frees all the nodes of a TreeView.
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function TreeViewRoot:TGadget( treeview:TGadget )`
 
@@ -2820,6 +3030,7 @@ nodes (see [SelectTreeViewNode](../../maxgui/maxgui.maxgui/#function-selecttreev
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function SelectedTreeViewNode:TGadget( treeview:TGadget )`
 
@@ -2830,6 +3041,7 @@ Will return [Null](../../brl/brl.blitz/#null) if there aren't any nodes currentl
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0), [SelectTreeViewNode](../../maxgui/maxgui.maxgui/#function-selecttreeviewnode-node-tgadget)
 
 
+<br/>
 
 ### `Function CountTreeViewNodes( node:TGadget )`
 
@@ -2839,6 +3051,7 @@ Get the number of children of a Node gadget.
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function SelectTreeViewNode( node:TGadget )`
 
@@ -2855,6 +3068,7 @@ SelectTreeViewNode( TreeViewRoot( myTree ) )
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0), [SelectedTreeViewNode](../../maxgui/maxgui.maxgui/#function-selectedtreeviewnode-tgadget-treeview-tgadget)
 
 
+<br/>
 
 ### `Function ExpandTreeViewNode( node:TGadget )`
 
@@ -2864,6 +3078,7 @@ Expands a treeview node in a TreeView gadget.
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0), [CollapseTreeViewNode](../../maxgui/maxgui.maxgui/#function-collapsetreeviewnode-node-tgadget)
 
 
+<br/>
 
 ### `Function CollapseTreeViewNode( node:TGadget )`
 
@@ -2873,6 +3088,7 @@ Collapses a treeview node in a TreeView gadget.
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0), [ExpandTreeViewNode](../../maxgui/maxgui.maxgui/#function-expandtreeviewnode-node-tgadget)
 
 
+<br/>
 
 ### `Function FreeTreeViewNode( node:TGadget )`
 
@@ -2883,6 +3099,7 @@ This function has been superseded by [FreeGadget](../../maxgui/maxgui.maxgui/#fu
 See Also: [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function CreateHTMLView:TGadget(x,y,w,h,group:TGadget,style=0)`
 
@@ -2932,6 +3149,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function HtmlViewGo( view:TGadget,url$ )`
 
@@ -2941,6 +3159,7 @@ Direct the HTMLView gadget to a new URL.
 See Also: [CreateHTMLView](../../maxgui/maxgui.maxgui/#function-createhtmlview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function HtmlViewBack( view:TGadget )`
 
@@ -2950,6 +3169,7 @@ Go back a page in an HTMLView gadget.
 See Also: [CreateHTMLView](../../maxgui/maxgui.maxgui/#function-createhtmlview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function HtmlViewForward( view:TGadget )`
 
@@ -2959,6 +3179,7 @@ Go forward a page in an HTMLView gadget.
 See Also: [CreateHTMLView](../../maxgui/maxgui.maxgui/#function-createhtmlview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function HtmlViewStatus( view:TGadget )`
 
@@ -2968,6 +3189,7 @@ Get the status of an HTMLView gadget.
 See Also: [CreateHTMLView](../../maxgui/maxgui.maxgui/#function-createhtmlview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function HtmlViewCurrentURL$( view:TGadget )`
 
@@ -2977,6 +3199,7 @@ Get the current URL of an HTMLView gadget.
 See Also: [CreateHTMLView](../../maxgui/maxgui.maxgui/#function-createhtmlview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function HtmlViewRun$( view:TGadget,script$ )`
 
@@ -2986,6 +3209,7 @@ Run a script in an HTMLView gadget.
 See Also: [CreateHTMLView](../../maxgui/maxgui.maxgui/#function-createhtmlview-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function CreateLabel:TGadget( name$,x,y,w,h,group:TGadget,style=LABEL_LEFT )`
 
@@ -3023,6 +3247,7 @@ CreateLabel("not applicable",10,220,280,54,window,LABEL_SEPARATOR)
 While WaitEvent()<>EVENT_WINDOWCLOSE
 Wend
 ```
+<br/>
 
 ### `Function CreateSlider:TGadget( x,y,w,h,group:TGadget,style=0 )`
 
@@ -3087,6 +3312,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function SetSliderRange( slider:TGadget,range0,range1 )`
 
@@ -3103,6 +3329,7 @@ are treated as the minimum and maximum [SliderValue](../../maxgui/maxgui.maxgui/
 See Also: [CreateSlider](../../maxgui/maxgui.maxgui/#function-createslider-tgadget-x-y-w-h-group-tgadget-style-0), [SliderValue](../../maxgui/maxgui.maxgui/#function-slidervalue-slider-tgadget) and [SetSliderValue](../../maxgui/maxgui.maxgui/#function-setslidervalue-slider-tgadget-value)
 
 
+<br/>
 
 ### `Function SetSliderValue( slider:TGadget,value )`
 
@@ -3112,6 +3339,7 @@ Set the position of a Slider gadget.
 See Also: [CreateSlider](../../maxgui/maxgui.maxgui/#function-createslider-tgadget-x-y-w-h-group-tgadget-style-0), [SetSliderRange](../../maxgui/maxgui.maxgui/#function-setsliderrange-slider-tgadget-range0-range1) and [SliderValue](../../maxgui/maxgui.maxgui/#function-slidervalue-slider-tgadget)
 
 
+<br/>
 
 ### `Function SliderValue( slider:TGadget )`
 
@@ -3121,6 +3349,7 @@ Get the position of a Slider gadget.
 See Also: [CreateSlider](../../maxgui/maxgui.maxgui/#function-createslider-tgadget-x-y-w-h-group-tgadget-style-0), [SetSliderRange](../../maxgui/maxgui.maxgui/#function-setsliderrange-slider-tgadget-range0-range1) and [SetSliderValue](../../maxgui/maxgui.maxgui/#function-setslidervalue-slider-tgadget-value)
 
 
+<br/>
 
 ### `Function CreateProgBar:TGadget( x,y,w,h,group:TGadget,style=0 )`
 
@@ -3157,6 +3386,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function UpdateProgBar( progbar:TGadget,value# )`
 
@@ -3166,6 +3396,7 @@ Update the display of a ProgressBar gadget.
 See Also: [CreateProgBar](../../maxgui/maxgui.maxgui/#function-createprogbar-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function LoadIconStrip:TIconStrip( source:Object )`
 
@@ -3184,6 +3415,7 @@ Once an icon strip has been loaded, it can be attached to item-based gadgets usi
 See Also: [SetGadgetIconStrip](../../maxgui/maxgui.maxgui/#function-setgadgeticonstrip-gadget-tgadget-iconstrip-ticonstrip) and [PixmapFromIconStrip](../../maxgui/maxgui.maxgui/#function-pixmapfromiconstrip-tpixmap-iconstrip-ticonstrip-index-1)
 
 
+<br/>
 
 ### `Function SetGadgetIconStrip( gadget:TGadget,iconstrip:TIconStrip )`
 
@@ -3199,6 +3431,7 @@ This command may only be used with the <b>ComboBox</b>, <b>ListBox</b>, <b>Tabbe
 See Also: [LoadIconStrip](../../maxgui/maxgui.maxgui/#function-loadiconstrip-ticonstrip-source-object)
 
 
+<br/>
 
 ### `Function PixmapFromIconStrip:TPixmap( iconstrip:TIconStrip, index = -1 )`
 
@@ -3214,6 +3447,7 @@ This function will return [Null](../../brl/brl.blitz/#null) if no iconstrip is p
 See Also: [LoadIconStrip](../../maxgui/maxgui.maxgui/#function-loadiconstrip-ticonstrip-source-object)
 
 
+<br/>
 
 ### `Function CreateCanvas:TGadget( x,y,w,h,group:TGadget,style=0 )`
 
@@ -3295,6 +3529,7 @@ While WaitEvent()
 	End Select
 Wend
 ```
+<br/>
 
 ### `Function CanvasGraphics:TGraphics( gadget:TGadget )`
 
@@ -3306,6 +3541,7 @@ gadgets utilizing the EVENT_GADGETPAINT event.
 See Also: [CreateCanvas](../../maxgui/maxgui.maxgui/#function-createcanvas-tgadget-x-y-w-h-group-tgadget-style-0)
 
 
+<br/>
 
 ### `Function QueryGadget:Byte Ptr( gadget:TGadget,queryid )`
 
@@ -3317,6 +3553,7 @@ Return internal gadget handle.
 
 
 
+<br/>
 
 ### `Function GadgetScaleFactor:Int( gadget:TGadget )`
 
@@ -3325,4 +3562,5 @@ Returns the gadget scale factor that maps from window coordiantes to the actual 
 On traditional systems this is 1, but on very high density outputs this can be a higher value (often 2).
 
 
+<br/>
 

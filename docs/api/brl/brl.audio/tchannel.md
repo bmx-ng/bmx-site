@@ -39,6 +39,7 @@ Stop audio channel playback
 Shuts down the audio channel. Further commands on this audio channel will have no effect.
 
 
+<br/>
 
 ### `Method SetPaused( paused:Int )`
 
@@ -48,6 +49,7 @@ Pause or unpause audio channel playback
 If <b>paused</b> is True, the audio channel is paused. Otherwise, the audio channel is unpaused.
 
 
+<br/>
 
 ### `Method SetVolume( volume# )`
 
@@ -57,6 +59,7 @@ Set audio channel volume
 <b>volume</b> should be in the range 0 (silence) to 1 (full volume).
 
 
+<br/>
 
 ### `Method SetPan( pan# )`
 
@@ -66,6 +69,7 @@ Set audio channel stereo pan
 <b>pan</b> should be in the range -1 (full left) to 1 (full right).
 
 
+<br/>
 
 ### `Method SetDepth( depth# )`
 
@@ -75,6 +79,7 @@ Set audio channel depth
 <b>depth</b> should be in the range -1 (back) to 1 (front).
 
 
+<br/>
 
 ### `Method SetRate( rate# )`
 
@@ -87,6 +92,7 @@ to play at half speed (ie: an octave down) while a rate of 2 will
 cause the audio channel to play at double speed (ie: an octave up).
 
 
+<br/>
 
 ### `Method Playing:Int()`
 
@@ -126,4 +132,5 @@ Repeat
 	Flip
 Until AppTerminate() Or KeyHit(KEY_ESCAPE)
 ```
+<br/>
 

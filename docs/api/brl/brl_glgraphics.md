@@ -19,6 +19,7 @@ The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/
 An OpenGL graphics driver
 
 
+<br/>
 
 ### `Function GLGraphics:TGraphics( width,height,depth=0,hertz=60,flags=GRAPHICS_BACKBUFFER|GRAPHICS_DEPTHBUFFER )`
 
@@ -32,6 +33,7 @@ This is a convenience function that allows you to easily create an OpenGL graphi
 An OpenGL graphics object
 
 
+<br/>
 
 ### `Function GLAdjustTexSize( width Var,height Var )`
 
@@ -40,6 +42,7 @@ Helper function to calculate nearest valid texture size
 This functions rounds <b>width</b> and <b>height</b> up to the nearest valid texture size
 
 
+<br/>
 
 ### `Function GLTexFromPixmap( pixmap:TPixmap,mipmap=True )`
 
@@ -52,6 +55,7 @@ Helper function to create a texture from a pixmap
 Integer GL Texture name
 
 
+<br/>
 
 ### `Function GLDrawRect( x,y,width,height )`
 
@@ -61,6 +65,7 @@ Helper function to output a simple rectangle
 Draws a rectangle relative to top-left of current viewport.
 
 
+<br/>
 
 ### `Function GLDrawText( text$,x,y )`
 
@@ -74,6 +79,7 @@ The font used is an internal fixed point 8x16 font.<br>
 This function is intended for debugging purposes only - performance is unlikely to be stellar.
 
 
+<br/>
 
 ### `Function GLDrawPixmap( pixmap:TPixmap,x,y )`
 
@@ -85,6 +91,7 @@ Draws the pixmap relative to top-left of current viewport.<br>
 This function is intended for debugging purposes only - performance is unlikely to be stellar.
 
 
+<br/>
 
 ### `Function GLShareContexts()`
 
@@ -97,4 +104,5 @@ shared displaylists, textures, shaders etc.
 This should be called before any opengl contexts are created.
 
 
+<br/>
 

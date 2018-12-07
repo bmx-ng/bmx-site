@@ -13,21 +13,25 @@ CondVar type
 
 Close the condvar
 
+<br/>
 
 ### `Method Wait( mutex:TMutex )`
 
 Wait for the condvar
 
+<br/>
 
 ### `Method Signal()`
 
 Signal the condvar
 
+<br/>
 
 ### `Method Broadcast()`
 
 Broadcast the condvar
 
+<br/>
 
 ## Functions
 
@@ -35,4 +39,5 @@ Broadcast the condvar
 
 Create a new condvar
 
+<br/>
 

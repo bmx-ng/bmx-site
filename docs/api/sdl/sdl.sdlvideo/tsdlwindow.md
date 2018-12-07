@@ -17,6 +17,7 @@ Gets the display associated with the window.
 Returns the display containing the center of the window on success or Null on failure.
 
 
+<br/>
 
 ### `Method SetDisplayMode:Int(Mode:TSDLDisplayMode)`
 
@@ -30,6 +31,7 @@ use [SetSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-setsize-w-int-h-int)(
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method GetDisplayMode:TSDLDisplayMode()`
 
@@ -39,6 +41,7 @@ Gets information about the display mode to use when a window is visible at fulls
 The display mode on success or Null on failure.
 
 
+<br/>
 
 ### `Method GetPixelFormat:UInt()`
 
@@ -48,6 +51,7 @@ Gets the pixel format associated with the window.
 The pixel format of the window on success or SDL_PIXELFORMAT_UNKNOWN on failure.
 
 
+<br/>
 
 ### `Method GetID:UInt()`
 
@@ -57,16 +61,19 @@ Gets the numeric ID of the window, for logging purposes.
 The ID of the window on success or 0 on failure.
 
 
+<br/>
 
 ### `Method GetTitle:String()`
 
 Gets the title of the window.
 
+<br/>
 
 ### `Method SetTitle(title:String)`
 
 Sets the title of the window.
 
+<br/>
 
 ### `Method SetPosition(x:Int, y:Int)`
 
@@ -75,11 +82,13 @@ Sets the position of the window.
 The window coordinate origin is the upper left of the display.
 
 
+<br/>
 
 ### `Method GetPosition(x:Int Var, y:Int Var)`
 
 Gets the position of the window.
 
+<br/>
 
 ### `Method SetSize(w:Int, h:Int)`
 
@@ -91,6 +100,7 @@ Use [GLGetDrawableSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-glgetdrawab
 Fullscreen windows automatically match the size of the display mode, and you should use SetWindowDisplayMode() to change their size.
 
 
+<br/>
 
 ### `Method GetSize(w:Int Var, h:Int Var)`
 
@@ -101,6 +111,7 @@ The window size in screen coordinates may differ from the size in pixels, if the
 Use [GLGetDrawableSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-glgetdrawablesize-w-int-var-h-int-var)() or SDLGetRendererOutputSize() to get the real client area size in pixels.
 
 
+<br/>
 
 ### `Method GetBorderSize:Int(wTop:Int Var, wLeft:Int Var, wBottom:Int Var, wRight:Int Var)`
 
@@ -111,26 +122,31 @@ This method also returns -1 if getting the information is not supported.
 This method is only supported on X11.
 
 
+<br/>
 
 ### `Method SetMinimumSize(w:Int, h:Int)`
 
 Sets the minimum size of the window's client area.
 
+<br/>
 
 ### `Method GetMinimumSize(w:Int Var, h:Int Var)`
 
 Gets the minimum size of a window's client area.
 
+<br/>
 
 ### `Method SetMaximumSize(w:Int, h:Int)`
 
 Sets the maximum size of the window's client area.
 
+<br/>
 
 ### `Method GetMaximumSize(w:Int Var, h:Int Var)`
 
 Gets the maximum size of the window's client area.
 
+<br/>
 
 ### `Method SetBordered(bordered:Int)`
 
@@ -141,6 +157,7 @@ This is a no-op if the window's border already matches the requested state.
 You can't change the border state of a fullscreen window.
 
 
+<br/>
 
 ### `Method SetResizable(resizable:Int)`
 
@@ -151,36 +168,43 @@ This is a no-op if the window's resizable state already matches the requested st
 You can't change the resizable state of a fullscreen window.
 
 
+<br/>
 
 ### `Method Show()`
 
 Shows the window.
 
+<br/>
 
 ### `Method Hide()`
 
 Hides the window.
 
+<br/>
 
 ### `Method Raise()`
 
 Raises the window above other windows and sets the input focus.
 
+<br/>
 
 ### `Method Maximize()`
 
 Makes the window as large as possible.
 
+<br/>
 
 ### `Method Minimize()`
 
 Minimizes the window to an iconic representation.
 
+<br/>
 
 ### `Method Restore()`
 
 Restores the size and position of a minimized or maximized window.
 
+<br/>
 
 ### `Method SetFullScreen:Int(flags:UInt)`
 
@@ -194,6 +218,7 @@ for "fake" fullscreen that takes the size of the desktop; and 0 for windowed mod
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method GetSurface:TSDLSurface()`
 
@@ -209,6 +234,7 @@ You may not combine this with 3D or the rendering API on this window.
 The surface associated with the window, or Null on failure.
 
 
+<br/>
 
 ### `Method UpdateSurface:Int()`
 
@@ -221,6 +247,7 @@ This is the method you use to reflect any changes to the surface on the screen.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method SetGrab(grabbed:Int)`
 
@@ -230,6 +257,7 @@ When input is grabbed the mouse is confined to the window.
 If the caller enables a grab while another window is currently grabbed, the other window loses its grab in favor of the caller's window.
 
 
+<br/>
 
 ### `Method GetGrab:Int()`
 
@@ -239,6 +267,7 @@ Gets a window's input grab mode.
 True if input is grabbed, False otherwise.
 
 
+<br/>
 
 ### `Method SetBrightness:Int(brightness:Float)`
 
@@ -253,6 +282,7 @@ retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-getdis
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method GetBrightness:Float()`
 
@@ -267,6 +297,7 @@ retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-getdis
 The brightness for the display where 0.0 is completely dark and 1.0 is normal brightness.
 
 
+<br/>
 
 ### `Method SetOpacity:Int(opacity:Float)`
 
@@ -281,6 +312,7 @@ This method is only supported on DirectFB, X11, Cocoa (Apple Mac OS X) and Micro
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method GetOpacity:Int(opacity:Float Var)`
 
@@ -295,6 +327,7 @@ This method is only supported on DirectFB, X11, Cocoa (Apple Mac OS X) and Micro
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method SetModalFor:Int(parent:TSDLWindow)`
 
@@ -307,6 +340,7 @@ This function is only supported on X11.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method SetInputFocus:Int()`
 
@@ -321,6 +355,7 @@ This method is only supported on X11.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method SetGammaRamp:Int(red:Short Ptr, green:Short Ptr, blue:Short Ptr)`
 
@@ -338,6 +373,7 @@ can be retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/tsdlwindow/#method
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method GetGammaRamp:Int(red:Short Ptr, green:Short Ptr, blue:Short Ptr)`
 
@@ -352,11 +388,13 @@ can be retrieved using [GetDisplay](../../../sdl/sdl.sdlvideo/tsdlwindow/#method
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method Destroy()`
 
 Destroys the window.
 
+<br/>
 
 ### `Method GLCreateContext:TSDLGLContext()`
 
@@ -371,6 +409,7 @@ library or with GLGetProcAddress() and its related functions.
 The OpenGL context associated with window or Null on error.
 
 
+<br/>
 
 ### `Method GLGetDrawableSize(w:Int Var, h:Int Var)`
 
@@ -381,6 +420,7 @@ This may differ from [GetSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-gets
 the SDL_HINT_VIDEO_HIGHDPI_DISABLED hint.
 
 
+<br/>
 
 ### `Method GLMakeCurrent:Int(context:TSDLGLContext)`
 
@@ -390,6 +430,7 @@ Sets up an OpenGL context for rendering into an OpenGL window.
 0 on success or a negative error code on failure.
 
 
+<br/>
 
 ### `Method GLSwap()`
 
@@ -398,6 +439,7 @@ Updates a window with OpenGL rendering.
 This is used with double-buffered OpenGL contexts, which are the default.
 
 
+<br/>
 
 ## Functions
 
@@ -409,4 +451,5 @@ Creates a window with the specified position, dimensions, and flags.
 The window that was created or Null on failure.
 
 
+<br/>
 

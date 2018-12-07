@@ -16,4 +16,5 @@ Because a single instance of [TIntKey](../../../brl/brl.map/tintkey) is used dur
 
 Int key value.
 
+<br/>
 

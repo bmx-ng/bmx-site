@@ -74,4 +74,5 @@ Register a global object with Lua
 Once registered, the object can be accessed from within Lua scripts using the <b>name</b> identifer.
 
 
+<br/>
 

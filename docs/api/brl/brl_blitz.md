@@ -40,6 +40,7 @@ Local a:Int
 
 If a=0 RuntimeError "This program has failed badly."
 ```
+<br/>
 
 ### `Function DebugStop()`
 
@@ -63,6 +64,7 @@ Repeat
 Until KeyDown(KEY_ESCAPE)
 DebugStop
 ```
+<br/>
 
 ### `Function DebugLog( message$ )`
 
@@ -80,6 +82,7 @@ SuperStrict
 
 DebugLog "My debug text"
 ```
+<br/>
 
 ### `Function OnEnd( fun() )`
 
@@ -103,6 +106,7 @@ OnEnd cleanup
 Print "program running"
 End	'the cleanup function will be called at this time
 ```
+<br/>
 
 ### `Function ReadStdin$()`
 
@@ -112,6 +116,7 @@ Read a string from stdin
 A string read from stdin. The newline terminator, if any, is included in the returned string.
 
 
+<br/>
 
 ### `Function WriteStdout( str$ )`
 
@@ -120,6 +125,7 @@ Write a string to stdout
 Writes <b>str</b> to stdout and flushes stdout.
 
 
+<br/>
 
 ### `Function WriteStderr( str$ )`
 
@@ -128,6 +134,7 @@ Write a string to stderr
 Writes <b>str</b> to stderr and flushes stderr.
 
 
+<br/>
 
 ### `Function Delay( millis:Int )`
 
@@ -152,6 +159,7 @@ Print "This program will end in 2000 milliseconds."
 
 Delay 2000
 ```
+<br/>
 
 ### `Function MilliSecs:Int()`
 
@@ -178,6 +186,7 @@ Input("Type Anything >")
 
 Print "You took "+(MilliSecs()-start)+" milliseconds to type that."
 ```
+<br/>
 
 ### `Function MemAlloc:Byte Ptr( size:Size_T )`
 
@@ -187,6 +196,7 @@ Allocate memory
 A new block of memory <b>size</b> bytes long
 
 
+<br/>
 
 ### `Function MemFree( mem:Byte Ptr )`
 
@@ -195,6 +205,7 @@ Free allocated memory
 The memory specified by <b>mem</b> must have been previously allocated by [MemAlloc](../../brl/brl.blitz/#function-memalloc-byte-ptr-size-size-t) or [MemExtend](../../brl/brl.blitz/#function-memextend-byte-ptr-mem-byte-ptr-size-size-t-new-size-size-t).
 
 
+<br/>
 
 ### `Function MemExtend:Byte Ptr( mem:Byte Ptr,size:Size_T,new_size:Size_T )`
 
@@ -208,21 +219,25 @@ of memory <b>new_size</b> bytes long. The existing block is released and the new
 A new block of memory <b>new_size</b> bytes long
 
 
+<br/>
 
 ### `Function MemClear( mem:Byte Ptr,size:Size_T )`
 
 Clear a block of memory to 0
 
+<br/>
 
 ### `Function MemCopy( dst:Byte Ptr,src:Byte Ptr,size:Size_T )`
 
 Copy a non-overlapping block of memory
 
+<br/>
 
 ### `Function MemMove( dst:Byte Ptr,src:Byte Ptr,size:Size_T )`
 
 Copy a potentially overlapping block of memory
 
+<br/>
 
 ### `Function GCSetMode( Mode:Int )`
 
@@ -236,6 +251,7 @@ Set garbage collector mode
 The default GC mode is automatic GC.
 
 
+<br/>
 
 ### `Function GCSuspend()`
 
@@ -250,6 +266,7 @@ and [GCResume](../../brl/brl.blitz/#function-gcresume) 'nest', meaning that each
 matched by a call to [GCResume](../../brl/brl.blitz/#function-gcresume).
 
 
+<br/>
 
 ### `Function GCResume()`
 
@@ -261,6 +278,7 @@ Resume garbage collector
 See [GCSuspend](../../brl/brl.blitz/#function-gcsuspend) for more details.
 
 
+<br/>
 
 ### `Function GCCollect:Int()`
 
@@ -275,6 +293,7 @@ suspended due to [GCSuspend](../../brl/brl.blitz/#function-gcsuspend).
 The amount of memory, in bytes, collected.
 
 
+<br/>
 
 ### `Function GCCollectALittle:Int()`
 
@@ -289,6 +308,7 @@ suspended due to [GCSuspend](../../brl/brl.blitz/#function-gcsuspend).
 Returns 0 if there is no more to collect.
 
 
+<br/>
 
 ### `Function GCMemAlloced:Int()`
 
@@ -303,16 +323,19 @@ arrays in use by the application.
 The amount of memory, in bytes, currently allocated by the application
 
 
+<br/>
 
 ### `Function GCEnter()`
 
 Private: do not use
 
+<br/>
 
 ### `Function GCLeave()`
 
 Private: do not use
 
+<br/>
 
 ### `Function HandleFromObject:Size_T( obj:Object )`
 
@@ -327,6 +350,7 @@ release it using the [Release](../../brl/brl.blitz/#release) command.
 An integer object handle
 
 
+<br/>
 
 ### `Function HandleToObject:Object( handle:Size_T )`
 
@@ -336,11 +360,13 @@ Convert integer handle to object
 The object associated with the integer handle
 
 
+<br/>
 
 ### `Function ArrayCopy(src:Object, srcPos:Int, dst:Object, dstPos:Int, length:Int)`
 
 Copies an array from the specified <b>src</b> array, starting at the position <b>srcPos</b>, to the position <b>dstPos</b> of the destination array.
 
+<br/>
 
 ## Globals
 
@@ -366,6 +392,7 @@ Local file:String = RequestFile("Select File to Open","",False,AppDir)
 
 Print "file selected was :"+file
 ```
+<br/>
 
 ### `Global AppFile$="bbAppFile"`
 
@@ -383,6 +410,7 @@ SuperStrict
 
 Print "This program's executable is located at "+AppFile
 ```
+<br/>
 
 ### `Global AppTitle$="bbAppTitle"`
 
@@ -410,6 +438,7 @@ Repeat
 	Flip
 Until AppTerminate()
 ```
+<br/>
 
 ### `Global AppArgs$[]="bbAppArgs"`
 
@@ -435,6 +464,7 @@ For Local a:String = EachIn AppArgs
 	Print a
 Next
 ```
+<br/>
 
 ### `Global LaunchDir$="bbLaunchDir"`
 
@@ -453,6 +483,7 @@ SuperStrict
 
 Print "This program was launched from "+LaunchDir$
 ```
+<br/>
 
 ## Keywords
 
@@ -476,11 +507,13 @@ local a=10
 
 b=20	'compiler error, strict mode means variables must be declared b4 use
 ```
+<br/>
 
 ### `SuperStrict`
 
 Set SuperStrict mode
 
+<br/>
 
 ### `End`
 
@@ -498,6 +531,7 @@ Print "Hello!"
 End
 Print "This line will never be printed as the program has already been ended."
 ```
+<br/>
 
 ### `Rem`
 
@@ -531,6 +565,7 @@ End Rem
 Print "Sorry."
 End
 ```
+<br/>
 
 ### `EndRem`
 
@@ -547,6 +582,7 @@ SuperStrict
 
 Print "goodbye"
 ```
+<br/>
 
 ### `True`
 
@@ -570,6 +606,7 @@ If Not True
 	Print "This line will never be executed"
 EndIf
 ```
+<br/>
 
 ### `False`
 
@@ -589,6 +626,7 @@ If False
 	Print "This code will never be executed"
 EndIf
 ```
+<br/>
 
 ### `Pi`
 
@@ -604,6 +642,7 @@ SuperStrict
 
 Print "Pi="+Pi
 ```
+<br/>
 
 ### `Null`
 
@@ -627,6 +666,7 @@ If a=Null Print "a is uninitialized"
 a=New mytype
 If a<>Null Print "a is initialized"
 ```
+<br/>
 
 ### `Byte`
 
@@ -645,6 +685,7 @@ Local a:Byte
 a=512;Print "a="+a	'prints 0
 a=-1;Print "a="+a	'prints 255
 ```
+<br/>
 
 ### `Short`
 
@@ -663,6 +704,7 @@ Local a:Short
 a=65536;Print "a="+a	'prints 0
 a=-1;Print "a="+a	'prints 65535
 ```
+<br/>
 
 ### `Int`
 
@@ -686,11 +728,13 @@ a=0.9;Print a
 a=-0.1;Print a
 a=-0.9;Print a
 ```
+<br/>
 
 ### `UInt`
 
 Unsigned 32 bit integer type
 
+<br/>
 
 ### `Long`
 
@@ -710,16 +754,19 @@ Const MINLONG:Long=$8000000000000000:Long
 Print "A long can have the maximum value of:"+MAXLONG
 Print "A long can have the minimum value of:"+MINLONG
 ```
+<br/>
 
 ### `ULong`
 
 Unsigned 64 bit integer type
 
+<br/>
 
 ### `Size_T`
 
 Unsigned 32/64 bit integer type
 
+<br/>
 
 ### `LParam`
 
@@ -728,6 +775,7 @@ Signed 32/64 bit LPARAM WinAPI type
 Only available on Windows.
 
 
+<br/>
 
 ### `WParam`
 
@@ -736,6 +784,7 @@ Unsigned 32/64 bit WPARAM WinAPI type
 Only available on Windows.
 
 
+<br/>
 
 ### `Float`
 
@@ -763,6 +812,7 @@ For Local i:Int = 1 To 8
 	Print a
 Next
 ```
+<br/>
 
 ### `Double`
 
@@ -787,6 +837,7 @@ seconds=distance/speedoflight
 
 Print "Number of seconds for light to travel from earth to sun="+seconds
 ```
+<br/>
 
 ### `Int128`
 
@@ -795,6 +846,7 @@ Print "Number of seconds for light to travel from earth to sun="+seconds
 Only available on x64.
 
 
+<br/>
 
 ### `Float64`
 
@@ -803,6 +855,7 @@ Only available on x64.
 Only available on x64.
 
 
+<br/>
 
 ### `Float128`
 
@@ -811,6 +864,7 @@ Only available on x64.
 Only available on x64.
 
 
+<br/>
 
 ### `Double128`
 
@@ -819,6 +873,7 @@ Only available on x64.
 Only available on x64.
 
 
+<br/>
 
 ### `String`
 
@@ -835,6 +890,7 @@ SuperStrict
 Local quote:String=Chr(34)
 Print quote+"Hello World!"+quote
 ```
+<br/>
 
 ### `Object`
 
@@ -858,6 +914,7 @@ Function IsImage(obj:Object)
 	Return False
 End Function
 ```
+<br/>
 
 ### `Var`
 
@@ -889,6 +946,7 @@ Print "x="+x	'10
 Print "y="+y	'20
 Print "z="+z	'30
 ```
+<br/>
 
 ### `Ptr`
 
@@ -919,6 +977,7 @@ Print "pointer 'p' points to:"+p[0]	'3
 p:+1
 Print "pointer 'p' points to:"+p[0]	'4
 ```
+<br/>
 
 ### `If`
 
@@ -938,6 +997,7 @@ If 5<7				'if block
 	Print "5<7"
 EndIf
 ```
+<br/>
 
 ### `Then`
 
@@ -953,6 +1013,7 @@ SuperStrict
 
 If 3<5 Then Print "3<5"
 ```
+<br/>
 
 ### `Else`
 
@@ -976,6 +1037,7 @@ Else
 	Print "i>=5"
 EndIf
 ```
+<br/>
 
 ### `ElseIf`
 
@@ -999,6 +1061,7 @@ Else
 	Print "You are neither young nor a teen"
 EndIf
 ```
+<br/>
 
 ### `EndIf`
 
@@ -1018,6 +1081,7 @@ If i<10
 	Print "i<10"
 EndIf
 ```
+<br/>
 
 ### `For`
 
@@ -1037,6 +1101,7 @@ For Local i:Int = 1 To 12
 	Print "5*"+i+"="+5*i
 Next
 ```
+<br/>
 
 ### `To`
 
@@ -1054,6 +1119,7 @@ For Local i:Int = 1 To 5
 	Print i
 Next
 ```
+<br/>
 
 ### `Step`
 
@@ -1073,6 +1139,7 @@ For Local i:Int = 10 To 0 Step -1
 	Print i
 Next
 ```
+<br/>
 
 ### `Next`
 
@@ -1090,6 +1157,7 @@ For Local i:Int = 1 To 5
 	Print i
 Next
 ```
+<br/>
 
 ### `EachIn`
 
@@ -1109,6 +1177,7 @@ For Local b:Int = EachIn a
 	Print b
 Next
 ```
+<br/>
 
 ### `While`
 
@@ -1131,6 +1200,7 @@ While Not KeyHit(KEY_ESCAPE)	'loop until escape key is pressed
 	Flip
 Wend
 ```
+<br/>
 
 ### `Wend`
 
@@ -1151,6 +1221,7 @@ While i<5
 	i:+1
 Wend
 ```
+<br/>
 
 ### `EndWhile`
 
@@ -1167,6 +1238,7 @@ While i < 5
   i :+ 1
 EndWhile  'can also use Wend
 ```
+<br/>
 
 ### `Repeat`
 
@@ -1187,6 +1259,7 @@ Repeat
 	i:+1
 Until i=5
 ```
+<br/>
 
 ### `Until`
 
@@ -1206,6 +1279,7 @@ Repeat
 	i:*2
 Until i>1000000
 ```
+<br/>
 
 ### `Forever`
 
@@ -1225,6 +1299,7 @@ Repeat
 	i:+1
 Forever
 ```
+<br/>
 
 ### `Select`
 
@@ -1253,6 +1328,7 @@ Select a
 		Print "I cannot tell which country you are from"
 End Select
 ```
+<br/>
 
 ### `EndSelect`
 
@@ -1278,6 +1354,7 @@ Select a
 	Default Print "Program Error"
 End Select
 ```
+<br/>
 
 ### `Case`
 
@@ -1302,6 +1379,7 @@ Select a
 	Default Print "You are unable to follow instructions"
 End Select
 ```
+<br/>
 
 ### `Default`
 
@@ -1325,6 +1403,7 @@ Select a
 	Default Print "You are quite unique!"
 End Select
 ```
+<br/>
 
 ### `Exit`
 
@@ -1345,6 +1424,7 @@ Repeat
 	If n=5 Exit
 Forever
 ```
+<br/>
 
 ### `Continue`
 
@@ -1363,6 +1443,7 @@ For Local i:Int = 1 To 20
 	Print i
 Next
 ```
+<br/>
 
 ### `Const`
 
@@ -1383,6 +1464,7 @@ Const TWOPI:Float=2*Pi
 
 Print TWOPI
 ```
+<br/>
 
 ### `Local`
 
@@ -1406,6 +1488,7 @@ End Function
 TestLocal
 Print "a="+a	'prints an error as a is only local to the TestLocal function
 ```
+<br/>
 
 ### `Global`
 
@@ -1428,6 +1511,7 @@ End Function
 TestGlobal
 Print "a="+a
 ```
+<br/>
 
 ### `Field`
 
@@ -1451,6 +1535,7 @@ a.x=10
 a.y=20
 a.z=30
 ```
+<br/>
 
 ### `Function`
 
@@ -1482,6 +1567,7 @@ NextArg("one,two,three,four")
 
 NextArg "22,25,20"	'look ma, no brackets
 ```
+<br/>
 
 ### `EndFunction`
 
@@ -1504,6 +1590,7 @@ For Local i:Int = 1 To 5
 	Print RandomName$()
 Next
 ```
+<br/>
 
 ### `Method`
 
@@ -1528,6 +1615,7 @@ End Type
 Local a:TPoint=New TPoint
 Print a.ToString()
 ```
+<br/>
 
 ### `EndMethod`
 
@@ -1552,6 +1640,7 @@ End Type
 Local p:TPoint = New TPoint
 Print p.ToString()
 ```
+<br/>
 
 ### `Return`
 
@@ -1579,6 +1668,7 @@ End Function
 Print "LongRand()="+LongRand()
 Print "LongRand()="+LongRand()
 ```
+<br/>
 
 ### `Type`
 
@@ -1606,6 +1696,7 @@ a.x=10
 a.y=20
 a.z=30
 ```
+<br/>
 
 ### `EndType`
 
@@ -1629,26 +1720,31 @@ a.x=10
 a.y=20
 a.z=30
 ```
+<br/>
 
 ### `Interface`
 
 Begin a user defined interface declaration
 
+<br/>
 
 ### `EndInterface`
 
 End a user defined interface declaration
 
+<br/>
 
 ### `Struct`
 
 Begin a user defined structure declaration
 
+<br/>
 
 ### `EndStruct`
 
 End a user defined structure declaration
 
+<br/>
 
 ### `Extends`
 
@@ -1713,11 +1809,13 @@ While Not KeyHit(KEY_ESCAPE)
 Wend
 End
 ```
+<br/>
 
 ### `Implements`
 
 Specify implemented interface(s) of a user defined type
 
+<br/>
 
 ### `Abstract`
 
@@ -1788,6 +1886,7 @@ While Not KeyHit(KEY_ESCAPE)
 Wend
 End
 ```
+<br/>
 
 ### `Final`
 
@@ -1813,21 +1912,25 @@ Type T2 Extends T1
 	End Method
 End Type
 ```
+<br/>
 
 ### `ReadOnly`
 
 Denote a field as read only, where the value may only be set in its declaration or in the type constructor
 
+<br/>
 
 ### `Export`
 
 Denote a function for export to a shared library. The generated function name will not be mangled.
 
+<br/>
 
 ### `Where`
 
 Specify constraints on the types that can be used as arguments for a type parameter defined in a generic declaration
 
+<br/>
 
 ### `New`
 
@@ -1877,6 +1980,7 @@ Print c.a
 Print c.b
 Print c.c
 ```
+<br/>
 
 ### `Delete`
 
@@ -1888,6 +1992,7 @@ Rem
 Reserved for future expansions.
 End Rem
 ```
+<br/>
 
 ### `Self`
 
@@ -1926,6 +2031,7 @@ For c=EachIn ClassList
 	Print c.id
 Next
 ```
+<br/>
 
 ### `Super`
 
@@ -1955,6 +2061,7 @@ End Type
 Local b:TypeB=New TypeB
 b.Report()
 ```
+<br/>
 
 ### `Release`
 
@@ -1981,6 +2088,7 @@ Release a
 GCCollect
 Print GCMemAlloced()
 ```
+<br/>
 
 ### `Public`
 
@@ -2002,6 +2110,7 @@ Private
 
 Global posx:Int,posy:Int,posz:Int
 ```
+<br/>
 
 ### `Private`
 
@@ -2024,6 +2133,7 @@ Private
 
 Global posx:Int,posy:Int,posz:Int
 ```
+<br/>
 
 ### `Protected`
 
@@ -2036,6 +2146,7 @@ Protected
 Protected makes a variable, function or method only accessible from within the current source file.
 End Rem
 ```
+<br/>
 
 ### `Extern`
 
@@ -2057,6 +2168,7 @@ End Extern
 puts "Using clib's put string!"
 my_puts "Also using clib's put string!"
 ```
+<br/>
 
 ### `EndExtern`
 
@@ -2076,6 +2188,7 @@ End Extern
 
 puts "Using clib's put string!"
 ```
+<br/>
 
 ### `Module`
 
@@ -2101,6 +2214,7 @@ ModuleInfo "Copyright: Blitz Research Ltd"
 ModuleInfo "Author: Simon Armstrong"
 ModuleInfo "Version: 1.00"
 ```
+<br/>
 
 ### `ModuleInfo`
 
@@ -2121,6 +2235,7 @@ ModuleInfo "Copyright: Blitz Research Ltd"
 ModuleInfo "Author: Simon Armstrong"
 ModuleInfo "Version: 1.00"
 ```
+<br/>
 
 ### `Incbin`
 
@@ -2141,6 +2256,7 @@ Incbin "stars.png"
 
 Local stars:TImage = LoadImage( "incbin::stars.png" )
 ```
+<br/>
 
 ### `IncbinPtr`
 
@@ -2163,6 +2279,7 @@ Local s:String = String.FromBytes(p,bytes)
 
 Print "StringFromBytes(p,bytes)="+s
 ```
+<br/>
 
 ### `IncbinLen`
 
@@ -2185,11 +2302,13 @@ Local s:String=String.FromBytes(p,bytes)
 
 Print "StringFromBytes(p,bytes)="+s
 ```
+<br/>
 
 ### `Include`
 
 Include effectively 'inserts' the specified file into the file being compiled.
 
+<br/>
 
 ### `Framework`
 
@@ -2207,6 +2326,7 @@ Import Brl.random ' so we can use the Rnd Function
 
 Print Rnd(255)
 ```
+<br/>
 
 ### `Import`
 
@@ -2232,6 +2352,7 @@ While Not KeyHit(KEY_ESCAPE)
 	Flip
 Wend
 ```
+<br/>
 
 ### `Assert`
 
@@ -2248,6 +2369,7 @@ SuperStrict
 Local a:TImage = LoadImage("nonexistant image file")
 Assert a,"Image Failed to Load"
 ```
+<br/>
 
 ### `Goto`
 
@@ -2265,6 +2387,7 @@ Print "two"
 here
 Print "three"
 ```
+<br/>
 
 ### `Try`
 
@@ -2290,6 +2413,7 @@ Catch e:String
 	Print "caught exception "+e
 EndTry
 ```
+<br/>
 
 ### `Catch`
 
@@ -2314,11 +2438,13 @@ Catch e:String
 	Print "caught exception "+e
 EndTry
 ```
+<br/>
 
 ### `Finally`
 
 Execute a block of code upon exiting a Try or Catch block
 
+<br/>
 
 ### `EndTry`
 
@@ -2331,6 +2457,7 @@ EndTry
 EndTry marks the end of a Try block.
 End Rem
 ```
+<br/>
 
 ### `Throw`
 
@@ -2355,6 +2482,7 @@ Catch e:String
 	Print "caught exception "+e
 EndTry
 ```
+<br/>
 
 ### `DefData`
 
@@ -2376,11 +2504,13 @@ Print "name="+name+" age="+age+" skill="+skill
 
 DefData "Simon",37,5000
 ```
+<br/>
 
 ### `ReadData`
 
 Read classic BASIC style data
 
+<br/>
 
 ### `RestoreData`
 
@@ -2404,6 +2534,7 @@ mydata	'program label that can be used with the RestoreData command
 
 DefData "Simon",37,5000
 ```
+<br/>
 
 ### `And`
 
@@ -2421,6 +2552,7 @@ For Local i:Int = 1 To 10
 	If i>3 And i<6 Print "!" Else Print i
 Next
 ```
+<br/>
 
 ### `Or`
 
@@ -2438,6 +2570,7 @@ For Local i:Int = 1 To 5
 	If i=2 Or i=4 Print "!" Else Print i
 Next
 ```
+<br/>
 
 ### `Not`
 
@@ -2454,6 +2587,7 @@ SuperStrict
 Print Not 0			'prints 1 (TRUE)
 Print Not 20		'prints 0 (FALSE)
 ```
+<br/>
 
 ### `Shl`
 
@@ -2473,6 +2607,7 @@ For Local i:Int = 1 To 32
 	b=b Shl 1
 Next
 ```
+<br/>
 
 ### `Shr`
 
@@ -2492,6 +2627,7 @@ For Local i:Int = 1 To 32
 	b=b Shr 1
 Next
 ```
+<br/>
 
 ### `Sar`
 
@@ -2511,6 +2647,7 @@ For Local i:Int = 1 To 32
 	b=b Sar 1
 Next
 ```
+<br/>
 
 ### `Len`
 
@@ -2533,6 +2670,7 @@ Print Len b		'prints 0
 b=New Int[20]
 Print Len b		'prints 20
 ```
+<br/>
 
 ### `Abs`
 
@@ -2550,6 +2688,7 @@ For Local f:Float = -1 To 1 Step 0.125
 	Print "Abs "+f+"="+Abs f
 Next
 ```
+<br/>
 
 ### `Mod`
 
@@ -2567,6 +2706,7 @@ For Local i:Int = 6 To -6 Step -1
 	Print i+" Mod 3="+(i Mod 3)
 Next
 ```
+<br/>
 
 ### `Sgn`
 
@@ -2584,6 +2724,7 @@ Print Sgn 50	'1
 Print Sgn 0		'0
 Print Sgn -50	'-1
 ```
+<br/>
 
 ### `Min`
 
@@ -2604,6 +2745,7 @@ SuperStrict
 Print Min(10,20)	'10
 Print Min(20,10)	'10
 ```
+<br/>
 
 ### `Max`
 
@@ -2625,6 +2767,7 @@ SuperStrict
 Print Max(10,20)	'20
 Print Max(20,10)	'20
 ```
+<br/>
 
 ### `Varptr`
 
@@ -2645,6 +2788,7 @@ a=20
 p=Varptr a
 Print p[0]
 ```
+<br/>
 
 ### `SizeOf`
 
@@ -2677,6 +2821,7 @@ Print SizeOf b	'prints 1
 Local a:String="Hello World"
 Print SizeOf a	'prints 22 (unicode characters take 2 bytes each)
 ```
+<br/>
 
 ### `Asc`
 
@@ -2693,6 +2838,7 @@ SuperStrict
 Print Asc("A")	'65
 Print "A"[0]	'65 - equivalent index style implementation
 ```
+<br/>
 
 ### `Chr`
 
@@ -2708,4 +2854,5 @@ SuperStrict
 
 Print Chr(65)	'A
 ```
+<br/>
 
