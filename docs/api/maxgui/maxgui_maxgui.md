@@ -55,7 +55,7 @@ state, of a gadget. Any changes made to gadget through MaxGUI command calls (suc
 not result in events being emitted. 
 
 <h2>Windows</h2>
-![](assets/win32window.png)![](assets/fltkwindow.png)![](assets/osxwindow.png)
+![](assets/maxgui/win32window.png)![](assets/maxgui/fltkwindow.png)![](assets/maxgui/osxwindow.png)
 
 A Window is used to contain a collection of gadgets that make up the user interface of an application. The [CreateWindow](../../maxgui/maxgui.maxgui/#function-createwindow-tgadget-titletext-x-y-w-h-group-tgadget-null-style-window-default) 
 command creates a window of a specified size that can then be used as the <b>group</b> parameter for the other gadget creation
@@ -71,7 +71,7 @@ If a window is created with the WINDOW_RESIZABLE style, its sizing can be restra
 [RestoreWindow](../../maxgui/maxgui.maxgui/#function-restorewindow-window-tgadget) commands. The state of a window can be dermined using [WindowMinimized](../../maxgui/maxgui.maxgui/#function-windowminimized-window-tgadget) and [WindowMaximized](../../maxgui/maxgui.maxgui/#function-windowmaximized-window-tgadget).
 
 <h2>Menus</h2>
-![](assets/win32menu.png)![](assets/fltkmenu.png)![](assets/osxmenu.png)
+![](assets/maxgui/win32menu.png)![](assets/maxgui/fltkmenu.png)![](assets/maxgui/osxmenu.png)
 
 The [CreateMenu](../../maxgui/maxgui.maxgui/#function-createmenu-tgadget-text-tag-parent-tgadget-hotkey-0-modifier-0) command is used to create menu-items. Menus can be attached either to a window's menu-bar by parenting them to a 
 [WindowMenu](../../maxgui/maxgui.maxgui/#function-windowmenu-tgadget-window-tgadget) or can popup at the current mouse location if used with the [PopupWindowMenu](../../maxgui/maxgui.maxgui/#function-popupwindowmenu-window-tgadget-menu-tgadget-extra-object-null) command.
@@ -80,7 +80,7 @@ The [CreateMenu](../../maxgui/maxgui.maxgui/#function-createmenu-tgadget-text-ta
 being chosen by the user. [EnableGadget](../../maxgui/maxgui.maxgui/#function-enablegadget-gadget-tgadget) reverses this operation.
 
 <h2>Buttons</h2>
-![](assets/win32buttons.png)![](assets/fltkbuttons.png)![](assets/osxbuttons.png)
+![](assets/maxgui/win32buttons.png)![](assets/maxgui/fltkbuttons.png)![](assets/maxgui/osxbuttons.png)
 
 The [CreateButton](../../maxgui/maxgui.maxgui/#function-createbutton-tgadget-label-x-y-w-h-group-tgadget-style-button-push) command is used to add buttons to a group gadget. Buttons can be standard push buttons that emit a single
 event whenever clicked, or they can be created with the BUTTON_CHECKBOX or BUTTON_RADIO styles
@@ -88,7 +88,7 @@ in which case they can be toggled by the user (or programatically with the [SetB
 Their current state can be found with the help of the [ButtonState](../../maxgui/maxgui.maxgui/#function-buttonstate-button-tgadget) function.
 
 <h2>Panels</h2>
-![](assets/win32panels.png)![](assets/fltkpanels.png)![](assets/osxpanels.png)
+![](assets/maxgui/win32panels.png)![](assets/maxgui/fltkpanels.png)![](assets/maxgui/osxpanels.png)
 
 The [CreatePanel](../../maxgui/maxgui.maxgui/#function-createpanel-tgadget-x-y-w-h-group-tgadget-style-0-title) command is used to to create a Panel gadget. Panels can be used to group other gadgets together and
 can be optionally assigned a background color or image using the [SetPanelColor](../../maxgui/maxgui.maxgui/#function-setpanelcolor-panel-tgadget-r-g-b) or [SetPanelPixmap](../../maxgui/maxgui.maxgui/#function-setpanelpixmap-panel-tgadget-pixmap-tpixmap-flags-panelpixmap-tile) commands.  They can
@@ -96,14 +96,14 @@ be created with or without a border. Panels were one of the first gadgets that c
 specifying the optional PANEL_ACTIVE style upon creation.
 
 <h2>Text Fields</h2>
-![](assets/win32textfield.png)![](assets/fltktextfield.png)![](assets/osxtextfield.png)
+![](assets/maxgui/win32textfield.png)![](assets/maxgui/fltktextfield.png)![](assets/maxgui/osxtextfield.png)
 
 A text-field allows the users to enter a single line of text. A text-field's characters can be masked by specifying an 
 optional TEXTFIELD_PASSWORD style flag upon the call to [CreateTextField](../../maxgui/maxgui.maxgui/#function-createtextfield-tgadget-x-y-w-h-group-tgadget-style-0).  This is useful for creating password-entry
 forms.  As with all other gadgets, [GadgetText](../../maxgui/maxgui.maxgui/#function-gadgettext-gadget-tgadget) and [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text) can be used to set and retrieve the text in the field.
 
 <h2>Text Areas</h2>
-![](assets/win32textarea.png)![](assets/fltktextarea.png)![](assets/osxtextarea.png)
+![](assets/maxgui/win32textarea.png)![](assets/maxgui/fltktextarea.png)![](assets/maxgui/osxtextarea.png)
 
 The [CreateTextArea](../../maxgui/maxgui.maxgui/#function-createtextarea-tgadget-x-y-w-h-group-tgadget-style-0) command creates a gadget for displaying formatted text, with optional TEXTAREA_WORDWRAP and 
 TEXTAREA_READONLY styles.  
@@ -124,7 +124,7 @@ The MaxGUI commands specific to text-areas are summarised below:
 of the gadget.
 
 <h2>Combo Boxes</h2>
-![](assets/win32combobox.png)![](assets/fltkcombobox.png)![](assets/osxcombobox.png)
+![](assets/maxgui/win32combobox.png)![](assets/maxgui/fltkcombobox.png)![](assets/maxgui/osxcombobox.png)
 
 Combo-boxes provide a dropdown list of options to the user with an optional style that allows the user to enter 
 their own text in a similar manner to the TextField gadget. [CreateComboBox](../../maxgui/maxgui.maxgui/#function-createcombobox-tgadget-x-y-w-h-group-tgadget-style-0) creates a ComboBox and the standard
@@ -132,14 +132,14 @@ list based gadget commands [ClearGadgetItems](../../maxgui/maxgui.maxgui/#functi
 [SelectedGadgetItem](../../maxgui/maxgui.maxgui/#function-selectedgadgetitem-gadget-tgadget), [CountGadgetItems](../../maxgui/maxgui.maxgui/#function-countgadgetitems-gadget-tgadget) and [GadgetItemText](../../maxgui/maxgui.maxgui/#function-gadgetitemtext-gadget-tgadget-index) can be used to manage the items contained by the ComboBox gadget.
 
 <h2>List Boxes</h2>
-![](assets/win32listbox.png)![](assets/fltklistbox.png)![](assets/osxlistbox.png)
+![](assets/maxgui/win32listbox.png)![](assets/maxgui/fltklistbox.png)![](assets/maxgui/osxlistbox.png)
 
 List-boxes are similiar to ComboBoxes but features a scrolling list rather than a drop-down selection mechanism.
 The [CreateListBox](../../maxgui/maxgui.maxgui/#function-createlistbox-tgadget-x-y-w-h-group-tgadget-style-0) command is used to create a ListBox gadget while the standard list based gadget commands listed
 in the previous ComboBox section are used to manage the items.
 
 <h2>Toolbars</h2>
-![](assets/win32toolbar.png)
+![](assets/maxgui/win32toolbar.png)
 
 Toolbars display a row of clickable icons at the top of a window. The [CreateToolbar](../../maxgui/maxgui.maxgui/#function-createtoolbar-tgadget-source-object-x-y-w-h-window-tgadget-style-0) command creates a window toolbar 
 using a previously loaded <b>TIconStrip</b> or using a specified image file containing a strip of icons.
@@ -154,7 +154,7 @@ It is important to note that Toolbars should only ever be added to <b>Window</b>
 cause your program to crash on some platforms.
 
 <h2>Tabbers</h2>
-![](assets/win32tabber.png)![](assets/fltktabber.png)![](assets/osxtabber.png)
+![](assets/maxgui/win32tabber.png)![](assets/maxgui/fltktabber.png)![](assets/maxgui/osxtabber.png)
 
 The [CreateTabber](../../maxgui/maxgui.maxgui/#function-createtabber-tgadget-x-y-w-h-group-tgadget-style-0) command creates a tab control gadget commonly used to group gadgets into a collection of pages. 
 The standard list based gadget commands [ClearGadgetItems](../../maxgui/maxgui.maxgui/#function-cleargadgetitems-gadget-tgadget), [AddGadgetItem](../../maxgui/maxgui.maxgui/#function-addgadgetitem-gadget-tgadget-text-flags-0-icon-1-tip-extra-object-null), [ModifyGadgetItem](../../maxgui/maxgui.maxgui/#function-modifygadgetitem-gadget-tgadget-index-text-flags-0-icon-1-tip-extra-object-null), [RemoveGadgetItem](../../maxgui/maxgui.maxgui/#function-removegadgetitem-gadget-tgadget-index), 
@@ -162,7 +162,7 @@ The standard list based gadget commands [ClearGadgetItems](../../maxgui/maxgui.m
 in a Tabber gadget.
 
 <h2>TreeViews</h2>
-![](assets/win32treeview.png)![](assets/fltktreeview.png)![](assets/osxtreeview.png)
+![](assets/maxgui/win32treeview.png)![](assets/maxgui/fltktreeview.png)![](assets/maxgui/osxtreeview.png)
 
 A TreeView is used to display hierarchical data where items are contained in nodes that can be children of other nodes.
 The [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget-x-y-w-h-group-tgadget-style-0) command creates a new TreeView gadget that provides a [TreeViewRoot](../../maxgui/maxgui.maxgui/#function-treeviewroot-tgadget-treeview-tgadget) used to create a tree of nodes.
@@ -175,7 +175,7 @@ The [CreateTreeView](../../maxgui/maxgui.maxgui/#function-createtreeview-tgadget
 can be used to remove nodes previously added to a TreeView gadget.
 
 <h2>HtmlViews</h2>
-![](assets/win32htmlview.png)
+![](assets/maxgui/win32htmlview.png)
 
 An HTMLView is a gadget containing a complete web browser display. The [CreateHTMLView](../../maxgui/maxgui.maxgui/#function-createhtmlview-tgadget-x-y-w-h-group-tgadget-style-0) command creates an HTMLView gadget
 while [HtmlViewGo](../../maxgui/maxgui.maxgui/#function-htmlviewgo-view-tgadget-url), [HtmlViewBack](../../maxgui/maxgui.maxgui/#function-htmlviewback-view-tgadget) and [HtmlViewForward](../../maxgui/maxgui.maxgui/#function-htmlviewforward-view-tgadget) control the page being displayed.
@@ -188,7 +188,7 @@ Labels are read-only regions of text on a user inteface that do not have a backg
 [CreateLabel](../../maxgui/maxgui.maxgui/#function-createlabel-tgadget-name-x-y-w-h-group-tgadget-style-label-left) command.
 
 <h2>Sliders</h2>
-![](assets/win32sliders.png)![](assets/fltksliders.png)![](assets/osxsliders.png)
+![](assets/maxgui/win32sliders.png)![](assets/maxgui/fltksliders.png)![](assets/maxgui/osxsliders.png)
 
 Sliders allow the user to control a numerical value by dragging a control inside a container. [CreateSlider](../../maxgui/maxgui.maxgui/#function-createslider-tgadget-x-y-w-h-group-tgadget-style-0) can create 
 both a scroll-bar type slider (where the size of the knob represents the portion of the document being viewed) and 
@@ -198,7 +198,7 @@ allowed by the control).
 [SetSliderValue](../../maxgui/maxgui.maxgui/#function-setslidervalue-slider-tgadget-value) and [SliderValue](../../maxgui/maxgui.maxgui/#function-slidervalue-slider-tgadget) set and retrieve the position of a Slider control.
 
 <h2>Progress Bars</h2>
-![](assets/win32progbar.png)![](assets/fltkprogbar.png)![](assets/osxprogbar.png)
+![](assets/maxgui/win32progbar.png)![](assets/maxgui/fltkprogbar.png)![](assets/maxgui/osxprogbar.png)
 
 [CreateProgBar](../../maxgui/maxgui.maxgui/#function-createprogbar-tgadget-x-y-w-h-group-tgadget-style-0) creates a progress bar gadget commonly used to display the progress of an operation. The 
 [UpdateProgBar](../../maxgui/maxgui.maxgui/#function-updateprogbar-progbar-tgadget-value) command is used to update the progress bar with a floating point value between 0.0 and 1.0 and

@@ -265,7 +265,7 @@ standard MaxGUI commands.
 * The client area is the panel that will actually be scrolled and is retrieved using the [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclient-tgadget-scrollpanel-tscrollpanel) command.  This is the panel
 whose dimensions determine the total scrollable area, and is also the panel that all your child gadgets should be added to.
 
-![](assets/scroll_dimensions.png)
+![](assets/maxgui/scroll_dimensions.png)
 
 The dimensions given above can each be retrieved programatically:
 
@@ -400,7 +400,7 @@ Scrolls the current viewport to a new position.
 This function moves the client area of the scroll panel so that the the top-left corner of the viewport is as close
 as possible to the specified <b>pX</b>, <b>pY</b> position in the client-area.
 
-![](assets/scroll_position.png)
+![](assets/maxgui/scroll_position.png)
 
 There are 4 position constants provided:
 
