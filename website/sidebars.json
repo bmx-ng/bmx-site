@@ -109,6 +109,7 @@
       "api/brl/brl.graphics",
       "api/brl/brl.hook",
       "api/brl/brl.jpgloader",
+      "api/brl/brl.json",
       "api/brl/brl.keycodes",
       "api/brl/brl.linkedlist",
       "api/brl/brl.map",
@@ -137,7 +138,9 @@
       "api/brl/brl.threads",
       "api/brl/brl.timer",
       "api/brl/brl.timerdefault",
-      "api/brl/brl.wavloader"
+      "api/brl/brl.volumes",
+      "api/brl/brl.wavloader",
+      "api/brl/brl.xml"
     ],
     "MaxGUI": [
       "api/maxgui/maxgui.maxgui",
@@ -212,6 +215,20 @@
       "api/brl/brl.event/tevent"
     ]
   },
+  "brl_json": {
+    "BRL.Json": [
+      "api/brl/brl.json/tjson",
+      "api/brl/brl.json/tjsonobject",
+      "api/brl/brl.json/tjsonstring",
+      "api/brl/brl.json/tjsoninteger",
+      "api/brl/brl.json/tjsonreal",
+      "api/brl/brl.json/tjsonbool",
+      "api/brl/brl.json/tjsonarray",
+      "api/brl/brl.json/tjsonnull",
+      "api/brl/brl.json/tjsonerror",
+      "api/brl/brl.json/tjsonnumber"
+    ]
+  },
   "brl_linkedlist": {
     "BRL.LinkedList": [
       "api/brl/brl.linkedlist/tlink",
@@ -262,6 +279,18 @@
     "BRL.StringBuilder": [
       "api/brl/brl.stringbuilder/tstringbuilder",
       "api/brl/brl.stringbuilder/tsplitbuffer"
+    ]
+  },
+  "brl_volumes": {
+    "BRL.Volumes": [
+      "api/brl/brl.volumes/tvolume"
+    ]
+  },
+  "brl_xml": {
+    "BRL.Xml": [
+      "api/brl/brl.xml/txmldoc",
+      "api/brl/brl.xml/txmlnode",
+      "api/brl/brl.xml/txmlattribute"
     ]
   },
   "sdl_sdl": {
