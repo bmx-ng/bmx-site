@@ -215,6 +215,12 @@ Name of host, or Null if host not found
 
 <br/>
 
+### `Function AddrInfo:TAddrInfo[](host:String, service:String = "http", family:Int = AF_UNSPEC_)`
+
+Returns an array of TAddrInfo objects.
+
+<br/>
+
 ### `Function AddrInfo:TAddrInfo[](host:String, service:String, hints:TAddrInfo)`
 
 Returns an array of TAddrInfo objects.

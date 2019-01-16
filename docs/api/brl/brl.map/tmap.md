@@ -103,7 +103,7 @@ Returns a copy the contents of this map.
 
 ### `Method ObjectEnumerator:TNodeEnumerator()`
 
-Returns a node enumeration object.
+Returns a node enumeration Object.
 
 The object returned by [ObjectEnumerator](../../../brl/brl.map/tmap/#method-objectenumerator-tnodeenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the nodes in the map.
 
