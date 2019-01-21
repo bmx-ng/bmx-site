@@ -45,7 +45,8 @@
           "language/interfacing_with_c",
           "language/memory_management",
           "language/pointers",
-          "language/pre_post_compilation_scripts"
+          "language/pre_post_compilation_scripts",
+          "language/creating_dlls"
         ]
       }
     ],
