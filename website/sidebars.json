@@ -96,6 +96,7 @@
       "api/brl/brl.bankstream",
       "api/brl/brl.blitz",
       "api/brl/brl.bmploader",
+      "api/brl/brl.clipboard",
       "api/brl/brl.d3d7max2d",
       "api/brl/brl.d3d9max2d",
       "api/brl/brl.directsoundaudio",
@@ -209,6 +210,14 @@
       "api/brl/brl.blitz/tnullobjectexception",
       "api/brl/brl.blitz/toutofdataexception",
       "api/brl/brl.blitz/truntimeexception"
+    ]
+  },
+  "brl_clipboard": {
+    "BRL.Clipboard": [
+      "api/brl/brl.clipboard/tclipboard",
+      "api/brl/brl.clipboard/tclipboardopts",
+      "api/brl/brl.clipboard/twin32clipboardopts",
+      "api/brl/brl.clipboard/tx11clipboardopts"
     ]
   },
   "brl_event": {
