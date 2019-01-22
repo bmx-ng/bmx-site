@@ -18,7 +18,7 @@ visible to the application. In BlitzMax, this is done by adding the [Export] pro
 every function you want to be visible to applications.
 
 Here's an example of an exported function :
-```blitzmaz
+```blitzmax
 Function TheAnswer:Int() Export
     Return 42
 End Function
