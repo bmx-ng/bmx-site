@@ -26,8 +26,8 @@ starting with the highest precedence operators:
 | Member  | Expression . Identifier  |
 | Index  | Expression [ IndexExpressions ]  |
 | Call  | Expression ( Parameters ) |
-| Negate  | + Expression  |
-| Posate  | - Expression  |
+| Negate  | `+` Expression  |
+| Posate  | `-` Expression  |
 | Bitwise complement  | `~` Expression  |
 | Boolean not  | [Not] Expression  |
 | Absolute value  | [Abs] Expression  |
