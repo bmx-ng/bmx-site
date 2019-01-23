@@ -70,8 +70,8 @@ the correct calling convention.
 To do this, you add the `"Win32"` property to the function declaration :
 
 ```blitzmax
-Function TheAnswer:Int() "Win32"
-    Return 42
+Function AddInts:Int( x:Int, y:Int ) "Win32"
+	Return x + y
 End Function
 ```
 
@@ -90,8 +90,8 @@ the [Export] property to it. An exported function will then be made visible in t
 so that it can be called by the application.
 
 ```blitzmax
-Function TheAnswer:Int() Export
-    Return 42
+Function AddInts:Int( x:Int, y:Int ) Export
+	Return x + y
 End Function
 ```
 
