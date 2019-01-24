@@ -27,5 +27,5 @@ applications.
 The `SDL` modscope can be used as a replacement graphics and system-integration
 backend for the default modules provided by `BRL`. It is optional on the main
 desktop platforms, but generally required on the other targets (iOS, Android, rpi, NX).
-It a full implementation of SDL in BlitzMax, including SDL's Render and Window subsystems,
+It is a full implementation of SDL in BlitzMax, including SDL's Render and Window subsystems,
 which can be used directly if preferred.
