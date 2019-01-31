@@ -4,6 +4,8 @@ title: User Defined Types
 sidebar_label: User Defined Types
 ---
 
+## Introduction
+
 User defined types allow you to group related data and program code together into a single entity known as an object.
 
 The general syntax for declaring a user defined type is:
@@ -92,12 +94,12 @@ This is really the whole point of inheritance - its not just a technique to save
 This behaviour allows for a very useful technique known as polymorphism. This means the ability of an object
 to behave in different ways depending on its type. This is achieved in BlitzMax by *overriding* methods.
 
-Notice in the above example that the method 'Sum' has the same signature (parameters and return type) in both
-the base type and the derived type. This is not just a coincidence - it is required by the language. Whenever
-you add a method to a derived type with the same name as an existing method in a base type, it must have the same
+Notice in the above example that the method `Sum` has the same signature (parameters and return type) in both
+the base type and the derived type. This is not just a coincidence - it is required by the language. To override
+a method in a derived type it must have the same name as an existing method in a base type, and it must have the same
 signature as the method in the base type.
 
-But now we have 2 versions of 'Sum' - which gets called? This depends on the *runtime type* of an object. For example:
+But now we have 2 versions of `Sum` - which gets called? This depends on the *runtime type* of an object. For example:
 ```blitzmax
 Type BaseType
 	Method Test:String()
@@ -122,6 +124,173 @@ Note that when the variable `y` is initialized, it is assigned a DerivedType obj
 a BaseType variable. This is legal because derived types can be used in place of base types. However, this
 means the runtime type of `y` is actually DerivedType. Therefore, when `y.Test()` is called, the DerivedType method
 `Test()` is called.
+
+## Overloading
+
+Overloading is similar to overriding, with the ability to create multiple functions or methods of the
+same name with different implementations. Overloaded functions/methods must have a unique signature.
+
+For example, the methods `Show()` and `Show(text:String)` in the same [Type] are overloaded methods.
+
+```blitzmax
+Type TMyType
+
+    Method Show()
+        Print "Hello"
+    End Method
+
+    Method Show(text:String)
+        Print text
+    End Method
+End Type
+```
+
+To call the latter, a [String] must be passed as an argument, whereas to call the first, no argument is supplied.
+
+> Be careful not to assign default values to parameters in some cases where it might introduce ambiguity - the
+> compiler not knowing which of the two methods to use.
+
+### Operator Overloading
+
+In addition to overloading by method and function names, BlitzMax also supports the overloading of *operators*, like
+`+` and `=`, which are treated like just like normal polymorphic methods, and have different behaviours depending on their arguments.
+
+The use of operator overloading can arguably make code easier to read in some cases, as it
+simplifies the syntax of some operations.
+
+As an example, imagine we have a type to which you can add an integer. Normally
+you might create an `Add(value:Int)` method, like so :
+
+```blitzmax
+Type TMyType
+    Field total:Int
+
+    Method Add(value:Int)
+        total :+ value
+    End Method
+End Type
+```
+To use it, you could call it thus :
+```blitzmax
+myType.Add(10)
+```
+
+With operator overloading, we can create a special method using the [Operator] keyword followed
+by the specific operator, and then implement the rest of the method as usual.
+```blitzmax
+Type TMyType
+    Field total:Int
+
+    Method Operator :+(value:Int)
+        total :+ value
+    End Method
+End Type
+```
+As you can see, the two versions looks almost the same, apart from the name of the method.
+The operator we have chosen here is `:+`, which is the addition assignment operator.
+
+With the overloaded operator, we can now write :
+```blitzmax
+myType :+ 10
+```
+
+Any of the following operators can be overloaded : `*` `/` `+` `-` `&` `|` `~` `:*` `:/` `:+` `:-` `:&` `:|`
+`:~` `<` `>` `<=` `>=` `=` `<>` `mod` `shl` `shr` `:mod` `:shl` `:shr` `[]` `[]=`
+
+Generally, an overloaded operator is expected to behave in a similar way to the built in operator. Operator `+`
+is expected to add rather than multiply, for example. However, there are no restrictions in BlitzMax on how
+you actually implement the overload.
+
+#### Index Operator overloading
+
+The operators `[]` and `[]=` allow user defined types to support indexed element access using brackets (`[]`)
+much in the same way you can use them to access arrays, strings and pointers.
+
+* `Method Operator []` is the index operator. It should take one or more indices as parameters and return the corresponding element.
+* `Method Operator []=` is the index assignment operator. It should take one or more indices and the to-be-assigned element as parameters and not return anything.
+
+As an example, a wrapper type for an array that automatically grows when accessing an
+out-of-bounds index can be written like this :
+
+```blitzmax
+SuperStrict
+Framework BRL.StandardIO
+
+Type TDynamicIntArray
+	Private
+
+	Field array:Int[]
+	Field startIndex:Int = 0
+
+	Public
+
+	Method Operator [] :Int(index:Int)
+		If index < startIndex Or index >= startIndex + array.length Then Return 0
+		Return array[index - startIndex]
+	End Method
+
+	Method Operator []= (index:Int, value:Int)
+		If index < startIndex Then
+			array = array[index - startIndex..]
+			startIndex = index
+		Else If index >= startIndex + array.length Then
+			array = array[..index - startIndex + 1]
+		End If
+		' ^ it's inefficient to grow arrays like this, but it's just a simple example
+		array[index - startIndex] = value
+	End Method
+End Type
+
+Local a:TDynamicIntArray = New TDynamicIntArray
+a[-1] = -1 ' this calls Operator []=
+a[2] = 2   ' this calls Operator []=
+a[4] = 4   ' this calls Operator []=
+For Local i:Int = -2 To 5
+	Print i + ": " + a[i] ' this calls Operator []
+Next
+```
+
+Indices can be of any type; they do not need to be #Int :
+
+```blitzmax
+SuperStrict
+Framework BRL.StandardIO
+Import BRL.Map
+
+Type TMapWithOperators Extends TMap ' extending TMap to keep the example simple
+	Method Operator [] :Object(key:Object)
+		Return ValueForKey(key)
+	End Method
+
+	Method Operator []= (key:Object, value:Object)
+		Insert key, value
+	End Method
+End Type
+
+Local map:TMapWithOperators = New TMapWithOperators
+
+' insert an element
+map["hello"] = "world"
+
+' retrieve the element
+Print map["hello"].ToString()
+```
+
+And like the built-in multidimensional arrays, user-defined types can also support multiple indices :
+```blitzmax
+SuperStrict
+Framework BRL.StandardIO
+
+Type TMultidimTest
+	Method Operator [] :String(index0:Int, index1:Int, index2:Float)
+		Return "Element at [" + index0 + ", " + index1 + ", " + index2 + "]"
+	End Method
+End Type
+
+Local x:TMultidimTest = New TMultidimTest
+Print x[1, 2, 3]
+```
+
 
 ## Self and Super
 
@@ -202,3 +371,6 @@ Final types and methods are mostly used to prevent modification to a type's beha
 [Delete]: ../../api/brl/brl.blitz/#delete
 [Abstract]: ../../api/brl/brl.blitz/#abstract
 [Final]: ../../api/brl/brl.blitz/#final
+[Type]: ../../api/brl/brl.blitz/#type
+[Operator]: ../../api/brl/brl.blitz/#operator
+[String]: ../../api/brl/brl.blitz/#string
