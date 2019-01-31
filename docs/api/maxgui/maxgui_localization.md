@@ -13,7 +13,7 @@ imported into other BlitzMax games and applications separately, without the over
 It is recommended that you read through the command set below to familiarize yourself with the module before
 use.  
 
-Whenever applicable, MaxGUI coders should use the [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip) command in [MaxGUI.MaxGUI](../../maxgui/maxgui_maxgui.md) in favour of 
+Whenever applicable, MaxGUI coders should use the [LocalizeGadget](../../maxgui/maxgui.maxgui/#function-localizegadget-gadget-tgadget-localizationtext-localizationtooltip) command in [MaxGUI.MaxGUI](../maxgui/maxgui_maxgui.md) in favour of 
 [LocalizeString](../../maxgui/maxgui.localization/#function-localizestring-localizationstring) to ensure that gadgets are updated when the language or localization settings are changed.
 
 ## Functions

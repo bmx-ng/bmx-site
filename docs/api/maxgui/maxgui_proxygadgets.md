@@ -7,7 +7,7 @@ sidebar_label: MaxGUI.ProxyGadgets
 
 This module contains any official proxy gadgets that wrap around the standard MaxGUI gadgets and provide an additional library
 of gadgets that can be used in a whole host of programs. Any gadgets in this library can be used with the standard MaxGUI functions
-available in the core [MaxGUI.MaxGUI](../../maxgui/maxgui_maxgui.md) module.
+available in the core [MaxGUI.MaxGUI](../maxgui/maxgui_maxgui.md) module.
 
 
 ## Functions

@@ -6,7 +6,7 @@ sidebar_label: BRL.AudioSample
 
 
 The BlitzMax audiosample module contains commands to create and load audio samples for
-use with the BlitzMax [BRL.Audio](../../brl/brl_audio.md) module.
+use with the BlitzMax [BRL.Audio](../brl/brl_audio.md) module.
 
 
 ## Types
