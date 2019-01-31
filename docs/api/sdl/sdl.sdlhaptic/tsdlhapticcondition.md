@@ -7,7 +7,7 @@ sidebar_label: TSDLHapticCondition
 A template for a condition effect.
 
 
-## Methods
+## Constructors
 
 ### `Method New(effectType:Int)`
 
@@ -17,6 +17,8 @@ Creates a new instance of the effect.
 
 
 <br/>
+
+## Methods
 
 ### `Method GetLength:UInt()`
 

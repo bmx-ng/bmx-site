@@ -12,13 +12,15 @@ It augments in linear fashion. If you use attack and fade with a ramp the effect
 making the effect become quadratic instead of linear.
 
 
-## Methods
+## Constructors
 
 ### `Method New()`
 
 Creates a new instance of the effect.
 
 <br/>
+
+## Methods
 
 ### `Method GetLength:UInt()`
 

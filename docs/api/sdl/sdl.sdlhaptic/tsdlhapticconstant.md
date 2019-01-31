@@ -7,13 +7,15 @@ sidebar_label: TSDLHapticConstant
 A constant effect applies a constant force to the joystick in the specified direction.
 
 
-## Methods
+## Constructors
 
 ### `Method New()`
 
 Creates a new instance of the effect.
 
 <br/>
+
+## Methods
 
 ### `Method GetLength:UInt()`
 

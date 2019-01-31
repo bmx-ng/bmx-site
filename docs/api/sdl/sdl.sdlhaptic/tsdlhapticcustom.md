@@ -12,13 +12,15 @@ You will have to allocate the data yourself. data should consist of channels * s
 If channels is 1, the effect is rotated using the defined direction. Otherwise it uses the samples in data for the different axes.
 
 
-## Methods
+## Constructors
 
 ### `Method New()`
 
 Creates a new instance of the effect.
 
 <br/>
+
+## Methods
 
 ### `Method GetLength:UInt()`
 

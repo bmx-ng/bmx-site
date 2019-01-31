@@ -10,7 +10,7 @@ A wave-shaped effect that repeats itself over time.
 The type determines the shape of the wave and the other parameters determine the dimensions of the wave.
 
 
-## Methods
+## Constructors
 
 ### `Method New(waveType:Int)`
 
@@ -20,6 +20,8 @@ Creates a new instance of the effect.
 
 
 <br/>
+
+## Methods
 
 ### `Method GetLength:UInt()`
 

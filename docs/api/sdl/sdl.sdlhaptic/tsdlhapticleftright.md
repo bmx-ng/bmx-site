@@ -10,13 +10,15 @@ Controls the large and small motors, commonly found in modern game controllers.
 One motor is high frequency, the other is low frequency.
 
 
-## Methods
+## Constructors
 
 ### `Method New()`
 
 Creates a new instance of the effect.
 
 <br/>
+
+## Methods
 
 ### `Method SetLength(value:UInt)`
 
