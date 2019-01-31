@@ -176,6 +176,8 @@ const siteConfig = {
     editUrl: 'https://github.com/bmx-ng/bmx-site/edit/master/docs/',
 
     useEnglishUrl: true,
+
+    docsSideNavCollapsible: true,
 };
 
 module.exports = siteConfig;
