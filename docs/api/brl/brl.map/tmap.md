@@ -7,6 +7,62 @@ sidebar_label: TMap
 An key/value (Object/Object) map backed by a Red/Black tree.
 
 
+## Operators
+
+### `Method Operator[]:Object(key:Object)`
+
+Finds a value given a <b>key</b> using index syntax.
+
+If the map does not contain <b>key</b>, a [Null](../../../brl/brl.blitz/#null) object is returned.
+
+
+#### Returns
+The value associated with <b>key</b>.
+
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.map
+
+Local map:TMap = New TMap
+
+map.Insert("one", "Hello")
+map.Insert("two", "World")
+
+For Local s:String = EachIn map.Keys()
+	Print s + " = " + String(map[s]) ' retrieve value using index operator
+Next
+```
+<br/>
+
+### `Method Operator[]=(key:Object, value:Object)`
+
+Inserts a key/value pair into the map using index syntax.
+
+If the map already contains <b>key</b>, its value is overwritten with <b>value</b>.
+
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.map
+
+Local map:TMap = New TMap
+
+map["one"] = "Hello" ' insert value using index operator
+map["two"] = "World"
+
+For Local s:String = EachIn map.Keys()
+	Print s + " = " + String(map.ValueForKey(s))
+Next
+```
+<br/>
+
 ## Methods
 
 ### `Method Clear()`

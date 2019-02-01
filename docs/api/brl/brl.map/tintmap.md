@@ -7,6 +7,62 @@ sidebar_label: TIntMap
 A key/value (Int/Object) map.
 
 
+## Operators
+
+### `Method Operator[]:Object(key:Int)`
+
+Finds a value given a <b>key</b> using index syntax.
+
+If the map does not contain <b>key</b>, a [Null](../../../brl/brl.blitz/#null) object is returned.
+
+
+#### Returns
+The value associated with <b>key</b>.
+
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.map
+
+Local map:TIntMap = New TIntMap
+
+map.Insert(1, "Hello")
+map.Insert(2, "World")
+
+For Local k:TIntKey = EachIn map.Keys()
+	Print k.value + " = " + String(map[k.value]) ' retrieve value using index operator
+Next
+```
+<br/>
+
+### `Method Operator[]=(key:Int, value:Object)`
+
+Inserts a key/value pair into the map using index syntax.
+
+If the map already contains <b>key</b>, its value is overwritten with <b>value</b>.
+
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.map
+
+Local map:TIntMap = New TIntMap
+
+map[1] = "Hello" ' insert value using index operator
+map[2] = "World"
+
+For Local k:TIntKey = EachIn map.Keys()
+	Print k.value + " = " + String(map.ValueForKey(k.value))
+Next
+```
+<br/>
+
 ## Methods
 
 ### `Method Clear()`

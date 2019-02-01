@@ -7,6 +7,62 @@ sidebar_label: TPtrMap
 A key/value (Byte Ptr/Object) map.
 
 
+## Operators
+
+### `Method Operator[]:Object(key:Byte Ptr)`
+
+Finds a value given a <b>key</b> using index syntax.
+
+If the map does not contain <b>key</b>, a [Null](../../../brl/brl.blitz/#null) object is returned.
+
+
+#### Returns
+The value associated with <b>key</b>.
+
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.map
+
+Local map:TPtrMap = New TPtrMap
+
+map.Insert(Byte Ptr(1), "Hello")
+map.Insert(Byte Ptr(2), "World")
+
+For Local k:TPtrKey = EachIn map.Keys()
+	Print Int(k.value) + " = " + String(map[k.value]) ' retrieve value using index operator
+Next
+```
+<br/>
+
+### `Method Operator[]=(key:Byte Ptr, value:Object)`
+
+Inserts a key/value pair into the map using index syntax.
+
+If the map already contains <b>key</b>, its value is overwritten with <b>value</b>.
+
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.map
+
+Local map:TPtrMap = New TPtrMap
+
+map[Byte Ptr(1)] = "Hello" ' insert value using index operator
+map[Byte Ptr(2)] = "World"
+
+For Local k:TPtrKey = EachIn map.Keys()
+	Print Int(k.value) + " = " + String(map.ValueForKey(k.value))
+Next
+```
+<br/>
+
 ## Methods
 
 ### `Method Clear()`
