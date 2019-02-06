@@ -22,29 +22,30 @@ purpose identifiers:
 
     Strict SuperStrict Module ModuleInfo Framework
     End Return Continue Exit Assert
-    Public Private
+    Public Protected Private
     True False Pi Null Self Super
-    Byte Short Int Long Float Double Object String
-    UInt ULong Size_T
+    Byte Short Int UInt Long ULong Size_T Float Double Object String
     Var Ptr VarPtr Chr Len Asc SizeOf Sgn Abs Min Max Mod
     Shl Shr Sar Not And Or
     New Release Delete
     Incbin IncbinPtr IncbinLen
-    Include Import Extern EndExtern
+    Include Import Extern EndExtern Export
     Function EndFunction
     Type EndType Extends
-    Interface EndInterface
+    Interface EndInterface Implements
     Struct EndStruct
     Method EndMethod
-    Local Global Const Field
-    Abstract Final ReadOnly Export
+    Operator
+    Local Global Const Field ReadOnly
+    Abstract Final
+    Where
     Rem EndRem
     If Then Else ElseIf EndIf
     For To Next Step EachIn
-    While Wend
+    While Wend EndWhile
     Repeat Until Forever
     Select Case Default EndSelect
-    Try Catch EndTry Throw
-    DefData ReadData RestoreData
+    Try Catch Finally EndTry Throw
+    Goto DefData ReadData RestoreData
+    NoDebug
     Alias
-    Operator Where
