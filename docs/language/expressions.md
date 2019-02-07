@@ -21,8 +21,6 @@ starting with the highest precedence operators:
 | Pi  | [Pi]  |
 | True  | [True]  |
 | False  | [False]  |
-| Minumum  | [Min] ( Expression1 , Expression2 )  |
-| Maximum  | [Max] ( Expression1 , Expression2 )  |
 | Member  | Expression . Identifier  |
 | Index  | Expression [ IndexExpressions ]  |
 | Call  | Expression ( Parameters ) |
@@ -30,8 +28,6 @@ starting with the highest precedence operators:
 | Posate  | `-` Expression  |
 | Bitwise complement  | `~` Expression  |
 | Boolean not  | [Not] Expression  |
-| Absolute value  | [Abs] Expression  |
-| Sign  | [Sgn] Expression  |
 | Value byte size  | [SizeOf] Expression  |
 | Variable address  | [Varptr] Variable  |
 | Convert type expression  | Type Expression  |
@@ -113,10 +109,6 @@ The rules for determining whether an expression is true or false are:
 [Self]: ../../api/brl/brl.blitz/#self
 [Super]: ../../api/brl/brl.blitz/#super
 [Pi]: ../../api/brl/brl.blitz/#pi
-[Min]: ../../api/brl/brl.blitz/#min
-[Max]: ../../api/brl/brl.blitz/#max
-[Abs]: ../../api/brl/brl.blitz/#abs
-[Sgn]: ../../api/brl/brl.blitz/#sgn
 [SizeOf]: ../../api/brl/brl.blitz/#sizeof
 [Varptr]: ../../api/brl/brl.blitz/#varptr
 [Mod]: ../../api/brl/brl.blitz/#mod
