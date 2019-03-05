@@ -10,11 +10,13 @@ User defined types allow you to group related data and program code together int
 
 The general syntax for declaring a user defined type is:
 
-> `Type Typename Extends Typename`
+> `Type Typename Extends Typename Implements Interfacename, AnotherInterfacename`
 
 **Typename** must be a valid identifier.
 
 The [Extends] part is optional. If omitted, the user defined type extends the built in [Object] type.
+
+The [Implements] part is also optional.
 
 Once declared, you can create instances of such types using the [New] operator.
 
@@ -76,7 +78,7 @@ End Type
 Type DerivedType Extends BaseType
 	Field p,q,r
 
-	Method Sum()
+	Method Sum() Override
 		Return x+y+z+p+q+r
 	End Method
 End Type
@@ -95,9 +97,10 @@ This behaviour allows for a very useful technique known as polymorphism. This me
 to behave in different ways depending on its type. This is achieved in BlitzMax by *overriding* methods.
 
 Notice in the above example that the method `Sum` has the same signature (parameters and return type) in both
-the base type and the derived type. This is not just a coincidence - it is required by the language. To override
+the base type and the derived type, and that the [Override] definition is applied to the overriding method. To override
 a method in a derived type it must have the same name as an existing method in a base type, and it must have the same
-signature as the method in the base type.
+signature as the method in the base type, and use the [Override] definition to confirm that the method should actually
+be an override of a method from a base type.
 
 But now we have 2 versions of `Sum` - which gets called? This depends on the *runtime type* of an object. For example:
 ```blitzmax
@@ -108,7 +111,7 @@ Type BaseType
 End Type
 
 Type DerivedType Extends BaseType
-	Method Test:String()
+	Method Test:String() Override
 		Return "DerivedType.Test"
 	End Method
 End Type
@@ -124,6 +127,29 @@ Note that when the variable `y` is initialized, it is assigned a DerivedType obj
 a BaseType variable. This is legal because derived types can be used in place of base types. However, this
 means the runtime type of `y` is actually DerivedType. Therefore, when `y.Test()` is called, the DerivedType method
 `Test()` is called.
+
+The use of [Override] is intended to prevent common errors when working with extended types. For example, imagine in the
+previous example, we had decided to change the signature of the `Test()` method in order for it to provide
+more functionality, but in doing so we neglected to also change that of the derived method.
+```blitzmax
+Type BaseType
+	Method Test:String(action:Int)
+		Return "BaseType.Test(" + action + ")"
+	End Method
+End Type
+
+Type DerivedType Extends BaseType
+	Method Test:String() Override
+		Return "DerivedType.Test"
+	End Method
+End Type
+```
+
+Compilation would now fail, because the `Test()` method in the derived type is no longer overriding the `Test()`
+method of its base type - the signatures are different!.
+
+However, if this was intended, you could remove the [Override] from the derived method, and the method would
+now become an *overloaded* method.
 
 ## Overloading
 
@@ -291,6 +317,33 @@ Local x:TMultidimTest = New TMultidimTest
 Print x[1, 2, 3]
 ```
 
+## Interface
+
+An [Interface] is a reference type. It is similar to an [Abstract] type, but it may **only** contain
+method signatures. A derived type [Implements] the interface, thereby inheriting its abstract
+methods. An instance of an interface itself cannot be created. Methods of an interface are always
+[Public].
+
+```blitzmax
+Interface ISerializable
+    Method SerializeToJson(stream:TStream)
+End Interface
+```
+
+Once an interface is defined, a type can [Implement] it:
+```blitzmax
+Type TPlayer Implements ISerializable
+    Field name:String
+
+    Method SerializeToJson(stream:TStream)
+        stream.WriteLine("{~qname~q : ~q" + name + "~q}")
+    End Method
+End Type
+```
+
+Interfaces can be more useful than simply extending a base type because a derived type can implement
+as many different interfaces as required, allowing a particular type to be used in many different
+and potentially unrelated contexts.
 
 ## Self and Super
 
@@ -322,14 +375,14 @@ x.Test
 
 ## New and Delete
 
-User defined types can optionally declare two special methods named [New] and [Delete]. Both methods must
-take no arguments, and any returned value is ignored.
+User defined types can optionally declare two special methods named [New] and [Delete]. [Delete] must take no
+arguments, whereas [New] can be overloaded, with the default having no arguments.
 
 The [New] method is called when an object is first created with the [New] operator. This allows you to perform
 extra initialization code.
 
 The [Delete] method is called when an object is discarded by the memory manager. Note that critical
-shutdown operations such as closing files etc should not be placed in the Delete, as you can't always
+shutdown operations such as closing files etc should not be placed in the [Delete], as you can't always
 be sure when [Delete] will be called.
 
 
@@ -374,3 +427,7 @@ Final types and methods are mostly used to prevent modification to a type's beha
 [Type]: ../../api/brl/brl.blitz/#type
 [Operator]: ../../api/brl/brl.blitz/#operator
 [String]: ../../api/brl/brl.blitz/#string
+[Override]: ../../api/brl/brl.blitz/#override
+[Implements]: ../../api/brl/brl.blitz/#implements
+[Interface]: ../../api/brl/brl.blitz/#interface
+[Public]: ../../api/brl/brl.blitz/#public
