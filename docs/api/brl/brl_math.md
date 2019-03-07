@@ -15,7 +15,7 @@ Check if a value is NAN
 True if <b>x</b> is 'not a number' (eg: Sqr(-1))
 
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -34,6 +34,27 @@ Next
 ' Square Root of  0.000000000 = 0.00000000000000000
 ' Square Root of  0.200000003 = 0.44721359883195888
 ```
+#### Example 2
+```blitzmax
+SuperStrict
+
+For Local f:Float = - 0.4 Until 0.4 Step 0.2
+	If IsInf(Log(f) ) Then
+		Print "Log(" + f + ")=Infinity "+Log(f)
+	Else If IsNan(Log(f) ) Then
+		Print "Log(" + f + ") is not a real number "+Log(f)
+	Else
+		Print "Log(" + f + ")=" + Log(f) 
+   End If
+Next
+
+' ===================
+' Output
+' Log(-0.400000006) is not a real number -1.#IND000000000000
+' Log(-0.200000003) is not a real number -1.#IND000000000000
+' Log(0.000000000)=Infinity -1.#INF000000000000
+' Log(0.200000003)=-1.6094378975329393
+```
 <br/>
 
 ### `Function IsInf( x:Double )`
@@ -44,7 +65,7 @@ Check if a value is infinite (eg: 1.0/0.0)
 True if <b>x</b> is infinite
 
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -62,6 +83,27 @@ Next
 ' inverse of -0.200000003 = -5.00000000
 ' Divide by Zero
 ' inverse of 0.200000003 = 5.00000000
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+For Local f:Float = - 0.4 Until 0.4 Step 0.2
+	If IsInf(Log(f) ) Then
+		Print "Log(" + f + ")=Infinity "+Log(f)
+	Else If IsNan(Log(f) ) Then
+		Print "Log(" + f + ") is not a real number "+Log(f)
+	Else
+		Print "Log(" + f + ")=" + Log(f) 
+   End If
+Next
+
+' ===================
+' Output
+' Log(-0.400000006) is not a real number -1.#IND000000000000
+' Log(-0.200000003) is not a real number -1.#IND000000000000
+' Log(0.000000000)=Infinity -1.#INF000000000000
+' Log(0.200000003)=-1.6094378975329393
 ```
 <br/>
 
@@ -95,7 +137,7 @@ Next
 
 Sine of <b>x</b> degrees
 
-#### Example
+#### Example 1
 ```blitzmax
 Rem
 Sin:Double( x:Double )
@@ -107,13 +149,54 @@ For Local d:Int = 0 To 360 Step 45
 	Print "Sin("+d+")="+Sin(d)
 Next
 ```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+SetColor 128,128,128
+DrawRect 0,240,360,1
+
+SetColor 0,255,255
+
+For Local t:Int=0 To 359
+	Plot t,Float(240+Sin(t)*80)
+Next
+
+Flip
+
+Repeat
+	WaitKey()
+Until KeyDown(KEY_ESCAPE)
+```
+#### Example 3
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+Local radius:Int=80
+
+SetColor 0,255,255
+
+For Local t:Int=0 To 359 Step 4
+	Plot Float(320+Sin(t)*radius), Float(240+Cos(t)*radius)
+Next
+
+Flip
+
+Repeat
+	WaitKey()
+Until KeyDown(KEY_ESCAPE)
+```
 <br/>
 
 ### `Function Cos:Double( x:Double )`
 
 Cosine of <b>x</b> degrees
 
-#### Example
+#### Example 1
 ```blitzmax
 Rem
 Cosine of x
@@ -124,6 +207,51 @@ SuperStrict
 For Local d:Int = 0 To 360 Step 45
 	Print "Cos("+d+")="+Cos(d)
 Next
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+SetColor 128,128,128
+DrawRect 0,240,360,1
+
+SetColor 0,255,255
+
+For Local t:Int=0 To 359
+	Plot t,Float(240+Cos(t)*80)
+Next
+
+Flip
+
+Repeat
+	WaitKey()
+Until KeyDown(KEY_ESCAPE)
+```
+#### Example 3
+```blitzmax
+'
+' How to draw a 'dotted' flower using Sin/Cos
+'
+SuperStrict
+
+Graphics 640,480
+
+Local radius:Int
+
+SetColor 0,255,255
+
+For Local t:Int=0 To 359 Step 4
+	radius=Sin(t*8)*40+80
+	Plot Float(320+Sin(t)*radius), Float(240+Cos(t)*radius)
+Next
+
+Flip
+
+Repeat
+	WaitKey()
+Until KeyDown(KEY_ESCAPE)
 ```
 <br/>
 
@@ -203,7 +331,7 @@ Next
 
 Inverse Tangent of two variables <b>x</b> , <b>y</b>
 
-#### Example
+#### Example 1
 ```blitzmax
 Rem
 ATan2 returns the Inverse Tangent of two variables
@@ -224,6 +352,24 @@ While Not KeyHit(KEY_ESCAPE)
 	DrawText "Angle="+Angle(320,240,x,y),20,20
 	Flip
 Wend
+```
+#### Example 2
+```blitzmax
+'
+' ATan2
+'
+' returns the angle in degrees between two points by giving the width and height between then.
+'
+SuperStrict
+
+Print ATan2(4,4)
+'4^|    / (45 degrees)
+'  |   / 
+'  |  /
+'  | /
+'  |/
+'  +-----
+'       4>
 ```
 <br/>
 
@@ -365,7 +511,7 @@ Next
 
 Smallest integral value not less than <b>x</b>
 
-#### Example
+#### Example 1
 ```blitzmax
 Rem
 Ceil(x#) returns the smallest integral value not less than x
@@ -377,13 +523,51 @@ For Local i:Float = -1 To 1 Step .2
 	Print "Ceil("+i+")="+Ceil(i)
 Next
 ```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+Local x:Int,y:Int
+Local mx:Int,my:Int
+
+HideMouse
+Repeat
+	mx=MouseX()
+	my=MouseY()
+	
+	Cls
+	' draw grid
+	SetColor 90,90,90
+	For y=0 Until 480 Step 20
+		For x=0 Until 640 Step 20
+			Plot x,y
+		Next
+	Next
+	
+	'draw mouse mx,my
+	SetColor 255,255,255
+	DrawRect mx-1,my-1,3,3
+	
+	' draw ceiled and floored mouse mx,my
+	SetColor 255,255,0
+	DrawRect Float(Ceil( mx/20.0)*20-1),Float(Ceil(my/20.0)*20-1),3,3
+	
+	SetColor 0,255,255
+	DrawRect Float(Floor(mx/20.0)*20-1),Float(Floor( my/20.0)*20-1),3,3
+	
+	Flip
+	
+Until KeyDown(KEY_ESCAPE)
+```
 <br/>
 
 ### `Function Floor:Double( x:Double )`
 
 Largest integral value not greater than <b>x</b>
 
-#### Example
+#### Example 1
 ```blitzmax
 Rem
 Floor(x!) returns the largest integral value not greater than x
@@ -394,6 +578,44 @@ SuperStrict
 For Local i:Double = -1 To 1 Step .2
 	Print "Floor("+i+")="+Floor(i)
 Next
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+Local x:Int,y:Int
+Local mx:Int,my:Int
+
+HideMouse
+Repeat
+	mx=MouseX()
+	my=MouseY()
+	
+	Cls
+	' draw grid
+	SetColor 90,90,90
+	For y=0 Until 480 Step 20
+		For x=0 Until 640 Step 20
+			Plot x,y
+		Next
+	Next
+	
+	'draw mouse mx,my
+	SetColor 255,255,255
+	DrawRect mx-1,my-1,3,3
+	
+	' draw ceiled and floored mouse mx,my
+	SetColor 255,255,0
+	DrawRect Float(Ceil( mx/20.0)*20-1),Float(Ceil(my/20.0)*20-1),3,3
+	
+	SetColor 0,255,255
+	DrawRect Float(Floor(mx/20.0)*20-1),Float(Floor( my/20.0)*20-1),3,3
+	
+	Flip
+	
+Until KeyDown(KEY_ESCAPE)
 ```
 <br/>
 

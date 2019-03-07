@@ -91,7 +91,7 @@ Appends a Long value to the string builder.
 
 Appends the new line string to the string builder.
 
-The new line string can be altered using [SetNewLineText](../../../brl/brl.stringbuilder/tstringbuilder/#method-setnewlinetext-tstringbuilder-newline-string). This might be used to force the output to always use Unix line endings even when on Windows.
+The new line string can be altered using [SetNewLineText](../../../brl/brl.stringbuilder/tstringbuilder/#method-setnewlinetext-tstringbuildernewline-string). This might be used to force the output to always use Unix line endings even when on Windows.
 
 
 <br/>
@@ -302,7 +302,7 @@ will return everything from <b>beginIndex</b> until the end of the string builde
 
 <br/>
 
-### `Method ToString:String()`
+### `Method ToString:String() Override`
 
 Converts the string builder to a String.
 

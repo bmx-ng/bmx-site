@@ -26,6 +26,7 @@
       "language/constants",
       "language/data_types",
       "language/debugging",
+      "language/enums",
       "language/exceptions",
       "language/expressions",
       "language/functions",

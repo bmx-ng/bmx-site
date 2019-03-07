@@ -11,7 +11,7 @@ A linked list allows you to efficiently add and remove objects to and from a col
 
 To create a linked list, use the [CreateList](../../brl/brl.linkedlist/#function-createlist-tlist) command.
 
-Add objects to a linked list using [ListAddFirst](../../brl/brl.linkedlist/#function-listaddfirst-tlink-list-tlist-value-object) or [ListAddLast](../../brl/brl.linkedlist/#function-listaddlast-tlink-list-tlist-value-object). Both commands return a link object which can be used to later remove the object with the [RemoveLink](../../brl/brl.linkedlist/#function-removelink-link-tlink) command. You can also remove objects with the [ListRemove](../../brl/brl.linkedlist/#function-listremove-list-tlist-value-object) command. However this is not as efficient as using [RemoveLink](../../brl/brl.linkedlist/#function-removelink-link-tlink) because the list must first be searched for the object to be removed.
+Add objects to a linked list using [ListAddFirst](../../brl/brl.linkedlist/#function-listaddfirst-tlink-list-tlist-value-object) or [ListAddLast](../../brl/brl.linkedlist/#function-listaddlast-tlink-list-tlist-value-object). Both commands return a link object which can be used to later remove the object with the [RemoveLink](../../brl/brl.linkedlist/tlist/#method-removelink-link-tlink) command. You can also remove objects with the [ListRemove](../../brl/brl.linkedlist/#function-listremove-list-tlist-value-object) command. However this is not as efficient as using [RemoveLink](../../brl/brl.linkedlist/tlist/#method-removelink-link-tlink) because the list must first be searched for the object to be removed.
 
 To visit all the objects in a linked list, you can use an [EachIn](../../brl/brl.blitz/#eachin) loop.
 
@@ -169,15 +169,6 @@ A link object
 Remove an object from a linked list
 
 [ListRemove](../../brl/brl.linkedlist/#function-listremove-list-tlist-value-object) scans a list for the specified value and removes its link.
-
-
-<br/>
-
-### `Function RemoveLink( link:TLink )`
-
-Remove an object from a linked list
-
-[RemoveLink](../../brl/brl.linkedlist/#function-removelink-link-tlink) is more efficient than [ListRemove](../../brl/brl.linkedlist/#function-listremove-list-tlist-value-object).
 
 
 <br/>

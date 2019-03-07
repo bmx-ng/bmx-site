@@ -676,7 +676,7 @@ The horizontal and vertical position of the current drawing handle.
 
 <br/>
 
-### `Function SetRotation( rotation# )`
+### `Function SetRotation( Rotation# )`
 
 Set current rotation
 
@@ -718,7 +718,7 @@ The current x and y scale values in the variables supplied.
 
 <br/>
 
-### `Function SetTransform( rotation#=0,scale_x#=1,scale_y#=1 )`
+### `Function SetTransform( Rotation#=0,scale_x#=1,scale_y#=1 )`
 
 Set current rotation and scale
 
@@ -1040,7 +1040,7 @@ Grab pixmap
 Tests if two images collide
 
 
-[ImagesCollide](../../brl/brl.max2d/#function-imagescollide-image1-timage-x1-y1-frame1-image2-timage-x2-y2-frame2) uses the current Rotation and Scale factors from the most previous
+[ImagesCollide](../../brl/brl.max2d/#function-imagescollideimage1-timage-x1-y1-frame1-image2-timage-x2-y2-frame2) uses the current Rotation and Scale factors from the most previous
 call to [SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y) and [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation) to calculate at a pixel level if the two images collide.
 
 
@@ -1055,7 +1055,7 @@ True if any pixels of the two images specified at the given location overlap.
 Tests if two images with arbitrary Rotation and Scales collide
 
 
-[ImagesCollide2](../../brl/brl.max2d/#function-imagescollide2-image1-timage-x1-y1-frame1-rot1-scalex1-scaley1-image2-timage-x2-y2-frame2-rot2-scalex2-scaley2) uses the specified Rotation and Scale paramteters
+[ImagesCollide2](../../brl/brl.max2d/#function-imagescollide2image1-timage-x1-y1-frame1-rot1-scalex1-scaley1-image2-timage-x2-y2-frame2-rot2-scalex2-scaley2) uses the specified Rotation and Scale paramteters
 to calculate at a pixel level if the two images collide (overlap).
 
 
@@ -1074,7 +1074,7 @@ The BlitzMax 2D collision system manages 32 layers, the <b>mask</b> parameter ca
 be a combination of the following values or the special value COLLISION_LAYER_ALL in order
 to perform collision operations on multiple layers.
 
-Note: COLLISION_LAYER_32 is used by the [ImagesCollide](../../brl/brl.max2d/#function-imagescollide-image1-timage-x1-y1-frame1-image2-timage-x2-y2-frame2) and [ImagesCollide2](../../brl/brl.max2d/#function-imagescollide2-image1-timage-x1-y1-frame1-rot1-scalex1-scaley1-image2-timage-x2-y2-frame2-rot2-scalex2-scaley2) commands.
+Note: COLLISION_LAYER_32 is used by the [ImagesCollide](../../brl/brl.max2d/#function-imagescollideimage1-timage-x1-y1-frame1-image2-timage-x2-y2-frame2) and [ImagesCollide2](../../brl/brl.max2d/#function-imagescollide2image1-timage-x1-y1-frame1-rot1-scalex1-scaley1-image2-timage-x2-y2-frame2-rot2-scalex2-scaley2) commands.
 
 <table><tr><td> <b>Layer</b></td><td><b>Mask value</b></td></tr><tr><td>  COLLISION_LAYER_ALL</td><td>0</td></tr><tr><td>  COLLISION_LAYER_1</td><td>$0001</td></tr><tr><td>  COLLISION_LAYER_2</td><td>$0002</td></tr><tr><td>  COLLISION_LAYER_3</td><td>$0004</td></tr><tr><td>  COLLISION_LAYER_4</td><td>$0008</td></tr><tr><td>  COLLISION_LAYER_5</td><td>$0010</td></tr><tr><td>  COLLISION_LAYER_6</td><td>$0020</td></tr><tr><td>  COLLISION_LAYER_7</td><td>$0040</td></tr><tr><td>  COLLISION_LAYER_8</td><td>$0080</td></tr><tr><td>  COLLISION_LAYER_9</td><td>$0100</td></tr><tr><td>  COLLISION_LAYER_10</td><td>$0200</td></tr><tr><td>  COLLISION_LAYER_11</td><td>$0400</td></tr><tr><td>  COLLISION_LAYER_12</td><td>$0800</td></tr><tr><td>  COLLISION_LAYER_13</td><td>$1000</td></tr><tr><td>  COLLISION_LAYER_14</td><td>$2000</td></tr><tr><td>  COLLISION_LAYER_15</td><td>$4000</td></tr><tr><td>  COLLISION_LAYER_16</td><td>$8000</table>
 

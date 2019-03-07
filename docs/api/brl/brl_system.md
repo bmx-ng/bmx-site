@@ -28,7 +28,7 @@ There can only be one system driver initialised. A second call to this function 
 
 ### `Function SystemDriver:TSystemDriver()`
 
-Returns the BlitzMax system driver, or throws an exception if [InitSystemDriver](../../brl/brl.system/#function-initsystemdriver-driver-tsystemdriver)() hasn't been called with one.
+Returns the BlitzMax system driver, or throws an exception if [InitSystemDriver](../../brl/brl.system/#function-initsystemdriverdriver-tsystemdriver)() hasn't been called with one.
 
 <br/>
 

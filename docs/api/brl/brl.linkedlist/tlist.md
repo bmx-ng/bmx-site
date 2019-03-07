@@ -195,6 +195,12 @@ An array of objects
 
 <br/>
 
+### `Method RemoveLink( link:TLink )`
+
+Remove an object from a linked list.
+
+<br/>
+
 ## Functions
 
 ### `Function FromArray:TList( arr:Object[] )`

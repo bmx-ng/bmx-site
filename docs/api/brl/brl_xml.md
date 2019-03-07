@@ -20,7 +20,7 @@ Returns the element name.
 
 <br/>
 
-### `Method ToString:String()`
+### `Method ToString:String() Override`
 
 Returns a string representation of the element.
 

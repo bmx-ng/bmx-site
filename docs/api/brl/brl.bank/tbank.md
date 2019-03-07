@@ -198,7 +198,7 @@ End
 
 Poke a byte into a bank
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -211,13 +211,24 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(16)
+
+PokeByte myBank,0,$11
+PokeShort myBank,1,$1122 ' new address = 0+1=[1]
+PokeInt myBank,3,$11223344 ' new address = [1]+2=(3)
+PokeLong myBank,7,$1122334455667788 ' new address = (3)+4=7
+```
 <br/>
 
 ### `Method PokeByte( offset:Size_T,value:Int )`
 
 Poke a byte into a bank
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -229,6 +240,17 @@ PokeByte myBank,15,234
 For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(16)
+
+PokeByte myBank,0,$11
+PokeShort myBank,1,$1122 ' new address = 0+1=[1]
+PokeInt myBank,3,$11223344 ' new address = [1]+2=(3)
+PokeLong myBank,7,$1122334455667788 ' new address = (3)+4=7
 ```
 <br/>
 
@@ -382,7 +404,7 @@ Print PeekInt(myBank,12)
 
 Poke an int into a bank
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -395,13 +417,23 @@ For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
 Next
 ```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(16)
+
+For Local t:Int = 0 Until 4
+	PokeInt MyBank,t*4,Int(Rnd($12345678))
+Next
+```
 <br/>
 
 ### `Method PokeInt( offset:Size_T,value:Int )`
 
 Poke an int into a bank
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -412,6 +444,16 @@ PokeInt myBank,12,31415926
 
 For Local t:Int = 0 Until BankSize(myBank)
 	Print PeekByte(myBank,t)
+Next
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Local myBank:TBank=CreateBank(16)
+
+For Local t:Int = 0 Until 4
+	PokeInt MyBank,t*4,Int(Rnd($12345678))
 Next
 ```
 <br/>

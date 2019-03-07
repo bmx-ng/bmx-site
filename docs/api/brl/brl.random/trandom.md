@@ -1,34 +1,34 @@
 ---
-id: brl.random
-title: BRL.Random
-sidebar_label: BRL.Random
+id: trandom
+title: TRandom
+sidebar_label: TRandom
 ---
 
-
-<h1>Random numbers</h1>
-
-The random module contains commands for generating random numbers.
-
-The numbers generated are not really random, as without special hardware support a software algorithm cannot produce 'real' random numbers.
-
-Instead, the algorithm produces values that merely appear to be random. In reality, each generated value actually depends on the previously generated value.
-
-You can set the 'state' of the random number generator using the [SeedRnd](../../brl/brl.random/trandom/#method-seedrndseed-int) command. A common practice is to seed the random number generator with the system time when your program starts up, for example:
-```
-SeedRnd MilliSecs()
-````
-
-This ensures that the random number generator does not start in the same state each time your program is run, which would cause it to produce the same sequence of random numbers.
+Random number generator
 
 
-## Types
-| Type | Description |
-|---|---|
-| [TRandom](../../brl/brl.random/trandom) | Random number generator |
 
-## Functions
+By creating multiple TRandom objects, multiple independent
+random number generators can be used in parallel.
 
-### `Function RndFloat:Float()`
+
+## Constructors
+
+### `Method New()`
+
+Create a new random number generator
+
+<br/>
+
+### `Method New(seed:Int)`
+
+Create a new random number generator with the specified seed
+
+<br/>
+
+## Methods
+
+### `Method RndFloat:Float()`
 
 Generate random float
 
@@ -66,7 +66,7 @@ Print "    Exact probability = " + ( 15.0 / 29.0 )
 ```
 <br/>
 
-### `Function RndDouble:Double()`
+### `Method RndDouble:Double()`
 
 Generate random double
 
@@ -104,7 +104,7 @@ Print "    Exact probability = " + ( 15.0 / 29.0 )
 ```
 <br/>
 
-### `Function Rnd:Double(minValue:Double = 1, maxValue:Double = 0)`
+### `Method Rnd:Double(minValue:Double = 1, maxValue:Double = 0)`
 
 Generate random double
 
@@ -144,12 +144,12 @@ Print "    Exact area = " + Pi     '  4 * Pi/4, compare with estimate
 ```
 <br/>
 
-### `Function Rand:Int(minValue:Int, maxValue:Int = 1)`
+### `Method Rand:Int(minValue:Int, maxValue:Int = 1)`
 
 Generate random integer
 
 
-The optional parameter allows you to use [Rand](../../brl/brl.random/trandom/#method-rand-intminvalue-int-maxvalue-int-1) in 2 ways:
+The optional parameter allows you to use [Rand](../../../brl/brl.random/trandom/#method-rand-intminvalue-int-maxvalue-int-1) in 2 ways:
 
 <table><tr><td> <b>Format</b></td><td><b>Result</b></td></tr><tr><td>  &Rand(x)</td><td>Random integer in the range 1 to x (inclusive)</td></tr><tr><td>  &Rand(x,y)</td><td>Random integer in the range x to y (inclusive)</table>
 
@@ -180,7 +180,7 @@ Next
 ```
 <br/>
 
-### `Function SeedRnd(seed:Int)`
+### `Method SeedRnd(seed:Int)`
 
 Set random number generator seed
 
@@ -211,7 +211,7 @@ Next
 ```
 <br/>
 
-### `Function RndSeed:Int()`
+### `Method RndSeed:Int()`
 
 Get random number generator seed
 

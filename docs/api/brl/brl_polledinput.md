@@ -156,7 +156,7 @@ The character code of the next character.
 Flush key states and character queue.
 
 
-[FlushKeys](../../brl/brl.polledinput/#function-flushkeys-resetstates-int-true) resets the state of all keys to 'off', and resets the character queue
+[FlushKeys](../../brl/brl.polledinput/#function-flushkeysresetstates-int-true) resets the state of all keys to 'off', and resets the character queue
 used by [GetChar](../../brl/brl.polledinput/#function-getchar).
 
 

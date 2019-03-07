@@ -457,6 +457,49 @@ End If
 ```
 <br/>
 
+### `Method getContent:String()`
+
+Reads the value of a node.
+
+#### Returns
+The node content.
+
+
+<br/>
+
+### `Method findElement:TxmlNode(element:String = "", attr:String = "", value:String = "")`
+
+Finds an element of the given <b>element</b> name, attribute or attribute/value.
+
+#### Returns
+A node or Null if no match was found.
+
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.xml
+Import brl.standardio
+
+Local docname:String = "sample.xml"
+Local doc:TxmlDoc
+
+doc = TxmlDoc.parseFile(docname)
+If doc Then
+
+	Local root:TxmlNode = doc.getRootElement()
+	
+	Local node:TxmlNode = root.findElement("author")
+	
+	If node Then
+		Print node.ToString()
+	End If
+
+End If
+```
+<br/>
+
 ### `Method Free()`
 
 Frees a node and all of its children.

@@ -64,7 +64,7 @@ the hook data.
 
 <br/>
 
-### `Method ToString$()`
+### `Method ToString$() Override`
 
 Convert event to a string
 

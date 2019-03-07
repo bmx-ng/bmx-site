@@ -88,7 +88,7 @@ Get current event id
 The <b>id</b> field of the [CurrentEvent](../../brl/brl.eventqueue/#global-currentevent-tevent-nullevent) global variable
 
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -103,6 +103,28 @@ Repeat
   Case EVENT_WINDOWCLOSE
      End
    End Select
+Forever
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Import MaxGUI.Drivers
+
+Local window:tgadget=CreateWindow("events",0,0,320,240)
+
+Local button:tgadget=CreateButton("Button1",4,4,80,24,window)
+Local canvas:tgadget=CreateCanvas(84,4,80,24,window,1)
+
+Repeat
+	WaitEvent()
+	If EventID()=EVENT_WINDOWCLOSE End
+	
+	Select EventID()
+		Case EVENT_GADGETACTION Print "gadgetaction (buttonpress, etc.)"
+		Case EVENT_MOUSEMOVE Print "canvas mousemove"
+	End Select
+	
 Forever
 ```
 <br/>
@@ -253,7 +275,7 @@ Get current event source object
 The <b>source</b> field of the [CurrentEvent](../../brl/brl.eventqueue/#global-currentevent-tevent-nullevent) global variable
 
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -276,6 +298,28 @@ Repeat
          SetGadgetText(Button2,"Two clicked")
       End Select
    End Select
+Forever
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Import MaxGUI.Drivers
+
+Local window:tgadget=CreateWindow("events",0,0,320,240)
+
+Local button1:tgadget=CreateButton("Button1",4,4,80,24,window)
+Local button2:tgadget=CreateButton("Button2",84,4,80,24,window)
+
+Repeat
+	WaitEvent()
+	If EventID()=EVENT_WINDOWCLOSE End
+	
+	Select EventSource()
+		Case button1 Print "button1"
+		Case button2 Print "button2"
+	End Select
+	
 Forever
 ```
 <br/>

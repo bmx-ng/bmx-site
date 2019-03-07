@@ -21,7 +21,471 @@ Much of the functionality provided by this module is hidden from application pro
 | [TOutOfDataException](../../brl/brl.blitz/toutofdataexception) | Out of data exception |
 | [TRuntimeException](../../brl/brl.blitz/truntimeexception) | Runtime exception |
 
+## Interfaces
+| Interface | Description |
+|---|---|
+| [IDisposable](../../brl/brl.blitz/idisposable) | Provides a mechanism for releasing resources. |
+
 ## Functions
+
+### `Function Max:Int(a:Int, b:Int)`
+
+Returns the larger of the two [Int](../../brl/brl.blitz/#int) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:Long(a:Long, b:Long)`
+
+Returns the larger of the two [Long](../../brl/brl.blitz/#long) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:Float(a:Float, b:Float)`
+
+Returns the larger of the two [Float](../../brl/brl.blitz/#float) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:Double(a:Double, b:Double)`
+
+Returns the larger of the two [Double](../../brl/brl.blitz/#double) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:Byte(a:Byte, b:Byte)`
+
+Returns the larger of the two [Byte](../../brl/brl.blitz/#byte) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:Short(a:Short, b:Short)`
+
+Returns the larger of the two [Short](../../brl/brl.blitz/#short) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:UInt(a:UInt, b:UInt)`
+
+Returns the larger of the two [UInt](../../brl/brl.blitz/#uint) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:ULong(a:ULong, b:ULong)`
+
+Returns the larger of the two [ULong](../../brl/brl.blitz/#ulong) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:Size_T(a:Size_T, b:Size_T)`
+
+Returns the larger of the two [Size_T](../../brl/brl.blitz/#size-t) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Min:Int(a:Int, b:Int)`
+
+Returns the lesser of the two [Int](../../brl/brl.blitz/#int) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:Long(a:Long, b:Long)`
+
+Returns the lesser of the two [Long](../../brl/brl.blitz/#long) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:Float(a:Float, b:Float)`
+
+Returns the lesser of the two [Float](../../brl/brl.blitz/#float) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:Double(a:Double, b:Double)`
+
+Returns the lesser of the two [Double](../../brl/brl.blitz/#double) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:Byte(a:Byte, b:Byte)`
+
+Returns the lesser of the two [Byte](../../brl/brl.blitz/#byte) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:Short(a:Short, b:Short)`
+
+Returns the lesser of the two [Short](../../brl/brl.blitz/#short) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:UInt(a:UInt, b:UInt)`
+
+Returns the lesser of the two [UInt](../../brl/brl.blitz/#uint) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:ULong(a:ULong, b:ULong)`
+
+Returns the lesser of the two [ULong](../../brl/brl.blitz/#ulong) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:Size_T(a:Size_T, b:Size_T)`
+
+Returns the lesser of the two [Size_T](../../brl/brl.blitz/#size-t) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Abs:Int(a:Int)`
+
+Returns the absolute value of the [Int](../../brl/brl.blitz/#int) argument.
+
+#### Example
+```blitzmax
+Rem
+Abs is a mathematical operator that performs the Absolute function.
+End Rem
+
+SuperStrict
+
+For Local f:Float = -1 To 1 Step 0.125
+	Print "Abs "+f+"="+Abs f
+Next
+```
+<br/>
+
+### `Function Abs:Float(a:Float)`
+
+Returns the absolute value of the [Float](../../brl/brl.blitz/#float) argument.
+
+#### Example
+```blitzmax
+Rem
+Abs is a mathematical operator that performs the Absolute function.
+End Rem
+
+SuperStrict
+
+For Local f:Float = -1 To 1 Step 0.125
+	Print "Abs "+f+"="+Abs f
+Next
+```
+<br/>
+
+### `Function Abs:Double(a:Double)`
+
+Returns the absolute value of the [Double](../../brl/brl.blitz/#double) argument.
+
+#### Example
+```blitzmax
+Rem
+Abs is a mathematical operator that performs the Absolute function.
+End Rem
+
+SuperStrict
+
+For Local f:Float = -1 To 1 Step 0.125
+	Print "Abs "+f+"="+Abs f
+Next
+```
+<br/>
+
+### `Function Abs:Long(a:Long)`
+
+Returns the absolute value of the [Long](../../brl/brl.blitz/#long) argument.
+
+#### Example
+```blitzmax
+Rem
+Abs is a mathematical operator that performs the Absolute function.
+End Rem
+
+SuperStrict
+
+For Local f:Float = -1 To 1 Step 0.125
+	Print "Abs "+f+"="+Abs f
+Next
+```
+<br/>
+
+### `Function Sgn:Int(a:Int)`
+
+Returns the sign of the [Int](../../brl/brl.blitz/#int) argument.
+
+#### Example
+```blitzmax
+Rem
+Sgn is a mathematical operator that returns the sign of a value.
+End Rem
+
+SuperStrict
+
+Print Sgn 50	'1
+Print Sgn 0		'0
+Print Sgn -50	'-1
+```
+<br/>
+
+### `Function Sgn:Float(a:Float)`
+
+Returns the sign of the [Float](../../brl/brl.blitz/#float) argument.
+
+#### Example
+```blitzmax
+Rem
+Sgn is a mathematical operator that returns the sign of a value.
+End Rem
+
+SuperStrict
+
+Print Sgn 50	'1
+Print Sgn 0		'0
+Print Sgn -50	'-1
+```
+<br/>
+
+### `Function Sgn:Double(a:Double)`
+
+Returns the sign of the [Double](../../brl/brl.blitz/#double) argument.
+
+#### Example
+```blitzmax
+Rem
+Sgn is a mathematical operator that returns the sign of a value.
+End Rem
+
+SuperStrict
+
+Print Sgn 50	'1
+Print Sgn 0		'0
+Print Sgn -50	'-1
+```
+<br/>
+
+### `Function Sgn:Long(a:Long)`
+
+Returns the sign of the [Long](../../brl/brl.blitz/#long) argument.
+
+#### Example
+```blitzmax
+Rem
+Sgn is a mathematical operator that returns the sign of a value.
+End Rem
+
+SuperStrict
+
+Print Sgn 50	'1
+Print Sgn 0		'0
+Print Sgn -50	'-1
+```
+<br/>
 
 ### `Function RuntimeError( message$ )`
 
@@ -280,7 +744,7 @@ See [GCSuspend](../../brl/brl.blitz/#function-gcsuspend) for more details.
 
 <br/>
 
-### `Function GCCollect:Int()`
+### `Function GCCollect:Size_T()`
 
 Run garbage collector
 
@@ -310,7 +774,7 @@ Returns 0 if there is no more to collect.
 
 <br/>
 
-### `Function GCMemAlloced:Int()`
+### `Function GCMemAlloced:Size_T()`
 
 Memory allocated by application
 
@@ -334,6 +798,44 @@ Private: do not use
 ### `Function GCLeave()`
 
 Private: do not use
+
+<br/>
+
+### `Function GCRetain(obj:Object)`
+
+Retains a reference to the specified [Object](../../brl/brl.blitz/#object), preventing it from being collected.
+
+<br/>
+
+### `Function GCRelease(obj:Byte Ptr)`
+
+Releases a reference from the specified [Object](../../brl/brl.blitz/#object).
+
+<br/>
+
+### `Function GCThreadIsRegistered:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the current thread is registered with the garbage collector.
+
+<br/>
+
+### `Function GCRegisterMyThread:Int()`
+
+Registers the current thread with the garbage collector.
+
+#### Returns
+0 on success, 1 if the thread was already registered, or -1 if threads are not supported.
+
+
+<br/>
+
+### `Function GCUnregisterMyThread:Int()`
+
+Unregisters the previously registered current thread.
+
+Note, that any memory allocated by the garbage collector from the current thread will no longer be
+accessible after the thread is unregistered.
+
 
 <br/>
 
@@ -378,6 +880,9 @@ The [AppDir](../../brl/brl.blitz/#global-appdir-bbappdir) global variable contai
 executing application. An application's initial current directory is also set to [AppDir](../../brl/brl.blitz/#global-appdir-bbappdir)
 when an application starts.
 
+In a compiled DLL, the [AppDir](../../brl/brl.blitz/#global-appdir-bbappdir) global variable will instead contain the fully qualified
+directory of the DLL.
+
 
 #### Example
 ```blitzmax
@@ -400,6 +905,9 @@ Application file name
 
 The [AppFile](../../brl/brl.blitz/#global-appfile-bbappfile) global variable contains the fully qualified file name of the currently
 executing application.
+
+In a compiled DLL, the [AppFile](../../brl/brl.blitz/#global-appfile-bbappfile) global variable will instead contain the fully qualified
+file name of the DLL.
 
 
 #### Example
@@ -1746,6 +2254,18 @@ End a user defined structure declaration
 
 <br/>
 
+### `Enum`
+
+Begin an enumeration declaration
+
+<br/>
+
+### `EndEnum`
+
+End an enumeration declaration
+
+<br/>
+
 ### `Extends`
 
 Specify supertype(s) of a user defined type
@@ -1926,6 +2446,15 @@ Denote a function for export to a shared library. The generated function name wi
 
 <br/>
 
+### `Override`
+
+Indicates that a method declaration is intended to override a method declaration in a supertype.
+
+Use of [Override](../../brl/brl.blitz/#override) on a method that does not override a method will result in a compilation error.
+
+
+<br/>
+
 ### `Where`
 
 Specify constraints on the types that can be used as arguments for a type parameter defined in a generic declaration
@@ -2092,7 +2621,7 @@ Print GCMemAlloced()
 
 ### `Public`
 
-Make a type, constant, global variable or function accessible from outside the current source file (default)
+Make types, constants, global variables, functions or type members accessible from outside the current source file (default)
 
 #### Example
 ```blitzmax
@@ -2114,7 +2643,7 @@ Global posx:Int,posy:Int,posz:Int
 
 ### `Private`
 
-Make a type, constant, global variable or function only accessible from within the current source file, or make a type member only accessible from within that type.
+Make types, constants, global variables, functions or type members only accessible from within the current source file.
 
 #### Example
 ```blitzmax
@@ -2137,7 +2666,7 @@ Global posx:Int,posy:Int,posz:Int
 
 ### `Protected`
 
-Make a type member accessible only from within that type and from its subtypes.
+Make type members only accessible from within the current source file and within subtypes.
 
 #### Example
 ```blitzmax
@@ -2672,24 +3201,6 @@ Print Len b		'prints 20
 ```
 <br/>
 
-### `Abs`
-
-Numeric 'absolute value' unary operator
-
-#### Example
-```blitzmax
-Rem
-Abs is a mathematical operator that performs the Absolute function.
-End Rem
-
-SuperStrict
-
-For Local f:Float = -1 To 1 Step 0.125
-	Print "Abs "+f+"="+Abs f
-Next
-```
-<br/>
-
 ### `Mod`
 
 Numeric 'modulus' or 'remainder' binary operator
@@ -2705,67 +3216,6 @@ SuperStrict
 For Local i:Int = 6 To -6 Step -1
 	Print i+" Mod 3="+(i Mod 3)
 Next
-```
-<br/>
-
-### `Sgn`
-
-Numeric 'sign' unary operator
-
-#### Example
-```blitzmax
-Rem
-Sgn is a mathematical operator that returns the sign of a value.
-End Rem
-
-SuperStrict
-
-Print Sgn 50	'1
-Print Sgn 0		'0
-Print Sgn -50	'-1
-```
-<br/>
-
-### `Min`
-
-Numeric 'minimum' builtin function
-
-#### Returns
-The lesser of the two numeric arguments
-
-
-#### Example
-```blitzmax
-Rem
-Min evaluates to the value of the smallest of the two operators.
-End Rem
-
-SuperStrict
-
-Print Min(10,20)	'10
-Print Min(20,10)	'10
-```
-<br/>
-
-### `Max`
-
-Numeric 'maximum' builtin function
-
-#### Returns
-The larger of the two numeric arguments
-
-
-#### Example
-```blitzmax
-Rem
-Max
-Max evaluates to the value of the largest of the two operators.
-End Rem
-
-SuperStrict
-
-Print Max(10,20)	'20
-Print Max(20,10)	'20
 ```
 <br/>
 

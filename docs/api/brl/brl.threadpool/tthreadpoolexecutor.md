@@ -9,7 +9,7 @@ An executor that executes each submitted task using one of possibly several pool
 
 ## Methods
 
-### `Method execute(command:TRunnable)`
+### `Method execute(command:TRunnable) Override`
 
 Executes the given command at some time in the future.
 
