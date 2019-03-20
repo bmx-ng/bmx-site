@@ -13,7 +13,7 @@ Topic: http://mojolabs.nz/posts.php?topic=88042
 Site: http://www.playniax.com
 
 ## Dig - 2d game and app framework
-Repo: http://github.com/GWRon
+Repo: https://github.com/GWRon/Dig
 
 ## Digital Wizard's Lab framework
 Repo: http://code.google.com/p/dwlab/
