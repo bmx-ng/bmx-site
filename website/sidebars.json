@@ -95,9 +95,11 @@
       "api/brl/brl.audiosample",
       "api/brl/brl.bank",
       "api/brl/brl.bankstream",
+      "api/brl/brl.base64",
       "api/brl/brl.blitz",
       "api/brl/brl.bmploader",
       "api/brl/brl.clipboard",
+      "api/brl/brl.crypto",
       "api/brl/brl.d3d7max2d",
       "api/brl/brl.d3d9max2d",
       "api/brl/brl.directsoundaudio",
@@ -202,6 +204,11 @@
       "api/brl/brl.bankstream/tbankstream"
     ]
   },
+  "brl_base64": {
+    "BRL.Base64": [
+      "api/brl/brl.base64/tbase64"
+    ]
+  },
   "brl_blitz": {
     "BRL.Blitz": [
       "api/brl/brl.blitz/arrayboundsexception",
@@ -219,6 +226,31 @@
       "api/brl/brl.clipboard/tclipboardopts",
       "api/brl/brl.clipboard/twin32clipboardopts",
       "api/brl/brl.clipboard/tx11clipboardopts"
+    ]
+  },
+  "brl_crypto": {
+    "BRL.Crypto": [
+      "api/brl/brl.crypto/tcryptorandom",
+      "api/brl/brl.crypto/tcryptosecretbox",
+      "api/brl/brl.crypto/tcryptohash",
+      "api/brl/brl.crypto/tcryptosign",
+      "api/brl/brl.crypto/tcryptokeyexchange",
+      "api/brl/brl.crypto/tcryptokey",
+      "api/brl/brl.crypto/tcryptohashkey",
+      "api/brl/brl.crypto/tcryptosecretboxkey",
+      "api/brl/brl.crypto/tcryptosignature",
+      "api/brl/brl.crypto/tcryptoexchangekeypair",
+      "api/brl/brl.crypto/tcryptosessionkeypair",
+      "api/brl/brl.crypto/tcryptonpacket",
+      "api/brl/brl.crypto/tcryptokk1packet",
+      "api/brl/brl.crypto/tcryptokk2packet",
+      "api/brl/brl.crypto/tcryptoxx1packet",
+      "api/brl/brl.crypto/tcryptoxx2packet",
+      "api/brl/brl.crypto/tcryptoxx3packet",
+      "api/brl/brl.crypto/tcryptoexchangestate",
+      "api/brl/brl.crypto/tcryptopwhashmasterkey",
+      "api/brl/brl.crypto/tcryptopwhashstoredkey",
+      "api/brl/brl.crypto/tcryptopasswordhash"
     ]
   },
   "brl_event": {
