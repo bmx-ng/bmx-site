@@ -108,6 +108,7 @@
       "api/brl/brl.eventqueue",
       "api/brl/brl.filesystem",
       "api/brl/brl.freeaudioaudio",
+      "api/brl/brl.geometry",
       "api/brl/brl.glgraphics",
       "api/brl/brl.glmax2d",
       "api/brl/brl.gnet",
@@ -256,6 +257,16 @@
   "brl_event": {
     "BRL.Event": [
       "api/brl/brl.event/tevent"
+    ]
+  },
+  "brl_geometry": {
+    "BRL.Geometry": [
+      "api/brl/brl.geometry/svec2",
+      "api/brl/brl.geometry/svec3",
+      "api/brl/brl.geometry/smat2",
+      "api/brl/brl.geometry/smat3",
+      "api/brl/brl.geometry/smat4",
+      "api/brl/brl.geometry/squat"
     ]
   },
   "brl_json": {
