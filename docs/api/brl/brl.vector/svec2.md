@@ -9,9 +9,9 @@ A 2-element structure that can be used to represent positions and directions in 
 
 ## Constructors
 
-### `Method New(x:Float, y:Float)`
+### `Method New(x:Double, y:Double)`
 
-Creates a new [SVec2](../../../brl/brl.geometry/svec2) from the supplied arguments.
+Creates a new [SVec2](../../../brl/brl.vector/svec2) from the supplied arguments.
 
 <br/>
 
@@ -31,14 +31,14 @@ Returns [True](../../../brl/brl.blitz/#true) if the vector and <b>b</b> are apro
 
 ### `Method Operator+:SVec2(b:SVec2)`
 
-Adds <b>b</b> to the vector, returning the new vector.
+Adds <b>b</b> to the vector, returning a new vector.
 
 #### Example
 ```blitzmax
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(3, 2)
 Local b:SVec2 = New SVec2(-2, 1)
@@ -51,14 +51,14 @@ Print c.ToString() ' 1, 3
 
 ### `Method Operator-:SVec2(b:SVec2)`
 
-Subtracts <b>b</b> from the vector, returning the new vector.
+Subtracts <b>b</b> from the vector, returning a new vector.
 
 #### Example
 ```blitzmax
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(12, 2)
 
@@ -70,26 +70,26 @@ Print b.ToString() ' -12, -2
 
 ### `Method Operator*:SVec2(b:SVec2)`
 
-Multiplies the vector by <b>b</b>, returning the vectors.
+Multiplies the vector by <b>b</b>, returning a new vector.
 
 <br/>
 
 ### `Method Operator/:SVec2(b:SVec2)`
 
-Divides the vector by <b>b</b>, returning the new vector.
+Divides the vector by <b>b</b>, returning a new vector.
 
 <br/>
 
 ### `Method Operator-:SVec2()`
 
-Returns the vector, negated.
+Returns a new vector, negated.
 
 #### Example
 ```blitzmax
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(12, 2)
 
@@ -99,19 +99,19 @@ Print b.ToString() ' -12, -2
 ```
 <br/>
 
-### `Method Operator*:SVec2(s:Float)`
+### `Method Operator*:SVec2(s:Double)`
 
-Scales the vector by <b>s</b>, returning the new vector.
-
-<br/>
-
-### `Method Operator/:SVec2(s:Float)`
-
-Divides the vector by <b>s</b>, returning the new vector.
+Scales the vector by <b>s</b>, returning a new vector.
 
 <br/>
 
-### `Method Operator[]:Float(index:Int)`
+### `Method Operator/:SVec2(s:Double)`
+
+Divides the vector by <b>s</b>, returning a new vector.
+
+<br/>
+
+### `Method Operator[]:Double(index:Int)`
 
 Retrieves the x or y component using [0] or [1] respectively.
 
@@ -120,7 +120,7 @@ Retrieves the x or y component using [0] or [1] respectively.
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(6, 4)
 
@@ -128,31 +128,9 @@ Print a[0] + ", " + a[1]
 ```
 <br/>
 
-### `Method Operator[]=(index:Int, value:Float)`
-
-Sets the x or y component using [0] or [1] respectively.
-
-#### Example
-```blitzmax
-SuperStrict
-
-Framework brl.standardio
-Import brl.geometry
-
-Local a:SVec2 = New SVec2(0, 0)
-
-Print a.ToString()
-
-a[0] = 6
-a[1] = 4
-
-Print a.ToString()
-```
-<br/>
-
 ## Methods
 
-### `Method Angle:Float(b:SVec2)`
+### `Method AngleTo:Double(b:SVec2)`
 
 Returns the unsigned angle between this vector and <b>b</b>.
 
@@ -161,46 +139,28 @@ Returns the unsigned angle between this vector and <b>b</b>.
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(-5, -5)
 Local b:SVec2 = New SVec2(5, 5)
 
 
-Local c:Float = a.Angle(b)
+Local c:Double = a.AngleTo(b)
 
 Print c
 ```
 <br/>
 
-### `Method Apply:SVec2(z:SMat2)`
-
-Applies the 2x2 matrix <b>z</b> to the vector, returning the new vector.
-
-<br/>
-
-### `Method Apply:SVec2(z:SMat3 Var)`
-
-Applies the 3x3 matrix to the vector, returning the new vector.
-
-<br/>
-
-### `Method Apply:SVec2(z:SMat4 Var)`
-
-Applies the 4x4 matrix to the vector, returning the new vector.
-
-<br/>
-
 ### `Method Clamp:SVec2(minv:SVec2, maxv:SVec2)`
 
-Returns the vector clamped between the vectors <b>minv</b> and <b>maxv</b>.
+Returns a vector clamped between the vectors <b>minv</b> and <b>maxv</b>.
 
 #### Example
 ```blitzmax
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(0, 0)
 Local b:SVec2 = New SVec2(10, 5)
@@ -244,7 +204,7 @@ Returns a vector that is made from the largest components of the two vectors.
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(12, 8)
 Local b:SVec2 = New SVec2(10, 16)
@@ -256,7 +216,7 @@ Print c.ToString() ' 12, 16
 ```
 <br/>
 
-### `Method Lerp:SVec2(b:SVec2, t:Float)`
+### `Method Interpolate:SVec2(b:SVec2, t:Double)`
 
 Linearly interpolates between two vectors.
 
@@ -269,20 +229,20 @@ This is commonly used to find a point some fraction of the way along a line betw
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(-6, 8)
 Local b:SVec2 = New SVec2(5, 12)
 
-Print a.Lerp(b, 0).ToString() ' -6, 8
-Print a.Lerp(b, 1).ToString() ' 5, 12
-Print a.Lerp(b, 0.5).ToString() ' -0.5, 10
+Print a.Interpolate(b, 0).ToString() ' -6, 8
+Print a.Interpolate(b, 1).ToString() ' 5, 12
+Print a.Interpolate(b, 0.5).ToString() ' -0.5, 10
 ```
 <br/>
 
 ### `Method Normal:SVec2()`
 
-Returns the vector with a magnitude of 1.
+Returns a vector with a magnitude of 1.
 
 When normalized, a vector keeps the same direction but its length is 1.0.
 
@@ -292,7 +252,7 @@ When normalized, a vector keeps the same direction but its length is 1.0.
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(10, 0)
 
@@ -302,11 +262,11 @@ Print b.ToString() ' 1, 0
 ```
 <br/>
 
-### `Method Dot:Float(b:SVec2)`
+### `Method Dot:Double(b:SVec2)`
 
 Returns the dot product of two vectors.
 
-For normalized vectors [Dot](../../../brl/brl.geometry/svec2/#method-dot-floatb-svec2) returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions,
+For normalized vectors [Dot](../../../brl/brl.vector/svec2/#method-dot-doubleb-svec2) returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions,
 and a number in between for other cases (e.g. Dot returns zero if vectors are perpendicular).
 
 
@@ -315,7 +275,7 @@ and a number in between for other cases (e.g. Dot returns zero if vectors are pe
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(-6, 8)
 Local b:SVec2 = New SVec2(5, 12)
@@ -326,7 +286,7 @@ Print dot ' 66
 ```
 <br/>
 
-### `Method Length:Float()`
+### `Method Length:Double()`
 
 Returns the length of the vector.
 
@@ -335,7 +295,7 @@ Returns the length of the vector.
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(3, 4)
 
@@ -345,7 +305,7 @@ Print length ' 5
 ```
 <br/>
 
-### `Method LengthSquared:Float()`
+### `Method LengthSquared:Double()`
 
 Returns the squared length of the vector.
 
@@ -358,7 +318,7 @@ Often if you are comparing lengths of two vectors you can just compare their squ
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(3, 4)
 
@@ -368,13 +328,13 @@ Print length ' 25
 ```
 <br/>
 
-### `Method Distance:Float(b:SVec2)`
+### `Method Distance:Double(b:SVec2)`
 
 Returns the distance between the vector And <b>b</b>.
 
 <br/>
 
-### `Method DistanceSquared:Float(b:SVec2)`
+### `Method DistanceSquared:Double(b:SVec2)`
 
 Returns the squared distance between the vector and <b>b</b>.
 
@@ -388,14 +348,14 @@ Returns a vector perpendicular to the vector.
 
 ### `Method Reflect:SVec2(n:SVec2)`
 
-Returns the vector reflected from the given plane, specified by its normal vector.
+Returns a vector reflected from the given plane, specified by its normal vector.
 
 #### Example
 ```blitzmax
 SuperStrict
 
 Framework brl.standardio
-Import brl.geometry
+Import brl.vector
 
 Local a:SVec2 = New SVec2(5, 0)
 Local b:SVec2 = New SVec2(0, 10)

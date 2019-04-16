@@ -108,7 +108,6 @@
       "api/brl/brl.eventqueue",
       "api/brl/brl.filesystem",
       "api/brl/brl.freeaudioaudio",
-      "api/brl/brl.geometry",
       "api/brl/brl.glgraphics",
       "api/brl/brl.glmax2d",
       "api/brl/brl.gnet",
@@ -120,6 +119,7 @@
       "api/brl/brl.linkedlist",
       "api/brl/brl.map",
       "api/brl/brl.math",
+      "api/brl/brl.matrix",
       "api/brl/brl.max2d",
       "api/brl/brl.maxlua",
       "api/brl/brl.oggloader",
@@ -127,6 +127,7 @@
       "api/brl/brl.pixmap",
       "api/brl/brl.pngloader",
       "api/brl/brl.polledinput",
+      "api/brl/brl.quaternion",
       "api/brl/brl.ramstream",
       "api/brl/brl.random",
       "api/brl/brl.reflection",
@@ -144,6 +145,7 @@
       "api/brl/brl.threads",
       "api/brl/brl.timer",
       "api/brl/brl.timerdefault",
+      "api/brl/brl.vector",
       "api/brl/brl.volumes",
       "api/brl/brl.wavloader",
       "api/brl/brl.xml"
@@ -259,16 +261,6 @@
       "api/brl/brl.event/tevent"
     ]
   },
-  "brl_geometry": {
-    "BRL.Geometry": [
-      "api/brl/brl.geometry/svec2",
-      "api/brl/brl.geometry/svec3",
-      "api/brl/brl.geometry/smat2",
-      "api/brl/brl.geometry/smat3",
-      "api/brl/brl.geometry/smat4",
-      "api/brl/brl.geometry/squat"
-    ]
-  },
   "brl_json": {
     "BRL.Json": [
       "api/brl/brl.json/tjson",
@@ -300,6 +292,19 @@
       "api/brl/brl.map/tstringmap"
     ]
   },
+  "brl_matrix": {
+    "BRL.Matrix": [
+      "api/brl/brl.matrix/smat2",
+      "api/brl/brl.matrix/smat2f",
+      "api/brl/brl.matrix/smat2i",
+      "api/brl/brl.matrix/smat3",
+      "api/brl/brl.matrix/smat3f",
+      "api/brl/brl.matrix/smat3i",
+      "api/brl/brl.matrix/smat4",
+      "api/brl/brl.matrix/smat4f",
+      "api/brl/brl.matrix/smat4i"
+    ]
+  },
   "brl_max2d": {
     "BRL.Max2D": [
       "api/brl/brl.max2d/timage"
@@ -315,6 +320,13 @@
     "BRL.Pixmap": [
       "api/brl/brl.pixmap/tpixmap",
       "api/brl/brl.pixmap/tpixmaploader"
+    ]
+  },
+  "brl_quaternion": {
+    "BRL.Quaternion": [
+      "api/brl/brl.quaternion/squat",
+      "api/brl/brl.quaternion/squatf",
+      "api/brl/brl.quaternion/squati"
     ]
   },
   "brl_stream": {
@@ -333,6 +345,16 @@
     "BRL.StringBuilder": [
       "api/brl/brl.stringbuilder/tstringbuilder",
       "api/brl/brl.stringbuilder/tsplitbuffer"
+    ]
+  },
+  "brl_vector": {
+    "BRL.Vector": [
+      "api/brl/brl.vector/svec2",
+      "api/brl/brl.vector/svec2f",
+      "api/brl/brl.vector/svec2i",
+      "api/brl/brl.vector/svec3",
+      "api/brl/brl.vector/svec3f",
+      "api/brl/brl.vector/svec3i"
     ]
   },
   "brl_volumes": {

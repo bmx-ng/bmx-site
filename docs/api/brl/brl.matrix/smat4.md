@@ -9,9 +9,9 @@ A standard 4x4 transformation matrix.
 
 ## Constructors
 
-### `Method New(a:Float, b:Float, c:Float, d:Float, e:Float, f:Float, g:Float, h:Float, i:Float, j:Float, k:Float, l:Float, m:Float, n:Float, o:Float, p:Float)`
+### `Method New(a:Double, b:Double, c:Double, d:Double, e:Double, f:Double, g:Double, h:Double, i:Double, j:Double, k:Double, l:Double, m:Double, n:Double, o:Double, p:Double)`
 
-Creates a new [SMat4](../../../brl/brl.geometry/smat4) from the supplied arguments.
+Creates a new [SMat4](../../../brl/brl.matrix/smat4) from the supplied arguments.
 
 <br/>
 
@@ -31,11 +31,23 @@ Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 ### `Method Operator*:SMat4(z:SMat4 Var)`
 
-Multiplies the matrix by <b>z</b>, returnin a new matrix.
+Multiplies the matrix by <b>z</b>, returning a new matrix.
 
 <br/>
 
 ## Methods
+
+### `Method Apply:SVec2(v:SVec2)`
+
+Applies the matrix to the vector <b>v</b>, returning a new vector.
+
+<br/>
+
+### `Method Apply:SVec3(v:SVec3)`
+
+Applies the 4x4 matrix <b>b</b> to the vector, returning a new vector.
+
+<br/>
 
 ### `Method Adjoint:SMat4()`
 
@@ -45,11 +57,11 @@ Returns the transposition of the cofactor matrix.
 
 ### `Method CompMul:SMat4(z:SMat4 Var)`
 
-Multiplies the matrix by <b>z</b> by its components, return a new matrix.
+Multiplies the matrix by <b>z</b> by its components, returning a new matrix.
 
 <br/>
 
-### `Method Det:Float()`
+### `Method Determinant:Double()`
 
 Returns the determinant of the matrix.
 
@@ -65,7 +77,7 @@ If some matrix transforms vectors in a particular way, then the inverse matrix c
 
 <br/>
 
-### `Method Rotate:SMat4(axis:SVec3, angle:Float)`
+### `Method Rotate:SMat4(axis:SVec3, angle:Double)`
 
 Creates a rotation matrix, rotated <b>angle</b> degrees around the point <b>axis</b>.
 
@@ -79,7 +91,7 @@ Scales the matrix, return the new scaled matrix.
 
 ### `Method Transpose:SMat4()`
 
-Returns the transpose of this matrix
+Returns the transpose of this matrix.
 
 The transposed matrix is the one that has the columns exchanged with its rows.
 
@@ -106,7 +118,7 @@ Returns the identity matrix.
 
 <br/>
 
-### `Function Frustum:SMat4(l:Float, r:Float, b:Float, t:Float, n:Float, f:Float)`
+### `Function Frustum:SMat4(l:Double, r:Double, b:Double, t:Double, n:Double, f:Double)`
 
 Returns a projection matrix with a viewing frustum defined by the plane coordinates passed in.
 
@@ -121,7 +133,7 @@ The right-hand vector is perpendicular to the up vector.
 
 <br/>
 
-### `Function Orthogonal:SMat4(width:Float, height:Float, zNear:Float, zFar:Float)`
+### `Function Orthogonal:SMat4(width:Double, height:Double, zNear:Double, zFar:Double)`
 
 Creates an orthogonal projection matrix.
 
@@ -130,33 +142,15 @@ The returned matrix, when used as a Camera's projection matrix, creates a view s
 
 <br/>
 
-### `Function Perspective:SMat4(fov:Float, w:Float, h:Float, n:Float, f:Float)`
+### `Function Perspective:SMat4(fov:Double, w:Double, h:Double, n:Double, f:Double)`
 
 Creates a perspective projection matrix.
 
 <br/>
 
-### `Function Rotation:SMat4(axis:SVec3, angle:Float)`
+### `Function Rotation:SMat4(axis:SVec3, angle:Double)`
 
 Returns a rotation matrix on the given <b>axis</b> and <b>angle</b> degrees.
-
-<br/>
-
-### `Function RotTrans:SMat4(a:SQuat, s:SVec3)`
-
-Creates a translation and rotation matrix.
-
-The returned matrix is such that it places objects at position <b>s</b>, oriented in rotation <b>a</b>.
-
-
-<br/>
-
-### `Function RotTransOrigin:SMat4(a:SQuat, s:SVec3, origin:SVec3)`
-
-Creates a translation, rotation and scaling matrix.
-
-The returned matrix is such that it places objects at position <b>origin</b>, oriented in rotation <b>a</b> and scaled by <b>s</b>.
-
 
 <br/>
 
@@ -169,12 +163,6 @@ Creates a scaling matrix.
 ### `Function Translation:SMat4(s:SVec3)`
 
 Creates a translation matrix.
-
-<br/>
-
-### `Function Quat:SMat4(a:SQuat)`
-
-Applies the quaternian to the matrix, return the new matrix.
 
 <br/>
 

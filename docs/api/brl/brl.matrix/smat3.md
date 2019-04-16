@@ -9,9 +9,9 @@ A 3x3 matrix.
 
 ## Constructors
 
-### `Method New(a:Float, b:Float, c:Float, d:Float, e:Float, f:Float, g:Float, h:Float, i:Float)`
+### `Method New(a:Double, b:Double, c:Double, d:Double, e:Double, f:Double, g:Double, h:Double, i:Double)`
 
-Creates a new [SMat3](../../../brl/brl.geometry/smat3) from the supplied arguments.
+Creates a new [SMat3](../../../brl/brl.matrix/smat3) from the supplied arguments.
 
 <br/>
 
@@ -19,13 +19,13 @@ Creates a new [SMat3](../../../brl/brl.geometry/smat3) from the supplied argumen
 
 ### `Method Operator+:SMat3(z:SMat3 Var)`
 
-Adds <b>z</b> to the matrix, returning the new matrix.
+Adds <b>z</b> to the matrix, returning a new matrix.
 
 <br/>
 
 ### `Method Operator-:SMat3(z:SMat3 Var)`
 
-Subtracts <b>z</b> from the matrix, returning the new matrix.
+Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 <br/>
 
@@ -36,6 +36,18 @@ Multiplies the matrix by <b>z</b>, returning a new matrix.
 <br/>
 
 ## Methods
+
+### `Method Apply:SVec2(v:SVec2)`
+
+Applies the matrix to the vector <b>v</b>, returning a new vector.
+
+<br/>
+
+### `Method Apply:SVec3(v:SVec3)`
+
+Applies the matrix to the vector <b>v</b>, returning a new vector.
+
+<br/>
 
 ### `Method Adjoint:SMat3()`
 
@@ -49,7 +61,7 @@ Multiplies the matrix by <b>z</b> by its components, return a new matrix.
 
 <br/>
 
-### `Method Det:Float()`
+### `Method Determinant:Double()`
 
 Returns the determinant of the matrix.
 
@@ -61,7 +73,7 @@ Returns the inverse of the matrix.
 
 <br/>
 
-### `Method Rotate:SMat3(angle:Float)`
+### `Method Rotate:SMat3(angle:Double)`
 
 Rotates the matrix by <b>angle</b> degrees, returning a new matrix.
 
@@ -79,12 +91,6 @@ Returns a transposition of the matrix.
 
 <br/>
 
-### `Method Quat:SMat3(a:SQuat)`
-
-Applies the quaternion <b>a</b> to the matrix, returning a new matrix.
-
-<br/>
-
 ### `Method ToString:String() Override`
 
 Returns a [String](../../../brl/brl.blitz/#string) representation of the matrix.
@@ -99,7 +105,7 @@ Return the 3x3 identity matrix.
 
 <br/>
 
-### `Function Rotation:SMat3(angle:Float)`
+### `Function Rotation:SMat3(angle:Double)`
 
 Retrns a rotation matrix of <b>angle</b> degrees.
 
