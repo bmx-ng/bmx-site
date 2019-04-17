@@ -4,7 +4,7 @@ title: SQuatI
 sidebar_label: SQuatI
 ---
 
-A Quaternion.
+An [Int](../../../brl/brl.blitz/#int) backed Quaternion.
 
 
 Quaternions are used to represent rotations.

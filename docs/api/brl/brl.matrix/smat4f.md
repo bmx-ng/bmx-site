@@ -4,7 +4,7 @@ title: SMat4F
 sidebar_label: SMat4F
 ---
 
-A standard 4x4 transformation matrix.
+A standard [Float](../../../brl/brl.blitz/#float) backed 4x4 transformation matrix.
 
 
 ## Constructors
@@ -174,7 +174,7 @@ Creates a scaling matrix.
 
 ### `Function Scaling:SMat4F(s:SVec3)`
 
-Creates a scaling matrix.
+Creates a Scaling matrix.
 
 <br/>
 

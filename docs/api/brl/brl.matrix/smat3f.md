@@ -4,7 +4,7 @@ title: SMat3F
 sidebar_label: SMat3F
 ---
 
-A 3x3 matrix.
+A [Float](../../../brl/brl.blitz/#float) backed 3x3 matrix.
 
 
 ## Constructors

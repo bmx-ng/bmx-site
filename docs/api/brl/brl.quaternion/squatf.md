@@ -4,7 +4,7 @@ title: SQuatF
 sidebar_label: SQuatF
 ---
 
-A Quaternion.
+A [Float](../../../brl/brl.blitz/#float) backed Quaternion.
 
 
 Quaternions are used to represent rotations.

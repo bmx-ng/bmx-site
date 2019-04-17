@@ -61,10 +61,11 @@ Framework brl.standardio
 Import brl.vector
 
 Local a:SVec2 = New SVec2(12, 2)
+Local b:SVec2 = New SVec2(4, 5)
 
-Local b:SVec2 = -a
+Local c:SVec2 = a - b
 
-Print b.ToString() ' -12, -2
+Print c.ToString() ' 8, -3
 ```
 <br/>
 
@@ -72,12 +73,40 @@ Print b.ToString() ' -12, -2
 
 Multiplies the vector by <b>b</b>, returning a new vector.
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.vector
+
+Local a:SVec2 = New SVec2(2, 3)
+Local b:SVec2 = New SVec2(5, 6)
+
+Local c:SVec2 = a * b
+
+Print c.ToString() ' 10, 18
+```
 <br/>
 
 ### `Method Operator/:SVec2(b:SVec2)`
 
 Divides the vector by <b>b</b>, returning a new vector.
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.vector
+
+Local a:SVec2 = New SVec2(10, 18)
+Local b:SVec2 = New SVec2(5, 6)
+
+Local c:SVec2 = a / b
+
+Print c.ToString() ' 2, 3
+```
 <br/>
 
 ### `Method Operator-:SVec2()`
@@ -328,13 +357,13 @@ Print length ' 25
 ```
 <br/>
 
-### `Method Distance:Double(b:SVec2)`
+### `Method DistanceTo:Double(b:SVec2)`
 
 Returns the distance between the vector And <b>b</b>.
 
 <br/>
 
-### `Method DistanceSquared:Double(b:SVec2)`
+### `Method DistanceToSquared:Double(b:SVec2)`
 
 Returns the squared distance between the vector and <b>b</b>.
 

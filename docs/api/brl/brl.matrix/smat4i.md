@@ -4,7 +4,7 @@ title: SMat4I
 sidebar_label: SMat4I
 ---
 
-A standard 4x4 transformation matrix.
+A standard [Int](../../../brl/brl.blitz/#int) backed 4x4 transformation matrix.
 
 
 ## Constructors

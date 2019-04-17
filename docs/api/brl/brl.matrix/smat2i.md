@@ -4,7 +4,7 @@ title: SMat2I
 sidebar_label: SMat2I
 ---
 
-A 2x2 Matrix
+An [Int](../../../brl/brl.blitz/#int) backed 2x2 Matrix.
 
 
 ## Constructors

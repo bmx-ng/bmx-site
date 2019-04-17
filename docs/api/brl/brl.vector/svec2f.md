@@ -4,7 +4,7 @@ title: SVec2F
 sidebar_label: SVec2F
 ---
 
-A 2-element structure that can be used to represent positions and directions in 2D-space.
+A [Float](../../../brl/brl.blitz/#float) backed 2-element structure that can be used to represent positions and directions in 2D-space.
 
 
 ## Constructors
@@ -148,15 +148,15 @@ Often if you are comparing lengths of two vectors you can just compare their squ
 
 <br/>
 
-### `Method Distance:Float(b:SVec2F)`
+### `Method DistanceTo:Float(b:SVec2F)`
 
 Returns the distance between the vector And <b>b</b>.
 
 <br/>
 
-### `Method DistanceSquared:Float(b:SVec2F)`
+### `Method DistanceToSquared:Float(b:SVec2F)`
 
-Returns the squared distance between the vector and <b>b</b>.
+Returns the squared distance between the vector And <b>b</b>.
 
 <br/>
 

@@ -4,7 +4,7 @@ title: SMat3I
 sidebar_label: SMat3I
 ---
 
-A 3x3 matrix.
+An [Int](../../../brl/brl.blitz/#int) backed 3x3 matrix.
 
 
 ## Constructors

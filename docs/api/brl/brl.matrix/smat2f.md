@@ -4,7 +4,7 @@ title: SMat2F
 sidebar_label: SMat2F
 ---
 
-A 2x2 Matrix
+A [Float](../../../brl/brl.blitz/#float) backed 2x2 Matrix.
 
 
 ## Constructors

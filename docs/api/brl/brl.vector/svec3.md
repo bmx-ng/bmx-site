@@ -130,13 +130,13 @@ Often if you are comparing lengths of two vectors you can just compare their squ
 
 <br/>
 
-### `Method Distance:Double(b:SVec3)`
+### `Method DistanceTo:Double(b:SVec3)`
 
 Returns the distance between the vector and <b>b</b>.
 
 <br/>
 
-### `Method DistanceSquared:Double(b:SVec3)`
+### `Method DistanceToSquared:Double(b:SVec3)`
 
 Returns the squared distance between the vector and <b>b</b>.
 

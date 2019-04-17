@@ -4,7 +4,7 @@ title: SVec3I
 sidebar_label: SVec3I
 ---
 
-A 3-element structure that can be used to represent positions and directions in 3D-space.
+An [Int](../../../brl/brl.blitz/#int) backed 3-element structure that can be used to represent positions and directions in 3D-space.
 
 
 ## Constructors
@@ -130,13 +130,13 @@ Often if you are comparing lengths of two vectors you can just compare their squ
 
 <br/>
 
-### `Method Distance:Int(b:SVec3I)`
+### `Method DistanceTo:Int(b:SVec3I)`
 
 Returns the distance between the vector and <b>b</b>.
 
 <br/>
 
-### `Method DistanceSquared:Int(b:SVec3I)`
+### `Method DistanceToSquared:Int(b:SVec3I)`
 
 Returns the squared distance between the vector and <b>b</b>.
 
