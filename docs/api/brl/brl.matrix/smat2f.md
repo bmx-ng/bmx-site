@@ -79,7 +79,7 @@ Returns the scale of this matrix.
 
 <br/>
 
-### `Method Scale:SMat2F(s:SVec2)`
+### `Method Scale:SMat2F(s:SVec2D)`
 
 Returns the scale of this matrix.
 
@@ -117,7 +117,7 @@ Creates a scaled matrix of the scale <b>s</b>.
 
 <br/>
 
-### `Function Scaling:SMat2F(s:SVec2)`
+### `Function Scaling:SMat2F(s:SVec2D)`
 
 Creates a scaled matrix of the scale <b>s</b>.
 

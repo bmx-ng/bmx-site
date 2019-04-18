@@ -294,13 +294,13 @@
   },
   "brl_matrix": {
     "BRL.Matrix": [
-      "api/brl/brl.matrix/smat2",
+      "api/brl/brl.matrix/smat2d",
       "api/brl/brl.matrix/smat2f",
       "api/brl/brl.matrix/smat2i",
-      "api/brl/brl.matrix/smat3",
+      "api/brl/brl.matrix/smat3d",
       "api/brl/brl.matrix/smat3f",
       "api/brl/brl.matrix/smat3i",
-      "api/brl/brl.matrix/smat4",
+      "api/brl/brl.matrix/smat4d",
       "api/brl/brl.matrix/smat4f",
       "api/brl/brl.matrix/smat4i"
     ]
@@ -324,7 +324,7 @@
   },
   "brl_quaternion": {
     "BRL.Quaternion": [
-      "api/brl/brl.quaternion/squat",
+      "api/brl/brl.quaternion/squatd",
       "api/brl/brl.quaternion/squatf",
       "api/brl/brl.quaternion/squati"
     ]
@@ -349,10 +349,10 @@
   },
   "brl_vector": {
     "BRL.Vector": [
-      "api/brl/brl.vector/svec2",
+      "api/brl/brl.vector/svec2d",
       "api/brl/brl.vector/svec2f",
       "api/brl/brl.vector/svec2i",
-      "api/brl/brl.vector/svec3",
+      "api/brl/brl.vector/svec3d",
       "api/brl/brl.vector/svec3f",
       "api/brl/brl.vector/svec3i"
     ]

@@ -8,7 +8,7 @@ sidebar_label: BRL.Quaternion
 ## Structs
 | Struct | Description |
 |---|---|
-| [SQuat](../../brl/brl.quaternion/squat) | A Quaternion. |
+| [SQuatD](../../brl/brl.quaternion/squatd) | A Quaternion. |
 | [SQuatF](../../brl/brl.quaternion/squatf) | A [Float](../../brl/brl.blitz/#float) backed Quaternion. |
 | [SQuatI](../../brl/brl.quaternion/squati) | An [Int](../../brl/brl.blitz/#int) backed Quaternion. |
 

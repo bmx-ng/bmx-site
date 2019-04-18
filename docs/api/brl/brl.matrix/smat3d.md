@@ -1,7 +1,7 @@
 ---
-id: smat3
-title: SMat3
-sidebar_label: SMat3
+id: smat3d
+title: SMat3D
+sidebar_label: SMat3D
 ---
 
 A 3x3 matrix.
@@ -11,25 +11,25 @@ A 3x3 matrix.
 
 ### `Method New(a:Double, b:Double, c:Double, d:Double, e:Double, f:Double, g:Double, h:Double, i:Double)`
 
-Creates a new [SMat3](../../../brl/brl.matrix/smat3) from the supplied arguments.
+Creates a new [SMat3D](../../../brl/brl.matrix/smat3d) from the supplied arguments.
 
 <br/>
 
 ## Operators
 
-### `Method Operator+:SMat3(z:SMat3 Var)`
+### `Method Operator+:SMat3D(z:SMat3D Var)`
 
 Adds <b>z</b> to the matrix, returning a new matrix.
 
 <br/>
 
-### `Method Operator-:SMat3(z:SMat3 Var)`
+### `Method Operator-:SMat3D(z:SMat3D Var)`
 
 Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 <br/>
 
-### `Method Operator*:SMat3(z:SMat3 Var)`
+### `Method Operator*:SMat3D(z:SMat3D Var)`
 
 Multiplies the matrix by <b>z</b>, returning a new matrix.
 
@@ -37,25 +37,25 @@ Multiplies the matrix by <b>z</b>, returning a new matrix.
 
 ## Methods
 
-### `Method Apply:SVec2(v:SVec2)`
+### `Method Apply:SVec2D(v:SVec2D)`
 
 Applies the matrix to the vector <b>v</b>, returning a new vector.
 
 <br/>
 
-### `Method Apply:SVec3(v:SVec3)`
+### `Method Apply:SVec3D(v:SVec3D)`
 
 Applies the matrix to the vector <b>v</b>, returning a new vector.
 
 <br/>
 
-### `Method Adjoint:SMat3()`
+### `Method Adjoint:SMat3D()`
 
 Returns the transposition of the cofactor matrix.
 
 <br/>
 
-### `Method CompMul:SMat3(z:SMat3 Var)`
+### `Method CompMul:SMat3D(z:SMat3D Var)`
 
 Multiplies the matrix by <b>z</b> by its components, return a new matrix.
 
@@ -67,25 +67,25 @@ Returns the determinant of the matrix.
 
 <br/>
 
-### `Method Invert:SMat3()`
+### `Method Invert:SMat3D()`
 
 Returns the inverse of the matrix.
 
 <br/>
 
-### `Method Rotate:SMat3(angle:Double)`
+### `Method Rotate:SMat3D(angle:Double)`
 
 Rotates the matrix by <b>angle</b> degrees, returning a new matrix.
 
 <br/>
 
-### `Method Scale:SMat3(s:SVec2)`
+### `Method Scale:SMat3D(s:SVec2D)`
 
 Scales the matrix by <b>s</b>, returning a new matrix.
 
 <br/>
 
-### `Method Transpose:SMat3()`
+### `Method Transpose:SMat3D()`
 
 Returns a transposition of the matrix.
 
@@ -99,19 +99,19 @@ Returns a [String](../../../brl/brl.blitz/#string) representation of the matrix.
 
 ## Functions
 
-### `Function Identity:SMat3()`
+### `Function Identity:SMat3D()`
 
 Return the 3x3 identity matrix.
 
 <br/>
 
-### `Function Rotation:SMat3(angle:Double)`
+### `Function Rotation:SMat3D(angle:Double)`
 
 Retrns a rotation matrix of <b>angle</b> degrees.
 
 <br/>
 
-### `Function Scaling:SMat3(s:SVec2)`
+### `Function Scaling:SMat3D(s:SVec2D)`
 
 Returns a scaling matrix of <b>s</b>.
 

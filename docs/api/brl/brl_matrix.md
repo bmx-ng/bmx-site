@@ -8,9 +8,9 @@ sidebar_label: BRL.Matrix
 ## Structs
 | Struct | Description |
 |---|---|
-| [SMat2](../../brl/brl.matrix/smat2) | A 2x2 Matrix |
-| [SMat3](../../brl/brl.matrix/smat3) | A 3x3 matrix. |
-| [SMat4](../../brl/brl.matrix/smat4) | A standard 4x4 transformation matrix. |
+| [SMat2D](../../brl/brl.matrix/smat2d) | A 2x2 Matrix |
+| [SMat3D](../../brl/brl.matrix/smat3d) | A 3x3 matrix. |
+| [SMat4D](../../brl/brl.matrix/smat4d) | A standard 4x4 transformation matrix. |
 | [SMat2F](../../brl/brl.matrix/smat2f) | A [Float](../../brl/brl.blitz/#float) backed 2x2 Matrix. |
 | [SMat3F](../../brl/brl.matrix/smat3f) | A [Float](../../brl/brl.blitz/#float) backed 3x3 matrix. |
 | [SMat4F](../../brl/brl.matrix/smat4f) | A standard [Float](../../brl/brl.blitz/#float) backed 4x4 transformation matrix. |

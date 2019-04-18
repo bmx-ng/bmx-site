@@ -1,7 +1,7 @@
 ---
-id: svec3
-title: SVec3
-sidebar_label: SVec3
+id: svec3d
+title: SVec3D
+sidebar_label: SVec3D
 ---
 
 A 3-element structure that can be used to represent positions and directions in 3D-space.
@@ -11,43 +11,43 @@ A 3-element structure that can be used to represent positions and directions in 
 
 ### `Method New(x:Double, y:Double, z:Double)`
 
-Creates a new [SVec3](../../../brl/brl.vector/svec3) from the supplied arguments.
+Creates a new [SVec3D](../../../brl/brl.vector/svec3d) from the supplied arguments.
 
 <br/>
 
 ## Operators
 
-### `Method Operator+:SVec3(b:SVec3)`
+### `Method Operator+:SVec3D(b:SVec3D)`
 
 Adds <b>b</b> to this vector, returning a new vector.
 
 <br/>
 
-### `Method Operator-:SVec3(b:SVec3)`
+### `Method Operator-:SVec3D(b:SVec3D)`
 
 Subtracts <b>b</b> from this vector, returning a new vector.
 
 <br/>
 
-### `Method Operator*:SVec3(b:SVec3)`
+### `Method Operator*:SVec3D(b:SVec3D)`
 
 Multiplies the vector by <b>b</b>, returning a new vector.
 
 <br/>
 
-### `Method Operator/:SVec3(b:SVec3)`
+### `Method Operator/:SVec3D(b:SVec3D)`
 
 Devides the vector by <b>b</b>, returning a new vector.
 
 <br/>
 
-### `Method Operator-:SVec3()`
+### `Method Operator-:SVec3D()`
 
 Returns a negated version of this vector.
 
 <br/>
 
-### `Method Operator*:SVec3(s:Double)`
+### `Method Operator*:SVec3D(s:Double)`
 
 Multiplies the vector by <b>s</b>, returning a new vector.
 
@@ -61,31 +61,31 @@ Retrieves the x, y or z component using [0], [1] or [2] respectively.
 
 ## Methods
 
-### `Method Clamp:SVec3(minv:SVec3, maxv:SVec3)`
+### `Method Clamp:SVec3D(minv:SVec3D, maxv:SVec3D)`
 
 Returns a vector clamped between the vectors <b>minv</b> and <b>maxv</b>.
 
 <br/>
 
-### `Method Cross:SVec3(b:SVec3)`
+### `Method Cross:SVec3D(b:SVec3D)`
 
 Returns the Cross Product of the two vectors.
 
 <br/>
 
-### `Method Min:SVec3(b:SVec3)`
+### `Method Min:SVec3D(b:SVec3D)`
 
 Returns a vector that is made from the smallest components of the two vectors.
 
 <br/>
 
-### `Method Max:SVec3(b:SVec3)`
+### `Method Max:SVec3D(b:SVec3D)`
 
 Returns a vector that is made from the largest components of the two vectors.
 
 <br/>
 
-### `Method Interpolate:SVec3(b:SVec3, t:Double)`
+### `Method Interpolate:SVec3D(b:SVec3D, t:Double)`
 
 Linearly interpolates between two vectors.
 
@@ -95,7 +95,7 @@ This is commonly used to find a point some fraction of the way along a line betw
 
 <br/>
 
-### `Method Normal:SVec3()`
+### `Method Normal:SVec3D()`
 
 Returns a vector with a magnitude of 1.
 
@@ -104,7 +104,7 @@ When normalized, a vector keeps the same direction but its length is 1.0.
 
 <br/>
 
-### `Method Dot:Double(b:SVec3)`
+### `Method Dot:Double(b:SVec3D)`
 
 Returns the dot product of two vectors.
 
@@ -130,19 +130,19 @@ Often if you are comparing lengths of two vectors you can just compare their squ
 
 <br/>
 
-### `Method DistanceTo:Double(b:SVec3)`
+### `Method DistanceTo:Double(b:SVec3D)`
 
 Returns the distance between the vector and <b>b</b>.
 
 <br/>
 
-### `Method DistanceToSquared:Double(b:SVec3)`
+### `Method DistanceToSquared:Double(b:SVec3D)`
 
 Returns the squared distance between the vector and <b>b</b>.
 
 <br/>
 
-### `Method Reflect:SVec3(n:SVec3)`
+### `Method Reflect:SVec3D(n:SVec3D)`
 
 Returns a vector reflected from the given plane, specified by its normal vector.
 

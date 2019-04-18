@@ -85,7 +85,7 @@ Scales the matrix by <b>s</b>, returning a new matrix.
 
 <br/>
 
-### `Method Scale:SMat3I(s:SVec2)`
+### `Method Scale:SMat3I(s:SVec2D)`
 
 Scales the matrix by <b>s</b>, returning a new matrix.
 
@@ -129,7 +129,7 @@ Returns a scaling matrix of <b>s</b>.
 
 <br/>
 
-### `Function Scaling:SMat3I(s:SVec2)`
+### `Function Scaling:SMat3I(s:SVec2D)`
 
 Returns a scaling matrix of <b>s</b>.
 

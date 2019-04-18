@@ -79,7 +79,7 @@ Returns the scale of this matrix.
 
 <br/>
 
-### `Method Scale:SMat2I(s:SVec2)`
+### `Method Scale:SMat2I(s:SVec2D)`
 
 Returns the scale of this matrix.
 

@@ -89,7 +89,7 @@ Scales the matrix, return the new scaled matrix.
 
 <br/>
 
-### `Method Scale:SMat4I(s:SVec3)`
+### `Method Scale:SMat4I(s:SVec3D)`
 
 Scales the matrix, return the new scaled matrix.
 
@@ -116,7 +116,7 @@ Translates the matrix to <b>s</b>.
 
 <br/>
 
-### `Method Translate:SMat4I(s:SVec3)`
+### `Method Translate:SMat4I(s:SVec3D)`
 
 Translates the matrix to <b>s</b>.
 
@@ -184,7 +184,7 @@ Creates a scaling matrix.
 
 <br/>
 
-### `Function Scaling:SMat4I(s:SVec3)`
+### `Function Scaling:SMat4I(s:SVec3D)`
 
 Creates a scaling matrix.
 
@@ -202,7 +202,7 @@ Creates a translation matrix.
 
 <br/>
 
-### `Function Translation:SMat4I(s:SVec3)`
+### `Function Translation:SMat4I(s:SVec3D)`
 
 Creates a translation matrix.
 
