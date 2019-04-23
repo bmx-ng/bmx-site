@@ -279,6 +279,23 @@ Appends a [TStringBuilder](../../../brl/brl.stringbuilder/tstringbuilder) onto t
 
 Appends a null-terminated C string onto the string builder.
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StringBuilder
+Import brl.standardio
+
+Local sb:TStringBuilder = New TStringBuilder()
+
+Local b:Byte Ptr = "Hello World".ToCString()
+
+sb.AppendCString(b)
+
+MemFree(b)
+
+Print sb.ToString()
+```
 <br/>
 
 ### `Method AppendDouble:TStringBuilder(value:Double)`
@@ -401,7 +418,8 @@ Print sb.ToString()
 
 Appends the new line string to the string builder.
 
-The new line string can be altered using [SetNewLineText](../../../brl/brl.stringbuilder/tstringbuilder/#method-setnewlinetext-tstringbuildernewline-string). This might be used to force the output to always use Unix line endings even when on Windows.
+The new line string can be altered using [SetNewLineText](../../../brl/brl.stringbuilder/tstringbuilder/#method-setnewlinetext-tstringbuildernewline-string). This might be used to force the output to always
+use Unix line endings even when on Windows.
 
 
 #### Example
@@ -545,6 +563,23 @@ Print sb.ToString()
 
 Appends a null-terminated UTF-8 string onto the string builder.
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StringBuilder
+Import brl.standardio
+
+Local sb:TStringBuilder = New TStringBuilder()
+
+Local b:Byte Ptr = "Привет, мир!".ToUTF8String()
+
+sb.AppendUTF8String(b)
+
+MemFree(b)
+
+Print sb.ToString()
+```
 <br/>
 
 ### `Method AppendShorts:TStringBuilder(shorts:Short Ptr, length:Int)`
@@ -757,6 +792,21 @@ Joins <b>bits</b> together by inserting this string builder between each bit.
 A new TStringBuilder object.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StringBuilder
+Import brl.standardio
+
+Local sb:TStringBuilder = New TStringBuilder(", ")
+
+Local values:String[] = ["one", "two", "three", "four", "five", "six"]
+
+Local joined:TStringBuilder = sb.Join(values)
+
+Print joined.ToString()
+```
 <br/>
 
 ### `Method ToLower:TStringBuilder()`
@@ -822,12 +872,38 @@ Removes the character at the specified position in the buffer.
 The buffer is shortened by one character.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StringBuilder
+Import brl.standardio
+
+Local sb:TStringBuilder = New TStringBuilder("Hello World!")
+
+sb.RemoveCharAt(4)
+
+Print sb.ToString()
+```
 <br/>
 
 ### `Method Insert:TStringBuilder(offset:Int, value:String)`
 
 Inserts text into the string builder at the specified offset.
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StringBuilder
+Import brl.standardio
+
+Local sb:TStringBuilder = New TStringBuilder("Hello World!")
+
+sb.Insert(6, "BlitzMax ")
+
+Print sb.ToString()
+```
 <br/>
 
 ### `Method Reverse:TStringBuilder()`
@@ -914,6 +990,17 @@ Returns a substring of the string builder given the specified indexes.
 will return everything from <b>beginIndex</b> until the end of the string builder.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StringBuilder
+Import brl.standardio
+
+Local sb:TStringBuilder = New TStringBuilder("Hello World!")
+
+Print sb.SubString(6, 11)
+```
 <br/>
 
 ### `Method Split:TSplitBuffer(separator:String)`
@@ -942,6 +1029,17 @@ Next
 
 Converts the string builder to a String.
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StringBuilder
+Import brl.standardio
+
+Local sb:TStringBuilder = New TStringBuilder("Hello World!")
+
+Print sb.ToString()
+```
 <br/>
 
 ## Functions
