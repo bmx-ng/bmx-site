@@ -49,6 +49,9 @@ sequences always start with the `~` character. The following escape sequences ar
 | `~n`  | Newline character (ascii code 10)  |
 | `~q`  | Quote character (ascii code 34)  |
 | `~~`  | Tilde character (ascii code 126)  |
+| `~n~` .. `~nnnn~`  | Unicode character, e.g. `~65~` = `A` |
+| `~$n~` .. `~$nnnn~`  | Hexadecimal character, e.g. `~$41~` = `A` |
+| `~%n~` .. `~%nnnnnnnnnnnnnnnn~`  | Binary character, e.g. `~%1000001~` = `A` |
 
 For example:
 
