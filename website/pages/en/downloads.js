@@ -118,7 +118,7 @@ class Downloads extends React.Component {
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.99.3.31.macos/BlitzMax_macos_0.99.3.31.zip">BlitzMax_macos_0.99.3.31.zip</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.105.3.35.macos/BlitzMax_macos_0.105.3.35.zip">BlitzMax_macos_0.105.3.35.zip</a>
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, 64-bit macOS edition.
@@ -126,7 +126,7 @@ class Downloads extends React.Component {
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/apple.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.99.3.31.macos/BlitzMax_macos_0.99.3.31.zip`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.105.3.35.macos/BlitzMax_macos_0.105.3.35.zip`,
                                     title: "macOS"
                                 },
                                 {},
