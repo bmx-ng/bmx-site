@@ -64,7 +64,7 @@ Define type of the application. Should be either `console` or `gui`.
 
 The default is `console`.
 
-#### '-f <framework>`
+#### `-f <framework>`
 
 Defines to use a specific module as framework instead of importing all `brl.mod` and `pub.mod` modules.
 
