@@ -38,7 +38,7 @@ Disable "strict upgrade". This then no longer upgrades strict subclass method/fu
 
 #### `-g <architecture>`
 
-Select for what architecture to create code. Valid architectures (for now) are: `x86`. `x64`, `pcc`, `arm`,  `arm64`, `armeabi`, `armeabiv7a`, `arm64v8a` and `js` (javascript via emscripten).
+Select for what architecture to create code. Valid architectures (for now) are: `x86`. `x64`, `pcc`, `arm`,  `arm64`, `armeabi`, `armeabiv7a`, and `arm64v8a`.
 
 #### `-m <modulename>`
 

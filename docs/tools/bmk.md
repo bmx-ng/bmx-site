@@ -102,7 +102,7 @@ Support of this param is only partial.  !TODO!
 
 Cross-compiles to the specific target platform.
 
-Valid targets are `win32`, `linux`, `macos`, `ios`, `android`, `raspberrypi`, `emscripten` (!TODO!) and `nx`.
+Valid targets are `win32`, `linux`, `macos`, `ios`, `android`, `raspberrypi` and `nx`.
 
 #### `-musl`
 
