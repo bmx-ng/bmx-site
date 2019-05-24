@@ -34,10 +34,11 @@ purpose identifiers:
     Type EndType Extends
     Interface EndInterface Implements
     Struct EndStruct
+    Enum EndEnum
     Method EndMethod
     Operator
     Local Global Const Field ReadOnly
-    Abstract Final
+    Abstract Final Override
     Where
     Rem EndRem
     If Then Else ElseIf EndIf
