@@ -2568,9 +2568,8 @@ to cut down on it. Make it a complete but small game.
 
 ### Get Debug Help
 
-When you encounter problems try to get help at the www.BlitzMax / Codersworkshop.com forums. Also check
-out the BlitzWiki – www.BlitzWiki.org. For people to be able to help you it's important that you know
-yourself what your problem actually is, so think about it, try to narrow it down. Is it a compile error?
+When you encounter problems try to get help at the [syntaxbomb.com forums](https://www.syntaxbomb.com). Also check
+out the project repositories' [issues at github.com](https://github.com/bmx-ng). For people to be able to help you it's important that you know yourself what your problem actually is, so think about it, try to narrow it down. Is it a compile error?
 Is something not showing up as expected? Check your variables, are they what they are supposed to be? Use
 Debugstop() or Waitkey on a line to see if that line is read, if it is your game will stop there. Don't forget
 a most important command – `Debuglog` which allows you to write text to the runtimelog, Ex:
