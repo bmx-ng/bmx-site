@@ -58,7 +58,7 @@ The name of the current video driver or NULL if no driver has been initialized.
 Gets the number of available video displays.
 
 #### Returns
-A number >= 1 or a negative error code on failure. Call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterror-string)() for more information.
+A number >= 1 or a negative error code on failure. Call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterrorstring)() for more information.
 
 
 <br/>

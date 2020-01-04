@@ -28,7 +28,7 @@ There can only be one system driver initialised. A second call to this function 
 
 ### `Function SystemDriver:TSystemDriver()`
 
-Returns the BlitzMax system driver, or throws an exception if [InitSystemDriver](../../brl/brl.system/#function-initsystemdriverdriver-tsystemdriver)() hasn't been called with one.
+Returns the BlitzMax system driver, or throws an exception if [InitSystemDriver](../../brl/brl.system/#function-initsystemdriverdrivertsystemdriver)() hasn't been called with one.
 
 <br/>
 
@@ -43,7 +43,7 @@ returned back to your program.
 
 If [PollSystem](../../brl/brl.system/#function-pollsystem) encounters a key, mouse or app suspend/resume/terminate
 event, an equivalent [TEvent](../../brl/brl.event/tevent) object event will be generated which may be intercepted using
-the [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid) hook.
+the [EmitEventHook](../../brl/brl.event/#global-emiteventhookintallochookid) hook.
 
 
 <br/>
@@ -61,7 +61,7 @@ of any events occuring, so use with caution.
 
 If [WaitSystem](../../brl/brl.system/#function-waitsystem) encounters a key, mouse or app suspend/resume/terminate
 event, an equivalent [TEvent](../../brl/brl.event/tevent) object will be generated which may be intercepted using
-the [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid) hook.
+the [EmitEventHook](../../brl/brl.event/#global-emiteventhookintallochookid) hook.
 
 
 <br/>
@@ -73,10 +73,10 @@ Get current date
 
 By default, it returns the current date in the format: DD MON YYYY (i.e. 10 DEC 2000).
 You can also specify some parameters to return the date in a format of your choice:
-<table><tr><td> <b>parameter</b></td><td><b>description</b></td></tr><tr><td>  %%a</td><td>Abbreviated day name (sun - mon).</td></tr><tr><td>  %%A</td><td>Long day name (Sunday - Monday).</td></tr><tr><td>  %%b</td><td>Abbreviated month name (jan - feb).</td></tr><tr><td>  %%B</td><td>Long month name (January...).</td></tr><tr><td>  %%c</td><td>Locale date & time.</td></tr><tr><td>  %%d</td><td>day - in number (1..31).</td></tr><tr><td>  %%H</td><td>hour - in number (0..23).</td></tr><tr><td>  %%I</td><td>hour - in number (1..12).</td></tr><tr><td>  %%j</td><td>day of the year (1..366).</td></tr><tr><td>  %%m</td><td>month - in number (1..12).</td></tr><tr><td>  %%M</td><td>minutes - in number (00..59).</td></tr><tr><td>  %%P</td><td>AM / PM.</td></tr><tr><td>  %%S</td><td>seconds - in number (00..59).</td></tr><tr><td>  %%U</td><td>week number</td></tr><tr><td>  %%w</td><td>day of the week (0..6).</td></tr><tr><td>  %%W</td><td>week of the year (0..53).</td></tr><tr><td>  %%x</td><td>locale data representation.</td></tr><tr><td>  %%y</td><td>year without century (2014 --> 14).</td></tr><tr><td>  %%Y</td><td>Year (2014).</td></tr><tr><td>  %%Z</td><td>Time zone name.</table>
+<table><tr><td> <b>parameter</b></td><td><b>description</b></td></tr><tr><td>  %%a</td><td>Abbreviated day name (sun - mon).</td></tr><tr><td>  %%A</td><td>Long day name (Sunday - Monday).</td></tr><tr><td>  %%b</td><td>Abbreviated month name (jan - feb).</td></tr><tr><td>  %%B</td><td>Long month name (January...).</td></tr><tr><td>  %%c</td><td>Locale date & time.</td></tr><tr><td>  %%d</td><td>day - in number (1..31).</td></tr><tr><td>  %%H</td><td>hour - in number (0..23).</td></tr><tr><td>  %%I</td><td>hour - in number (1..12).</td></tr><tr><td>  %%j</td><td>day of the year (1..366).</td></tr><tr><td>  %%m</td><td>month - in number (1..12).</td></tr><tr><td>  %%M</td><td>minutes - in number (00..59).</td></tr><tr><td>  %%P</td><td>AM / PM.</td></tr><tr><td>  %%S</td><td>seconds - in number (00..59).</td></tr><tr><td>  %%U</td><td>week number</td></tr><tr><td>  %%w</td><td>day of the week (0..6).</td></tr><tr><td>  %%W</td><td>week of the year (0..53).</td></tr><tr><td>  %%x</td><td>locale data representation.</td></tr><tr><td>  %%y</td><td>year without century (2014 --> 14).</td></tr><tr><td>  %%Y</td><td>Year (2014).</td></tr><tr><td>  %%Z</td><td>Time zone name.</td></tr></table>
 
-You can use these parameters together:<br>
-CurrentDate("Month: %%a Day: %%d")<br>
+You can use these parameters together:<br/>
+CurrentDate("Month: %%a Day: %%d")<br/>
 
 
 #### Returns
@@ -116,7 +116,7 @@ Print "The time is "+CurrentTime$()
 Move mouse pointer
 
 
-[MoveMouse](../../brl/brl.system/#function-movemouse-x-y) positions the mouse cursor at a specific location within
+[MoveMouse](../../brl/brl.system/#function-movemouse-xy-) positions the mouse cursor at a specific location within
 the current window or graphics display.
 
 
@@ -139,7 +139,7 @@ Make the mouse pointer invisible
 Notify user
 
 
-[Notify](../../brl/brl.system/#function-notify-text-serious-false) activates a simple user interface element informing the user of an event.
+[Notify](../../brl/brl.system/#function-notify-textseriousfalse-) activates a simple user interface element informing the user of an event.
 The optional <b>serious</b> flag can be used to indicate a 'critical' event.
 
 Note that a user interface may not be available when in graphics mode on some platforms.
@@ -158,8 +158,8 @@ Notify "Hello World"
 Request user confirmation.
 
 
-[Confirm](../../brl/brl.system/#function-confirm-text-serious-false) activates a simple user interface element requesting the user to select between
-YES and NO options. If the user selects YES, then [Confirm](../../brl/brl.system/#function-confirm-text-serious-false) returns True. Otherwise,
+[Confirm](../../brl/brl.system/#function-confirm-textseriousfalse-) activates a simple user interface element requesting the user to select between
+YES and NO options. If the user selects YES, then [Confirm](../../brl/brl.system/#function-confirm-textseriousfalse-) returns True. Otherwise,
 False is returned.
 
 Note that a user interface may not be available when in graphics mode on some platforms.
@@ -184,9 +184,9 @@ print result
 Request user confirmation or cancellation.
 
 
-[Proceed](../../brl/brl.system/#function-proceed-text-serious-false) activates a simple user interface element requesting the user to select between
-YES, NO and CANCEL options. If the user selects YES, then [Proceed](../../brl/brl.system/#function-proceed-text-serious-false) return 1. If the user
-selects NO, then [Proceed](../../brl/brl.system/#function-proceed-text-serious-false) returns 0. Otherwise, [Proceed](../../brl/brl.system/#function-proceed-text-serious-false) returns -1.
+[Proceed](../../brl/brl.system/#function-proceed-textseriousfalse-) activates a simple user interface element requesting the user to select between
+YES, NO and CANCEL options. If the user selects YES, then [Proceed](../../brl/brl.system/#function-proceed-textseriousfalse-) return 1. If the user
+selects NO, then [Proceed](../../brl/brl.system/#function-proceed-textseriousfalse-) returns 0. Otherwise, [Proceed](../../brl/brl.system/#function-proceed-textseriousfalse-) returns -1.
 
 Note that a user interface may not be available when in graphics mode on some platforms.
 

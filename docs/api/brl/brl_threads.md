@@ -12,15 +12,15 @@ Multithreading effectively allows your programs to do several things at the same
 
 Multithreading used to be achieved by software trickery, which made threading useful but not really faster - there was still only one CPU pretending to do multiple things at the same time! But these days, multicore CPUs mean that threading can be used to truly do multiple things at the same time (or 'in parallel').
 
-Creating a thread is easy - just call [CreateThread](../../brl/brl.threads/#function-createthread-tthread-entry-object-data-object-data-object). You will need to provide a function for the thread to use as it's 'entry point'. Once the thread is created, this function will start executing in parallel with the code that called [CreateThread](../../brl/brl.threads/#function-createthread-tthread-entry-object-data-object-data-object). When the thread function returns, that thread will be 'terminated'.
+Creating a thread is easy - just call [CreateThread](../../brl/brl.threads/#function-createthreadtthread-entryobject-dataobject-dataobject-). You will need to provide a function for the thread to use as it's 'entry point'. Once the thread is created, this function will start executing in parallel with the code that called [CreateThread](../../brl/brl.threads/#function-createthreadtthread-entryobject-dataobject-dataobject-). When the thread function returns, that thread will be 'terminated'.
 
 Alas, threading turns out to be rather tricky due to an issue known as 'synchronization'. Synchronization is required when you need to prevent multiple threads from modifying or accessing the same data at the same time. Synchronization usually involves a thread 'blocking'. When a thread blocks, it completely halts execution until another thread does something that causes it to 'unblock' and resume execution.
 
 BlitzMax provides 2 primitives known as 'mutexes' and 'semaphores' to assist with synchronization:
 
-* Mutexes provide a simple locking mechanism. Only one thread at a time can lock a mutex (using [LockMutex](../../brl/brl.threads/#function-lockmutex-mutex-tmutex) or [TryLockMutex](../../brl/brl.threads/#function-trylockmutex-int-mutex-tmutex)), so this is an easy way to protect resources from simultaneous access. If a thread calls [LockMutex](../../brl/brl.threads/#function-lockmutex-mutex-tmutex) and the mutex is already locked by another thread, the current thread will block until the other thread releases the mutex using [UnlockMutex](../../brl/brl.threads/#function-unlockmutex-mutex-tmutex). So don't forget to [UnlockMutex](../../brl/brl.threads/#function-unlockmutex-mutex-tmutex) a mutex after you are finished with it!
+* Mutexes provide a simple locking mechanism. Only one thread at a time can lock a mutex (using [LockMutex](../../brl/brl.threads/#function-lockmutex-mutextmutex-) or [TryLockMutex](../../brl/brl.threads/#function-trylockmutexint-mutextmutex-)), so this is an easy way to protect resources from simultaneous access. If a thread calls [LockMutex](../../brl/brl.threads/#function-lockmutex-mutextmutex-) and the mutex is already locked by another thread, the current thread will block until the other thread releases the mutex using [UnlockMutex](../../brl/brl.threads/#function-unlockmutex-mutextmutex-). So don't forget to [UnlockMutex](../../brl/brl.threads/#function-unlockmutex-mutextmutex-) a mutex after you are finished with it!
 
-* Semaphores provide a synchronized counting mechanism, and contain an internal integer counter. There are 2 operations you can perform on a semaphore - post and wait. Posting a semaphore (using [PostSemaphore](../../brl/brl.threads/#function-postsemaphore-semaphore-tsemaphore)) causes the semaphore's internal counter to be incremented, while waiting for a semaphore (using [WaitSemaphore](../../brl/brl.threads/#function-waitsemaphore-semaphore-tsemaphore)) will cause the current thread to block until the semaphore's internal counter is greater than 0. When it is, the counter is decremented and the thread unblocks. Semaphores are very useful for producer/consumer type situations.
+* Semaphores provide a synchronized counting mechanism, and contain an internal integer counter. There are 2 operations you can perform on a semaphore - post and wait. Posting a semaphore (using [PostSemaphore](../../brl/brl.threads/#function-postsemaphore-semaphoretsemaphore-)) causes the semaphore's internal counter to be incremented, while waiting for a semaphore (using [WaitSemaphore](../../brl/brl.threads/#function-waitsemaphore-semaphoretsemaphore-)) will cause the current thread to block until the semaphore's internal counter is greater than 0. When it is, the counter is decremented and the thread unblocks. Semaphores are very useful for producer/consumer type situations.
 
 
 ## Types
@@ -41,9 +41,9 @@ Create a thread
 
 Creates a thread and returns a thread object.
 
-The value returned by the thread <b>entry</b> routine can be later retrieved using [WaitThread](../../brl/brl.threads/#function-waitthread-object-thread-tthread).
+The value returned by the thread <b>entry</b> routine can be later retrieved using [WaitThread](../../brl/brl.threads/#function-waitthreadobject-threadtthread-).
 
-To 'close' a thread, call either [DetachThread](../../brl/brl.threads/#function-detachthread-thread-tthread) or [WaitThread](../../brl/brl.threads/#function-waitthread-object-thread-tthread). This isn't strictly
+To 'close' a thread, call either [DetachThread](../../brl/brl.threads/#function-detachthread-threadtthread-) or [WaitThread](../../brl/brl.threads/#function-waitthreadobject-threadtthread-). This isn't strictly
 necessary as the thread will eventually be closed when it is garbage collected, however, it
 may be a good idea if you are creating many threads very often, as some operating systems have
 a limit on the number of threads that can be allocated at once.
@@ -119,9 +119,9 @@ A thread object representing the current thread.
 Detach a thread
 
 
-[DetachThread](../../brl/brl.threads/#function-detachthread-thread-tthread) closes a thread's handle, but does not halt or otherwise affect the target thread.
+[DetachThread](../../brl/brl.threads/#function-detachthread-threadtthread-) closes a thread's handle, but does not halt or otherwise affect the target thread.
 
-Once one a thread has been detached, it wil no longer be possible to use [WaitThread](../../brl/brl.threads/#function-waitthread-object-thread-tthread) to get its return value.
+Once one a thread has been detached, it wil no longer be possible to use [WaitThread](../../brl/brl.threads/#function-waitthreadobject-threadtthread-) to get its return value.
 
 This allows the thread to run without your program having to continually check whether it has completedin order to close it.
 
@@ -133,11 +133,11 @@ This allows the thread to run without your program having to continually check w
 Wait for a thread to finish
 
 
-[WaitThread](../../brl/brl.threads/#function-waitthread-object-thread-tthread) causes the calling thread to block until the target thread has completed execution.
+[WaitThread](../../brl/brl.threads/#function-waitthreadobject-threadtthread-) causes the calling thread to block until the target thread has completed execution.
 
-If the target thread has already completed execution, [WaitThread](../../brl/brl.threads/#function-waitthread-object-thread-tthread) returns immediately.
+If the target thread has already completed execution, [WaitThread](../../brl/brl.threads/#function-waitthreadobject-threadtthread-) returns immediately.
 
-The returned object is the object returned by the thread's entry routine, as passed to [CreateThread](../../brl/brl.threads/#function-createthread-tthread-entry-object-data-object-data-object).
+The returned object is the object returned by the thread's entry routine, as passed to [CreateThread](../../brl/brl.threads/#function-createthreadtthread-entryobject-dataobject-dataobject-).
 
 
 #### Returns

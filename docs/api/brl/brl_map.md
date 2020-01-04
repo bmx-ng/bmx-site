@@ -32,12 +32,12 @@ A new map object
 Clears a map
 
 
-[ClearMap](../../brl/brl.map/#function-clearmap-map-tmap) removes all keys and values from <b>map</b>
+[ClearMap](../../brl/brl.map/#function-clearmap-maptmap-) removes all keys and values from <b>map</b>
 
 
 <br/>
 
-### `Function MapIsEmpty( map:TMap )`
+### `Function MapIsEmpty:Int( map:TMap )`
 
 Checks if a map is empty
 
@@ -71,7 +71,7 @@ The value associated with <b>key</b>
 
 <br/>
 
-### `Function MapContains( map:TMap,key:Object )`
+### `Function MapContains:Int( map:TMap,key:Object )`
 
 Checks if a map contains a key
 
@@ -92,7 +92,7 @@ Removes a key/value pair from a map
 Gets map keys
 
 
-The object returned by [MapKeys](../../brl/brl.map/#function-mapkeys-tmapenumerator-map-tmap) can be used with [EachIn](../../brl/brl.blitz/#eachin) to iterate through
+The object returned by [MapKeys](../../brl/brl.map/#function-mapkeystmapenumerator-maptmap-) can be used with [EachIn](../../brl/brl.blitz/#eachin) to iterate through
 the keys in <b>map</b>.
 
 
@@ -107,7 +107,7 @@ An iterator object
 Gets map values
 
 
-The object returned by [MapValues](../../brl/brl.map/#function-mapvalues-tmapenumerator-map-tmap) can be used with [EachIn](../../brl/brl.blitz/#eachin) to iterate through
+The object returned by [MapValues](../../brl/brl.map/#function-mapvaluestmapenumerator-maptmap-) can be used with [EachIn](../../brl/brl.blitz/#eachin) to iterate through
 the values in <b>map</b>.
 
 

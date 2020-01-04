@@ -13,10 +13,10 @@ does not provide any commands for actual rendering - this is left to other modul
 max2D to implement.
 
 The graphics module maintains 2 'current' objects - the current graphics driver and the currect
-graphics object. To change the current graphics driver, use [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-driver-tgraphicsdriver-defaultflags-graphics-backbuffer). To change the
-current graphics object, use [SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics).
+graphics object. To change the current graphics driver, use [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-drivertgraphicsdriverdefaultflagsgraphicsbackbuffer-). To change the
+current graphics object, use [SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-).
 
-To create a graphics object, use either [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) or [CreateGraphics](../../brl/brl.graphics/#function-creategraphics-tgraphics-width-height-depth-hertz-flags). The kind of graphics 
+To create a graphics object, use either [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) or [CreateGraphics](../../brl/brl.graphics/#function-creategraphicstgraphics-widthheightdepthhertzflagsxy-). The kind of graphics 
 object created will depend upon the current graphics driver. For example, the following code:
 ```
 SetGraphicsDriver GLGraphicsDriver()
@@ -33,9 +33,9 @@ glClear				'yes!
 Flip				'must do this as the graphics is double buffered
 ````
 
-One you have finished with a graphics object, use [CloseGraphics](../../brl/brl.graphics/#function-closegraphics-g-tgraphics) to close it.
+One you have finished with a graphics object, use [CloseGraphics](../../brl/brl.graphics/#function-closegraphics-gtgraphics-) to close it.
 
-[Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) and [CreateGraphics](../../brl/brl.graphics/#function-creategraphics-tgraphics-width-height-depth-hertz-flags) both accept the following parameters: <b>width</b>, <b>height</b>, <b>depth</b>,
+[Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) and [CreateGraphics](../../brl/brl.graphics/#function-creategraphicstgraphics-widthheightdepthhertzflagsxy-) both accept the following parameters: <b>width</b>, <b>height</b>, <b>depth</b>,
 <b>hertz</b> and <b>flags</b>.
 
 The <b>width</b> and <b>height</b> parameters specify the dimensions of the graphics, in pixels.
@@ -49,7 +49,7 @@ refreshes per second. The refresh rates available depend on the graphics modes a
 which differ from graphics card to graphics card. Note that creating graphics with an 
 unsupported refresh rate will not fail - instead, a default refresh rate will be used.
 
-The [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) command can be used to achieve a fixed refresh rate. When using [Flip](../../brl/brl.graphics/#function-flip-sync-1) to 
+The [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) command can be used to achieve a fixed refresh rate. When using [Flip](../../brl/brl.graphics/#function-flip-sync1-) to 
 present such graphics, BlitzMax will guarantee the desired refresh rate is honored regardless
 of the available hardware's capabilities. This is achieved by using software timing 
 techniques when necessary.
@@ -67,7 +67,7 @@ Flags can be combined with the | (or) operator. For example, GRAPHICS_BACKBUFFER
 can be used to create graphics which has both a back buffer and a depth buffer.
 
 Graphics created with the GRAPHICS_BACKBUFFER flag must be 'flipped' after you have finished
-rendering using [Flip](../../brl/brl.graphics/#function-flip-sync-1).
+rendering using [Flip](../../brl/brl.graphics/#function-flip-sync1-).
 
 
 ## Functions
@@ -78,13 +78,13 @@ Set current graphics driver
 
 
 The current graphics driver determines what kind of graphics are created when you use
-the [CreateGraphics](../../brl/brl.graphics/#function-creategraphics-tgraphics-width-height-depth-hertz-flags) or [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) functions, as well as the graphics modes available.
+the [CreateGraphics](../../brl/brl.graphics/#function-creategraphicstgraphics-widthheightdepthhertzflagsxy-) or [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) functions, as well as the graphics modes available.
 
-The [GLGraphicsDriver](../../brl/brl.glgraphics/#function-glgraphicsdriver-tglgraphicsdriver), [GLMax2DDriver](../../brl/brl.glmax2d/#function-glmax2ddriver-tglmax2ddriver), [D3D7Max2DDriver](../../brl/brl.d3d7max2d/#function-d3d7max2ddriver-td3d7max2ddriver) and [D3D9Max2DDriver](../../brl/brl.d3d9max2d/#function-d3d9max2ddriver-td3d9max2ddriver) functions can all be
+The [GLGraphicsDriver](../../brl/brl.glgraphics/#function-glgraphicsdrivertglgraphicsdriver), [GLMax2DDriver](../../brl/brl.glmax2d/#function-glmax2ddrivertglmax2ddriver), [D3D7Max2DDriver](../../brl/brl.d3d7max2d/#function-d3d7max2ddrivertd3d7max2ddriver) and [D3D9Max2DDriver](../../brl/brl.d3d9max2d/#function-d3d9max2ddrivertd3d9max2ddriver) functions can all be
 used to obtain a graphics driver.
 
 The <b>defaultFlags</b> parameter allows you to specify graphics flags that will be applied to any
-graphics created with [CreateGraphics](../../brl/brl.graphics/#function-creategraphics-tgraphics-width-height-depth-hertz-flags) or [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0).
+graphics created with [CreateGraphics](../../brl/brl.graphics/#function-creategraphicstgraphics-widthheightdepthhertzflagsxy-) or [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-).
 
 
 #### Example
@@ -114,7 +114,7 @@ WaitKey
 Get current graphics driver
 
 
-Returns the current graphics driver as selected by [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-driver-tgraphicsdriver-defaultflags-graphics-backbuffer)
+Returns the current graphics driver as selected by [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-drivertgraphicsdriverdefaultflagsgraphicsbackbuffer-)
 
 
 <br/>
@@ -156,7 +156,7 @@ Next
 Get number of graphics modes available under the current graphics driver
 
 
-Use [GetGraphicsMode](../../brl/brl.graphics/#function-getgraphicsmode-index-width-var-height-var-depth-var-hertz-var) To obtain information about an individual Graphics mode
+Use [GetGraphicsMode](../../brl/brl.graphics/#function-getgraphicsmode-indexwidth-varheight-vardepth-varhertz-var-) To obtain information about an individual Graphics mode
 
 
 #### Returns
@@ -170,7 +170,7 @@ Number of available Graphics modes
 Get information about a graphics mode
 
 
-[GetGraphicsMode](../../brl/brl.graphics/#function-getgraphicsmode-index-width-var-height-var-depth-var-hertz-var) returns information about a specific graphics mode. <b>mode</b> should be
+[GetGraphicsMode](../../brl/brl.graphics/#function-getgraphicsmode-indexwidth-varheight-vardepth-varhertz-var-) returns information about a specific graphics mode. <b>mode</b> should be
 in the range 0 (inclusive) to the value returned by [CountGraphicsModes](../../brl/brl.graphics/#function-countgraphicsmodes) (exclusive).
 
 
@@ -191,16 +191,16 @@ True if a matching graphics mode is found
 
 <br/>
 
-### `Function CreateGraphics:TGraphics( width,height,depth,hertz,flags )`
+### `Function CreateGraphics:TGraphics( width,height,depth,hertz,flags,x,y )`
 
 Create a graphics object
 
 
-[CreateGraphics](../../brl/brl.graphics/#function-creategraphics-tgraphics-width-height-depth-hertz-flags) creates a graphics object. To use this object for rendering, you will
-first have to select it using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics).
+[CreateGraphics](../../brl/brl.graphics/#function-creategraphicstgraphics-widthheightdepthhertzflagsxy-) creates a graphics object. To use this object for rendering, you will
+first have to select it using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-).
 
 The kind of graphics object returned depends upon the current graphics driver as set by
-[SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-driver-tgraphicsdriver-defaultflags-graphics-backbuffer).
+[SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-drivertgraphicsdriverdefaultflagsgraphicsbackbuffer-).
 
 
 #### Returns
@@ -224,7 +224,7 @@ Once closed, a graphics object can no longer be used.
 Set current graphics object
 
 
-[SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics) will also change the current graphics driver if <b>g</b> uses a different driver
+[SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-) will also change the current graphics driver if <b>g</b> uses a different driver
 than the current driver.
 
 
@@ -266,12 +266,18 @@ Resize the current graphics object to <b>width</b>, <b>height</b>.
 
 <br/>
 
+### `Function GraphicsPosition( x:Int, y:Int )`
+
+Sets the position of the graphics window to <b>x</b>, <b>y</b>.
+
+<br/>
+
 ### `Function GraphicsWidth()`
 
 Get width of current graphics object
 
 
-The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics).
+The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-).
 
 
 #### Returns
@@ -298,7 +304,7 @@ WaitKey()
 Get height of current graphics object
 
 
-The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics).
+The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-).
 
 
 #### Returns
@@ -325,7 +331,7 @@ WaitKey()
 Get depth of current graphics object
 
 
-The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics).
+The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-).
 
 
 #### Returns
@@ -352,7 +358,7 @@ WaitKey()
 Get refresh rate of current graphics object
 
 
-The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics).
+The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-).
 
 
 #### Returns
@@ -379,7 +385,7 @@ WaitKey()
 Get flags of current graphics object
 
 
-The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics).
+The current graphics object can be changed using [SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-).
 
 
 #### Returns
@@ -393,16 +399,16 @@ The flags of the current graphics object
 Flip current graphics object
 
 
-[Flip](../../brl/brl.graphics/#function-flip-sync-1) swap the front and back buffers of the current graphics objects.
+[Flip](../../brl/brl.graphics/#function-flip-sync1-) swap the front and back buffers of the current graphics objects.
 
 If <b>sync</b> is 0, then the flip occurs as soon as possible. If <b>sync</b> is 1, then the flip occurs
 on the next vertical blank.
 
-If <b>sync</b> is -1 and the current graphics object was created with the [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) command,
+If <b>sync</b> is -1 and the current graphics object was created with the [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) command,
 then flips will occur at the graphics object's refresh rate, unless the graphics object was
 created with a refresh rate of 0 in which case flip occurs immediately.
 
-If <b>sync</b> is -1 and the current graphics object was NOT created with the [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) command,
+If <b>sync</b> is -1 and the current graphics object was NOT created with the [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) command,
 then the flip will occur on the next vertical blank.
 
 
@@ -431,18 +437,18 @@ Wend
 ```
 <br/>
 
-### `Function Graphics:TGraphics( width,height,depth=0,hertz=60,flags=0 )`
+### `Function Graphics:TGraphics( width,height,depth=0,hertz=60,flags=0,x=-1,y=-1 )`
 
 Begin graphics
 
 
-[Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) is a convenience function that simplifies the process of creating a graphics
+[Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) is a convenience function that simplifies the process of creating a graphics
 object.
 
-Once [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) has executed, you can begin rendering immediately without any need for
-[SetGraphics](../../brl/brl.graphics/#function-setgraphics-g-tgraphics).
+Once [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) has executed, you can begin rendering immediately without any need for
+[SetGraphics](../../brl/brl.graphics/#function-setgraphics-gtgraphics-).
 
-[Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) also enables polled input mode, providing a simple way to monitor the keyboard
+[Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) also enables polled input mode, providing a simple way to monitor the keyboard
 and mouse.
 
 
@@ -498,7 +504,7 @@ Until AppTerminate()
 End graphics
 
 
-[EndGraphics](../../brl/brl.graphics/#function-endgraphics) closes the graphics object returned by [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0).
+[EndGraphics](../../brl/brl.graphics/#function-endgraphics) closes the graphics object returned by [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-).
 
 
 <br/>
@@ -510,8 +516,8 @@ End graphics
 Flip Hook id
 
 
-Use this id with [AddHook](../../brl/brl.hook/#function-addhook-id-func-object-id-data-object-context-object-context-object-null-priority-0) to register a function that
-is called every [Flip](../../brl/brl.graphics/#function-flip-sync-1).
+Use this id with [AddHook](../../brl/brl.hook/#function-addhook-idfuncobject-iddataobjectcontextobject-contextobjectnullpriority0-) to register a function that
+is called every [Flip](../../brl/brl.graphics/#function-flip-sync1-).
 
 
 <br/>

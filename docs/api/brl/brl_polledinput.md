@@ -5,11 +5,9 @@ sidebar_label: BRL.PolledInput
 ---
 
 
-<h1>Polled input</h1>
-
 The polled input module provides an easy way to detect keyboard and mouse input.
 
-The functions in this module are only available when your program is running in [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) mode. When working on GUI applications, you should use events instead.
+The functions in this module are only available when your program is running in [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) mode. When working on GUI applications, you should use events instead.
 
 
 ## Functions
@@ -71,7 +69,7 @@ Check for key hit
 
 
 The returned value represents the number of the times <b>key</b> has been hit since the last
-call to [KeyHit](../../brl/brl.polledinput/#function-keyhit-key) with the same <b>key</b>.
+call to [KeyHit](../../brl/brl.polledinput/#function-keyhit-key-) with the same <b>key</b>.
 
 See the key codes module for a list of valid key codes.
 
@@ -156,7 +154,7 @@ The character code of the next character.
 Flush key states and character queue.
 
 
-[FlushKeys](../../brl/brl.polledinput/#function-flushkeysresetstates-int-true) resets the state of all keys to 'off', and resets the character queue
+[FlushKeys](../../brl/brl.polledinput/#function-flushkeysresetstatesint-true) resets the state of all keys to 'off', and resets the character queue
 used by [GetChar](../../brl/brl.polledinput/#function-getchar).
 
 
@@ -296,10 +294,10 @@ Check for mouse button click
 
 
 The returned value represents the number of the times <b>button</b> has been clicked since the
-last call to [MouseHit](../../brl/brl.polledinput/#function-mousehit-button) with the same <b>button</b>.
+last call to [MouseHit](../../brl/brl.polledinput/#function-mousehit-button-) with the same <b>button</b>.
 
 <b>button</b> should be 1 for the left mouse button, 2 for the right mouse button or 3 for the
-middle mouse button.
+middle mouse button. Two further buttons, 4 and 5, are also available for mice that support them.
 
 
 #### Returns
@@ -330,7 +328,7 @@ Check for mouse button down state
 
 
 <b>button</b> should be 1 for the left mouse button, 2 for the right mouse button or 3 for the
-middle mouse button.
+middle mouse button. Two further buttons, 4 and 5, are also available for mice that support them.
 
 
 #### Returns

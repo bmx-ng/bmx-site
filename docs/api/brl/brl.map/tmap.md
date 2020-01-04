@@ -74,7 +74,7 @@ Removes all keys and values.
 
 <br/>
 
-### `Method IsEmpty()`
+### `Method IsEmpty:Int()`
 
 Checks if the map is empty.
 
@@ -92,7 +92,7 @@ If the map already contains <b>key</b>, its value is overwritten with <b>value</
 
 <br/>
 
-### `Method Contains( key:Object )`
+### `Method Contains:Int( key:Object )`
 
 Checks if the map contains <b>key</b>.
 
@@ -115,7 +115,7 @@ The value associated with <b>key</b>.
 
 <br/>
 
-### `Method Remove( key:Object )`
+### `Method Remove:Int( key:Object )`
 
 Remove a key/value pair from the map.
 
@@ -129,7 +129,7 @@ Remove a key/value pair from the map.
 
 Gets the map keys.
 
-The object returned by [Keys](../../../brl/brl.map/tmap/#method-keys-tmapenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the keys in the map.
+The object returned by [Keys](../../../brl/brl.map/tmap/#method-keystmapenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the keys in the map.
 
 
 #### Returns
@@ -142,7 +142,7 @@ An enumeration object
 
 Get the map values.
 
-The object returned by [Values](../../../brl/brl.map/tmap/#method-values-tmapenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the values in the map.
+The object returned by [Values](../../../brl/brl.map/tmap/#method-valuestmapenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the values in the map.
 
 
 #### Returns
@@ -161,7 +161,7 @@ Returns a copy the contents of this map.
 
 Returns a node enumeration Object.
 
-The object returned by [ObjectEnumerator](../../../brl/brl.map/tmap/#method-objectenumerator-tnodeenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the nodes in the map.
+The object returned by [ObjectEnumerator](../../../brl/brl.map/tmap/#method-objectenumeratortnodeenumerator) can be used with [EachIn](../../../brl/brl.blitz/#eachin) to iterate through the nodes in the map.
 
 
 <br/>

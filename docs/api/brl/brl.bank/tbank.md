@@ -14,7 +14,7 @@ Memory bank
 Get a bank's memory pointer
 
 
-Please use [Lock](../../../brl/brl.bank/tbank/#method-lock-byte-ptr) and [Unlock](../../../brl/brl.bank/tbank/#method-unlock) instead of this method.
+Please use [Lock](../../../brl/brl.bank/tbank/#method-lockbyte-ptr) and [Unlock](../../../brl/brl.bank/tbank/#method-unlock) instead of this method.
 
 
 #### Returns

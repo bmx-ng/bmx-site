@@ -8,9 +8,9 @@ sidebar_label: BRL.BankStream
 A bank stream allows you to read data into or out of a bank. A bank stream can be used with
 any of the stream commands, or anywhere a [TStream](../../brl/brl.stream/tstream) object is expected.
 
-To create a bank stream, use the [CreateBankStream](../../brl/brl.bankstream/#function-createbankstream-tbankstream-bank-tbank) command.
+To create a bank stream, use the [CreateBankStream](../../brl/brl.bankstream/#function-createbankstreamtbankstream-banktbank-) command.
 
-As with all streams, you should use [CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream) when you are finished with the bank stream.
+As with all streams, you should use [CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-) when you are finished with the bank stream.
 
 
 ## Types

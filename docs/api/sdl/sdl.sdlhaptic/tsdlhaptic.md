@@ -58,7 +58,7 @@ Stops all the currently playing effects on the haptic device.
 
 Gets the number of haptic axes the device has.
 
-The number of haptic axes might be useful if working with the [Direction](../../../sdl/sdl.sdlhaptic/tsdlhapticconstant/#method-direction-tsdlhapticdirection) effect.
+The number of haptic axes might be useful if working with the [Direction](../../../sdl/sdl.sdlhaptic/tsdlhapticconstant/#method-directiontsdlhapticdirection) effect.
 
 
 <br/>
@@ -77,7 +77,7 @@ True if effect is supported, False if it isn't, or a negative error code on fail
 Gets the number of effects a haptic device can store.
 
 On some platforms this isn't fully supported, and therefore is an approximation.
-Always check to see if your created effect was actually created and do not rely solely on [NumEffects](../../../sdl/sdl.sdlhaptic/tsdlhaptic/#method-numeffects-int)().
+Always check to see if your created effect was actually created and do not rely solely on [NumEffects](../../../sdl/sdl.sdlhaptic/tsdlhaptic/#method-numeffectsint)().
 
 
 <br/>
@@ -129,7 +129,7 @@ Stops the haptic effect on the device.
 
 Gets the status of the current effect on the haptic device.
 
-Device must support the [SDL_HAPTIC_STATUS](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-status-int-1-shl-14) feature.
+Device must support the [SDL_HAPTIC_STATUS](../../../sdl/sdl.sdlhaptic/#const-sdlhapticstatusint-1-shl-14) feature.
 
 
 #### Returns

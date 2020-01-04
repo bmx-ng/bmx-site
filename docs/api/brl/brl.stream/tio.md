@@ -121,3 +121,16 @@ Number of bytes successfully written
 
 <br/>
 
+### `Method SetSize:Int(size:Long)`
+
+Sets the size of the stream to <b>size</b> bytes.
+
+Only a few stream types support resizing.
+
+
+#### Returns
+[True](../../../brl/brl.blitz/#true) if the stream was able to be resized, [False](../../../brl/brl.blitz/#false) otherwise.
+
+
+<br/>
+

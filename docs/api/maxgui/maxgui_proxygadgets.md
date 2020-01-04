@@ -16,13 +16,13 @@ available in the core [MaxGUI.MaxGUI](../maxgui/maxgui_maxgui.md) module.
 
 Creates a basic hyperlink gadget that opens the specified <b>url</b>$ in the default browser when clicked.
 
-The underlying gadget is a label, and so the <b>style</b> parameter can take all the [CreateLabel](../../maxgui/maxgui.maxgui/#function-createlabel-tgadget-name-x-y-w-h-group-tgadget-style-label-left) flags apart from LABEL_SEPARATOR.
+The underlying gadget is a label, and so the <b>style</b> parameter can take all the [CreateLabel](../../maxgui/maxgui.maxgui/#function-createlabeltgadget-namexywhgrouptgadgetstylelabelleft-) flags apart from LABEL_SEPARATOR.
 
-The normal and roll-over text color can be set individually using [SetGadgetTextColor](../../maxgui/maxgui.maxgui/#function-setgadgettextcolor-gadget-tgadget-r-g-b) and [SetGadgetColor](../../maxgui/maxgui.maxgui/#function-setgadgetcolor-gadget-tgadget-r-g-b-bg-true) respectively.
+The normal and roll-over text color can be set individually using [SetGadgetTextColor](../../maxgui/maxgui.maxgui/#function-setgadgettextcolor-gadgettgadgetrgb-) and [SetGadgetColor](../../maxgui/maxgui.maxgui/#function-setgadgetcolor-gadgettgadgetrgbbgtrue-) respectively.
 
-The optional <b>customtext</b>$ parameter allows you to set user-friendly text that masks the URL in the label. If this is specified in [CreateHyperlink](../../maxgui/maxgui.proxygadgets/#function-createhyperlink-tgadget-url-x-y-w-h-group-tgadget-style-0-customtext)
-then the label's tooltip is automatically set to the URL the link refers to. This masking text can be changed at any time by calling [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadget-tgadget-text).
-Finally, the <b>url</b>$ that the hyperlink gadget opens can be modified/retrieved using [SetGadgetExtra](../../maxgui/maxgui.maxgui/#function-setgadgetextra-gadget-tgadget-extra-object) and String( [GadgetExtra](../../maxgui/maxgui.maxgui/#function-gadgetextra-object-gadget-tgadget) )
+The optional <b>customtext</b>$ parameter allows you to set user-friendly text that masks the URL in the label. If this is specified in [CreateHyperlink](../../maxgui/maxgui.proxygadgets/#function-createhyperlinktgadget-urlxywhgrouptgadgetstyle0customtext-)
+then the label's tooltip is automatically set to the URL the link refers to. This masking text can be changed at any time by calling [SetGadgetText](../../maxgui/maxgui.maxgui/#function-setgadgettext-gadgettgadgettext-).
+Finally, the <b>url</b>$ that the hyperlink gadget opens can be modified/retrieved using [SetGadgetExtra](../../maxgui/maxgui.maxgui/#function-setgadgetextra-gadgettgadget-extraobject-) and String( [GadgetExtra](../../maxgui/maxgui.maxgui/#function-gadgetextraobject-gadgettgadget-) )
 respectively (see code example).
 
 
@@ -89,24 +89,24 @@ Creates a gadget consisting of two panels separated by a draggable divider.
 A splitter is made up of two panels: a main panel (identified using SPLITPANEL_MAIN) which acts as the main working area; and a side pane
 (identified using SPLITPANEL_SIDEPANE) which is typically used to display additional information. Both of these panels are contained within a
 parent panel that is represented by the <b>TSplitter</b> instance. The two panels are separated by a split handle/divider, the behavior of which can be
-queried and altered using the [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehavior-int-splitter-tsplitter) and [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all) functions respectively.
+queried and altered using the [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehaviorint-splittertsplitter-) and [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-) functions respectively.
 
 The size of the split handle is determined using the optional <b>pHandleSize</b> parameter.  The default size of 10 pixels should work well in most
 situations, and the minimum value that this can be is 4.
 
-After creating a splitter gadget, you can start adding gadgets to it by retrieving the appropriate panel with the [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpanel-tgadget-splitter-tsplitter-panel-splitpanel-main) command.
+After creating a splitter gadget, you can start adding gadgets to it by retrieving the appropriate panel with the [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpaneltgadget-splittertsplitter-panel-splitpanelmain-) command.
 
 The <b>TSplitter</b> type instance can be used with most of the standard MaxGUI commands, allowing you to change the properties of the entire splitter
 gadget. There are, however, a few exceptions:
 
-[SetGadgetSensitivity](../../maxgui/maxgui.maxgui/#function-setgadgetsensitivity-gadget-tgadget-flags) and [GadgetSensitivity](../../maxgui/maxgui.maxgui/#function-gadgetsensitivity-gadget-tgadget) will have no effect on the splitter gadget. If you want to use active panels, create your own
+[SetGadgetSensitivity](../../maxgui/maxgui.maxgui/#function-setgadgetsensitivity-gadgettgadget-flags-) and [GadgetSensitivity](../../maxgui/maxgui.maxgui/#function-gadgetsensitivity-gadgettgadget-) will have no effect on the splitter gadget. If you want to use active panels, create your own
 sub-panel within each splitter panel.
 
-[SetGadgetTooltip](../../maxgui/maxgui.maxgui/#function-setgadgettooltip-gadget-tgadget-tip) and [GadgetTooltip](../../maxgui/maxgui.maxgui/#function-gadgettooltip-gadget-tgadget) will set/retrieve a tooltip for when the user is hovering over the splitter handle/divider.
+[SetGadgetTooltip](../../maxgui/maxgui.maxgui/#function-setgadgettooltip-gadgettgadget-tip-) and [GadgetTooltip](../../maxgui/maxgui.maxgui/#function-gadgettooltip-gadgettgadget-) will set/retrieve a tooltip for when the user is hovering over the splitter handle/divider.
 
-[SetGadgetColor](../../maxgui/maxgui.maxgui/#function-setgadgetcolor-gadget-tgadget-r-g-b-bg-true) will modify the split handle/divider background color.
+[SetGadgetColor](../../maxgui/maxgui.maxgui/#function-setgadgetcolor-gadgettgadgetrgbbgtrue-) will modify the split handle/divider background color.
 
-See Also: [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpanel-tgadget-splitter-tsplitter-panel-splitpanel-main), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splitter-tsplitter-position-save-true), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterposition-int-splitter-tsplitter), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehavior-int-splitter-tsplitter), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splitter-tsplitter-orientation-1) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientation-int-splitter-tsplitter).
+See Also: [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpaneltgadget-splittertsplitter-panel-splitpanelmain-), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splittertsplitter-position-save-true-), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterpositionint-splittertsplitter-), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehaviorint-splittertsplitter-), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splittertsplitter-orientation-1-) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientationint-splittertsplitter-).
 
 
 #### Example
@@ -129,9 +129,9 @@ Global wndMain:TGadget = CreateWindow("Splitter Example",100,100,400,300,Null,WI
 		Global txtEditor:TGadget = CreateTextArea(0,0,ClientWidth(tmpSplitPanel),ClientHeight(tmpSplitPanel),tmpSplitPanel,TEXTAREA_WORDWRAP)
 		SetGadgetLayout(txtEditor,EDGE_ALIGNED,EDGE_ALIGNED,EDGE_ALIGNED,EDGE_ALIGNED)
 		
-			AddTextAreaText(txtEditor, "The quick brown fox jumped over the lazy dogs.nn")
-			AddTextAreaText(txtEditor, "The quick brown fox jumped over the lazy dogs.nn")
-			AddTextAreaText(txtEditor, "The quick brown fox jumped over the lazy dogs.nn")
+			AddTextAreaText(txtEditor, "The quick brown fox jumped over the lazy dogs.~n~n")
+			AddTextAreaText(txtEditor, "The quick brown fox jumped over the lazy dogs.~n~n")
+			AddTextAreaText(txtEditor, "The quick brown fox jumped over the lazy dogs.~n~n")
 		
 		'Add a gadget to our right pane
 		tmpSplitPanel = SplitterPanel(spltMain,SPLITPANEL_SIDEPANE)
@@ -157,10 +157,10 @@ Retrieves either one of the two panels which make up a TSplitter gadget.
 
 This function is used to return a standard MaxGUI panel that you can add your gadgets to.
 
-The panels available are SPLITPANEL_MAIN and SPLITPANEL_SIDEPANE. See [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplitter-tsplitter-px-py-pw-ph-pparent-tgadget-porientation-split-vertical-phandlesize-10) for more information
+The panels available are SPLITPANEL_MAIN and SPLITPANEL_SIDEPANE. See [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplittertsplitter-px-py-pw-ph-pparenttgadget-porientation-splitvertical-phandlesize-10-) for more information
 about the differences between the two panels.
 
-See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplitter-tsplitter-px-py-pw-ph-pparent-tgadget-porientation-split-vertical-phandlesize-10), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splitter-tsplitter-position-save-true), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterposition-int-splitter-tsplitter), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehavior-int-splitter-tsplitter), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splitter-tsplitter-orientation-1) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientation-int-splitter-tsplitter).
+See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplittertsplitter-px-py-pw-ph-pparenttgadget-porientation-splitvertical-phandlesize-10-), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splittertsplitter-position-save-true-), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterpositionint-splittertsplitter-), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehaviorint-splittertsplitter-), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splittertsplitter-orientation-1-) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientationint-splittertsplitter-).
 
 
 <br/>
@@ -169,12 +169,12 @@ See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createspli
 
 Sets the position of the splitter (in pixels) from the edge of a TSplitter gadget.
 
-This function's most common use is to restore a split position previously returned by [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterposition-int-splitter-tsplitter).
+This function's most common use is to restore a split position previously returned by [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterpositionint-splittertsplitter-).
 
 The optional <b>save</b>% parameter determines whether or not the position supplied is restored when the splitter returns from it's hidden state.
 In most circumstances, this should be left as [True](../../brl/brl.blitz/#true).
 
-See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplitter-tsplitter-px-py-pw-ph-pparent-tgadget-porientation-split-vertical-phandlesize-10), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpanel-tgadget-splitter-tsplitter-panel-splitpanel-main), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterposition-int-splitter-tsplitter), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehavior-int-splitter-tsplitter), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splitter-tsplitter-orientation-1) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientation-int-splitter-tsplitter).
+See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplittertsplitter-px-py-pw-ph-pparenttgadget-porientation-splitvertical-phandlesize-10-), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpaneltgadget-splittertsplitter-panel-splitpanelmain-), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterpositionint-splittertsplitter-), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehaviorint-splittertsplitter-), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splittertsplitter-orientation-1-) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientationint-splittertsplitter-).
 
 
 <br/>
@@ -183,9 +183,9 @@ See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createspli
 
 Returns the position of the splitter (in pixels) from the edge of a TSplitter gadget.
 
-This function's most common use is probably for saving the current splitter position to restore at a later time using [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splitter-tsplitter-position-save-true).
+This function's most common use is probably for saving the current splitter position to restore at a later time using [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splittertsplitter-position-save-true-).
 
-See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplitter-tsplitter-px-py-pw-ph-pparent-tgadget-porientation-split-vertical-phandlesize-10), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpanel-tgadget-splitter-tsplitter-panel-splitpanel-main), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splitter-tsplitter-position-save-true), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehavior-int-splitter-tsplitter), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splitter-tsplitter-orientation-1) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientation-int-splitter-tsplitter).
+See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplittertsplitter-px-py-pw-ph-pparenttgadget-porientation-splitvertical-phandlesize-10-), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpaneltgadget-splittertsplitter-panel-splitpanelmain-), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splittertsplitter-position-save-true-), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehaviorint-splittertsplitter-), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splittertsplitter-orientation-1-) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientationint-splittertsplitter-).
 
 
 <br/>
@@ -196,10 +196,10 @@ Sets the splitter orientation.
 
 The two orientations available are (both of which can be combined with SPLIT_FLIPPED):
 
-<table><tr><td> <b>Orientation</b></td><td><b>Description</b></td></tr><tr><td>  -1</td><td>Toggles the SPLIT_FLIPPED flag.</td></tr><tr><td>  SPLIT_VERTICAL</td><td>The splitter consists of a main left panel with a side-pane along the right edge.</td></tr><tr><td>  SPLIT_HORIZONTAL</td><td>The splitter consists of a main top panel with a side-pane along the bottom edge.</td></tr><tr><td>  SPLIT_VERTICAL | SPLIT_FLIPPED</td><td>The splitter consists of a main right panel with a side-pane along the left edge.</td></tr><tr><td>  SPLIT_HORIZONTAL | SPLIT_FLIPPED</td><td>The splitter consists of a main bottom with a side-pane along the top edge.</table>
+<table><tr><td> <b>Orientation</b></td><td><b>Description</b></td></tr><tr><td>  -1</td><td>Toggles the SPLIT_FLIPPED flag.</td></tr><tr><td>  SPLIT_VERTICAL</td><td>The splitter consists of a main left panel with a side-pane along the right edge.</td></tr><tr><td>  SPLIT_HORIZONTAL</td><td>The splitter consists of a main top panel with a side-pane along the bottom edge.</td></tr><tr><td>  SPLIT_VERTICAL | SPLIT_FLIPPED</td><td>The splitter consists of a main right panel with a side-pane along the left edge.</td></tr><tr><td>  SPLIT_HORIZONTAL | SPLIT_FLIPPED</td><td>The splitter consists of a main bottom with a side-pane along the top edge.</td></tr></table>
 
 
-See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplitter-tsplitter-px-py-pw-ph-pparent-tgadget-porientation-split-vertical-phandlesize-10), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpanel-tgadget-splitter-tsplitter-panel-splitpanel-main), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splitter-tsplitter-position-save-true), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterposition-int-splitter-tsplitter), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientation-int-splitter-tsplitter).
+See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplittertsplitter-px-py-pw-ph-pparenttgadget-porientation-splitvertical-phandlesize-10-), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpaneltgadget-splittertsplitter-panel-splitpanelmain-), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splittertsplitter-position-save-true-), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterpositionint-splittertsplitter-), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientationint-splittertsplitter-).
 
 
 <br/>
@@ -210,10 +210,10 @@ Returns the orientation of the splitter.
 
 The two orientations available are (both of which can be combined with SPLIT_FLIPPED):
 
-<table><tr><td> <b>Orientation</b></td><td><b>Description</b></td></tr><tr><td>  SPLIT_VERTICAL</td><td>The splitter consists of a main left panel with a side-pane along the right edge.</td></tr><tr><td>  SPLIT_HORIZONTAL</td><td>The splitter consists of a main top panel with a side-pane along the bottom edge.</td></tr><tr><td>  SPLIT_VERTICAL | SPLIT_FLIPPED</td><td>The splitter consists of a main right panel with a side-pane along the left edge.</td></tr><tr><td>  SPLIT_HORIZONTAL | SPLIT_FLIPPED</td><td>The splitter consists of a main bottom with a side-pane along the top edge.</table>
+<table><tr><td> <b>Orientation</b></td><td><b>Description</b></td></tr><tr><td>  SPLIT_VERTICAL</td><td>The splitter consists of a main left panel with a side-pane along the right edge.</td></tr><tr><td>  SPLIT_HORIZONTAL</td><td>The splitter consists of a main top panel with a side-pane along the bottom edge.</td></tr><tr><td>  SPLIT_VERTICAL | SPLIT_FLIPPED</td><td>The splitter consists of a main right panel with a side-pane along the left edge.</td></tr><tr><td>  SPLIT_HORIZONTAL | SPLIT_FLIPPED</td><td>The splitter consists of a main bottom with a side-pane along the top edge.</td></tr></table>
 
 
-See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplitter-tsplitter-px-py-pw-ph-pparent-tgadget-porientation-split-vertical-phandlesize-10), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpanel-tgadget-splitter-tsplitter-panel-splitpanel-main), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splitter-tsplitter-position-save-true), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterposition-int-splitter-tsplitter), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all) and [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splitter-tsplitter-orientation-1).
+See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplittertsplitter-px-py-pw-ph-pparenttgadget-porientation-splitvertical-phandlesize-10-), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpaneltgadget-splittertsplitter-panel-splitpanelmain-), [SetSplitterPosition](../../maxgui/maxgui.proxygadgets/#function-setsplitterposition-splittertsplitter-position-save-true-), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterpositionint-splittertsplitter-), [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-) and [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splittertsplitter-orientation-1-).
 
 
 <br/>
@@ -224,21 +224,21 @@ Sets the behavior of a splitter.
 
 Any combination of the following are available:
 
-<table><tr><td> <b>Behavior Flag</b></td><td><b>Description</b></td></tr><tr><td>  0</td><td>The splitter does none of the actions listed below.</td></tr><tr><td>  SPLIT_RESIZABLE</td><td>The splitter can be resized by dragging.</td></tr><tr><td>  SPLIT_LIMITPANESIZE</td><td>The splitter side-pane is not allowed to take up more than half the splitted dimensions.</td></tr><tr><td>  SPLIT_CANFLIP</td><td>The splitter can switch between opposite edges by dragging to the edge.</td></tr><tr><td>  SPLIT_CANORIENTATE</td><td>The splitter can switch between vertical and horizontal modes by dragging to right/bottom edges.</td></tr><tr><td>  SPLIT_CLICKTOTOGGLE</td><td>The splitter will hide/show when the drag-bar is clicked.</td></tr><tr><td>  SPLIT_ALL</td><td>A shorthand flag for representing all of the above.</table>
+<table><tr><td> <b>Behavior Flag</b></td><td><b>Description</b></td></tr><tr><td>  0</td><td>The splitter does none of the actions listed below.</td></tr><tr><td>  SPLIT_RESIZABLE</td><td>The splitter can be resized by dragging.</td></tr><tr><td>  SPLIT_LIMITPANESIZE</td><td>The splitter side-pane is not allowed to take up more than half the splitted dimensions.</td></tr><tr><td>  SPLIT_CANFLIP</td><td>The splitter can switch between opposite edges by dragging to the edge.</td></tr><tr><td>  SPLIT_CANORIENTATE</td><td>The splitter can switch between vertical and horizontal modes by dragging to right/bottom edges.</td></tr><tr><td>  SPLIT_CLICKTOTOGGLE</td><td>The splitter will hide/show when the drag-bar is clicked.</td></tr><tr><td>  SPLIT_ALL</td><td>A shorthand flag for representing all of the above.</td></tr></table>
 
 
 The default behavior of a splitter is SPLIT_ALL&~SPLIT_LIMITPANESIZE (i.e. everything but SPLIT_LIMITPANESIZE).
 
-See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplitter-tsplitter-px-py-pw-ph-pparent-tgadget-porientation-split-vertical-phandlesize-10), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpanel-tgadget-splitter-tsplitter-panel-splitpanel-main), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterposition-int-splitter-tsplitter), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehavior-int-splitter-tsplitter), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splitter-tsplitter-orientation-1) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientation-int-splitter-tsplitter).
+See Also: [CreateSplitter](../../maxgui/maxgui.proxygadgets/#function-createsplittertsplitter-px-py-pw-ph-pparenttgadget-porientation-splitvertical-phandlesize-10-), [SplitterPanel](../../maxgui/maxgui.proxygadgets/#function-splitterpaneltgadget-splittertsplitter-panel-splitpanelmain-), [SplitterPosition](../../maxgui/maxgui.proxygadgets/#function-splitterpositionint-splittertsplitter-), [SplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-splitterbehaviorint-splittertsplitter-), [SetSplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-setsplitterorientation-splittertsplitter-orientation-1-) and [SplitterOrientation](../../maxgui/maxgui.proxygadgets/#function-splitterorientationint-splittertsplitter-).
 
 
 <br/>
 
 ### `Function SplitterBehavior:Int( splitter:TSplitter )`
 
-Returns the value previously set using [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all).
+Returns the value previously set using [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-).
 
-See [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splitter-tsplitter-flags-split-all) for more information.
+See [SetSplitterBehavior](../../maxgui/maxgui.proxygadgets/#function-setsplitterbehavior-splittertsplitter-flagssplitall-) for more information.
 
 
 #### Returns
@@ -252,26 +252,26 @@ An integer composed of a combination of bitwise flags that describe the behavior
 Creates a scrollable panel.
 
 A scroll panel can be used to present a large number of gadgets in a small area.  Scrollbars are displayed to allow the
-user to move around a client-area that is viewed through a, typically smaller, viewport.  The [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelx-int-scrollpanel-tscrollpanel) and [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanely-int-scrollpanel-tscrollpanel) functions
-can be used to retrieve the current scroll position, and the [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpanel-tscrollpanel-px-scrollpanel-top-py-scrollpanel-left) command, to set the scroll position.  A <b>TScrollPanel</b> gadget
+user to move around a client-area that is viewed through a, typically smaller, viewport.  The [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelxint-scrollpaneltscrollpanel-) and [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanelyint-scrollpaneltscrollpanel-) functions
+can be used to retrieve the current scroll position, and the [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpaneltscrollpanel-px-scrollpaneltop-py-scrollpanelleft-) command, to set the scroll position.  A <b>TScrollPanel</b> gadget
 emits the following event when <i>the user</i> scrolls around the scroll area:
 
-<table><tr><td> <b>Event</b></td><td><b>EventX</b></td><td><b>EventY</b></td></tr><tr><td>  EVENT_GADGETACTION</td><td>New value of [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelx-int-scrollpanel-tscrollpanel).</td><td>New value of [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanely-int-scrollpanel-tscrollpanel).</table>
+<table><tr><td> <b>Event</b></td><td><b>EventX</b></td><td><b>EventY</b></td></tr><tr><td>  EVENT_GADGETACTION</td><td>New value of [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelxint-scrollpaneltscrollpanel-).</td><td>New value of [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanelyint-scrollpaneltscrollpanel-).</td></tr></table>
 
 
 Any combination of the following style flags are supported:
 
-<table><tr><td> <b>Constant</b></td><td><b>Meaning</b></td></tr><tr><td>  SCROLLPANEL_SUNKEN</td><td>The scroll-panel will be drawn with a sunken border.</td></tr><tr><td>  SCROLLPANEL_HALWAYS</td><td>The horizontal scroll-bar will be shown at all times (even if not necessary).</td></tr><tr><td>  SCROLLPANEL_VALWAYS</td><td>The vertical scroll-bar will be shown at all times (even if not necessary).</td></tr><tr><td>  SCROLLPANEL_HNEVER</td><td>The horizontal scroll-bar will never be shown (even if client-area width is greater than viewport's).</td></tr><tr><td>  SCROLLPANEL_VNEVER</td><td>The vertical scroll-bar will never be shown (even if client-area height is greater than viewport's).</table>
+<table><tr><td> <b>Constant</b></td><td><b>Meaning</b></td></tr><tr><td>  SCROLLPANEL_SUNKEN</td><td>The scroll-panel will be drawn with a sunken border.</td></tr><tr><td>  SCROLLPANEL_HALWAYS</td><td>The horizontal scroll-bar will be shown at all times (even if not necessary).</td></tr><tr><td>  SCROLLPANEL_VALWAYS</td><td>The vertical scroll-bar will be shown at all times (even if not necessary).</td></tr><tr><td>  SCROLLPANEL_HNEVER</td><td>The horizontal scroll-bar will never be shown (even if client-area width is greater than viewport's).</td></tr><tr><td>  SCROLLPANEL_VNEVER</td><td>The vertical scroll-bar will never be shown (even if client-area height is greater than viewport's).</td></tr></table>
 
 
 The above can also be combined with any of the following behavioural flags which determine how the scrollable client-area resizes with the viewport:
 
-<table><tr><td> <b>Constant</b></td><td><b>Meaning</b></td></tr><tr><td>  SCROLLPANEL_HSCALING</td><td>The client area's width grows uniformly as the viewport is sized.</td></tr><tr><td>  SCROLLPANEL_VSCALING</td><td>The client area's height grows uniformly as the viewport is sized.</table>
+<table><tr><td> <b>Constant</b></td><td><b>Meaning</b></td></tr><tr><td>  SCROLLPANEL_HSCALING</td><td>The client area's width grows uniformly as the viewport is sized.</td></tr><tr><td>  SCROLLPANEL_VSCALING</td><td>The client area's height grows uniformly as the viewport is sized.</td></tr></table>
 
 
 * The <b>TScrollPanel</b> instance itself represents the viewport of the scroll-panel, which can be manipulated (e.g. resized/shown/hidden) using the
 standard MaxGUI commands.
-* The client area is the panel that will actually be scrolled and is retrieved using the [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclient-tgadget-scrollpanel-tscrollpanel) command.  This is the panel
+* The client area is the panel that will actually be scrolled and is retrieved using the [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclienttgadget-scrollpaneltscrollpanel-) command.  This is the panel
 whose dimensions determine the total scrollable area, and is also the panel that all your child gadgets should be added to.
 
 ![](assets/scroll_dimensions.png)
@@ -301,7 +301,7 @@ SetGadgetShape( ScrollPanelClient( myScrollPanel ), 0, 0, w, h )
 ````
 
 
-See Also: [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclient-tgadget-scrollpanel-tscrollpanel), [FitScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-fitscrollpanelclient-scrollpanel-tscrollpanel-fittype-scrollpanel-sizetokids), [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpanel-tscrollpanel-px-scrollpanel-top-py-scrollpanel-left), [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelx-int-scrollpanel-tscrollpanel), [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanely-int-scrollpanel-tscrollpanel) and [FitScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-fitscrollpanelclient-scrollpanel-tscrollpanel-fittype-scrollpanel-sizetokids).
+See Also: [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclienttgadget-scrollpaneltscrollpanel-), [FitScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-fitscrollpanelclient-scrollpaneltscrollpanel-fittype-scrollpanelsizetokids-), [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpaneltscrollpanel-px-scrollpaneltop-py-scrollpanelleft-), [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelxint-scrollpaneltscrollpanel-), [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanelyint-scrollpaneltscrollpanel-) and [FitScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-fitscrollpanelclient-scrollpaneltscrollpanel-fittype-scrollpanelsizetokids-).
 
 
 #### Example
@@ -376,12 +376,12 @@ Forever
 
 Retrieves the panel that is scrolled.
 
-This panel represents the total scrollable region of the gadget.  As such, use [SetGadgetShape](../../maxgui/maxgui.maxgui/#function-setgadgetshape-gadget-tgadget-x-y-w-h) on this panel to alter the
-scrollable region (the xpos and ypos parameters will be ignored) or use the helper function [FitScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-fitscrollpanelclient-scrollpanel-tscrollpanel-fittype-scrollpanel-sizetokids) to resize the client area to
+This panel represents the total scrollable region of the gadget.  As such, use [SetGadgetShape](../../maxgui/maxgui.maxgui/#function-setgadgetshape-gadgettgadgetxywh-) on this panel to alter the
+scrollable region (the xpos and ypos parameters will be ignored) or use the helper function [FitScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-fitscrollpanelclient-scrollpaneltscrollpanel-fittype-scrollpanelsizetokids-) to resize the client area to
 common dimensions.  In either case, it is important to note that, contrary to typical MaxGUI behaviour, resizing the client panel
-<i>will not alter the position or dimensions of the children</i>, irrespective of any sizing behaviour previously defined using [SetGadgetLayout](../../maxgui/maxgui.maxgui/#function-setgadgetlayout-gadget-tgadget-left-right-top-bottom).
+<i>will not alter the position or dimensions of the children</i>, irrespective of any sizing behaviour previously defined using [SetGadgetLayout](../../maxgui/maxgui.maxgui/#function-setgadgetlayout-gadgettgadgetleftrighttopbottom-).
 
-See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpanel-tscrollpanel-x-y-w-h-group-tgadget-flags-0) for more information.
+See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpaneltscrollpanel-xywhgrouptgadgetflags0-) for more information.
 
 
 <br/>
@@ -391,16 +391,16 @@ See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollp
 Helper function that resizes the client area to common dimensions.
 
 This function resizes the scrollable area of a <b>TScrollPanel</b> widget.  Any child gadgets will retain their current
-position and dimensions, irrespective of any sizing behaviour previously defined using [SetGadgetLayout](../../maxgui/maxgui.maxgui/#function-setgadgetlayout-gadget-tgadget-left-right-top-bottom). This function will
+position and dimensions, irrespective of any sizing behaviour previously defined using [SetGadgetLayout](../../maxgui/maxgui.maxgui/#function-setgadgetlayout-gadgettgadgetleftrighttopbottom-). This function will
 also reset the current visible area, to the furthest top-left.
 
 * <b>scrollpanel</b>: The scrollpanel whose client you want to resize.
 * <b>fitType</b>: Should be one of the following constants:
 
-<table><tr><td> <b>Constant</b></td><td><b>Meaning</b></td></tr><tr><td>  SCROLLPANEL_SIZETOKIDS</td><td>The client area will be resized so that its width and height are just enough to enclose all child gadgets.</td></tr><tr><td>  SCROLLPANEL_SIZETOVIEWPORT</td><td>The client area will be resized so that it is the same size that the viewport is currently (effectively removing the scrollbars).</table>
+<table><tr><td> <b>Constant</b></td><td><b>Meaning</b></td></tr><tr><td>  SCROLLPANEL_SIZETOKIDS</td><td>The client area will be resized so that its width and height are just enough to enclose all child gadgets.</td></tr><tr><td>  SCROLLPANEL_SIZETOVIEWPORT</td><td>The client area will be resized so that it is the same size that the viewport is currently (effectively removing the scrollbars).</td></tr></table>
 
 
-See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpanel-tscrollpanel-x-y-w-h-group-tgadget-flags-0) and [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclient-tgadget-scrollpanel-tscrollpanel) for more information.
+See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpaneltscrollpanel-xywhgrouptgadgetflags0-) and [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclienttgadget-scrollpaneltscrollpanel-) for more information.
 
 
 <br/>
@@ -416,7 +416,7 @@ as possible to the specified <b>pX</b>, <b>pY</b> position in the client-area.
 
 There are 4 position constants provided:
 
-<table><tr><td> <b>Constant</b></td><td><b>Position</b></td></tr><tr><td>  SCROLLPANEL_TOP</td><td>Top-most edge.</td></tr><tr><td>  SCROLLPANEL_LEFT</td><td>Left-most edge.</td></tr><tr><td>  SCROLLPANEL_BOTTOM</td><td>Bottom-most edge.</td></tr><tr><td>  SCROLLPANEL_RIGHT</td><td>Right-most edge.</td></tr><tr><td>  SCROLLPANEL_HOLD</td><td>Current position.</table>
+<table><tr><td> <b>Constant</b></td><td><b>Position</b></td></tr><tr><td>  SCROLLPANEL_TOP</td><td>Top-most edge.</td></tr><tr><td>  SCROLLPANEL_LEFT</td><td>Left-most edge.</td></tr><tr><td>  SCROLLPANEL_BOTTOM</td><td>Bottom-most edge.</td></tr><tr><td>  SCROLLPANEL_RIGHT</td><td>Right-most edge.</td></tr><tr><td>  SCROLLPANEL_HOLD</td><td>Current position.</td></tr></table>
 
 
 For example, both of these commands...
@@ -440,7 +440,7 @@ ScrollScrollPanel( myScrollPanel, SCROLLPANEL_LEFT, SCROLLPANEL_HOLD )
 ````
 
 
-See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpanel-tscrollpanel-x-y-w-h-group-tgadget-flags-0), [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelx-int-scrollpanel-tscrollpanel), [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanely-int-scrollpanel-tscrollpanel) and [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclient-tgadget-scrollpanel-tscrollpanel) for more information.
+See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpaneltscrollpanel-xywhgrouptgadgetflags0-), [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelxint-scrollpaneltscrollpanel-), [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanelyint-scrollpaneltscrollpanel-) and [ScrollPanelClient](../../maxgui/maxgui.proxygadgets/#function-scrollpanelclienttgadget-scrollpaneltscrollpanel-) for more information.
 
 
 <br/>
@@ -449,10 +449,10 @@ See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollp
 
 Returns the x position of the client-area that is currently at the top-left of the viewport.
 
-Complementary function to [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanely-int-scrollpanel-tscrollpanel) and [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpanel-tscrollpanel-px-scrollpanel-top-py-scrollpanel-left).  See [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpanel-tscrollpanel-px-scrollpanel-top-py-scrollpanel-left) for a visual representation
+Complementary function to [ScrollPanelY](../../maxgui/maxgui.proxygadgets/#function-scrollpanelyint-scrollpaneltscrollpanel-) and [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpaneltscrollpanel-px-scrollpaneltop-py-scrollpanelleft-).  See [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpaneltscrollpanel-px-scrollpaneltop-py-scrollpanelleft-) for a visual representation
 of this value.
 
-See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpanel-tscrollpanel-x-y-w-h-group-tgadget-flags-0) for more information.
+See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpaneltscrollpanel-xywhgrouptgadgetflags0-) for more information.
 
 
 <br/>
@@ -461,10 +461,10 @@ See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollp
 
 Returns the y position of the client-area that is currently at the top-left of the viewport.
 
-Complementary function to [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelx-int-scrollpanel-tscrollpanel) and [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpanel-tscrollpanel-px-scrollpanel-top-py-scrollpanel-left).  See [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpanel-tscrollpanel-px-scrollpanel-top-py-scrollpanel-left) for a visual representation
+Complementary function to [ScrollPanelX](../../maxgui/maxgui.proxygadgets/#function-scrollpanelxint-scrollpaneltscrollpanel-) and [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpaneltscrollpanel-px-scrollpaneltop-py-scrollpanelleft-).  See [ScrollScrollPanel](../../maxgui/maxgui.proxygadgets/#function-scrollscrollpanel-scrollpaneltscrollpanel-px-scrollpaneltop-py-scrollpanelleft-) for a visual representation
 of this value.
 
-See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpanel-tscrollpanel-x-y-w-h-group-tgadget-flags-0) for more information.
+See [CreateScrollPanel](../../maxgui/maxgui.proxygadgets/#function-createscrollpaneltscrollpanel-xywhgrouptgadgetflags0-) for more information.
 
 
 <br/>

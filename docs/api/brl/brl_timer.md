@@ -5,6 +5,11 @@ sidebar_label: BRL.Timer
 ---
 
 
+## Types
+| Type | Description |
+|---|---|
+| [TChrono](../../brl/brl.timer/tchrono) | A high resolution timing mechanism. |
+
 ## Functions
 
 ### `Function CreateTimer:TTimer( hertz#,event:TEvent=Null )`
@@ -12,9 +17,9 @@ sidebar_label: BRL.Timer
 Create a timer
 
 
-[CreateTimer](../../brl/brl.timer/#function-createtimer-ttimer-hertz-event-tevent-null) creates a timer object that 'ticks' <b>hertz</b> times per second.
+[CreateTimer](../../brl/brl.timer/#function-createtimerttimer-hertzeventteventnull-) creates a timer object that 'ticks' <b>hertz</b> times per second.
 
-Each time the timer ticks, <b>event</b> will be emitted using [EmitEvent](../../brl/brl.event/#function-emitevent-event-tevent).
+Each time the timer ticks, <b>event</b> will be emitted using [EmitEvent](../../brl/brl.event/#function-emitevent-eventtevent-).
 
 If <b>event</b> is Null, an event with an <b>id</b> equal to EVENT_TIMERTICK and
 <b>source</b> equal to the timer object will be emitted instead.
@@ -86,7 +91,7 @@ The number of times <b>timer</b> has ticked over
 Wait until a timer ticks
 
 #### Returns
-The number of ticks since the last call to [WaitTimer](../../brl/brl.timer/#function-waittimer-int-timer-ttimer)
+The number of ticks since the last call to [WaitTimer](../../brl/brl.timer/#function-waittimerint-timerttimer-)
 
 
 #### Example

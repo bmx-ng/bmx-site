@@ -321,7 +321,7 @@ Print b.ToString() ' 1, 0
 
 Returns the dot product of two vectors.
 
-For normalized vectors [Dot](../../../brl/brl.vector/svec2d/#method-dot-doubleb-svec2d) returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions,
+For normalized vectors [Dot](../../../brl/brl.vector/svec2d/#method-dotdoublebsvec2d) returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions,
 and a number in between for other cases (e.g. Dot returns zero if vectors are perpendicular).
 
 
@@ -418,6 +418,25 @@ Local b:SVec2D = New SVec2D(0, 10)
 Local c:SVec2D = a.Reflect(b)
 
 Print c.ToString() ' -5, 0
+```
+<br/>
+
+### `Method Rotate:SVec2D(angle:Double)`
+
+Returns a vector rotated by <b>angle</b> degrees.
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.vector
+
+Local a:SVec2D = New SVec2D(5, 0)
+
+Local b:SVec2D = a.Rotate(90)
+
+Print b.ToString() ' 0, 5
 ```
 <br/>
 

@@ -71,6 +71,12 @@ Divides the vector by <b>s</b>, returning a new vector.
 
 <br/>
 
+### `Method Operator/:SVec2I(s:Float)`
+
+Divides the vector by <b>s</b>, returning a new vector.
+
+<br/>
+
 ### `Method Operator[]:Int(index:Int)`
 
 Retrieves the x or y component using [0] or [1] respectively.
@@ -126,7 +132,7 @@ When normalized, a vector keeps the same direction but its length is 1.0.
 
 Returns the dot product of two vectors.
 
-For normalized vectors [Dot](../../../brl/brl.vector/svec2i/#method-dot-intb-svec2i) returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions,
+For normalized vectors [Dot](../../../brl/brl.vector/svec2i/#method-dotintbsvec2i) returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions,
 and a number in between for other cases (e.g. Dot returns zero if vectors are perpendicular).
 
 
@@ -169,6 +175,12 @@ Returns a vector perpendicular to the vector.
 ### `Method Reflect:SVec2I(n:SVec2I)`
 
 Returns a vector reflected from the given plane, specified by its normal vector.
+
+<br/>
+
+### `Method Rotate:SVec2I(angle:Double)`
+
+Returns a vector rotated by <b>angle</b> degrees.
 
 <br/>
 

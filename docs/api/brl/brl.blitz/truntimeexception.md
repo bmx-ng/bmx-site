@@ -7,6 +7,6 @@ sidebar_label: TRuntimeException
 Runtime exception
 
 
-Thrown by [RuntimeError](../../../brl/brl.blitz/#function-runtimeerror-message).
+Thrown by [RuntimeError](../../../brl/brl.blitz/#function-runtimeerror-message-).
 
 

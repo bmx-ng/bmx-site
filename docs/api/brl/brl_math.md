@@ -619,3 +619,158 @@ Until KeyDown(KEY_ESCAPE)
 ```
 <br/>
 
+### `Function Round:Double( x:Double )`
+
+Nearest integral value to <b>x</b>.
+
+#### Example
+```blitzmax
+Rem
+Nearest integral value to x
+End Rem
+SuperStrict
+
+Framework brl.standardio
+Import brl.math
+
+Print "Round(+2.3) = " + Round(2.3)
+Print "Round(+2.5) = " + Round(2.5)
+Print "Round(+2.7) = " + round(2.7)
+Print ""
+
+Print "Round(-2.3) = " + Round(-2.3)
+Print "Round(-2.5) = " + Round(-2.5)
+Print "Round(-2.7) = " + Round(-2.7)
+
+Print "Round(-0.0) = " + Round(-0.0)
+```
+<br/>
+
+### `Function Trunc:Double( x:Double )`
+
+Nearest integral not greater in magnitude than <b>x</b>.
+
+#### Example
+```blitzmax
+Rem
+Nearest integral not greater in magnitude than x
+End Rem
+SuperStrict
+
+Framework brl.standardio
+Import brl.math
+
+Print "Trunc(+2.7) = " + Trunc(2.7)
+Print "Trunc(-2.7) = " + Trunc(-2.7)
+Print "Trunc(-0.0) = " + Trunc(-0.0)
+```
+<br/>
+
+### `Function SqrF:Float( x:Float )`
+
+Square root of <b>x</b>
+
+<br/>
+
+### `Function SinF:Float( x:Float )`
+
+Sine of <b>x</b> degrees
+
+<br/>
+
+### `Function CosF:Float( x:Float )`
+
+Cosine of <b>x</b> degrees
+
+<br/>
+
+### `Function TanF:Float( x:Float )`
+
+Tangent of <b>x</b> degrees
+
+<br/>
+
+### `Function ASinF:Float( x:Float )`
+
+Inverse Sine of <b>x</b>
+
+<br/>
+
+### `Function ACosF:Float( x:Float )`
+
+Inverse Cosine of <b>x</b>
+
+<br/>
+
+### `Function ATanF:Float( x:Float )`
+
+Inverse Tangent of <b>x</b>
+
+<br/>
+
+### `Function ATan2F:Float( y:Float,x:Float )`
+
+Inverse Tangent of two variables <b>x</b> , <b>y</b>
+
+<br/>
+
+### `Function SinhF:Float( x:Float )`
+
+Hyperbolic sine of <b>x</b>
+
+<br/>
+
+### `Function CoshF:Float( x:Float )`
+
+Hyperbolic cosine of <b>x</b>
+
+<br/>
+
+### `Function TanhF:Float( x:Float )`
+
+Hyperbolic tangent of <b>x</b>
+
+<br/>
+
+### `Function ExpF:Float( x:Float )`
+
+Exponential function
+
+<br/>
+
+### `Function LogF:Float( x:Float )`
+
+Natural logarithm
+
+<br/>
+
+### `Function Log10F:Float( x:Float )`
+
+Base 10 logarithm
+
+<br/>
+
+### `Function CeilF:Float( x:Float )`
+
+Smallest integral value not less than <b>x</b>
+
+<br/>
+
+### `Function FloorF:Float( x:Float )`
+
+Largest integral value not greater than <b>x</b>
+
+<br/>
+
+### `Function RoundF:Float( x:Float )`
+
+Nearest integral value to <b>x</b>.
+
+<br/>
+
+### `Function TruncF:Float( x:Float )`
+
+Nearest integral not greater in magnitude than <b>x</b>.
+
+<br/>
+

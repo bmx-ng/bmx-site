@@ -13,7 +13,7 @@ A template for a condition effect.
 
 Creates a new instance of the effect.
 
-<b>effectType</b> one of [SDL_HAPTIC_SPRING](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-spring-int-1-shl-7), [SDL_HAPTIC_DAMPER](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-damper-int-1-shl-8), [SDL_HAPTIC_INERTIA](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-inertia-int-1-shl-9), [SDL_HAPTIC_FRICTION](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-friction-int-1-shl-10)
+<b>effectType</b> one of [SDL_HAPTIC_SPRING](../../../sdl/sdl.sdlhaptic/#const-sdlhapticspringint-1-shl-7), [SDL_HAPTIC_DAMPER](../../../sdl/sdl.sdlhaptic/#const-sdlhapticdamperint-1-shl-8), [SDL_HAPTIC_INERTIA](../../../sdl/sdl.sdlhaptic/#const-sdlhapticinertiaint-1-shl-9), [SDL_HAPTIC_FRICTION](../../../sdl/sdl.sdlhaptic/#const-sdlhapticfrictionint-1-shl-10)
 
 
 <br/>

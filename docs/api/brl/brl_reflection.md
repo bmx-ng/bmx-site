@@ -5,8 +5,6 @@ sidebar_label: BRL.Reflection
 ---
 
 
-<h1>Reflection</h1>
-
 BlitzMax provides limited support for a form of runtime <i>reflection</i>.
 
 Using reflection, programs can 'inspect' objects and types at runtime. You can determine the fields and methods contained in an object or type, set and get object fields and invoke - or 'call' - object methods.

@@ -134,7 +134,7 @@ Resets all previously set OpenGL context attributes to their default values.
 Sets an OpenGL window attribute before window creation.
 
 Sets the OpenGL attribute <b>attr</b> to <b>value</b>. The requested attributes should be set before creating an OpenGL window.
-You should use [GetAttribute](../../../sdl/sdl.sdlvideo/tsdlglcontext/#function-getattribute-int-attr-int-value-int-var)() to check the values after creating the OpenGL context, since the values obtained can differ from
+You should use [GetAttribute](../../../sdl/sdl.sdlvideo/tsdlglcontext/#function-getattributeintattrint-valueint-var)() to check the values after creating the OpenGL context, since the values obtained can differ from
 the requested ones.
 
 
@@ -146,7 +146,7 @@ the requested ones.
 
 ### `Function UnloadLibrary()`
 
-Unloads the OpenGL library previously loaded by [LoadLibrary](../../../sdl/sdl.sdlvideo/tsdlglcontext/#function-loadlibrary-int-path-string)()
+Unloads the OpenGL library previously loaded by [LoadLibrary](../../../sdl/sdl.sdlvideo/tsdlglcontext/#function-loadlibraryintpathstring)()
 
 <br/>
 

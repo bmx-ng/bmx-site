@@ -21,6 +21,12 @@ Get type meta data
 
 <br/>
 
+### `Method HasMetaData:Int( key:String )`
+
+Returns [True](../../../brl/brl.blitz/#true) if <b>key</b> is in the metadata.
+
+<br/>
+
 ### `Method SuperType:TTypeId()`
 
 Get super type
@@ -248,13 +254,187 @@ Get the number of dimensions
 
 ### `Method GetArrayElement:Object( _array:Object,index )`
 
-Get an array element
+Gets an array element
+
+<br/>
+
+### `Method GetStringArrayElement:String( _array:Object,index )`
+
+Gets an array element as a [String](../../../brl/brl.blitz/#string)
+
+<br/>
+
+### `Method GetByteArrayElement:Byte( _array:Object,index )`
+
+Gets an array element as a [Byte](../../../brl/brl.blitz/#byte)
+
+<br/>
+
+### `Method GetShortArrayElement:Short( _array:Object,index )`
+
+Gets an array element as a [Short](../../../brl/brl.blitz/#short)
+
+<br/>
+
+### `Method GetIntArrayElement:Int( _array:Object,index )`
+
+Gets an array element as an [Int](../../../brl/brl.blitz/#int)
+
+<br/>
+
+### `Method GetUIntArrayElement:UInt( _array:Object,index )`
+
+Gets an array element as a [UInt](../../../brl/brl.blitz/#uint)
+
+<br/>
+
+### `Method GetLongArrayElement:Long( _array:Object,index )`
+
+Gets an array element as a [Long](../../../brl/brl.blitz/#long)
+
+<br/>
+
+### `Method GetULongArrayElement:ULong( _array:Object,index )`
+
+Gets an array element as a [ULong](../../../brl/brl.blitz/#ulong)
+
+<br/>
+
+### `Method GetSizeTArrayElement:Size_T( _array:Object,index )`
+
+Gets an array element as a [Size_T](../../../brl/brl.blitz/#sizet)
+
+<br/>
+
+### `Method GetFloatArrayElement:Float( _array:Object,index )`
+
+Gets an array element as a [Float](../../../brl/brl.blitz/#float)
+
+<br/>
+
+### `Method GetDoubleArrayElement:Double( _array:Object,index )`
+
+Gets an array element as a [Double](../../../brl/brl.blitz/#double)
 
 <br/>
 
 ### `Method SetArrayElement( _array:Object,index,value:Object )`
 
-Set an array element
+Sets an array element
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:Byte )`
+
+Sets an array element as a [Byte](../../../brl/brl.blitz/#byte)
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:Short )`
+
+Sets an array element as a [Short](../../../brl/brl.blitz/#short)
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:Int )`
+
+Sets an array element as an [Int](../../../brl/brl.blitz/#int)
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:UInt )`
+
+Sets an array element as a [UInt](../../../brl/brl.blitz/#uint)
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:Long )`
+
+Sets an array element as a [Long](../../../brl/brl.blitz/#long)
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:ULong )`
+
+Sets an array element as a [ULong](../../../brl/brl.blitz/#ulong)
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:Size_T )`
+
+Sets an array element as a [Size_T](../../../brl/brl.blitz/#sizet)
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:Float )`
+
+Sets an array element as a [Float](../../../brl/brl.blitz/#float)
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index,value:Double )`
+
+Sets an array element as a [Double](../../../brl/brl.blitz/#double)
+
+<br/>
+
+### `Method SetByteArrayElement( _array:Object,index,value:Byte )`
+
+Sets an array element as a [Byte](../../../brl/brl.blitz/#byte)
+
+<br/>
+
+### `Method SetShortArrayElement( _array:Object,index,value:Short )`
+
+Sets an array element as a [Short](../../../brl/brl.blitz/#short)
+
+<br/>
+
+### `Method SetIntArrayElement( _array:Object,index,value:Int )`
+
+Sets an array element as a [Int](../../../brl/brl.blitz/#int)
+
+<br/>
+
+### `Method SetUIntArrayElement( _array:Object,index,value:UInt )`
+
+Sets an array element as a [UInt](../../../brl/brl.blitz/#uint)
+
+<br/>
+
+### `Method SetLongArrayElement( _array:Object,index,value:Long )`
+
+Sets an array element as a [Long](../../../brl/brl.blitz/#long)
+
+<br/>
+
+### `Method SetULongArrayElement( _array:Object,index,value:ULong )`
+
+Sets an array element as a [ULong](../../../brl/brl.blitz/#ulong)
+
+<br/>
+
+### `Method SetSizeTArrayElement( _array:Object,index,value:Size_T )`
+
+Sets an array element as a [Size_T](../../../brl/brl.blitz/#sizet)
+
+<br/>
+
+### `Method SetFloatArrayElement( _array:Object,index,value:Float )`
+
+Sets an array element as a [Float](../../../brl/brl.blitz/#float)
+
+<br/>
+
+### `Method SetDoubleArrayElement( _array:Object,index,value:Double )`
+
+Sets an array element as a [Double](../../../brl/brl.blitz/#double)
+
+<br/>
+
+### `Method SetStringArrayElement( _array:Object,index,value:String )`
+
+Sets an array element
 
 <br/>
 

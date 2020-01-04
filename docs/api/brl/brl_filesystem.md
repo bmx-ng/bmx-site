@@ -9,21 +9,21 @@ sidebar_label: BRL.FileSystem
 The BlitzMax filesystem module contains commands to perform operations on the computer's
 files and directories.
 
-[OpenFile](../../brl/brl.filesystem/#function-openfile-tstream-url-object-readable-int-true-writeable-int-true), [ReadFile](../../brl/brl.filesystem/#function-readfile-tstream-url-object) and [WriteFile](../../brl/brl.filesystem/#function-writefile-tstream-url-object) return a stream object for reading and or writing data
+[OpenFile](../../brl/brl.filesystem/#function-openfiletstream-urlobjectreadableinttruewriteableinttrue-), [ReadFile](../../brl/brl.filesystem/#function-readfiletstream-urlobject-) and [WriteFile](../../brl/brl.filesystem/#function-writefiletstream-urlobject-) return a stream object for reading and or writing data
 to files.
 
 Directories can be examined file by file using a combination of the
-[ReadDir](../../brl/brl.filesystem/#function-readdir-byte-ptr-path), [NextFile](../../brl/brl.filesystem/#function-nextfile-dir-byte-ptr) and [CloseDir](../../brl/brl.filesystem/#function-closedir-dir-byte-ptr) commands, or [LoadDir](../../brl/brl.filesystem/#function-loaddir-dir-skip-dots-int-true) can be used to read the file names
+[ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-path-), [NextFile](../../brl/brl.filesystem/#function-nextfile-dirbyte-ptr-) and [CloseDir](../../brl/brl.filesystem/#function-closedir-dirbyte-ptr-) commands, or [LoadDir](../../brl/brl.filesystem/#function-loaddir-dirskipdotsinttrue-) can be used to read the file names
 of a directory into a string array.
 
-File properties can be examined with the [FileType](../../brl/brl.filesystem/#function-filetype-int-path), [FileTime](../../brl/brl.filesystem/#function-filetime-int-path-timetype-int-filetime-modified), [FileSize](../../brl/brl.filesystem/#function-filesize-long-path) and [FileMode](../../brl/brl.filesystem/#function-filemode-int-path) commands.
+File properties can be examined with the [FileType](../../brl/brl.filesystem/#function-filetypeint-path-), [FileTime](../../brl/brl.filesystem/#function-filetimeint-path-timetypeintfiletimemodified-), [FileSize](../../brl/brl.filesystem/#function-filesizelong-path-) and [FileMode](../../brl/brl.filesystem/#function-filemodeint-path-) commands.
 
-Files and directories (folders) can be created and deleted with the [CreateFile](../../brl/brl.filesystem/#function-createfile-int-path), [CreateDir](../../brl/brl.filesystem/#function-createdir-int-path-recurse-int-false)
-[DeleteFile](../../brl/brl.filesystem/#function-deletefile-int-path) and [DeleteDir](../../brl/brl.filesystem/#function-deletedir-int-path-recurse-int-false) commands.
+Files and directories (folders) can be created and deleted with the [CreateFile](../../brl/brl.filesystem/#function-createfileint-path-), [CreateDir](../../brl/brl.filesystem/#function-createdirint-pathrecurseintfalse-)
+[DeleteFile](../../brl/brl.filesystem/#function-deletefileint-path-) and [DeleteDir](../../brl/brl.filesystem/#function-deletedirint-pathrecurseintfalse-) commands.
 
 Finally, the FileSystem module contains various utility functions for handling file paths
-in a system independent manner. These commands include [RealPath](../../brl/brl.filesystem/#function-realpath-path), [StripDir](../../brl/brl.filesystem/#function-stripdir-path), [StripExt](../../brl/brl.filesystem/#function-stripext-path),
-[StripAll](../../brl/brl.filesystem/#function-stripall-path), [ExtractDir](../../brl/brl.filesystem/#function-extractdir-path) and [ExtractExt](../../brl/brl.filesystem/#function-extractext-path).
+in a system independent manner. These commands include [RealPath](../../brl/brl.filesystem/#function-realpath-path-), [StripDir](../../brl/brl.filesystem/#function-stripdir-path-), [StripExt](../../brl/brl.filesystem/#function-stripext-path-),
+[StripAll](../../brl/brl.filesystem/#function-stripall-path-), [ExtractDir](../../brl/brl.filesystem/#function-extractdir-path-) and [ExtractExt](../../brl/brl.filesystem/#function-extractext-path-).
 
 
 ## Functions
@@ -75,7 +75,7 @@ Print StripAll("mypath/myfile.bmx")	' prints myfile
 Strip trailing slash from a file path
 
 
-[StripSlash](../../brl/brl.filesystem/#function-stripslash-path) will not remove the trailing slash from a 'root' path. For example, "/"
+[StripSlash](../../brl/brl.filesystem/#function-stripslash-path-) will not remove the trailing slash from a 'root' path. For example, "/"
 or (on Win32 only) "C:/".
 
 
@@ -227,7 +227,7 @@ SuperStrict
 Function Permissions:String(mode:Int)
 	Local testbit:Int, pos:Int
 	Local p:String = "rwxrwxrwx"
-	testbit = <i>100000000</i>
+	testbit = %100000000
 	pos = 1
 	Local res:String
 	While (testbit)
@@ -256,13 +256,13 @@ Set file mode
 SuperStrict
 
 ' the following makes this source file readonly
-Local writebits:Int = <i>010010010</i>
+Local writebits:Int = %010010010
 
 ' read the file mode
 Local mode:Int = FileMode("setfilemode.bmx")
 
 'mask out the write bits to make readonly
-mode = mode & writebits
+mode = mode & ~writebits
 
 'set the new file mode
 SetFileMode("setfilemode.bmx",mode)
@@ -476,7 +476,7 @@ CloseDir dir
 Return next file in a directory
 
 #### Returns
-File name of next file in directory opened using [ReadDir](../../brl/brl.filesystem/#function-readdir-byte-ptr-path), or an empty string if there are no more files to read.
+File name of next file in directory opened using [ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-path-), or an empty string if there are no more files to read.
 
 
 #### Example
@@ -563,10 +563,10 @@ Next
 Open a file for input and/or output.
 
 
-This command is similar to the [OpenStream](../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true) command but will attempt
+This command is similar to the [OpenStream](../../brl/brl.stream/#function-openstreamtstream-urlobjectreadableinttruewritemodeintwritemodeoverwrite-) command but will attempt
 to cache the contents of the file to ensure serial streams such as
-http: based url's are seekable. Use the [CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream) command when
-finished reading and or writing to a Stream returned by [OpenFile](../../brl/brl.filesystem/#function-openfile-tstream-url-object-readable-int-true-writeable-int-true).
+http: based url's are seekable. Use the [CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-) command when
+finished reading and or writing to a Stream returned by [OpenFile](../../brl/brl.filesystem/#function-openfiletstream-urlobjectreadableinttruewriteableinttrue-).
 
 
 #### Example
@@ -592,10 +592,10 @@ CloseStream file
 Open a file For Input.
 
 
-This command is similar to the [ReadStream](../../brl/brl.stream/#function-readstream-tstream-url-object) command but will attempt
+This command is similar to the [ReadStream](../../brl/brl.stream/#function-readstreamtstream-urlobject-) command but will attempt
 to cache the contents of the file to ensure serial streams such as
-http: based url's are seekable. Use the [CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream) command when
-finished reading and or writing to a Stream returned by [OpenFile](../../brl/brl.filesystem/#function-openfile-tstream-url-object-readable-int-true-writeable-int-true).
+http: based url's are seekable. Use the [CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-) command when
+finished reading and or writing to a Stream returned by [OpenFile](../../brl/brl.filesystem/#function-openfiletstream-urlobjectreadableinttruewriteableinttrue-).
 
 
 #### Example
@@ -622,7 +622,7 @@ CloseStream file
 Open a file for output.
 
 
-This command is identical to the [WriteStream](../../brl/brl.stream/#function-writestream-tstream-url-object) command.
+This command is identical to the [WriteStream](../../brl/brl.stream/#function-writestreamtstream-urlobject-) command.
 
 
 #### Example
@@ -646,8 +646,8 @@ Closes a file stream.
 
 
 After performing file operations on an open file make sure to
-close the file stream with either [CloseFile](../../brl/brl.filesystem/#function-closefile-stream-tstream) or the identical
-[CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream) command.
+close the file stream with either [CloseFile](../../brl/brl.filesystem/#function-closefile-streamtstream-) or the identical
+[CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-) command.
 
 
 #### Example

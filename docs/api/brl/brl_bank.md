@@ -10,13 +10,13 @@ A bank object encapsulates a block of memory you can use to store arbitrary data
 Banks are useful for storing data that is of no fixed type - for example, the contents
 of a binary file.
 
-To create a bank, use the [CreateBank](../../brl/brl.bank/#function-createbank-tbank-size-int-0) command.
+To create a bank, use the [CreateBank](../../brl/brl.bank/#function-createbanktbank-sizeint0-) command.
 
-To write data to a bank, use one of 'Poke' style commands, such as [PokeByte](../../brl/brl.bank/tbank/#method-pokebyte-offset-int-value-int).
+To write data to a bank, use one of 'Poke' style commands, such as [PokeByte](../../brl/brl.bank/tbank/#method-pokebyte-offsetintvalueint-).
 
-To read data from a bank, use one of the 'Peek' style commands, such as [PeekByte](../../brl/brl.bank/tbank/#method-peekbyte-int-offset-int).
+To read data from a bank, use one of the 'Peek' style commands, such as [PeekByte](../../brl/brl.bank/tbank/#method-peekbyteint-offsetint-).
 
-In addition, banks can be loaded or saved using [LoadBank](../../brl/brl.bank/#function-loadbank-tbank-url-object) or [SaveBank](../../brl/brl.bank/#function-savebank-int-bank-tbank-url-object).
+In addition, banks can be loaded or saved using [LoadBank](../../brl/brl.bank/#function-loadbanktbank-urlobject-) or [SaveBank](../../brl/brl.bank/#function-savebankint-banktbankurlobject-).
 
 
 ## Types
@@ -31,7 +31,7 @@ In addition, banks can be loaded or saved using [LoadBank](../../brl/brl.bank/#f
 Create a bank
 
 
-[CreateBank](../../brl/brl.bank/#function-createbank-tbank-size-int-0) creates a Bank allocating a specified amount of memory that
+[CreateBank](../../brl/brl.bank/#function-createbanktbank-sizeint0-) creates a Bank allocating a specified amount of memory that
 can be used for storage of binary data using the various Poke and
 Peek commands.
 
@@ -72,7 +72,7 @@ A bank object that references an existing block of memory
 Load a bank
 
 
-[LoadBank](../../brl/brl.bank/#function-loadbank-tbank-url-object) reads the entire contents of a binary file from a specified <b>url</b> into a newly
+[LoadBank](../../brl/brl.bank/#function-loadbanktbank-urlobject-) reads the entire contents of a binary file from a specified <b>url</b> into a newly
 created bank with a size matching that of the file.
 
 
@@ -106,7 +106,7 @@ Next
 Save a bank
 
 
-[SaveBank](../../brl/brl.bank/#function-savebank-int-bank-tbank-url-object) writes it's entire contents to a <b>url</b>. If the <b>url</b> is a file path a new
+[SaveBank](../../brl/brl.bank/#function-savebankint-banktbankurlobject-) writes it's entire contents to a <b>url</b>. If the <b>url</b> is a file path a new
 file is created.
 
 
@@ -134,7 +134,7 @@ SaveBank MyBank,"mybank.dat"
 Get bank's memory buffer
 
 
-Please use [LockBank](../../brl/brl.bank/#function-lockbank-byte-ptr-bank-tbank) and [UnlockBank](../../brl/brl.bank/#function-unlockbank-bank-tbank) instead of this method.
+Please use [LockBank](../../brl/brl.bank/#function-lockbankbyte-ptr-banktbank-) and [UnlockBank](../../brl/brl.bank/#function-unlockbank-banktbank-) instead of this method.
 
 
 #### Returns
@@ -162,7 +162,7 @@ Lock a bank's memory block
 
 While locked, a bank cannot be resized.
 
-After you have finished with a bank's memory block, you must use [UnlockBank](../../brl/brl.bank/#function-unlockbank-bank-tbank)
+After you have finished with a bank's memory block, you must use [UnlockBank](../../brl/brl.bank/#function-unlockbank-banktbank-)
 to return it to the bank.
 
 
@@ -177,7 +177,7 @@ A byte pointer to the memory block controlled by the bank.
 Unlock a bank's memory block
 
 
-After you have finished with a bank's memory block, you must use [UnlockBank](../../brl/brl.bank/#function-unlockbank-bank-tbank)
+After you have finished with a bank's memory block, you must use [UnlockBank](../../brl/brl.bank/#function-unlockbank-banktbank-)
 to return it to the bank.
 
 
@@ -208,7 +208,7 @@ Get capacity of bank
 
 The capacity of a bank is the size limit before a bank must allocate
 more memory due to a resize. Bank capacity may be increased due to a call
-to [ResizeBank](../../brl/brl.bank/#function-resizebank-bank-tbank-size-size-t) by either 50% or the requested amount, whichever is greater.
+to [ResizeBank](../../brl/brl.bank/#function-resizebank-banktbanksizesizet-) by either 50% or the requested amount, whichever is greater.
 Capacity never decreases.
 
 
@@ -232,9 +232,9 @@ Print "capacity of the bank is: "+BankCapacity(bank)
 Resize a bank
 
 
-[ResizeBank](../../brl/brl.bank/#function-resizebank-bank-tbank-size-size-t) modifies the size limit of a bank. This may cause memory to be
+[ResizeBank](../../brl/brl.bank/#function-resizebank-banktbanksizesizet-) modifies the size limit of a bank. This may cause memory to be
 allocated if the requested size is greater than the bank's current capacity,
-see [BankCapacity](../../brl/brl.bank/#function-bankcapacity-long-bank-tbank) for more information.
+see [BankCapacity](../../brl/brl.bank/#function-bankcapacitylong-banktbank-) for more information.
 
 
 <br/>
@@ -244,7 +244,7 @@ see [BankCapacity](../../brl/brl.bank/#function-bankcapacity-long-bank-tbank) fo
 Copy bank contents
 
 
-[CopyBank](../../brl/brl.bank/#function-copybank-src-bank-tbank-src-offset-size-t-dst-bank-tbank-dst-offset-size-t-count-size-t) copies <b>count</b> bytes from <b>src_offset</b> in <b>src_bank</b> to <b>dst_offset</b>
+[CopyBank](../../brl/brl.bank/#function-copybank-srcbanktbanksrcoffsetsizetdstbanktbankdstoffsetsizetcountsizet-) copies <b>count</b> bytes from <b>src_offset</b> in <b>src_bank</b> to <b>dst_offset</b>
 in <b>dst_bank</b>.
 
 

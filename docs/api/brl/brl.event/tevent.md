@@ -58,7 +58,7 @@ Event specific extra information
 Emit this event
 
 
-This method runs all [EmitEventHook](../../../brl/brl.event/#global-emiteventhook-int-allochookid) hook function, passing <b>Self</b> as
+This method runs all [EmitEventHook](../../../brl/brl.event/#global-emiteventhookintallochookid) hook function, passing <b>Self</b> as
 the hook data.
 
 

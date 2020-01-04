@@ -216,7 +216,7 @@ Destroys the rendering context for a window and free associated textures.
 
 Creates a 2D rendering context for a window.
 
-Note that providing no flags gives priority to available [SDL_RENDERER_ACCELERATED](../../../sdl/sdl.sdlrender/#const-sdl-renderer-accelerated-int-02) renderers
+Note that providing no flags gives priority to available [SDL_RENDERER_ACCELERATED](../../../sdl/sdl.sdlrender/#const-sdlrendereracceleratedint-02) renderers
 
 
 <br/>

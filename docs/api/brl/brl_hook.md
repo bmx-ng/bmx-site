@@ -13,14 +13,14 @@ The following hook ids are currently used by BlitzMax modules:
 
 | Hook id | Description | Data |
 | --- | --- | --- |
-| FlipHook | A Max2D [Flip](../../brl/brl.graphics/#function-flip-sync-1) is about to occur | Null |
-| EmitEventHook | An event has been emitted by a call to [EmitEvent](../../brl/brl.event/#function-emitevent-event-tevent) | A [TEvent](../../brl/brl.event/tevent) object |
+| FlipHook | A Max2D [Flip](../../brl/brl.graphics/#function-flip-sync1-) is about to occur | Null |
+| EmitEventHook | An event has been emitted by a call to [EmitEvent](../../brl/brl.event/#function-emitevent-eventtevent-) | A [TEvent](../../brl/brl.event/tevent) object |
 
-To hook into any of these functions, use [AddHook](../../brl/brl.hook/#function-addhook-id-func-object-id-data-object-context-object-context-object-null-priority-0) with the specified hook id and your hook function.
+To hook into any of these functions, use [AddHook](../../brl/brl.hook/#function-addhook-idfuncobject-iddataobjectcontextobject-contextobjectnullpriority0-) with the specified hook id and your hook function.
 
 To provide hook support for your own code, use [AllocHookId](../../brl/brl.hook/#function-allochookid) to generate a valid integer hook id 
 somewhere in your program's startup code. Then, when the section of code you would like to be 
-'hookable' is about to execute, simply call [RunHooks](../../brl/brl.hook/#function-runhooks-object-id-data-object) with the previously generated hook id and your
+'hookable' is about to execute, simply call [RunHooks](../../brl/brl.hook/#function-runhooksobject-iddataobject-) with the previously generated hook id and your
 own custom 'data' object. 
 
 
@@ -31,7 +31,7 @@ own custom 'data' object.
 Allocate a hook id
 
 
-The returned hook id can be used with [AddHook](../../brl/brl.hook/#function-addhook-id-func-object-id-data-object-context-object-context-object-null-priority-0), [RunHooks](../../brl/brl.hook/#function-runhooks-object-id-data-object) and [RemoveHook](../../brl/brl.hook/#function-removehook-id-func-object-id-data-object-context-object-context-object-null).
+The returned hook id can be used with [AddHook](../../brl/brl.hook/#function-addhook-idfuncobject-iddataobjectcontextobject-contextobjectnullpriority0-), [RunHooks](../../brl/brl.hook/#function-runhooksobject-iddataobject-) and [RemoveHook](../../brl/brl.hook/#function-removehook-idfuncobject-iddataobjectcontextobject-contextobjectnull-).
 
 
 #### Returns
@@ -77,11 +77,11 @@ Wend
 Add a hook function
 
 
-Add a hook function to be executed when [RunHooks](../../brl/brl.hook/#function-runhooks-object-id-data-object) is called with the specified hook <b>id</b>.
+Add a hook function to be executed when [RunHooks](../../brl/brl.hook/#function-runhooksobject-iddataobject-) is called with the specified hook <b>id</b>.
 
 
 #### Returns
-A hook object that can be used with the [RemoveHook](../../brl/brl.hook/#function-removehook-id-func-object-id-data-object-context-object-context-object-null) command.
+A hook object that can be used with the [RemoveHook](../../brl/brl.hook/#function-removehook-idfuncobject-iddataobjectcontextobject-contextobjectnull-) command.
 
 
 #### Example
@@ -120,7 +120,7 @@ Wend
 Run hook functions
 
 
-[RunHooks](../../brl/brl.hook/#function-runhooks-object-id-data-object) runs all hook functions that have been added for the specified hook <b>id</b>.
+[RunHooks](../../brl/brl.hook/#function-runhooksobject-iddataobject-) runs all hook functions that have been added for the specified hook <b>id</b>.
 
 The first hook function is called with the provided <b>data</b> object. The object returned by
 this function is then passed as the <b>data</b> parameter to the next hook function and so on.

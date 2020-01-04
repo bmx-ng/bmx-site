@@ -16,7 +16,7 @@ The OpenGL Max2D module provides an SDL-backend OpenGL driver for Max2D.
 Get OpenGL Max2D Driver
 
 
-The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-driver-tgraphicsdriver-defaultflags-graphics-backbuffer) to enable OpenGL Max2D
+The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-drivertgraphicsdriverdefaultflagsgraphicsbackbuffer-) to enable OpenGL Max2D
 rendering.
 
 

@@ -21,6 +21,12 @@ Wait for the condvar
 
 <br/>
 
+### `Method TimedWait:Int( mutex:TMutex, millis:Int )`
+
+Wait for the condvar
+
+<br/>
+
 ### `Method Signal()`
 
 Signal the condvar

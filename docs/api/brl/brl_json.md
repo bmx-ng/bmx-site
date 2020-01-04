@@ -105,6 +105,12 @@ This flag is useful when concatenating multiple arrays or objects into a stream.
 
 <br/>
 
+### `Const JSON_FRACTIONAL_DIGITS:Int = $20000`
+
+Precision becomes the number of fraction digits.
+
+<br/>
+
 ### `Const JSON_REJECT_DUPLICATES:Int = $1`
 
 Issues a decoding error if any JSON object in the input text contains duplicate keys.

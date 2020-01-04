@@ -53,6 +53,12 @@ Multiplies the vector by <b>s</b>, returning a new vector.
 
 <br/>
 
+### `Method Operator/:SVec3D(s:Double)`
+
+Divides the vector by <b>s</b>, returning a new vector.
+
+<br/>
+
 ### `Method Operator[]:Double(index:Int)`
 
 Retrieves the x, y or z component using [0], [1] or [2] respectively.

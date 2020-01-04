@@ -6,7 +6,7 @@ sidebar_label: BRL.OpenALAudio
 
 
 
-The OpenAL audio module provide OpenAL drivers for use with the audio module.
+The OpenAL audio module provide OpenAL drivers for use with the [audio](../../audio) module.
 
 
 ## Functions

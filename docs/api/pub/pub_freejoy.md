@@ -12,7 +12,7 @@ to the system.
 
 ## Methods
 
-### `Method FlushJoy( port_mask:Int=0 )`
+### `Method FlushJoy( port_mask:Int=0 ) Override`
 
 Flush joystick button states.
 

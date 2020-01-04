@@ -63,7 +63,7 @@ Check for a joystick button press
 
 
 The returned value represents the number of the times <b>button</b> has been hit since
-the last call to [JoyHit](../../pub/pub.joystick/#function-joyhit-int-button-int-port-int-0) with the same specified <b>button</b>.
+the last call to [JoyHit](../../pub/pub.joystick/#function-joyhitint-buttonint-portint0-) with the same specified <b>button</b>.
 
 
 #### Returns

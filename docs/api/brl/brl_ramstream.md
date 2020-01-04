@@ -7,7 +7,7 @@ sidebar_label: BRL.RamStream
 
 ## Functions
 
-### `Function CreateRamStream:TRamStream( ram:Byte Ptr,size:Long,readable,writeable )`
+### `Function CreateRamStream:TRamStream( ram:Byte Ptr,size:Long,readable,writeMode )`
 
 Create a ram stream
 

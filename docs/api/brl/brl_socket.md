@@ -52,7 +52,7 @@ Bind a socket to a local port
 
 
 If <b>localPort</b> is 0, a new local port will be allocated. If <b>localPort</b> is not 0,
-[BindSocket](../../brl/brl.socket/#function-bindsocket-socket-tsocket-localport-family-int-af-inet) will fail if there is already an application bound to <b>localPort</b>.
+[BindSocket](../../brl/brl.socket/#function-bindsocket-sockettsocket-localport-familyint-afinet) will fail if there is already an application bound to <b>localPort</b>.
 
 
 #### Returns
@@ -66,10 +66,10 @@ True if successful, otherwise false
 Connect a socket to a remote ip and port
 
 
-For both UDP and TCP sockets, [ConnectSocket](../../brl/brl.socket/#function-connectsocket-socket-tsocket-addrinfo-taddrinfo) will fail if the specified
+For both UDP and TCP sockets, [ConnectSocket](../../brl/brl.socket/#function-connectsocket-sockettsocket-addrinfotaddrinfo-) will fail if the specified
 ip address could not be reached.
 
-In the case of TCP sockets, [ConnectSocket](../../brl/brl.socket/#function-connectsocket-socket-tsocket-addrinfo-taddrinfo) will also fail if there is
+In the case of TCP sockets, [ConnectSocket](../../brl/brl.socket/#function-connectsocket-sockettsocket-addrinfotaddrinfo-) will also fail if there is
 no application listening at the remote port.
 
 
@@ -108,11 +108,11 @@ A new socket, or Null if no connection was made in the specified timeout
 Get socket connection status
 
 
-[SocketConnected](../../brl/brl.socket/#function-socketconnected-socket-tsocket) allows you to determine if a TCP connection is still
+[SocketConnected](../../brl/brl.socket/#function-socketconnected-sockettsocket-) allows you to determine if a TCP connection is still
 alive or has been remotely closed.
 
-[SocketConnected](../../brl/brl.socket/#function-socketconnected-socket-tsocket) should only be used with TCP sockets that have already
-connected via [ConnectSocket](../../brl/brl.socket/#function-connectsocket-socket-tsocket-addrinfo-taddrinfo) or [SocketAccept](../../brl/brl.socket/#function-socketaccept-tsocket-socket-tsocket-timeout-0).
+[SocketConnected](../../brl/brl.socket/#function-socketconnected-sockettsocket-) should only be used with TCP sockets that have already
+connected via [ConnectSocket](../../brl/brl.socket/#function-connectsocket-sockettsocket-addrinfotaddrinfo-) or [SocketAccept](../../brl/brl.socket/#function-socketaccepttsocket-sockettsockettimeout0-).
 
 
 #### Returns

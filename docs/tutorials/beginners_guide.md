@@ -134,7 +134,7 @@ BlitzMax file and delete all `Then`, it will run the same. Use `Then` if you thi
 use then, then it is to make an ifstatement on one line more readable, like in the example above and in the example
 below. My advice is, never use then if your if-statement is not on one line.
 
-## Not True or <> False?
+## Not True or `<>` False?
 
 `True` and `False` can be used in If-statements, usually to make the code a little easier to read, you can live
 without them*. False means something is equal to 0, True if it's not equal 0. Many functions return 1 if success and
@@ -167,7 +167,7 @@ The two lines above do the exact same thing. You can also check objects with tru
 ```blitzmax
 If Not Car Then Print "Car not Found"
 ```
-<> means "greater or higher than" and is therefore the same as not.
+`<>` means "greater or higher than" and is therefore the same as not.
 
 ```blitzmax
 If A <> 10
@@ -189,7 +189,7 @@ the resolution you want to use. Just enter `Graphics 800,600` for a full screen 
 
 A loop is a way to tell Blitz to do one thing several times, or in games to update the game until the game is ended.
 Loops are what makes games run in real-time. This loop below starts at Repeat and when the program reaches
-Until X >= 800 it will jump back to `Repeat` unless the condition is met. So it will loop depending on X. Try to
+Until X &gt;= 800 it will jump back to `Repeat` unless the condition is met. So it will loop depending on X. Try to
 run the example on the next page:
 
 ```blitzmax
@@ -487,14 +487,14 @@ Local First4[] = Test[..4]  'Get the four first elements
 For n = EachIn First4
     Print n
 Next
-Print "Lenght "+First4.length
+Print "Length "+First4.length
 ```
 This can also be used directly in the EachIn-loop:
 ```blitzmax
 For n = EachIn Test[9..]  'Get all elements from 9 to end of array
     Print n
 Next
-Print "Lenght "+Test[9..].length
+Print "Length "+Test[9..].length
 ```
 To get all elements (full copy) you could go:
 ```blitzmax
@@ -505,7 +505,7 @@ Print "Length "+Test[0..Test.length].length
 Print "Length "+Test.length
 ```
 Or you could go `Test[..]` which means all elements from first to last.
-To get the last 2 elements you could do: 
+To get the last 2 elements you could do:
 ```blitzmax
 Local Last2[] = Test[Test.Length-2..]'Get the last two elements
 
@@ -845,7 +845,7 @@ Wend
 ```
 
 This time the code didn't become smaller but we did it easier to work with in the future.
-Note the For-Eachin-Tank.List-Loop, this will give a error if we haven't already created a list. 
+Note the For-Eachin-Tank.List-Loop, this will give a error if we haven't already created a list.
 The List is created as soon as you create your first tank, but sometimes the game starts before you
 have an instance of a certain type. Because of this it is wise to add an if-statement around
 the For Eachin TankList Loop. We can make this code even more object oriented by adding
@@ -1117,14 +1117,14 @@ End Type
 
 Always try to never replicate code, use loops and functions as much as possible.
 Also note how easy it would be to increase the number of weapon slots in the last example
-compared to the first. Our code is much more flexible now. Any of our tanks can have any number of weapon slots.   
- 
+compared to the first. Our code is much more flexible now. Any of our tanks can have any number of weapon slots.
+
 Now let's take it one step further, think if we could have used a type instead of an array
 as our "missileslot". Instead of two arrays we can make it one type. This type will have
 its own methods and functions, like load and fire. Also our missile could be a type. We
 could load our slot with missiles and our tank with slots. Now it's starting to feel OOP.
 It will be a little longer but it will give us an even more flexible code. Here is how that
-could look like: 
+could look like:
 
 ```blitzmax
 Strict
@@ -1298,7 +1298,7 @@ Type Fighter
 
     Global Sfx_Thrust ' Sound
     Global Sfx_Explode
-    Field SheildRechargeRate#=0.1
+    Field ShieldRechargeRate#=0.1
     Field Energy%=500
     Field WeaponUpgrade%
     Field PowerUpgrade%
@@ -1333,7 +1333,7 @@ Type Cruiser
     Global Gfx_Thrusters
     Global Sfx_Thrust ' Sound
     Global Sfx_Explode
-    Field SheildPower
+    Field ShieldPower
     Field Reactor$
     Field CrewNR%
     Field TractorBeamUpgrade%
@@ -1393,7 +1393,7 @@ Type Ship
 End Type
 
 Type Fighter Extends Ship
-    Field SheildRechargeRate#=0.1
+    Field ShieldRechargeRate#=0.1
     Field Energy%=500
     Field WeaponUpgrade%
     Field PowerUpgrade%
@@ -1406,7 +1406,7 @@ Type Fighter Extends Ship
 End Type
 
 Type Cruiser Extends Ship
-    Field SheildPower
+    Field ShieldPower
     Field Reactor$
     Field CrewNR%
     Field TractorBeamUpgrade%
@@ -1595,7 +1595,7 @@ change the code. One example of casting could be if a function returns an object
 are of the object type. An array of objects can for example contain any type. The same goes
 with lists which only uses objects. These objects could be strings, types or arrays.
 
-``` blitzmax
+```blitzmax
 '----------------------------------------------------------------------
 Type Tank
     Field name$ = "Object Tank"
@@ -1726,7 +1726,7 @@ Print "Links/Objects in the List: "+MyList.Count()
 So far there is nothing new, this was just the basics. We have encountered a problem that
 come from the use of lists. If you in your program have a place where you loop through a
 list that does not exist, you'll receive a runtime error. The solution is simply to put an
-if statement around your For.. Eachin Loop.  You could also make sure you create the list 
+if statement around your For.. Eachin Loop.  You could also make sure you create the list
 before the loop (no matter what). Make sure you don't skip CreateList() or New Tlist.
 
 If you on the other hand have a list you want to clear. If you want to remove all objects
@@ -2222,7 +2222,7 @@ it with 0.001. Also make sure DeltaTime is a Float or Double! And that TimeDelay
 Energy Recharge. Multiply them with DeltaTime.
 ```blitzmax
 X:+Speed*Cos(Dir)*DeltaTime Y:+Speed*Sin(Dir)*DeltaTime
-Sheild:+ SheildRechargeRate*DeltaTime
+Shield:+ ShieldRechargeRate*DeltaTime
 ```
 Make these variables floats or doubles.
 3. Redefine your speed. When using deltatime your speed is measured in pixels/seconds.

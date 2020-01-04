@@ -6,44 +6,44 @@ sidebar_label: BRL.Max2D
 
 
 
-The Max2D module provides a set of commands for drawing 2D graphics.<br>
-<br>
+The Max2D module provides a set of commands for drawing 2D graphics.<br/>
+<br/>
 Before using any of the Max2D commands, you must first create a Max2D graphics
-object. The easiest way to do this is using the [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0) command.<br>
-<br>
+object. The easiest way to do this is using the [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) command.<br/>
+<br/>
 By default, Max2D is double buffered which means you will have to use 
-[Flip](../../brl/brl.graphics/#function-flip-sync-1) once you have finished drawing each frame of graphics.<br>
-<br>
+[Flip](../../brl/brl.graphics/#function-flip-sync1-) once you have finished drawing each frame of graphics.<br/>
+<br/>
 <h2>Drawing</h2>
-Max2D provides support for the following drawing commands:<br>
-<br>
+Max2D provides support for the following drawing commands:<br/>
+<br/>
 <table>
 <tr><th>Drawing command</th><th>Action</th></tr>
-<tr><td><a href=#Cls class=token>Cls</a></td><td>Clears the viewport</td></tr>
-<tr><td><a href=#Plot class=token>Plot</a></td><td>Draws a single pixel</td></tr>
-<tr><td><a href=#DrawLine class=token>DrawLine</a></td><td>Draws a line</td></tr>
-<tr><td><a href=#DrawRect class=token>DrawRect</a></td><td>Draws a rectangle</td></tr>
-<tr><td><a href=#DrawOval class=token>DrawOval</a></td><td>Draws an oval</td></tr>
-<tr><td><a href=#DrawPoly class=token>DrawPoly</a></td><td>Draws a polygon</td></tr>
-<tr><td><a href=#DrawText class=token>DrawText</a></td><td>Draws some text</td></tr>
-<tr><td><a href=#DrawImage class=token>DrawImage</a></td><td>Draws an image</td></tr>
-<tr><td><a href=#DrawPixmap class=token>DrawPixmap</a></td><td>Draws a pixmap</td></tr>
+<tr><td><a href="#Cls" class="token">Cls</a></td><td>Clears the viewport</td></tr>
+<tr><td><a href="#Plot" class="token">Plot</a></td><td>Draws a single pixel</td></tr>
+<tr><td><a href="#DrawLine" class="token">DrawLine</a></td><td>Draws a line</td></tr>
+<tr><td><a href="#DrawRect" class="token">DrawRect</a></td><td>Draws a rectangle</td></tr>
+<tr><td><a href="#DrawOval" class="token">DrawOval</a></td><td>Draws an oval</td></tr>
+<tr><td><a href="#DrawPoly" class="token">DrawPoly</a></td><td>Draws a polygon</td></tr>
+<tr><td><a href="#DrawText" class="token">DrawText</a></td><td>Draws some text</td></tr>
+<tr><td><a href="#DrawImage" class="token">DrawImage</a></td><td>Draws an image</td></tr>
+<tr><td><a href="#DrawPixmap" class="token">DrawPixmap</a></td><td>Draws a pixmap</td></tr>
 </table>
-<br>
+<br/>
 <h2>Viewport, origin and handle</h2>
-Drawing commands are clipped to a rectangular area known as the <i>viewport</i>. Only the area within the viewport is ever modified, and attempting to draw outside the viewport will result in the drawing command being clipped or <i>chopped</i> to the viewport. To set the viewport, use the <a href=#SetViewport class=token>SetViewport</a> command.<br>
-<br>
-Drawing commands are also offset by the current <i>origin</i> and <i>handle</i>. To set these properties, use the <a href=#SetOrigin class=token>SetOrigin</a> and <a href=#SetHandle class=token>SetHandle</a> commands.<br>
-<br>
-The current handle is an x,y coordinate subtracted from all drawing x,y coordinates <i>before</i> any rotation or scaling occurs. This allows you to provide a local 'center' for drawing. On the other hand, the current origin is an x,y coordinate added to all drawing x,y coordinates <i>after</i> any rotation or scaling.<br>
-<br>
+Drawing commands are clipped to a rectangular area known as the <i>viewport</i>. Only the area within the viewport is ever modified, and attempting to draw outside the viewport will result in the drawing command being clipped or <i>chopped</i> to the viewport. To set the viewport, use the <a href="#SetViewport" class="token">SetViewport</a> command.<br/>
+<br/>
+Drawing commands are also offset by the current <i>origin</i> and <i>handle</i>. To set these properties, use the <a href="#SetOrigin" class="token">SetOrigin</a> and <a href="#SetHandle" class="token">SetHandle</a> commands.<br/>
+<br/>
+The current handle is an x,y coordinate subtracted from all drawing x,y coordinates <i>before</i> any rotation or scaling occurs. This allows you to provide a local 'center' for drawing. On the other hand, the current origin is an x,y coordinate added to all drawing x,y coordinates <i>after</i> any rotation or scaling.<br/>
+<br/>
 <h2>Color, alpha and blend mode</h2>
-Drawing commands are affected by the current color, alpha and blend mode. You can set these properties by using the <a href=#SetColor class=token>SetColor</a>, <a href=#SetAlpha class=token>SetAlpha</a> and <a href=#SetBlend class=token>SetBlend</a> commands.<br>
-<br>
-The current alpha value controls the transparency level when using the ALPHABLEND blend mode.<br>
-<br>
-The current blend mode controls how pixels are combined with existing pixels in the back buffer and can be one of the following:<br>
-<br>
+Drawing commands are affected by the current color, alpha and blend mode. You can set these properties by using the <a href="#SetColor" class="token">SetColor</a>, <a href="#SetAlpha" class="token">SetAlpha</a> and <a href="#SetBlend" class="token">SetBlend</a> commands.<br/>
+<br/>
+The current alpha value controls the transparency level when using the ALPHABLEND blend mode.<br/>
+<br/>
+The current blend mode controls how pixels are combined with existing pixels in the back buffer and can be one of the following:<br/>
+<br/>
 <table>
 <tr><th>Blend mode</th><th>Effect</th></tr>
 <tr><td>SOLIDBLEND</td><td>Pixels overwrite existing backbuffer pixels</td></tr>
@@ -52,37 +52,42 @@ The current blend mode controls how pixels are combined with existing pixels in 
 <tr><td>LIGHTBLEND</td><td>Pixel colors are added to backbuffer pixel colors, giving a 'lighting' effect</td></tr>
 <tr><td>SHADEBLEND</td><td>Pixel colors are multiplied with backbuffer pixel colors, giving a 'shading' effect</td></tr>
 </table>
-<br>
+<br/>
 <h2>Rotation and scale</h2>
-Drawing commands can be scaled and rotated using the <a href=#SetScale class=token>SetScale</a> and <a href=#SetRotation class=token>SetRotation</a> commands. Rotation and scaling occur relative to the current handle.<br>
-<br>
+Drawing commands can be scaled and rotated using the <a href="#SetScale" class="token">SetScale</a> and <a href="#SetRotation" class="token">SetRotation</a> commands. Rotation and scaling occur relative to the current handle.<br/>
+<br/>
 <h2>Images</h2>
-Images are pre-rendered chunks of graphics that can be efficiently drawn using a single <a href=#DrawImage class=token>DrawImage</a> command. Images are typically stored in png, bmp or jpg format, and can be loaded using the <a href=#LoadImage class=token>LoadImage</a> command.<br>
-<br>
-Image drawing is also affected by color, alpha, blend, rotation and scale. The current color is multiplied with each pixel color before the image is drawn to the backbuffer, allowing you to <i>tint</i> images. To disable this effect, you should set the current color to white.<br>
-<br>
-Images can also have a mask color. This is the color that represents transparency when an image is drawn using the MASKBLEND blend mode. To set the mask color, use the <a href=#SetMaskColor class=token>SetMaskColor</a> command.<br>
-<br>
-Images can be created by snapshotting regions of the back buffer using the <a href=#GrabImage class=token>GrabImage</a> command.
+Images are pre-rendered chunks of graphics that can be efficiently drawn using a single <a href="#DrawImage" class="token">DrawImage</a> command. Images are typically stored in png, bmp or jpg format, and can be loaded using the <a href="#LoadImage" class="token">LoadImage</a> command.<br/>
+<br/>
+Image drawing is also affected by color, alpha, blend, rotation and scale. The current color is multiplied with each pixel color before the image is drawn to the backbuffer, allowing you to <i>tint</i> images. To disable this effect, you should set the current color to white.<br/>
+<br/>
+Images can also have a mask color. This is the color that represents transparency when an image is drawn using the MASKBLEND blend mode. To set the mask color, use the <a href="#SetMaskColor" class="token">SetMaskColor</a> command.<br/>
+<br/>
+Images can be created by snapshotting regions of the back buffer using the <a href="#GrabImage" class="token">GrabImage</a> command.
 <h2>Pixmaps</h2>
-Pixmaps are used to manipulate images at a pixel level, see the pixmaps module for details.<p>
-
-<a href=#LockImage class=token>LockImage</a> allows for direct Image pixel access and requires a corresponding call to
-<a href=#UnlockImage class=token>UnlockImage</a> when you have have finished reading or modifying the pixels. 
-The <a href=#DrawPixmap class=token>DrawPixmap</a> and <a href=#GrabPixmap class=token>GrabPixmap</a>
+Pixmaps are used to manipulate images at a pixel level, see the pixmaps module for details.
+<p>
+<a href="#LockImage" class="token">LockImage</a> allows for direct Image pixel access and requires a corresponding call to
+<a href="#UnlockImage" class="token">UnlockImage</a> when you have have finished reading or modifying the pixels. 
+The <a href="#DrawPixmap" class="token">DrawPixmap</a> and <a href="#GrabPixmap" class="token">GrabPixmap</a>
 commands allow you to move pixels to and from the current graphic display's backbuffer.
 <h2>Collisions</h2>
 Max2D features a multilayered pixel perfect collision system.
-The <a href=#CollideRect class=token>CollideRect</a> and 
-<a href=#CollideImage class=token>CollideImage</a> commands
+The <a href="#CollideRect" class="token">CollideRect</a> and 
+<a href="#CollideImage" class="token">CollideImage</a> commands
 provide a dual function allowing the drawing and hit testing of Rects and 
-Images with any combination of 32 collision layers.<p>
+Images with any combination of 32 collision layers.
+</p>
+<p>
 The current Scale, Rotation, Origin and Handle settings are taken into account 
 so coordinates for the collision commands acurately match their drawing counterparts 
-<a href=#DrawRect class=token>DrawRect</a> and <a href=#DrawImage class=token>DrawImage</a>.<p>
-<a href=#ResetCollisions class=token>ResetCollisions</a> is used
-to clear any or all of the 32 collision layers provided.<br>
-<br>
+<a href="#DrawRect" class="token">DrawRect</a> and <a href="#DrawImage" class="token">DrawImage</a>.
+</p>
+<p>
+<a href="#ResetCollisions" class="token">ResetCollisions</a> is used
+to clear any or all of the 32 collision layers provided.<br/>
+</p>
+<br/>
 
 
 
@@ -98,7 +103,7 @@ to clear any or all of the 32 collision layers provided.<br>
 Clear graphics buffer
 
 
-Clears the graphics buffer to the current cls color as determined by [SetClsColor](../../brl/brl.max2d/#function-setclscolor-red-green-blue).
+Clears the graphics buffer to the current cls color as determined by [SetClsColor](../../brl/brl.max2d/#function-setclscolor-redgreenblue-).
 
 
 #### Example
@@ -154,8 +159,8 @@ Plot a pixel
 
 
 Sets the color of a single pixel on the back buffer to the current drawing color
-defined with the [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blue) command. Other commands that affect the operation of
-[Plot](../../brl/brl.max2d/#function-plot-x-y) include [SetOrigin](../../brl/brl.max2d/#function-setorigin-x-y), [SetViewPort](../../brl/brl.max2d/#function-setviewport-x-y-width-height), [SetBlend](../../brl/brl.max2d/#function-setblend-blend) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha).
+defined with the [SetColor](../../brl/brl.max2d/#function-setcolor-redgreenblue-) command. Other commands that affect the operation of
+[Plot](../../brl/brl.max2d/#function-plot-xy-) include [SetOrigin](../../brl/brl.max2d/#function-setorigin-xy-), [SetViewPort](../../brl/brl.max2d/#function-setviewport-xywidthheight-), [SetBlend](../../brl/brl.max2d/#function-setblend-blend-) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha-).
 
 
 #### Example
@@ -189,10 +194,10 @@ Draw a rectangle
 
 
 Sets the color of a rectangular area of pixels using the current drawing color
-defined with the [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blue) command.
+defined with the [SetColor](../../brl/brl.max2d/#function-setcolor-redgreenblue-) command.
 
-Other commands that affect the operation of [DrawRect](../../brl/brl.max2d/#function-drawrect-x-y-width-height) include [SetHandle](../../brl/brl.max2d/#function-sethandle-x-y), [SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y),
-[SetRotation](../../brl/brl.max2d/#function-setrotation-rotation), [SetOrigin](../../brl/brl.max2d/#function-setorigin-x-y), [SetViewPort](../../brl/brl.max2d/#function-setviewport-x-y-width-height), [SetBlend](../../brl/brl.max2d/#function-setblend-blend) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha).
+Other commands that affect the operation of [DrawRect](../../brl/brl.max2d/#function-drawrect-xywidthheight-) include [SetHandle](../../brl/brl.max2d/#function-sethandle-xy-), [SetScale](../../brl/brl.max2d/#function-setscale-scalexscaley-),
+[SetRotation](../../brl/brl.max2d/#function-setrotation-rotation-), [SetOrigin](../../brl/brl.max2d/#function-setorigin-xy-), [SetViewPort](../../brl/brl.max2d/#function-setviewport-xywidthheight-), [SetBlend](../../brl/brl.max2d/#function-setblend-blend-) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha-).
 
 
 #### Example
@@ -233,10 +238,10 @@ Wend
 Draw a line
 
 
-[DrawLine](../../brl/brl.max2d/#function-drawline-x-y-x2-y2-draw-last-pixel-true) draws a line from <b>x</b>, <b>y</b> to <b>x2</b>, <b>y2</b> with the current drawing color.
+[DrawLine](../../brl/brl.max2d/#function-drawline-xyx2y2drawlastpixeltrue-) draws a line from <b>x</b>, <b>y</b> to <b>x2</b>, <b>y2</b> with the current drawing color.
 
-BlitzMax commands that affect the drawing of lines include [SetLineWidth](../../brl/brl.max2d/#function-setlinewidth-width), [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blue), [SetHandle](../../brl/brl.max2d/#function-sethandle-x-y),
-[SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y), [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation), [SetOrigin](../../brl/brl.max2d/#function-setorigin-x-y), [SetViewPort](../../brl/brl.max2d/#function-setviewport-x-y-width-height), [SetBlend](../../brl/brl.max2d/#function-setblend-blend) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha).
+BlitzMax commands that affect the drawing of lines include [SetLineWidth](../../brl/brl.max2d/#function-setlinewidth-width-), [SetColor](../../brl/brl.max2d/#function-setcolor-redgreenblue-), [SetHandle](../../brl/brl.max2d/#function-sethandle-xy-),
+[SetScale](../../brl/brl.max2d/#function-setscale-scalexscaley-), [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation-), [SetOrigin](../../brl/brl.max2d/#function-setorigin-xy-), [SetViewPort](../../brl/brl.max2d/#function-setviewport-xywidthheight-), [SetBlend](../../brl/brl.max2d/#function-setblend-blend-) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha-).
 The optional <b>draw_last_pixel</b> parameter can be used to control whether the last pixel of the line is drawn or not.
 Not drawing the last pixel can be useful if you are using certain blending modes.
 
@@ -272,11 +277,11 @@ Wend
 Draw an oval
 
 
-[DrawOval](../../brl/brl.max2d/#function-drawoval-x-y-width-height) draws an oval that fits in the rectangular area defined by <b>x</b>, <b>y</b>, <b>width</b>
+[DrawOval](../../brl/brl.max2d/#function-drawoval-xywidthheight-) draws an oval that fits in the rectangular area defined by <b>x</b>, <b>y</b>, <b>width</b>
 and <b>height</b> parameters.
 
-BlitzMax commands that affect the drawing of ovals include [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blue), [SetHandle](../../brl/brl.max2d/#function-sethandle-x-y),
-[SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y), [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation), [SetOrigin](../../brl/brl.max2d/#function-setorigin-x-y), [SetViewPort](../../brl/brl.max2d/#function-setviewport-x-y-width-height), [SetBlend](../../brl/brl.max2d/#function-setblend-blend) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha).
+BlitzMax commands that affect the drawing of ovals include [SetColor](../../brl/brl.max2d/#function-setcolor-redgreenblue-), [SetHandle](../../brl/brl.max2d/#function-sethandle-xy-),
+[SetScale](../../brl/brl.max2d/#function-setscale-scalexscaley-), [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation-), [SetOrigin](../../brl/brl.max2d/#function-setorigin-xy-), [SetViewPort](../../brl/brl.max2d/#function-setviewport-xywidthheight-), [SetBlend](../../brl/brl.max2d/#function-setblend-blend-) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha-).
 
 
 #### Example
@@ -309,10 +314,10 @@ Wend
 Draw a polygon
 
 
-[DrawPoly](../../brl/brl.max2d/#function-drawpoly-xy) draws a polygon with corners defined by an array of x#,y# coordinate pairs.
+[DrawPoly](../../brl/brl.max2d/#function-drawpoly-xy-) draws a polygon with corners defined by an array of x#,y# coordinate pairs.
 
-BlitzMax commands that affect the drawing of polygons include [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blue), [SetHandle](../../brl/brl.max2d/#function-sethandle-x-y),
-[SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y), [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation), [SetOrigin](../../brl/brl.max2d/#function-setorigin-x-y), [SetViewPort](../../brl/brl.max2d/#function-setviewport-x-y-width-height), [SetBlend](../../brl/brl.max2d/#function-setblend-blend) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha).
+BlitzMax commands that affect the drawing of polygons include [SetColor](../../brl/brl.max2d/#function-setcolor-redgreenblue-), [SetHandle](../../brl/brl.max2d/#function-sethandle-xy-),
+[SetScale](../../brl/brl.max2d/#function-setscale-scalexscaley-), [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation-), [SetOrigin](../../brl/brl.max2d/#function-setorigin-xy-), [SetViewPort](../../brl/brl.max2d/#function-setviewport-xywidthheight-), [SetBlend](../../brl/brl.max2d/#function-setblend-blend-) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha-).
 
 
 #### Example
@@ -342,16 +347,16 @@ Wend
 Draw text
 
 
-[DrawText](../../brl/brl.max2d/#function-drawtext-t-x-y) prints strings at position <b>x</b>,@y of the graphics display using
-the current image font specified by the [SetImageFont](../../brl/brl.max2d/#function-setimagefont-font-timagefont) command.
+[DrawText](../../brl/brl.max2d/#function-drawtext-txy-) prints strings at position <b>x</b>,@y of the graphics display using
+the current image font specified by the [SetImageFont](../../brl/brl.max2d/#function-setimagefont-fonttimagefont-) command.
 
-Other commands that affect [DrawText](../../brl/brl.max2d/#function-drawtext-t-x-y) include [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blue), [SetHandle](../../brl/brl.max2d/#function-sethandle-x-y),
-[SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y), [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation), [SetOrigin](../../brl/brl.max2d/#function-setorigin-x-y), [SetViewPort](../../brl/brl.max2d/#function-setviewport-x-y-width-height), [SetBlend](../../brl/brl.max2d/#function-setblend-blend) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha).
+Other commands that affect [DrawText](../../brl/brl.max2d/#function-drawtext-txy-) include [SetColor](../../brl/brl.max2d/#function-setcolor-redgreenblue-), [SetHandle](../../brl/brl.max2d/#function-sethandle-xy-),
+[SetScale](../../brl/brl.max2d/#function-setscale-scalexscaley-), [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation-), [SetOrigin](../../brl/brl.max2d/#function-setorigin-xy-), [SetViewPort](../../brl/brl.max2d/#function-setviewport-xywidthheight-), [SetBlend](../../brl/brl.max2d/#function-setblend-blend-) and [SetAlpha](../../brl/brl.max2d/#function-setalpha-alpha-).
 
-It is recomended that the blend mode be set to ALPHABLEND using the [SetBlend](../../brl/brl.max2d/#function-setblend-blend)
+It is recomended that the blend mode be set to ALPHABLEND using the [SetBlend](../../brl/brl.max2d/#function-setblend-blend-)
 command for non jagged antialiased text. Text that will be drawn at a smaller
-size using the [SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y) command should use fonts loaded with the SMOOTHFONT
-style to benefit from mip-mapped filtering, see [LoadImageFont](../../brl/brl.max2d/#function-loadimagefont-timagefont-url-object-size-style-smoothfont) for more information.
+size using the [SetScale](../../brl/brl.max2d/#function-setscale-scalexscaley-) command should use fonts loaded with the SMOOTHFONT
+style to benefit from mip-mapped filtering, see [LoadImageFont](../../brl/brl.max2d/#function-loadimagefonttimagefont-urlobjectsizestylesmoothfont-) for more information.
 
 
 #### Example
@@ -437,7 +442,7 @@ If the blend mode is ALPHABLEND, then the image is also affected by the current 
 Draw an image in a tiled pattern
 
 
-[TileImage](../../brl/brl.max2d/#function-tileimage-image-timage-x-0-y-0-frame-0) draws an image in a repeating, tiled pattern, filling the current viewport.
+[TileImage](../../brl/brl.max2d/#function-tileimage-imagetimagex0y0frame0-) draws an image in a repeating, tiled pattern, filling the current viewport.
 
 
 <br/>
@@ -447,8 +452,8 @@ Draw an image in a tiled pattern
 Set current color
 
 
-The [SetColor](../../brl/brl.max2d/#function-setcolor-red-green-blue) command affects the color of [Plot](../../brl/brl.max2d/#function-plot-x-y), [DrawRect](../../brl/brl.max2d/#function-drawrect-x-y-width-height), [DrawLine](../../brl/brl.max2d/#function-drawline-x-y-x2-y2-draw-last-pixel-true), [DrawText](../../brl/brl.max2d/#function-drawtext-t-x-y),
-[DrawImage](../../brl/brl.max2d/#function-drawimage-image-timage-x-y-frame-0) and [DrawPoly](../../brl/brl.max2d/#function-drawpoly-xy).
+The [SetColor](../../brl/brl.max2d/#function-setcolor-redgreenblue-) command affects the color of [Plot](../../brl/brl.max2d/#function-plot-xy-), [DrawRect](../../brl/brl.max2d/#function-drawrect-xywidthheight-), [DrawLine](../../brl/brl.max2d/#function-drawline-xyx2y2drawlastpixeltrue-), [DrawText](../../brl/brl.max2d/#function-drawtext-txy-),
+[DrawImage](../../brl/brl.max2d/#function-drawimage-imagetimagexyframe0-) and [DrawPoly](../../brl/brl.max2d/#function-drawpoly-xy-).
 
 The <b>red</b>, <b>green</b> and <b>blue</b> parameters should be in the range of 0 to 255.
 
@@ -475,7 +480,7 @@ commands are used in BlitzMax.
 
 <b>blend</b> should be one of:
 
-<table><tr><td> <b>Blend mode</b></td><td><b>Effect</b></td></tr><tr><td>  MASKBLEND</td><td>Pixels are drawn only if their alpha component is greater than .5</td></tr><tr><td>  SOLIDBLEND</td><td>Pixels overwrite existing backbuffer pixels</td></tr><tr><td>  ALPHABLEND</td><td>Pixels are alpha blended with existing backbuffer pixels</td></tr><tr><td>  LIGHTBLEND</td><td>Pixel colors are added to backbuffer pixel colors, giving a 'lighting' effect</td></tr><tr><td>  SHADEBLEND</td><td>Pixel colors are multiplied with backbuffer pixel colors, giving a 'shading' effect</table>
+<table><tr><td> <b>Blend mode</b></td><td><b>Effect</b></td></tr><tr><td>  MASKBLEND</td><td>Pixels are drawn only if their alpha component is greater than .5</td></tr><tr><td>  SOLIDBLEND</td><td>Pixels overwrite existing backbuffer pixels</td></tr><tr><td>  ALPHABLEND</td><td>Pixels are alpha blended with existing backbuffer pixels</td></tr><tr><td>  LIGHTBLEND</td><td>Pixel colors are added to backbuffer pixel colors, giving a 'lighting' effect</td></tr><tr><td>  SHADEBLEND</td><td>Pixel colors are multiplied with backbuffer pixel colors, giving a 'shading' effect</td></tr></table>
 
 
 
@@ -486,7 +491,7 @@ commands are used in BlitzMax.
 Get current blend mode
 
 
-See [SetBlend](../../brl/brl.max2d/#function-setblend-blend) for possible return values.
+See [SetBlend](../../brl/brl.max2d/#function-setblend-blend-) for possible return values.
 
 
 #### Returns
@@ -521,7 +526,7 @@ the current alpha value in the range 0..1.0
 
 ### `Function SetLineWidth( width# )`
 
-Sets pixel width of lines drawn with the [DrawLine](../../brl/brl.max2d/#function-drawline-x-y-x2-y2-draw-last-pixel-true) command
+Sets pixel width of lines drawn with the [DrawLine](../../brl/brl.max2d/#function-drawline-xyx2y2drawlastpixeltrue-) command
 
 <br/>
 
@@ -658,9 +663,9 @@ Set drawing handle
 
 
 The drawing handle is a 2D offset subtracted from the x,y location of all
-drawing commands except [DrawImage](../../brl/brl.max2d/#function-drawimage-image-timage-x-y-frame-0) as Images have their own unique handles.
+drawing commands except [DrawImage](../../brl/brl.max2d/#function-drawimage-imagetimagexyframe0-) as Images have their own unique handles.
 
-Unlike [SetOrigin](../../brl/brl.max2d/#function-setorigin-x-y) the drawing handle is subtracted before rotation and scale
+Unlike [SetOrigin](../../brl/brl.max2d/#function-setorigin-xy-) the drawing handle is subtracted before rotation and scale
 are applied providing a 'local' origin.
 
 
@@ -750,8 +755,8 @@ An image font object
 Set current image font
 
 
-In order to [DrawText](../../brl/brl.max2d/#function-drawtext-t-x-y) in fonts other than the default system font use the [SetImageFont](../../brl/brl.max2d/#function-setimagefont-font-timagefont)
-command with a font handle returned by the [LoadImageFont](../../brl/brl.max2d/#function-loadimagefont-timagefont-url-object-size-style-smoothfont) command.
+In order to [DrawText](../../brl/brl.max2d/#function-drawtext-txy-) in fonts other than the default system font use the [SetImageFont](../../brl/brl.max2d/#function-setimagefont-fonttimagefont-)
+command with a font handle returned by the [LoadImageFont](../../brl/brl.max2d/#function-loadimagefonttimagefont-urlobjectsizestylesmoothfont-) command.
 
 Use &{SetImageFont Null} to select the default, built-in font.
 
@@ -774,7 +779,7 @@ Get width of text
 
 
 This command is useful for calculating horizontal alignment of text when using
-the [DrawText](../../brl/brl.max2d/#function-drawtext-t-x-y) command.
+the [DrawText](../../brl/brl.max2d/#function-drawtext-txy-) command.
 
 
 #### Returns
@@ -789,7 +794,7 @@ Get height of text
 
 
 This command is useful for calculating vertical alignment of text when using
-the [DrawText](../../brl/brl.max2d/#function-drawtext-t-x-y) command.
+the [DrawText](../../brl/brl.max2d/#function-drawtext-txy-) command.
 
 
 #### Returns
@@ -812,14 +817,14 @@ Load an image
 </td></tr><tr><td>  FILTEREDIMAGE</td><td>The image is smoothed when scaled up to greater than its original
 size, when rotated, or when drawn at fractional pixel coordinates.
 </td></tr><tr><td>  MIPMAPPEDIMAGE</td><td>The image is smoothed when scaled down to less than its original size.
-</td></tr><tr><td>  DYNAMICIMAGE</td><td>The image can be modified using [LockImage](../../brl/brl.max2d/#function-lockimage-tpixmap-image-timage-frame-0-read-lock-true-write-lock-true) or [GrabImage](../../brl/brl.max2d/#function-grabimage-image-timage-x-y-frame-0).</table>
+</td></tr><tr><td>  DYNAMICIMAGE</td><td>The image can be modified using [LockImage](../../brl/brl.max2d/#function-lockimagetpixmap-imagetimageframe0readlocktruewritelocktrue-) or [GrabImage](../../brl/brl.max2d/#function-grabimage-imagetimagexyframe0-).</td></tr></table>
 
 
 
 Note MIPMAPPEDIMAGE images consume extra video memory, so this flag should only be used
 when really necessary.
 
-If flags is -1, the auto image flags are used: See [AutoImageFlags](../../brl/brl.max2d/#function-autoimageflags-flags).
+If flags is -1, the auto image flags are used: See [AutoImageFlags](../../brl/brl.max2d/#function-autoimageflags-flags-).
 
 To combine flags, use the | (boolean OR) operator.
 
@@ -835,10 +840,10 @@ A new image object
 Load a multi-frame image
 
 
-[LoadAnimImage](../../brl/brl.max2d/#function-loadanimimage-timage-url-object-cell-width-cell-height-first-cell-cell-count-flags-1) extracts multiple image frames from a single, larger image. <b>url</b> can be either a string or an
+[LoadAnimImage](../../brl/brl.max2d/#function-loadanimimagetimage-urlobjectcellwidthcellheightfirstcellcellcountflags1-) extracts multiple image frames from a single, larger image. <b>url</b> can be either a string or an
 existing pixmap.
 
-See [LoadImage](../../brl/brl.max2d/#function-loadimage-timage-url-object-flags-1) for valid <b>flags</b> values.
+See [LoadImage](../../brl/brl.max2d/#function-loadimagetimage-urlobjectflags1-) for valid <b>flags</b> values.
 
 
 #### Returns
@@ -852,7 +857,7 @@ An image object
 Set an image's handle to an arbitrary point
 
 
-An image's handle is subtracted from the coordinates of [DrawImage](../../brl/brl.max2d/#function-drawimage-image-timage-x-y-frame-0) before
+An image's handle is subtracted from the coordinates of [DrawImage](../../brl/brl.max2d/#function-drawimage-imagetimagexyframe0-) before
 rotation and scale are applied.
 
 
@@ -863,10 +868,10 @@ rotation and scale are applied.
 Enable or disable auto midhandle mode
 
 
-When auto midhandle mode is enabled, all images are automatically 'midhandled' (see [MidHandleImage](../../brl/brl.max2d/#function-midhandleimage-image-timage))
+When auto midhandle mode is enabled, all images are automatically 'midhandled' (see [MidHandleImage](../../brl/brl.max2d/#function-midhandleimage-imagetimage-))
 when they are created. If auto midhandle mode is disabled, images are handled by their top left corner.
 
-AutoMidHandle defaults to False after calling [Graphics](../../brl/brl.graphics/#function-graphics-tgraphics-width-height-depth-0-hertz-60-flags-0).
+AutoMidHandle defaults to False after calling [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-).
 
 
 <br/>
@@ -876,8 +881,8 @@ AutoMidHandle defaults to False after calling [Graphics](../../brl/brl.graphics/
 Set auto image flags
 
 
-The auto image flags are used by [LoadImage](../../brl/brl.max2d/#function-loadimage-timage-url-object-flags-1) and [CreateImage](../../brl/brl.max2d/#function-createimage-timage-width-height-frames-1-flags-1) when no image
-flags are specified. See [LoadImage](../../brl/brl.max2d/#function-loadimage-timage-url-object-flags-1) for a full list of valid image flags.
+The auto image flags are used by [LoadImage](../../brl/brl.max2d/#function-loadimagetimage-urlobjectflags1-) and [CreateImage](../../brl/brl.max2d/#function-createimagetimage-widthheightframes1flags1-) when no image
+flags are specified. See [LoadImage](../../brl/brl.max2d/#function-loadimagetimage-urlobjectflags1-) for a full list of valid image flags.
 AutoImageFlags defaults to MASKEDIMAGE | FILTEREDIMAGE.
 
 
@@ -914,10 +919,10 @@ The height, in pixels, of <b>image</b>
 Create an empty image
 
 
-[CreateImage](../../brl/brl.max2d/#function-createimage-timage-width-height-frames-1-flags-1) creates an 'empty' image, which should be initialized using either [GrabImage](../../brl/brl.max2d/#function-grabimage-image-timage-x-y-frame-0) or [LockImage](../../brl/brl.max2d/#function-lockimage-tpixmap-image-timage-frame-0-read-lock-true-write-lock-true)
+[CreateImage](../../brl/brl.max2d/#function-createimagetimage-widthheightframes1flags1-) creates an 'empty' image, which should be initialized using either [GrabImage](../../brl/brl.max2d/#function-grabimage-imagetimagexyframe0-) or [LockImage](../../brl/brl.max2d/#function-lockimagetpixmap-imagetimageframe0readlocktruewritelocktrue-)
 before being drawn.
 
-Please refer to [LoadImage](../../brl/brl.max2d/#function-loadimage-timage-url-object-flags-1) for valid <b>flags</b> values. The <b>flags</b> value is always combined with DYNAMICIMAGE.
+Please refer to [LoadImage](../../brl/brl.max2d/#function-loadimagetimage-urlobjectflags1-) for valid <b>flags</b> values. The <b>flags</b> value is always combined with DYNAMICIMAGE.
 
 
 #### Returns
@@ -961,7 +966,7 @@ Locking an image allows you to directly access an image's pixels.
 
 Only images created with the DYNAMICIMAGE flag can be locked.
 
-Locked images must eventually be unlocked with [UnlockImage](../../brl/brl.max2d/#function-unlockimage-image-timage-frame-0) before they can be drawn.
+Locked images must eventually be unlocked with [UnlockImage](../../brl/brl.max2d/#function-unlockimage-imagetimageframe0-) before they can be drawn.
 
 
 #### Returns
@@ -975,7 +980,7 @@ A pixmap representing the image contents
 Unlock an image
 
 
-Unlocks an image previously locked with [LockImage](../../brl/brl.max2d/#function-lockimage-tpixmap-image-timage-frame-0-read-lock-true-write-lock-true).
+Unlocks an image previously locked with [LockImage](../../brl/brl.max2d/#function-lockimagetpixmap-imagetimageframe0readlocktruewritelocktrue-).
 
 
 <br/>
@@ -1040,8 +1045,8 @@ Grab pixmap
 Tests if two images collide
 
 
-[ImagesCollide](../../brl/brl.max2d/#function-imagescollideimage1-timage-x1-y1-frame1-image2-timage-x2-y2-frame2) uses the current Rotation and Scale factors from the most previous
-call to [SetScale](../../brl/brl.max2d/#function-setscale-scale-x-scale-y) and [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation) to calculate at a pixel level if the two images collide.
+[ImagesCollide](../../brl/brl.max2d/#function-imagescollideimage1timagex1y1frame1image2timagex2y2frame2) uses the current Rotation and Scale factors from the most previous
+call to [SetScale](../../brl/brl.max2d/#function-setscale-scalexscaley-) and [SetRotation](../../brl/brl.max2d/#function-setrotation-rotation-) to calculate at a pixel level if the two images collide.
 
 
 #### Returns
@@ -1055,7 +1060,7 @@ True if any pixels of the two images specified at the given location overlap.
 Tests if two images with arbitrary Rotation and Scales collide
 
 
-[ImagesCollide2](../../brl/brl.max2d/#function-imagescollide2image1-timage-x1-y1-frame1-rot1-scalex1-scaley1-image2-timage-x2-y2-frame2-rot2-scalex2-scaley2) uses the specified Rotation and Scale paramteters
+[ImagesCollide2](../../brl/brl.max2d/#function-imagescollide2image1timagex1y1frame1rot1scalex1scaley1image2timagex2y2frame2rot2scalex2scaley2) uses the specified Rotation and Scale paramteters
 to calculate at a pixel level if the two images collide (overlap).
 
 
@@ -1074,9 +1079,9 @@ The BlitzMax 2D collision system manages 32 layers, the <b>mask</b> parameter ca
 be a combination of the following values or the special value COLLISION_LAYER_ALL in order
 to perform collision operations on multiple layers.
 
-Note: COLLISION_LAYER_32 is used by the [ImagesCollide](../../brl/brl.max2d/#function-imagescollideimage1-timage-x1-y1-frame1-image2-timage-x2-y2-frame2) and [ImagesCollide2](../../brl/brl.max2d/#function-imagescollide2image1-timage-x1-y1-frame1-rot1-scalex1-scaley1-image2-timage-x2-y2-frame2-rot2-scalex2-scaley2) commands.
+Note: COLLISION_LAYER_32 is used by the [ImagesCollide](../../brl/brl.max2d/#function-imagescollideimage1timagex1y1frame1image2timagex2y2frame2) and [ImagesCollide2](../../brl/brl.max2d/#function-imagescollide2image1timagex1y1frame1rot1scalex1scaley1image2timagex2y2frame2rot2scalex2scaley2) commands.
 
-<table><tr><td> <b>Layer</b></td><td><b>Mask value</b></td></tr><tr><td>  COLLISION_LAYER_ALL</td><td>0</td></tr><tr><td>  COLLISION_LAYER_1</td><td>$0001</td></tr><tr><td>  COLLISION_LAYER_2</td><td>$0002</td></tr><tr><td>  COLLISION_LAYER_3</td><td>$0004</td></tr><tr><td>  COLLISION_LAYER_4</td><td>$0008</td></tr><tr><td>  COLLISION_LAYER_5</td><td>$0010</td></tr><tr><td>  COLLISION_LAYER_6</td><td>$0020</td></tr><tr><td>  COLLISION_LAYER_7</td><td>$0040</td></tr><tr><td>  COLLISION_LAYER_8</td><td>$0080</td></tr><tr><td>  COLLISION_LAYER_9</td><td>$0100</td></tr><tr><td>  COLLISION_LAYER_10</td><td>$0200</td></tr><tr><td>  COLLISION_LAYER_11</td><td>$0400</td></tr><tr><td>  COLLISION_LAYER_12</td><td>$0800</td></tr><tr><td>  COLLISION_LAYER_13</td><td>$1000</td></tr><tr><td>  COLLISION_LAYER_14</td><td>$2000</td></tr><tr><td>  COLLISION_LAYER_15</td><td>$4000</td></tr><tr><td>  COLLISION_LAYER_16</td><td>$8000</table>
+<table><tr><td> <b>Layer</b></td><td><b>Mask value</b></td></tr><tr><td>  COLLISION_LAYER_ALL</td><td>0</td></tr><tr><td>  COLLISION_LAYER_1</td><td>$0001</td></tr><tr><td>  COLLISION_LAYER_2</td><td>$0002</td></tr><tr><td>  COLLISION_LAYER_3</td><td>$0004</td></tr><tr><td>  COLLISION_LAYER_4</td><td>$0008</td></tr><tr><td>  COLLISION_LAYER_5</td><td>$0010</td></tr><tr><td>  COLLISION_LAYER_6</td><td>$0020</td></tr><tr><td>  COLLISION_LAYER_7</td><td>$0040</td></tr><tr><td>  COLLISION_LAYER_8</td><td>$0080</td></tr><tr><td>  COLLISION_LAYER_9</td><td>$0100</td></tr><tr><td>  COLLISION_LAYER_10</td><td>$0200</td></tr><tr><td>  COLLISION_LAYER_11</td><td>$0400</td></tr><tr><td>  COLLISION_LAYER_12</td><td>$0800</td></tr><tr><td>  COLLISION_LAYER_13</td><td>$1000</td></tr><tr><td>  COLLISION_LAYER_14</td><td>$2000</td></tr><tr><td>  COLLISION_LAYER_15</td><td>$4000</td></tr><tr><td>  COLLISION_LAYER_16</td><td>$8000</td></tr></table>
 
 
 
@@ -1091,7 +1096,7 @@ The <b>collidemask</b> specifies any layers to test for collision with.
 
 The <b>writemask</b> specifies which if any collision layers the <b>image</b> is added to in it's currently transformed state.
 
-The id specifies an object to be returned to future [CollideImage](../../brl/brl.max2d/#function-collideimage-object-image-timage-x-y-frame-collidemask-writemask-id-object-null) calls when collisions occur.
+The id specifies an object to be returned to future [CollideImage](../../brl/brl.max2d/#function-collideimageobjectimagetimagexyframecollidemaskwritemaskidobjectnull) calls when collisions occur.
 
 
 #### Example
@@ -1158,7 +1163,7 @@ The <b>collidemask</b> specifies any layers to test for collision with.
 
 The <b>writemask</b> specifies which if any collision layers the <b>image</b> is added to in it's currently transformed state.
 
-The <b>id</b> specifies an object to be returned to future [CollideImage](../../brl/brl.max2d/#function-collideimage-object-image-timage-x-y-frame-collidemask-writemask-id-object-null) calls when collisions occur.
+The <b>id</b> specifies an object to be returned to future [CollideImage](../../brl/brl.max2d/#function-collideimageobjectimagetimagexyframecollidemaskwritemaskidobjectnull) calls when collisions occur.
 
 
 <br/>

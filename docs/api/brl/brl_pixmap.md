@@ -8,24 +8,24 @@ sidebar_label: BRL.Pixmap
 
 Pixmaps provide storage for rectangular regions of pixels.
 
-You can create a new pixmap using the [CreatePixmap](../../brl/brl.pixmap/#function-createpixmap-tpixmap-width-height-format-align-bytes-4) command, or load a pixmap 
-using [LoadPixmap](../../brl/brl.pixmap/tpixmaploader/#method-loadpixmap-tpixmap-stream-tstream-abstract).
+You can create a new pixmap using the [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthheightformatalignbytes4-) command, or load a pixmap 
+using [LoadPixmap](../../brl/brl.pixmap/tpixmaploader/#method-loadpixmaptpixmap-streamtstream-abstract).
 
 Pixmaps have 5 properties: width, height, a byte pointer to the pixmap's pixels, pitch and
 format.
 
-You can retrieve a pointer to a pixmap's pixels using the [PixmapPixelPtr](../../brl/brl.pixmap/#function-pixmappixelptr-byte-ptr-pixmap-tpixmap-x-0-y-0) command.
+You can retrieve a pointer to a pixmap's pixels using the [PixmapPixelPtr](../../brl/brl.pixmap/#function-pixmappixelptrbyte-ptr-pixmaptpixmapx0y0-) command.
 
 A pixmap's pitch refers to the number of bytes between one row of pixels in the pixmap
-and the next. To retrieve a pixmap's pitch, use the [PixmapPitch](../../brl/brl.pixmap/#function-pixmappitch-pixmap-tpixmap) command.
+and the next. To retrieve a pixmap's pitch, use the [PixmapPitch](../../brl/brl.pixmap/#function-pixmappitch-pixmaptpixmap-) command.
 
 A pixmap's pixel format determines how the pixels within a pixmap are stored in memory. This 
 must be taken into account if you want to access pixels directly via a pixmap's pixel pointer.
-You can retrieve the format of a pixmap using the [PixmapFormat](../../brl/brl.pixmap/#function-pixmapformat-pixmap-tpixmap) command, and convert pixmaps
-from one format to another using [ConvertPixmap](../../brl/brl.pixmap/#function-convertpixmap-tpixmap-pixmap-tpixmap-format).
+You can retrieve the format of a pixmap using the [PixmapFormat](../../brl/brl.pixmap/#function-pixmapformat-pixmaptpixmap-) command, and convert pixmaps
+from one format to another using [ConvertPixmap](../../brl/brl.pixmap/#function-convertpixmaptpixmap-pixmaptpixmapformat-).
 
-You can also use [ResizePixmap](../../brl/brl.pixmap/#function-resizepixmap-tpixmap-pixmap-tpixmap-width-height-nodebug) to resize a pixmap and flip a pixmap horizontally or vertically
-with [XFlipPixmap](../../brl/brl.pixmap/#function-xflippixmap-tpixmap-pixmap-tpixmap-nodebug) and [YFlipPixmap](../../brl/brl.pixmap/#function-yflippixmap-tpixmap-pixmap-tpixmap-nodebug).
+You can also use [ResizePixmap](../../brl/brl.pixmap/#function-resizepixmaptpixmap-pixmaptpixmapwidthheight-nodebug) to resize a pixmap and flip a pixmap horizontally or vertically
+with [XFlipPixmap](../../brl/brl.pixmap/#function-xflippixmaptpixmap-pixmaptpixmap-nodebug) and [YFlipPixmap](../../brl/brl.pixmap/#function-yflippixmaptpixmap-pixmaptpixmap-nodebug).
 
 
 ## Types
@@ -43,10 +43,10 @@ Create a pixmap
 
 <b>format</b> should be one of the following:
 
-<table><tr><td> <b>Format</b></td><td><b>Description</b></td></tr><tr><td>  PF_A8</td><td>8 bit alpha</td></tr><tr><td>  PF_I8</td><td>8 bit intensity</td></tr><tr><td>  PF_RGB888</td><td>24 bit big endian RGB</td></tr><tr><td>  PF_BGR888</td><td>24 bit little endian RGB</td></tr><tr><td>  PF_RGBA8888</td><td>32 bit big endian RGB with alpha</td></tr><tr><td>  PF_BGRA8888</td><td>32 bit little endian RGB with alpha</table>
+<table><tr><td> <b>Format</b></td><td><b>Description</b></td></tr><tr><td>  PF_A8</td><td>8 bit alpha</td></tr><tr><td>  PF_I8</td><td>8 bit intensity</td></tr><tr><td>  PF_RGB888</td><td>24 bit big endian RGB</td></tr><tr><td>  PF_BGR888</td><td>24 bit little endian RGB</td></tr><tr><td>  PF_RGBA8888</td><td>32 bit big endian RGB with alpha</td></tr><tr><td>  PF_BGRA8888</td><td>32 bit little endian RGB with alpha</td></tr></table>
 
 
-Note that the newly created pixmap will contain random data. [ClearPixels](../../brl/brl.pixmap/tpixmap/#method-clearpixels-argb) can
+Note that the newly created pixmap will contain random data. [ClearPixels](../../brl/brl.pixmap/tpixmap/#method-clearpixels-argb-) can
 be used to set all pixels to a known value prior to use.
 
 
@@ -63,7 +63,7 @@ Create a pixmap with existing pixel data
 
 The memory referenced by a static pixmap is not released when the pixmap is deleted.
 
-See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmap-tpixmap-width-height-format-align-bytes-4) for valid pixmap formats.
+See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthheightformatalignbytes4-) for valid pixmap formats.
 
 
 #### Returns
@@ -108,7 +108,7 @@ Until KeyHit(key_escape) Or AppTerminate()
 Convert pixel format of a pixmap
 
 
-See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmap-tpixmap-width-height-format-align-bytes-4) for valid pixmap formats.
+See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthheightformatalignbytes4-) for valid pixmap formats.
 
 
 #### Returns
@@ -198,7 +198,7 @@ The pitch, in bytes, of <b>pixmap</b>
 Get pixmap format
 
 
-See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmap-tpixmap-width-height-format-align-bytes-4) for supported formats.
+See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthheightformatalignbytes4-) for supported formats.
 
 
 #### Returns
@@ -221,7 +221,7 @@ A byte pointer to the pixels stored in <b>pixmap</b>
 
 Create a pixmap window
 
-[PixmapWindow](../../brl/brl.pixmap/#function-pixmapwindow-tpixmap-pixmap-tpixmap-x-y-width-height) creates a 'virtual' window into <b>pixmap</b>.
+[PixmapWindow](../../brl/brl.pixmap/#function-pixmapwindowtpixmap-pixmaptpixmapxywidthheight-) creates a 'virtual' window into <b>pixmap</b>.
 
 
 #### Returns
@@ -407,7 +407,7 @@ Read a pixel from a pixmap
 
 The returned 32 bit value contains the following components:
 
-<table><tr><td> bits 24-31</td><td>pixel alpha</td></tr><tr><td>  bits 16-23</td><td>pixel red</td></tr><tr><td>  bits 8-15</td><td>pixel green</td></tr><tr><td>  bits 0-7</td><td>pixel blue</table>
+<table><tr><td> bits 24-31</td><td>pixel alpha</td></tr><tr><td>  bits 16-23</td><td>pixel red</td></tr><tr><td>  bits 8-15</td><td>pixel green</td></tr><tr><td>  bits 0-7</td><td>pixel blue</td></tr></table>
 
 
 
@@ -424,7 +424,7 @@ Write a pixel to a pixmap
 
 The 32 bit <b>argb</b> value contains the following components:
 
-<table><tr><td> bits 24-31</td><td>pixel alpha</td></tr><tr><td>  bits 16-23</td><td>pixel red</td></tr><tr><td>  bits 8-15</td><td>pixel green</td></tr><tr><td>  bits 0-7</td><td>pixel blue</table>
+<table><tr><td> bits 24-31</td><td>pixel alpha</td></tr><tr><td>  bits 16-23</td><td>pixel red</td></tr><tr><td>  bits 8-15</td><td>pixel green</td></tr><tr><td>  bits 0-7</td><td>pixel blue</td></tr></table>
 
 
 
@@ -439,7 +439,7 @@ Sets all pixels in a pixmap to a 32 bit pixel value.
 
 The 32 bit <b>argb</b> value contains the following components:
 
-<table><tr><td> bits 24-31</td><td>pixel alpha</td></tr><tr><td>  bits 16-23</td><td>pixel red</td></tr><tr><td>  bits 8-15</td><td>pixel green</td></tr><tr><td>  bits 0-7</td><td>pixel blue</table>
+<table><tr><td> bits 24-31</td><td>pixel alpha</td></tr><tr><td>  bits 16-23</td><td>pixel red</td></tr><tr><td>  bits 8-15</td><td>pixel green</td></tr><tr><td>  bits 0-7</td><td>pixel blue</td></tr></table>
 
 
 

@@ -17,8 +17,8 @@ the transition to BlitzMax a little easier.
 
 NOTE: Strings in classic BASIC are '1 based'. This means that the first character within a 
 string is at index 1, the second at index 2 and so on. However, BlitzMax strings are '0 based',
-meaning the first character is at index 0, the second at index 1 and so on. The [instr](../../brl/brl.retro/#function-instr-str-sub-start-1) and
-[Mid](../../brl/brl.retro/#function-mid-str-pos-size-1) functions in this module retain the '1 based' behaviour of classic BASIC.
+meaning the first character is at index 0, the second at index 1 and so on. The [instr](../../brl/brl.retro/#function-instr-strsubstart1-) and
+[Mid](../../brl/brl.retro/#function-mid-strpossize1-) functions in this module retain the '1 based' behaviour of classic BASIC.
 
 
 ## Functions
@@ -31,8 +31,8 @@ Extract substring from a string
 The Mid$ command returns a substring of a String.
 
 Given an existing string, a <b>position</b> from the start of the string and
-an optional <b>size</b>, [Mid](../../brl/brl.retro/#function-mid-str-pos-size-1) creates a new string equal to the section specified.
-If no size if given, [Mid](../../brl/brl.retro/#function-mid-str-pos-size-1) returns the characters in the existing string from
+an optional <b>size</b>, [Mid](../../brl/brl.retro/#function-mid-strpossize1-) creates a new string equal to the section specified.
+If no size if given, [Mid](../../brl/brl.retro/#function-mid-strpossize1-) returns the characters in the existing string from
 <b>position</b> to the end of the string.
 
 For compatibility with classic BASIC, the <b>pos</b> parameter is 'one based'.

@@ -27,3 +27,9 @@ Get member meta data
 
 <br/>
 
+### `Method HasMetaData:Int( key:String )`
+
+Returns [True](../../../brl/brl.blitz/#true) if <b>key</b> is in the metadata.
+
+<br/>
+
