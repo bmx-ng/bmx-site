@@ -24,6 +24,8 @@ The `PUB` modscope generally contains third party libraries and platform-specifi
 helpers. These are considered more low-level, and generally you won't use
 these modules directly.
 
+`Crypto` provides several different cryptographic utilities, such has message digests.
+
 The `SDL` modscope can be used as a replacement graphics and system-integration
 backend for the default modules provided by `BRL`. It is optional on the main
 desktop platforms, but generally required on the other targets (iOS, Android, rpi, NX).
