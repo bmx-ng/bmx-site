@@ -410,6 +410,30 @@
       },
       {
         "type": "subcategory",
+        "label": "Crypto.Cipher",
+        "ids": [
+          "api/crypto/crypto.cipher",
+          "api/crypto/crypto.cipher/tcipher",
+          "api/crypto/crypto.cipher/tciphermode",
+          "api/crypto/crypto.aescipher",
+          "api/crypto/crypto.anubiscipher",
+          "api/crypto/crypto.blowfishcipher",
+          "api/crypto/crypto.camelliacipher",
+          "api/crypto/crypto.cast5cipher",
+          "api/crypto/crypto.descipher",
+          "api/crypto/crypto.ideacipher",
+          "api/crypto/crypto.kasumicipher",
+          "api/crypto/crypto.khazadcipher",
+          "api/crypto/crypto.kseedcipher",
+          "api/crypto/crypto.noekeoncipher",
+          "api/crypto/crypto.serpentcipher",
+          "api/crypto/crypto.skipjackcipher",
+          "api/crypto/crypto.twofishcipher",
+          "api/crypto/crypto.xteacipher"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Crypto.CRC32",
         "ids": [
           "api/crypto/crypto.crc32",
