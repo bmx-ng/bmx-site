@@ -9,6 +9,7 @@
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
-    "docusaurus": "^1.7.2"
+    "docusaurus": "^1.7.2",
+    "remarkable-katex": "git://github.com/woollybah/remarkable-katex.git"
   }
 }
