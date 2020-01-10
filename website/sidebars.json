@@ -434,6 +434,70 @@
       },
       {
         "type": "subcategory",
+        "label": "Crypto.CBCMode",
+        "ids": [
+          "api/crypto/crypto.cbcmode",
+          "api/crypto/crypto.cbcmode/tcbcciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Crypto.CFBMode",
+        "ids": [
+          "api/crypto/crypto.cfbmode",
+          "api/crypto/crypto.cfbmode/tcfbciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Crypto.CTRMode",
+        "ids": [
+          "api/crypto/crypto.ctrmode",
+          "api/crypto/crypto.ctrmode/tctrciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Crypto.ECBMode",
+        "ids": [
+          "api/crypto/crypto.ecbmode",
+          "api/crypto/crypto.ecbmode/tecbciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Crypto.F8Mode",
+        "ids": [
+          "api/crypto/crypto.f8mode",
+          "api/crypto/crypto.f8mode/tf8ciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Crypto.LRWMode",
+        "ids": [
+          "api/crypto/crypto.lrwmode",
+          "api/crypto/crypto.lrwmode/tlrwciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Crypto.OFBMode",
+        "ids": [
+          "api/crypto/crypto.ofbmode",
+          "api/crypto/crypto.ofbmode/tofbciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Crypto.XTSMode",
+        "ids": [
+          "api/crypto/crypto.xtsmode",
+          "api/crypto/crypto.xtsmode/txtsciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Crypto.CRC32",
         "ids": [
           "api/crypto/crypto.crc32",
