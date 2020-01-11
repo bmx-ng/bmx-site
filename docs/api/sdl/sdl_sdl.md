@@ -189,6 +189,35 @@ and perhaps ignore changes until they seem to be stable for a few seconds.
 One of [SDL_POWERSTATE_UNKNOWN](../../sdl/sdl.sdl/#const-sdlpowerstateunknownint-0), [SDL_POWERSTATE_ON_BATTERY](../../sdl/sdl.sdl/#const-sdlpowerstateonbatteryint-1), [SDL_POWERSTATE_NO_BATTERY](../../sdl/sdl.sdl/#const-sdlpowerstatenobatteryint-2), [SDL_POWERSTATE_CHARGING](../../sdl/sdl.sdl/#const-sdlpowerstatechargingint-3), or [SDL_POWERSTATE_CHARGED](../../sdl/sdl.sdl/#const-sdlpowerstatechargedint-4).
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework SDL.SDL
+Import brl.standardio
+
+Local seconds:Int
+Local percent:Int
+
+Local result:Int = SDLGetPowerInfo(seconds, percent)
+
+Local state:String
+Select result
+	Case SDL_POWERSTATE_UNKNOWN
+		state = "Unknown"
+	Case SDL_POWERSTATE_ON_BATTERY
+		state = "On Battery"
+	Case SDL_POWERSTATE_NO_BATTERY
+		state = "No Battery"
+	Case SDL_POWERSTATE_CHARGING
+		state = "Charging"
+	Case SDL_POWERSTATE_CHARGED
+		state = "Charged"
+End Select
+
+Print "State     : " + state
+Print "Remaining : " + seconds + " seconds (" + percent + " %)"
+```
 <br/>
 
 ### `Function SDLGetPixelFormatName:String(format:UInt)`
