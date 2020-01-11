@@ -13,7 +13,7 @@ Base type for JSON objects.
 
 Returns the JSON representation of the object as a String, or NULL on error.
 
-Valid flags include [JSON_COMPACT](../../../brl/brl.json/#const-json-compact-int-20), [JSON_ENSURE_ASCII](../../../brl/brl.json/#const-json-ensure-ascii-int-40), [JSON_SORT_KEYS](../../../brl/brl.json/#const-json-sort-keys-int-80), [JSON_PRESERVE_ORDER](../../../brl/brl.json/#const-json-preserve-order-int-100), [JSON_ENCODE_ANY](../../../brl/brl.json/#const-json-encode-any-int-200) and [JSON_ESCAPE_SLASH](../../../brl/brl.json/#const-json-escape-slash-int-400).
+Valid flags include [JSON_COMPACT](../../../brl/brl.json/#const-jsoncompactint-20), [JSON_ENSURE_ASCII](../../../brl/brl.json/#const-jsonensureasciiint-40), [JSON_SORT_KEYS](../../../brl/brl.json/#const-jsonsortkeysint-80), [JSON_PRESERVE_ORDER](../../../brl/brl.json/#const-jsonpreserveorderint-100), [JSON_ENCODE_ANY](../../../brl/brl.json/#const-jsonencodeanyint-200) and [JSON_ESCAPE_SLASH](../../../brl/brl.json/#const-jsonescapeslashint-400).
 
 
 <br/>
@@ -23,7 +23,7 @@ Valid flags include [JSON_COMPACT](../../../brl/brl.json/#const-json-compact-int
 Writes the JSON representation of the object to the stream output.
 
 The stream should already be open for writing.
-Valid flags include [JSON_COMPACT](../../../brl/brl.json/#const-json-compact-int-20), [JSON_ENSURE_ASCII](../../../brl/brl.json/#const-json-ensure-ascii-int-40), [JSON_SORT_KEYS](../../../brl/brl.json/#const-json-sort-keys-int-80), [JSON_PRESERVE_ORDER](../../../brl/brl.json/#const-json-preserve-order-int-100), [JSON_ENCODE_ANY](../../../brl/brl.json/#const-json-encode-any-int-200) and [JSON_ESCAPE_SLASH](../../../brl/brl.json/#const-json-escape-slash-int-400).
+Valid flags include [JSON_COMPACT](../../../brl/brl.json/#const-jsoncompactint-20), [JSON_ENSURE_ASCII](../../../brl/brl.json/#const-jsonensureasciiint-40), [JSON_SORT_KEYS](../../../brl/brl.json/#const-jsonsortkeysint-80), [JSON_PRESERVE_ORDER](../../../brl/brl.json/#const-jsonpreserveorderint-100), [JSON_ENCODE_ANY](../../../brl/brl.json/#const-jsonencodeanyint-200) and [JSON_ESCAPE_SLASH](../../../brl/brl.json/#const-jsonescapeslashint-400).
 
 
 <br/>
@@ -35,7 +35,7 @@ Valid flags include [JSON_COMPACT](../../../brl/brl.json/#const-json-compact-int
 Loads JSON text from a String or TStream.
 
 The stream should already be open for reading.
-Valid flags include [JSON_REJECT_DUPLICATES](../../../brl/brl.json/#const-json-reject-duplicates-int-1), [JSON_DISABLE_EOF_CHECK](../../../brl/brl.json/#const-json-disable-eof-check-int-2), [JSON_DECODE_ANY](../../../brl/brl.json/#const-json-decode-any-int-4), [JSON_DECODE_INT_AS_REAL](../../../brl/brl.json/#const-json-decode-int-as-real-int-8) and [JSON_ALLOW_NUL](../../../brl/brl.json/#const-json-allow-nul-int-10).
+Valid flags include [JSON_REJECT_DUPLICATES](../../../brl/brl.json/#const-jsonrejectduplicatesint-1), [JSON_DISABLE_EOF_CHECK](../../../brl/brl.json/#const-jsondisableeofcheckint-2), [JSON_DECODE_ANY](../../../brl/brl.json/#const-jsondecodeanyint-4), [JSON_DECODE_INT_AS_REAL](../../../brl/brl.json/#const-jsondecodeintasrealint-8) and [JSON_ALLOW_NUL](../../../brl/brl.json/#const-jsonallownulint-10).
 
 
 <br/>

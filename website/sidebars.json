@@ -91,20 +91,86 @@
   "api": {
     "BlitzMax API" : ["api/intro"],
     "BRL": [
-      "api/brl/brl.audio",
-      "api/brl/brl.audiosample",
-      "api/brl/brl.bank",
-      "api/brl/brl.bankstream",
-      "api/brl/brl.base64",
-      "api/brl/brl.blitz",
+      {
+        "type": "subcategory",
+        "label": "Audio",
+        "ids": [
+          "api/brl/brl.audio",
+          "api/brl/brl.audio/tchannel",
+          "api/brl/brl.audio/tsound"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "AudioSample",
+        "ids": [
+          "api/brl/brl.audiosample",
+          "api/brl/brl.audiosample/taudiosample",
+          "api/brl/brl.audiosample/taudiosampleloader"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Bank",
+        "ids": [
+          "api/brl/brl.bank",
+          "api/brl/brl.bank/tbank"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "BankStream",
+        "ids": [
+          "api/brl/brl.bankstream",
+          "api/brl/brl.bankstream/tbankstream"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Base64",
+        "ids": [
+          "api/brl/brl.base64",
+          "api/brl/brl.base64/tbase64"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Blitz",
+        "ids": [
+          "api/brl/brl.blitz",
+          "api/brl/brl.blitz/tarrayboundsexception",
+          "api/brl/brl.blitz/tblitzexception",
+          "api/brl/brl.blitz/tnullfunctionexception",
+          "api/brl/brl.blitz/tnullmethodexception",
+          "api/brl/brl.blitz/tnullobjectexception",
+          "api/brl/brl.blitz/toutofdataexception",
+          "api/brl/brl.blitz/truntimeexception"
+        ]
+      },
       "api/brl/brl.bmploader",
-      "api/brl/brl.clipboard",
-      "api/brl/brl.crypto",
+      {
+        "type": "subcategory",
+        "label": "Clipboard",
+        "ids": [
+          "api/brl/brl.clipboard",
+          "api/brl/brl.clipboard/tclipboard",
+          "api/brl/brl.clipboard/tclipboardopts",
+          "api/brl/brl.clipboard/twin32clipboardopts",
+          "api/brl/brl.clipboard/tx11clipboardopts"
+        ]
+      },
       "api/brl/brl.d3d7max2d",
       "api/brl/brl.d3d9max2d",
       "api/brl/brl.directsoundaudio",
       "api/brl/brl.endianstream",
-      "api/brl/brl.event",
+      {
+        "type": "subcategory",
+        "label": "Event",
+        "ids": [
+          "api/brl/brl.event",
+          "api/brl/brl.event/tevent"
+        ]
+      },
       "api/brl/brl.eventqueue",
       "api/brl/brl.filesystem",
       "api/brl/brl.freeaudioaudio",
@@ -114,20 +180,124 @@
       "api/brl/brl.graphics",
       "api/brl/brl.hook",
       "api/brl/brl.jpgloader",
-      "api/brl/brl.json",
+      {
+        "type": "subcategory",
+        "label": "JConv",
+        "ids": [
+          "api/brl/brl.jconv",
+          "api/brl/brl.jconv/tjconv",
+          "api/brl/brl.jconv/tjconvbuilder",
+          "api/brl/brl.jconv/tjconvserializer"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Json",
+        "ids": [
+          "api/brl/brl.json",
+          "api/brl/brl.json/tjson",
+          "api/brl/brl.json/tjsonobject",
+          "api/brl/brl.json/tjsonstring",
+          "api/brl/brl.json/tjsoninteger",
+          "api/brl/brl.json/tjsonreal",
+          "api/brl/brl.json/tjsonbool",
+          "api/brl/brl.json/tjsonarray",
+          "api/brl/brl.json/tjsonnull",
+          "api/brl/brl.json/tjsonerror",
+          "api/brl/brl.json/tjsonnumber"
+        ]
+      },
       "api/brl/brl.keycodes",
-      "api/brl/brl.linkedlist",
-      "api/brl/brl.map",
+      {
+        "type": "subcategory",
+        "label": "LinkedList",
+        "ids": [
+          "api/brl/brl.linkedlist",
+          "api/brl/brl.linkedlist/tlist",
+          "api/brl/brl.linkedlist/tlistenum",
+          "api/brl/brl.linkedlist/tlink"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Map",
+        "ids": [
+          "api/brl/brl.map",
+          "api/brl/brl.map/tmap",
+          "api/brl/brl.map/tintmap",
+          "api/brl/brl.map/tintkey",
+          "api/brl/brl.map/tptrmap",
+          "api/brl/brl.map/tptrkey",
+          "api/brl/brl.map/tstringmap"
+        ]
+      },
       "api/brl/brl.math",
-      "api/brl/brl.matrix",
-      "api/brl/brl.max2d",
-      "api/brl/brl.maxlua",
+      {
+        "type": "subcategory",
+        "label": "Matrix",
+        "ids": [
+          "api/brl/brl.matrix",
+          "api/brl/brl.matrix/smat2d",
+          "api/brl/brl.matrix/smat2f",
+          "api/brl/brl.matrix/smat2i",
+          "api/brl/brl.matrix/smat3d",
+          "api/brl/brl.matrix/smat3f",
+          "api/brl/brl.matrix/smat3i",
+          "api/brl/brl.matrix/smat4d",
+          "api/brl/brl.matrix/smat4f",
+          "api/brl/brl.matrix/smat4i"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Max2D",
+        "ids": [
+          "api/brl/brl.max2d",
+          "api/brl/brl.max2d/timage"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "MaxLua",
+        "ids": [
+          "api/brl/brl.maxlua",
+          "api/brl/brl.maxlua/tluaclass",
+          "api/brl/brl.maxlua/tluaobject"
+        ]
+      },
       "api/brl/brl.oggloader",
       "api/brl/brl.openalaudio",
-      "api/brl/brl.pixmap",
+      {
+        "type": "subcategory",
+        "label": "ObjectList",
+        "ids": [
+          "api/brl/brl.objectlist",
+          "api/brl/brl.objectlist/tobjectlist",
+          "api/brl/brl.objectlist/tobjectlistenumerator",
+          "api/brl/brl.objectlist/tobjectlistreverseenumerator"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Pixmap",
+        "ids": [
+          "api/brl/brl.pixmap",
+          "api/brl/brl.pixmap/tpixmap",
+          "api/brl/brl.pixmap/tpixmaploader"
+        ]
+      },
       "api/brl/brl.pngloader",
       "api/brl/brl.polledinput",
-      "api/brl/brl.quaternion",
+      {
+        "type": "subcategory",
+        "label": "Quaternion",
+        "ids": [
+          "api/brl/brl.quaternion",
+          "api/brl/brl.quaternion/squatd",
+          "api/brl/brl.quaternion/squatf",
+          "api/brl/brl.quaternion/squati"
+        ]
+      },
       "api/brl/brl.ramstream",
       "api/brl/brl.random",
       "api/brl/brl.reflection",
@@ -135,20 +305,77 @@
       "api/brl/brl.socket",
       "api/brl/brl.socketstream",
       "api/brl/brl.standardio",
-      "api/brl/brl.stream",
-      "api/brl/brl.stringbuilder",
+      {
+        "type": "subcategory",
+        "label": "Stream",
+        "ids": [
+          "api/brl/brl.stream",
+          "api/brl/brl.stream/tcstream",
+          "api/brl/brl.stream/tio",
+          "api/brl/brl.stream/tstream",
+          "api/brl/brl.stream/tstreamexception",
+          "api/brl/brl.stream/tstreamfactory",
+          "api/brl/brl.stream/tstreamreadexception",
+          "api/brl/brl.stream/tstreamwrapper",
+          "api/brl/brl.stream/tstreamwriteexception"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "StringBuilder",
+        "ids": [
+          "api/brl/brl.stringbuilder",
+          "api/brl/brl.stringbuilder/tstringbuilder",
+          "api/brl/brl.stringbuilder/tsplitbuffer"
+        ]
+      },
       "api/brl/brl.system",
       "api/brl/brl.systemdefault",
       "api/brl/brl.textstream",
       "api/brl/brl.tgaloader",
       "api/brl/brl.threadpool",
       "api/brl/brl.threads",
-      "api/brl/brl.timer",
+      {
+        "type": "subcategory",
+        "label": "Timer",
+        "ids": [
+          "api/brl/brl.timer",
+          "api/brl/brl.timer/tchrono"
+        ]
+      },
       "api/brl/brl.timerdefault",
-      "api/brl/brl.vector",
-      "api/brl/brl.volumes",
+      {
+        "type": "subcategory",
+        "label": "Vector",
+        "ids": [
+          "api/brl/brl.vector",
+          "api/brl/brl.vector/svec2d",
+          "api/brl/brl.vector/svec2f",
+          "api/brl/brl.vector/svec2i",
+          "api/brl/brl.vector/svec3d",
+          "api/brl/brl.vector/svec3f",
+          "api/brl/brl.vector/svec3i"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "BRL.Volumes",
+        "ids": [
+          "api/brl/brl.volumes",
+          "api/brl/brl.volumes/tvolume"
+        ]
+      },
       "api/brl/brl.wavloader",
-      "api/brl/brl.xml"
+      {
+        "type": "subcategory",
+        "label": "Xml",
+        "ids": [
+          "api/brl/brl.xml",
+          "api/brl/brl.xml/txmldoc",
+          "api/brl/brl.xml/txmlnode",
+          "api/brl/brl.xml/txmlattribute"
+        ]
+      }
     ],
     "MaxGUI": [
       "api/maxgui/maxgui.maxgui",
@@ -170,255 +397,282 @@
       "api/pub/pub.xmmintrin",
       "api/pub/pub.zlib"
     ],
+    "Crypto": [
+      {
+        "type": "subcategory",
+        "label": "Digest",
+        "ids": [
+          "api/crypto/crypto.digest",
+          "api/crypto/crypto.digest/tmessagedigest",
+          "api/crypto/crypto.digest/tdigestregister",
+          "api/crypto/crypto.digest/tnosuchalgorithmexception"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Cipher",
+        "ids": [
+          "api/crypto/crypto.cipher",
+          "api/crypto/crypto.cipher/tcipher",
+          "api/crypto/crypto.cipher/tciphermode",
+          "api/crypto/crypto.aescipher",
+          "api/crypto/crypto.anubiscipher",
+          "api/crypto/crypto.blowfishcipher",
+          "api/crypto/crypto.camelliacipher",
+          "api/crypto/crypto.cast5cipher",
+          "api/crypto/crypto.descipher",
+          "api/crypto/crypto.ideacipher",
+          "api/crypto/crypto.kasumicipher",
+          "api/crypto/crypto.khazadcipher",
+          "api/crypto/crypto.kseedcipher",
+          "api/crypto/crypto.noekeoncipher",
+          "api/crypto/crypto.serpentcipher",
+          "api/crypto/crypto.skipjackcipher",
+          "api/crypto/crypto.twofishcipher",
+          "api/crypto/crypto.xteacipher"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "CBCMode",
+        "ids": [
+          "api/crypto/crypto.cbcmode",
+          "api/crypto/crypto.cbcmode/tcbcciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "CFBMode",
+        "ids": [
+          "api/crypto/crypto.cfbmode",
+          "api/crypto/crypto.cfbmode/tcfbciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "CTRMode",
+        "ids": [
+          "api/crypto/crypto.ctrmode",
+          "api/crypto/crypto.ctrmode/tctrciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "ECBMode",
+        "ids": [
+          "api/crypto/crypto.ecbmode",
+          "api/crypto/crypto.ecbmode/tecbciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "F8Mode",
+        "ids": [
+          "api/crypto/crypto.f8mode",
+          "api/crypto/crypto.f8mode/tf8ciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "LRWMode",
+        "ids": [
+          "api/crypto/crypto.lrwmode",
+          "api/crypto/crypto.lrwmode/tlrwciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "OFBMode",
+        "ids": [
+          "api/crypto/crypto.ofbmode",
+          "api/crypto/crypto.ofbmode/tofbciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "XTSMode",
+        "ids": [
+          "api/crypto/crypto.xtsmode",
+          "api/crypto/crypto.xtsmode/txtsciphermode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "CRC32",
+        "ids": [
+          "api/crypto/crypto.crc32",
+          "api/crypto/crypto.crc32/tcrc32"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "MD5Digest",
+        "ids": [
+          "api/crypto/crypto.md5digest",
+          "api/crypto/crypto.md5digest/tmd5"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SHA1Digest",
+        "ids": [
+          "api/crypto/crypto.sha1digest",
+          "api/crypto/crypto.sha1digest/tsha1"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SHA256Digest",
+        "ids": [
+          "api/crypto/crypto.sha256digest",
+          "api/crypto/crypto.sha256digest/tsha256"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SHA512Digest",
+        "ids": [
+          "api/crypto/crypto.sha512digest",
+          "api/crypto/crypto.sha512digest/tsha512"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Crypto",
+        "ids": [
+          "api/crypto/crypto.crypto",
+          "api/crypto/crypto.crypto/tcryptorandom",
+          "api/crypto/crypto.crypto/tcryptosecretbox",
+          "api/crypto/crypto.crypto/tcryptohash",
+          "api/crypto/crypto.crypto/tcryptosign",
+          "api/crypto/crypto.crypto/tcryptokeyexchange",
+          "api/crypto/crypto.crypto/tcryptokey",
+          "api/crypto/crypto.crypto/tcryptohashkey",
+          "api/crypto/crypto.crypto/tcryptosecretboxkey",
+          "api/crypto/crypto.crypto/tcryptosignature",
+          "api/crypto/crypto.crypto/tcryptoexchangekeypair",
+          "api/crypto/crypto.crypto/tcryptosessionkeypair",
+          "api/crypto/crypto.crypto/tcryptonpacket",
+          "api/crypto/crypto.crypto/tcryptokk1packet",
+          "api/crypto/crypto.crypto/tcryptokk2packet",
+          "api/crypto/crypto.crypto/tcryptoxx1packet",
+          "api/crypto/crypto.crypto/tcryptoxx2packet",
+          "api/crypto/crypto.crypto/tcryptoxx3packet",
+          "api/crypto/crypto.crypto/tcryptoexchangestate",
+          "api/crypto/crypto.crypto/tcryptopwhashmasterkey",
+          "api/crypto/crypto.crypto/tcryptopwhashstoredkey",
+          "api/crypto/crypto.crypto/tcryptopasswordhash"
+        ]
+      }
+    ],
     "SDL": [
-      "api/sdl/sdl.sdl",
-      "api/sdl/sdl.sdlsystem",
-      "api/sdl/sdl.sdlvideo",
-      "api/sdl/sdl.sdlrender",
-      "api/sdl/sdl.sdltimer",
-      "api/sdl/sdl.sdlhaptic",
-      "api/sdl/sdl.sdlsensor",
+      {
+        "type": "subcategory",
+        "label": "SDL",
+        "ids": [
+          "api/sdl/sdl.sdl",
+          "api/sdl/sdl.sdl/tsdlstream"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SDLSystem",
+        "ids": [
+          "api/sdl/sdl.sdlsystem",
+          "api/sdl/sdl.sdlsystem/tsdlmultigesture"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SDLVideo",
+        "ids": [
+          "api/sdl/sdl.sdlvideo",
+          "api/sdl/sdl.sdlvideo/tsdldisplay",
+          "api/sdl/sdl.sdlvideo/tsdldisplaymode",
+          "api/sdl/sdl.sdlvideo/tsdlglcontext",
+          "api/sdl/sdl.sdlvideo/tsdlwindow"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SDLRender",
+        "ids": [
+          "api/sdl/sdl.sdlrender",
+          "api/sdl/sdl.sdlrender/tsdlrenderer",
+          "api/sdl/sdl.sdlrender/tsdltexture"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SDLTimer",
+        "ids": [
+          "api/sdl/sdl.sdltimer",
+          "api/sdl/sdl.sdltimer/tsdltimer"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SDLHaptic",
+        "ids": [
+          "api/sdl/sdl.sdlhaptic",
+          "api/sdl/sdl.sdlhaptic/tsdlhaptic",
+          "api/sdl/sdl.sdlhaptic/tsdlhapticcondition",
+          "api/sdl/sdl.sdlhaptic/tsdlhapticconstant",
+          "api/sdl/sdl.sdlhaptic/tsdlhapticcustom",
+          "api/sdl/sdl.sdlhaptic/tsdlhapticdirection",
+          "api/sdl/sdl.sdlhaptic/tsdlhapticeffect",
+          "api/sdl/sdl.sdlhaptic/tsdlhapticleftright",
+          "api/sdl/sdl.sdlhaptic/tsdlhapticperiodic",
+          "api/sdl/sdl.sdlhaptic/tsdlhapticramp"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SDLSensor",
+        "ids": [
+          "api/sdl/sdl.sdlsensor",
+          "api/sdl/sdl.sdlsensor/tsdlsensor"
+        ]
+      },
       "api/sdl/sdl.sdlfreeaudio",
       "api/sdl/sdl.glsdlmax2d",
       "api/sdl/sdl.gl2sdlmax2d",
       "api/sdl/sdl.d3d9sdlmax2d",
-      "api/sdl/sdl.virtualjoystick"
-    ]
-  },
-  "brl_audio": {
-    "BRL.Audio": [
-      "api/brl/brl.audio/tchannel",
-      "api/brl/brl.audio/tsound"
-    ]
-  },
-  "brl_audiosample": {
-    "BRL.AudioSample": [
-      "api/brl/brl.audiosample/taudiosample",
-      "api/brl/brl.audiosample/taudiosampleloader"
-    ]
-  },
-  "brl_bank": {
-    "BRL.Bank": [
-      "api/brl/brl.bank/tbank"
-    ]
-  },
-  "brl_bankstream": {
-    "BRL.BankStream": [
-      "api/brl/brl.bankstream/tbankstream"
-    ]
-  },
-  "brl_base64": {
-    "BRL.Base64": [
-      "api/brl/brl.base64/tbase64"
-    ]
-  },
-  "brl_blitz": {
-    "BRL.Blitz": [
-      "api/brl/brl.blitz/arrayboundsexception",
-      "api/brl/brl.blitz/tblitzexception",
-      "api/brl/brl.blitz/tnullfunctionexception",
-      "api/brl/brl.blitz/tnullmethodexception",
-      "api/brl/brl.blitz/tnullobjectexception",
-      "api/brl/brl.blitz/toutofdataexception",
-      "api/brl/brl.blitz/truntimeexception"
-    ]
-  },
-  "brl_clipboard": {
-    "BRL.Clipboard": [
-      "api/brl/brl.clipboard/tclipboard",
-      "api/brl/brl.clipboard/tclipboardopts",
-      "api/brl/brl.clipboard/twin32clipboardopts",
-      "api/brl/brl.clipboard/tx11clipboardopts"
-    ]
-  },
-  "brl_crypto": {
-    "BRL.Crypto": [
-      "api/brl/brl.crypto/tcryptorandom",
-      "api/brl/brl.crypto/tcryptosecretbox",
-      "api/brl/brl.crypto/tcryptohash",
-      "api/brl/brl.crypto/tcryptosign",
-      "api/brl/brl.crypto/tcryptokeyexchange",
-      "api/brl/brl.crypto/tcryptokey",
-      "api/brl/brl.crypto/tcryptohashkey",
-      "api/brl/brl.crypto/tcryptosecretboxkey",
-      "api/brl/brl.crypto/tcryptosignature",
-      "api/brl/brl.crypto/tcryptoexchangekeypair",
-      "api/brl/brl.crypto/tcryptosessionkeypair",
-      "api/brl/brl.crypto/tcryptonpacket",
-      "api/brl/brl.crypto/tcryptokk1packet",
-      "api/brl/brl.crypto/tcryptokk2packet",
-      "api/brl/brl.crypto/tcryptoxx1packet",
-      "api/brl/brl.crypto/tcryptoxx2packet",
-      "api/brl/brl.crypto/tcryptoxx3packet",
-      "api/brl/brl.crypto/tcryptoexchangestate",
-      "api/brl/brl.crypto/tcryptopwhashmasterkey",
-      "api/brl/brl.crypto/tcryptopwhashstoredkey",
-      "api/brl/brl.crypto/tcryptopasswordhash"
-    ]
-  },
-  "brl_event": {
-    "BRL.Event": [
-      "api/brl/brl.event/tevent"
-    ]
-  },
-  "brl_json": {
-    "BRL.Json": [
-      "api/brl/brl.json/tjson",
-      "api/brl/brl.json/tjsonobject",
-      "api/brl/brl.json/tjsonstring",
-      "api/brl/brl.json/tjsoninteger",
-      "api/brl/brl.json/tjsonreal",
-      "api/brl/brl.json/tjsonbool",
-      "api/brl/brl.json/tjsonarray",
-      "api/brl/brl.json/tjsonnull",
-      "api/brl/brl.json/tjsonerror",
-      "api/brl/brl.json/tjsonnumber"
-    ]
-  },
-  "brl_linkedlist": {
-    "BRL.LinkedList": [
-      "api/brl/brl.linkedlist/tlink",
-      "api/brl/brl.linkedlist/tlist",
-      "api/brl/brl.linkedlist/tlistenum"
-    ]
-  },
-  "brl_map": {
-    "BRL.Map": [
-      "api/brl/brl.map/tmap",
-      "api/brl/brl.map/tintmap",
-      "api/brl/brl.map/tintkey",
-      "api/brl/brl.map/tptrmap",
-      "api/brl/brl.map/tptrkey",
-      "api/brl/brl.map/tstringmap"
-    ]
-  },
-  "brl_matrix": {
-    "BRL.Matrix": [
-      "api/brl/brl.matrix/smat2d",
-      "api/brl/brl.matrix/smat2f",
-      "api/brl/brl.matrix/smat2i",
-      "api/brl/brl.matrix/smat3d",
-      "api/brl/brl.matrix/smat3f",
-      "api/brl/brl.matrix/smat3i",
-      "api/brl/brl.matrix/smat4d",
-      "api/brl/brl.matrix/smat4f",
-      "api/brl/brl.matrix/smat4i"
-    ]
-  },
-  "brl_max2d": {
-    "BRL.Max2D": [
-      "api/brl/brl.max2d/timage"
-    ]
-  },
-  "brl_maxlua": {
-    "BRL.MaxLua": [
-      "api/brl/brl.maxlua/tluaclass",
-      "api/brl/brl.maxlua/tluaobject"
-    ]
-  },
-  "brl_pixmap": {
-    "BRL.Pixmap": [
-      "api/brl/brl.pixmap/tpixmap",
-      "api/brl/brl.pixmap/tpixmaploader"
-    ]
-  },
-  "brl_quaternion": {
-    "BRL.Quaternion": [
-      "api/brl/brl.quaternion/squatd",
-      "api/brl/brl.quaternion/squatf",
-      "api/brl/brl.quaternion/squati"
-    ]
-  },
-  "brl_stream": {
-    "BRL.Stream": [
-      "api/brl/brl.stream/tcstream",
-      "api/brl/brl.stream/tio",
-      "api/brl/brl.stream/tstream",
-      "api/brl/brl.stream/tstreamexception",
-      "api/brl/brl.stream/tstreamfactory",
-      "api/brl/brl.stream/tstreamreadexception",
-      "api/brl/brl.stream/tstreamwrapper",
-      "api/brl/brl.stream/tstreamwriteexception"
-    ]
-  },
-  "brl_stringbuilder": {
-    "BRL.StringBuilder": [
-      "api/brl/brl.stringbuilder/tstringbuilder",
-      "api/brl/brl.stringbuilder/tsplitbuffer"
-    ]
-  },
-  "brl_vector": {
-    "BRL.Vector": [
-      "api/brl/brl.vector/svec2d",
-      "api/brl/brl.vector/svec2f",
-      "api/brl/brl.vector/svec2i",
-      "api/brl/brl.vector/svec3d",
-      "api/brl/brl.vector/svec3f",
-      "api/brl/brl.vector/svec3i"
-    ]
-  },
-  "brl_volumes": {
-    "BRL.Volumes": [
-      "api/brl/brl.volumes/tvolume"
-    ]
-  },
-  "brl_xml": {
-    "BRL.Xml": [
-      "api/brl/brl.xml/txmldoc",
-      "api/brl/brl.xml/txmlnode",
-      "api/brl/brl.xml/txmlattribute"
-    ]
-  },
-  "sdl_sdl": {
-    "SDL.SDL": [
-      "api/sdl/sdl.sdl/tsdlstream"
-    ]
-  },
-  "sdl_sdlhaptic": {
-    "SDL.SDLHaptic": [
-      "api/sdl/sdl.sdlhaptic/tsdlhaptic",
-      "api/sdl/sdl.sdlhaptic/tsdlhapticcondition",
-      "api/sdl/sdl.sdlhaptic/tsdlhapticconstant",
-      "api/sdl/sdl.sdlhaptic/tsdlhapticcustom",
-      "api/sdl/sdl.sdlhaptic/tsdlhapticdirection",
-      "api/sdl/sdl.sdlhaptic/tsdlhapticreflect",
-      "api/sdl/sdl.sdlhaptic/tsdlhapticleftright",
-      "api/sdl/sdl.sdlhaptic/tsdlhapticperiodic",
-      "api/sdl/sdl.sdlhaptic/tsdlhapticramp"
-    ]
-  },
-  "sdl_sdlrender": {
-    "SDL.SDLRender": [
-      "api/sdl/sdl.sdlrender/tsdlrenderer",
-      "api/sdl/sdl.sdlrender/tsdltexture"
-    ]
-  },
-  "sdl_sdlsensor": {
-    "SDL.SDLSensor": [
-      "api/sdl/sdl.sdlsensor/tsdlsensor"
-    ]
-  },
-  "sdl_sdlsystem": {
-    "SDL.SDLSystem": [
-      "api/sdl/sdl.sdlsystem/tsdlmultigesture"
-    ]
-  },
-  "sdl_sdltimer": {
-    "SDL.SDLTimer": [
-      "api/sdl/sdl.sdltimer/tsdltimer"
-    ]
-  },
-  "sdl_sdlvideo": {
-    "SDL.SDLVideo": [
-      "api/sdl/sdl.sdlvideo/tsdldisplay",
-      "api/sdl/sdl.sdlvideo/tsdldisplaymode",
-      "api/sdl/sdl.sdlvideo/tsdlglcontext",
-      "api/sdl/sdl.sdlvideo/tsdlwindow"
-    ]
-  },
-  "sdl_sdlvirtualjoystick": {
-    "SDL.SDLVirtualJoystick": [
-      "api/sdl/sdl.virtualjoystick/tvirtualjoystick"
+      {
+        "type": "subcategory",
+        "label": "SDLVirtualJoystick",
+        "ids": [
+          "api/sdl/sdl.virtualjoystick",
+          "api/sdl/sdl.virtualjoystick/tvirtualjoystick"
+        ]
+      }
+    ],
+    "Steam": [
+      {
+        "type": "subcategory",
+        "label": "SteamSDK",
+        "ids": [
+          "api/steam/steam.steamsdk",
+          "api/steam/steam.steamsdk/tsteamclient",
+          "api/steam/steam.steamsdk/tsteamutils",
+          "api/steam/steam.steamsdk/tsteamuserstats",
+          "api/steam/steam.steamsdk/tsteamfriends",
+          "api/steam/steam.steamsdk/tsteamugc",
+          "api/steam/steam.steamsdk/isteamfriendslistener",
+          "api/steam/steam.steamsdk/isteamugclistener",
+          "api/steam/steam.steamsdk/isteamuserstatslistener",
+          "api/steam/steam.steamsdk/isteamutilslistener",
+          "api/steam/steam.steamsdk/eitempreviewtype",
+          "api/steam/steam.steamsdk/epersonachange",
+          "api/steam/steam.steamsdk/epersonastate",
+          "api/steam/steam.steamsdk/eremotestoragepublishedfilevisibility",
+          "api/steam/steam.steamsdk/eugcmatchingugctype",
+          "api/steam/steam.steamsdk/eugcquery",
+          "api/steam/steam.steamsdk/euserrestriction",
+          "api/steam/steam.steamsdk/euserugclist",
+          "api/steam/steam.steamsdk/eworkshopfiletype"
+        ]
+      }
     ]
   }
 }

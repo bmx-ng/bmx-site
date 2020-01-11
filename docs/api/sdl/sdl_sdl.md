@@ -23,7 +23,7 @@ providing mouse and keyboard input, since OpenGL comprises only rendering.
 
 ## Functions
 
-### `Function OpenSDLStream:TSDLStream( file:String, readable:Int, writeable:Int )`
+### `Function OpenSDLStream:TSDLStream( file:String, readable:Int, writeMode:Int )`
 
 Opens an SDL stream for reading/writing.
 
@@ -72,7 +72,7 @@ Your external storage path is typically: /storage/sdcard0/Android/data/your.app.
 
 
 #### Returns
-The path used for external storage for this application on success or NULL on failure; call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterror-string)() for more information.
+The path used for external storage for this application on success or NULL on failure; call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterrorstring)() for more information.
 
 
 <br/>
@@ -96,7 +96,7 @@ Your internal storage path is typically: /data/data/your.app.package/files.
 
 
 #### Returns
-The path used for internal storage or NULL on failure; call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterror-string)() for more information.
+The path used for internal storage or NULL on failure; call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterrorstring)() for more information.
 
 
 <br/>
@@ -125,43 +125,43 @@ Puts text into the clipboard.
 
 ### `Function SDLLogAppInfo(Text:String)`
 
-Logs a message with [SDL_LOG_CATEGORY_APPLICATION](../../sdl/sdl.sdl/#const-sdl-log-category-application-int-0) and [SDL_LOG_PRIORITY_INFO](../../sdl/sdl.sdl/#const-sdl-log-priority-info-int-3).
+Logs a message with [SDL_LOG_CATEGORY_APPLICATION](../../sdl/sdl.sdl/#const-sdllogcategoryapplicationint-0) and [SDL_LOG_PRIORITY_INFO](../../sdl/sdl.sdl/#const-sdllogpriorityinfoint-3).
 
 <br/>
 
 ### `Function SDLLogDebug(category:Int, Text:String)`
 
-Logs a message with [SDL_LOG_PRIORITY_DEBUG](../../sdl/sdl.sdl/#const-sdl-log-priority-debug-int-2).
+Logs a message with [SDL_LOG_PRIORITY_DEBUG](../../sdl/sdl.sdl/#const-sdllogprioritydebugint-2).
 
 <br/>
 
 ### `Function SDLLogError(category:Int, Text:String)`
 
-Logs a message with [SDL_LOG_PRIORITY_ERROR](../../sdl/sdl.sdl/#const-sdl-log-priority-error-int-5).
+Logs a message with [SDL_LOG_PRIORITY_ERROR](../../sdl/sdl.sdl/#const-sdllogpriorityerrorint-5).
 
 <br/>
 
 ### `Function SDLLogCritical(category:Int, Text:String)`
 
-Logs a message with [SDL_LOG_PRIORITY_CRITICAL](../../sdl/sdl.sdl/#const-sdl-log-priority-critical-int-6).
+Logs a message with [SDL_LOG_PRIORITY_CRITICAL](../../sdl/sdl.sdl/#const-sdllogprioritycriticalint-6).
 
 <br/>
 
 ### `Function SDLLogInfo(category:Int, Text:String)`
 
-Logs a message with [SDL_LOG_PRIORITY_INFO](../../sdl/sdl.sdl/#const-sdl-log-priority-info-int-3).
+Logs a message with [SDL_LOG_PRIORITY_INFO](../../sdl/sdl.sdl/#const-sdllogpriorityinfoint-3).
 
 <br/>
 
 ### `Function SDLLogVerbose(category:Int, Text:String)`
 
-Logs a message with [SDL_LOG_PRIORITY_VERBOSE](../../sdl/sdl.sdl/#const-sdl-log-priority-verbose-int-1).
+Logs a message with [SDL_LOG_PRIORITY_VERBOSE](../../sdl/sdl.sdl/#const-sdllogpriorityverboseint-1).
 
 <br/>
 
 ### `Function SDLLogWarn(category:Int, Text:String)`
 
-Logs a message with [SDL_LOG_PRIORITY_WARN](../../sdl/sdl.sdl/#const-sdl-log-priority-warn-int-4).
+Logs a message with [SDL_LOG_PRIORITY_WARN](../../sdl/sdl.sdl/#const-sdllogprioritywarnint-4).
 
 <br/>
 
@@ -169,7 +169,7 @@ Logs a message with [SDL_LOG_PRIORITY_WARN](../../sdl/sdl.sdl/#const-sdl-log-pri
 
 Sets the priority of all log categories.
 
-If you are debugging SDL, you might want to call this with [SDL_LOG_PRIORITY_WARN](../../sdl/sdl.sdl/#const-sdl-log-priority-warn-int-4).
+If you are debugging SDL, you might want to call this with [SDL_LOG_PRIORITY_WARN](../../sdl/sdl.sdl/#const-sdllogprioritywarnint-4).
 
 
 <br/>
@@ -186,7 +186,7 @@ and perhaps ignore changes until they seem to be stable for a few seconds.
 
 
 #### Returns
-One of [SDL_POWERSTATE_UNKNOWN](../../sdl/sdl.sdl/#const-sdl-powerstate-unknown-int-0), [SDL_POWERSTATE_ON_BATTERY](../../sdl/sdl.sdl/#const-sdl-powerstate-on-battery-int-1), [SDL_POWERSTATE_NO_BATTERY](../../sdl/sdl.sdl/#const-sdl-powerstate-no-battery-int-2), [SDL_POWERSTATE_CHARGING](../../sdl/sdl.sdl/#const-sdl-powerstate-charging-int-3), or [SDL_POWERSTATE_CHARGED](../../sdl/sdl.sdl/#const-sdl-powerstate-charged-int-4).
+One of [SDL_POWERSTATE_UNKNOWN](../../sdl/sdl.sdl/#const-sdlpowerstateunknownint-0), [SDL_POWERSTATE_ON_BATTERY](../../sdl/sdl.sdl/#const-sdlpowerstateonbatteryint-1), [SDL_POWERSTATE_NO_BATTERY](../../sdl/sdl.sdl/#const-sdlpowerstatenobatteryint-2), [SDL_POWERSTATE_CHARGING](../../sdl/sdl.sdl/#const-sdlpowerstatechargingint-3), or [SDL_POWERSTATE_CHARGED](../../sdl/sdl.sdl/#const-sdlpowerstatechargedint-4).
 
 
 <br/>
@@ -215,7 +215,7 @@ A value representing the number of milliseconds since the SDL library initialize
 Retrieves a message about the last error that occurred.
 
 #### Returns
-A message with information about the specific error that occurred, or an empty string if there hasn't been an error message set since the last call to [SDLClearError](../../sdl/sdl.sdl/#function-sdlclearerror)(). The message is only applicable when an SDL function has signaled an error. You must check the return values of SDL function calls to determine when to appropriately call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterror-string)().
+A message with information about the specific error that occurred, or an empty string if there hasn't been an error message set since the last call to [SDLClearError](../../sdl/sdl.sdl/#function-sdlclearerror)(). The message is only applicable when an SDL function has signaled an error. You must check the return values of SDL function calls to determine when to appropriately call [SDLGetError](../../sdl/sdl.sdl/#function-sdlgeterrorstring)().
 
 
 <br/>
@@ -223,6 +223,12 @@ A message with information about the specific error that occurred, or an empty s
 ### `Function SDLClearError()`
 
 Clears any previous error message.
+
+<br/>
+
+### `Function SDLAudioInit:Int(name:String)`
+
+(re)Initialises the audio subsystem.
 
 <br/>
 

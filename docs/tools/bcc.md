@@ -99,3 +99,7 @@ Sets requirement for overriding methods and functions to append `override` to th
 #### `-overerr`
 
 Defines missing `override` keywords in overridden methods and functions to be handled as error instead of warning.
+
+#### `-ud <user defined conditionals>`
+
+Add user defined conditionals (comma separated) then usable via `?myconditional`.

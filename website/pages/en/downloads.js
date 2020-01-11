@@ -140,11 +140,16 @@ class Downloads extends React.Component {
                                 {},
                                 {
                                     content:
-                                        `Coming soon...
+                                        `<strong>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.115.3.40.rpi/BlitzMax_rpi_0.115.3.40.tar.xz">BlitzMax_rpi_0.115.3.40.tar.xz</a>
+                                         </strong>
+                                        <br/><br/>
+                                        BlitzMax, RaspberryPi edition, aimed at 32-bit ARM development, with MaxIDE.
+                                        Includes SDL backend, mojo2, soloud audio driver and Gtk MaxGUI.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/rpi.svg`,
                                     imageAlign: "top",
-                                    //imageLink: `${siteConfig.baseUrl}docs/setup/${this.props.language}/platforms.html`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.115.3.40.rpi/BlitzMax_rpi_0.115.3.40.tar.xz`,
                                     title: "Raspberry Pi"
                                 },
                                 {},

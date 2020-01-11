@@ -23,7 +23,7 @@ TextStream type will be added capable of decoding text streams in multiple forma
 Reads bytes from a stream
 
 
-[ReadBytes](../../../brl/brl.stream/tstream/#method-readbytes-long-buf-byte-ptr-count-long) reads <b>count</b> bytes from the stream into the memory block specified by <b>buf</b>.
+[ReadBytes](../../../brl/brl.stream/tstream/#method-readbyteslong-bufbyte-ptrcountlong-) reads <b>count</b> bytes from the stream into the memory block specified by <b>buf</b>.
 
 If <b>count</b> bytes were not successfully read, a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown. This typically
 occurs due to end of file.
@@ -36,7 +36,7 @@ occurs due to end of file.
 Writes bytes to a stream
 
 
-[WriteBytes](../../../brl/brl.stream/tstream/#method-writebytes-long-buf-byte-ptr-count-long) writes <b>count</b> bytes from the memory block specified by <b>buf</b> to the stream.
+[WriteBytes](../../../brl/brl.stream/tstream/#method-writebyteslong-bufbyte-ptrcountlong-) writes <b>count</b> bytes from the memory block specified by <b>buf</b> to the stream.
 
 If <b>count</b> bytes were not successfully written, a [TStreamWriteException](../../../brl/brl.stream/tstreamwriteexception) is thrown. This typically
 occurs due to end of file.
@@ -49,7 +49,7 @@ occurs due to end of file.
 Skip bytes in a stream
 
 
-[SkipBytes](../../../brl/brl.stream/tstream/#method-skipbytes-long-count-long) read <b>count</b> bytes from the stream and throws them away.
+[SkipBytes](../../../brl/brl.stream/tstream/#method-skipbyteslong-countlong-) read <b>count</b> bytes from the stream and throws them away.
 
 If <b>count</b> bytes were not successfully read, a [TStreamReadException](../../../brl/brl.stream/tstreamreadexception) is thrown. This typically
 occurs due to end of file.

@@ -12,11 +12,11 @@ BlitzMax supports many kinds of streams, including standard file streams
 (for reading and writing to files), bank streams (for reading and writing to banks) and 
 endian streams (for swapping the byte order of stream data).
 
-Streams are usually created using [OpenStream](../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../brl/brl.stream/#function-readstream-tstream-url-object) or [WriteStream](../../brl/brl.stream/#function-writestream-tstream-url-object). However,
+Streams are usually created using [OpenStream](../../brl/brl.stream/#function-openstreamtstream-urlobjectreadableinttruewritemodeintwritemodeoverwrite-), [ReadStream](../../brl/brl.stream/#function-readstreamtstream-urlobject-) or [WriteStream](../../brl/brl.stream/#function-writestreamtstream-urlobject-). However,
 some kinds of streams provide their own methods for creating streams. For example, banks
-streams are created with the [CreateBankStream](../../brl/brl.bankstream/#function-createbankstream-tbankstream-bank-tbank) command.
+streams are created with the [CreateBankStream](../../brl/brl.bankstream/#function-createbankstreamtbankstream-banktbank-) command.
 
-[OpenStream](../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../brl/brl.stream/#function-readstream-tstream-url-object) and [WriteStream](../../brl/brl.stream/#function-writestream-tstream-url-object) all require a <i>url</i> parameter, which is used to
+[OpenStream](../../brl/brl.stream/#function-openstreamtstream-urlobjectreadableinttruewritemodeintwritemodeoverwrite-), [ReadStream](../../brl/brl.stream/#function-readstreamtstream-urlobject-) and [WriteStream](../../brl/brl.stream/#function-writestreamtstream-urlobject-) all require a <i>url</i> parameter, which is used to
 'locate' the stream. A url is usually a string value.
 
 If the url contains the string "::", then a stream <i>protocol</i> is being specified. If not,
@@ -29,16 +29,16 @@ from a binary file that has been embedded in an application using the [Incbin](.
 Other protocols include "http::" for reading and writing data over a network, and 
 "littleendian::" and "bigendian::" for swapping the byte order of streams.
 
-To write to a stream, use one of the 'Write' style commands, such as [WriteByte](../../brl/brl.stream/tstream/#method-writebyte-n-int).
+To write to a stream, use one of the 'Write' style commands, such as [WriteByte](../../brl/brl.stream/tstream/#method-writebyte-nint-).
 
-To read from a stream, use one of the 'Read' style commands, such as [ReadByte](../../brl/brl.stream/tstream/#method-readbyte-int).
+To read from a stream, use one of the 'Read' style commands, such as [ReadByte](../../brl/brl.stream/tstream/#method-readbyteint).
 
 Some kinds of streams (for example, file streams and bank streams) support <i>random access</i>.
 This means that you can modify where in the stream the next read or write is to occur using
-the [SeekStream](../../brl/brl.stream/#function-seekstream-long-stream-tstream-pos-long-whence-int-seek-set) command. You can also tell where you are in such streams using the 
-[StreamPos](../../brl/brl.stream/#function-streampos-long-stream-tstream) command.
+the [SeekStream](../../brl/brl.stream/#function-seekstreamlong-streamtstream-poslong-whenceint-seekset-) command. You can also tell where you are in such streams using the 
+[StreamPos](../../brl/brl.stream/#function-streamposlong-streamtstream-) command.
 
-When you are finished with a stream, you should always close it using [CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream).
+When you are finished with a stream, you should always close it using [CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-).
 Failure to do so may result in a resource leak, or prevent the stream from successfully
 opening in future.
 
@@ -57,12 +57,12 @@ opening in future.
 
 ## Functions
 
-### `Function OpenStream:TStream( url:Object,readable:Int=True,writeable:Int=True )`
+### `Function OpenStream:TStream( url:Object,readable:Int=True,writeMode:Int=WRITE_MODE_OVERWRITE )`
 
-Open a stream for reading/writing
+Open a stream for reading/writing/appending
 
-All streams created by [OpenStream](../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../brl/brl.stream/#function-readstream-tstream-url-object) or [WriteStream](../../brl/brl.stream/#function-writestream-tstream-url-object) should eventually be
-closed using [CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream).
+All streams created by [OpenStream](../../brl/brl.stream/#function-openstreamtstream-urlobjectreadableinttruewritemodeintwritemodeoverwrite-), [ReadStream](../../brl/brl.stream/#function-readstreamtstream-urlobject-), [WriteStream](../../brl/brl.stream/#function-writestreamtstream-urlobject-) or [AppendStream](../../brl/brl.stream/#function-appendstreamtstream-urlobject-) should eventually be
+closed using [CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-).
 
 
 #### Returns
@@ -75,8 +75,8 @@ A stream object
 
 Open a stream for reading
 
-All streams created by [OpenStream](../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../brl/brl.stream/#function-readstream-tstream-url-object) or [WriteStream](../../brl/brl.stream/#function-writestream-tstream-url-object) should eventually
-be closed using [CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream).
+All streams created by [OpenStream](../../brl/brl.stream/#function-openstreamtstream-urlobjectreadableinttruewritemodeintwritemodeoverwrite-), [ReadStream](../../brl/brl.stream/#function-readstreamtstream-urlobject-) or [WriteStream](../../brl/brl.stream/#function-writestreamtstream-urlobject-) should eventually
+be closed using [CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-).
 
 
 #### Returns
@@ -107,8 +107,8 @@ CloseStream in
 
 Open a stream for writing
 
-All streams created by [OpenStream](../../brl/brl.stream/#function-openstream-tstream-url-object-readable-int-true-writeable-int-true), [ReadStream](../../brl/brl.stream/#function-readstream-tstream-url-object) or [WriteStream](../../brl/brl.stream/#function-writestream-tstream-url-object) should eventually
-be closed using [CloseStream](../../brl/brl.stream/#function-closestream-stream-tstream).
+All streams created by [OpenStream](../../brl/brl.stream/#function-openstreamtstream-urlobjectreadableinttruewritemodeintwritemodeoverwrite-), [ReadStream](../../brl/brl.stream/#function-readstreamtstream-urlobject-), [WriteStream](../../brl/brl.stream/#function-writestreamtstream-urlobject-) or [AppendStream](../../brl/brl.stream/#function-appendstreamtstream-urlobject-) should eventually
+be closed using [CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-).
 
 
 #### Returns
@@ -142,6 +142,20 @@ CloseStream out
 
 Print "File mygame.ini created, bytes="+FileSize("mygame.ini")
 ```
+<br/>
+
+### `Function AppendStream:TStream( url:Object )`
+
+Open a stream for appending
+
+All streams created by [OpenStream](../../brl/brl.stream/#function-openstreamtstream-urlobjectreadableinttruewritemodeintwritemodeoverwrite-), [ReadStream](../../brl/brl.stream/#function-readstreamtstream-urlobject-), [WriteStream](../../brl/brl.stream/#function-writestreamtstream-urlobject-) or [AppendStream](../../brl/brl.stream/#function-appendstreamtstream-urlobject-) should eventually
+be closed using [CloseStream](../../brl/brl.stream/#function-closestream-streamtstream-).
+
+
+#### Returns
+A stream object
+
+
 <br/>
 
 ### `Function Eof:Int( stream:TStream )`
@@ -188,7 +202,7 @@ New stream position, or -1 If stream is not seekable
 
 Flush a stream
 
-[FlushStream](../../brl/brl.stream/#function-flushstream-stream-tstream) writes any outstanding buffered data to <b>stream</b>.
+[FlushStream](../../brl/brl.stream/#function-flushstream-streamtstream-) writes any outstanding buffered data to <b>stream</b>.
 
 
 <br/>
@@ -208,7 +222,7 @@ Closing a stream also flushes the stream before it closes.
 
 Read a Byte from a stream
 
-[ReadByte](../../brl/brl.stream/tstream/#method-readbyte-int) reads a single Byte from <b>stream</b>.
+[ReadByte](../../brl/brl.stream/tstream/#method-readbyteint) reads a single Byte from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -222,7 +236,7 @@ A Byte value
 
 Read a Short from a stream
 
-[ReadShort](../../brl/brl.stream/tstream/#method-readshort-int) reads 2 bytes from <b>stream</b>.
+[ReadShort](../../brl/brl.stream/tstream/#method-readshortint) reads 2 bytes from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -236,7 +250,7 @@ A Short value
 
 Read an Int from a stream
 
-[ReadInt](../../brl/brl.stream/tstream/#method-readint-int) reads 4 bytes from <b>stream</b>.
+[ReadInt](../../brl/brl.stream/tstream/#method-readintint) reads 4 bytes from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -250,7 +264,7 @@ An Int value
 
 Read a Long from a stream
 
-[ReadLong](../../brl/brl.stream/tstream/#method-readlong-long) reads 8 bytes from <b>stream</b>.
+[ReadLong](../../brl/brl.stream/tstream/#method-readlonglong) reads 8 bytes from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -292,7 +306,7 @@ A Double value
 
 Write a Byte to a stream
 
-[WriteByte](../../brl/brl.stream/tstream/#method-writebyte-n-int) writes a single Byte to <b>stream</b>.
+[WriteByte](../../brl/brl.stream/tstream/#method-writebyte-nint-) writes a single Byte to <b>stream</b>.
 A TStreamWriteException is thrown If the Byte could Not be written
 
 
@@ -302,7 +316,7 @@ A TStreamWriteException is thrown If the Byte could Not be written
 
 Write a Short to a stream
 
-[WriteShort](../../brl/brl.stream/tstream/#method-writeshort-n-int) writes 2 bytes to <b>stream</b>.
+[WriteShort](../../brl/brl.stream/tstream/#method-writeshort-nint-) writes 2 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -312,7 +326,7 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 Write an Int to a stream
 
-[WriteInt](../../brl/brl.stream/tstream/#method-writeint-n-int) writes 4 bytes to <b>stream</b>.
+[WriteInt](../../brl/brl.stream/tstream/#method-writeint-nint-) writes 4 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -322,7 +336,7 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 Write a Long to a stream
 
-[WriteLong](../../brl/brl.stream/tstream/#method-writelong-n-long) writes 8 bytes to <b>stream</b>.
+[WriteLong](../../brl/brl.stream/tstream/#method-writelong-nlong-) writes 8 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -332,7 +346,7 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 Write a Float to a stream
 
-[WriteFloat](../../brl/brl.stream/tstream/#method-writefloat-n) writes 4 bytes to <b>stream</b>.
+[WriteFloat](../../brl/brl.stream/tstream/#method-writefloat-n-) writes 4 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -342,7 +356,7 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 Write a Double to a stream
 
-[WriteDouble](../../brl/brl.stream/tstream/#method-writedouble-n) writes 8 bytes to <b>stream</b>.
+[WriteDouble](../../brl/brl.stream/tstream/#method-writedouble-n-) writes 8 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
@@ -472,7 +486,7 @@ A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown 
 Copy stream contents to another stream
 
 
-[CopyStream](../../brl/brl.stream/#function-copystream-fromstream-tstream-tostream-tstream-bufsize-int-4096) copies bytes from <b>fromStream</b> to <b>toStream</b> Until <b>fromStream</b> reaches end
+[CopyStream](../../brl/brl.stream/#function-copystream-fromstreamtstreamtostreamtstreambufsizeint4096-) copies bytes from <b>fromStream</b> to <b>toStream</b> Until <b>fromStream</b> reaches end
 of file.
 
 A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
@@ -485,7 +499,7 @@ A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown 
 Copy bytes from one stream to another
 
 
-[CopyBytes](../../brl/brl.stream/#function-copybytes-fromstream-tstream-tostream-tstream-count-int-bufsize-int-4096) copies <b>count</b> bytes from <b>fromStream</b> to <b>toStream</b>.
+[CopyBytes](../../brl/brl.stream/#function-copybytes-fromstreamtstreamtostreamtstreamcountintbufsizeint4096-) copies <b>count</b> bytes from <b>fromStream</b> to <b>toStream</b>.
 
 A [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown if not all bytes could be read, and a
 [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown if not all bytes could be written.
@@ -496,6 +510,23 @@ A [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown if
 ### `Function CasedFileName$(path$)`
 
 Returns a case sensitive filename if it exists from a case insensitive file path.
+
+<br/>
+
+## Consts
+
+### `Const WRITE_MODE_OVERWRITE:Int = 1`
+
+Opens a file for output operations.
+
+<br/>
+
+### `Const WRITE_MODE_APPEND:Int = 2`
+
+Opens a file for appending with all output operations writing data at the end of the file.
+
+Repositioning operations such as [Seek](../../brl/brl.stream/tio/#method-seeklong-poslong-whenceint-seekset-) affects the next input operations, but output operations move the position back to the end of file.
+
 
 <br/>
 

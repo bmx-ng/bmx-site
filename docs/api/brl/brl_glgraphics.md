@@ -12,7 +12,7 @@ sidebar_label: BRL.GLGraphics
 Get OpenGL graphics driver
 
 
-The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-driver-tgraphicsdriver-defaultflags-graphics-backbuffer)
+The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-drivertgraphicsdriverdefaultflagsgraphicsbackbuffer-)
 
 
 #### Returns
@@ -67,15 +67,15 @@ Draws a rectangle relative to top-left of current viewport.
 
 <br/>
 
-### `Function GLDrawText( text$,x,y )`
+### `Function GLDrawText( Text$,x,y )`
 
 Helper function to output some simple 8x16 font text
 
 
-Draws text relative to top-left of current viewport.<br>
-<br>
-The font used is an internal fixed point 8x16 font.<br>
-<br>
+Draws text relative to top-left of current viewport.<br/>
+<br/>
+The font used is an internal fixed point 8x16 font.<br/>
+<br/>
 This function is intended for debugging purposes only - performance is unlikely to be stellar.
 
 
@@ -86,8 +86,8 @@ This function is intended for debugging purposes only - performance is unlikely 
 Helper function to draw a pixmap to a gl context
 
 
-Draws the pixmap relative to top-left of current viewport.<br>
-<br>
+Draws the pixmap relative to top-left of current viewport.<br/>
+<br/>
 This function is intended for debugging purposes only - performance is unlikely to be stellar.
 
 

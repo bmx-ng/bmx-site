@@ -5,8 +5,8 @@ sidebar_label: BRL.Blitz
 ---
 
 
-The Blitz runtime module provides low level functionality required by  BlitzMax applications when they are running. This includes things like memory management, exception handling and string and array operations.<br>
-<br>
+The Blitz runtime module provides low level functionality required by  BlitzMax applications when they are running. This includes things like memory management, exception handling and string and array operations.<br/>
+<br/>
 Much of the functionality provided by this module is hidden from application programmers, but is instead used 'behind the scenes' by the compiler. However, there are some very useful commands for debugging, memory management and simple standard IO.
 
 
@@ -17,9 +17,10 @@ Much of the functionality provided by this module is hidden from application pro
 | [TNullObjectException](../../brl/brl.blitz/tnullobjectexception) | Null object exception |
 | [TNullMethodException](../../brl/brl.blitz/tnullmethodexception) | Null method exception |
 | [TNullFunctionException](../../brl/brl.blitz/tnullfunctionexception) | Null function exception |
-| [TArrayBoundsException](../../brl/brl.blitz/tarrayboundsexception) | Null method exception |
+| [TArrayBoundsException](../../brl/brl.blitz/tarrayboundsexception) | Array bounds exception |
 | [TOutOfDataException](../../brl/brl.blitz/toutofdataexception) | Out of data exception |
 | [TRuntimeException](../../brl/brl.blitz/truntimeexception) | Runtime exception |
+| [TInvalidEnumException](../../brl/brl.blitz/tinvalidenumexception) | Invalid enum exception |
 
 ## Interfaces
 | Interface | Description |
@@ -46,7 +47,7 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Max:Long(a:Long, b:Long)`
+### `Function Max:Long(a:Long, b:Long) Inline`
 
 Returns the larger of the two [Long](../../brl/brl.blitz/#long) arguments.
 
@@ -64,7 +65,7 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Max:Float(a:Float, b:Float)`
+### `Function Max:Float(a:Float, b:Float) Inline`
 
 Returns the larger of the two [Float](../../brl/brl.blitz/#float) arguments.
 
@@ -82,7 +83,7 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Max:Double(a:Double, b:Double)`
+### `Function Max:Double(a:Double, b:Double) Inline`
 
 Returns the larger of the two [Double](../../brl/brl.blitz/#double) arguments.
 
@@ -100,7 +101,7 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Max:Byte(a:Byte, b:Byte)`
+### `Function Max:Byte(a:Byte, b:Byte) Inline`
 
 Returns the larger of the two [Byte](../../brl/brl.blitz/#byte) arguments.
 
@@ -118,7 +119,7 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Max:Short(a:Short, b:Short)`
+### `Function Max:Short(a:Short, b:Short) Inline`
 
 Returns the larger of the two [Short](../../brl/brl.blitz/#short) arguments.
 
@@ -136,7 +137,7 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Max:UInt(a:UInt, b:UInt)`
+### `Function Max:UInt(a:UInt, b:UInt) Inline`
 
 Returns the larger of the two [UInt](../../brl/brl.blitz/#uint) arguments.
 
@@ -154,7 +155,7 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Max:ULong(a:ULong, b:ULong)`
+### `Function Max:ULong(a:ULong, b:ULong) Inline`
 
 Returns the larger of the two [ULong](../../brl/brl.blitz/#ulong) arguments.
 
@@ -172,9 +173,9 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Max:Size_T(a:Size_T, b:Size_T)`
+### `Function Max:Size_T(a:Size_T, b:Size_T) Inline`
 
-Returns the larger of the two [Size_T](../../brl/brl.blitz/#size-t) arguments.
+Returns the larger of the two [Size_T](../../brl/brl.blitz/#sizet) arguments.
 
 #### Example
 ```blitzmax
@@ -190,7 +191,7 @@ Print Max(20,10)	'20
 ```
 <br/>
 
-### `Function Min:Int(a:Int, b:Int)`
+### `Function Min:Int(a:Int, b:Int) Inline`
 
 Returns the lesser of the two [Int](../../brl/brl.blitz/#int) arguments.
 
@@ -207,7 +208,7 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Min:Long(a:Long, b:Long)`
+### `Function Min:Long(a:Long, b:Long) Inline`
 
 Returns the lesser of the two [Long](../../brl/brl.blitz/#long) arguments.
 
@@ -224,7 +225,7 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Min:Float(a:Float, b:Float)`
+### `Function Min:Float(a:Float, b:Float) Inline`
 
 Returns the lesser of the two [Float](../../brl/brl.blitz/#float) arguments.
 
@@ -241,7 +242,7 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Min:Double(a:Double, b:Double)`
+### `Function Min:Double(a:Double, b:Double) Inline`
 
 Returns the lesser of the two [Double](../../brl/brl.blitz/#double) arguments.
 
@@ -258,7 +259,7 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Min:Byte(a:Byte, b:Byte)`
+### `Function Min:Byte(a:Byte, b:Byte) Inline`
 
 Returns the lesser of the two [Byte](../../brl/brl.blitz/#byte) arguments.
 
@@ -275,7 +276,7 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Min:Short(a:Short, b:Short)`
+### `Function Min:Short(a:Short, b:Short) Inline`
 
 Returns the lesser of the two [Short](../../brl/brl.blitz/#short) arguments.
 
@@ -292,7 +293,7 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Min:UInt(a:UInt, b:UInt)`
+### `Function Min:UInt(a:UInt, b:UInt) Inline`
 
 Returns the lesser of the two [UInt](../../brl/brl.blitz/#uint) arguments.
 
@@ -309,7 +310,7 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Min:ULong(a:ULong, b:ULong)`
+### `Function Min:ULong(a:ULong, b:ULong) Inline`
 
 Returns the lesser of the two [ULong](../../brl/brl.blitz/#ulong) arguments.
 
@@ -326,9 +327,9 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Min:Size_T(a:Size_T, b:Size_T)`
+### `Function Min:Size_T(a:Size_T, b:Size_T) Inline`
 
-Returns the lesser of the two [Size_T](../../brl/brl.blitz/#size-t) arguments.
+Returns the lesser of the two [Size_T](../../brl/brl.blitz/#sizet) arguments.
 
 #### Example
 ```blitzmax
@@ -343,7 +344,7 @@ Print Min(20,10)	'10
 ```
 <br/>
 
-### `Function Abs:Int(a:Int)`
+### `Function Abs:Int(a:Int) Inline`
 
 Returns the absolute value of the [Int](../../brl/brl.blitz/#int) argument.
 
@@ -361,7 +362,7 @@ Next
 ```
 <br/>
 
-### `Function Abs:Float(a:Float)`
+### `Function Abs:Float(a:Float) Inline`
 
 Returns the absolute value of the [Float](../../brl/brl.blitz/#float) argument.
 
@@ -379,7 +380,7 @@ Next
 ```
 <br/>
 
-### `Function Abs:Double(a:Double)`
+### `Function Abs:Double(a:Double) Inline`
 
 Returns the absolute value of the [Double](../../brl/brl.blitz/#double) argument.
 
@@ -397,7 +398,7 @@ Next
 ```
 <br/>
 
-### `Function Abs:Long(a:Long)`
+### `Function Abs:Long(a:Long) Inline`
 
 Returns the absolute value of the [Long](../../brl/brl.blitz/#long) argument.
 
@@ -415,7 +416,7 @@ Next
 ```
 <br/>
 
-### `Function Sgn:Int(a:Int)`
+### `Function Sgn:Int(a:Int) Inline`
 
 Returns the sign of the [Int](../../brl/brl.blitz/#int) argument.
 
@@ -433,7 +434,7 @@ Print Sgn -50	'-1
 ```
 <br/>
 
-### `Function Sgn:Float(a:Float)`
+### `Function Sgn:Float(a:Float) Inline`
 
 Returns the sign of the [Float](../../brl/brl.blitz/#float) argument.
 
@@ -451,7 +452,7 @@ Print Sgn -50	'-1
 ```
 <br/>
 
-### `Function Sgn:Double(a:Double)`
+### `Function Sgn:Double(a:Double) Inline`
 
 Returns the sign of the [Double](../../brl/brl.blitz/#double) argument.
 
@@ -469,7 +470,7 @@ Print Sgn -50	'-1
 ```
 <br/>
 
-### `Function Sgn:Long(a:Long)`
+### `Function Sgn:Long(a:Long) Inline`
 
 Returns the sign of the [Long](../../brl/brl.blitz/#long) argument.
 
@@ -552,7 +553,7 @@ DebugLog "My debug text"
 
 Add a function to be called when the program ends
 
-[OnEnd](../../brl/brl.blitz/#function-onend-fun) allows you to specify a function to be called when the program ends. OnEnd functions are called
+[OnEnd](../../brl/brl.blitz/#function-onend-fun-) allows you to specify a function to be called when the program ends. OnEnd functions are called
 in the reverse order to that in which they were added.
 
 
@@ -605,8 +606,8 @@ Writes <b>str</b> to stderr and flushes stderr.
 Wait for a given number of milliseconds
 
 
-[Delay](../../brl/brl.blitz/#function-delay-millis-int) suspends program execution for at least <b>millis</b> milliseconds.<br>
-<br>
+[Delay](../../brl/brl.blitz/#function-delay-millisint-) suspends program execution for at least <b>millis</b> milliseconds.<br/>
+<br/>
 A millisecond is one thousandth of a second.
 
 
@@ -625,14 +626,26 @@ Delay 2000
 ```
 <br/>
 
+### `Function UDelay( microseconds:Int )`
+
+Wait for a given number of microseconds
+
+
+[UDelay](../../brl/brl.blitz/#function-udelay-microsecondsint-) suspends program execution for at least <b>microcseconds</b>.<br/>
+<br/>
+A microsecond is one millionth of a second.
+
+
+<br/>
+
 ### `Function MilliSecs:Int()`
 
 Get millisecond counter
 
 
-[MilliSecs](../../brl/brl.blitz/#function-millisecs-int) returns the number of milliseconds elapsed since the computer
-was turned on.<br>
-<br>
+[MilliSecs](../../brl/brl.blitz/#function-millisecsint) returns the number of milliseconds elapsed since the computer
+was turned on.<br/>
+<br/>
 A millisecond is one thousandth of a second.
 
 
@@ -666,7 +679,7 @@ A new block of memory <b>size</b> bytes long
 
 Free allocated memory
 
-The memory specified by <b>mem</b> must have been previously allocated by [MemAlloc](../../brl/brl.blitz/#function-memalloc-byte-ptr-size-size-t) or [MemExtend](../../brl/brl.blitz/#function-memextend-byte-ptr-mem-byte-ptr-size-size-t-new-size-size-t).
+The memory specified by <b>mem</b> must have been previously allocated by [MemAlloc](../../brl/brl.blitz/#function-memallocbyte-ptr-sizesizet-) or [MemExtend](../../brl/brl.blitz/#function-memextendbyte-ptr-membyte-ptrsizesizetnewsizesizet-).
 
 
 <br/>
@@ -708,10 +721,10 @@ Copy a potentially overlapping block of memory
 Set garbage collector mode
 
 
-<b>mode</b> can be one of the following:<br>
-1 : automatic GC - memory will be automatically garbage collected<br>
-2 : manual GC - no memory will be collected until a call to GCCollect is made<br>
-<br>
+<b>mode</b> can be one of the following:<br/>
+1 : automatic GC - memory will be automatically garbage collected<br/>
+2 : manual GC - no memory will be collected until a call to GCCollect is made<br/>
+<br/>
 The default GC mode is automatic GC.
 
 
@@ -723,8 +736,8 @@ Suspend garbage collector
 
 
 [GCSuspend](../../brl/brl.blitz/#function-gcsuspend) temporarily suspends the garbage collector. No garbage
-collection will be performed following a call to [GCSuspend](../../brl/brl.blitz/#function-gcsuspend).<br>
-<br>
+collection will be performed following a call to [GCSuspend](../../brl/brl.blitz/#function-gcsuspend).<br/>
+<br/>
 Use [GCResume](../../brl/brl.blitz/#function-gcresume) to resume the garbage collector. Note that [GCSuspend](../../brl/brl.blitz/#function-gcsuspend)
 and [GCResume](../../brl/brl.blitz/#function-gcresume) 'nest', meaning that each call to [GCSuspend](../../brl/brl.blitz/#function-gcsuspend) must be
 matched by a call to [GCResume](../../brl/brl.blitz/#function-gcresume).
@@ -737,8 +750,8 @@ matched by a call to [GCResume](../../brl/brl.blitz/#function-gcresume).
 Resume garbage collector
 
 
-[GCResume](../../brl/brl.blitz/#function-gcresume) resumes garbage collection following a call to [GCSuspend](../../brl/brl.blitz/#function-gcsuspend).<br>
-<br>
+[GCResume](../../brl/brl.blitz/#function-gcresume) resumes garbage collection following a call to [GCSuspend](../../brl/brl.blitz/#function-gcsuspend).<br/>
+<br/>
 See [GCSuspend](../../brl/brl.blitz/#function-gcsuspend) for more details.
 
 
@@ -807,7 +820,7 @@ Retains a reference to the specified [Object](../../brl/brl.blitz/#object), prev
 
 <br/>
 
-### `Function GCRelease(obj:Byte Ptr)`
+### `Function GCRelease(obj:Object)`
 
 Releases a reference from the specified [Object](../../brl/brl.blitz/#object).
 
@@ -870,17 +883,27 @@ Copies an array from the specified <b>src</b> array, starting at the position <b
 
 <br/>
 
+### `Function IsEmptyArray:Int(obj:Object)`
+
+Determines whether the [Object](../../brl/brl.blitz/#object) <b>obj</b> is an empty array.
+
+#### Returns
+[True](../../brl/brl.blitz/#true) if <b>obj</b> is an empty array, or [False](../../brl/brl.blitz/#false) otherwise.
+
+
+<br/>
+
 ## Globals
 
 ### `Global AppDir$="bbAppDir"`
 
 Application directory
 
-The [AppDir](../../brl/brl.blitz/#global-appdir-bbappdir) global variable contains the fully qualified directory of the currently
-executing application. An application's initial current directory is also set to [AppDir](../../brl/brl.blitz/#global-appdir-bbappdir)
+The [AppDir](../../brl/brl.blitz/#global-appdirbbappdir) global variable contains the fully qualified directory of the currently
+executing application. An application's initial current directory is also set to [AppDir](../../brl/brl.blitz/#global-appdirbbappdir)
 when an application starts.
 
-In a compiled DLL, the [AppDir](../../brl/brl.blitz/#global-appdir-bbappdir) global variable will instead contain the fully qualified
+In a compiled DLL, the [AppDir](../../brl/brl.blitz/#global-appdirbbappdir) global variable will instead contain the fully qualified
 directory of the DLL.
 
 
@@ -903,10 +926,10 @@ Print "file selected was :"+file
 
 Application file name
 
-The [AppFile](../../brl/brl.blitz/#global-appfile-bbappfile) global variable contains the fully qualified file name of the currently
+The [AppFile](../../brl/brl.blitz/#global-appfilebbappfile) global variable contains the fully qualified file name of the currently
 executing application.
 
-In a compiled DLL, the [AppFile](../../brl/brl.blitz/#global-appfile-bbappfile) global variable will instead contain the fully qualified
+In a compiled DLL, the [AppFile](../../brl/brl.blitz/#global-appfilebbappfile) global variable will instead contain the fully qualified
 file name of the DLL.
 
 
@@ -924,12 +947,12 @@ Print "This program's executable is located at "+AppFile
 
 Application title
 
-The [AppTitle](../../brl/brl.blitz/#global-apptitle-bbapptitle) global variable is used by various commands when a
+The [AppTitle](../../brl/brl.blitz/#global-apptitlebbapptitle) global variable is used by various commands when a
 default application title is required - for example, when opening simple
-windows or requesters.<br>
-<br>
-Initially, [AppTitle](../../brl/brl.blitz/#global-apptitle-bbapptitle) is set to the value "BlitzMax Application". However, you may change
-[AppTitle](../../brl/brl.blitz/#global-apptitle-bbapptitle) at any time with a simple assignment.
+windows or requesters.<br/>
+<br/>
+Initially, [AppTitle](../../brl/brl.blitz/#global-apptitlebbapptitle) is set to the value "BlitzMax Application". However, you may change
+[AppTitle](../../brl/brl.blitz/#global-apptitlebbapptitle) at any time with a simple assignment.
 
 
 #### Example
@@ -952,10 +975,10 @@ Until AppTerminate()
 
 Arguments passed to the application at startup
 
-The [AppArgs](../../brl/brl.blitz/#global-appargs-bbappargs) global array contains the command line parameters sent to an application
-when it was started. The first element of [AppArgs](../../brl/brl.blitz/#global-appargs-bbappargs) always contains the name of the
+The [AppArgs](../../brl/brl.blitz/#global-appargsbbappargs) global array contains the command line parameters sent to an application
+when it was started. The first element of [AppArgs](../../brl/brl.blitz/#global-appargsbbappargs) always contains the name of the
 application. However, the format of the name may change depending on how the application
-was launched. Use [AppDir](../../brl/brl.blitz/#global-appdir-bbappdir) or [AppFile](../../brl/brl.blitz/#global-appfile-bbappfile) for consistent information about the applications name
+was launched. Use [AppDir](../../brl/brl.blitz/#global-appdirbbappdir) or [AppFile](../../brl/brl.blitz/#global-appfilebbappfile) for consistent information about the applications name
 or directory.
 
 
@@ -978,7 +1001,7 @@ Next
 
 Directory from which application was launched
 
-The [LaunchDir](../../brl/brl.blitz/#global-launchdir-bblaunchdir) global variable contains the current directory at the time the
+The [LaunchDir](../../brl/brl.blitz/#global-launchdirbblaunchdir) global variable contains the current directory at the time the
 application was launched. This is mostly of use to command line tools which may need to
 access the 'shell' current directory as opposed to the application directory.
 
@@ -1000,7 +1023,7 @@ Print "This program was launched from "+LaunchDir$
 Set strict mode
 
 
-See the <a href=../../../../doc/bmxlang/compatibility.html>BlitzMax Language Reference</a> for more information on Strict mode programming.
+See the <a href="../../../../doc/bmxlang/compatibility.html">BlitzMax Language Reference</a> for more information on Strict mode programming.
 
 
 #### Example
@@ -2724,7 +2747,7 @@ puts "Using clib's put string!"
 Declare module scope and identifier
 
 
-See the <a href=../../../../doc/bmxlang/modules.html>BlitzMax Language Reference</a> for more information on BlitzMax Modules.
+See the <a href="../../../../doc/bmxlang/modules.html">BlitzMax Language Reference</a> for more information on BlitzMax Modules.
 
 
 #### Example
@@ -2907,13 +2930,13 @@ Transfer program flow to specified label
 #### Example
 ```blitzmax
 Rem
-Causes program execution to jump to the label specified.
+Causes program execution to jump to the #label specified.
 End Rem
 
 Print "one"
 Goto here
 Print "two"
-here
+#here
 Print "three"
 ```
 <br/>
@@ -3059,7 +3082,7 @@ For Local i:Int = 1 To 5
 	Print "name="+name+" age="+age+" skill="+skill
 Next
 
-mydata	'program label that can be used with the RestoreData command
+#mydata	'program label that can be used with the RestoreData command
 
 DefData "Simon",37,5000
 ```
@@ -3304,5 +3327,15 @@ SuperStrict
 
 Print Chr(65)	'A
 ```
+<br/>
+
+### `StackAlloc`
+
+Allocates memory from the stack.
+
+This memory is automatically freed on leaving the function where it was created.
+It should not be freed, or returned from the function.
+
+
 <br/>
 

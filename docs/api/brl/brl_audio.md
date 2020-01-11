@@ -8,17 +8,17 @@ sidebar_label: BRL.Audio
 
 The BlitzMax audio module contains commands to load and play sounds.
 
-A sound file can be played in BlitzMax with a combination of [LoadSound](../../brl/brl.audio/#function-loadsound-tsound-url-object-flags-int-0) that loads a sound file
-and [PlaySound](../../brl/brl.audio/#function-playsound-tchannel-sound-tsound-channel-tchannel-null) which plays the sound through the systems audio system if available.
+A sound file can be played in BlitzMax with a combination of [LoadSound](../../brl/brl.audio/#function-loadsoundtsound-urlobjectflagsint0-) that loads a sound file
+and [PlaySound](../../brl/brl.audio/#function-playsoundtchannel-soundtsoundchanneltchannelnull-) which plays the sound through the systems audio system if available.
 
 BlitzMax contains native support for sound files in both .wav (uncompressed)
 and .ogg (compressed) file formats.
 
 Playback of sounds can be controlled with various audio channel
-operators including [SetChannelVolume](../../brl/brl.audio/#function-setchannelvolume-channel-tchannel-volume), [SetChannelPan](../../brl/brl.audio/#function-setchannelpan-channel-tchannel-pan), [SetChannelDepth](../../brl/brl.audio/#function-setchanneldepth-channel-tchannel-depth) and [SetChannelRate](../../brl/brl.audio/#function-setchannelrate-channel-tchannel-rate).
+operators including [SetChannelVolume](../../brl/brl.audio/#function-setchannelvolume-channeltchannelvolume-), [SetChannelPan](../../brl/brl.audio/#function-setchannelpan-channeltchannelpan-), [SetChannelDepth](../../brl/brl.audio/#function-setchanneldepth-channeltchanneldepth-) and [SetChannelRate](../../brl/brl.audio/#function-setchannelrate-channeltchannelrate-).
 
-A channel handle is obtained from either the return value of [PlaySound](../../brl/brl.audio/#function-playsound-tchannel-sound-tsound-channel-tchannel-null) and [CueSound](../../brl/brl.audio/#function-cuesound-tchannel-sound-tsound-channel-tchannel-null) or from
-reserving a channel with [AllocChannel](../../brl/brl.audio/#function-allocchannel-tchannel).
+A channel handle is obtained from either the return value of [PlaySound](../../brl/brl.audio/#function-playsoundtchannel-soundtsoundchanneltchannelnull-) and [CueSound](../../brl/brl.audio/#function-cuesoundtchannel-soundtsoundchanneltchannelnull-) or from
+reserving a channel with [AllocChannel](../../brl/brl.audio/#function-allocchanneltchannel).
 
 
 ## Types
@@ -35,11 +35,11 @@ Load a sound
 
 
 <b>url</b> can be either a string, a stream or a [TAudioSample](../../brl/brl.audiosample/taudiosample) object.
-The returned sound can be played using [PlaySound](../../brl/brl.audio/#function-playsound-tchannel-sound-tsound-channel-tchannel-null) or [CueSound](../../brl/brl.audio/#function-cuesound-tchannel-sound-tsound-channel-tchannel-null).
+The returned sound can be played using [PlaySound](../../brl/brl.audio/#function-playsoundtchannel-soundtsoundchanneltchannelnull-) or [CueSound](../../brl/brl.audio/#function-cuesoundtchannel-soundtsoundchanneltchannelnull-).
 
 The <b>flags</b> parameter can be any combination of:
 
-<table><tr><td> <b>Flag value</b></td><td><b>Effect</b></td></tr><tr><td>  SOUND_LOOP</td><td>The sound should loop when played back.</td></tr><tr><td>  SOUND_HARDWARE</td><td>The sound should be placed in onboard soundcard memory if possible.</table>
+<table><tr><td> <b>Flag value</b></td><td><b>Effect</b></td></tr><tr><td>  SOUND_LOOP</td><td>The sound should loop when played back.</td></tr><tr><td>  SOUND_HARDWARE</td><td>The sound should be placed in onboard soundcard memory if possible.</td></tr></table>
 
 
 To combine flags, use the binary 'or' operator: '|'.
@@ -69,8 +69,8 @@ Input "Press any key to continue"
 Play a sound
 
 
-[PlaySound](../../brl/brl.audio/#function-playsound-tchannel-sound-tsound-channel-tchannel-null) starts a sound playing through an audio channel.
-If no <b>channel</b> is specified, [PlaySound](../../brl/brl.audio/#function-playsound-tchannel-sound-tsound-channel-tchannel-null) automatically allocates a channel for you.
+[PlaySound](../../brl/brl.audio/#function-playsoundtchannel-soundtsoundchanneltchannelnull-) starts a sound playing through an audio channel.
+If no <b>channel</b> is specified, [PlaySound](../../brl/brl.audio/#function-playsoundtchannel-soundtsoundchanneltchannelnull-) automatically allocates a channel for you.
 
 
 #### Returns
@@ -98,10 +98,10 @@ Cue a sound
 
 
 Prepares a sound for playback through an audio channel.
-To actually start the sound, you must use [ResumeChannel](../../brl/brl.audio/#function-resumechannel-channel-tchannel).
-If no <b>channel</b> is specified, [CueSound](../../brl/brl.audio/#function-cuesound-tchannel-sound-tsound-channel-tchannel-null) automatically allocates a channel for you.
+To actually start the sound, you must use [ResumeChannel](../../brl/brl.audio/#function-resumechannel-channeltchannel-).
+If no <b>channel</b> is specified, [CueSound](../../brl/brl.audio/#function-cuesoundtchannel-soundtsoundchanneltchannelnull-) automatically allocates a channel for you.
 
-[CueSound](../../brl/brl.audio/#function-cuesound-tchannel-sound-tsound-channel-tchannel-null) allows you to setup various audio channel states such as volume, pan, depth
+[CueSound](../../brl/brl.audio/#function-cuesoundtchannel-soundtsoundchanneltchannelnull-) allows you to setup various audio channel states such as volume, pan, depth
 and rate before a sound actually starts playing.
 
 
@@ -131,8 +131,8 @@ Input "Press return key to quit"
 Allocate audio channel
 
 
-Allocates an audio channel for use with [PlaySound](../../brl/brl.audio/#function-playsound-tchannel-sound-tsound-channel-tchannel-null) and [CueSound](../../brl/brl.audio/#function-cuesound-tchannel-sound-tsound-channel-tchannel-null).
-Once you are finished with an audio channel, you should use [StopChannel](../../brl/brl.audio/#function-stopchannel-channel-tchannel).
+Allocates an audio channel for use with [PlaySound](../../brl/brl.audio/#function-playsoundtchannel-soundtsoundchanneltchannelnull-) and [CueSound](../../brl/brl.audio/#function-cuesoundtchannel-soundtsoundchanneltchannelnull-).
+Once you are finished with an audio channel, you should use [StopChannel](../../brl/brl.audio/#function-stopchannel-channeltchannel-).
 
 
 #### Returns
@@ -187,8 +187,8 @@ Input "Press return key to quit"
 Determine whether an audio channel is playing
 
 
-[ChannelPlaying](../../brl/brl.audio/#function-channelplaying-int-channel-tchannel) will return [False](../../brl/brl.blitz/#false) if either the channel has been paused using [PauseChannel](../../brl/brl.audio/#function-pausechannel-channel-tchannel),
-or stopped using [StopChannel](../../brl/brl.audio/#function-stopchannel-channel-tchannel).
+[ChannelPlaying](../../brl/brl.audio/#function-channelplayingint-channeltchannel-) will return [False](../../brl/brl.blitz/#false) if either the channel has been paused using [PauseChannel](../../brl/brl.audio/#function-pausechannel-channeltchannel-),
+or stopped using [StopChannel](../../brl/brl.audio/#function-stopchannel-channeltchannel-).
 
 
 #### Returns
@@ -393,7 +393,7 @@ Until AppTerminate() Or KeyHit(KEY_ESCAPE)
 Resume audio channel playback
 
 
-Resumes audio channel playback after it has been paused by [CueSound](../../brl/brl.audio/#function-cuesound-tchannel-sound-tsound-channel-tchannel-null) or [PauseChannel](../../brl/brl.audio/#function-pausechannel-channel-tchannel).
+Resumes audio channel playback after it has been paused by [CueSound](../../brl/brl.audio/#function-cuesoundtchannel-soundtsoundchanneltchannelnull-) or [PauseChannel](../../brl/brl.audio/#function-pausechannel-channeltchannel-).
 
 
 #### Example

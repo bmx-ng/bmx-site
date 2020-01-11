@@ -53,6 +53,18 @@ Multiplies the vector by <b>s</b>, returning a new vector.
 
 <br/>
 
+### `Method Operator/:SVec3I(s:Int)`
+
+Divides the vector by <b>s</b>, returning a new vector.
+
+<br/>
+
+### `Method Operator/:SVec3I(s:Float)`
+
+Divides the vector by <b>s</b>, returning a new vector.
+
+<br/>
+
 ### `Method Operator[]:Int(index:Int)`
 
 Retrieves the x, y or z component using [0], [1] or [2] respectively.

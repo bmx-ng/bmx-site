@@ -6,6 +6,6 @@ sidebar_label: BRL.DirectSoundAudio
 
 
 
-The DirectSound audio module provides DirectSound drivers for use with the audio module.
+The DirectSound audio module provides DirectSound drivers for use with the [audio](../../audio) module.
 
 

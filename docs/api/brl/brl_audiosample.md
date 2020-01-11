@@ -31,7 +31,7 @@ the audio sample will be played. <b>format</b> should be one of:
 </td></tr><tr><td>  &SF_MONO16BE</td><td>Mono signed 16 bit big endian
 </td></tr><tr><td>  &SF_STEREO8</td><td>Stereo unsigned 8 bit
 </td></tr><tr><td>  &SF_STEREO16LE</td><td>Stereo signed 16 bit little endian
-</td></tr><tr><td>  &SF_STEREO16BE</td><td>Stereo signed 16 bit big endian</table>
+</td></tr><tr><td>  &SF_STEREO16BE</td><td>Stereo signed 16 bit big endian</td></tr></table>
 
 
 
@@ -67,7 +67,7 @@ Create an audio sample with existing data
 The memory referenced by a static audio sample is not released when the audio sample is
 deleted.
 
-See [CreateAudioSample](../../brl/brl.audiosample/#function-createaudiosample-taudiosample-length-hertz-format) for possile <b>format</b> values.
+See [CreateAudioSample](../../brl/brl.audiosample/#function-createaudiosampletaudiosample-lengthhertzformat-) for possile <b>format</b> values.
 
 
 #### Returns

@@ -126,7 +126,7 @@ When normalized, a vector keeps the same direction but its length is 1.0.
 
 Returns the dot product of two vectors.
 
-For normalized vectors [Dot](../../../brl/brl.vector/svec2f/#method-dot-floatb-svec2f) returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions,
+For normalized vectors [Dot](../../../brl/brl.vector/svec2f/#method-dotfloatbsvec2f) returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions,
 and a number in between for other cases (e.g. Dot returns zero if vectors are perpendicular).
 
 
@@ -169,6 +169,12 @@ Returns a vector perpendicular to the vector.
 ### `Method Reflect:SVec2F(n:SVec2F)`
 
 Returns a vector reflected from the given plane, specified by its normal vector.
+
+<br/>
+
+### `Method Rotate:SVec2F(angle:Double)`
+
+Returns a vector rotated by <b>angle</b> degrees.
 
 <br/>
 

@@ -7,3 +7,11 @@ sidebar_label: TJSONBool
 A JSON boolean.
 
 
+## Methods
+
+### `Method Create:TJSONBool(v:Int)`
+
+Creates an instance of [TJSONBool](../../../brl/brl.json/tjsonbool) with <b>v</b>.
+
+<br/>
+

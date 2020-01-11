@@ -208,3 +208,13 @@ EndIf
 ```
 <br/>
 
+### `Function KillProcess:Int(process:TProcess)`
+
+Forcefully End Process
+
+#### Returns
+1 if forceful termination of program was successful and 0 otherwise.
+
+
+<br/>
+

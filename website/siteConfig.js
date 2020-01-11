@@ -155,6 +155,10 @@ const siteConfig = {
         }
     },
 
+    markdownPlugins: [function (md) {
+        md.use(require('remarkable-katex'));
+    }],
+
     // Add custom scripts here that would be placed in <script> tags.
     scripts: [
         'https://buttons.github.io/buttons.js',

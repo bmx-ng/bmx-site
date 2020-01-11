@@ -117,6 +117,30 @@ Print sb.ToString()
 ```
 <br/>
 
+### `Method Operator =:Int (obj:Object)`
+
+Returns [True](../../../brl/brl.blitz/#true) if <b>obj</b> is equal to this string builder.
+
+<br/>
+
+### `Method Operator =:Int (sb:TStringBuilder)`
+
+Returns [True](../../../brl/brl.blitz/#true) if <b>sb</b> is lexicographically equal to this string builder.
+
+<br/>
+
+### `Method Operator <>:Int (obj:Object)`
+
+Returns [True](../../../brl/brl.blitz/#true) if <b>obj</b> is not equal to this string builder.
+
+<br/>
+
+### `Method Operator <>:Int (sb:TStringBuilder)`
+
+Returns [True](../../../brl/brl.blitz/#true) if <b>sb</b> is not lexicographically equal to this string builder.
+
+<br/>
+
 ## Methods
 
 ### `Method Length:Int()`
@@ -418,7 +442,7 @@ Print sb.ToString()
 
 Appends the new line string to the string builder.
 
-The new line string can be altered using [SetNewLineText](../../../brl/brl.stringbuilder/tstringbuilder/#method-setnewlinetext-tstringbuildernewline-string). This might be used to force the output to always
+The new line string can be altered using [SetNewLineText](../../../brl/brl.stringbuilder/tstringbuilder/#method-setnewlinetexttstringbuildernewlinestring). This might be used to force the output to always
 use Unix line endings even when on Windows.
 
 
@@ -533,13 +557,13 @@ Print sb.ToString()
 
 ### `Method AppendSizet:TStringBuilder(value:Size_T)`
 
-Appends a [Size_T](../../../brl/brl.blitz/#size-t) value to the string builder.
+Appends a [Size_T](../../../brl/brl.blitz/#sizet) value to the string builder.
 
 <br/>
 
 ### `Method Append:TStringBuilder(value:Size_T)`
 
-Appends a [Size_T](../../../brl/brl.blitz/#size-t) value to the string builder.
+Appends a [Size_T](../../../brl/brl.blitz/#sizet) value to the string builder.
 
 #### Example
 ```blitzmax
@@ -603,6 +627,42 @@ Print sb.ToString()
 ```
 <br/>
 
+### `Method AppendChar:TStringBuilder(char:Int)`
+
+Appends a character of the given <b>char</b> code point to the string builder.
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StringBuilder
+Import brl.standardio
+
+Local sb:TStringBuilder = New TStringBuilder
+
+Local chars:Int[] = [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33]
+
+For Local c:Int = EachIn chars
+	sb.AppendChar(c)
+Next
+
+Print sb.ToString()
+```
+<br/>
+
+### `Method Compare:Int(o:Object) Override`
+
+Compares the string builder with another object.
+
+If the other object is a string builder then, the contents of two are compared lexicographically, as
+determined by the unicode value of each character in order.
+If there is no difference, then the shorter of the two contents precedes the longer.
+
+If the other object is not a string builder, the standard object comparison is made.
+
+
+<br/>
+
 ### `Method Find:Int(subString:String, startIndex:Int = 0)`
 
 Finds first occurance of a sub string.
@@ -649,6 +709,186 @@ Print sb.FindLast("w", 30) ' -1
 ```
 <br/>
 
+### `Method Format:TStringBuilder(formatText:String, value:String)`
+
+Appends a [String](../../../brl/brl.blitz/#string) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:Byte)`
+
+Appends a [Byte](../../../brl/brl.blitz/#byte) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:Short)`
+
+Appends a [Short](../../../brl/brl.blitz/#short) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:Int)`
+
+Appends a [Int](../../../brl/brl.blitz/#int) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:UInt)`
+
+Appends a [UInt](../../../brl/brl.blitz/#uint) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:Long)`
+
+Appends a [Long](../../../brl/brl.blitz/#long) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:ULong)`
+
+Appends a [ULong](../../../brl/brl.blitz/#ulong) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:Size_T)`
+
+Appends a [Size_T](../../../brl/brl.blitz/#sizet) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:Float)`
+
+Appends a [Float](../../../brl/brl.blitz/#float) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method Format:TStringBuilder(formatText:String, value:Double)`
+
+Appends a [Double](../../../brl/brl.blitz/#double) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatString:TStringBuilder(formatText:String, value:String)`
+
+Appends a [String](../../../brl/brl.blitz/#string) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatByte:TStringBuilder(formatText:String, value:Byte)`
+
+Appends a [Byte](../../../brl/brl.blitz/#byte) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatShort:TStringBuilder(formatText:String, value:Short)`
+
+Appends a [Short](../../../brl/brl.blitz/#short) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatInt:TStringBuilder(formatText:String, value:Int)`
+
+Appends a [Int](../../../brl/brl.blitz/#int) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatUInt:TStringBuilder(formatText:String, value:UInt)`
+
+Appends a [UInt](../../../brl/brl.blitz/#uint) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatLong:TStringBuilder(formatText:String, value:Long)`
+
+Appends a [Long](../../../brl/brl.blitz/#long) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatULong:TStringBuilder(formatText:String, value:ULong)`
+
+Appends a [ULong](../../../brl/brl.blitz/#ulong) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatSizeT:TStringBuilder(formatText:String, value:Size_T)`
+
+Appends a [Size_T](../../../brl/brl.blitz/#sizet) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatFloat:TStringBuilder(formatText:String, value:Float)`
+
+Appends a [Float](../../../brl/brl.blitz/#float) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
+### `Method FormatDouble:TStringBuilder(formatText:String, value:Double)`
+
+Appends a [Double](../../../brl/brl.blitz/#double) value to the string builder using the specified printf style <b>formatText</b>.
+
+<b>formatText</b> is limited to 256 character bytes. Formatted text is limited to 2048 character bytes.
+
+
+<br/>
+
 ### `Method Left:String(length:Int)`
 
 Extracts the leftmost characters from the string builder.
@@ -681,7 +921,7 @@ SuperStrict
 Framework BRL.StringBuilder
 Import brl.standardio
 
-Local sb:TStringBuilder = New TStringBuilder("  Hello World!tt ")
+Local sb:TStringBuilder = New TStringBuilder("  Hello World!~t~t ")
 
 sb.Trim()
 
@@ -784,12 +1024,15 @@ Print sb.Contains("Wo")
 ```
 <br/>
 
-### `Method Join:TStringBuilder(bits:String[])`
+### `Method Join:TStringBuilder(bits:String[], buf:TStringBuilder = Null)`
 
 Joins <b>bits</b> together by inserting this string builder between each bit.
 
+Optionally accepts a preassigned string builder for populating with the result of the join.
+
+
 #### Returns
-A new TStringBuilder object.
+<b>buf</b> or a new TStringBuilder object of <b>buf</b> is [Null](../../../brl/brl.blitz/#null).
 
 
 #### Example
@@ -807,6 +1050,12 @@ Local joined:TStringBuilder = sb.Join(values)
 
 Print joined.ToString()
 ```
+<br/>
+
+### `Method JoinStrings:TStringBuilder(bits:String[], joiner:String)`
+
+Joins <b>bits</b> together by inserting <b>joiner</b> between each bit, appending to the end of this string builder.
+
 <br/>
 
 ### `Method ToLower:TStringBuilder()`
@@ -841,6 +1090,26 @@ Local sb:TStringBuilder = New TStringBuilder("Hello World!")
 
 Print sb.ToUpper().ToString()
 ```
+<br/>
+
+### `Method LeftAlign:TStringBuilder(length:Int)`
+
+Left aligns the buffer, adjusted to the specified <b>length</b>.
+
+If buffer is longer than the specified length, the buffer is shortened to the specified length.
+If the buffer is shorter than the specified length, spaces are added to the right end of the buffer to produce the appropriate length.
+
+
+<br/>
+
+### `Method RightAlign:TStringBuilder(length:Int)`
+
+Right aligns the buffer, adjusted to the specified <b>length</b>.
+
+If buffer is longer than the specified length, the buffer is shortened to the specified length.
+If the buffer is shorter than the specified length, spaces are added to the left end of the buffer to produce the appropriate length.
+
+
 <br/>
 
 ### `Method Remove:TStringBuilder(startIndex:Int, endIndex:Int)`
@@ -1040,6 +1309,32 @@ Local sb:TStringBuilder = New TStringBuilder("Hello World!")
 
 Print sb.ToString()
 ```
+<br/>
+
+### `Method ToUTF8String:Byte Ptr()`
+
+Converts the value of the string builder to a UTF-8 formatted [Byte](../../../brl/brl.blitz/#byte) sequence.
+
+The resulting Byte Ptr must be freed with [MemFree](../../../brl/brl.blitz/#function-memfree-membyte-ptr-).
+
+
+#### Returns
+A pointer to a sequence of Bytes, or [Null](../../../brl/brl.blitz/#null) if the string builder is empty.
+
+
+<br/>
+
+### `Method ToWString:Short Ptr()`
+
+Converts the value of the string builder to a sequence of Shorts.
+
+The resulting Short Ptr must be freed with [MemFree](../../../brl/brl.blitz/#function-memfree-membyte-ptr-).
+
+
+#### Returns
+A pointer to a sequence of Shorts, or [Null](../../../brl/brl.blitz/#null) if the string builder is empty.
+
+
 <br/>
 
 ## Functions

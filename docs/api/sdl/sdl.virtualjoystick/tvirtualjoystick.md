@@ -62,7 +62,7 @@ Test the status of a joystick button.
 
 Checks for a joystick button press.
 
-The returned value represents the number of the times <b>button</b> has been hit since the last call to [ButtonHit](../../../sdl/sdl.virtualjoystick/tvirtualjoystick/#method-buttonhit-int-button-int) with the same specified <b>button</b>.
+The returned value represents the number of the times <b>button</b> has been hit since the last call to [ButtonHit](../../../sdl/sdl.virtualjoystick/tvirtualjoystick/#method-buttonhitintbuttonint) with the same specified <b>button</b>.
 
 
 #### Returns

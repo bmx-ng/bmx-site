@@ -16,7 +16,7 @@ The JPG loader module provides the ability to load JPG format pixmaps.
 Load a Pixmap in JPeg format
 
 
-[LoadPixmapJPeg](../../brl/brl.jpgloader/#function-loadpixmapjpeg-tpixmap-url-object) loads a pixmap from <b>url</b> in JPeg format.
+[LoadPixmapJPeg](../../brl/brl.jpgloader/#function-loadpixmapjpegtpixmap-urlobject-) loads a pixmap from <b>url</b> in JPeg format.
 
 If the pixmap cannot be loaded, Null is returned.
 
@@ -28,7 +28,7 @@ If the pixmap cannot be loaded, Null is returned.
 Save a Pixmap in JPeg format
 
 
-Saves <b>pixmap</b> to <b>url</b> in JPeg format. If successful, [SavePixmapJPeg](../../brl/brl.jpgloader/#function-savepixmapjpeg-pixmap-tpixmap-url-object-quality-75) returns
+Saves <b>pixmap</b> to <b>url</b> in JPeg format. If successful, [SavePixmapJPeg](../../brl/brl.jpgloader/#function-savepixmapjpeg-pixmaptpixmapurlobjectquality75-) returns
 True, otherwise False.
 
 The optional <b>quality</b> parameter should be in the range 0 to 100, where

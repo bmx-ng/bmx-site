@@ -11,7 +11,7 @@ sidebar_label: BRL.Volumes
 <h2>Volume Information</h2>
 <p>Enables access to all volumes on the system, as well as drive-details such as free and total space for the volume.</p>
 <p>To get a list of volumes on the current system, simply call <a href="#ListVolumes">ListVolumes</a> which returns
-a list of <a href="#TVolume">TVolume</a> objects, from which you have access to the extra information.<br>
+a list of <a href="#TVolume">TVolume</a> objects, from which you have access to the extra information.<br/>
 You can also retrieve size information directly using <a href="#GetVolumeSize">GetVolumeSize</a> and <a href="#GetVolumeFreeSpace">GetVolumeFreeSpace</a>.
 </p>
 <h2>User Directories</h2>
@@ -45,7 +45,7 @@ Others domains include <a href="#kSystemDomain">kSystemDomain</a>, <a href="#kLo
 
 Returns a list of volumes on the system.
 
-#### Example
+#### Example 1
 ```blitzmax
 SuperStrict
 
@@ -60,7 +60,49 @@ If list Then
 	For Local v:TVolume = EachIn list
 	
 		'If v.available Then
-			Print "t" + v.volumeName + "  -  " + v.volumeDevice + " (" +  v.volumeType +  ") -  " + ((v.volumeFree / 1024) / 1024) + "mb"
+			Print "~t" + v.volumeName + "  -  " + v.volumeDevice + " (" +  v.volumeType +  ") -  " + ((v.volumeFree / 1024) / 1024) + "mb"
+		'End If
+	
+	Next
+End If
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Framework BRL.volumes
+Import brl.standardio
+
+Local list:TList = ListVolumes()
+
+If list Then
+	Print "Volumes :"
+
+	For Local v:TVolume = EachIn list
+	
+		'If v.available Then
+			Print "~t" + v.volumeName + "  -  " + v.volumeDevice + " (" +  v.volumeType +  ") -  " + ((v.volumeFree / 1024) / 1024) + "mb"
+		'End If
+	
+	Next
+End If
+```
+#### Example 3
+```blitzmax
+SuperStrict
+
+Framework BRL.volumes
+Import brl.standardio
+
+Local list:TList = ListVolumes()
+
+If list Then
+	Print "Volumes :"
+
+	For Local v:TVolume = EachIn list
+	
+		'If v.available Then
+			Print "~t" + v.volumeName + "  -  " + v.volumeDevice + " (" +  v.volumeType +  ") -  " + ((v.volumeFree / 1024) / 1024) + "mb"
 		'End If
 	
 	Next
@@ -78,7 +120,47 @@ Parameters:
 </ul>
 
 
-#### Example
+#### Example 1
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import brl.standardio
+
+Local vol:String
+
+?win32
+vol = "C:\"
+?linux
+vol = "/"
+?macos
+vol = "/"
+?
+
+Print "Freespace :"
+Print vol + " = " + (GetVolumeFreeSpace(vol) / 1024) + " kb"
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import brl.standardio
+
+Local vol:String
+
+?win32
+vol = "C:\"
+?linux
+vol = "/"
+?macos
+vol = "/"
+?
+
+Print "Freespace :"
+Print vol + " = " + (GetVolumeFreeSpace(vol) / 1024) + " kb"
+```
+#### Example 3
 ```blitzmax
 SuperStrict
 
@@ -110,7 +192,47 @@ Parameters:
 </ul>
 
 
-#### Example
+#### Example 1
+```blitzmax
+SuperStrict
+
+Framework BRL.volumes
+Import brl.standardio
+
+Local vol:String
+
+?win32
+vol = "C:\"
+?linux
+vol = "/"
+?macos
+vol = "/"
+?
+
+Print "Total space :"
+Print vol + " = " + (GetVolumeSize(vol) / 1024) + " kb"
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Framework BRL.volumes
+Import brl.standardio
+
+Local vol:String
+
+?win32
+vol = "C:\"
+?linux
+vol = "/"
+?macos
+vol = "/"
+?
+
+Print "Total space :"
+Print vol + " = " + (GetVolumeSize(vol) / 1024) + " kb"
+```
+#### Example 3
 ```blitzmax
 SuperStrict
 
@@ -151,13 +273,31 @@ Returns the user home directory.
 The table lists examples for the various platforms -
 <table align="center">
 <tr><th>Platform</th><th>Example</th><th>Equivalent</th></tr>
-<tr><td>Linux</td><td>/home/username</td><td>&lt;/td></tr>
-<tr><td>Mac OS</td><td>/Users/username</td><td>&lt;/td></tr>
-<tr><td>Win32</td><td>C:\Documents and Settings\username</td><td>&nbsp;</td></tr>
+<tr><td>Linux</td><td>`/home/username`</td><td>``</td></tr>
+<tr><td>Mac OS</td><td>`/Users/username`</td><td>``</td></tr>
+<tr><td>Win32</td><td>`C:\Documents and Settings\username`</td><td>&nbsp;</td></tr>
 </table>
 
 
-#### Example
+#### Example 1
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserHomeDir()
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserHomeDir()
+```
+#### Example 3
 ```blitzmax
 SuperStrict
 
@@ -175,13 +315,31 @@ Returns the user Desktop directory.
 The table lists examples for the various platforms -
 <table align="center">
 <tr><th>Platform</th><th>Example</th><th>Equivalent</th></tr>
-<tr><td>Linux</td><td>/home/username/Desktop</td><td>/Desktop</td></tr>
-<tr><td>Mac OS</td><td>/Users/username/Desktop</td><td>/Desktop</td></tr>
-<tr><td>Win32</td><td>C:\Documents and Settings\username\Desktop</td><td>&nbsp;</td></tr>
+<tr><td>Linux</td><td>`/home/username/Desktop`</td><td>`/Desktop`</td></tr>
+<tr><td>Mac OS</td><td>`/Users/username/Desktop`</td><td>`/Desktop`</td></tr>
+<tr><td>Win32</td><td>`C:\Documents and Settings\username\Desktop`</td><td>&nbsp;</td></tr>
 </table>
 
 
-#### Example
+#### Example 1
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserDesktopDir()
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserDesktopDir()
+```
+#### Example 3
 ```blitzmax
 SuperStrict
 
@@ -199,13 +357,31 @@ Returns the user directory for application data.
 The table lists examples for the various platforms -
 <table align="center">
 <tr><th>Platform</th><th>Example</th><th>Equivalent</th></tr>
-<tr><td>Linux</td><td>/home/username</td><td>&lt;/td></tr>
-<tr><td>Mac OS</td><td>/Users/username/Library/Application Support</td><td>/Library/Application Support</td></tr>
-<tr><td>Win32</td><td>C:\Documents and Settings\username\Application Data</td><td>&nbsp;</td></tr>
+<tr><td>Linux</td><td>`/home/username`</td><td>``</td></tr>
+<tr><td>Mac OS</td><td>`/Users/username/Library/Application Support`</td><td>`/Library/Application Support`</td></tr>
+<tr><td>Win32</td><td>`C:\Documents and Settings\username\Application Data`</td><td>&nbsp;</td></tr>
 </table>
 
 
-#### Example
+#### Example 1
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserAppDir()
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserAppDir()
+```
+#### Example 3
 ```blitzmax
 SuperStrict
 
@@ -223,13 +399,31 @@ Returns the user Documents directory.
 The table lists examples for the various platforms -
 <table align="center">
 <tr><th>Platform</th><th>Example</th><th>Equivalent</th></tr>
-<tr><td>Linux</td><td>/home/username/Documents</td><td>/Documents</td></tr>
-<tr><td>Mac OS</td><td>/Users/username/Documents</td><td>/Documents</td></tr>
-<tr><td>Win32</td><td>C:\Documents and Settings\username\My Documents</td><td>&nbsp;</td></tr>
+<tr><td>Linux</td><td>`/home/username/Documents`</td><td>`/Documents`</td></tr>
+<tr><td>Mac OS</td><td>`/Users/username/Documents`</td><td>`/Documents`</td></tr>
+<tr><td>Win32</td><td>`C:\Documents and Settings\username\My Documents`</td><td>&nbsp;</td></tr>
 </table>
 
 
-#### Example
+#### Example 1
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserDocumentsDir()
+```
+#### Example 2
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserDocumentsDir()
+```
+#### Example 3
 ```blitzmax
 SuperStrict
 

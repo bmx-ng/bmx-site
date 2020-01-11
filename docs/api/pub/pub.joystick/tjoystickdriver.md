@@ -8,7 +8,7 @@ Abstract base type for joystick drivers.
 
 
 
-To create a new joystick driver, you should extend [TJoystickDriver](../../../pub/pub.joystick/tjoystickdriver) and implement the [GetName](../../../pub/pub.joystick/tjoystickdriver/#method-getname-string-abstract) method.
+To create a new joystick driver, you should extend [TJoystickDriver](../../../pub/pub.joystick/tjoystickdriver) and implement the [GetName](../../../pub/pub.joystick/tjoystickdriver/#method-getnamestring-abstract) method.
 
 To install your joystick driver, simply create an instance of it using [New](../../../pub/pub.joystick/tjoystickdriver/#method-new).
 

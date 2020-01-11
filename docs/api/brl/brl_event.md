@@ -10,7 +10,7 @@ Event objects are used to notify your application about external events such as 
 user interface activity and so on.
 
 The are two main ways your program can receive events: either by adding a hook function to 
-the [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid) hook, or by using using the global event queue
+the [EmitEventHook](../../brl/brl.event/#global-emiteventhookintallochookid) hook, or by using using the global event queue
 
 The most important field in an event object is the <b>id</b> field, which identifies the kind of 
 event:
@@ -22,7 +22,8 @@ event:
 | EVENT_APPTERMINATE | Application wants to terminate |
 | EVENT_KEYDOWN | Key pressed. Event data contains keycode |
 | EVENT_KEYUP | Key released. Event data contains keycode |
-| EVENT_KEYCHAR | Key character. Event data contains unicode value |
+| EVENT_KEYCHAR | Key character being pressed. Event data contains unicode value of character. |
+| EVENT_KEYREPEAT | Key held down. Event data contains keycode |
 | EVENT_MOUSEDOWN | Mouse button pressed. Event data contains mouse button code |
 | EVENT_MOUSEUP | Mouse button released. Event data contains mouse button code |
 | EVENT_MOUSEMOVE | Mouse moved. Event x and y contain mouse coordinates |
@@ -44,7 +45,7 @@ event:
 | EVENT_GADGETOPEN | A TreeView Node has been expanded |
 | EVENT_GADGETCLOSE | A TreeView Node has been collapsed |
 | EVENT_GADGETDONE | An HTMLView has completed loading a page |
-
+| --- | --- |
 
 
 ## Types
@@ -59,7 +60,7 @@ event:
 Emit an event
 
 
-Runs all [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid) hooks, passing <b>event</b> as the hook data.
+Runs all [EmitEventHook](../../brl/brl.event/#global-emiteventhookintallochookid) hooks, passing <b>event</b> as the hook data.
 
 
 <br/>
@@ -109,9 +110,9 @@ A new user event id
 Hook id for emitted events
 
 
-The [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid) global variable contains a hook id for use with [AddHook](../../brl/brl.hook/#function-addhook-id-func-object-id-data-object-context-object-context-object-null-priority-0).
+The [EmitEventHook](../../brl/brl.event/#global-emiteventhookintallochookid) global variable contains a hook id for use with [AddHook](../../brl/brl.hook/#function-addhook-idfuncobject-iddataobjectcontextobject-contextobjectnullpriority0-).
 
-Each time [EmitEvent](../../brl/brl.event/#function-emitevent-event-tevent) is called, the event is passed to all [EmitEventHook](../../brl/brl.event/#global-emiteventhook-int-allochookid)
+Each time [EmitEvent](../../brl/brl.event/#function-emitevent-eventtevent-) is called, the event is passed to all [EmitEventHook](../../brl/brl.event/#global-emiteventhookintallochookid)
 hook functions by means of the hook function <b>data</b> parameter.
 
 

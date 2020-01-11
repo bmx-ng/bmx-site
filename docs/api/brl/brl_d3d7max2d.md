@@ -16,7 +16,7 @@ The Direct3D7 Max2D module provides a Direct3D7 driver for Max2D.
 Get Direct3D7 Max2D Driver
 
 
-The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-driver-tgraphicsdriver-defaultflags-graphics-backbuffer) to enable Direct3D Max2D rendering.
+The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-drivertgraphicsdriverdefaultflagsgraphicsbackbuffer-) to enable Direct3D Max2D rendering.
 
 
 <br/>

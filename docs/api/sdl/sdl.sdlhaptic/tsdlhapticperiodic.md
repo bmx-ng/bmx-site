@@ -16,7 +16,7 @@ The type determines the shape of the wave and the other parameters determine the
 
 Creates a new instance of the effect.
 
-<b>waveType</b> one of [SDL_HAPTIC_SINE](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-sine-int-1-shl-1), [SDL_HAPTIC_LEFTRIGHT](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-leftright-int-1-shl-2), [SDL_HAPTIC_TRIANGLE](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-triangle-int-1-shl-3), [SDL_HAPTIC_SAWTOOTHUP](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-sawtoothup-int-1-shl-4) or [SDL_HAPTIC_SAWTOOTHDOWN](../../../sdl/sdl.sdlhaptic/#const-sdl-haptic-sawtoothdown-int-1-shl-5).
+<b>waveType</b> one of [SDL_HAPTIC_SINE](../../../sdl/sdl.sdlhaptic/#const-sdlhapticsineint-1-shl-1), [SDL_HAPTIC_LEFTRIGHT](../../../sdl/sdl.sdlhaptic/#const-sdlhapticleftrightint-1-shl-2), [SDL_HAPTIC_TRIANGLE](../../../sdl/sdl.sdlhaptic/#const-sdlhaptictriangleint-1-shl-3), [SDL_HAPTIC_SAWTOOTHUP](../../../sdl/sdl.sdlhaptic/#const-sdlhapticsawtoothupint-1-shl-4) or [SDL_HAPTIC_SAWTOOTHDOWN](../../../sdl/sdl.sdlhaptic/#const-sdlhapticsawtoothdownint-1-shl-5).
 
 
 <br/>

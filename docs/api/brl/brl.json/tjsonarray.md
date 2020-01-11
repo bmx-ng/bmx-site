@@ -7,6 +7,23 @@ sidebar_label: TJSONArray
 A JSON array is an ordered collection of other JSON values.
 
 
+## Operators
+
+### `Method Operator [] :TJSON(index:Int)`
+
+Returns the element in array at position index.
+
+The valid range for index is from 0 to the return value of Size() minus 1. If index is out of range, NULL is returned.
+
+
+<br/>
+
+### `Method Operator []= (index:Int, value:TJSON)`
+
+Replaces the element in array at position index with value.
+
+<br/>
+
 ## Methods
 
 ### `Method Create:TJSONArray()`

@@ -21,6 +21,12 @@ Wait for the semaphore
 
 <br/>
 
+### `Method TimedWait:Int(millis:Int)`
+
+Wait for the semaphore
+
+<br/>
+
 ### `Method Post()`
 
 Post the semaphore

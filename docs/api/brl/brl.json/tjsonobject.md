@@ -137,7 +137,7 @@ If there already is a value for key, it is replaced by the new value.
 
 ### `Method Set:Int(key:String, value:Size_T)`
 
-Sets the value of key to the [Size_t](../../../brl/brl.blitz/#size-t) value.
+Sets the value of key to the [Size_t](../../../brl/brl.blitz/#sizet) value.
 
 If there already is a value for key, it is replaced by the new value.
 

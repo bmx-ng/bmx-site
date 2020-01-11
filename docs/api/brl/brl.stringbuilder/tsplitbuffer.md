@@ -8,7 +8,7 @@ An array of split text from a TStringBuilder.
 
 
 Note that the [TSplitBuffer](../../../brl/brl.stringbuilder/tsplitbuffer) is only valid while its parent [TStringBuilder](../../../brl/brl.stringbuilder/tstringbuilder) is unchanged.
-Once you modify the TStringBuffer you should call Split() again.
+Once you modify the [TSplitBuffer](../../../brl/brl.stringbuilder/tsplitbuffer) you should call Split() again.
 
 
 ## Methods
