@@ -4,8 +4,7 @@ title: BlitzMax Make (bmk)
 sidebar_label: BlitzMax Make (bmk)
 ---
 
-`bmk` is used to build BlitzMax applications and modules. It scans source
-files for imports and build options !TODO!
+`bmk` is used to build BlitzMax applications and modules. It scans source files for imports and build options. Next to feeding information to [`bcc`](bcc) it is also executing scripts before and after building projects (see "scripts" section).
 
 ## Command line syntax
 
@@ -29,14 +28,35 @@ Builds a set of modules.
 
 On Win32, builds a dynamic linked library (DLL) from the source file.
 
+#### `makebootstrap`
+
+Build a bootstrap package.  To finish building the transpiled C files on the client then.
+
+#### `compile`
+
+Compile sources only, no building of the application.
+
+#### `cleanmods <modulename> <...>`
+
+Clean the given modules by removing all files in their ".bmx" directories. To delete also other files add the  `-k` parameter.
+ 
+#### `zapmod <modulename> <outputfile>`
+
+Pack a given module into a single file.
+
+#### `unzapmod <infile>`
+
+Unpack a given file into a module directory.
+
+#### `ranlibdir <directory>`
+
+Adds and/or updates object files of static libraries in the given directory. 
+
 ### Options
-
-
 
 #### `-a`
 
-Recompiles all source/modules regardless of timestamp. By default, only those
-modified since the last build are recompiled.
+Recompiles all source/modules regardless of timestamp. By default, only those modified since the last build are recompiled.
 
 #### `-b <custom appstub module>`
 
@@ -70,17 +90,19 @@ Backtrace (etc.) will show .bmx relative source lines rather than that of the ge
 
 #### `-h`
 
-Builds multithreaded version. (By default, the single threaded version is built.)
+Builds multithreaded version. (By default, the single threaded version is built when used with `bcc` of BlitzMax legacy while the newer BlitzMax NG `bcc` builds multi-threaded versions.)
 
 #### `-i`
 
-Creates a Universal build for supported platforms. !TODO!
+Creates a Universal build for supported platforms (Mac OS X and iOS). 
+
+Support of this param is only partial.  !TODO!
 
 #### `-l <target platform>`
 
 Cross-compiles to the specific target platform.
 
-Valid targets are `win32`, `linux`, `macos`, `ios`, `android`, `raspberrypi` and `nx`. !TODO!
+Valid targets are `win32`, `linux`, `macos`, `ios`, `android`, `raspberrypi` and `nx`.
 
 #### `-musl`
 
@@ -146,3 +168,43 @@ With this warning enabled you may have problems using method overloading.
 #### `-x`
 
 Executes built application. (makeapp only)
+
+#### `-k`
+
+When using the `cleanmods` this param tells `bmk` to remove other files in the module folder too. Kept are: "i","a","txt","htm" and "html" files and the "doc" folder. Use with caution!
+
+#### `-f <framework>`
+
+Defines to use a specific module as framework instead of importing all `brl.mod` and `pub.mod` modules.
+
+#### `-nomanifest`
+
+Do not generate a manifest file for the built application (Win32 only).
+
+#### `-single`
+
+Disabled multi threaded processing in a `bmk` built with thread support. So tasks are processed in sequence rather than parallel.
+
+#### `-nodef`
+
+Defines to not generate .def files useable by created DLLs/shared libraries.
+
+#### `-nohead`
+
+Defines to not generate header files useable by created DLLs/shared libraries.
+
+#### `-override`
+
+Sets requirement for overriding methods and functions to append `override` to their definitions.
+
+#### `-overerr`
+
+Defines missing `override` keywords in overridden methods and functions to be handled as error instead of warning.
+
+#### `-no-pie`
+
+Do not generate PIE binaries (Linux only).
+
+#### `-upx`
+
+Compress the created binary with UPX (only if UPX binary is present in the /bin directory).
