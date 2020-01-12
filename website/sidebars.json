@@ -538,6 +538,25 @@
       },
       {
         "type": "subcategory",
+        "label": "SHA3Digest",
+        "ids": [
+          "api/crypto/crypto.sha3digest",
+          "api/crypto/crypto.sha3digest/tsha3_512",
+          "api/crypto/crypto.sha3digest/tsha3_384",
+          "api/crypto/crypto.sha3digest/tsha3_256",
+          "api/crypto/crypto.sha3digest/tsha3_224"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SHAWhirlpoolDigest",
+        "ids": [
+          "api/crypto/crypto.whirlpooldigest",
+          "api/crypto/crypto.whirlpooldigest/twhirlpool"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Crypto",
         "ids": [
           "api/crypto/crypto.crypto",

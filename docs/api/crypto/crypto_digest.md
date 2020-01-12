@@ -5,6 +5,26 @@ sidebar_label: Crypto.Digest
 ---
 
 
+### Supported Digests
+
+| Name | Size of Message Digest (bytes) |
+|---|---|
+| [Crypto.WhirlpoolDigest](../crypto/crypto_whirlpooldigest.md)          | 64 |
+| [Crypto.SHA3Digest](../crypto/crypto_sha3digest.md) ([TSHA3_512])  | 64 |
+| [Crypto.SHA512Digest](../crypto/crypto_sha512digest.md)             | 64 |
+| [Crypto.SHA3Digest](../crypto/crypto_sha3digest.md) ([TSHA3_384])  | 48 |
+| [Crypto.SHA3Digest](../crypto/crypto_sha3digest.md) ([TSHA3_256])  | 32 |
+| [Crypto.SHA256Digest](../crypto/crypto_sha256digest.md)             | 32 |
+| [Crypto.SHA3Digest](../crypto/crypto_sha3digest.md) ([TSHA3_224])  | 28 |
+| [Crypto.SHA1Digest](../crypto/crypto_sha1digest.md)               | 20 |
+| [Crypto.MD5Digest](../crypto/crypto_md5digest.md)                | 16 |
+
+[TSHA3_512]: ../crypto.sha3digest/tsha3_512
+[TSHA3_384]: ../crypto.sha3digest/tsha3_384
+[TSHA3_256]: ../crypto.sha3digest/tsha3_256
+[TSHA3_224]: ../crypto.sha3digest/tsha3_224
+
+
 ## Types
 | Type | Description |
 |---|---|
