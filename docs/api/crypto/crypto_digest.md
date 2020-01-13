@@ -41,6 +41,21 @@ Gets a digest of the specified <b>name</b>.
 A [TNoSuchAlgorithmException](../../crypto/crypto.digest/tnosuchalgorithmexception) is thrown if the requested digest is not available.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import Crypto.MD5Digest
+
+Local data:String = "Hello World"
+
+Local digest:TMessageDigest = GetMessageDigest("md5")
+
+If digest Then
+	Print digest.Digest(data)
+End If
+```
 <br/>
 
 ### `Function ListDigests:TArrayList<String>()`
@@ -50,6 +65,19 @@ Returns a list of all currently registered digests.
 The returned digest names can be used with [GetMessageDigest](../../crypto/crypto.digest/#function-getmessagedigesttmessagedigestnamestring) to get a [TMessageDigest](../../crypto/crypto.digest/tmessagedigest) instance.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import Crypto.MD5Digest
+Import Crypto.SHA512Digest
+
+Print "Available digests:"
+For Local digest:String = EachIn ListDigests()
+	Print "  " + digest
+Next
+```
 <br/>
 
 ### `Function BytesToHex:String(bytes:Byte[], uppercase:Int = False)`
