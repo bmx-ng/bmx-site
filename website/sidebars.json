@@ -544,7 +544,7 @@
         "label": "Ripemd160Digest",
         "ids": [
           "api/crypto/crypto.ripemd160digest",
-          "api/crypto/crypto.ripemd160digest/tripemd16S0"
+          "api/crypto/crypto.ripemd160digest/tripemd160"
         ]
       },
       {
