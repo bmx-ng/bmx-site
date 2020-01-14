@@ -592,7 +592,15 @@
       },
       {
         "type": "subcategory",
-        "label": "SHAWhirlpoolDigest",
+        "label": "TigerDigest",
+        "ids": [
+          "api/crypto/crypto.tigerdigest",
+          "api/crypto/crypto.tigerdigest/ttiger"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "WhirlpoolDigest",
         "ids": [
           "api/crypto/crypto.whirlpooldigest",
           "api/crypto/crypto.whirlpooldigest/twhirlpool"
