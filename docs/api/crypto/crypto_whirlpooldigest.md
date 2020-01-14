@@ -5,6 +5,10 @@ sidebar_label: Crypto.WhirlpoolDigest
 ---
 
 
+
+See <https://en.wikipedia.org/wiki/Whirlpool_(hash_function)>
+
+
 ## Types
 | Type | Description |
 |---|---|

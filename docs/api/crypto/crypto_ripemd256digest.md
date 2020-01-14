@@ -5,6 +5,10 @@ sidebar_label: Crypto.Ripemd256Digest
 ---
 
 
+
+See <https://en.wikipedia.org/wiki/RIPEMD>
+
+
 ## Types
 | Type | Description |
 |---|---|

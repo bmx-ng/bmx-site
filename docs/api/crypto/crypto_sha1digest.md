@@ -5,6 +5,10 @@ sidebar_label: Crypto.SHA1Digest
 ---
 
 
+
+See <https://en.wikipedia.org/wiki/SHA-1>
+
+
 ## Types
 | Type | Description |
 |---|---|

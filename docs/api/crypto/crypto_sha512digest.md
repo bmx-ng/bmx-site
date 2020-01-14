@@ -5,6 +5,10 @@ sidebar_label: Crypto.SHA512Digest
 ---
 
 
+
+See <https://en.wikipedia.org/wiki/SHA-2>
+
+
 ## Types
 | Type | Description |
 |---|---|

@@ -5,6 +5,10 @@ sidebar_label: Crypto.MD5Digest
 ---
 
 
+
+See <https://en.wikipedia.org/wiki/MD5>
+
+
 ## Types
 | Type | Description |
 |---|---|
