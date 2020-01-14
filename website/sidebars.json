@@ -498,6 +498,17 @@
       },
       {
         "type": "subcategory",
+        "label": "Blake2BDigest",
+        "ids": [
+          "api/crypto/crypto.blake2bdigest",
+          "api/crypto/crypto.blake2bdigest/tblake2b_512",
+          "api/crypto/crypto.blake2bdigest/tblake2b_384",
+          "api/crypto/crypto.blake2bdigest/tblake2b_256",
+          "api/crypto/crypto.blake2bdigest/tblake2b_160"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "CRC32",
         "ids": [
           "api/crypto/crypto.crc32",
@@ -510,6 +521,38 @@
         "ids": [
           "api/crypto/crypto.md5digest",
           "api/crypto/crypto.md5digest/tmd5"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Ripemd320Digest",
+        "ids": [
+          "api/crypto/crypto.ripemd320digest",
+          "api/crypto/crypto.ripemd320digest/tripemd320"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Ripemd356Digest",
+        "ids": [
+          "api/crypto/crypto.ripemd256digest",
+          "api/crypto/crypto.ripemd256digest/tripemd256"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Ripemd160Digest",
+        "ids": [
+          "api/crypto/crypto.ripemd160digest",
+          "api/crypto/crypto.ripemd160digest/tripemd16S0"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Ripemd128Digest",
+        "ids": [
+          "api/crypto/crypto.ripemd128digest",
+          "api/crypto/crypto.ripemd128digest/tripemd128"
         ]
       },
       {
