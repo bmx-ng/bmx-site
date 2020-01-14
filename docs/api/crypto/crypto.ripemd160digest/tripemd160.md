@@ -7,6 +7,21 @@ sidebar_label: TRipemd160
 An Ripemd-160 message digest.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+Import Crypto.Ripemd160Digest
+
+Local data:String = "Hello Digest World !!"
+
+Local digest:TMessageDigest = GetMessageDigest("RIPEMD-160")
+
+If digest Then
+	Print digest.Digest(data)
+End If
+```
 ## Methods
 
 ### `Method Update:Int(data:Byte Ptr, dataLen:Int) Override`

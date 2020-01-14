@@ -7,6 +7,21 @@ sidebar_label: TWhirlpool
 A WHIRPOOL message digest.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+Import Crypto.WhirlpoolDigest
+
+Local data:String = "Hello Digest World !!"
+
+Local digest:TMessageDigest = GetMessageDigest("WHIRLPOOL")
+
+If digest Then
+	Print digest.Digest(data)
+End If
+```
 ## Methods
 
 ### `Method Update:Int(data:Byte Ptr, dataLen:Int) Override`

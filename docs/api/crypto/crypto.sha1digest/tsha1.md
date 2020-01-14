@@ -7,6 +7,21 @@ sidebar_label: TSHA1
 An SHA-1 message digest.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+Import Crypto.SHA1Digest
+
+Local data:String = "Hello Digest World !!"
+
+Local digest:TMessageDigest = GetMessageDigest("SHA1")
+
+If digest Then
+	Print digest.Digest(data)
+End If
+```
 ## Methods
 
 ### `Method Update:Int(data:Byte Ptr, dataLen:Int) Override`
