@@ -38,13 +38,15 @@
                 }
             }
 
-            if (headingElement.offsetTop < navPageContainer.scrollTop) {
-                navPageContainer.scrollTop = headingElement.offsetTop;
-            } else {
-                const offsetBottom = headingElement.offsetTop + headingElement.offsetHeight;
-                const scrollBottom = navPageContainer.scrollTop + navPageContainer.offsetHeight;
-                if (offsetBottom > scrollBottom) {
-                    navPageContainer.scrollTop = offsetBottom - navPageContainer.offsetHeight;
+            if (headingElement) {
+                if (headingElement.offsetTop < navPageContainer.scrollTop) {
+                    navPageContainer.scrollTop = headingElement.offsetTop;
+                } else {
+                    const offsetBottom = headingElement.offsetTop + headingElement.offsetHeight;
+                    const scrollBottom = navPageContainer.scrollTop + navPageContainer.offsetHeight;
+                    if (offsetBottom > scrollBottom) {
+                        navPageContainer.scrollTop = offsetBottom - navPageContainer.offsetHeight;
+                    }
                 }
             }
         }, 100);
