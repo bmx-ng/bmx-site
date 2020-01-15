@@ -4,6 +4,7 @@
     const OFFSET = 10;
     let timer;
     let headingsCache;
+    let navPageContainer;
     const findHeadings = () => headingsCache ? headingsCache :
         document.querySelectorAll('.toc-headings > li > a');
     const onScroll = () => {
@@ -14,6 +15,7 @@
             timer = null;
             let found = false;
             const headings = findHeadings();
+            let headingElement;
             for (let i = 0; i < headings.length; i++) {
                 // if !found and i is the last element, highlight the last
                 let current = !found;
@@ -30,8 +32,19 @@
                 if (current) {
                     found = true;
                     headings[i].className = "active";
+                    headingElement = headings[i];
                 } else {
                     headings[i].className = "";
+                }
+            }
+
+            if (headingElement.offsetTop < navPageContainer.scrollTop) {
+                navPageContainer.scrollTop = headingElement.offsetTop;
+            } else {
+                const offsetBottom = headingElement.offsetTop + headingElement.offsetHeight;
+                const scrollBottom = navPageContainer.scrollTop + navPageContainer.offsetHeight;
+                if (offsetBottom > scrollBottom) {
+                    navPageContainer.scrollTop = offsetBottom - navPageContainer.offsetHeight;
                 }
             }
         }, 100);
@@ -40,6 +53,7 @@
     document.addEventListener('resize', onScroll);
     document.addEventListener('DOMContentLoaded', () => {
         // Cache the headings once the page has fully loaded.
+        navPageContainer = document.getElementsByClassName('onPageNav')[0];
         headingsCache = findHeadings();
         onScroll();
     });
