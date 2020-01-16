@@ -1,9 +1,376 @@
 ---
 id: brl.jconv
-title: brl.jconv
-sidebar_label: brl.jconv
+title: BRL.JConv
+sidebar_label: BRL.JConv
 ---
 
+
+### Serialising with JConv
+
+In the context of [BRL.JConv](../brl/brl_jconv.md), serialisation is the mapping of BlitzMax objects to their JSON representation.
+
+Take the following `TUser` type to start with :
+```blitzmax
+Type TUser
+	Field name:String
+	Field email:String
+	Field age:int
+	
+	' ...
+End Type
+```
+
+The `TUser` object has three Fields,
+* The user's `name` is a [String](../../brl/brl.blitz/#string)
+* The user's `email` is a [String](../../brl/brl.blitz/#string)
+* The user's `age` is an [Int](../../brl/brl.blitz/#int)
+
+An application needs to convert a 'TUser' into its JSON representation, so assuming the member names
+remained the same, we could expect a typical JSON representation to look like this :
+```json
+{
+  "name" : "bob",
+  "email" : "bob@example.com",
+  "age" : 30
+}
+```
+
+To convert a `TUser` to JSON, we first construct an instance of one for the user Bob :
+```blitzmax
+Local user:TUser = New TUser("bob", "bob@example.com", 30)
+```
+
+In order to do the serialisation, we need an instance of [TJConv](../../brl/brl.jconv/tjconv) to do the conversion :
+```blitzmax
+Local jconv:TJConv = New TJConvBuilder.Build()
+```
+The next step is to call the [ToJson](../../brl/brl.jconv/tjconv/#method-tojsonstringobjobject) method of [TJConv](../../brl/brl.jconv/tjconv), passing the object we want to serialise :
+```blitzmax
+Local json:String = jconv.ToJson(user)
+```
+The `json` [String](../../brl/brl.blitz/#string) contains the following value :
+```json
+{"name": "bob", "email": "bob@example.com", "age": 30}
+```
+Notice that [BRL.JConv](../brl/brl_jconv.md) respects the field types, wrapping Strings in quotes, but not so for numbers.
+Just a single method call is required to do the conversion of the entire object. This is useful when
+working with more complex object structures.
+
+Here's the example in full :
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+Import BRL.JConv
+
+Local user:TUser = New TUser("bob", "bob@example.com", 30)
+
+Local jconv:TJConv = New TJConvBuilder.Build()
+
+Local json:String = jconv.ToJson(user)
+
+Print json
+
+Type TUser
+	Field name:String
+	Field email:String
+	Field age:Int
+	
+	Method New(name:String, email:String, age:Int)
+		Self.name = name
+		Self.email = email
+		Self.age = age
+	End Method
+End Type
+```
+
+### Deserialising with JConv
+
+We'll start by creating a [String](../../brl/brl.blitz/#string) containing the JSON to convert :
+```blitzmax
+Local json:String = "{~qname~q: ~qbob~q, ~qemail~q: ~qbob@example.com~q, ~qage~q: 30}"
+```
+Again, we'll build an instance of [TJConv](../../brl/brl.jconv/tjconv) which will perform the conversion :
+```blitzmax
+Local jconv:TJConv = New TJConvBuilder.Build()
+```
+Finally, we need to map the JSON to a BlitzMax [Object](../../brl/brl.blitz/#object) with [FromJson](../../brl/brl.jconv/tjconv/#method-fromjsonobjectjsonstring-typenamestring) :
+```blitzmax
+Local user:TUser = TUser(jconv.FromJson(json, "TUser"))
+```
+Note that the second argument specifies the name of the [Type](../../brl/brl.blitz/#type) we want the [String](../../brl/brl.blitz/#string) to map the JSON to.
+Without this *hint*, [BRL.JConv](../brl/brl_jconv.md) wouldn't know what [Type](../../brl/brl.blitz/#type) to create from the text.
+
+The `user` object returned from [FromJson](../../brl/brl.jconv/tjconv/#method-fromjsonobjectjsonstring-typenamestring) will have its fields populated accordingly.
+
+Here's the example in full :
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+Import BRL.JConv
+
+Local json:String = "{~qname~q: ~qbob~q, ~qemail~q: ~qbob@example.com~q, ~qage~q: 30}"
+
+Local jconv:TJConv = New TJConvBuilder.Build()
+
+Local user:TUser = TUser(jconv.FromJson(json, "TUser"))
+
+Print "name  = " + user.name
+Print "email = " + user.email
+Print "age   = " + user.age
+
+Type TUser
+	Field name:String
+	Field email:String
+	Field age:Int
+	
+	Method New(name:String, email:String, age:Int)
+		Self.name = name
+		Self.email = email
+		Self.age = age
+	End Method
+End Type
+```
+
+### Serialising Nested Objects
+
+[BRL.JConv](../brl/brl_jconv.md) can also handle the conversion of more complex objects that include the nesting of other non-primitive objects.
+To demostrate this we will extend the `TUser` type to include an address, which will be represented by the `TAddress` [Type](../../brl/brl.blitz/#type) :
+```blitzmax
+Type TUser
+	Field name:String
+	Field email:String
+	Field age:Int
+	Field address:TAddress
+
+	' ...
+End Type
+
+Type TAddress
+	Field line1:String
+	Field city:String
+	Field country:String
+	
+	' ...
+End Type
+```
+In BlitzMax the two models are cleanly separated by types, and the `TAddress` reference is held in the `address` [Field](../../brl/brl.blitz/#field) of the user.
+In JSON however, the address must be nested directly within the user object, as we can see here :
+```json
+{
+  "name" : "bob",
+  "email" : "bob@example.com",
+  "age" : 30,
+  "address" : {
+    "line1" : "66 Some Street",
+    "city" : "Someville",
+    "country" : "Someland"
+  }
+}
+```
+We'll initially create the required BlitzMax objects :
+```blitzmax
+Local address:TAddress = New TAddress("66 Some Street", "Someville", "Someland")
+Local user:TUser = New TUser("bob", "bob@example.com", 30, address)
+```
+And then serialise the user with an instance of TJCon :
+```blitzmax
+Local jconv:TJConv = New TJConvBuilder.Build()
+Local json:String = jconv.ToJson(user)
+```
+The resulting conversion to JSON is :
+```json
+{"name": "bob", "email": "bob@example.com", "age": 30, "address": {"line1": "66 Some Street", "city": "Someville", "country": "Someland"}}
+```
+As you can see, [BRL.JConv](../brl/brl_jconv.md) has correctly nested the address inside the user as a JSON object.
+
+### Deserialising Nested Objects
+
+In the real world, the developer is often presented with a JSON API from which they need to construct the relevant BlitzMax
+Types in order to import the data.
+
+As we have seen previously, the structure of a JSON object maps relatively well to a BlitzMax [Object](../../brl/brl.blitz/#object) and its fields.
+In the next example, we'll start with a JSON object and construct a set of BlitzMax Types that we can use to deserialise the
+data in order to use it within our BlitzMax application.
+
+In this particular example, we will be retrieving some airport information from an online flight information resource :
+```json
+{
+  "id": "BER",
+  "code": "BER",
+  "name": "Berlin Brandenburg",
+  "slug": "berlin-brandenburg-berlin-germany",
+  "timezone": "Europe/Berlin",
+  "city": {
+	"id": "berlin_de",
+	"name": "Berlin",
+	"code": "BER",
+	"slug": "berlin-germany",
+	"country": {
+	  "id": "DE",
+	  "name": "Germany",
+	  "slug": "germany",
+	  "code": "DE"
+	},
+	"region": {
+	  "id": "central-europe",
+	  "name": "Central Europe",
+	  "slug": "central-europe"
+	},
+	"continent": {
+	  "id": "europe",
+	  "name": "Europe",
+	  "slug": "europe",
+	  "code": "EU"
+	}
+  },
+  "location": {
+	"lat": 52.366667,
+	"lon": 13.503333
+  }
+}
+```
+As you can see, there are several levels of nesting. The main airport object has a nested `city`, and within that `country`, `region` and `continent` objects.
+Also notice that many of the objects share a similar structure (`id`, `name`, `slug`, and `code`).
+We can use BlitzMax's [Type](../../brl/brl.blitz/#type) polymorphism by creating a base [Type](../../brl/brl.blitz/#type) and avoid a lot of duplication :
+```blitzmax
+Type TBase
+	Field id:String
+	Field code:String
+	Field name:String
+	Field slug:String
+End Type
+```
+
+Next, we'll define the BlitzMax types that will contain the more specific information :
+```blitzmax
+Type TAirport Extends TBase
+	Field timezone:String
+	Field city:TCity
+	Field location:TLocation
+End Type
+
+Type TCity Extends TBase
+	Field country:TCountry
+	Field region:TRegion
+	Field continent:TContinent
+End Type
+
+Type TCountry Extends TBase
+End Type
+
+Type TRegion Extends TBase
+End Type
+
+Type TContinent Extends TBase
+End Type
+
+Type TLocation
+	Field lat:Double
+	Field lon:Double
+End Type
+```
+Each [Type](../../brl/brl.blitz/#type) represents a particular JSON object from original nested JSON. `TCity` contains fields for `country`, `region` and `continent`, each of which are types
+representing that particular piece of information.
+
+Where the naming of your fields must match those of the JSON objects, how you name your types is not important for JSON mapping, but you'll generally give them a
+name that reflects the kind of information they contain.
+
+Finally, we can use these types to de-serialise a matching JSON object, as shown in this complete example :
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+Import BRL.JConv
+
+Local data:String = "{~qid~q:~qBER~q,~qcode~q:~qBER~q,~qname~q:~qBerlin Brandenburg~q,~qslug~q:~qberlin-brandenburg-berlin-germany~q,~qtimezone~q:~qEurope/Berlin~q,~qcity~q:{~qid~q:~qberlin_de~q,~qname~q:~qBerlin~q,~qcode~q:~qBER~q,~qslug~q:~qberlin-germany~q,~qcountry~q:{~qid~q:~qDE~q,~qname~q:~qGermany~q,~qslug~q:~qgermany~q,~qcode~q:~qDE~q},~qregion~q:{~qid~q:~qcentral-europe~q,~qname~q:~qCentral Europe~q,~qslug~q:~qcentral-europe~q},~qcontinent~q:{~qid~q:~qeurope~q,~qname~q:~qEurope~q,~qslug~q:~qeurope~q,~qcode~q:~qEU~q}},~qlocation~q:{~qlat~q:52.366667,~qlon~q:13.503333}}"
+
+Local jconv:TJConv = New TJConvBuilder.Build()
+Local airport:TAirport = TAirport(jconv.FromJson(data, "TAirport"))
+
+Print "Airport    : " + airport.name
+Print "  City     : " + airport.city.name
+Print "  Location : " + airport.location.lat + ", " + airport.location.lon
+
+Type TBase
+	Field id:String
+	Field code:String
+	Field name:String
+	Field slug:String
+End Type
+
+Type TAirport Extends TBase
+	Field timezone:String
+	Field city:TCity
+	Field location:TLocation
+End Type
+
+Type TCity Extends TBase
+	Field country:TCountry
+	Field region:TRegion
+	Field continent:TContinent
+End Type
+
+Type TCountry Extends TBase
+End Type
+
+Type TRegion Extends TBase
+End Type
+
+Type TContinent Extends TBase
+End Type
+
+Type TLocation
+	Field lat:Double
+	Field lon:Double
+End Type
+```
+
+### Customising Field names
+
+Occasionally, a JSON object will use a key that has the same name as a reserved keyword in BlitzMax. In that case, you are unable create a field
+using the desired name. Fortunately, [BRL.JConv](../brl/brl_jconv.md) allows you use metadata to specify the serialised name of a given field using the `serializedName`
+metadata tag.
+
+Take the following JSON object as an example :
+```json
+{
+	"field" : "hello",
+	"for" : "ever"
+}
+```
+Neither `field` nor `for` are valid names for fields, but we can use the `serializedName` feature to create a valid BlitzMax [Type](../../brl/brl.blitz/#type) that can
+deserialise this object :
+```blitzmax
+Type TCustomFields
+	Field field_:String { serializedName="field" }
+	Field anotherField:String { serializedName = "for" }
+End Type
+```
+As this example demonstrates, when using the `serializedName` metadata tag, you can give any name to your fields and the data will still be mapped from
+the JSON object correctly.
+
+Here the example in full :
+```blitzmax:
+SuperStrict
+
+Framework BRL.StandardIO
+Import BRL.JConv
+
+Local data:String = "{~qfield~q:~qhello~q,~qfor~q:~qever~q}"
+
+Local jconv:TJConv = New TJConvBuilder.Build()
+Local custom:TCustomFields = TCustomFields(jconv.FromJson(data, "TCustomFields"))
+
+Print custom.field_
+Print custom.anotherField
+
+Type TCustomFields
+	Field field_:String { serializedName="field" }
+	Field anotherField:String { serializedName = "for" }
+End Type
+```
 
 ## Types
 | Type | Description |
