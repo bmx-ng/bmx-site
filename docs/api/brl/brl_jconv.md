@@ -15,8 +15,6 @@ Type TUser
 	Field name:String
 	Field email:String
 	Field age:int
-	
-	' ...
 End Type
 ```
 
@@ -143,16 +141,12 @@ Type TUser
 	Field email:String
 	Field age:Int
 	Field address:TAddress
-
-	' ...
 End Type
 
 Type TAddress
 	Field line1:String
 	Field city:String
 	Field country:String
-	
-	' ...
 End Type
 ```
 In BlitzMax the two models are cleanly separated by types, and the `TAddress` reference is held in the `address` [Field](../../brl/brl.blitz/#field) of the user.
@@ -327,11 +321,11 @@ Type TLocation
 End Type
 ```
 
-### Customising Field names
+### Customising Field Names
 
 Occasionally, a JSON object will use a key that has the same name as a reserved keyword in BlitzMax. In that case, you are unable create a field
 using the desired name. Fortunately, [BRL.JConv](../brl/brl_jconv.md) allows you use metadata to specify the serialised name of a given field using the `serializedName`
-metadata tag.
+metadata property.
 
 Take the following JSON object as an example :
 ```json
@@ -348,7 +342,7 @@ Type TCustomFields
 	Field anotherField:String { serializedName = "for" }
 End Type
 ```
-As this example demonstrates, when using the `serializedName` metadata tag, you can give any name to your fields and the data will still be mapped from
+As this example demonstrates, when using the `serializedName` metadata property, you can give any name to your fields and the data will still be mapped from
 the JSON object correctly.
 
 Here the example in full :
@@ -371,6 +365,117 @@ Type TCustomFields
 	Field anotherField:String { serializedName = "for" }
 End Type
 ```
+
+In addition to `serializedName`, another metadata property is available during deserialisation, `alternateName`. If you consider `serializedName` as being
+the default value, `alternateName` allows you to map other JSON keys to a particular field. 
+
+For example, given a `TUser` object where we are already mapping the JSON key `full_name` to the field `name` :
+```blitzmax
+Type TUser
+	Field name:String { serializedName = "full_name" }
+	Field email:String
+	Field age:int
+End Type
+```
+We decide we also want ingest similar data from another system in our application. Instead of `full_name`, the other system uses
+`username` for this value. Using the `alternateName` metadata property we can add a comma-delimited list of other names, and our [Type](../../brl/brl.blitz/#type) becomes :
+```blitzmax
+Type TUser
+	Field name:String { serializedName = "full_name", alternateName ="username" }
+	Field email:String
+	Field age:int
+End Type
+```
+`alternateName` is only available during deserialisation. [BRL.JConv](../brl/brl_jconv.md) will use either the [Field](../../brl/brl.blitz/#field) name or the `serializedName` when mapping a
+BlitzMax object to JSON.
+
+The following two sets of JSON would map to a `TUser` object and set the `name` [Field](../../brl/brl.blitz/#field) appropriately :
+```json
+{
+  "full_name" : "Bob"
+  "email" : "bob@example.com"
+}
+```
+
+```json
+{
+  "username" : "userBob"
+  "email" : "bob@example.com"
+}
+```
+
+If there are multiple fields in the JSON that match, [BRL.JConv](../brl/brl_jconv.md) will apply the value that is processed last. So, in the following example,
+deserialising the JSON would result in the `name` [Field](../../brl/brl.blitz/#field) containing the value `userBob` :
+```json
+{
+  "full_name" : "Bob"
+  "username" : "userBob"
+  "email" : "bob@example.com"
+}
+```
+
+### Ignoring Fields
+
+If you don't want a field to be mapped to or from JSON there are some metadata properties that you can apply to your types in order to do so.
+The first, `transient`, completely disables field from mapping in either direction.
+
+If you want more finer grained control, the metadata properties `noSerialize` and `noDeserialize` can be used instead.
+The `noSerialize` property instructs [BRL.JConv](../brl/brl_jconv.md) not to serialize a particular field to JSON, but it allows data from a JSON object to be
+deserialized into the [Field](../../brl/brl.blitz/#field).
+On the other hand, `noDeserialize` prevents data from a JSON object from deserializing into the [Field](../../brl/brl.blitz/#field), but does allow it to be serialized into
+a JSON object.
+
+We'll apply some properties to the `TUser` object to demonstrate the options :
+```blitzmax
+Type TUser
+	Field name:String
+	Field email:String { noSerialize }
+	Field age:int { noDeserialize }
+	Field passwordHash:String { transient }
+End Type
+```
+Based on the above example, when serializing an instance of `TUser`, only the `name` and `age` fields would be mapped to JSON.
+Similarly, only the `name` and `email` fields would be mapped from a JSON object.
+
+The following is a complete example of these properties in action :
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+Import BRL.JConv
+
+Local user:TUser = New TUser("bob", "bob@example.com", 30, "xxxx")
+
+Local jconv:TJConv = New TJConvBuilder.Build()
+
+Local json:String = jconv.ToJson(user)
+
+Print "json  : " + json
+
+json = "{~qname~q: ~qbob~q, ~qemail~q: ~qbob@example.com~q, ~qage~q: 30, ~qpasswordHash~q: ~qxxxx~q}"
+
+user = TUser(jconv.FromJson(json, "TUser"))
+
+Print "name  : " + user.name
+Print "email : " + user.email
+Print "age   : " + user.age
+Print "hash  : " + user.passwordHash
+
+Type TUser
+	Field name:String
+	Field email:String { noSerialize }
+	Field age:Int { noDeserialize }
+	Field passwordHash:String { transient }
+
+	Method New(name:String, email:String, age:Int, ph:String)
+		Self.name = name
+		Self.email = email
+		Self.age = age
+		Self.passwordHash = ph
+	End Method
+End Type
+```
+
 
 ## Types
 | Type | Description |
