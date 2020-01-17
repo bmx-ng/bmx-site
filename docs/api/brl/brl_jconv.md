@@ -392,14 +392,14 @@ BlitzMax object to JSON.
 The following two sets of JSON would map to a `TUser` object and set the `name` [Field](../../brl/brl.blitz/#field) appropriately :
 ```json
 {
-  "full_name" : "Bob"
+  "full_name" : "Bob",
   "email" : "bob@example.com"
 }
 ```
 
 ```json
 {
-  "username" : "userBob"
+  "username" : "userBob",
   "email" : "bob@example.com"
 }
 ```
@@ -408,8 +408,8 @@ If there are multiple fields in the JSON that match, [BRL.JConv](../brl/brl_jcon
 deserialising the JSON would result in the `name` [Field](../../brl/brl.blitz/#field) containing the value `userBob` :
 ```json
 {
-  "full_name" : "Bob"
-  "username" : "userBob"
+  "full_name" : "Bob",
+  "username" : "userBob",
   "email" : "bob@example.com"
 }
 ```
