@@ -5,7 +5,7 @@ sidebar_label: BRL.JConv
 ---
 
 
-### Serialising with JConv
+## Serialising with JConv
 
 In the context of [BRL.JConv](../brl/brl_jconv.md), serialisation is the mapping of BlitzMax objects to their JSON representation.
 
@@ -82,7 +82,7 @@ Type TUser
 End Type
 ```
 
-### Deserialising with JConv
+## Deserialising with JConv
 
 We'll start by creating a [String](../../brl/brl.blitz/#string) containing the JSON to convert :
 ```blitzmax
@@ -131,7 +131,7 @@ Type TUser
 End Type
 ```
 
-### Serialising Nested Objects
+## Serialising Nested Objects
 
 [BRL.JConv](../brl/brl_jconv.md) can also handle the conversion of more complex objects that include the nesting of other non-primitive objects.
 To demostrate this we will extend the `TUser` type to include an address, which will be represented by the `TAddress` [Type](../../brl/brl.blitz/#type) :
@@ -179,7 +179,7 @@ The resulting conversion to JSON is :
 ```
 As you can see, [BRL.JConv](../brl/brl_jconv.md) has correctly nested the address inside the user as a JSON object.
 
-### Deserialising Nested Objects
+## Deserialising Nested Objects
 
 In the real world, the developer is often presented with a JSON API from which they need to construct the relevant BlitzMax
 Types in order to import the data.
@@ -321,7 +321,7 @@ Type TLocation
 End Type
 ```
 
-### Customising Field Names
+## Customising Field Names
 
 Occasionally, a JSON object will use a key that has the same name as a reserved keyword in BlitzMax. In that case, you are unable create a field
 using the desired name. Fortunately, [BRL.JConv](../brl/brl_jconv.md) allows you use metadata to specify the serialised name of a given field using the `serializedName`
@@ -414,7 +414,7 @@ deserialising the JSON would result in the `name` [Field](../../brl/brl.blitz/#f
 }
 ```
 
-### Ignoring Fields
+## Ignoring Fields
 
 If you don't want a field to be mapped to or from JSON there are some metadata properties that you can apply to your types in order to do so.
 The first, `transient`, completely disables field from mapping in either direction.
