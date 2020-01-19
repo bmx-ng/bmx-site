@@ -227,7 +227,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_getfen
 
 <br/>
 
-### `Function lua_getfield (lua_state:Byte Ptr, index:Int, k$z)              ' no 0 expected`
+### `Function lua_getfield (lua_state:Byte Ptr, index:Int, k$z)`
 
 Pushes onto the stack the value `t[k]`, where <b>t</b> is the value at the given valid index.
 
@@ -267,7 +267,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_gethoo
 
 <br/>
 
-### `Function lua_getinfo:Int (lua_state:Byte Ptr, what$z, ar:lua_Debug Ptr)    ' no 0 expected`
+### `Function lua_getinfo:Int (lua_state:Byte Ptr, what$z, ar:lua_Debug Ptr)`
 
 Returns information about a specific function or function invocation.
 
@@ -277,7 +277,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_getinf
 
 <br/>
 
-### `Function lua_getlocal$z (lua_state:Byte Ptr, ar:lua_Debug Ptr, n:Int)     ' no 0 expected`
+### `Function lua_getlocal$z (lua_state:Byte Ptr, ar:lua_Debug Ptr, n:Int)`
 
 Gets information about a local variable of a given activation record.
 
@@ -297,7 +297,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_getmet
 
 <br/>
 
-### `Function lua_getstack:Int (lua_state:Byte Ptr, level:Int, ar:lua_Debug Ptr) ' no 0 expected`
+### `Function lua_getstack:Int (lua_state:Byte Ptr, level:Int, ar:lua_Debug Ptr)`
 
 Get information about the interpreter runtime stack.
 
@@ -327,7 +327,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_gettop
 
 <br/>
 
-### `Function lua_getupvalue$z (lua_state:Byte Ptr, funcindex:Int, n:Int)        ' no 0 expected`
+### `Function lua_getupvalue$z (lua_state:Byte Ptr, funcindex:Int, n:Int)`
 
 Gets information about a closure's upvalue.
 
@@ -477,7 +477,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_pushnu
 
 <br/>
 
-### `Function lua_pushstring (lua_state:Byte Ptr, s$z)                         ' no 0 expected`
+### `Function lua_pushstring (lua_state:Byte Ptr, s$z)`
 
 Pushes the [String](../../brl/brl.blitz/#string) pointed to by <b>s</b> onto the stack.
 
@@ -597,7 +597,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_setfen
 
 <br/>
 
-### `Function lua_setfield (lua_state:Byte Ptr, index:Int, k$z)              ' no 0 expected`
+### `Function lua_setfield (lua_state:Byte Ptr, index:Int, k$z)`
 
 Does the equivalent to `t[k] = v`, where <b>t</b> is the value at the given valid <b>index</b> and v is the value at the top of the stack.
 
@@ -617,7 +617,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_sethoo
 
 <br/>
 
-### `Function lua_setlocal$z (lua_state:Byte Ptr, ar:lua_Debug Ptr, n:Int)     ' no 0 expected`
+### `Function lua_setlocal$z (lua_state:Byte Ptr, ar:lua_Debug Ptr, n:Int)`
 
 Sets the value of a local variable of a given activation record.
 
@@ -657,7 +657,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_settop
 
 <br/>
 
-### `Function lua_setupvalue$z (lua_state:Byte Ptr, funcindex:Int, n:Int)        ' no 0 expected`
+### `Function lua_setupvalue$z (lua_state:Byte Ptr, funcindex:Int, n:Int)`
 
 Sets the value of a closure's upvalue.
 
@@ -757,7 +757,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#lua_type)
 
 <br/>
 
-### `Function lua_typename$z (lua_state:Byte Ptr, tp:Int)                      ' no 0 expected`
+### `Function lua_typename$z (lua_state:Byte Ptr, tp:Int)`
 
 Returns the name of the type encoded by the value <b>tp</b>, which must be one the values returned by lua_type.
 
@@ -947,7 +947,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_addsi
 
 <br/>
 
-### `Function luaL_addstring (B:Byte Ptr, s$z)                                 ' no 0 allowed!`
+### `Function luaL_addstring (B:Byte Ptr, s$z)`
 
 Adds the zero-terminated string pointed to by <b>s</b> to the buffer <b>B</b>.
 
@@ -967,7 +967,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_addva
 
 <br/>
 
-### `Function luaL_argerror:Int (lua_state:Byte Ptr, narg:Int, extramsg$z)     ' no 0 expected`
+### `Function luaL_argerror:Int (lua_state:Byte Ptr, narg:Int, extramsg$z)`
 
 Raises an error with the following message, where func is retrieved from the call stack.
 
@@ -987,7 +987,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_buffi
 
 <br/>
 
-### `Function luaL_callmeta:Int (lua_state:Byte Ptr, obj:Int, e$z)             ' no 0 expected`
+### `Function luaL_callmeta:Int (lua_state:Byte Ptr, obj:Int, e$z)`
 
 Calls a metamethod.
 
@@ -1027,7 +1027,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_check
 
 <br/>
 
-### `Function luaL_checkstack (lua_state:Byte Ptr, sz:Int, msg$z)                     ' no 0 expected`
+### `Function luaL_checkstack (lua_state:Byte Ptr, sz:Int, msg$z)`
 
 Grows the stack size to top + <b>sz</b> elements, raising an error if the stack cannot grow to that size.
 
@@ -1047,7 +1047,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_check
 
 <br/>
 
-### `Function luaL_checkudata:Byte Ptr (lua_state:Byte Ptr, narg:Int, tname$z)        ' no 0 expected`
+### `Function luaL_checkudata:Byte Ptr (lua_state:Byte Ptr, narg:Int, tname$z)`
 
 Checks whether the function argument <b>narg</b> is a userdata of the type <b>tname</b>.
 
@@ -1057,7 +1057,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_check
 
 <br/>
 
-### `Function luaL_getmetafield:Int (lua_state:Byte Ptr, obj:Int, e$z)                ' no 0 expected`
+### `Function luaL_getmetafield:Int (lua_state:Byte Ptr, obj:Int, e$z)`
 
 Pushes onto the stack the field <b>e</b> from the metatable of the object at index <b>obj</b>.
 
@@ -1067,7 +1067,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_getme
 
 <br/>
 
-### `Function luaL_gsub$z (lua_state:Byte Ptr, s$z, p$z, r$z)                         ' no 0 expected`
+### `Function luaL_gsub$z (lua_state:Byte Ptr, s$z, p$z, r$z)`
 
 Creates a copy of string <b>s</b> by replacing any occurrence of the string <b>p</b> with the string <b>r</b>.
 
@@ -1077,7 +1077,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_gsub)
 
 <br/>
 
-### `Function luaL_loadbuffer:Int (lua_state:Byte Ptr, buff:Byte Ptr, sz:Int, name$z) ' no 0 expected`
+### `Function luaL_loadbuffer:Int (lua_state:Byte Ptr, buff:Byte Ptr, sz:Int, name$z)`
 
 Loads a buffer as a Lua chunk.
 
@@ -1087,7 +1087,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_loadb
 
 <br/>
 
-### `Function luaL_loadfile:Int (lua_state:Byte Ptr, filename$z)                      ' no 0 expected`
+### `Function luaL_loadfile:Int (lua_state:Byte Ptr, filename$z)`
 
 Loads a file as a Lua chunk.
 
@@ -1097,7 +1097,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_loadf
 
 <br/>
 
-### `Function luaL_loadstring:Int (lua_state:Byte Ptr, s$z)                           ' no 0 allowed!`
+### `Function luaL_loadstring:Int (lua_state:Byte Ptr, s$z)`
 
 Loads a string as a Lua chunk.
 
@@ -1107,7 +1107,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_loads
 
 <br/>
 
-### `Function luaL_newmetatable:Int (lua_state:Byte Ptr, tname$z)                     ' no 0 expected`
+### `Function luaL_newmetatable:Int (lua_state:Byte Ptr, tname$z)`
 
 If the registry already has the key <b>tname</b>, returns 0.
 
@@ -1137,7 +1137,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_openl
 
 <br/>
 
-### `Function luaL_optlstring:Byte Ptr (lua_state:Byte Ptr, narg:Int, d$z, size:Int Ptr) ' no 0 expected in "d"`
+### `Function luaL_optlstring:Byte Ptr (lua_state:Byte Ptr, narg:Int, d$z, size:Int Ptr)`
 
 If the function argument <b>narg</b> is a string, returns this string.
 
@@ -1187,7 +1187,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_ref)
 
 <br/>
 
-### `Function luaL_register (lua_state:Byte Ptr, libname$z, l:lua_Reg Ptr)            ' no 0 expected`
+### `Function luaL_register (lua_state:Byte Ptr, libname$z, l:lua_Reg Ptr)`
 
 Opens a library.
 
@@ -1197,7 +1197,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_regis
 
 <br/>
 
-### `Function luaL_typerror:Int (lua_state:Byte Ptr, narg:Int, tname$z)               ' no 0 expected`
+### `Function luaL_typerror:Int (lua_state:Byte Ptr, narg:Int, tname$z)`
 
 Generates an error with a message.
 
@@ -1299,7 +1299,7 @@ See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_dostr
 
 ### `Function luaL_getmetatable (lua_state:Byte Ptr, tname:String)`
 
-Pushes onto the stack the metatable associated with name <b>tname</b> in the registry (see [luaL_newmetatable](../../pub/pub.lua/#function-lualnewmetatableint-luastatebyte-ptr-tnamez-no-0-expected)).
+Pushes onto the stack the metatable associated with name <b>tname</b> in the registry (see [luaL_newmetatable](../../pub/pub.lua/#function-lualnewmetatableint-luastatebyte-ptr-tnamez)).
 
 
 See [Lua Reference Manual](https://www.lua.org/manual/5.1/manual.html#luaL_getmetatable)
