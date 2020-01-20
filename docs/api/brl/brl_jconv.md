@@ -168,7 +168,7 @@ We'll initially create the required BlitzMax objects :
 Local address:TAddress = New TAddress("66 Some Street", "Someville", "Someland")
 Local user:TUser = New TUser("bob", "bob@example.com", 30, address)
 ```
-And then serialise the user with an instance of TJCon :
+And then serialise the user with an instance of [TJConv](../../brl/brl.jconv/tjconv) :
 ```blitzmax
 Local jconv:TJConv = New TJConvBuilder.Build()
 Local json:String = jconv.ToJson(user)
@@ -475,6 +475,166 @@ Type TUser
 	End Method
 End Type
 ```
+
+## Using the Builder Options
+
+You may have noticed, that by default [BRL.JConv](../brl/brl_jconv.md) serialises the JSON into a single line.
+You can change this behaviour with one ofthe builder's configurable options.
+
+The builder uses what is known as a fluent interface, or method chaining design, where a sequence of method calls can be used to construct the [TJConv](../../brl/brl.jconv/tjconv) instance.
+
+For example, the following builder creates an instance of [TJConv](../../brl/brl.jconv/tjconv) which will serialise objects to JSON with a decimal a precision of 2 places and compact objects :
+```blitzmax
+Local jconv:TJConv = New TJConvBuilder.WithPrecision(2).WithCompact().Build()
+```
+
+### WithIndent
+
+The [WithIndent](../../brl/brl.jconv/tjconvbuilder/#method-withindenttjconvbuilderindentint) method of [TJConvBuilder](../../brl/brl.jconv/tjconvbuilder) specifies the number of spaces to use for indenting of nested objects. The default of 0 (zero)
+means not to use pretty-printing.
+
+This is an example of `TUser` using the default options :
+```json
+{"name": "Bob", "email": "bob@example.com", "age": 30}
+```
+And this is an example of building with [WithIndent](../../brl/brl.jconv/tjconvbuilder/#method-withindenttjconvbuilderindentint) :
+```json
+{
+  "name": "Bob",
+  "email": "bob@example.com",
+  "age": 30
+}
+```
+
+### WithCompact
+
+On the other hand, JSON can be compacted further using the [WithCompact](../../brl/brl.jconv/tjconvbuilder/#method-withcompacttjconvbuilder) method, which works to remove extra spaces :
+```json
+{"name":"Bob","email":"bob@example.com","age":30}
+```
+### WithPrecision
+The representation of decimal numbers can be controlled by the [WithPrecision](../../brl/brl.jconv/tjconvbuilder/#method-withprecisiontjconvbuilderprecisionint) method, which specifies the maximum number of decimal places to used.
+
+For example, the default representation of a [Type](../../brl/brl.blitz/#type) `TPoint` :
+```blitzmax
+Type TPoint
+	Field x:Double
+	Field y:Double
+End Type
+```
+would normally result in the following JSON with fields of the values (10.565, 15.912) :
+```json
+{"x": 10.565, "y": 15.912000000000001}
+```
+Using a maximum precision of 3 (`WithPrecision(3)`), the resulting JSON would become :
+```json
+{"x": 10.565, "y": 15.912}
+```
+
+### WithEmptyArrays
+
+By default, [Null](../../brl/brl.blitz/#null)/empty arrays are not serialised at all. That is, the field is not included in the JSON object.
+The [WithEmptyArrays](../../brl/brl.jconv/tjconvbuilder/#method-withemptyarraystjconvbuilder) option can be enabled to generate an empty array (`[]`] instead.
+
+### WithBoxing
+
+Primitive numbers, by their very nature in BlitzMax, have no concept of nullability. JSON, conversely, can represent any field as a null value,
+either by simply not including it in the object, or by having the value `null`.
+
+To support this, [BRL.JConv](../brl/brl_jconv.md) provides an option to use "boxed" primitives in your types. A Boxed primitive is just an instance of a [Type](../../brl/brl.blitz/#type) that has
+a value field of the appropriate numeric [Type](../../brl/brl.blitz/#type). Using a boxed primitive then allows a field to contain a value, or be [Null](../../brl/brl.blitz/#null).
+
+This feature is enabled by using the [WithBoxing](../../brl/brl.jconv/tjconvbuilder/#method-withboxingtjconvbuilder) option of the builder.
+
+As an example, suppose there is a JSON object which has a numeric field `failures`. The schema specifies that this value can either be `null` or have a value
+greater than zero :
+```json
+[
+  {
+    "jobId": "ABC123",
+    "failures": 3,
+    "lastError": "overflow"
+  },
+  {
+    "jobId": "DEF456"
+  }
+]
+```
+Deserialising this wouldn't be a problem, as our `TJob` [Type](../../brl/brl.blitz/#type) could represent no `failures` by the number zero :
+```blitzmax
+Type TJob
+	Field jobId:String
+	Field failures:Int
+	Field lastError:String
+End Type
+```
+However, were we required to serialise our [Type](../../brl/brl.blitz/#type) to JSON for use by the API, we'd potentially fail schema validation by passing zero as a value for
+the `failures` [Field](../../brl/brl.blitz/#field).
+
+Utilising the boxing feature, we could instead define the `failures` [Field](../../brl/brl.blitz/#field) as `TInt` :
+```blitzmax
+Type TJob
+	Field jobId:String
+	Field failures:TInt
+	Field lastError:String
+End Type
+```
+Which would, for [Null](../../brl/brl.blitz/#null) values, result in the `features` [Field](../../brl/brl.blitz/#field) not being serialized to JSON.
+
+Here's a full example highlighting the use of boxing :
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+Import BRL.JConv
+
+Local job1:TJob = New TJob("ABC123", 3, "overflow")
+Local job2:TBoxedJob = New TBoxedJob("DEF456", 0, Null)
+
+Local jconv:TJConv = New TJConvBuilder.WithBoxing().WithIndent(2).Build()
+
+Print jconv.ToJson(job1)
+Print jconv.ToJson(job2)
+
+Type TJob
+	Field jobId:String
+	Field failures:Int
+	Field lastError:String
+	
+	Method New(jobId:String, failures:Int, lastError:String)
+		Self.jobId = jobId
+		Self.failures = failures
+		Self.lastError = lastError
+	End Method
+End Type
+
+Type TBoxedJob
+	Field jobId:String
+	Field failures:TInt
+	Field lastError:String
+
+	Method New(jobId:String, failures:Int, lastError:String)
+		Self.jobId = jobId
+		If failures > 0 Then
+			Self.failures = New TInt(failures)
+		End If
+		Self.lastError = lastError
+	End Method
+End Type
+```
+Running the above example would result in the following output :
+```
+{
+  "jobId": "ABC123",
+  "failures": 3,
+  "lastError": "overflow"
+}
+{
+  "jobId": "DEF456"
+}
+```
+
+### RegisterSerializer
 
 
 ## Types
