@@ -1,7 +1,7 @@
 ---
 id: crypto.cbcmode
 title: Crypto.CBCMode
-sidebar_label: Crypto.CBCMode
+sidebar_label: Introduction to Crypto.CBCMode
 ---
 
 

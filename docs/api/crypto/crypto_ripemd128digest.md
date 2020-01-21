@@ -1,7 +1,7 @@
 ---
 id: crypto.ripemd128digest
 title: Crypto.Ripemd128Digest
-sidebar_label: Crypto.Ripemd128Digest
+sidebar_label: Introduction to Crypto.Ripemd128Digest
 ---
 
 

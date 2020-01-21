@@ -1,7 +1,7 @@
 ---
 id: crypto.sha3digest
 title: Crypto.SHA3Digest
-sidebar_label: Crypto.SHA3Digest
+sidebar_label: Introduction to Crypto.SHA3Digest
 ---
 
 

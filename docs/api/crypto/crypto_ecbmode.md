@@ -1,7 +1,7 @@
 ---
 id: crypto.ecbmode
 title: Crypto.ECBMode
-sidebar_label: Crypto.ECBMode
+sidebar_label: Introduction to Crypto.ECBMode
 ---
 
 

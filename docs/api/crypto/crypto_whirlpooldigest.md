@@ -1,7 +1,7 @@
 ---
 id: crypto.whirlpooldigest
 title: Crypto.WhirlpoolDigest
-sidebar_label: Crypto.WhirlpoolDigest
+sidebar_label: Introduction to Crypto.WhirlpoolDigest
 ---
 
 

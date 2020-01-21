@@ -1,7 +1,7 @@
 ---
 id: crypto.ofbmode
 title: Crypto.OFBMode
-sidebar_label: Crypto.OFBMode
+sidebar_label: Introduction to Crypto.OFBMode
 ---
 
 

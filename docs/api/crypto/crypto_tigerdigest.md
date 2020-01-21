@@ -1,7 +1,7 @@
 ---
 id: crypto.tigerdigest
 title: Crypto.TigerDigest
-sidebar_label: Crypto.TigerDigest
+sidebar_label: Introduction to Crypto.TigerDigest
 ---
 
 

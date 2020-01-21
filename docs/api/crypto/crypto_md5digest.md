@@ -1,7 +1,7 @@
 ---
 id: crypto.md5digest
 title: Crypto.MD5Digest
-sidebar_label: Crypto.MD5Digest
+sidebar_label: Introduction to Crypto.MD5Digest
 ---
 
 

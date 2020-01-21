@@ -1,7 +1,7 @@
 ---
 id: crypto.xtsmode
 title: Crypto.XTSMode
-sidebar_label: Crypto.XTSMode
+sidebar_label: Introduction to Crypto.XTSMode
 ---
 
 

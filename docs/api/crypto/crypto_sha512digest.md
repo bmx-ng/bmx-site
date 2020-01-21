@@ -1,7 +1,7 @@
 ---
 id: crypto.sha512digest
 title: Crypto.SHA512Digest
-sidebar_label: Crypto.SHA512Digest
+sidebar_label: Introduction to Crypto.SHA512Digest
 ---
 
 

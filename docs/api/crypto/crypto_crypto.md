@@ -1,7 +1,7 @@
 ---
 id: crypto.crypto
 title: Crypto.Crypto
-sidebar_label: Crypto.Crypto
+sidebar_label: Introduction to Crypto.Crypto
 ---
 
 

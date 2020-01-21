@@ -1,7 +1,7 @@
 ---
 id: crypto.f8mode
 title: Crypto.F8Mode
-sidebar_label: Crypto.F8Mode
+sidebar_label: Introduction to Crypto.F8Mode
 ---
 
 

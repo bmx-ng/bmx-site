@@ -1,7 +1,7 @@
 ---
 id: crypto.digest
 title: Crypto.Digest
-sidebar_label: Crypto.Digest
+sidebar_label: Introduction to Crypto.Digest
 ---
 
 

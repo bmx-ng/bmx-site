@@ -1,7 +1,7 @@
 ---
 id: crypto.ctrmode
 title: Crypto.CTRMode
-sidebar_label: Crypto.CTRMode
+sidebar_label: Introduction to Crypto.CTRMode
 ---
 
 
