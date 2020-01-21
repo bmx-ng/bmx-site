@@ -1,7 +1,7 @@
 ---
 id: steam.steamsdk
 title: Steam.SteamSDK
-sidebar_label: Introduction to Steam.SteamSDK
+sidebar_label: Introduction
 ---
 
 

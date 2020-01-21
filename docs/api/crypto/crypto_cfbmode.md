@@ -1,7 +1,7 @@
 ---
 id: crypto.cfbmode
 title: Crypto.CFBMode
-sidebar_label: Introduction to Crypto.CFBMode
+sidebar_label: Introduction
 ---
 
 

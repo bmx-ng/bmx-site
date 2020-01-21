@@ -1,7 +1,7 @@
 ---
 id: brl.maxlua
 title: BRL.MaxLua
-sidebar_label: Introduction to BRL.MaxLua
+sidebar_label: Introduction
 ---
 
 

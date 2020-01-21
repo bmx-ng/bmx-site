@@ -1,7 +1,7 @@
 ---
 id: crypto.lrwmode
 title: Crypto.lrwMode
-sidebar_label: Introduction to Crypto.lrwMode
+sidebar_label: Introduction
 ---
 
 

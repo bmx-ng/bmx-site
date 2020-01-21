@@ -1,7 +1,7 @@
 ---
 id: brl.threadpool
 title: BRL.ThreadPool
-sidebar_label: Introduction to BRL.ThreadPool
+sidebar_label: Introduction
 ---
 
 

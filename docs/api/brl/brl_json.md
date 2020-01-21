@@ -1,7 +1,7 @@
 ---
 id: brl.json
 title: BRL.Json
-sidebar_label: Introduction to BRL.Json
+sidebar_label: Introduction
 ---
 
 

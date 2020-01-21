@@ -1,7 +1,7 @@
 ---
 id: crypto.sha256digest
 title: Crypto.SHA256Digest
-sidebar_label: Introduction to Crypto.SHA256Digest
+sidebar_label: Introduction
 ---
 
 

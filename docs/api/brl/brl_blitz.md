@@ -1,7 +1,7 @@
 ---
 id: brl.blitz
 title: BRL.Blitz
-sidebar_label: Introduction to BRL.Blitz
+sidebar_label: Introduction
 ---
 
 

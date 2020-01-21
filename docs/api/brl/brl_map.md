@@ -1,7 +1,7 @@
 ---
 id: brl.map
 title: BRL.Map
-sidebar_label: Introduction to BRL.Map
+sidebar_label: Introduction
 ---
 
 

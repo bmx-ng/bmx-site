@@ -1,7 +1,7 @@
 ---
 id: brl.stream
 title: BRL.Stream
-sidebar_label: Introduction to BRL.Stream
+sidebar_label: Introduction
 ---
 
 

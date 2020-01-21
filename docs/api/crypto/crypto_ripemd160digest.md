@@ -1,7 +1,7 @@
 ---
 id: crypto.ripemd160digest
 title: Crypto.Ripemd160Digest
-sidebar_label: Introduction to Crypto.Ripemd160Digest
+sidebar_label: Introduction
 ---
 
 

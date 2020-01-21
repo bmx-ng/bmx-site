@@ -1,7 +1,7 @@
 ---
 id: brl.random
 title: BRL.Random
-sidebar_label: Introduction to BRL.Random
+sidebar_label: Introduction
 ---
 
 

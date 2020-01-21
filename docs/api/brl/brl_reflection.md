@@ -1,7 +1,7 @@
 ---
 id: brl.reflection
 title: BRL.Reflection
-sidebar_label: Introduction to BRL.Reflection
+sidebar_label: Introduction
 ---
 
 

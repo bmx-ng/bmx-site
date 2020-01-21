@@ -1,7 +1,7 @@
 ---
 id: brl.jconv
 title: BRL.JConv
-sidebar_label: Introduction to BRL.JConv
+sidebar_label: Introduction
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 id: brl.objectlist
 title: BRL.ObjectList
-sidebar_label: Introduction to BRL.ObjectList
+sidebar_label: Introduction
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 id: brl.audio
 title: BRL.Audio
-sidebar_label: Introduction to BRL.Audio
+sidebar_label: Introduction
 ---
 
 

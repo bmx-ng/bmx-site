@@ -1,7 +1,7 @@
 ---
 id: brl.base64
 title: BRL.Base64
-sidebar_label: Introduction to BRL.Base64
+sidebar_label: Introduction
 ---
 
 

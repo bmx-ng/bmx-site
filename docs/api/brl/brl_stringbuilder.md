@@ -1,7 +1,7 @@
 ---
 id: brl.stringbuilder
 title: BRL.StringBuilder
-sidebar_label: Introduction to BRL.StringBuilder
+sidebar_label: Introduction
 ---
 
 

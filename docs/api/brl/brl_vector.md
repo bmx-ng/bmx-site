@@ -1,7 +1,7 @@
 ---
 id: brl.vector
 title: BRL.Vector
-sidebar_label: Introduction to BRL.Vector
+sidebar_label: Introduction
 ---
 
 

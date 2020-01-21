@@ -1,7 +1,7 @@
 ---
 id: crypto.cipher
 title: Crypto.Cipher
-sidebar_label: Introduction to Crypto.Cipher
+sidebar_label: Introduction
 ---
 
 

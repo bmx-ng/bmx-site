@@ -1,7 +1,7 @@
 ---
 id: brl.quaternion
 title: BRL.Quaternion
-sidebar_label: Introduction to BRL.Quaternion
+sidebar_label: Introduction
 ---
 
 

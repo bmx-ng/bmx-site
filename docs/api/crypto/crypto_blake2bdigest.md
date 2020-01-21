@@ -1,7 +1,7 @@
 ---
 id: crypto.blake2bdigest
 title: Crypto.Blake2BDigest
-sidebar_label: Introduction to Crypto.Blake2BDigest
+sidebar_label: Introduction
 ---
 
 

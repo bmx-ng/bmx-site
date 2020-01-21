@@ -1,7 +1,7 @@
 ---
 id: brl.pixmap
 title: BRL.Pixmap
-sidebar_label: Introduction to BRL.Pixmap
+sidebar_label: Introduction
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 id: brl.maxunit
 title: BRL.MaxUnit
-sidebar_label: Introduction to BRL.MaxUnit
+sidebar_label: Introduction
 ---
 
 
