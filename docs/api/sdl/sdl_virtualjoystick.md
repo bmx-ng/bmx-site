@@ -1,7 +1,7 @@
 ---
 id: sdl.virtualjoystick
 title: SDL.VirtualJoystick
-sidebar_label: SDL.VirtualJoystick
+sidebar_label: Introduction
 ---
 
 

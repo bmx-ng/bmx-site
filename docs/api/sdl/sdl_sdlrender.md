@@ -1,7 +1,7 @@
 ---
 id: sdl.sdlrender
 title: SDL.SDLRender
-sidebar_label: SDL.SDLRender
+sidebar_label: Introduction
 ---
 
 

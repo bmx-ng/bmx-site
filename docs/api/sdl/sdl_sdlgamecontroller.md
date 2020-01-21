@@ -1,7 +1,7 @@
 ---
 id: sdl.sdlgamecontroller
 title: SDL.SDLGameController
-sidebar_label: SDL.SDLGameController
+sidebar_label: Introduction
 ---
 
 

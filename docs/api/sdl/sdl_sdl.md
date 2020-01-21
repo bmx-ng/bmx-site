@@ -1,7 +1,7 @@
 ---
 id: sdl.sdl
 title: SDL.SDL
-sidebar_label: SDL.SDL
+sidebar_label: Introduction
 ---
 
 
@@ -44,6 +44,15 @@ Mac OS X and iOS Specific Functionality: If the application is in a ".app" bundl
 the name SDL_FILESYSTEM_BASE_DIR_TYPE with a supported value will change the behaviour.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework SDL.SDL
+Import BRL.StandardIO
+
+Print SDLGetBasePath()
+```
 <br/>
 
 ### `Function SDLGetPrefPath:String(org:String, app:String)`
@@ -224,6 +233,17 @@ Print "Remaining : " + seconds + " seconds (" + percent + " %)"
 
 Gets the human readable name of a pixel format
 
+#### Example
+```blitzmax
+SuperStrict
+
+Framework SDL.SDL
+Import brl.standardio
+
+Print SDLGetPixelFormatName(SDL_PIXELFORMAT_INDEX8)
+Print SDLGetPixelFormatName(SDL_PIXELFORMAT_RGB24)
+Print SDLGetPixelFormatName(SDL_PIXELFORMAT_BGRA8888)
+```
 <br/>
 
 ### `Function SDLGetTicks:UInt()`

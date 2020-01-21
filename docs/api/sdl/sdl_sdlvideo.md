@@ -1,7 +1,7 @@
 ---
 id: sdl.sdlvideo
 title: SDL.SDLVideo
-sidebar_label: SDL.SDLVideo
+sidebar_label: Introduction
 ---
 
 

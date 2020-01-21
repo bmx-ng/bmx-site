@@ -1,7 +1,7 @@
 ---
 id: sdl.sdlhaptic
 title: SDL.SDLHaptic
-sidebar_label: SDL.SDLHaptic
+sidebar_label: Introduction
 ---
 
 

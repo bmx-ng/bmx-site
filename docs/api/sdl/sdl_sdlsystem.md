@@ -1,7 +1,7 @@
 ---
 id: sdl.sdlsystem
 title: SDL.SDLSystem
-sidebar_label: SDL.SDLSystem
+sidebar_label: Introduction
 ---
 
 

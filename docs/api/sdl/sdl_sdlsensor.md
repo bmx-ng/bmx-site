@@ -1,7 +1,7 @@
 ---
 id: sdl.sdlsensor
 title: SDL.SDLSensor
-sidebar_label: SDL.SDLSensor
+sidebar_label: Introduction
 ---
 
 

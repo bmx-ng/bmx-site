@@ -1,7 +1,7 @@
 ---
 id: sdl.sdlsurface
 title: SDL.SDLSurface
-sidebar_label: SDL.SDLSurface
+sidebar_label: Introduction
 ---
 
 
