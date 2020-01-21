@@ -1,7 +1,7 @@
 ---
 id: brl.xml
 title: BRL.XML
-sidebar_label: BRL.XML
+sidebar_label: Introduction to BRL.XML
 ---
 
 

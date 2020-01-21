@@ -1,7 +1,7 @@
 ---
 id: brl.linkedlist
 title: BRL.LinkedList
-sidebar_label: BRL.LinkedList
+sidebar_label: Introduction to BRL.LinkedList
 ---
 
 

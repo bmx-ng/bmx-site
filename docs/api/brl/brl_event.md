@@ -1,7 +1,7 @@
 ---
 id: brl.event
 title: BRL.Event
-sidebar_label: BRL.Event
+sidebar_label: Introduction to BRL.Event
 ---
 
 

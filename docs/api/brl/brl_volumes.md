@@ -1,7 +1,7 @@
 ---
 id: brl.volumes
 title: BRL.Volumes
-sidebar_label: BRL.Volumes
+sidebar_label: Introduction to BRL.Volumes
 ---
 
 

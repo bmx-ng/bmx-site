@@ -1,7 +1,7 @@
 ---
 id: brl.max2d
 title: BRL.Max2D
-sidebar_label: BRL.Max2D
+sidebar_label: Introduction to BRL.Max2D
 ---
 
 

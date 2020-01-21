@@ -1,7 +1,7 @@
 ---
 id: brl.timer
 title: BRL.Timer
-sidebar_label: BRL.Timer
+sidebar_label: Introduction to BRL.Timer
 ---
 
 

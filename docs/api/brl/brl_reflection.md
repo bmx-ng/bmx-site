@@ -1,7 +1,7 @@
 ---
 id: brl.reflection
 title: BRL.Reflection
-sidebar_label: BRL.Reflection
+sidebar_label: Introduction to BRL.Reflection
 ---
 
 
@@ -24,7 +24,7 @@ Local id:TTypeId=TTypeId.ForName( "TMyType" )
 For Local fld:TField=EachIn id.EnumFields()
    Print fld.Name()+":"+fld.TypeId().Name()
 Next
-````
+```
 
 This simple program will print "x:Int", "y:Int" and "z:Int" - the names and types of the fields within TMyType. Note that this is done without actually creating a new TMyType.
 
@@ -44,7 +44,7 @@ For Local fld:TField=EachIn id.EnumFields()
 Next
 
 Print obj.x+","+obj.y+","+obj.z
-````
+```
 
 In this case we need an actual instance of TMyType, otherwise we have nothing to set the fields of! Also, we have used TTypeId.ForObject instead of TTypeId.ForName to get a TTypeId. While in this case TTypeId.ForName could have been used to achieve the same result, in general we may not know the exact type of the object, and therefore we wont know its type name.
 
@@ -66,7 +66,7 @@ Local id:TTypeId=TTypeId.ForObject( obj )
 Local update:TMethod=id.FindMethod( "Update" )
 
 update.Invoke obj,[String( .25 )]
-````
+```
 
 This example uses <b>FindMethod</b> to locate a type method and <b>Invoke</b> to call it. Arguments to the method are contained in an object array, and again the float argument is converted to a string.
 

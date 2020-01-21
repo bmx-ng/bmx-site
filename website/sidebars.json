@@ -299,8 +299,28 @@
         ]
       },
       "api/brl/brl.ramstream",
-      "api/brl/brl.random",
-      "api/brl/brl.reflection",
+      {
+        "type": "subcategory",
+        "label": "Random",
+        "ids": [
+          "api/brl/brl.random",
+          "api/brl/brl.random/trandom"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Reflection",
+        "ids": [
+          "api/brl/brl.reflection",
+          "api/brl/brl.reflection/ttypeid",
+          "api/brl/brl.reflection/tmember",
+          "api/brl/brl.reflection/tconstant",
+          "api/brl/brl.reflection/tfield",
+          "api/brl/brl.reflection/tglobal",
+          "api/brl/brl.reflection/tfunction",
+          "api/brl/brl.reflection/tmethod"
+        ]
+      },
       "api/brl/brl.retro",
       "api/brl/brl.socket",
       "api/brl/brl.socketstream",
@@ -333,8 +353,27 @@
       "api/brl/brl.systemdefault",
       "api/brl/brl.textstream",
       "api/brl/brl.tgaloader",
-      "api/brl/brl.threadpool",
-      "api/brl/brl.threads",
+      {
+        "type": "subcategory",
+        "label": "ThreadPool",
+        "ids": [
+          "api/brl/brl.threadpool",
+          "api/brl/brl.threadpool/trunnable",
+          "api/brl/brl.threadpool/tthreadpoolexecutor"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Threads",
+        "ids": [
+          "api/brl/brl.threads",
+          "api/brl/brl.threads/tthread",
+          "api/brl/brl.threads/tthreaddata",
+          "api/brl/brl.threads/tmutex",
+          "api/brl/brl.threads/tsemaphore",
+          "api/brl/brl.threads/tcondvar"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Timer",
@@ -359,7 +398,7 @@
       },
       {
         "type": "subcategory",
-        "label": "BRL.Volumes",
+        "label": "Volumes",
         "ids": [
           "api/brl/brl.volumes",
           "api/brl/brl.volumes/tvolume"

@@ -1,7 +1,7 @@
 ---
 id: brl.jconv
 title: BRL.JConv
-sidebar_label: BRL.JConv
+sidebar_label: Introduction to BRL.JConv
 ---
 
 
@@ -476,7 +476,7 @@ Type TUser
 End Type
 ```
 
-## Using the Builder Options
+## Configuring TJConv with the Builder
 
 You may have noticed, that by default [BRL.JConv](../brl/brl_jconv.md) serialises the JSON into a single line.
 You can change this behaviour with one ofthe builder's configurable options.

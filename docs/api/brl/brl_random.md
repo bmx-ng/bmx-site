@@ -1,7 +1,7 @@
 ---
 id: brl.random
 title: BRL.Random
-sidebar_label: BRL.Random
+sidebar_label: Introduction to BRL.Random
 ---
 
 
@@ -108,7 +108,7 @@ Generate random double
 
 The optional parameters allow you to use Rnd in 3 ways:
 
-<table><tr><td> <b>Format</b></td><td><b>Result</b></td></tr><tr><td>  &Rnd()</td><td>Random double in the range 0 (inclusive) to 1 (exclusive)</td></tr><tr><td>  &Rnd(_x_)</td><td>Random double in the range 0 (inclusive) to n (exclusive)</td></tr><tr><td>  &Rnd(_x,y_)</td><td>Random double in the range x (inclusive) to y (exclusive)</td></tr></table>
+<table><tr><td> <b>Format</b></td><td><b>Result</b></td></tr><tr><td>  `Rnd()`</td><td>Random double in the range 0 (inclusive) to 1 (exclusive)</td></tr><tr><td>  `Rnd(x)`</td><td>Random double in the range 0 (inclusive) to n (exclusive)</td></tr><tr><td>  `Rnd(x,y)`</td><td>Random double in the range x (inclusive) to y (exclusive)</td></tr></table>
 
 
 
@@ -148,7 +148,7 @@ Generate random integer
 
 The optional parameter allows you to use [Rand](../../brl/brl.random/trandom/#method-randintminvalueint-maxvalueint-1) in 2 ways:
 
-<table><tr><td> <b>Format</b></td><td><b>Result</b></td></tr><tr><td>  &Rand(x)</td><td>Random integer in the range 1 to x (inclusive)</td></tr><tr><td>  &Rand(x,y)</td><td>Random integer in the range x to y (inclusive)</td></tr></table>
+<table><tr><td> <b>Format</b></td><td><b>Result</b></td></tr><tr><td>  `Rand(x)`</td><td>Random integer in the range 1 to x (inclusive)</td></tr><tr><td>  `Rand(x,y)`</td><td>Random integer in the range x to y (inclusive)</td></tr></table>
 
 
 

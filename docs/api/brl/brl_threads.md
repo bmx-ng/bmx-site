@@ -1,7 +1,7 @@
 ---
 id: brl.threads
 title: BRL.Threads
-sidebar_label: BRL.Threads
+sidebar_label: Introduction to BRL.Threads
 ---
 
 

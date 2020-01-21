@@ -1,7 +1,7 @@
 ---
 id: brl.blitz
 title: BRL.Blitz
-sidebar_label: BRL.Blitz
+sidebar_label: Introduction to BRL.Blitz
 ---
 
 
@@ -889,6 +889,16 @@ Determines whether the [Object](../../brl/brl.blitz/#object) <b>obj</b> is an em
 
 #### Returns
 [True](../../brl/brl.blitz/#true) if <b>obj</b> is an empty array, or [False](../../brl/brl.blitz/#false) otherwise.
+
+
+<br/>
+
+### `Function IsEmptyString:Int(obj:Object)`
+
+Determines whether the [Object](../../brl/brl.blitz/#object) <b>obj</b> is an empty [String](../../brl/brl.blitz/#string).
+
+#### Returns
+[True](../../brl/brl.blitz/#true) if <b>obj</b> is an empty [String](../../brl/brl.blitz/#string), or [False](../../brl/brl.blitz/#false) otherwise.
 
 
 <br/>

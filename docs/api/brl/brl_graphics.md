@@ -21,7 +21,7 @@ object created will depend upon the current graphics driver. For example, the fo
 ```
 SetGraphicsDriver GLGraphicsDriver()
 Local g:TGraphics=CreateGraphics( 640,480,32,60,GRAPHICS_BACKBUFFER )
-````
+```
 
 Will create an OpenGL graphics object.
 
@@ -31,7 +31,7 @@ SetGraphics g			'we can now execute OpenGL code
 glClearColor .5,0,1,1		'tada!
 glClear				'yes!
 Flip				'must do this as the graphics is double buffered
-````
+```
 
 One you have finished with a graphics object, use [CloseGraphics](../../brl/brl.graphics/#function-closegraphics-gtgraphics-) to close it.
 

@@ -1,7 +1,7 @@
 ---
 id: brl.matrix
 title: BRL.Matrix
-sidebar_label: BRL.Matrix
+sidebar_label: Introduction to BRL.Matrix
 ---
 
 

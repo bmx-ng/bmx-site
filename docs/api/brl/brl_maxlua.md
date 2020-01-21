@@ -1,7 +1,7 @@
 ---
 id: brl.maxlua
 title: BRL.MaxLua
-sidebar_label: BRL.MaxLua
+sidebar_label: Introduction to BRL.MaxLua
 ---
 
 
@@ -54,7 +54,7 @@ Local instance:TLuaObject=TLuaObject.Create( class,Null )
 '
 instance.Invoke "hello",Null
 instance.Invoke "goodbye",Null
-````
+```
 
 
 

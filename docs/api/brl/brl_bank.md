@@ -1,7 +1,7 @@
 ---
 id: brl.bank
 title: BRL.Bank
-sidebar_label: BRL.Bank
+sidebar_label: Introduction to BRL.Bank
 ---
 
 

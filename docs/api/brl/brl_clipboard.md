@@ -1,7 +1,7 @@
 ---
 id: brl.clipboard
 title: BRL.Clipboard
-sidebar_label: BRL.Clipboard
+sidebar_label: Introduction to BRL.Clipboard
 ---
 
 

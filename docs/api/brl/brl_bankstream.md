@@ -1,7 +1,7 @@
 ---
 id: brl.bankstream
 title: BRL.BankStream
-sidebar_label: BRL.BankStream
+sidebar_label: Introduction to BRL.BankStream
 ---
 
 
