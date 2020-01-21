@@ -429,7 +429,14 @@
       "api/pub/pub.freeprocess",
       "api/pub/pub.glad",
       "api/pub/pub.glew",
-      "api/pub/pub.joystick",
+      {
+        "type": "subcategory",
+        "label": "Joystick",
+        "ids": [
+          "api/pub/pub.joystick",
+          "api/pub/pub.joystick/tjoystickdriver"
+        ]
+      },
       "api/pub/pub.lua",
       "api/pub/pub.openal",
       "api/pub/pub.opengles",

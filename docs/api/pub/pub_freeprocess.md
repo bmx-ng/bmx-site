@@ -1,7 +1,7 @@
 ---
 id: pub.freeprocess
-title: PUB.FreeProcess
-sidebar_label: PUB.FreeProcess
+title: Pub.FreeProcess
+sidebar_label: Pub.FreeProcess
 ---
 
 

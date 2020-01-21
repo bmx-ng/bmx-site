@@ -1,7 +1,7 @@
 ---
 id: pub.joystick
 title: Pub.Joystick
-sidebar_label: Pub.Joystick
+sidebar_label: Introduction
 ---
 
 

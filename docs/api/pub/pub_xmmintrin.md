@@ -1,7 +1,7 @@
 ---
 id: pub.xmmintrin
-title: pub.xmmintrin
-sidebar_label: pub.xmmintrin
+title: Pub.xmmintrin
+sidebar_label: Pub.xmmintrin
 ---
 
 
