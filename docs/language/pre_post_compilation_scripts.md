@@ -42,12 +42,12 @@ And "make" compiles the source file specified.
 
 Again, the all these commands are defined in core.bmk and make.bmk
 
+Next to writing the commands into your project source file you can also just add a "pre.bmk" file and it gets executed before compilation of your project. BlitzMax prefers "pre.projectfile.bmk" over "pre.bmk" so you can use this in case of multiple project source files in one directory with some of them requiring individual pre-compilation scripts.
 
 ## Post-Compilation Scripts
 
 You can also get the compiler to run Lua code after it has compiled your BlitzMax source file,
-just add a "post.bmk" file into the same directory as your application. It will then be loaded
-after completion of the compilation stage, but before execution (if you chose to Run it). This can
+just add a "post.bmk" (or less generic "post.projectfile.bmk") file into the same directory as your application. It will then be loaded after completion of the compilation stage, but before execution (if you chose to Run it). This can
 be useful if you want to copy files into an App Bundle, or run the exe through some compression utility, for example.
 
 
