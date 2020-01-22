@@ -62,12 +62,12 @@ for the SDL backend.
 | Base  | `sudo zypper install gcc-c++ libXxf86vm-devel webkit2gtk3-devel alsa-lib-devel  freetype-devel  libpulse-devel glu-devel` |
 | SDL   | `sudo zypper install libudev-devel libXss-devel` |
 
-#### Fedora (30)
+#### Fedora (31)
 
 | Requirement | Command |
 |---|---|
 | Base  | `sudo dnf install gcc-c++ alsa-lib-devel pulseaudio-libs-devel freetype-devel mesa-libGLU-devel gtk3-devel webkit2gtk3-devel` |
-| SDL   | `sudo dnf install dbus-devel libudev-devel libXScrnSaver-devel` |
+| SDL   | `sudo dnf install dbus-devel libudev-devel libXScrnSaver-devel nas-devel` |
 
 ## 64 or 32-bit
 
