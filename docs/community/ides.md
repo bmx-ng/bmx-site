@@ -4,7 +4,7 @@ title: IDEs
 sidebar_label: IDEs
 ---
 
-# Maintained / supported
+# Maintained
 
 ## MaxIDE - default IDE v1.56 [NG and Legacy]
 Site: https://blitzmax.org
@@ -25,7 +25,7 @@ Repo: https://github.com/GWRon/blitzmax-geany-plugin
 
 
 
-# Unmaintained / no longer supported
+# Unmaintained
 
 ## BLIde
 Toolbox: http://web.archive.org/web/20160619071115/http://www.blitzbasic.com/toolbox/toolbox.php?tool=131
