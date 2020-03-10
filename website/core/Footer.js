@@ -58,7 +58,6 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>News</a>
             <a href="https://github.com/bmx-ng">GitHub</a>
             <a
               className="github-button"
@@ -69,6 +68,9 @@ class Footer extends React.Component {
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
               Star
+            </a>
+            <a href="https://discord.gg/udSSJkj" target="_blank" rel="noreferrer noopener">
+              <img alt="Chat on Discord" src="https://img.shields.io/discord/613699895139762176?logo=discord&color=DDDDDD&logoColor=555555&style=social"/>
             </a>
           </div>
         </section>
