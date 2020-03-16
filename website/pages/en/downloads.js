@@ -45,43 +45,43 @@ class Downloads extends React.Component {
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.105.3.35.win32/BlitzMax_win32_0.105.3.35.7z">BlitzMax_win32_0.105.3.35.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.118.3.41.win32/BlitzMax_win32_0.118.3.41.7z">BlitzMax_win32_0.118.3.41.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, with both x86 and x64 MinGW-w64 8.1.0-rev0 distributions.
-                                        Includes SDL backend, and mojo2.
+                                        Includes SDL backend, mojo2, Crypto, Audio and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.105.3.35.win32/BlitzMax_win32_0.105.3.35.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.118.3.41.win32/BlitzMax_win32_0.118.3.41.7z`,
                                     title: "Win32 x86/x64"
                                 },
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.117.3.41.win32.x64/BlitzMax_win32_x64_0.117.3.41.7z">BlitzMax_win32_x64_0.117.3.41.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.118.3.41.win32.x64/BlitzMax_win32_x64_0.118.3.41.7z">BlitzMax_win32_x64_0.118.3.41.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, aimed at x64 development, with x64 MinGW-w64 8.1.0-rev0.
-                                        Includes SDL backend, mojo2, Crypto, and Audio.
+                                        Includes SDL backend, mojo2, Crypto, Audio and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.117.3.41.win32.x64/BlitzMax_win32_x64_0.117.3.41.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.118.3.41.win32.x64/BlitzMax_win32_x64_0.118.3.41.7z`,
                                     title: "Win32 x64"
                                 },
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.105.3.35.win32.x86/BlitzMax_win32_x86_0.105.3.35.7z">BlitzMax_win32_x86_0.105.3.35.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.118.3.41.win32.x86/BlitzMax_win32_x86_0.118.3.41.7z">BlitzMax_win32_x86_0.118.3.41.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, aimed at x86 development, with x86 MinGW-w64 8.1.0-rev0.
-                                        Includes SDL backend, and mojo2.
+                                        Includes SDL backend, mojo2, Crypto, Audio and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.105.3.35.win32.x86/BlitzMax_win32_x86_0.105.3.35.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.118.3.41.win32.x86/BlitzMax_win32_x86_0.118.3.41.7z`,
                                     title: "win32 x86"
                                 },
                             ]}
