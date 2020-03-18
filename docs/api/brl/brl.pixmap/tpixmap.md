@@ -142,6 +142,12 @@ Write a pixel to a pixmap
 
 <br/>
 
+### `Method WritePixel(x:Int, y:Int, col:SColor8)`
+
+Writes a pixel to a pixmap of the specified [SColor8](../../../brl/brl.color/scolor8)
+
+<br/>
+
 ### `Method ClearPixels( argb )`
 
 Clear a pixmap

@@ -63,6 +63,35 @@ Emit an event
 Runs all [EmitEventHook](../../brl/brl.event/#global-emiteventhookintallochookid) hooks, passing <b>event</b> as the hook data.
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+Local myEventID:Int = AllocUserEventId("My optional event description")
+Local myEvent:TEvent = CreateEvent(myEventID)
+Local myTimer:TTImer = CreateTimer(10, myEvent)
+Local myQuitEventID:Int = AllocUserEventId("We want to quit now")
+Local myQuitEvent:TEvent = CreateEvent(myQuitEventID)
+
+Repeat
+	WaitEvent
+	Cls
+	Select EventID()
+		Case myEventID
+			DrawText "Timer has ticked " + TimerTicks(myTimer) + " times",10,15
+			
+			' exit application after 50 ticks
+			If TimerTicks(myTimer) = 50
+				EmitEvent(myQuitEvent)
+			EndIf
+		Case myQuitEventID
+			End
+	End Select
+	Flip
+Until AppTerminate()
+```
 <br/>
 
 ### `Function CreateEvent:TEvent( id:Int,source:Object=Null,data:Int=0,mods:Int=0,x:Int=0,y:Int=0,extra:Object=Null)`
@@ -101,6 +130,24 @@ Allocate a user event id
 A new user event id
 
 
+#### Example
+```blitzmax
+SuperStrict
+
+Graphics 640,480
+
+Local myEventID:Int = AllocUserEventId("My optional event description")
+Local myEvent:TEvent = CreateEvent(myEventID)
+Local myTimer:TTImer = CreateTimer(10, myEvent)
+Repeat
+	WaitEvent
+	Cls
+	If EventID() = myEventID
+		DrawText "Timer has ticked " + TimerTicks(myTimer) + " times",10,15
+	EndIf
+	Flip
+Until AppTerminate()
+```
 <br/>
 
 ## Globals

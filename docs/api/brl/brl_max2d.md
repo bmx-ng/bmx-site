@@ -812,13 +812,12 @@ Load an image
 
 <b>flags</b> can be 0, -1 or any combination of:
 
-<table><tr><td> <b>Flags value</b></td><td><b>Effect</b>
-</td></tr><tr><td>  MASKEDIMAGE</td><td>The image is masked with the current mask color.
-</td></tr><tr><td>  FILTEREDIMAGE</td><td>The image is smoothed when scaled up to greater than its original
-size, when rotated, or when drawn at fractional pixel coordinates.
-</td></tr><tr><td>  MIPMAPPEDIMAGE</td><td>The image is smoothed when scaled down to less than its original size.
-</td></tr><tr><td>  DYNAMICIMAGE</td><td>The image can be modified using [LockImage](../../brl/brl.max2d/#function-lockimagetpixmap-imagetimageframe0readlocktruewritelocktrue-) or [GrabImage](../../brl/brl.max2d/#function-grabimage-imagetimagexyframe0-).</td></tr></table>
-
+| Flags value | Effect |
+| --- | --- |
+| MASKEDIMAGE | The image is masked with the current mask color. |
+| FILTEREDIMAGE | The image is smoothed when scaled up to greater than its original size, when rotated, or when drawn at fractional pixel coordinates.|
+| MIPMAPPEDIMAGE | The image is smoothed when scaled down to less than its original size. |
+| DYNAMICIMAGE | The image can be modified using [LockImage](../../brl/brl.max2d/#function-lockimagetpixmap-imagetimageframe0readlocktruewritelocktrue-) or [GrabImage](../../brl/brl.max2d/#function-grabimage-imagetimagexyframe0-). |
 
 
 Note MIPMAPPEDIMAGE images consume extra video memory, so this flag should only be used
