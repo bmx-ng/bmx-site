@@ -180,33 +180,6 @@
       "api/brl/brl.graphics",
       "api/brl/brl.hook",
       "api/brl/brl.jpgloader",
-      {
-        "type": "subcategory",
-        "label": "JConv",
-        "ids": [
-          "api/brl/brl.jconv",
-          "api/brl/brl.jconv/tjconv",
-          "api/brl/brl.jconv/tjconvbuilder",
-          "api/brl/brl.jconv/tjconvserializer"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Json",
-        "ids": [
-          "api/brl/brl.json",
-          "api/brl/brl.json/tjson",
-          "api/brl/brl.json/tjsonobject",
-          "api/brl/brl.json/tjsonstring",
-          "api/brl/brl.json/tjsoninteger",
-          "api/brl/brl.json/tjsonreal",
-          "api/brl/brl.json/tjsonbool",
-          "api/brl/brl.json/tjsonarray",
-          "api/brl/brl.json/tjsonnull",
-          "api/brl/brl.json/tjsonerror",
-          "api/brl/brl.json/tjsonnumber"
-        ]
-      },
       "api/brl/brl.keycodes",
       {
         "type": "subcategory",
@@ -404,15 +377,63 @@
           "api/brl/brl.volumes/tvolume"
         ]
       },
-      "api/brl/brl.wavloader",
+      "api/brl/brl.wavloader"
+    ],
+    "Text": [
+      {
+        "type": "subcategory",
+        "label": "Format",
+        "ids": [
+          "api/text/text.format",
+          "api/text/text.format/tformatter"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "JConv",
+        "ids": [
+          "api/text/text.jconv",
+          "api/text/text.jconv/tjconv",
+          "api/text/text.jconv/tjconvbuilder",
+          "api/text/text.jconv/tjconvserializer"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Json",
+        "ids": [
+          "api/text/text.json",
+          "api/text/text.json/tjson",
+          "api/text/text.json/tjsonobject",
+          "api/text/text.json/tjsonstring",
+          "api/text/text.json/tjsoninteger",
+          "api/text/text.json/tjsonreal",
+          "api/text/text.json/tjsonbool",
+          "api/text/text.json/tjsonarray",
+          "api/text/text.json/tjsonnull",
+          "api/text/text.json/tjsonerror",
+          "api/text/text.json/tjsonnumber"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Regex",
+        "ids": [
+          "api/text/text.regex",
+          "api/text/text.regex/tregex",
+          "api/text/text.regex/tregexmatch",
+          "api/text/text.regex/tregexoptions",
+          "api/text/text.regex/tregexexception"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "Xml",
         "ids": [
-          "api/brl/brl.xml",
-          "api/brl/brl.xml/txmldoc",
-          "api/brl/brl.xml/txmlnode",
-          "api/brl/brl.xml/txmlattribute"
+          "api/text/text.xml",
+          "api/text/text.xml/txmldoc",
+          "api/text/text.xml/txmlnode",
+          "api/text/text.xml/txmlattribute"
         ]
       }
     ],

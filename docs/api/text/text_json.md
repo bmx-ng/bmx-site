@@ -1,6 +1,6 @@
 ---
-id: brl.json
-title: BRL.Json
+id: text.json
+title: Text.Json
 sidebar_label: Introduction
 ---
 
@@ -8,16 +8,16 @@ sidebar_label: Introduction
 ## Types
 | Type | Description |
 |---|---|
-| [TJSON](../../brl/brl.json/tjson) | Base type for JSON objects. |
-| [TJSONArray](../../brl/brl.json/tjsonarray) | A JSON array is an ordered collection of other JSON values. |
-| [TJSONObject](../../brl/brl.json/tjsonobject) | A JSON object is a dictionary of key-value pairs, where the key is a Unicode string and the value is any JSON value. |
-| [TJSONString](../../brl/brl.json/tjsonstring) | A JSON String. |
-| [TJSONNumber](../../brl/brl.json/tjsonnumber) | Base type for JSON number types. |
-| [TJSONInteger](../../brl/brl.json/tjsoninteger) | a JSON integer. |
-| [TJSONReal](../../brl/brl.json/tjsonreal) | A JSON real number. |
-| [TJSONBool](../../brl/brl.json/tjsonbool) | A JSON boolean. |
-| [TJSONNull](../../brl/brl.json/tjsonnull) | A JSON Null. |
-| [TJSONError](../../brl/brl.json/tjsonerror) | JSON error information. |
+| [TJSON](../../text/text.json/tjson) | Base type for JSON objects. |
+| [TJSONArray](../../text/text.json/tjsonarray) | A JSON array is an ordered collection of other JSON values. |
+| [TJSONObject](../../text/text.json/tjsonobject) | A JSON object is a dictionary of key-value pairs, where the key is a Unicode string and the value is any JSON value. |
+| [TJSONString](../../text/text.json/tjsonstring) | A JSON String. |
+| [TJSONNumber](../../text/text.json/tjsonnumber) | Base type for JSON number types. |
+| [TJSONInteger](../../text/text.json/tjsoninteger) | a JSON integer. |
+| [TJSONReal](../../text/text.json/tjsonreal) | A JSON real number. |
+| [TJSONBool](../../text/text.json/tjsonbool) | A JSON boolean. |
+| [TJSONNull](../../text/text.json/tjsonnull) | A JSON Null. |
+| [TJSONError](../../text/text.json/tjsonerror) | JSON error information. |
 
 ## Functions
 

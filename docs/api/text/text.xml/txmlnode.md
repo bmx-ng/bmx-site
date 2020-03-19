@@ -30,7 +30,7 @@ Added at the end of child nodes list.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 
 Local doc:TxmlDoc = TxmlDoc.parseFile("attributes.xml")
 
@@ -54,7 +54,7 @@ Adds a new node <b>node</b> as the next sibling.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 
 Local doc:TxmlDoc = TxmlDoc.parseFile("attributes.xml")
 
@@ -63,7 +63,7 @@ If doc Then
 	Local node:TxmlNode = TxmlNode(doc.getRootElement().getFirstChild())
 
 	' a new node for the document
-	Local newNode:TxmlNode = TxmlNode.newnode("cd")
+	Local newNode:TxmlNode = TxmlNode.newNode("cd")
 	newNode.addAttribute("title", "Together Alone")
 	newNode.addAttribute("artist", "Crowded House")
 	newNode.addChild("country", "NZ")
@@ -85,7 +85,7 @@ Adds a new node <b>node</b> as the previous sibling.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 
 Local doc:TxmlDoc = TxmlDoc.parseFile("attributes.xml")
 
@@ -94,7 +94,7 @@ If doc Then
 	Local node:TxmlNode = TxmlNode(doc.getRootElement().getFirstChild())
 	
 	' a new node for the document
-	Local newNode:TxmlNode = TxmlNode.newnode("cd")
+	Local newNode:TxmlNode = TxmlNode.newNode("cd")
 	newNode.addAttribute("title", "This is the Sea")
 	newNode.addAttribute("artist", "Waterboys")
 	newNode.addChild("country", "UK")
@@ -116,7 +116,7 @@ Appends the extra substring to the node content.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 Import brl.standardio
 
 Local doc:TxmlDoc = TxmlDoc.parseFile("attributes.xml")
@@ -144,7 +144,7 @@ Replaces the content of a node.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework text.xml
 Import BRL.StandardIO
 
 Local doc:TxmlDoc = TxmlDoc.newDoc("1.0")
@@ -181,7 +181,7 @@ Sets (or resets) the name of the node.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework text.xml
 Import BRL.StandardIO
 
 Local doc:TxmlDoc = TxmlDoc.newDoc("1.0")
@@ -219,7 +219,7 @@ Sets (or resets) an attribute carried by the node.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework text.xml
 Import BRL.StandardIO
 
 Local doc:TxmlDoc = TxmlDoc.newDoc("1.0")
@@ -266,7 +266,7 @@ The list of attributes.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 Import brl.standardio
 
 Local docname:String = "attributes.xml"
@@ -295,7 +295,7 @@ Remove an attribute carried by the node.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework text.xml
 Import BRL.StandardIO
 
 Local doc:TxmlDoc = TxmlDoc.newDoc("1.0")
@@ -353,7 +353,7 @@ The first child or Null if none.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 Import brl.standardio
 
 Local docname:String = "sample.xml"
@@ -381,7 +381,7 @@ The last child or Null if none.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 Import brl.standardio
 
 Local docname:String = "sample.xml"
@@ -409,7 +409,7 @@ The next node or Null if there are none.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework text.xml
 Import brl.standardio
 
 Local docname:String = "sample.xml"
@@ -439,7 +439,7 @@ The previous node or Null if there are none.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework text.xml
 Import brl.standardio
 
 Local docname:String = "sample.xml"
@@ -479,7 +479,7 @@ A node or Null if no match was found.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 Import brl.standardio
 
 Local docname:String = "sample.xml"
@@ -514,7 +514,7 @@ Creates a new node element.
 
 #### Example
 ```blitzmax
-Framework brl.xml
+Framework text.xml
 Import brl.standardio
 
 Local doc:TxmlDoc = TxmlDoc.newDoc("1.0")

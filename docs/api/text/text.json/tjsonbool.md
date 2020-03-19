@@ -11,7 +11,7 @@ A JSON boolean.
 
 ### `Method Create:TJSONBool(v:Int)`
 
-Creates an instance of [TJSONBool](../../../brl/brl.json/tjsonbool) with <b>v</b>.
+Creates an instance of [TJSONBool](../../../text/text.json/tjsonbool) with <b>v</b>.
 
 <br/>
 

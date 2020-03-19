@@ -1,6 +1,6 @@
 ---
-id: brl.xml
-title: BRL.XML
+id: text.xml
+title: Text.XML
 sidebar_label: Introduction
 ---
 
@@ -8,9 +8,9 @@ sidebar_label: Introduction
 ## Types
 | Type | Description |
 |---|---|
-| [TxmlNode](../../brl/brl.xml/txmlnode) | An XML Node. |
-| [TxmlDoc](../../brl/brl.xml/txmldoc) | An XML Document. |
-| [TxmlAttribute](../../brl/brl.xml/txmlattribute) | An xml element attribute name/value pair. (read only) |
+| [TxmlNode](../../text/text.xml/txmlnode) | An XML Node. |
+| [TxmlDoc](../../text/text.xml/txmldoc) | An XML Document. |
+| [TxmlAttribute](../../text/text.xml/txmlattribute) | An xml element attribute name/value pair. (read only) |
 
 ## Methods
 

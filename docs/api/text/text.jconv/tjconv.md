@@ -22,7 +22,7 @@ The deserialized object.
 SuperStrict
 
 Framework brl.standardio
-Import brl.jconv
+Import Text.jconv
 
 ' a serialized object as json
 Local txt:String = "{~qposition~q:{~qx~q:100,~qy~q:50},~qspeed~q:{~qx~q:50,~qy~q:75}}"
@@ -59,7 +59,7 @@ Deserializes the specified JSON string into <b>obj</b>.
 SuperStrict
 
 Framework brl.standardio
-Import brl.jconv
+Import Text.jconv
 
 ' a serialized object as json
 Local txt:String = "{~qposition~q:{~qx~q:100,~qy~q:50},~qspeed~q:{~qx~q:50,~qy~q:75}}"
@@ -106,7 +106,7 @@ The JSON representation as a [String](../../../brl/brl.blitz/#string).
 SuperStrict
 
 Framework brl.standardio
-Import brl.jconv
+Import Text.jconv
 
 
 ' create a person with some data
@@ -175,7 +175,7 @@ The stream should be open and writeable.
 SuperStrict
 
 Framework brl.standardio
-Import brl.jconv
+Import Text.jconv
 
 
 ' create a person with some data

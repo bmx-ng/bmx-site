@@ -11,43 +11,43 @@ a JSON integer.
 
 ### `Method Create:TJSONInteger(v:Long)`
 
-Creates an instance of [TJSONInteger](../../../brl/brl.json/tjsoninteger) with <b>v</b>.
+Creates an instance of [TJSONInteger](../../../text/text.json/tjsoninteger) with <b>v</b>.
 
 <br/>
 
 ### `Method Create:TJSONInteger(v:Byte)`
 
-Creates an instance of [TJSONInteger](../../../brl/brl.json/tjsoninteger) with <b>v</b>.
+Creates an instance of [TJSONInteger](../../../text/text.json/tjsoninteger) with <b>v</b>.
 
 <br/>
 
 ### `Method Create:TJSONInteger(v:Short)`
 
-Creates an instance of [TJSONInteger](../../../brl/brl.json/tjsoninteger) with <b>v</b>.
+Creates an instance of [TJSONInteger](../../../text/text.json/tjsoninteger) with <b>v</b>.
 
 <br/>
 
 ### `Method Create:TJSONInteger(v:Int)`
 
-Creates an instance of [TJSONInteger](../../../brl/brl.json/tjsoninteger) with <b>v</b>.
+Creates an instance of [TJSONInteger](../../../text/text.json/tjsoninteger) with <b>v</b>.
 
 <br/>
 
 ### `Method Create:TJSONInteger(v:UInt)`
 
-Creates an instance of [TJSONInteger](../../../brl/brl.json/tjsoninteger) with <b>v</b>.
+Creates an instance of [TJSONInteger](../../../text/text.json/tjsoninteger) with <b>v</b>.
 
 <br/>
 
 ### `Method Create:TJSONInteger(v:ULong)`
 
-Creates an instance of [TJSONInteger](../../../brl/brl.json/tjsoninteger) with <b>v</b>.
+Creates an instance of [TJSONInteger](../../../text/text.json/tjsoninteger) with <b>v</b>.
 
 <br/>
 
 ### `Method Create:TJSONInteger(v:Size_T)`
 
-Creates an instance of [TJSONInteger](../../../brl/brl.json/tjsoninteger) with <b>v</b>.
+Creates an instance of [TJSONInteger](../../../text/text.json/tjsoninteger) with <b>v</b>.
 
 <br/>
 

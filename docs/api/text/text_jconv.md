@@ -1,13 +1,13 @@
 ---
-id: brl.jconv
-title: BRL.JConv
+id: text.jconv
+title: Text.JConv
 sidebar_label: Introduction
 ---
 
 
 ## Serialising with JConv
 
-In the context of [BRL.JConv](../brl/brl_jconv.md), serialisation is the mapping of BlitzMax objects to their JSON representation.
+In the context of [Text.JConv](../text/text_jconv.md), serialisation is the mapping of BlitzMax objects to their JSON representation.
 
 Take the following `TUser` type to start with :
 ```blitzmax
@@ -38,11 +38,11 @@ To convert a `TUser` to JSON, we first construct an instance of one for the user
 Local user:TUser = New TUser("bob", "bob@example.com", 30)
 ```
 
-In order to do the serialisation, we need an instance of [TJConv](../../brl/brl.jconv/tjconv) to do the conversion :
+In order to do the serialisation, we need an instance of [TJConv](../../text/text.jconv/tjconv) to do the conversion :
 ```blitzmax
 Local jconv:TJConv = New TJConvBuilder.Build()
 ```
-The next step is to call the [ToJson](../../brl/brl.jconv/tjconv/#method-tojsonstringobjobject) method of [TJConv](../../brl/brl.jconv/tjconv), passing the object we want to serialise :
+The next step is to call the [ToJson](../../text/text.jconv/tjconv/#method-tojsonstringobjobject) method of [TJConv](../../text/text.jconv/tjconv), passing the object we want to serialise :
 ```blitzmax
 Local json:String = jconv.ToJson(user)
 ```
@@ -50,7 +50,7 @@ The `json` [String](../../brl/brl.blitz/#string) contains the following value :
 ```json
 {"name": "bob", "email": "bob@example.com", "age": 30}
 ```
-Notice that [BRL.JConv](../brl/brl_jconv.md) respects the field types, wrapping Strings in quotes, but not so for numbers.
+Notice that [Text.JConv](../text/text_jconv.md) respects the field types, wrapping Strings in quotes, but not so for numbers.
 Just a single method call is required to do the conversion of the entire object. This is useful when
 working with more complex object structures.
 
@@ -59,7 +59,7 @@ Here's the example in full :
 SuperStrict
 
 Framework BRL.StandardIO
-Import BRL.JConv
+Import Text.JConv
 
 Local user:TUser = New TUser("bob", "bob@example.com", 30)
 
@@ -88,25 +88,25 @@ We'll start by creating a [String](../../brl/brl.blitz/#string) containing the J
 ```blitzmax
 Local json:String = "{~qname~q: ~qbob~q, ~qemail~q: ~qbob@example.com~q, ~qage~q: 30}"
 ```
-Again, we'll build an instance of [TJConv](../../brl/brl.jconv/tjconv) which will perform the conversion :
+Again, we'll build an instance of [TJConv](../../text/text.jconv/tjconv) which will perform the conversion :
 ```blitzmax
 Local jconv:TJConv = New TJConvBuilder.Build()
 ```
-Finally, we need to map the JSON to a BlitzMax [Object](../../brl/brl.blitz/#object) with [FromJson](../../brl/brl.jconv/tjconv/#method-fromjsonobjectjsonstring-typenamestring) :
+Finally, we need to map the JSON to a BlitzMax [Object](../../brl/brl.blitz/#object) with [FromJson](../../text/text.jconv/tjconv/#method-fromjsonobjectjsonstring-typenamestring) :
 ```blitzmax
 Local user:TUser = TUser(jconv.FromJson(json, "TUser"))
 ```
 Note that the second argument specifies the name of the [Type](../../brl/brl.blitz/#type) we want the [String](../../brl/brl.blitz/#string) to map the JSON to.
-Without this *hint*, [BRL.JConv](../brl/brl_jconv.md) wouldn't know what [Type](../../brl/brl.blitz/#type) to create from the text.
+Without this *hint*, [Text.JConv](../text/text_jconv.md) wouldn't know what [Type](../../brl/brl.blitz/#type) to create from the text.
 
-The `user` object returned from [FromJson](../../brl/brl.jconv/tjconv/#method-fromjsonobjectjsonstring-typenamestring) will have its fields populated accordingly.
+The `user` object returned from [FromJson](../../text/text.jconv/tjconv/#method-fromjsonobjectjsonstring-typenamestring) will have its fields populated accordingly.
 
 Here's the example in full :
 ```blitzmax
 SuperStrict
 
 Framework BRL.StandardIO
-Import BRL.JConv
+Import Text.JConv
 
 Local json:String = "{~qname~q: ~qbob~q, ~qemail~q: ~qbob@example.com~q, ~qage~q: 30}"
 
@@ -133,7 +133,7 @@ End Type
 
 ## Serialising Nested Objects
 
-[BRL.JConv](../brl/brl_jconv.md) can also handle the conversion of more complex objects that include the nesting of other non-primitive objects.
+[Text.JConv](../text/text_jconv.md) can also handle the conversion of more complex objects that include the nesting of other non-primitive objects.
 To demostrate this we will extend the `TUser` type to include an address, which will be represented by the `TAddress` [Type](../../brl/brl.blitz/#type) :
 ```blitzmax
 Type TUser
@@ -168,7 +168,7 @@ We'll initially create the required BlitzMax objects :
 Local address:TAddress = New TAddress("66 Some Street", "Someville", "Someland")
 Local user:TUser = New TUser("bob", "bob@example.com", 30, address)
 ```
-And then serialise the user with an instance of [TJConv](../../brl/brl.jconv/tjconv) :
+And then serialise the user with an instance of [TJConv](../../text/text.jconv/tjconv) :
 ```blitzmax
 Local jconv:TJConv = New TJConvBuilder.Build()
 Local json:String = jconv.ToJson(user)
@@ -177,7 +177,7 @@ The resulting conversion to JSON is :
 ```json
 {"name": "bob", "email": "bob@example.com", "age": 30, "address": {"line1": "66 Some Street", "city": "Someville", "country": "Someland"}}
 ```
-As you can see, [BRL.JConv](../brl/brl_jconv.md) has correctly nested the address inside the user as a JSON object.
+As you can see, [Text.JConv](../text/text_jconv.md) has correctly nested the address inside the user as a JSON object.
 
 ## Deserialising Nested Objects
 
@@ -276,7 +276,7 @@ Finally, we can use these types to de-serialise a matching JSON object, as shown
 SuperStrict
 
 Framework BRL.StandardIO
-Import BRL.JConv
+Import Text.JConv
 
 Local data:String = "{~qid~q:~qBER~q,~qcode~q:~qBER~q,~qname~q:~qBerlin Brandenburg~q,~qslug~q:~qberlin-brandenburg-berlin-germany~q,~qtimezone~q:~qEurope/Berlin~q,~qcity~q:{~qid~q:~qberlin_de~q,~qname~q:~qBerlin~q,~qcode~q:~qBER~q,~qslug~q:~qberlin-germany~q,~qcountry~q:{~qid~q:~qDE~q,~qname~q:~qGermany~q,~qslug~q:~qgermany~q,~qcode~q:~qDE~q},~qregion~q:{~qid~q:~qcentral-europe~q,~qname~q:~qCentral Europe~q,~qslug~q:~qcentral-europe~q},~qcontinent~q:{~qid~q:~qeurope~q,~qname~q:~qEurope~q,~qslug~q:~qeurope~q,~qcode~q:~qEU~q}},~qlocation~q:{~qlat~q:52.366667,~qlon~q:13.503333}}"
 
@@ -324,7 +324,7 @@ End Type
 ## Customising Field Names
 
 Occasionally, a JSON object will use a key that has the same name as a reserved keyword in BlitzMax. In that case, you are unable create a field
-using the desired name. Fortunately, [BRL.JConv](../brl/brl_jconv.md) allows you use metadata to specify the serialised name of a given field using the `serializedName`
+using the desired name. Fortunately, [Text.JConv](../text/text_jconv.md) allows you use metadata to specify the serialised name of a given field using the `serializedName`
 metadata property.
 
 Take the following JSON object as an example :
@@ -350,7 +350,7 @@ Here the example in full :
 SuperStrict
 
 Framework BRL.StandardIO
-Import BRL.JConv
+Import Text.JConv
 
 Local data:String = "{~qfield~q:~qhello~q,~qfor~q:~qever~q}"
 
@@ -386,7 +386,7 @@ Type TUser
 	Field age:int
 End Type
 ```
-`alternateName` is only available during deserialisation. [BRL.JConv](../brl/brl_jconv.md) will use either the [Field](../../brl/brl.blitz/#field) name or the `serializedName` when mapping a
+`alternateName` is only available during deserialisation. [Text.JConv](../text/text_jconv.md) will use either the [Field](../../brl/brl.blitz/#field) name or the `serializedName` when mapping a
 BlitzMax object to JSON.
 
 The following two sets of JSON would map to a `TUser` object and set the `name` [Field](../../brl/brl.blitz/#field) appropriately :
@@ -404,7 +404,7 @@ The following two sets of JSON would map to a `TUser` object and set the `name` 
 }
 ```
 
-If there are multiple fields in the JSON that match, [BRL.JConv](../brl/brl_jconv.md) will apply the value that is processed last. So, in the following example,
+If there are multiple fields in the JSON that match, [Text.JConv](../text/text_jconv.md) will apply the value that is processed last. So, in the following example,
 deserialising the JSON would result in the `name` [Field](../../brl/brl.blitz/#field) containing the value `userBob` :
 ```json
 {
@@ -420,7 +420,7 @@ If you don't want a field to be mapped to or from JSON there are some metadata p
 The first, `transient`, completely disables field from mapping in either direction.
 
 If you want more finer grained control, the metadata properties `noSerialize` and `noDeserialize` can be used instead.
-The `noSerialize` property instructs [BRL.JConv](../brl/brl_jconv.md) not to serialize a particular field to JSON, but it allows data from a JSON object to be
+The `noSerialize` property instructs [Text.JConv](../text/text_jconv.md) not to serialize a particular field to JSON, but it allows data from a JSON object to be
 deserialized into the [Field](../../brl/brl.blitz/#field).
 On the other hand, `noDeserialize` prevents data from a JSON object from deserializing into the [Field](../../brl/brl.blitz/#field), but does allow it to be serialized into
 a JSON object.
@@ -442,7 +442,7 @@ The following is a complete example of these properties in action :
 SuperStrict
 
 Framework BRL.StandardIO
-Import BRL.JConv
+Import Text.JConv
 
 Local user:TUser = New TUser("bob", "bob@example.com", 30, "xxxx")
 
@@ -478,26 +478,26 @@ End Type
 
 ## Configuring TJConv with the Builder
 
-You may have noticed, that by default [BRL.JConv](../brl/brl_jconv.md) serialises the JSON into a single line.
+You may have noticed, that by default [Text.JConv](../text/text_jconv.md) serialises the JSON into a single line.
 You can change this behaviour with one ofthe builder's configurable options.
 
-The builder uses what is known as a fluent interface, or method chaining design, where a sequence of method calls can be used to construct the [TJConv](../../brl/brl.jconv/tjconv) instance.
+The builder uses what is known as a fluent interface, or method chaining design, where a sequence of method calls can be used to construct the [TJConv](../../text/text.jconv/tjconv) instance.
 
-For example, the following builder creates an instance of [TJConv](../../brl/brl.jconv/tjconv) which will serialise objects to JSON with a decimal a precision of 2 places and compact objects :
+For example, the following builder creates an instance of [TJConv](../../text/text.jconv/tjconv) which will serialise objects to JSON with a decimal a precision of 2 places and compact objects :
 ```blitzmax
 Local jconv:TJConv = New TJConvBuilder.WithPrecision(2).WithCompact().Build()
 ```
 
 ### WithIndent
 
-The [WithIndent](../../brl/brl.jconv/tjconvbuilder/#method-withindenttjconvbuilderindentint) method of [TJConvBuilder](../../brl/brl.jconv/tjconvbuilder) specifies the number of spaces to use for indenting of nested objects. The default of 0 (zero)
+The [WithIndent](../../text/text.jconv/tjconvbuilder/#method-withindenttjconvbuilderindentint) method of [TJConvBuilder](../../text/text.jconv/tjconvbuilder) specifies the number of spaces to use for indenting of nested objects. The default of 0 (zero)
 means not to use pretty-printing.
 
 This is an example of `TUser` using the default options :
 ```json
 {"name": "Bob", "email": "bob@example.com", "age": 30}
 ```
-And this is an example of building with [WithIndent](../../brl/brl.jconv/tjconvbuilder/#method-withindenttjconvbuilderindentint) :
+And this is an example of building with [WithIndent](../../text/text.jconv/tjconvbuilder/#method-withindenttjconvbuilderindentint) :
 ```json
 {
   "name": "Bob",
@@ -508,12 +508,12 @@ And this is an example of building with [WithIndent](../../brl/brl.jconv/tjconvb
 
 ### WithCompact
 
-On the other hand, JSON can be compacted further using the [WithCompact](../../brl/brl.jconv/tjconvbuilder/#method-withcompacttjconvbuilder) method, which works to remove extra spaces :
+On the other hand, JSON can be compacted further using the [WithCompact](../../text/text.jconv/tjconvbuilder/#method-withcompacttjconvbuilder) method, which works to remove extra spaces :
 ```json
 {"name":"Bob","email":"bob@example.com","age":30}
 ```
 ### WithPrecision
-The representation of decimal numbers can be controlled by the [WithPrecision](../../brl/brl.jconv/tjconvbuilder/#method-withprecisiontjconvbuilderprecisionint) method, which specifies the maximum number of decimal places to used.
+The representation of decimal numbers can be controlled by the [WithPrecision](../../text/text.jconv/tjconvbuilder/#method-withprecisiontjconvbuilderprecisionint) method, which specifies the maximum number of decimal places to used.
 
 For example, the default representation of a [Type](../../brl/brl.blitz/#type) `TPoint` :
 ```blitzmax
@@ -534,17 +534,17 @@ Using a maximum precision of 3 (`WithPrecision(3)`), the resulting JSON would be
 ### WithEmptyArrays
 
 By default, [Null](../../brl/brl.blitz/#null)/empty arrays are not serialised at all. That is, the field is not included in the JSON object.
-The [WithEmptyArrays](../../brl/brl.jconv/tjconvbuilder/#method-withemptyarraystjconvbuilder) option can be enabled to generate an empty array (`[]`] instead.
+The [WithEmptyArrays](../../text/text.jconv/tjconvbuilder/#method-withemptyarraystjconvbuilder) option can be enabled to generate an empty array (`[]`] instead.
 
 ### WithBoxing
 
 Primitive numbers, by their very nature in BlitzMax, have no concept of nullability. JSON, conversely, can represent any field as a null value,
 either by simply not including it in the object, or by having the value `null`.
 
-To support this, [BRL.JConv](../brl/brl_jconv.md) provides an option to use "boxed" primitives in your types. A Boxed primitive is just an instance of a [Type](../../brl/brl.blitz/#type) that has
+To support this, [Text.JConv](../text/text_jconv.md) provides an option to use "boxed" primitives in your types. A Boxed primitive is just an instance of a [Type](../../brl/brl.blitz/#type) that has
 a value field of the appropriate numeric [Type](../../brl/brl.blitz/#type). Using a boxed primitive then allows a field to contain a value, or be [Null](../../brl/brl.blitz/#null).
 
-This feature is enabled by using the [WithBoxing](../../brl/brl.jconv/tjconvbuilder/#method-withboxingtjconvbuilder) option of the builder.
+This feature is enabled by using the [WithBoxing](../../text/text.jconv/tjconvbuilder/#method-withboxingtjconvbuilder) option of the builder.
 
 As an example, suppose there is a JSON object which has a numeric field `failures`. The schema specifies that this value can either be `null` or have a value
 greater than zero :
@@ -586,7 +586,7 @@ Here's a full example highlighting the use of boxing :
 SuperStrict
 
 Framework BRL.StandardIO
-Import BRL.JConv
+Import Text.JConv
 
 Local job1:TJob = New TJob("ABC123", 3, "overflow")
 Local job2:TBoxedJob = New TBoxedJob("DEF456", 0, Null)
@@ -640,7 +640,7 @@ Running the above example would result in the following output :
 ## Types
 | Type | Description |
 |---|---|
-| [TJConvBuilder](../../brl/brl.jconv/tjconvbuilder) | Creates an instance of [TJConv](../../brl/brl.jconv/tjconv) with custom settings. |
-| [TJConv](../../brl/brl.jconv/tjconv) | Serialises or deserializes objects to and from JSON. |
-| [TJConvSerializer](../../brl/brl.jconv/tjconvserializer) | Serializes BlitzMax type to JSON. |
+| [TJConvBuilder](../../text/text.jconv/tjconvbuilder) | Creates an instance of [TJConv](../../text/text.jconv/tjconv) with custom settings. |
+| [TJConv](../../text/text.jconv/tjconv) | Serialises or deserializes objects to and from JSON. |
+| [TJConvSerializer](../../text/text.jconv/tjconvserializer) | Serializes BlitzMax type to JSON. |
 

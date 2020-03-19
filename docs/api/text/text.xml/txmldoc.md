@@ -37,7 +37,7 @@ True on success, or Fales otherwise.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 Import BRL.StandardIO
 
 ' Create a new document
@@ -114,7 +114,7 @@ The resulting document tree.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 Import brl.standardio
 
 Local xml:String = LoadText("sample.xml")
@@ -140,7 +140,7 @@ The resulting document tree or Null if error.
 ```blitzmax
 SuperStrict
 
-Framework brl.xml
+Framework Text.xml
 Import brl.standardio
 Import brl.ramstream
 

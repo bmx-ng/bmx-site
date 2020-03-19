@@ -4,14 +4,14 @@ title: TJConvBuilder
 sidebar_label: TJConvBuilder
 ---
 
-Creates an instance of [TJConv](../../../brl/brl.jconv/tjconv) with custom settings.
+Creates an instance of [TJConv](../../../text/text.jconv/tjconv) with custom settings.
 
 
 ## Methods
 
 ### `Method Build:TJConv()`
 
-Builds the [TJConv](../../../brl/brl.jconv/tjconv) instance.
+Builds the [TJConv](../../../text/text.jconv/tjconv) instance.
 
 <br/>
 

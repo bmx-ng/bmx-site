@@ -11,13 +11,13 @@ A JSON real number.
 
 ### `Method Create:TJSONReal(v:Double)`
 
-Creates an instance of [TJSONReal](../../../brl/brl.json/tjsonreal) with <b>v</b>.
+Creates an instance of [TJSONReal](../../../text/text.json/tjsonreal) with <b>v</b>.
 
 <br/>
 
 ### `Method Create:TJSONReal(v:Float)`
 
-Creates an instance of [TJSONReal](../../../brl/brl.json/tjsonreal) with <b>v</b>.
+Creates an instance of [TJSONReal](../../../text/text.json/tjsonreal) with <b>v</b>.
 
 <br/>
 
