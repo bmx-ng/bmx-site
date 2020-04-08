@@ -46,7 +46,7 @@ for the SDL backend.
 | Requirement  | Command |
 |---|---|
 | Base  | ```sudo apt install g++ libglu1-mesa-dev libasound2-dev libfreetype6-dev libxpm-dev libxft-dev libxxf86vm-dev libpulse-dev libopenal-dev libwebkit2gtk-4.0-dev libgtk-3-dev``` |
-| SDL  | `sudo apt install libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxi-dev libxinerama-dev libxss-dev libgl1-mesa-dev libesd0-dev libdbus-1-dev libudev-dev`  |
+| SDL  | `sudo apt install libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxi-dev libxinerama-dev libxss-dev libgl1-mesa-dev libesd0-dev libdbus-1-dev libudev-dev libaudio-dev`  |
 
 #### Manjaro (18.04)
 
