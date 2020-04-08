@@ -118,15 +118,17 @@ class Downloads extends React.Component {
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.105.3.35.macos/BlitzMax_macos_0.105.3.35.zip">BlitzMax_macos_0.105.3.35.zip</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.121.3.42.macos/BlitzMax_macos_0.121.3.42.zip">BlitzMax_macos_0.121.3.42.zip</a>
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, 64-bit macOS edition.
-                                        Includes SDL backend and mojo2.
+                                        Includes SDL backend, mojo2, Crypto, Audio, Text and Steam.
+                                        <br/>
+                                        See the <strong><a href="https://github.com/bmx-ng/bmx-ng/releases/tag/v0.121.3.42.macos">Release Notes</a></strong> for setup information.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/apple.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.105.3.35.macos/BlitzMax_macos_0.105.3.35.zip`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.121.3.42.macos/BlitzMax_macos_0.121.3.42.zip`,
                                     title: "macOS"
                                 },
                                 {},
