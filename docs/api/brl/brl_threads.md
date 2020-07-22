@@ -55,8 +55,6 @@ A new thread object.
 
 #### Example
 ```blitzmax
-'Make sure to have 'Threaded build' enabled!
-'
 SuperStrict
 
 'Custom print that shows which thread is doing the printing
