@@ -16,7 +16,7 @@ Directories can be examined file by file using a combination of the
 [ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-path-), [NextFile](../../brl/brl.filesystem/#function-nextfile-dirbyte-ptr-) and [CloseDir](../../brl/brl.filesystem/#function-closedir-dirbyte-ptr-) commands, or [LoadDir](../../brl/brl.filesystem/#function-loaddir-dirskipdotsinttrue-) can be used to read the file names
 of a directory into a string array.
 
-File properties can be examined with the [FileType](../../brl/brl.filesystem/#function-filetypeint-path-), [FileTime](../../brl/brl.filesystem/#function-filetimeint-path-timetypeintfiletimemodified-), [FileSize](../../brl/brl.filesystem/#function-filesizelong-path-) and [FileMode](../../brl/brl.filesystem/#function-filemodeint-path-) commands.
+File properties can be examined with the [FileType](../../brl/brl.filesystem/#function-filetypeint-path-), [FileTime](../../brl/brl.filesystem/#function-filetimelong-path-timetypeintfiletimemodified-), [FileSize](../../brl/brl.filesystem/#function-filesizelong-path-) and [FileMode](../../brl/brl.filesystem/#function-filemodeint-path-) commands.
 
 Files and directories (folders) can be created and deleted with the [CreateFile](../../brl/brl.filesystem/#function-createfileint-path-), [CreateDir](../../brl/brl.filesystem/#function-createdirint-pathrecurseintfalse-)
 [DeleteFile](../../brl/brl.filesystem/#function-deletefileint-path-) and [DeleteDir](../../brl/brl.filesystem/#function-deletedirint-pathrecurseintfalse-) commands.
@@ -170,7 +170,7 @@ Print FileType("notfound.file")	' prints 0 for doesn't exist
 ```
 <br/>
 
-### `Function FileTime:Int( path$, timetype:Int=FILETIME_MODIFIED )`
+### `Function FileTime:Long( path$, timetype:Int=FILETIME_MODIFIED )`
 
 Get file time
 
@@ -448,7 +448,7 @@ Print "CurrentDir()="+CurrentDir()
 Open a directory
 
 #### Returns
-A directory handle, or 0 if the directory does not exist
+A directory handle, or Null if the directory does not exist
 
 
 #### Example

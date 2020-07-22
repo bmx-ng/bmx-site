@@ -889,6 +889,12 @@ Appends a [Double](../../../brl/brl.blitz/#double) value to the string builder u
 
 <br/>
 
+### `Method Hash:ULong()`
+
+Returns the calculated hash for the content of the string builder.
+
+<br/>
+
 ### `Method Left:String(length:Int)`
 
 Extracts the leftmost characters from the string builder.

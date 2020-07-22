@@ -15,21 +15,27 @@ Byte pointer to sample data
 
 <br/>
 
-### `Field length`
+### `Field length:Int`
 
 Length, in samples, of the sample data
 
 <br/>
 
-### `Field hertz`
+### `Field hertz:Int`
 
 Sample rate
 
 <br/>
 
-### `Field format`
+### `Field format:Int`
 
 Sample format
+
+<br/>
+
+### `Field capacity:Long`
+
+Allocated memory in bytes
 
 <br/>
 
@@ -45,7 +51,7 @@ A new audio sample object
 
 <br/>
 
-### `Method Convert:TAudioSample( to_format )`
+### `Method Convert:TAudioSample( to_format:Int )`
 
 Convert audio sample
 
@@ -57,7 +63,7 @@ A new audio sample object in the specified format
 
 ## Functions
 
-### `Function Create:TAudioSample( length,hertz,format )`
+### `Function Create:TAudioSample( length:Int,hertz:Int,format:Int )`
 
 Create an audio sample
 
@@ -67,7 +73,7 @@ A new audio sample object
 
 <br/>
 
-### `Function CreateStatic:TAudioSample( samples:Byte Ptr,length,hertz,format )`
+### `Function CreateStatic:TAudioSample( samples:Byte Ptr,length:Int,hertz:Int,format:Int )`
 
 Create a static audio sample
 

@@ -12,3 +12,8 @@ sidebar_label: Introduction
 | [SQuatF](../../brl/brl.quaternion/squatf) | A [Float](../../brl/brl.blitz/#float) backed Quaternion. |
 | [SQuatI](../../brl/brl.quaternion/squati) | An [Int](../../brl/brl.blitz/#int) backed Quaternion. |
 
+## Enums
+| Enum | Description |
+|---|---|
+| [ERotationOrder](../../brl/brl.quaternion/erotationorder) | The order in which to apply rotations. |
+

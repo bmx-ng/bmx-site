@@ -136,7 +136,7 @@ Returns a projection matrix with a viewing frustum defined by the plane coordina
 
 <br/>
 
-### `Function LookAt:SMat4F(eye:SVec3F, pos:SVec3F, up:SVec3F)`
+### `Function LookAt:SMat4F(eye:SVec3F, pos:SVec3F, upDir:SVec3F)`
 
 Computes a transformation matrix that corresponds to a camera viewing the <b>eye</b> from the <b>pos</b>.
 

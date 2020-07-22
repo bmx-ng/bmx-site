@@ -7,7 +7,7 @@ sidebar_label: BRL.Math
 
 ## Functions
 
-### `Function IsNan( x:Double )`
+### `Function IsNan:Int( x:Double )`
 
 Check if a value is NAN
 
@@ -20,7 +20,7 @@ True if <b>x</b> is 'not a number' (eg: Sqr(-1))
 SuperStrict
 
 For Local f:Float=-0.4 Until 0.4 Step 0.2
-    If IsNan(Sqr(f)) = True Then
+    If IsNan(Sqr(f)) Then
        Print "Square Root of "+f+" is not a real number"
     Else
        Print "Square Root of  "+f+" = "+Sqr(f)
@@ -57,7 +57,7 @@ Next
 ```
 <br/>
 
-### `Function IsInf( x:Double )`
+### `Function IsInf:Int( x:Double )`
 
 Check if a value is infinite (eg: 1.0/0.0)
 
@@ -70,7 +70,7 @@ True if <b>x</b> is infinite
 SuperStrict
 
 For Local f:Float=-0.4 Until 0.4 Step 0.2
-    If IsInf(1.0 / f) = True Then
+    If IsInf(1.0 / f) Then
        Print "Divide by Zero"
     Else
        Print "inverse of "+f+" = "+String(1.0/f)

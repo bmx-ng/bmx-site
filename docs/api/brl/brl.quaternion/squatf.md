@@ -35,6 +35,12 @@ Returns a new quaternion, negated.
 
 ## Methods
 
+### `Method AngleTo:Float(quat:SQuatF)`
+
+Returns the angle between ths quaternion and the quaternion <b>quat</b>.
+
+<br/>
+
 ### `Method Dot:Float(b:SQuatF)`
 
 The dot product between two rotations.
@@ -53,9 +59,31 @@ Interpolates between the SQuatF and <b>b</b> by <b>t</b> and normalizes the resu
 
 <br/>
 
+### `Method Length:Float()`
+
+Computes the length of this quaternion, considered as a 4 dimensional vector.
+
+<br/>
+
+### `Method LengthSquared:Float()`
+
+Computes the length of this quaternion, considered as a 4 dimensional vector.
+
+Calculating the squared length instead of the length is much faster.
+Often if you are comparing lengths of two quaternions you can just compare their squared lengths.
+
+
+<br/>
+
 ### `Method Normal:SQuatF()`
 
 Converts this quaternion to one with the same orientation but with a magnitude of 1.
+
+<br/>
+
+### `Method RotateTowards:SQuatF(quat:SQuatF, s:Float)`
+
+Rotates this quaternion by a given angular step <b>s</b> to the specified quaternion <b>quat</b>.
 
 <br/>
 
@@ -65,43 +93,40 @@ Spherically interpolates between this SQuatF and <b>b</b> by <b>t</b>.
 
 <br/>
 
-### `Method EulerXYZ:SQuatF(rot:SVec3F)`
+### `Method EulerRotate:SQuatF(rot:SVec3F, order:ERotationOrder = ERotationOrder.XYZ)`
 
 Returns a rotation that rotates around <b>rot</b>.
 
 <br/>
 
-### `Method EulerXZY:SQuatF(rot:SVec3F)`
+### `Method ToEuler:SVec3F(order:ERotationOrder = ERotationOrder.XYZ)`
 
-Returns a rotation that rotates around <b>rot</b>.
-
-<br/>
-
-### `Method EulerYXZ:SQuatF(rot:SVec3F)`
-
-Returns a rotation that rotates around <b>rot</b>.
+Returns the quaternion converted to Euler angles, using the specified rotation <b>order</b>.
 
 <br/>
 
-### `Method EulerYZX:SQuatF(rot:SVec3F)`
+### `Method ToString:String() Override`
 
-Returns a rotation that rotates around <b>rot</b>.
-
-<br/>
-
-### `Method EulerZXY:SQuatF(rot:SVec3F)`
-
-Returns a rotation that rotates around <b>rot</b>.
-
-<br/>
-
-### `Method EulerZYX:SQuatF(rot:SVec3F)`
-
-Returns a rotation that rotates around <b>rot</b>.
+Returns a [String](../../../brl/brl.blitz/#string) representation of the quaternion.
 
 <br/>
 
 ## Functions
+
+### `Function CreateFromEuler:SQuatF(euler:SVec3F, order:ERotationOrder = ERotationOrder.XYZ)`
+
+Creates a new [SQuatF](../../../brl/brl.quaternion/squatf) from the rotation specified by the <b>euler</b> angle and <b>order</b>.
+
+<br/>
+
+### `Function CreateFromRotation:SQuatF(mat:SMat4F)`
+
+Creates a new [SQuatD](../../../brl/brl.quaternion/squatd) from the rotation component of matrix <b>mat</b>.
+
+see http://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/index.htm
+
+
+<br/>
 
 ### `Function ToMat3:SMat3F(a:SQuatF)`
 

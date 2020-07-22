@@ -281,6 +281,15 @@ Clears any previous error message.
 
 <br/>
 
+### `Function SDLGetCPUCount:Int()`
+
+Returns the total number of logical CPU cores.
+
+On CPUs that include technologies such as hyperthreading, the number of logical cores may be more than the number of physical cores.
+
+
+<br/>
+
 ## Consts
 
 ### `Const SDL_APP_TERMINATING:Int         = $101`

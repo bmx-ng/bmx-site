@@ -29,7 +29,7 @@ Much of the functionality provided by this module is hidden from application pro
 
 ## Functions
 
-### `Function Max:Int(a:Int, b:Int)`
+### `Function Max:Int(a:Int, b:Int) Inline`
 
 Returns the larger of the two [Int](../../brl/brl.blitz/#int) arguments.
 
@@ -899,6 +899,16 @@ Determines whether the [Object](../../brl/brl.blitz/#object) <b>obj</b> is an em
 
 #### Returns
 [True](../../brl/brl.blitz/#true) if <b>obj</b> is an empty [String](../../brl/brl.blitz/#string), or [False](../../brl/brl.blitz/#false) otherwise.
+
+
+<br/>
+
+### `Function ObjectIsString:Int(obj:Object)`
+
+Determines whether the [Object](../../brl/brl.blitz/#object) <b>obj</b> is a [String](../../brl/brl.blitz/#string).
+
+#### Returns
+[True](../../brl/brl.blitz/#true) if <b>obj</b> is a [String](../../brl/brl.blitz/#string), or [False](../../brl/brl.blitz/#false) otherwise.
 
 
 <br/>
@@ -3346,6 +3356,18 @@ Allocates memory from the stack.
 This memory is automatically freed on leaving the function where it was created.
 It should not be freed, or returned from the function.
 
+
+<br/>
+
+### `FieldOffset`
+
+Returns the offset in bytes for a field of the specified [Type](../../brl/brl.blitz/#type) or [Struct](../../brl/brl.blitz/#struct).
+
+<br/>
+
+### `StaticArray`
+
+Denotes an array as a static array, with its content allocated on the stack.
 
 <br/>
 

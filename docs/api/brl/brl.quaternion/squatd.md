@@ -13,7 +13,7 @@ They are compact, don't suffer from gimbal lock and can easily be interpolated.
 
 ## Constructors
 
-### `Method New(x:Double, y:Double, z:Double, w:Double)`
+### `Method New(x:Double, y:Double, z:Double, w:Double = 1)`
 
 Creates a new [SQuatD](../../../brl/brl.quaternion/squatd) from the supplied arguments.
 
@@ -35,6 +35,12 @@ Returns a new quaternion, negated.
 
 ## Methods
 
+### `Method AngleTo:Double(quat:SQuatD)`
+
+Returns the angle between ths quaternion and the quaternion <b>quat</b>.
+
+<br/>
+
 ### `Method Dot:Double(b:SQuatD)`
 
 The dot product between two rotations.
@@ -53,9 +59,31 @@ Interpolates between the SQuatD and <b>b</b> by <b>t</b> and normalizes the resu
 
 <br/>
 
+### `Method Length:Double()`
+
+Computes the length of this quaternion, considered as a 4 dimensional vector.
+
+<br/>
+
+### `Method LengthSquared:Double()`
+
+Computes the length of this quaternion, considered as a 4 dimensional vector.
+
+Calculating the squared length instead of the length is much faster.
+Often if you are comparing lengths of two quaternions you can just compare their squared lengths.
+
+
+<br/>
+
 ### `Method Normal:SQuatD()`
 
 Converts this quaternion to one with the same orientation but with a magnitude of 1.
+
+<br/>
+
+### `Method RotateTowards:SQuatD(quat:SQuatD, s:Double)`
+
+Rotates this quaternion by a given angular step <b>s</b> to the specified quaternion <b>quat</b>.
 
 <br/>
 
@@ -65,43 +93,40 @@ Spherically interpolates between this SQuatD and <b>b</b> by <b>t</b>.
 
 <br/>
 
-### `Method EulerXYZ:SQuatD(rot:SVec3D)`
+### `Method EulerRotate:SQuatD(rot:SVec3D, order:ERotationOrder = ERotationOrder.XYZ)`
 
 Returns a rotation that rotates around <b>rot</b>.
 
 <br/>
 
-### `Method EulerXZY:SQuatD(rot:SVec3D)`
+### `Method ToEuler:SVec3D(order:ERotationOrder = ERotationOrder.XYZ)`
 
-Returns a rotation that rotates around <b>rot</b>.
-
-<br/>
-
-### `Method EulerYXZ:SQuatD(rot:SVec3D)`
-
-Returns a rotation that rotates around <b>rot</b>.
+Returns the quaternion converted to Euler angles, using the specified rotation <b>order</b>.
 
 <br/>
 
-### `Method EulerYZX:SQuatD(rot:SVec3D)`
+### `Method ToString:String() Override`
 
-Returns a rotation that rotates around <b>rot</b>.
-
-<br/>
-
-### `Method EulerZXY:SQuatD(rot:SVec3D)`
-
-Returns a rotation that rotates around <b>rot</b>.
-
-<br/>
-
-### `Method EulerZYX:SQuatD(rot:SVec3D)`
-
-Returns a rotation that rotates around <b>rot</b>.
+Returns a [String](../../../brl/brl.blitz/#string) representation of the quaternion.
 
 <br/>
 
 ## Functions
+
+### `Function CreateFromEuler:SQuatD(euler:SVec3D, order:ERotationOrder = ERotationOrder.XYZ)`
+
+Creates a new [SQuatD](../../../brl/brl.quaternion/squatd) from the rotation specified by the <b>euler</b> angle and <b>order</b>.
+
+<br/>
+
+### `Function CreateFromRotation:SQuatD(mat:SMat4D)`
+
+Creates a new [SQuatD](../../../brl/brl.quaternion/squatd) from the rotation component of matrix <b>mat</b>.
+
+see http://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/index.htm
+
+
+<br/>
 
 ### `Function ToMat3:SMat3D(a:SQuatD)`
 

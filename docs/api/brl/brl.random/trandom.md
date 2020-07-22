@@ -12,23 +12,9 @@ By creating multiple TRandom objects, multiple independent
 random number generators can be used in parallel.
 
 
-## Constructors
-
-### `Method New()`
-
-Create a new random number generator
-
-<br/>
-
-### `Method New(seed:Int)`
-
-Create a new random number generator with the specified seed
-
-<br/>
-
 ## Methods
 
-### `Method RndFloat:Float()`
+### `Method RndFloat:Float() Abstract`
 
 Generate random float
 
@@ -66,7 +52,7 @@ Print "    Exact probability = " + ( 15.0 / 29.0 )
 ```
 <br/>
 
-### `Method RndDouble:Double()`
+### `Method RndDouble:Double() Abstract`
 
 Generate random double
 
@@ -104,7 +90,7 @@ Print "    Exact probability = " + ( 15.0 / 29.0 )
 ```
 <br/>
 
-### `Method Rnd:Double(minValue:Double = 1, maxValue:Double = 0)`
+### `Method Rnd:Double(minValue:Double = 1, maxValue:Double = 0) Abstract`
 
 Generate random double
 
@@ -144,12 +130,12 @@ Print "    Exact area = " + Pi     '  4 * Pi/4, compare with estimate
 ```
 <br/>
 
-### `Method Rand:Int(minValue:Int, maxValue:Int = 1)`
+### `Method Rand:Int(minValue:Int, maxValue:Int = 1) Abstract`
 
 Generate random integer
 
 
-The optional parameter allows you to use [Rand](../../../brl/brl.random/trandom/#method-randintminvalueint-maxvalueint-1) in 2 ways:
+The optional parameter allows you to use [Rand](../../../brl/brl.random/trandom/#method-randintminvalueint-maxvalueint-1-abstract) in 2 ways:
 
 <table><tr><td> <b>Format</b></td><td><b>Result</b></td></tr><tr><td>  `Rand(x)`</td><td>Random integer in the range 1 to x (inclusive)</td></tr><tr><td>  `Rand(x,y)`</td><td>Random integer in the range x to y (inclusive)</td></tr></table>
 
@@ -180,7 +166,7 @@ Next
 ```
 <br/>
 
-### `Method SeedRnd(seed:Int)`
+### `Method SeedRnd(seed:Int) Abstract`
 
 Set random number generator seed
 
@@ -211,7 +197,7 @@ Next
 ```
 <br/>
 
-### `Method RndSeed:Int()`
+### `Method RndSeed:Int() Abstract`
 
 Get random number generator seed
 

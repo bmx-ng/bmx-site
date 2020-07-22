@@ -17,7 +17,7 @@ use with the BlitzMax [BRL.Audio](../brl/brl_audio.md) module.
 
 ## Functions
 
-### `Function CreateAudioSample:TAudioSample( length,hertz,format )`
+### `Function CreateAudioSample:TAudioSample( length:Int,hertz:Int,format:Int )`
 
 Create an audio sample
 
@@ -59,7 +59,7 @@ Input
 ```
 <br/>
 
-### `Function CreateStaticAudioSample:TAudioSample( samples:Byte Ptr,length,hertz,format )`
+### `Function CreateStaticAudioSample:TAudioSample( samples:Byte Ptr,length:Int,hertz:Int,format:Int )`
 
 Create an audio sample with existing data
 
@@ -67,7 +67,7 @@ Create an audio sample with existing data
 The memory referenced by a static audio sample is not released when the audio sample is
 deleted.
 
-See [CreateAudioSample](../../brl/brl.audiosample/#function-createaudiosampletaudiosample-lengthhertzformat-) for possile <b>format</b> values.
+See [CreateAudioSample](../../brl/brl.audiosample/#function-createaudiosampletaudiosample-lengthinthertzintformatint-) for possile <b>format</b> values.
 
 
 #### Returns
