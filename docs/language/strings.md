@@ -13,6 +13,7 @@ Strings provide the following methods:
 |---|---|
 | `Find:Int( subString:String,startIndex=0 )` | Finds first occurance of a sub string. Returns -1 if **subString** not found. |
 | `FindLast:Int( subString:String,startIndex=0 )` | Finds last occurance of a sub string. Returns -1 if **subString** not found. |
+| `Hash:ULong()` | Returns the calculated hash for the string. |
 | `Trim:String()` | Removes leading and trailing non-printable characters from a string. |
 | `Replace:String( subString:String,withString:String )` | Replaces all occurances of **subString** with **withString**. |
 | `StartsWith:Int( subString:String )` | Returns true if string starts with **subString**. |
