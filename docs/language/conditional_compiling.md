@@ -13,7 +13,11 @@ Conditional compiling works a bit like an [If] statement, but takes the form:
 ?Identifier
 ```
 
-The `?` must appear at the start of a new line, and `Identifier` should be one of the following:
+The `?` must appear at the start of a new line, and `Identifier` should be one of the built-in or custom  identifiers.
+
+## Built-in Identifiers
+
+The following is a list of BlitzMax's built-in conditional compiler identifiers:
 
 | Name  | Meaning  |
 |---|---|
@@ -23,27 +27,29 @@ The `?` must appear at the start of a new line, and `Identifier` should be one o
 | Win32  | True if program is being compiled for the Windows operating system.  |
 | Win32x86  | True if program is being compiled for 32-bit Windows operating system.  |
 | Win64  | True if program is being compiled for 64-bit Windows operating system.  |
-| Win32x64  | Same as above  |
+| Win32x64  | True if program is being compiled for 64-bit Windows operating system.  |
 | MacOS  | True if program is being compiled for the macOS or iOS operating system.  |
-| MacOSX86  | True if program is being compiled for an 32-bit macOS or iOS operating system.  |
-| MacOSX64  | True if program is being compiled for an 64-bit macOS or iOS operating system.  |
+| MacOSX86  | True if program is being compiled for an 32-bit x86 macOS or iOS operating system.  |
+| MacOSX64  | True if program is being compiled for an 64-bit x64 macOS or iOS operating system.  |
+| MacOSarm64  | True if program is being compiled for an Arm64 (silicon) macOS or iOS operating system.  |
 | MacOSPPC  | True if program is being compiled for a PowerPC macOS or iOS operating system.  |
-| osx  | True if program is being compiled for a Mac.  |
-| osxx86  | True if program is being compiled for a 32-bit Intel Mac.  |
-| osxppc  | True if program is being compiled for a PowerPC Mac.  |
-| osxx64  | True if program is being compiled for a 64-bit Intel Mac.  |
-| ios  | True if program is being compiled for an iPhone.  |
-| iosx86  | True if program is being compiled for a 32-bit iPhone.  |
-| iosx64  | True if program is being compiled for a 64-bit iPhone.  |
-| iosarmv7  | True if program is being compiled for a ArmV7 iPhone.  |
-| iosarm64  | True if program is being compiled for an Arm64 iPhone.  |
+| osx  | True if program is being compiled for macOS. |
+| osxx86  | True if program is being compiled for a 32-bit x86 macOS. |
+| osxppc  | True if program is being compiled for a PowerPC macOS. |
+| osxx64  | True if program is being compiled for a 64-bit x64 macOS. |
+| osxarm64  | True if program is being compiled for a Arm64 (silicon) macOS. |
+| ios  | True if program is being compiled for iOS. |
+| iosx86  | True if program is being compiled for 32-bit x86 iOS. |
+| iosx64  | True if program is being compiled for 64-bit x64 iOS. |
+| iosarmv7  | True if program is being compiled for a ArmV7 iOS device. |
+| iosarm64  | True if program is being compiled for an Arm64 iOS device. |
 | Linux  | True if program is being compiled for the Linux operating system.  |
-| LinuxX86  | True if program is being compiled for 32-bit Linux operating system.  |
-| LinuxX64  | True if program is being compiled for 64-bit Linux operating system.  |
+| LinuxX86  | True if program is being compiled for 32-bit x86 Linux operating system.  |
+| LinuxX64  | True if program is being compiled for 64-bit x64 Linux operating system.  |
 | LinuxARM  | True if program is being compiled for Linux operating system running on ARM processors.  |
 | android  | True if program is being compiled for android.  |
-| androidx86  | True if program is being compiled for 32-bit android.  |
-| androidx64  | True if program is being compiled for 64-bit android.  |
+| androidx86  | True if program is being compiled for 32-bit x86 android. |
+| androidx64  | True if program is being compiled for 64-bit x64 android. |
 | androidarm  | True if program is being compiled for android running on any ARM processor.  |
 | androidarmeabi  | True if program is being compiled for android running on ARMeabi processor.  |
 | androidarmeabiv7a  | True if program is being compiled for android running on ARMeabi-v7a processor.  |
@@ -73,7 +79,9 @@ The `?` must appear at the start of a new line, and `Identifier` should be one o
 
 An `?` on its own always turns compiling on.
 
-BlitzMax-NG also allows for **conditional expressions** such as `?x64 and raspberrypi`
+## Conditional Expressions
+
+BlitzMax-NG also allows for **conditional expressions** such as `?x64 and raspberrypi`, where several identifiers can be chained together using `and`, `or` and `not`
 
 For example:
 
