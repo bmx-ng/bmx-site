@@ -4,7 +4,14 @@ title: Arrays
 sidebar_label: Arrays
 ---
 
-Arrays are used to store sequences of variables, or elements. An element within an array is accessed by indexing the
+Arrays are used to store sequences of variables, or elements. 
+
+There are two kinds of array in BlitzMax:
+* **dynamic arrays** are multi-dimensional, managed objects.
+* **static arrays** are of a fixed size and a single dimension. Its length is specified as a  constant value as part of the declaration.
+Static arrays are allocated on the stack and not managed by the garbage collector. 
+
+An element within an array is accessed by indexing the
 array with an integer offset.
 
 The general syntax for indexing an array is:
@@ -13,18 +20,20 @@ The general syntax for indexing an array is:
 ArrayExpression [ index1 , index2 etc... ]
 ```
 
+# Dynamic Arrays
+
 ## Creating Arrays
 
-The most common way to create an array is when declaring a variable:
+The most common way to create a dynamic array is when declaring a variable.
 
 ```blitzmax
-Local int_array[10]
+Local int_array:Int[10]
 ```
 
-This will initialize the int_array variable with a 10 element array. You can declare an **empty** array by using []:
+This will initialize the `int_array` variable with a 10 element array. You can declare an **empty** array by using []:
 
 ```
-Local int_array[]
+Local int_array:Int[]
 ```
 
 An empty array is identical to an array with 0 elements.
@@ -51,7 +60,7 @@ int_array = New Int[10]
 This returns a one dimensional array containing the specified elements, for example:
 
 ```blitzmax
-Local int_array[] = [1,2,3,4,5]
+Local int_array:Int[] = [1,2,3,4,5]
 ```
 
 Each element of an auto array must have exactly the same type. If necessary, you can use type conversions to enforce this.
@@ -194,6 +203,10 @@ So for example `Int[10,5].Dimensions()` would return `Int[2]` equal to the auto 
 
 ## Array Fields
 
+### `Field Length:Int`
+
+Returns an Int value indicating the size of the array.
+
 ### `Field numberOfDimensions:Int`
 
 Returns an Int value indicating the number of dimensions in the array.
@@ -202,8 +215,8 @@ Returns an Int value indicating the number of dimensions in the array.
 
 Byte Ptr to a value representing the data type of the array elements.
 
-Type encoding will return one of the following: TYPE_BYTE, TYPE_SHORT, TYPE_INT, TYPE_FLOAT,
-TYPE_LONG, TYPE_DOUBLE, TYPE_STRING, TYPE_OBJECT, TYPE_ARRAY, TYPE_POINTER.
+Type encoding will return one of the following: TYPE_BYTE, TYPE_SHORT, TYPE_INT, TYPE_UINT, TYPE_FLOAT,
+TYPE_LONG, TYPE_ULONG, TYPE_DOUBLE, TYPE_SIZET, TYPE_STRING, TYPE_OBJECT, TYPE_ARRAY, TYPE_POINTER.
 
 ### `Field sizeMinusHeader:Int`
 
@@ -244,7 +257,80 @@ For Local i:Int = EachIn myArray[5..]
 Next
 ```
 
+# Static Arrays
+
+Because a static array is allocated on the stack, their use is more suited to smaller array sizes. Creating static arrays of significant sizes could easily fill the stack and crash the application.
+
+Static arrays are one dimensional.
+
+A static array declaration requires the [StaticArray] property and a fixed length:
+
+```blitzmax
+Local StaticArray int_array:Int[10]
+```
+This will initialize the `int_array` variable with a 10 element fixed-length array.
+
+> Note that a static array **must** declare a length at creation using a constant value.
+
+Static array variables cannot be assigned another static array. Only the contents of the array may be changed.
+
+For example, the following code will fail to compile :
+```blitzmax
+Local StaticArray a1:Float[5]
+Local StaticArray a2:Float[5]
+
+a2 = a1 ' <-- cannot assign a static array
+```
+
+When provided as an argument to a function or method, a static array must be declared using the standard notation : 
+```blitzmax
+Function myFunc(StaticArray an_array:Int[10])
+...
+End Function
+```
+Attempting to pass a static array of a different length will result in an error.
+
+When a static array is passed into a function or method, any changes made to the contents of the  array will be reflected in the original array. For example:
+```blitzmax
+SuperStrict
+
+Framework BRL.StandardIO
+
+Local StaticArray arr:Int[10]
+process(arr)
+For Local i:Int = 0 Until arr.Length
+    Print i + " = " + arr[i]
+Next 
+
+Function process(StaticArray arr:Int[10])
+    For Local i:Int = 0 Until arr.Length
+        arr[i] = i
+    Next
+End Function
+```
+will print
+```
+0 = 0
+1 = 1
+2 = 2
+3 = 3
+4 = 4
+5 = 5
+6 = 6
+7 = 7
+8 = 8
+9 = 9
+```
+
+## Array Fields
+
+### `Field Length:Int`
+
+Returns an Int value indicating the size of the array.
+
+
 [Null]: ../../api/brl/brl.blitz/#null
 [For]: ../../api/brl/brl.blitz/#for
 [Eachin]: ../../api/brl/brl.blitz/#eachin
 [New]: ../../api/brl/brl.blitz/#new
+[StaticArray]: ../../api/brl/brl.blitz/#staticarray
