@@ -94,7 +94,109 @@ If hello <> help Then
 End If
 ```
 
-[TStringMap] uses string hashes as the key. Depending on the data in use, this can result in improved performance over a [TMap] (which relies on string `Compare()`), for example. 
+##  Multiline String Blocks
+A multiline string block allows you to easily create strings spanning several lines - for example:
+```blitzmax
+Local txt:String = """
+  {
+    "name" : "Bob"
+    "distance" : 150
+  }
+  """
+```
+Which is the equivalent to the following string creation:
+```blitzmax
+Local oldtxt:String = "{~n" + ..
+    "  ~qname~q : ~qBob~q~n" + ..
+    "  ~distance~q : 150~n" + ..
+    "}"
+```
+As you can see, a multiline string block is more natural and less clumsy, and is more representative of the final string.
+
+A multiline string block starts with three double-quote characters (`"""`) followed by a new line.
+It ends with a new line, followed by optional whitespace, and three more double-quote characters (`"""`).
+
+The following prints a multiline string of zero length:
+```blitzmax
+Print """
+"""
+```
+
+You cannot put a multiline string block on a single line, nor can the contents of
+the string block follow the three opening double-quotes without a new line.
+
+The following are examples of invalid multiline strings, and produce compilation errors:
+```blitzmax
+Local txt:String = """ """
+
+Local txt2:String = """"""
+
+Local txt3:String = """
+hello"""
+```
+
+A multiline string can be used anywhere a normal string would typically be used, although in some places it may make the surrounding code intentions less clear:
+```blitzmax
+For Local s:String = EachIn """
+		A
+		B
+		C
+		D
+		E
+		F
+		G
+		""".Split("~n")
+	Print s
+Next
+```
+
+### Whitespace
+Leading and trailing whitespace is removed from each line of a multiline string.
+
+The whitespace defined on the line with the closing quotes denotes the common leading whitespace that will be removed from the rest of the string.
+
+For example:
+```blitzmax
+Print """
+    <?xml version="1.0"/>
+    <root>
+        <line>
+        </line>
+    </root>
+    """ ' <- whitespace from the start of this line defines the common indentation
+```
+will print:
+```
+<?xml version="1.0"/>
+<root>
+    <line>
+    </line>
+</root>
+```
+
+### Line Endings
+Line endings are normalized, meaning that all line endings are converted to the "line feed" (`~n` / `Chr(10)`) character.
+
+This step is performed before escaped (`~`) characters are analyzed, allowing the use of other line ending characters within the final string.
+
+If the line continuation character (`/`) appears at the end of a line, the usual line ending is skipped, and the following line is appended instead.
+
+For example:
+```blitzmax
+Print """
+One
+Two \
+and a half
+Three
+"""
+```
+will print:
+```
+One
+Two and a half
+Three
+```
+
 
 [MemFree]: ../../api/brl/brl.blitz/#memfree
 [TStringMap]: ../../api/brl/brl.map/tstringmap
