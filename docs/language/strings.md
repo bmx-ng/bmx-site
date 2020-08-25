@@ -179,7 +179,7 @@ Line endings are normalized, meaning that all line endings are converted to the 
 
 This step is performed before escaped (`~`) characters are analyzed, allowing the use of other line ending characters within the final string.
 
-If the line continuation character (`/`) appears at the end of a line, the usual line ending is skipped, and the following line is appended instead.
+If the line continuation character (`\`) appears at the end of a line, the usual line ending is skipped, and the following line is appended instead.
 
 For example:
 ```blitzmax
