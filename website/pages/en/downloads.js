@@ -49,7 +49,7 @@ class Downloads extends React.Component {
                                          </strong>
                                         <br/><br/>
                                         Windows edition, with both x86 and x64 MinGW-w64 8.1.0-rev0 distributions.
-                                        Includes SDL backend, mojo2, Crypto, Random, Audio and Steam.
+                                        Includes SDL backend, mojo2, Crypto, Audio, Random, Text and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
@@ -63,7 +63,7 @@ class Downloads extends React.Component {
                                          </strong>
                                         <br/><br/>
                                         Windows edition, aimed at x64 development, with x64 MinGW-w64 8.1.0-rev0.
-                                        Includes SDL backend, mojo2, Crypto, Random, Audio and Steam.
+                                        Includes SDL backend, mojo2, Crypto, Audio, Random, Text and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
@@ -77,7 +77,7 @@ class Downloads extends React.Component {
                                          </strong>
                                         <br/><br/>
                                         Windows edition, aimed at x86 development, with x86 MinGW-w64 8.1.0-rev0.
-                                        Includes SDL backend, mojo2, Crypto, Random, Audio and Steam.
+                                        Includes SDL backend, mojo2, Crypto, Audio, Random, Text and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
@@ -147,7 +147,7 @@ class Downloads extends React.Component {
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, RaspberryPi edition, aimed at 32-bit ARM development, with MaxIDE.
-                                        Includes SDL backend, mojo2, Crypto, Random, Audio and Gtk MaxGUI.
+                                        Includes SDL backend, mojo2, Crypto, Audio, Random, Text and Gtk MaxGUI.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/rpi.svg`,
                                     imageAlign: "top",
