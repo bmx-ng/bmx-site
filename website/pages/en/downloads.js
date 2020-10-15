@@ -95,7 +95,7 @@ class Downloads extends React.Component {
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.128.3.45.linux.x64/BlitzMax_linux_x64_0.128.3.45.tar.xz">BlitzMax_linux_x64_0.128.3.45.tar.xz</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.129.3.45.linux.x64/BlitzMax_linux_x64_0.129.3.45.tar.xz">BlitzMax_linux_x64_0.129.3.45.tar.xz</a>
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, Linux edition, aimed at x64 development, with x64 MaxIDE.
@@ -103,7 +103,7 @@ class Downloads extends React.Component {
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/linux.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.128.3.45.linux.x64/BlitzMax_linux_x64_0.128.3.45.tar.xz`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.129.3.45.linux.x64/BlitzMax_linux_x64_0.129.3.45.tar.xz`,
                                     title: "Linux x64"
                                 },
                                 {},
