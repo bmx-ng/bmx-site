@@ -66,7 +66,7 @@ for the SDL backend.
 
 | Requirement | Command |
 |---|---|
-| Base  | `sudo dnf install gcc-c++ alsa-lib-devel pulseaudio-libs-devel freetype-devel mesa-libGLU-devel gtk3-devel webkit2gtk3-devel` |
+| Base  | `sudo dnf install gcc-c++ alsa-lib-devel pulseaudio-libs-devel freetype-devel mesa-libGLU-devel gtk3-devel webkit2gtk3-devel libXxf86vm-devel` |
 | SDL   | `sudo dnf install dbus-devel libudev-devel libXScrnSaver-devel nas-devel` |
 
 ## 64 or 32-bit
