@@ -113,7 +113,7 @@ The rules governing type balancing are:
 [Float]: ../../api/brl/brl.blitz/#float
 [Double]: ../../api/brl/brl.blitz/#double
 [String]: ../../api/brl/brl.blitz/#string
-[Size_T]: ../../api/brl/brl.blitz/#size-t
+[Size_T]: ../../api/brl/brl.blitz/#size_t
 [Float64]: ../../api/brl/brl.blitz/#float64
 [Int128]: ../../api/brl/brl.blitz/#int128
 [Float128]: ../../api/brl/brl.blitz/#float128
