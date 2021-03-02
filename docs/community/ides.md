@@ -24,6 +24,11 @@ Topic: http://mojolabs.nz/posts.php?topic=98327
 Repo: https://github.com/GWRon/blitzmax-geany-plugin
 
 
+## Emacs extension
+Site: https://www.sodaware.net/dev/tools/blitzmax-mode/
+
+Repo: https://github.com/sodaware/blitzmax-mode
+
 
 # Unmaintained
 
