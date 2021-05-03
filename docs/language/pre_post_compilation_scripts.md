@@ -40,8 +40,9 @@ after which time you can "pop" it back to its old state. Handy for on-the-fly tw
 
 And "make" compiles the source file specified.
 
-Again, the all these commands are defined in core.bmk and make.bmk
+Again, all these commands are defined in core.bmk and make.bmk
 
+If you add a "pre.bmk" file into the same directory as your BlitzMax source (*.bmx) file, then the Lua script in it will automatically be run when you call that source file using bmk, before the .bmx file itself is compiled.
 
 ## Post-Compilation Scripts
 

@@ -4,7 +4,7 @@ title: BlitzMax Make (bmk)
 sidebar_label: BlitzMax Make (bmk)
 ---
 
-`bmk` is used to build BlitzMax applications and modules. It scans source files for imports and build options. Next to feeding information to [`bcc`](bcc) it is also executing scripts before and after building projects (see "scripts" section).
+`bmk` is used to build BlitzMax applications and modules. It scans source files for imports and build options. Next to feeding information to [`bcc`](bcc) it is also executing scripts before and after building projects (see ["scripts" page](https://blitzmax.org/docs/en/language/pre_post_compilation_scripts/), which also explains the automated `pre.bmk` and `post.bmk` scripts).
 
 ## Command line syntax
 
