@@ -103,6 +103,7 @@ class Index extends React.Component {
                     <Container padding={["bottom", "top"]}>
                         <GridBlock
                             align="center"
+                            className="indexPageGrid"
                             contents={[
                                 {
                                     content:
@@ -117,19 +118,21 @@ class Index extends React.Component {
 `,
                                     image: `${siteConfig.baseUrl}img/devices.svg`,
                                     imageAlign: "top",
-                                    imageLink: `${siteConfig.baseUrl}docs/setup/${this.props.language}/get_started/`,
+                                    imageLink: `${siteConfig.baseUrl}docs/${language}/setup/get_started`,
                                     title: "Cross-platform"
                                 },
                                 {
                                     content:
-                                        `The BlitzMax community have developed scores of great cross-platform drop-in modules, from game-coding frameworks to database connectivity.`,
+                                        `The BlitzMax community have developed scores of great cross-platform drop-in <a href=${siteConfig.baseUrl}community/resources>modules</a>, from game-coding frameworks to database connectivity.`,
                                     image: `${siteConfig.baseUrl}img/network.svg`,
                                     imageAlign: "top",
+                                    imageLink: `${siteConfig.baseUrl}docs/${language}/api/intro`,
                                     title: "Modular"
                                 },
                                 {
                                     content:
-                                        `BlitzMax users are friendly, creative, helpful and welcoming to all.<br/>`,
+                                        `BlitzMax users are friendly, creative, helpful and welcoming to all.
+                                         Checkout what they <a href=${siteConfig.baseUrl}showcase>created</a> or maybe just have a <a href='https://discord.gg/DrrVwhz'>chat</a> with them.`,
                                     image: `${siteConfig.baseUrl}img/group.svg`,
                                     imageAlign: "top",
                                     imageLink: `${siteConfig.baseUrl}docs/${this.props.language}/community/resources/`,

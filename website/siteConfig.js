@@ -33,6 +33,7 @@ const siteConfig = {
         {doc: 'setup/get_started', label: 'Docs'},
         {doc: 'api/intro', label: 'API'},
         {doc: 'community/resources', label: 'Resources'},
+        {page: 'showcase', label: 'Showcase'},
         {doc: 'site/about', label: 'About'},
     ],
 

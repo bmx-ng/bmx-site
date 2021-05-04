@@ -49,6 +49,9 @@ class Footer extends React.Component {
             <a href={this.docUrl('community/resources', this.props.language)}>
               Resources
             </a>
+            <a href={this.pageUrl('showcase', this.props.language)}>
+              Showcase
+            </a>
             <a
               href="https://www.syntaxbomb.com/index.php/board,19.0.html"
               target="_blank"
