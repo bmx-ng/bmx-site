@@ -69,7 +69,7 @@ class Footer extends React.Component {
               aria-label="Star this project on GitHub">
               Star
             </a>
-            <a href="https://discord.gg/DrrVwhz" target="_blank" rel="noreferrer noopener">
+            <a href="https://discord.gg/yVxkBybBsY" target="_blank" rel="noreferrer noopener">
               <img alt="Chat on Discord" src="https://img.shields.io/discord/613699895139762176?logo=discord&color=DDDDDD&logoColor=555555&style=social"/>
             </a>
           </div>
