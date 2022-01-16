@@ -48,6 +48,18 @@ for the SDL backend.
 | Base  | ```sudo apt install g++ libglu1-mesa-dev libasound2-dev libfreetype6-dev libxpm-dev libxft-dev libxxf86vm-dev libpulse-dev libopenal-dev libwebkit2gtk-4.0-dev libgtk-3-dev``` |
 | SDL  | `sudo apt install libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxi-dev libxinerama-dev libxss-dev libgl1-mesa-dev libesd0-dev libdbus-1-dev libudev-dev libaudio-dev`  |
 
+Note: libesd0-dev is deprecated in Ubuntu 18.04. The Xenial 16.04 repositories must be added to apt's sources to satisfy this requirement.
+
+```sudo nano /etc/apt/sources.list```
+
+Add the following line to the bottom of sources.list.
+
+```deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe```
+
+Press ```Ctrl+X``` and then ```Y``` to exit and save changes.
+
+Now update the available packages with ```sudo apt update``` and then execute the SDL requirements command again.
+
 #### Manjaro (18.04)
 
 | Requirement | Command |
