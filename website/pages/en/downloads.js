@@ -114,24 +114,39 @@ class Downloads extends React.Component {
                         <GridBlock
                             align="center"
                             contents={[
+                                {
+                                    content:
+                                        `<strong>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.49.macos.arm64/BlitzMax_macos_arm64_0.136.3.49.zip">BlitzMax_macos_arm64_0.136.3.49.zip</a>
+                                         </strong>
+                                        <br/><br/>
+                                        BlitzMax, arm64 macOS edition.
+                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Random, Net, Text and Steam.
+                                        <br/>
+                                        See the <strong><a href="https://github.com/bmx-ng/bmx-ng/releases/tag/v0.136.3.49.macos.arm64">Release Notes</a></strong> for setup information.
+                                        `,
+                                    image: `${siteConfig.baseUrl}img/platform/apple.svg`,
+                                    imageAlign: "top",
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.49.macos.arm64/BlitzMax_macos_arm64_0.136.3.49.zip`,
+                                    title: "macOS"
+                                },
                                 {},
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.129.3.45.macos.x64/BlitzMax_macos_x64_0.129.3.45.zip">BlitzMax_macos_x64_0.129.3.45.zip</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.49.macos.x64/BlitzMax_macos_x64_0.136.3.49.zip">BlitzMax_macos_x64_0.136.3.49.zip</a>
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, x64 macOS edition.
-                                        Includes SDL backend, mojo2, Crypto, Audio, Random, Text and Steam.
+                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Random, Net, Text and Steam.
                                         <br/>
-                                        See the <strong><a href="https://github.com/bmx-ng/bmx-ng/releases/tag/v0.129.3.45.macos.x64">Release Notes</a></strong> for setup information.
+                                        See the <strong><a href="https://github.com/bmx-ng/bmx-ng/releases/tag/v0.136.3.49.macos.x64">Release Notes</a></strong> for setup information.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/apple.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.129.3.45.macos.x64/BlitzMax_macos_x64_0.129.3.45.zip`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.49.macos.x64/BlitzMax_macos_x64_0.136.3.49.zip`,
                                     title: "macOS"
                                 },
-                                {},
                             ]}
                             layout="threeColumn"
                         />
