@@ -1,77 +1,77 @@
 ---
-id: svec3d
-title: SVec3D
-sidebar_label: SVec3D
+id: svec4i
+title: SVec4I
+sidebar_label: SVec4I
 ---
 
-A 3-element structure that can be used to represent positions and directions in 3D-space.
+A 4-element structure.
 
 
 ## Constructors
 
-### `Method New(x:Double, y:Double, z:Double)`
+### `Method New(x:Int, y:Int, z:Int, w:Int)`
 
-Creates a new [SVec3D](../../../brl/brl.vector/svec3d) from the supplied arguments.
+Creates a new [SVec4I](../../../brl/brl.vector/svec4i) from the supplied arguments.
 
 <br/>
 
 ## Operators
 
-### `Method Operator+:SVec3D(b:SVec3D)`
+### `Method Operator+:SVec4I(b:SVec4I)`
 
 Adds <b>b</b> to this vector, returning a new vector.
 
 <br/>
 
-### `Method Operator-:SVec3D(b:SVec3D)`
+### `Method Operator-:SVec4I(b:SVec4I)`
 
 Subtracts <b>b</b> from this vector, returning a new vector.
 
 <br/>
 
-### `Method Operator*:SVec3D(b:SVec3D)`
+### `Method Operator*:SVec4I(b:SVec4I)`
 
 Multiplies the vector by <b>b</b>, returning a new vector.
 
 <br/>
 
-### `Method Operator/:SVec3D(b:SVec3D)`
+### `Method Operator/:SVec4I(b:SVec4I)`
 
 Devides the vector by <b>b</b>, returning a new vector.
 
 <br/>
 
-### `Method Operator-:SVec3D()`
+### `Method Operator-:SVec4I()`
 
 Returns a negated version of this vector.
 
 <br/>
 
-### `Method Operator*:SVec3D(s:Double)`
+### `Method Operator*:SVec4I(s:Int)`
 
 Multiplies the vector by <b>s</b>, returning a new vector.
 
 <br/>
 
-### `Method Operator/:SVec3D(s:Double)`
+### `Method Operator/:SVec4I(s:Int)`
 
 Divides the vector by <b>s</b>, returning a new vector.
 
 <br/>
 
-### `Method Operator[]:Double(index:Int)`
+### `Method Operator[]:Int(index:Int)`
 
-Retrieves the x, y or z component using [0], [1] or [2] respectively.
+Retrieves the x, y, z or w component using [0], [1], [2] or [3] respectively.
 
 <br/>
 
-### `Method Operator<>:Int(b:SVec3D)`
+### `Method Operator<>:Int(b:SVec4I)`
 
 Returns [True](../../../brl/brl.blitz/#true) if <b>b</b> is different.
 
 <br/>
 
-### `Method Operator=:Int(b:SVec3D)`
+### `Method Operator=:Int(b:SVec4I)`
 
 Returns [True](../../../brl/brl.blitz/#true) if the vector and <b>b</b> are aproximately equal.
 
@@ -79,13 +79,13 @@ Returns [True](../../../brl/brl.blitz/#true) if the vector and <b>b</b> are apro
 
 ## Methods
 
-### `Method Clamp:SVec3D(minv:SVec3D, maxv:SVec3D)`
+### `Method Clamp:SVec4I(minv:SVec4I, maxv:SVec4I)`
 
 Returns a vector clamped between the vectors <b>minv</b> and <b>maxv</b>.
 
 <br/>
 
-### `Method Cross:SVec3D(b:SVec3D)`
+### `Method Cross:SVec4I(b:SVec4I)`
 
 Returns the Cross Product of the two vectors.
 
@@ -94,19 +94,19 @@ A cross product of zero indicates that the two vectors are parallel.
 
 <br/>
 
-### `Method Min:SVec3D(b:SVec3D)`
+### `Method Min:SVec4I(b:SVec4I)`
 
 Returns a vector that is made from the smallest components of the two vectors.
 
 <br/>
 
-### `Method Max:SVec3D(b:SVec3D)`
+### `Method Max:SVec4I(b:SVec4I)`
 
 Returns a vector that is made from the largest components of the two vectors.
 
 <br/>
 
-### `Method Interpolate:SVec3D(b:SVec3D, t:Double)`
+### `Method Interpolate:SVec4I(b:SVec4I, t:Int)`
 
 Linearly interpolates between two vectors.
 
@@ -116,7 +116,7 @@ This is commonly used to find a point some fraction of the way along a line betw
 
 <br/>
 
-### `Method Normal:SVec3D()`
+### `Method Normal:SVec4I()`
 
 Returns a vector with a magnitude of 1.
 
@@ -125,7 +125,7 @@ When normalized, a vector keeps the same direction but its length is 1.0.
 
 <br/>
 
-### `Method Dot:Double(b:SVec3D)`
+### `Method Dot:Int(b:SVec4I)`
 
 Returns the dot product of two vectors.
 
@@ -135,13 +135,13 @@ and a number in between for other cases (e.g. Dot returns zero if vectors are pe
 
 <br/>
 
-### `Method Length:Double()`
+### `Method Length:Int()`
 
 Returns the length of the vector.
 
 <br/>
 
-### `Method LengthSquared:Double()`
+### `Method LengthSquared:Int()`
 
 Returns the squared length of the vector.
 
@@ -151,19 +151,19 @@ Often if you are comparing lengths of two vectors you can just compare their squ
 
 <br/>
 
-### `Method DistanceTo:Double(b:SVec3D)`
+### `Method DistanceTo:Int(b:SVec4I)`
 
 Returns the distance between the vector and <b>b</b>.
 
 <br/>
 
-### `Method DistanceToSquared:Double(b:SVec3D)`
+### `Method DistanceToSquared:Int(b:SVec4I)`
 
 Returns the squared distance between the vector and <b>b</b>.
 
 <br/>
 
-### `Method Reflect:SVec3D(n:SVec3D)`
+### `Method Reflect:SVec4I(n:SVec4I)`
 
 Returns a vector reflected from the given plane, specified by its normal vector.
 

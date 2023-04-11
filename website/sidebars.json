@@ -375,7 +375,10 @@
           "api/brl/brl.vector/svec2i",
           "api/brl/brl.vector/svec3d",
           "api/brl/brl.vector/svec3f",
-          "api/brl/brl.vector/svec3i"
+          "api/brl/brl.vector/svec3i",
+          "api/brl/brl.vector/svec4d",
+          "api/brl/brl.vector/svec4f",
+          "api/brl/brl.vector/svec4i"
         ]
       },
       {

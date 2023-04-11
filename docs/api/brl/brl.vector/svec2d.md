@@ -425,19 +425,6 @@ Print c.ToString() ' -5, 0
 
 Returns a vector rotated by <b>angle</b> degrees.
 
-#### Example
-```blitzmax
-SuperStrict
-
-Framework brl.standardio
-Import brl.vector
-
-Local a:SVec2D = New SVec2D(5, 0)
-
-Local b:SVec2D = a.Rotate(90)
-
-Print b.ToString() ' 0, 5
-```
 <br/>
 
 ### `Method ToString:String() Override`

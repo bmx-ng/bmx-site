@@ -65,6 +65,18 @@ Retrieves the x, y or z component using [0], [1] or [2] respectively.
 
 <br/>
 
+### `Method Operator<>:Int(b:SVec3F)`
+
+Returns [True](../../../brl/brl.blitz/#true) if <b>b</b> is different.
+
+<br/>
+
+### `Method Operator=:Int(b:SVec3F)`
+
+Returns [True](../../../brl/brl.blitz/#true) if the vector and <b>b</b> are aproximately equal.
+
+<br/>
+
 ## Methods
 
 ### `Method Clamp:SVec3F(minv:SVec3F, maxv:SVec3F)`
@@ -76,6 +88,9 @@ Returns a vector clamped between the vectors <b>minv</b> and <b>maxv</b>.
 ### `Method Cross:SVec3F(b:SVec3F)`
 
 Returns the Cross Product of the two vectors.
+
+A cross product of zero indicates that the two vectors are parallel.
+
 
 <br/>
 
