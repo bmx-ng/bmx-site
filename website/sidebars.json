@@ -179,6 +179,15 @@
       "api/brl/brl.gnet",
       "api/brl/brl.graphics",
       "api/brl/brl.hook",
+      {
+        "type": "subcategory",
+        "label": "IO",
+        "ids": [
+          "api/brl/brl.io",
+          "api/brl/brl.io/maxio"
+        ]
+      },
+
       "api/brl/brl.jpgloader",
       "api/brl/brl.keycodes",
       {
