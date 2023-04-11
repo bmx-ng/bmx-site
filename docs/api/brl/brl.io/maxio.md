@@ -21,6 +21,20 @@ This must be called before any other [MaxIO](../../../brl/brl.io/maxio) function
 
 <br/>
 
+### `Function IsInit:Int()`
+
+Determines if the [MaxIO](../../../brl/brl.io/maxio) is initialized.
+
+Once [Init](../../../brl/brl.io/maxio/#function-init)() returns successfully, this will return non-zero. Before a successful [Init](../../../brl/brl.io/maxio/#function-init)() and after [DeInit](../../../brl/brl.io/maxio/#function-deinitint)() returns
+successfully, this will return zero. This function is safe to call at any time.
+
+
+#### Returns
+non-zero if [MaxIO](../../../brl/brl.io/maxio) is initialized, zero if it is not.
+
+
+<br/>
+
 ### `Function DeInit:Int()`
 
 Deinitializes the abstraction layer.
@@ -55,6 +69,10 @@ may expect. As well, more than one archive can be mounted to the same mountpoint
 interpolation mechanism still functions as usual.
 
 
+#### Returns
+Nonzero if added to path, zero on failure (bogus archive, dir missing, etc).
+
+
 <br/>
 
 ### `Function MountIncbin:Int(newDir:String, mountPoint:String = Null, appendToPath:Int = True)`
@@ -62,6 +80,73 @@ interpolation mechanism still functions as usual.
 Adds an incbinned archive to the search path.
 
 See [Mount](../../../brl/brl.io/maxio/#function-mountintnewdirstring-mountpointstring-null-appendtopathint-true) for more information.
+
+
+<br/>
+
+### `Function Unmount:Int(oldDir:String)`
+
+Removes a directory or archive from the search path.
+
+This must be a (case-sensitive) match to a dir or archive already in the
+search path, specified in platform-dependent notation.
+
+This call will fail (and fail to remove from the path) if the element still has files open in it.
+
+
+#### Returns
+Nonzero on success, zero on failure. Use [GetLastErrorCode](../../../brl/brl.io/maxio/#function-getlasterrorcodeemaxioerrorcode)() to obtain the specific error.
+
+
+<br/>
+
+### `Function GetMountPoint:String(dir:String)`
+
+Determines a mounted archive's mountpoint.
+
+You give this function the name of an archive or dir you successfully
+added to the search path, and it reports the location in the interpolated
+tree where it is mounted. Files mounted with a [Null](../../../brl/brl.blitz/#null) mountpoint will report "/".
+
+<b>dir</b> must exactly match the string used when adding, even if your string would also reference the same file with a different string of characters.
+
+
+#### Returns
+The mount point if added to path, or [Null](../../../brl/brl.blitz/#null) on failure (bogus archive, etc). Use [GetLastErrorCode](../../../brl/brl.io/maxio/#function-getlasterrorcodeemaxioerrorcode)() to obtain the specific error.
+
+
+<br/>
+
+### `Function SetRoot:Int(archive:String, subdir:String)`
+
+Makes a subdirectory of an archive its root directory.
+
+This lets you narrow down the accessible files in a specific archive.
+
+For example, if you have x.zip with a file in y/z.txt, mounted to /a, if you
+call [SetRoot](../../../brl/brl.io/maxio/#function-setrootintarchivestring-subdirstring)("x.zip", "/y"), then the call OpenRead("/a/z.txt") will succeed.
+
+You can change an archive's root at any time, altering the interpolated
+file tree (depending on where paths shift, a different archive may be
+providing various files). If you set the root to [Null](../../../brl/brl.blitz/#null) or "/", the
+archive will be treated as if no special root was set (as if the archive
+was just mounted normally).
+
+Changing the root only affects future operations on pathnames; a file
+that was opened from a path that changed due to a [SetRoot](../../../brl/brl.io/maxio/#function-setrootintarchivestring-subdirstring) will not be affected.
+
+Setting a new root is not limited to archives in the search path; you may
+set one on the write dir, too, which might be useful if you have files
+open for write and thus can't change the write dir at the moment.
+
+It is not an error to set a subdirectory that does not exist to be the
+root of an archive; however, no files will be visible in this case. If
+the missing directories end up getting created (a mkdir to the physical
+filesystem, etc) then this will be reflected in the interpolated tree.
+
+
+#### Returns
+Nonzero on success, zero on failure. Use [GetLastErrorCode](../../../brl/brl.io/maxio/#function-getlasterrorcodeemaxioerrorcode)() to obtain the specific error.
 
 
 <br/>
@@ -103,7 +188,25 @@ Always use a unique app string for each one, and make sure it never changes for 
 Unicode characters are legal, as long as it's UTF-8 encoded, but...
 ...only use letters, numbers, and spaces. Avoid punctuation like "Game Name 2: Bad Guy's Revenge!" ... "Game Name 2" is sufficient.
 
-> You should assume the path returned by this function is the only safe place to write files.
+> You should assume the path returned by this function is the only safe place to write files (and that [GetBaseDir](../../../brl/brl.io/maxio/#function-getbasedirstring)(),
+while they might be writable, or even parents of the returned path, aren't where you should be writing things)..
+
+
+#### Returns
+The pref dir in platform-dependent notation, or [Null](../../../brl/brl.blitz/#null) if there's a problem (creating directory failed, etc).
+
+
+<br/>
+
+### `Function GetSearchPath:String[]()`
+
+Gets the current search path.
+
+The default search path is an empty list.
+
+
+#### Returns
+An array of Strings.
 
 
 <br/>
@@ -115,6 +218,35 @@ Indicates where files may be written.
 Sets a new write dir. This will override the previous setting.
 
 This call will fail (and fail to change the write dir) if the current write dir still has files open in it.
+
+The directory will be the root of the write dir, specified in platform-dependent notation.
+Setting to [Null](../../../brl/brl.blitz/#null) disables the write dir, so no files can be opened for writing.
+
+
+<br/>
+
+### `Function GetWriteDir:String()`
+
+Gets the path where files may be written.
+
+Gets the current write dir. The default write dir is [Null](../../../brl/brl.blitz/#null).
+
+
+<br/>
+
+### `Function GetRealDir:String(filename:String)`
+
+Figures out where in the search path a file resides.
+
+The file is specified in platform-independent notation. The returned
+filename will be the element of the search path where the file was found,
+which may be a directory, or an archive. Even if there are multiple
+matches in different parts of the search path, only the first one found
+is used, just like when opening a file.
+
+
+#### Returns
+The file location, or [Null](../../../brl/brl.blitz/#null) if not found.
 
 
 <br/>
@@ -176,6 +308,30 @@ should ALWAYS check the return value from the close call in addition to every wr
 Creates a directory.
 
 This is specified in platform-independent notation in relation to the write dir. All missing parent directories are also created if they don't exist.
+
+
+<br/>
+
+### `Function GetLastErrorCode:EMaxIOErrorCode()`
+
+Returns the last error code.
+
+Calling this function resets the last error code.
+
+
+<br/>
+
+### `Function GetErrorForCode:String(errorCode:EMaxIOErrorCode)`
+
+Returns the message for the specified <b>errorCode</b>.
+
+<br/>
+
+### `Function GetLastError:String()`
+
+Returns the last error message, or [Null](../../../brl/brl.blitz/#null) if there is none.
+
+Calling this function resets the last error.
 
 
 <br/>
