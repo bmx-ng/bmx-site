@@ -467,7 +467,7 @@ The node content.
 
 <br/>
 
-### `Method findElement:TxmlNode(element:String = "", attr:String = "", value:String = "")`
+### `Method findElement:TxmlNode(element:String = "", attr:String = "", value:String = "", descend:Int=MXML_DESCEND)`
 
 Finds an element of the given <b>element</b> name, attribute or attribute/value.
 

@@ -559,6 +559,14 @@ Returns a string representation of the element, optionally formatting the output
 
 <br/>
 
+## Functions
+
+### `Function XMLSetErrorCallback(callback(message:Byte Ptr))`
+
+Sets the callback for handing errors, errors will print if not set.
+
+<br/>
+
 ## Consts
 
 ### `Const MXML_DESCEND:Int = 1`
