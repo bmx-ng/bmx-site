@@ -31,7 +31,7 @@ Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 ### `Method Operator*:SMat2F(z:SMat2F)`
 
-Multiplies the matrix by <b>z</b>, returning a new matrix.
+Multiplies the matrix by <b>z</b>, the dot product, returning a new matrix.
 
 <br/>
 

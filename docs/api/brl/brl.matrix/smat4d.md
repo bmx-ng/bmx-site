@@ -31,7 +31,7 @@ Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 ### `Method Operator*:SMat4D(z:SMat4D Var)`
 
-Multiplies the matrix by <b>z</b>, returning a new matrix.
+Multiplies the matrix by <b>z</b>, the dot product, returning a new matrix.
 
 <br/>
 
@@ -49,6 +49,12 @@ Applies the 4x4 matrix <b>b</b> to the vector, returning a new vector.
 
 <br/>
 
+### `Method Apply:SVec4D(v:SVec4D)`
+
+Applies the 4x4 matrix <b>b</b> to the vector, returning a new vector.
+
+<br/>
+
 ### `Method Adjoint:SMat4D()`
 
 Returns the transposition of the cofactor matrix.
@@ -57,7 +63,7 @@ Returns the transposition of the cofactor matrix.
 
 ### `Method CompMul:SMat4D(z:SMat4D Var)`
 
-Multiplies the matrix by <b>z</b> by its components, returning a new matrix.
+Multiplies the matrix by <b>z</b> by its components, or element-wise matrix multiplication, returning a new matrix.
 
 <br/>
 

@@ -31,7 +31,7 @@ Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 ### `Method Operator*:SMat4F(z:SMat4F Var)`
 
-Multiplies the matrix by <b>z</b>, returning a new matrix.
+Multiplies the matrix by <b>z</b>, the dot product, returning a new matrix.
 
 <br/>
 
@@ -44,6 +44,12 @@ Applies the matrix to the vector <b>v</b>, returning a new vector.
 <br/>
 
 ### `Method Apply:SVec3F(v:SVec3F)`
+
+Applies the 4x4 matrix <b>b</b> to the vector, returning a new vector.
+
+<br/>
+
+### `Method Apply:SVec4F(v:SVec4F)`
 
 Applies the 4x4 matrix <b>b</b> to the vector, returning a new vector.
 

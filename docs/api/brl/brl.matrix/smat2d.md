@@ -31,7 +31,7 @@ Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 ### `Method Operator*:SMat2D(z:SMat2D)`
 
-Multiplies the matrix by <b>z</b>, returning a new matrix.
+Multiplies the matrix by <b>z</b>, the dot product, returning a new matrix.
 
 <br/>
 
@@ -51,7 +51,7 @@ Returns the transposition of the cofactor matrix.
 
 ### `Method CompMul:SMat2D(z:SMat2D)`
 
-Multiplies the matrix by <b>z</b> by its components, return a new matrix.
+Multiplies the matrix by <b>z</b> by its components, or element-wise matrix multiplication, return a new matrix.
 
 <br/>
 

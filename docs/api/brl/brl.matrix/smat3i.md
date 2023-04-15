@@ -31,7 +31,7 @@ Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 ### `Method Operator*:SMat3I(z:SMat3I Var)`
 
-Multiplies the matrix by <b>z</b>, returning a new matrix.
+Multiplies the matrix by <b>z</b>, the dot product, returning a new matrix.
 
 <br/>
 
@@ -44,6 +44,12 @@ Applies the matrix to the vector <b>v</b>, returning a new vector.
 <br/>
 
 ### `Method Apply:SVec3I(v:SVec3I)`
+
+Applies the matrix to the vector <b>v</b>, returning a new vector.
+
+<br/>
+
+### `Method Apply:SVec4I(v:SVec4I)`
 
 Applies the matrix to the vector <b>v</b>, returning a new vector.
 

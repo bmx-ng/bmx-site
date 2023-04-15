@@ -31,7 +31,7 @@ Subtracts <b>z</b> from the matrix, returning a new matrix.
 
 ### `Method Operator*:SMat3D(z:SMat3D Var)`
 
-Multiplies the matrix by <b>z</b>, returning a new matrix.
+Multiplies the matrix by <b>z</b>, the dot product, returning a new matrix.
 
 <br/>
 
@@ -49,6 +49,12 @@ Applies the matrix to the vector <b>v</b>, returning a new vector.
 
 <br/>
 
+### `Method Apply:SVec4D(v:SVec4D)`
+
+Applies the matrix to the vector <b>v</b>, returning a new vector.
+
+<br/>
+
 ### `Method Adjoint:SMat3D()`
 
 Returns the transposition of the cofactor matrix.
@@ -57,7 +63,7 @@ Returns the transposition of the cofactor matrix.
 
 ### `Method CompMul:SMat3D(z:SMat3D Var)`
 
-Multiplies the matrix by <b>z</b> by its components, return a new matrix.
+Multiplies the matrix by <b>z</b> by its components, or element-wise matrix multiplication, return a new matrix.
 
 <br/>
 
@@ -75,7 +81,13 @@ Returns the inverse of the matrix.
 
 ### `Method Rotate:SMat3D(angle:Double)`
 
-Rotates the matrix by <b>angle</b> degrees, returning a new matrix.
+Rotates the matrix on a 2D rotation in the XY plane by <b>angle</b> degrees, returning a new matrix.
+
+<br/>
+
+### `Method RotateZ:SMat3D(angle:Double)`
+
+Rotates the matrix around the Z axis by <b>angle</b> degrees, returning a new matrix.
 
 <br/>
 
@@ -107,7 +119,7 @@ Return the 3x3 identity matrix.
 
 ### `Function Rotation:SMat3D(angle:Double)`
 
-Retrns a rotation matrix of <b>angle</b> degrees.
+Returns a rotation matrix of <b>angle</b> degrees.
 
 <br/>
 
