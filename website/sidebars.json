@@ -440,6 +440,27 @@
       },
       {
         "type": "subcategory",
+        "label": "TOML",
+        "ids": [
+          "api/text/text.toml",
+          "api/text/text.toml/etomlnodetype",
+          "api/text/text.toml/ttoml",
+          "api/text/text.toml/itomlnode",
+          "api/text/text.toml/stomldate",
+          "api/text/text.toml/stomldatetime",
+          "api/text/text.toml/stomltime",
+          "api/text/text.toml/ttomlarray",
+          "api/text/text.toml/ttomlinteger",
+          "api/text/text.toml/ttomlstring",
+          "api/text/text.toml/ttomlparsererror",
+          "api/text/text.toml/ttomltable",
+          "api/text/text.toml/ttomlboolean",
+          "api/text/text.toml/ttomlfoatingpoint",
+          "api/text/text.toml/ttomlsoucreregion"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Xml",
         "ids": [
           "api/text/text.xml",
