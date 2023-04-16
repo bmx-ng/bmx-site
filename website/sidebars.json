@@ -414,6 +414,16 @@
       },
       {
         "type": "subcategory",
+        "label": "Ini",
+        "ids": [
+          "api/text/text.ini",
+          "api/text/text.ini/tini",
+          "api/text/text.ini/tiniproperty",
+          "api/text/text.ini/tinisection"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "JConv",
         "ids": [
           "api/text/text.jconv",
