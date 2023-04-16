@@ -394,6 +394,18 @@
     "Text": [
       {
         "type": "subcategory",
+        "label": "CSV",
+        "ids": [
+          "api/text/text.csv",
+          "api/text/text.csv/tcsvparser",
+          "api/text/text.csv/tcsvheader",
+          "api/text/text.csv/tcsvrow",
+          "api/text/text.csv/tcsvoptions",
+          "api/text/text.csv/scsvcolumn"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Format",
         "ids": [
           "api/text/text.format",
