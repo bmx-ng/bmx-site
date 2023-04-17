@@ -106,7 +106,8 @@ datetime_with_space_key = 2021-09-01 12:34:56
 A collection of values enclosed in square brackets and separated by commas.
 
 ```toml
-```array_key = [1, 2, 3]```
+array_key = [1, 2, 3]
+```
 
 Here's a complete example of a TOML document using various data types and tables:
 
