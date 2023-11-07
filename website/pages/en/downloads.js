@@ -176,9 +176,9 @@ class Downloads extends React.Component {
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, RaspberryPi edition, aimed at 64-bit ARM development, with MaxIDE.
-
+                                        <br/>
                                         Suitable for the latest 64-bit Raspberry Pi OS.
-
+                                        <br/>
                                         Includes SDL backend, mojo2, Crypto, Audio, Image, Net, Random, Text and Gtk MaxGUI.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/rpi.svg`,
