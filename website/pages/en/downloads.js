@@ -128,7 +128,7 @@ class Downloads extends React.Component {
                                     image: `${siteConfig.baseUrl}img/platform/apple.svg`,
                                     imageAlign: "top",
                                     imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.138.3.54.macos.arm64/BlitzMax_macos_arm64_0.138.3.54.zip`,
-                                    title: "macOS"
+                                    title: "macOS arm64"
                                 },
                                 {},
                                 {
@@ -154,7 +154,6 @@ class Downloads extends React.Component {
                         <GridBlock
                             align="center"
                             contents={[
-                                {},
                                 {
                                     content:
                                         `<strong>
@@ -170,6 +169,23 @@ class Downloads extends React.Component {
                                     title: "Raspberry Pi"
                                 },
                                 {},
+                                {
+                                    content:
+                                        `<strong>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.139.3.56.rpi.arm64/BlitzMax_rpi_arm64_0.139.3.56.tar.xz">BlitzMax_rpi_arm64_0.139.3.56.tar.xz</a>
+                                         </strong>
+                                        <br/><br/>
+                                        BlitzMax, RaspberryPi edition, aimed at 64-bit ARM development, with MaxIDE.
+
+                                        Suitable for the latest 64-bit Raspberry Pi OS.
+
+                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Net, Random, Text and Gtk MaxGUI.
+                                        `,
+                                    image: `${siteConfig.baseUrl}img/platform/rpi.svg`,
+                                    imageAlign: "top",
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.139.3.56.rpi.arm64/BlitzMax_rpi_arm64_0.139.3.56.tar.xz`,
+                                    title: "Raspberry Pi arm64"
+                                },
                             ]}
                             layout="threeColumn"
                         />
