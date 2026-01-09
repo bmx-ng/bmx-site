@@ -38,7 +38,7 @@ purpose identifiers:
     Method EndMethod
     Operator
     Local Global Const Field ReadOnly
-    Abstract Final Override
+    Abstract Final Override Inline
     Where
     Rem EndRem
     If Then Else ElseIf EndIf
