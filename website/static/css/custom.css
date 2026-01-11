@@ -44,3 +44,52 @@ h3 > code {
     background-color: transparent;
     padding: 0;
 }
+
+.showcase > .blockImage {
+ height:240px;
+ max-width:100%;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ text-align:center;
+ border:solid 1px #eee;
+}
+
+.showcase .blockImage img {
+ max-height:220px;
+ max-width:100%;
+ }
+
+.showcase h2 {
+	padding: 0;
+	margin: 0;
+}
+
+.showcase p {
+	padding: 0;
+	margin: 0;
+}
+
+
+.indexPageGrid > .blockImage {
+ height:90px;
+ max-width:100%;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ text-align:center;
+}
+
+.indexPageGrid .blockImage img {
+ max-height:80px;
+ max-width:100%;
+ }
+
+
+
+
+.centeredheadline {
+	width: 100%;
+	text-align:center;
+}
+
