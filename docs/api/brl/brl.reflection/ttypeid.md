@@ -4,38 +4,42 @@ title: TTypeId
 sidebar_label: TTypeId
 ---
 
-Type id
+Type ID
+
+
+Represents a type. Type IDs can be compared for equality to find out if two types are equal.
 
 
 ## Methods
-
-### `Method Name$()`
-
-Get name of type
-
-<br/>
-
-### `Method MetaData$( key$="" )`
-
-Get type meta data
-
-<br/>
-
-### `Method HasMetaData:Int( key:String )`
-
-Returns [True](../../../brl/brl.blitz/#true) if <b>key</b> is in the metadata.
-
-<br/>
 
 ### `Method SuperType:TTypeId()`
 
 Get super type
 
+When called on an interface type ID, this method alwayss returns <b>Object</b>.
+To get the super interfaces of an interface, use <b>Interfaces</b>.
+
+
+<br/>
+
+### `Method Interfaces:TList(list:TList = Null)`
+
+Get list of implemented interfaces of a class, or super interfaces of an interface.
+
+<br/>
+
+### `Method UnderlyingType:TTypeId()`
+
+Get underlying type
+
+Returns the underlying integral type of an enum type.
+
+
 <br/>
 
 ### `Method ArrayType:TTypeId(dims:Int = 1)`
 
-Get array type
+Get array type with this element type
 
 <br/>
 
@@ -45,15 +49,27 @@ Get element type
 
 <br/>
 
-### `Method PointerType:TTypeId()`
+### `Method Dimensions:Int()`
 
-Get pointer type
+Get number of array dimensions
 
 <br/>
 
-### `Method FunctionType:TTypeId( args:TTypeId[]=Null)`
+### `Method PointerType:TTypeId()`
 
-Get function pointer type
+Get pointer type with this element type
+
+<br/>
+
+### `Method VarType:TTypeId()`
+
+Get var type with this element type
+
+<br/>
+
+### `Method FunctionType:TTypeId(argTypes:TTypeId[] = Null)`
+
+Get function type with this return type
 
 <br/>
 
@@ -69,13 +85,13 @@ Get function argument types
 
 <br/>
 
-### `Method ExtendsType( typeId:TTypeId )`
+### `Method ExtendsType:Int(typeId:TTypeId)`
 
-Determine if type extends a type
+Determine if this type extends, implements, or equals another type
 
 <br/>
 
-### `Method DerivedTypes:TList()`
+### `Method DerivedTypes:TList(list:TList = Null)`
 
 Get list of derived types
 
@@ -85,15 +101,89 @@ Get list of derived types
 
 Create a new object
 
+Creates a new instance of this type with the default constructor.
+Can be used to create objects and struct instances.
+This method can not be used on array type IDs. To create an array, use <b>NewArray</b> instead.
+
+
+<br/>
+
+### `Method NewObject:Object(constructor:TMethod, args:Object[])`
+
+Create a new object with the given constructor
+
+Creates a new instance of this type by calling <b>constructor</b>, which must be one of the constructors for this type.
+To get a list of available constructors, use FindMethods("New").
+Can be used to create objects and struct instances.
+This method can not be used on array type IDs. To create an array, use <b>NewArray</b> instead.<br>
+
+
+<br/>
+
+### `Method IsReferenceType:Int()`
+
+Determine if type is a reference type
+
+<br/>
+
+### `Method IsValueType:Int()`
+
+Determine if type is a value type
+
+Returns True for Var types
+
+
+<br/>
+
+### `Method IsClass:Int()`
+
+Determine if type is a class
+
 <br/>
 
 ### `Method IsInterface:Int()`
 
-Returns True if this TypeId is an interface.
+Determine if type is an interface
 
 <br/>
 
-### `Method Constants:TStringMap()`
+### `Method IsStruct:Int()`
+
+Determine if type is a struct
+
+<br/>
+
+### `Method IsEnum:Int()`
+
+Determine if type is an enum
+
+<br/>
+
+### `Method IsFlagsEnum:Int()`
+
+Determine if type is a flags enum
+
+<br/>
+
+### `Method IsAbstract:Int()`
+
+Determine if type is abstract
+
+<br/>
+
+### `Method IsFinal:Int()`
+
+Determine if type is final
+
+<br/>
+
+### `Method IsArrayType:Int()`
+
+Determine if type is an array type
+
+<br/>
+
+### `Method Constants:TList(list:TList = Null)`
 
 Get list of constants
 
@@ -102,7 +192,7 @@ Only returns constants declared in this type, not in super types.
 
 <br/>
 
-### `Method Fields:TStringMap()`
+### `Method Fields:TList(list:TList = Null)`
 
 Get list of fields
 
@@ -111,7 +201,7 @@ Only returns fields declared in this type, not in super types.
 
 <br/>
 
-### `Method Globals:TStringMap()`
+### `Method Globals:TList(list:TList = Null)`
 
 Get list of globals
 
@@ -120,7 +210,7 @@ Only returns globals declared in this type, not in super types.
 
 <br/>
 
-### `Method Functions:TStringMap()`
+### `Method Functions:TList(list:TList = Null)`
 
 Get list of functions
 
@@ -129,7 +219,7 @@ Only returns functions declared in this type, not in super types.
 
 <br/>
 
-### `Method Methods:TStringMap()`
+### `Method Methods:TList(list:TList = Null)`
 
 Get list of methods
 
@@ -138,35 +228,29 @@ Only returns methods declared in this type, not in super types.
 
 <br/>
 
-### `Method Interfaces:TList()`
-
-Get list of implemented interfaces.
-
-<br/>
-
-### `Method FindConstant:TConstant( name$ )`
+### `Method FindConstant:TConstant(name:String)`
 
 Find a constant by name
 
-Searchs type hierarchy for constant called <b>name</b>.
+Searches type hierarchy for a constant called <b>name</b>.
 
 
 <br/>
 
-### `Method FindField:TField( name$ )`
+### `Method FindField:TField(name:String)`
 
 Find a field by name
 
-Searchs type hierarchy for field called <b>name</b>.
+Searches type hierarchy for a field called <b>name</b>.
 
 
 <br/>
 
-### `Method FindGlobal:TGlobal( name$ )`
+### `Method FindGlobal:TGlobal(name:String)`
 
 Find a global by name
 
-Searchs type hierarchy for global called <b>name</b>.
+Searches type hierarchy for a global called <b>name</b>.
 
 
 <br/>
@@ -175,292 +259,477 @@ Searchs type hierarchy for global called <b>name</b>.
 
 Find a function by name
 
-Searches type heirarchy for function called <b>name</b>
+Searches type hierarchy for a function called <b>name</b>.<br>
+If the function is overloaded, the first overload declared in the most derived type will be returned.
 
 
 <br/>
 
-### `Method FindMethod:TMethod( name$ )`
+### `Method FindFunction:TFunction(name:String, argTypes:TTypeId[])`
+
+Find a specific overload of a function by name and parameter list
+
+Searches type hierarchy for a function called <b>name</b> with the specified argument types.<br>
+This can be used to find a specific overload of a function.
+
+
+<br/>
+
+### `Method FindFunctions:TList(name:String, list:TList = Null)`
+
+Find all overloads of a function by name
+
+Searches type hierarchy for a function called <b>name</b>.<br>
+Same as <b>FindFunction</b>, except it returns all overloads of the function.<br>
+If an existing list is passed, retains the elements in that list and appends the results to the end. Otherwise, creates a new list.
+
+
+<br/>
+
+### `Method FindMethod:TMethod(name:String)`
 
 Find a method by name
 
-Searchs type hierarchy for method called <b>name</b>.
+Searches type hierarchy for a method called <b>name</b>.<br>
+If the method is overloaded, the first overload declared in the most derived type will be returned.
 
 
 <br/>
 
-### `Method EnumConstants:TList( list:TList=Null )`
+### `Method FindMethod:TMethod(name:String, argTypes:TTypeId[])`
+
+Find a specific overload of a method by name and parameter list
+
+Searches type hierarchy for a method called <b>name</b> with the specified argument types.<br>
+This can be used to find a specific overload of a method.
+
+
+<br/>
+
+### `Method FindMethods:TList(name:String, list:TList = Null)`
+
+Find all overloads of a method by name
+
+Searches type hierarchy for a method called <b>name</b>.<br>
+Same as <b>FindMethod</b>, except it returns all overloads of the method.<br>
+If an existing list is passed, retains the elements in that list and appends the results to the end. Otherwise, creates a new list.
+
+
+<br/>
+
+### `Method EnumConstants:TList(list:TList = Null)`
 
 Enumerate all constants
 
-Returns a list of all constants in type hierarchy
+Returns a list of all constants in type hierarchy.<br>
+If an existing list is passed, retains the elements in that list and appends the results to the end. Otherwise, creates a new list.
 
 
 <br/>
 
-### `Method EnumFields:TList( list:TList=Null )`
+### `Method EnumFields:TList(list:TList = Null)`
 
 Enumerate all fields
 
-Returns a list of all fields in type hierarchy
+Returns a list of all fields in type hierarchy.<br>
+If an existing list is passed, retains the elements in that list and appends the results to the end. Otherwise, creates a new list.
 
 
 <br/>
 
-### `Method EnumGlobals:TList( list:TList=Null )`
+### `Method EnumGlobals:TList(list:TList = Null)`
 
 Enumerate all globals
 
-Returns a list of all globals in type hierarchy
+Returns a list of all globals in type hierarchy.<br>
+If an existing list is passed, retains the elements in that list and appends the results to the end. Otherwise, creates a new list.
 
 
 <br/>
 
-### `Method EnumFunctions:TList( list:TList=Null )`
+### `Method EnumFunctions:TList(list:TList = Null)`
 
 Enumerate all functions
 
-Returns a list of all functions in type hierarchy
+Returns a list of all functions in type hierarchy, excluding ones that have been overridden.<br>
+If an existing list is passed, retains the elements in that list and appends the results to the end. Otherwise, creates a new list.
 
 
 <br/>
 
-### `Method EnumMethods:TList( list:TList=Null )`
+### `Method EnumMethods:TList(list:TList = Null)`
 
 Enumerate all methods
 
-Returns a list of all methods in type hierarchy - TO DO: handle overrides!
+Returns a list of all methods in type hierarchy, excluding ones that have been overridden. Does not include unimplemented methods from interfaces implemented by this type.<br>
+If an existing list is passed, retains the elements in that list and appends the results to the end. Otherwise, creates a new list.
 
 
 <br/>
 
-### `Method NewArray:Object( length, dims:Int[] = Null )`
+### `Method NullValue:Object()`
+
+Get Null value
+
+
+For reference types, this returns the object. For structs, it returns a <b>TBoxedValue</b>.
+For other value types, it returns a string representation of the value.
+
+
+<br/>
+
+### `Method NullValueBoxed:Object()`
+
+Get Null value
+
+Like <b>NullValue</b>, but always returns a <b>TBoxedValue</b> for value types instead of converting the value to a string.
+
+
+<br/>
+
+### `Method NewArray:Object(length:Int = 0, dims:Int[] = Null)`
 
 Create a new array
 
-<br/>
+This method should only be called on an array type ID.<br>
+If <b>dims</b> is not specified, this method will create a one-dimensional array with <b>length</b> elements.
+Otherwise, <b>length</b> is ignored and a new array with dimensions as specified by <b>dims</b> is created.
+The elements of the array are not initialized to valid values.
 
-### `Method ArrayLength( _array:Object, dim:Int = 0 )`
-
-Get array length
-
-<br/>
-
-### `Method ArrayDimensions:Int( _array:Object )`
-
-Get the number of dimensions
 
 <br/>
 
-### `Method GetArrayElement:Object( _array:Object,index )`
+### `Method ArraySlice:Object( _array:Object, _start:Int, _end:Int )`
 
-Gets an array element
-
-<br/>
-
-### `Method GetStringArrayElement:String( _array:Object,index )`
-
-Gets an array element as a [String](../../../brl/brl.blitz/#string)
+Slice an array
 
 <br/>
 
-### `Method GetByteArrayElement:Byte( _array:Object,index )`
+### `Method GetArrayElement:Object(_array:Object, index:Int)`
 
-Gets an array element as a [Byte](../../../brl/brl.blitz/#byte)
+Get an array element
 
-<br/>
 
-### `Method GetShortArrayElement:Short( _array:Object,index )`
+This method should only be called on the type ID corresponding to the type of the array.
+For arrays of reference types, this returns the object from the array. For structs, it returns a <b>TBoxedValue</b>.
+For other value types, it returns a string representation of the value.
 
-Gets an array element as a [Short](../../../brl/brl.blitz/#short)
-
-<br/>
-
-### `Method GetIntArrayElement:Int( _array:Object,index )`
-
-Gets an array element as an [Int](../../../brl/brl.blitz/#int)
 
 <br/>
 
-### `Method GetUIntArrayElement:UInt( _array:Object,index )`
+### `Method GetBoxedArrayElement:Object(_array:Object, index:Int)`
 
-Gets an array element as a [UInt](../../../brl/brl.blitz/#uint)
+Get an array element
 
-<br/>
 
-### `Method GetLongArrayElement:Long( _array:Object,index )`
+This method should only be called on the type ID corresponding to the type of the array.
+Like <b>Get</b>, but always returns a <b>TBoxedValue</b> for arrays of value types instead of converting the value to a string.
 
-Gets an array element as a [Long](../../../brl/brl.blitz/#long)
-
-<br/>
-
-### `Method GetULongArrayElement:ULong( _array:Object,index )`
-
-Gets an array element as a [ULong](../../../brl/brl.blitz/#ulong)
 
 <br/>
 
-### `Method GetSizeTArrayElement:Size_T( _array:Object,index )`
+### `Method GetStringArrayElement:String( _array:Object,index:Int )`
 
-Gets an array element as a [Size_T](../../../brl/brl.blitz/#sizet)
+Get an array element as <b>String</b>
 
-<br/>
+This method should only be called on the type ID corresponding to the type of the array.
 
-### `Method GetFloatArrayElement:Float( _array:Object,index )`
-
-Gets an array element as a [Float](../../../brl/brl.blitz/#float)
 
 <br/>
 
-### `Method GetDoubleArrayElement:Double( _array:Object,index )`
+### `Method GetEnumArrayElementAsString:String( _array:Object,index:Int )`
 
-Gets an array element as a [Double](../../../brl/brl.blitz/#double)
+Get an array element as enum name <b>String</b>
 
-<br/>
+This method should only be called on the type ID corresponding to the type of the array.
 
-### `Method SetArrayElement( _array:Object,index,value:Object )`
-
-Sets an array element
 
 <br/>
 
-### `Method SetArrayElement( _array:Object,index,value:Byte )`
+### `Method GetByteArrayElement:Byte( _array:Object,index:Int )`
 
-Sets an array element as a [Byte](../../../brl/brl.blitz/#byte)
-
-<br/>
-
-### `Method SetArrayElement( _array:Object,index,value:Short )`
-
-Sets an array element as a [Short](../../../brl/brl.blitz/#short)
+Get an array element as <b>Byte</b>
 
 <br/>
 
-### `Method SetArrayElement( _array:Object,index,value:Int )`
+### `Method GetShortArrayElement:Short( _array:Object,index:Int )`
 
-Sets an array element as an [Int](../../../brl/brl.blitz/#int)
-
-<br/>
-
-### `Method SetArrayElement( _array:Object,index,value:UInt )`
-
-Sets an array element as a [UInt](../../../brl/brl.blitz/#uint)
+Get an array element as <b>Short</b>
 
 <br/>
 
-### `Method SetArrayElement( _array:Object,index,value:Long )`
+### `Method GetIntArrayElement:Int( _array:Object,index:Int )`
 
-Sets an array element as a [Long](../../../brl/brl.blitz/#long)
-
-<br/>
-
-### `Method SetArrayElement( _array:Object,index,value:ULong )`
-
-Sets an array element as a [ULong](../../../brl/brl.blitz/#ulong)
+Get an array element as <b>Int</b>
 
 <br/>
 
-### `Method SetArrayElement( _array:Object,index,value:Size_T )`
+### `Method GetUIntArrayElement:UInt( _array:Object,index:Int )`
 
-Sets an array element as a [Size_T](../../../brl/brl.blitz/#sizet)
-
-<br/>
-
-### `Method SetArrayElement( _array:Object,index,value:Float )`
-
-Sets an array element as a [Float](../../../brl/brl.blitz/#float)
+Get an array element as <b>UInt</b>
 
 <br/>
 
-### `Method SetArrayElement( _array:Object,index,value:Double )`
+### `Method GetLongArrayElement:Long( _array:Object,index:Int )`
 
-Sets an array element as a [Double](../../../brl/brl.blitz/#double)
-
-<br/>
-
-### `Method SetByteArrayElement( _array:Object,index,value:Byte )`
-
-Sets an array element as a [Byte](../../../brl/brl.blitz/#byte)
+Get an array element as <b>Long</b>
 
 <br/>
 
-### `Method SetShortArrayElement( _array:Object,index,value:Short )`
+### `Method GetULongArrayElement:ULong( _array:Object,index:Int )`
 
-Sets an array element as a [Short](../../../brl/brl.blitz/#short)
-
-<br/>
-
-### `Method SetIntArrayElement( _array:Object,index,value:Int )`
-
-Sets an array element as a [Int](../../../brl/brl.blitz/#int)
+Get an array element as <b>ULong</b>
 
 <br/>
 
-### `Method SetUIntArrayElement( _array:Object,index,value:UInt )`
+### `Method GetSizeTArrayElement:Size_T( _array:Object,index:Int )`
 
-Sets an array element as a [UInt](../../../brl/brl.blitz/#uint)
-
-<br/>
-
-### `Method SetLongArrayElement( _array:Object,index,value:Long )`
-
-Sets an array element as a [Long](../../../brl/brl.blitz/#long)
+Get an array element as <b>Size_T</b>
 
 <br/>
 
-### `Method SetULongArrayElement( _array:Object,index,value:ULong )`
+### `Method GetFloatArrayElement:Float( _array:Object,index:Int )`
 
-Sets an array element as a [ULong](../../../brl/brl.blitz/#ulong)
-
-<br/>
-
-### `Method SetSizeTArrayElement( _array:Object,index,value:Size_T )`
-
-Sets an array element as a [Size_T](../../../brl/brl.blitz/#sizet)
+Get an array element as <b>Float</b>
 
 <br/>
 
-### `Method SetFloatArrayElement( _array:Object,index,value:Float )`
+### `Method GetDoubleArrayElement:Double( _array:Object,index:Int )`
 
-Sets an array element as a [Float](../../../brl/brl.blitz/#float)
-
-<br/>
-
-### `Method SetDoubleArrayElement( _array:Object,index,value:Double )`
-
-Sets an array element as a [Double](../../../brl/brl.blitz/#double)
+Get an array element as <b>Double</b>
 
 <br/>
 
-### `Method SetStringArrayElement( _array:Object,index,value:String )`
+### `Method GetLongIntArrayElement:LongInt( _array:Object,index:Int )`
 
-Sets an array element
+Get an array element as <b>LongInt</b>
+
+<br/>
+
+### `Method GetULongIntArrayElement:ULongInt( _array:Object,index:Int )`
+
+Get an array element as <b>ULongInt</b>
+
+<br/>
+
+### `Method SetArrayElement(_array:Object, index:Int, value:Object)`
+
+Set an array element
+
+This method should only be called on the type ID corresponding to the type of the array.
+
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:Byte )`
+
+Set an array element from <b>Byte</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:Short )`
+
+Set an array element from <b>Short</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:Int )`
+
+Set an array element from <b>Int</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:UInt )`
+
+Set an array element from <b>UInt</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:Long )`
+
+Set an array element from <b>Long</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:ULong )`
+
+Set an array element from <b>ULong</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:Size_T )`
+
+Set an array element from <b>Size_T</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:Float )`
+
+Set an array element from <b>Float</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:Double )`
+
+Set an array element from <b>Double</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:LongInt )`
+
+Set an array element from <b>LongInt</b>
+
+<br/>
+
+### `Method SetArrayElement( _array:Object,index:Int,value:ULongInt )`
+
+Set an array element from <b>ULongInt</b>
+
+<br/>
+
+### `Method SetEnumArrayElement( _array:Object,index:Int,value:String )`
+
+Set an enum array element from <b>String</b>
+
+<br/>
+
+### `Method SetByteArrayElement( _array:Object,index:Int,value:Byte )`
+
+Set an array element from <b>Byte</b>
+
+<br/>
+
+### `Method SetShortArrayElement( _array:Object,index:Int,value:Short )`
+
+Set an array element from <b>Short</b>
+
+<br/>
+
+### `Method SetIntArrayElement( _array:Object,index:Int,value:Int )`
+
+Set an array element from <b>Int</b>
+
+<br/>
+
+### `Method SetUIntArrayElement( _array:Object,index:Int,value:UInt )`
+
+Set an array element from <b>UInt</b>
+
+<br/>
+
+### `Method SetLongArrayElement( _array:Object,index:Int,value:Long )`
+
+Set an array element from <b>Long</b>
+
+<br/>
+
+### `Method SetULongArrayElement( _array:Object,index:Int,value:ULong )`
+
+Set an array element from <b>ULong</b>
+
+<br/>
+
+### `Method SetSizeTArrayElement( _array:Object,index:Int,value:Size_T )`
+
+Set an array element from <b>Size_T</b>
+
+<br/>
+
+### `Method SetFloatArrayElement( _array:Object,index:Int,value:Float )`
+
+Set an array element from <b>Float</b>
+
+<br/>
+
+### `Method SetDoubleArrayElement( _array:Object,index:Int,value:Double )`
+
+Set an array element from <b>Double</b>
+
+<br/>
+
+### `Method SetLongIntArrayElement( _array:Object,index:Int,value:LongInt )`
+
+Set an array element from <b>LongInt</b>
+
+<br/>
+
+### `Method SetULongIntArrayElement( _array:Object,index:Int,value:ULongInt )`
+
+Set an array element from <b>ULongInt</b>
+
+<br/>
+
+### `Method SetStringArrayElement( _array:Object,index:Int,value:String )`
+
+Set an array element from <b>String</b>
+
+<br/>
+
+### `Method Size:Size_T()`
+
+Size of the type in bytes
+
+For reference types such as classes and interfaces, this function will return the size of the reference (equal to the size of PointerTypeId), not the size of the pointed to instance.
+
 
 <br/>
 
 ## Functions
 
-### `Function ForName:TTypeId( name$ )`
+### `Function ArrayLength:Int(_array:Object, dim:Int = 0)`
 
-Get Type by name
+Get length of an array
 
 <br/>
 
-### `Function ForObject:TTypeId( obj:Object )`
+### `Function ArrayDimensions:Int(_array:Object)`
 
-Get Type by object
+Get the number of dimensions of an array
+
+<br/>
+
+### `Function ForName:TTypeId(name:String)`
+
+Get type by name
+
+<br/>
+
+### `Function ForObject:TTypeId(obj:Object)`
+
+Get type by object
 
 <br/>
 
 ### `Function EnumTypes:TList()`
 
-Get list of all types
+Get list of all data types currently used in this program
+
+<br/>
+
+### `Function EnumClasses:TList()`
+
+Get a list of all class types
+
+Does not include array types.
+
 
 <br/>
 
 ### `Function EnumInterfaces:TList()`
 
-Gets a list of all interfaces
+Get a list of all interface types
+
+<br/>
+
+### `Function EnumStructs:TList()`
+
+Get a list of all struct types
+
+<br/>
+
+### `Function EnumEnums:TList()`
+
+Get a list of all enum types
 
 <br/>
 

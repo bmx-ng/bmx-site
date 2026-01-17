@@ -10,17 +10,35 @@ A virtual touch joystick.
 Can be extended to implement your own rendering of it.
 
 
-## Methods
+## Constructors
 
-### `Method Create:TVirtualJoystick(name:String, x:Int, y:Int, stickRadius:Int, knobRadius:Int, flags:Int = VS_AXIS_XY)`
+### `Method New(name:String, x:Int, y:Int, stickRadius:Int, knobRadius:Int, flags:Int = VS_AXIS_XY)`
 
 Creates a new virtual joystick instance, using the specified configuration.
 
 <br/>
 
+### `Method New(name:String)`
+
+Creates a new virtual joystick instance, using the specified configuration.
+
+<br/>
+
+## Methods
+
 ### `Method AddButton:Int(x:Int, y:Int, radius:Int)`
 
-Adds a button at the specified location.
+Adds a circle button at the specified location.
+
+#### Returns
+The button id.
+
+
+<br/>
+
+### `Method AddButton:Int(x:Int, y:Int, w:Int, h:Int)`
+
+Adds a rect button at the specified location.
 
 #### Returns
 The button id.

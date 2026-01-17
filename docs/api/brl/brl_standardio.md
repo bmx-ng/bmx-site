@@ -12,9 +12,9 @@ The standard IO stream is generally connected to a 'console', allowing you to in
 
 ## Functions
 
-### `Function Print( str$="" )`
+### `Function Print( str:String="" )`
 
-Write a string to the standard IO stream
+Write a string to the standard errIO stream
 
 A newline character is also written after <b>str</b>.
 
@@ -31,7 +31,16 @@ Print "Hello World"
 ```
 <br/>
 
-### `Function Input$( prompt$=">" )`
+### `Function ErrPrint( str:String="" )`
+
+Write a string to the standard error IO stream
+
+A newline character is also written after <b>str</b>.
+
+
+<br/>
+
+### `Function Input:String( prompt:String=">" )`
 
 Receive a line of text from the standard IO stream
 
@@ -57,8 +66,14 @@ Print "Hello "+name
 
 BlitzMax Stream object used for Print and Input
 
-The [Print](../../brl/brl.standardio/#function-print-str-) and [Input](../../brl/brl.standardio/#function-input-prompt-) commands can be redirected by setting the <b>StandardIOStream</b> Global to an alternative Stream Object.
+The [Print](../../brl/brl.standardio/#function-print-strstring-) and [Input](../../brl/brl.standardio/#function-inputstring-promptstring-) commands can be redirected by setting the <b>StandardIOStream</b> Global to an alternative Stream Object.
 
+
+<br/>
+
+### `Global StandardErrIOStream:TStream=TTextStream.Create( New TCStandardErrIO,ETextStreamFormat.UTF8 )`
+
+BlitzMax Stream object used for [ErrPrint](../../brl/brl.standardio/#function-errprint-strstring-)
 
 <br/>
 

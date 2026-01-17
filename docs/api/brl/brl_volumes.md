@@ -108,6 +108,27 @@ If list Then
 	Next
 End If
 ```
+#### Example 4
+```blitzmax
+SuperStrict
+
+Framework BRL.volumes
+Import brl.standardio
+
+Local list:TList = ListVolumes()
+
+If list Then
+	Print "Volumes :"
+
+	For Local v:TVolume = EachIn list
+	
+		'If v.available Then
+			Print "~t" + v.volumeName + "  -  " + v.volumeDevice + " (" +  v.volumeType +  ") -  " + ((v.volumeFree / 1024) / 1024) + "mb"
+		'End If
+	
+	Next
+End If
+```
 <br/>
 
 ### `Function GetVolumeFreeSpace:Long(vol:String)`
@@ -161,6 +182,26 @@ Print "Freespace :"
 Print vol + " = " + (GetVolumeFreeSpace(vol) / 1024) + " kb"
 ```
 #### Example 3
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import brl.standardio
+
+Local vol:String
+
+?win32
+vol = "C:\"
+?linux
+vol = "/"
+?macos
+vol = "/"
+?
+
+Print "Freespace :"
+Print vol + " = " + (GetVolumeFreeSpace(vol) / 1024) + " kb"
+```
+#### Example 4
 ```blitzmax
 SuperStrict
 
@@ -252,6 +293,26 @@ vol = "/"
 Print "Total space :"
 Print vol + " = " + (GetVolumeSize(vol) / 1024) + " kb"
 ```
+#### Example 4
+```blitzmax
+SuperStrict
+
+Framework BRL.volumes
+Import brl.standardio
+
+Local vol:String
+
+?win32
+vol = "C:\"
+?linux
+vol = "/"
+?macos
+vol = "/"
+?
+
+Print "Total space :"
+Print vol + " = " + (GetVolumeSize(vol) / 1024) + " kb"
+```
 <br/>
 
 ### `Function GetVolumeInfo:TVolume(vol:String)`
@@ -306,6 +367,15 @@ Import BRL.Standardio
 
 Print GetUserHomeDir()
 ```
+#### Example 4
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserHomeDir()
+```
 <br/>
 
 ### `Function GetUserDesktopDir:String()`
@@ -340,6 +410,15 @@ Import BRL.Standardio
 Print GetUserDesktopDir()
 ```
 #### Example 3
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserDesktopDir()
+```
+#### Example 4
 ```blitzmax
 SuperStrict
 
@@ -390,6 +469,15 @@ Import BRL.Standardio
 
 Print GetUserAppDir()
 ```
+#### Example 4
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserAppDir()
+```
 <br/>
 
 ### `Function GetUserDocumentsDir:String()`
@@ -424,6 +512,15 @@ Import BRL.Standardio
 Print GetUserDocumentsDir()
 ```
 #### Example 3
+```blitzmax
+SuperStrict
+
+Framework BRL.Volumes
+Import BRL.Standardio
+
+Print GetUserDocumentsDir()
+```
+#### Example 4
 ```blitzmax
 SuperStrict
 

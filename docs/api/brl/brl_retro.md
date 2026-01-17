@@ -17,22 +17,22 @@ the transition to BlitzMax a little easier.
 
 NOTE: Strings in classic BASIC are '1 based'. This means that the first character within a 
 string is at index 1, the second at index 2 and so on. However, BlitzMax strings are '0 based',
-meaning the first character is at index 0, the second at index 1 and so on. The [instr](../../brl/brl.retro/#function-instr-strsubstart1-) and
-[Mid](../../brl/brl.retro/#function-mid-strpossize1-) functions in this module retain the '1 based' behaviour of classic BASIC.
+meaning the first character is at index 0, the second at index 1 and so on. The [instr](../../brl/brl.retro/#function-instrint-strstringsubstringstartint1-) and
+[Mid](../../brl/brl.retro/#function-midstring-strstringposintsizeint1-) functions in this module retain the '1 based' behaviour of classic BASIC.
 
 
 ## Functions
 
-### `Function Mid$( str$,pos,size=-1 )`
+### `Function Mid:String( str:String,pos:Int,size:Int=-1 )`
 
 Extract substring from a string
 
 
-The Mid$ command returns a substring of a String.
+The Mid command returns a substring of a String.
 
 Given an existing string, a <b>position</b> from the start of the string and
-an optional <b>size</b>, [Mid](../../brl/brl.retro/#function-mid-strpossize1-) creates a new string equal to the section specified.
-If no size if given, [Mid](../../brl/brl.retro/#function-mid-strpossize1-) returns the characters in the existing string from
+an optional <b>size</b>, [Mid](../../brl/brl.retro/#function-midstring-strstringposintsizeint1-) creates a new string equal to the section specified.
+If no size if given, [Mid](../../brl/brl.retro/#function-midstring-strstringposintsizeint1-) returns the characters in the existing string from
 <b>position</b> to the end of the string.
 
 For compatibility with classic BASIC, the <b>pos</b> parameter is 'one based'.
@@ -51,7 +51,7 @@ Print Mid(a,5,5)   ' prints 1234e
 ```
 <br/>
 
-### `Function Instr( str$,sub$,start=1 )`
+### `Function Instr:Int( str:String,sub:String,start:Int=1 )`
 
 Find a string within a string
 
@@ -82,13 +82,13 @@ If Instr(mystring,"media") Print "large!"
 ```
 <br/>
 
-### `Function Left$( str$,n )`
+### `Function Left:String( str:String,n:Int )`
 
 Extract characters from the beginning of a string
 
 
-The Left$ command returns a substring of a String.
-Given an existing String and a <b>size</b>, Left$ returns the first <b>size</b>
+The Left command returns a substring of a String.
+Given an existing String and a <b>size</b>, Left returns the first <b>size</b>
 characters from the start of the String in a new String.
 
 
@@ -104,13 +104,13 @@ Print Left("12345678",4)   ' prints 1234
 ```
 <br/>
 
-### `Function Right$( str$,n )`
+### `Function Right:String( str:String,n:Int )`
 
 Extract characters from the end of a string
 
 
-The Right$ command returns a substring of a String.
-Given an existing String and a <b>size</b>, Right$ returns the last <b>size</b>
+The Right command returns a substring of a String.
+Given an existing String and a <b>size</b>, Right returns the last <b>size</b>
 characters from the end of the String.
 
 
@@ -126,7 +126,7 @@ Print Right("12345678",4)   ' prints 5678
 ```
 <br/>
 
-### `Function LSet$( str$,n )`
+### `Function LSet:String( str:String,n:Int )`
 
 Left justify string
 
@@ -148,7 +148,7 @@ Print "["+LSet("12345678",10)+"]"
 ```
 <br/>
 
-### `Function RSet$( str$,n )`
+### `Function RSet:String( str:String,n:Int )`
 
 Right justify string
 
@@ -170,16 +170,16 @@ Print "["+RSet("12345678",10)+"]"
 ```
 <br/>
 
-### `Function Replace$( str$,sub$,replaceWith$ )`
+### `Function Replace:String( str:String,sub:String,replaceWith:String )`
 
 Performs a search and replace function
 
 
-The Replace$ command replaces all instances of one string with another.
+The Replace command replaces all instances of one string with another.
 
 
 #### Returns
-A string with all instances of <b>sub</b>$ replaced by <b>replace</b>$
+A string with all instances of <b>sub</b> replaced by <b>replace</b>
 
 
 #### Example
@@ -195,7 +195,7 @@ Print "Altered: "+str
 ```
 <br/>
 
-### `Function Trim$( str$ )`
+### `Function Trim:String( str:String )`
 
 Remove unprintable characters from ends a string
 
@@ -205,7 +205,7 @@ Remove unprintable characters from ends a string
 
 <br/>
 
-### `Function Lower$( str$ )`
+### `Function Lower:String( str:String )`
 
 Convert string to lowercase
 
@@ -221,7 +221,7 @@ Print Lower("abcdEFGH")     ' prints abcdefgh
 ```
 <br/>
 
-### `Function Upper$( str$ )`
+### `Function Upper:String( str:String )`
 
 Convert string to uppercase
 
@@ -237,7 +237,7 @@ Print Upper("Hello World") ' prints HELLO WORLD
 ```
 <br/>
 
-### `Function Hex$( val )`
+### `Function Hex:String( val:Int )`
 
 Convert an integer value to a hexadecimal string
 
@@ -256,7 +256,7 @@ Next
 ```
 <br/>
 
-### `Function Bin$( val )`
+### `Function Bin:String( val:Int )`
 
 Convert an integer value to a binary string
 
@@ -276,7 +276,7 @@ Print Bin(1 | 554) ' OR in action
 ```
 <br/>
 
-### `Function LongHex$( val:Long )`
+### `Function LongHex:String( val:Long )`
 
 Convert a 64 bit long integer value to a hexadecimal string
 
@@ -286,7 +286,7 @@ The hexadecimal string representation of <b>val</b>
 
 <br/>
 
-### `Function LongBin$( val:Long )`
+### `Function LongBin:String( val:Long )`
 
 Convert a 64 bit long integer value to a binary string
 

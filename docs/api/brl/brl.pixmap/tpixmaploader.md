@@ -10,7 +10,7 @@ Abstract base type for pixmap loaders
 
 To create a new pixmap loader, you should extend TPixmapLoader and implement the [LoadPixmap](../../../brl/brl.pixmap/tpixmaploader/#method-loadpixmaptpixmap-streamtstream-abstract) method.
 
-To install your pixmap loader, simply create an instance of it using [New](../../../brl/brl.blitz/#new).
+To install your pixmap loader, simply create an instance of it using [New](../../../math/math.vector/svec2d/#method-newxdouble-ydouble).
 
 
 ## Methods

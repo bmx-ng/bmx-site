@@ -12,12 +12,12 @@ sidebar_label: Introduction
 
 ## Functions
 
-### `Function CreateTimer:TTimer( hertz#,event:TEvent=Null )`
+### `Function CreateTimer:TTimer( hertz:Float,event:TEvent=Null )`
 
 Create a timer
 
 
-[CreateTimer](../../brl/brl.timer/#function-createtimerttimer-hertzeventteventnull-) creates a timer object that 'ticks' <b>hertz</b> times per second.
+[CreateTimer](../../brl/brl.timer/#function-createtimerttimer-hertzfloateventteventnull-) creates a timer object that 'ticks' <b>hertz</b> times per second.
 
 Each time the timer ticks, <b>event</b> will be emitted using [EmitEvent](../../brl/brl.event/#function-emitevent-eventtevent-).
 

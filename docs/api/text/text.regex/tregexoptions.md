@@ -9,6 +9,12 @@ Specifies options used when performing searches.
 
 ## Fields
 
+### `Field onlyPatternOptions:Int = False`
+
+Ignore other options and use only the pattern's options, like case sensitivity, etc.
+
+<br/>
+
 ### `Field caseSensitive:Int = False`
 
 Whether matches are case sensitive.

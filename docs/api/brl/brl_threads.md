@@ -31,6 +31,8 @@ BlitzMax provides 2 primitives known as 'mutexes' and 'semaphores' to assist wit
 | [TMutex](../../brl/brl.threads/tmutex) | Mutex type |
 | [TSemaphore](../../brl/brl.threads/tsemaphore) | Semaphore type |
 | [TCondVar](../../brl/brl.threads/tcondvar) | CondVar type |
+| [TFuture](../../brl/brl.threads/tfuture) | A generic type for asynchronous result handling, allowing threads to wait for and retrieve results safely. |
+| [TThreadEvent](../../brl/brl.threads/tthreadevent) | A thread event object. |
 
 ## Functions
 
@@ -55,6 +57,8 @@ A new thread object.
 
 #### Example
 ```blitzmax
+'Make sure to have 'Threaded build' enabled!
+'
 SuperStrict
 
 'Custom print that shows which thread is doing the printing

@@ -288,3 +288,13 @@ safely read, write, seek, or close the same file from two threads simultaneously
 |---|---|
 | [MaxIO](../../brl/brl.io/maxio) | IO abstraction implementation. |
 
+## Structs
+| Struct | Description |
+|---|---|
+| [SMaxIO_Stat](../../brl/brl.io/smaxio_stat) | File statistics, including file size, modification time, etc. |
+
+## Enums
+| Enum | Description |
+|---|---|
+| [EMaxIOFileType](../../brl/brl.io/emaxiofiletype) | The type of file. |
+

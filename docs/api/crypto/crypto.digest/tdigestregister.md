@@ -12,7 +12,7 @@ This can be extended to add new digests to the register.
 
 ## Methods
 
-### `Method GeTDigest:TMessageDigest( name:String ) Abstract`
+### `Method GetDigest:TMessageDigest( name:String ) Abstract`
 
 Gets an instance of a messages digest.
 

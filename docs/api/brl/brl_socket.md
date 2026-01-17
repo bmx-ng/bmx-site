@@ -155,7 +155,7 @@ Get remote port of a socket
 
 <br/>
 
-### `Function DottedIP$( ip:Int )`
+### `Function DottedIP:String( ip:Int )`
 
 Convert an ip address to a dotted string
 
@@ -185,7 +185,7 @@ For AF_INET6_, <b>dst</b> should be 128-bits (16 bytes) in size.
 
 <br/>
 
-### `Function HostIp:String( HostName$, index:Int=0, family:Int = AF_UNSPEC_ )`
+### `Function HostIp:String( HostName:String, index:Int=0, family:Int = AF_UNSPEC_ )`
 
 Convert a host name to an ip address
 
@@ -195,7 +195,7 @@ Host ip address, or 0 if host not found
 
 <br/>
 
-### `Function HostIps:String[]( HostName$, family:Int = AF_UNSPEC_ )`
+### `Function HostIps:String[]( HostName:String, family:Int = AF_UNSPEC_ )`
 
 Get all ip addresses for a host name
 
@@ -205,7 +205,7 @@ Array of host ips, or Null if host not found
 
 <br/>
 
-### `Function HostName$( HostIp:String, family:Int = AF_UNSPEC_ )`
+### `Function HostName:String( HostIp:String, family:Int = AF_UNSPEC_ )`
 
 Convert a host ip address to a name
 
@@ -224,6 +224,25 @@ Returns an array of TAddrInfo objects.
 ### `Function AddrInfo:TAddrInfo[](host:String, service:String, hints:TAddrInfo)`
 
 Returns an array of TAddrInfo objects.
+
+<br/>
+
+### `Function ShutdownSocket( socket:TSocket, how:Int=SD_SEND )`
+
+Disables sends or receives on a socket.
+
+Typically, [ShutdownSocket](../../brl/brl.socket/#function-shutdownsocket-sockettsocket-howintsdsend-) should be called before [CloseSocket](../../brl/brl.socket/#function-closesocket-sockettsocket-) to assure that all data is sent
+and received on a connected socket before it is closed.
+
+<b>how</b> is one of the following options :
+
+| Value      | Meaning                                   |
+|------------|-------------------------------------------|
+| SD_RECEIVE | Shutdown receive operations               |
+| SD_SEND    | Shutdown send operations                  |
+| SD_BOTH    | Shutdown both send and receive operations |
+
+
 
 <br/>
 

@@ -260,3 +260,13 @@ Null if key is not found, the value is not a Real, or on error.
 
 <br/>
 
+### `Method GetBool:Int(key:String)`
+
+Gets a Boolean value corresponding to key from the object.
+
+#### Returns
+Null if key is not found, the value is not a Boolean, or on error.
+
+
+<br/>
+

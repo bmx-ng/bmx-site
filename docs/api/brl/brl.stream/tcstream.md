@@ -12,7 +12,7 @@ Standard C file stream type
 
 ## Functions
 
-### `Function OpenFile:TCStream( path$,readable:Int,writeMode:Int )`
+### `Function OpenFile:TCStream( path:String,readable:Int,writeMode:Int )`
 
 Create a TCStream from a 'C' filename
 

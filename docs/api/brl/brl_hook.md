@@ -13,7 +13,7 @@ The following hook ids are currently used by BlitzMax modules:
 
 | Hook id | Description | Data |
 | --- | --- | --- |
-| FlipHook | A Max2D [Flip](../../brl/brl.graphics/#function-flip-sync1-) is about to occur | Null |
+| FlipHook | A Max2D [Flip](../../brl/brl.bytebuffer/tbuffer/#method-fliptbuffer) is about to occur | Null |
 | EmitEventHook | An event has been emitted by a call to [EmitEvent](../../brl/brl.event/#function-emitevent-eventtevent-) | A [TEvent](../../brl/brl.event/tevent) object |
 
 To hook into any of these functions, use [AddHook](../../brl/brl.hook/#function-addhook-idfuncobject-iddataobjectcontextobject-contextobjectnullpriority0-) with the specified hook id and your hook function.

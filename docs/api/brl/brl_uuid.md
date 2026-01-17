@@ -24,7 +24,7 @@ Next
 ```
 <br/>
 
-### `Function uuidGenerateBytes:Byte[]()`
+### `Function uuidGenerateBytes:Byte[](bytes:Byte[] = Null)`
 
 Generates a UUID Byte array.
 

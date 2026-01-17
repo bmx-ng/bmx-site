@@ -15,7 +15,7 @@ BlitzMax contains native support for sound files in both .wav (uncompressed)
 and .ogg (compressed) file formats.
 
 Playback of sounds can be controlled with various audio channel
-operators including [SetChannelVolume](../../brl/brl.audio/#function-setchannelvolume-channeltchannelvolume-), [SetChannelPan](../../brl/brl.audio/#function-setchannelpan-channeltchannelpan-), [SetChannelDepth](../../brl/brl.audio/#function-setchanneldepth-channeltchanneldepth-) and [SetChannelRate](../../brl/brl.audio/#function-setchannelrate-channeltchannelrate-).
+operators including [SetChannelVolume](../../brl/brl.audio/#function-setchannelvolume-channeltchannelvolumefloat-), [SetChannelPan](../../brl/brl.audio/#function-setchannelpan-channeltchannelpanfloat-), [SetChannelDepth](../../brl/brl.audio/#function-setchanneldepth-channeltchanneldepthfloat-) and [SetChannelRate](../../brl/brl.audio/#function-setchannelrate-channeltchannelratefloat-).
 
 A channel handle is obtained from either the return value of [PlaySound](../../brl/brl.audio/#function-playsoundtchannel-soundtsoundchanneltchannelnull-) and [CueSound](../../brl/brl.audio/#function-cuesoundtchannel-soundtsoundchanneltchannelnull-) or from
 reserving a channel with [AllocChannel](../../brl/brl.audio/#function-allocchanneltchannel).
@@ -212,7 +212,7 @@ Wend
 ```
 <br/>
 
-### `Function SetChannelVolume( channel:TChannel,volume# )`
+### `Function SetChannelVolume( channel:TChannel,volume:Float )`
 
 Set playback volume of an audio channel
 
@@ -239,7 +239,7 @@ Next
 ```
 <br/>
 
-### `Function SetChannelPan( channel:TChannel,pan# )`
+### `Function SetChannelPan( channel:TChannel,pan:Float )`
 
 Set stereo balance of an audio channel
 
@@ -280,7 +280,7 @@ End
 ```
 <br/>
 
-### `Function SetChannelDepth( channel:TChannel,depth# )`
+### `Function SetChannelDepth( channel:TChannel,depth:Float )`
 
 Set surround sound depth of an audio channel
 
@@ -322,7 +322,7 @@ End
 ```
 <br/>
 
-### `Function SetChannelRate( channel:TChannel,rate# )`
+### `Function SetChannelRate( channel:TChannel,rate:Float )`
 
 Set playback rate of an audio channel
 
@@ -423,7 +423,7 @@ Until AppTerminate() Or KeyHit(KEY_ESCAPE)
 ```
 <br/>
 
-### `Function AudioDrivers$[]()`
+### `Function AudioDrivers:String[]()`
 
 Get audio drivers
 
@@ -442,7 +442,7 @@ Next
 ```
 <br/>
 
-### `Function AudioDriverExists:Int( name$ )`
+### `Function AudioDriverExists:Int( name:String )`
 
 Determine if an audio driver exists
 
@@ -464,7 +464,7 @@ Print a+":"+AudioDriverExists(a)
 ```
 <br/>
 
-### `Function SetAudioDriver:Int( name$ )`
+### `Function SetAudioDriver:Int( name:String )`
 
 Set current audio driver
 
@@ -502,5 +502,11 @@ Function SetDriver:Int(d:String)
 	EndIf
 End Function
 ```
+<br/>
+
+### `Function GetAudioDriver:TAudioDriver()`
+
+Returns the current audio driver.
+
 <br/>
 

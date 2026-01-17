@@ -93,6 +93,16 @@ Deserializes the specified JSON instance into <b>obj</b>.
 
 <br/>
 
+### `Method FromJsonInstance:Object(json:TJSON, typeName:String)`
+
+Deserializes the specified JSON instance into an object of the specified type.
+
+#### Returns
+The deserialized object.
+
+
+<br/>
+
 ### `Method ToJson:String(obj:Object)`
 
 Serializes the specified object into its equivalent JSON representation.

@@ -12,7 +12,7 @@ IO abstraction implementation.
 
 ## Functions
 
-### `Function Init()`
+### `Function Init:Int()`
 
 Initialises the abstraction layer.
 
@@ -25,7 +25,7 @@ This must be called before any other [MaxIO](../../../brl/brl.io/maxio) function
 
 Determines if the [MaxIO](../../../brl/brl.io/maxio) is initialized.
 
-Once [Init](../../../brl/brl.io/maxio/#function-init)() returns successfully, this will return non-zero. Before a successful [Init](../../../brl/brl.io/maxio/#function-init)() and after [DeInit](../../../brl/brl.io/maxio/#function-deinitint)() returns
+Once [Init](../../../brl/brl.io/maxio/#function-initint)() returns successfully, this will return non-zero. Before a successful [Init](../../../brl/brl.io/maxio/#function-initint)() and after [DeInit](../../../brl/brl.io/maxio/#function-deinitint)() returns
 successfully, this will return zero. This function is safe to call at any time.
 
 
@@ -45,7 +45,7 @@ Note that this call can FAIL if there's a file open for writing that refuses to 
 buffering writes to network filesystem, and the fileserver has crashed, or a hard drive has failed, etc). It is usually best to close
 all write handles yourself before calling this function, so that you can gracefully handle a specific failure.
 
-Once successfully deinitialized, [Init](../../../brl/brl.io/maxio/#function-init)() can be called again to restart the subsystem. All default API states are restored at this point.
+Once successfully deinitialized, [Init](../../../brl/brl.io/maxio/#function-initint)() can be called again to restart the subsystem. All default API states are restored at this point.
 
 
 <br/>
@@ -124,7 +124,7 @@ Makes a subdirectory of an archive its root directory.
 This lets you narrow down the accessible files in a specific archive.
 
 For example, if you have x.zip with a file in y/z.txt, mounted to /a, if you
-call [SetRoot](../../../brl/brl.io/maxio/#function-setrootintarchivestring-subdirstring)("x.zip", "/y"), then the call OpenRead("/a/z.txt") will succeed.
+call [SetRoot](../../../brl/brl.io/maxio/#function-setrootintarchivestring-subdirstring)("x.zip", "/y"), then the call [OpenRead](../../../brl/brl.io/maxio/#function-openreadbyte-ptrpathstring)("/a/z.txt") will succeed.
 
 You can change an archive's root at any time, altering the interpolated
 file tree (depending on where paths shift, a different archive may be
@@ -253,7 +253,12 @@ The file location, or [Null](../../../brl/brl.blitz/#null) if not found.
 
 ### `Function Stat:Int(filename:String, _stat:SMaxIO_Stat Var)`
 
-Gets various information about a directory or a file.
+Gets various information about a directory or a file, populating the passed in [SMaxIO_Stat](../../../brl/brl.io/smaxio_stat) instance.
+
+This function will never follow symbolic links. If you haven't enabled
+symlinks with [PermitSymbolicLinks](../../../brl/brl.io/maxio/#function-permitsymboliclinksintallowint)(), stat'ing a symlink will be treated like stat'ing a non-existant file. If symlinks are enabled,
+stat'ing a symlink will give you information on the link itself and not what it points to.
+
 
 <br/>
 
@@ -288,6 +293,19 @@ The specified file is created if it doesn't exist. If it does exist, it is trunc
 
 Note that entries that are symlinks are ignored if PermitSymbolicLinks(True) hasn't been called, and opening a symlink with this function will
 fail in such a case.
+
+
+<br/>
+
+### `Function OpenRead:Byte Ptr(path:String)`
+
+Opens a file for reading.
+
+Opens a file for reading, in platform-independent notation.
+The search path is checked one at a time until a matching file is found, in which case an abstract filehandle is associated with it, and reading may be done.
+The reading offset is set to the first byte of the file.
+
+Note that entries that are symlinks are ignored if PHYSFS_permitSymbolicLinks(1) hasn't been called, and opening a symlink with this function will fail in such a case.
 
 
 <br/>
@@ -332,6 +350,55 @@ Returns the message for the specified <b>errorCode</b>.
 Returns the last error message, or [Null](../../../brl/brl.blitz/#null) if there is none.
 
 Calling this function resets the last error.
+
+
+<br/>
+
+### `Function PermitSymbolicLinks:Int(allow:Int)`
+
+Enables or disables following of symbolic links.
+
+Some physical filesystems and archives contain files that are just pointers
+to other files. On the physical filesystem, opening such a link will
+(transparently) open the file that is pointed to.
+
+By default, MaxIO will check if a file is really a symlink during open
+calls and fail if it is. Otherwise, the link could take you outside the
+write and search paths, and compromise security.
+
+If you want to take that risk, call this function with a non-zero parameter.
+Note that this is more for sandboxing a program's scripting language, in
+case untrusted scripts try to compromise the system. Generally speaking,
+a user could very well have a legitimate reason to set up a symlink, so
+unless you feel there's a specific danger in allowing them, you should
+permit them.
+
+Symlinks are only explicitly checked when dealing with filenames
+in platform-independent notation. That is, when setting up your
+search and write paths, etc, symlinks are never checked for.
+
+Please note that [Stat](../../../brl/brl.io/maxio/#function-statintfilenamestring-statsmaxiostat-var)() will always check the path specified; if
+that path is a symlink, it will not be followed in any case. If symlinks
+aren't permitted through this function, [Stat](../../../brl/brl.io/maxio/#function-statintfilenamestring-statsmaxiostat-var)() ignores them, and
+would treat the query as if the path didn't exist at all.
+
+Symbolic link permission can be enabled or disabled at any time after
+you've called [Init](../../../brl/brl.io/maxio/#function-initint)(), and is disabled by default.
+
+
+<br/>
+
+### `Function SymbolicLinksPermitted:Int()`
+
+Determine if symbolic links are permitted.
+
+This reports the setting from the last call to [PermitSymbolicLinks](../../../brl/brl.io/maxio/#function-permitsymboliclinksintallowint)().
+
+If [PermitSymbolicLinks](../../../brl/brl.io/maxio/#function-permitsymboliclinksintallowint)() hasn't been called since the library was last initialized, symbolic links are implicitly disabled.
+
+
+#### Returns
+[True](../../../brl/brl.blitz/#true) if symlinks are permitted, [False](../../../brl/brl.blitz/#false) if not.
 
 
 <br/>

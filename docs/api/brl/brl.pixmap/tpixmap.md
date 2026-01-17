@@ -48,31 +48,31 @@ A byte pointer to the pixmap's pixels
 
 <br/>
 
-### `Field width`
+### `Field width:Int`
 
 The width, in pixels, of the pixmap
 
 <br/>
 
-### `Field height`
+### `Field height:Int`
 
 The height, in pixels, of the pixmap
 
 <br/>
 
-### `Field pitch`
+### `Field pitch:Int`
 
 The pitch, in bytes, of the pixmap
 
 <br/>
 
-### `Field format`
+### `Field format:Int`
 
 The pixel format of the pixmap
 
 <br/>
 
-### `Field capacity`
+### `Field capacity:Int`
 
 The capacity, in bytes, of the pixmap, or -1 for a static pixmap
 
@@ -80,7 +80,7 @@ The capacity, in bytes, of the pixmap, or -1 for a static pixmap
 
 ## Methods
 
-### `Method PixelPtr:Byte Ptr( x,y )`
+### `Method PixelPtr:Byte Ptr( x:Int,y:Int )`
 
 Get memory address of a pixel
 
@@ -90,7 +90,7 @@ A byte pointer to the pixel at coordinates <b>x</b>, <b>y</b>
 
 <br/>
 
-### `Method Window:TPixmap( x,y,width,height )`
+### `Method Window:TPixmap( x:Int,y:Int,width:Int,height:Int )`
 
 Create a virtual window into a pixmap
 
@@ -110,13 +110,13 @@ A new TPixmap object.
 
 <br/>
 
-### `Method Paste( source:TPixmap,x,y )`
+### `Method Paste( source:TPixmap,x:Int,y:Int )`
 
 Paste a pixmap
 
 <br/>
 
-### `Method Convert:TPixmap( format )`
+### `Method Convert:TPixmap( format:Int )`
 
 Convert a pixmap
 
@@ -126,7 +126,7 @@ A new TPixmap object in the specified format
 
 <br/>
 
-### `Method ReadPixel( x,y )`
+### `Method ReadPixel:Int( x:Int,y:Int )`
 
 Read a pixel from a pixmap
 
@@ -136,7 +136,7 @@ The pixel at the specified coordinates packed into an integer
 
 <br/>
 
-### `Method WritePixel( x,y,argb )`
+### `Method WritePixel( x:Int,y:Int,argb:Int )`
 
 Write a pixel to a pixmap
 
@@ -148,7 +148,7 @@ Writes a pixel to a pixmap of the specified [SColor8](../../../brl/brl.color/sco
 
 <br/>
 
-### `Method ClearPixels( argb )`
+### `Method ClearPixels( argb:Int )`
 
 Clear a pixmap
 
@@ -178,7 +178,7 @@ WaitKey
 
 ## Functions
 
-### `Function Create:TPixmap( width,height,format,align=4 )`
+### `Function Create:TPixmap( width:Int,height:Int,format:Int,align:Int=4 )`
 
 Create a pixmap
 
@@ -188,9 +188,13 @@ A new TPixmap object
 
 <br/>
 
-### `Function CreateStatic:TPixmap( pixels:Byte Ptr,width,height,pitch,format )`
+### `Function CreateStatic:TPixmap( pixels:Byte Ptr,width:Int,height:Int,pitch:Int,format:Int )`
 
 Create a static pixmap
+
+The memory referenced by a static pixmap is not released when the pixmap is deleted.
+The memory must not freed before the pixmap is deleted.
+
 
 #### Returns
 A new TPixmap object

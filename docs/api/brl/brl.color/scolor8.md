@@ -15,9 +15,23 @@ Creates an [SColor8](../../../brl/brl.color/scolor8) instance using the specifie
 
 <br/>
 
-### `Method New(rgba:Int)`
+### `Method New(argb:Int)`
 
-Creates an [SColor8](../../../brl/brl.color/scolor8) instance using the specified 32-bit RGBA value.
+Creates an [SColor8](../../../brl/brl.color/scolor8) instance using the specified 32-bit ARGB value.
+
+<br/>
+
+## Operators
+
+### `Method Operator = :Int(col:SColor8)`
+
+Returns [True](../../../brl/brl.blitz/#true) if the components of this color and <b>col</b> are equal.
+
+<br/>
+
+### `Method Operator <> :Int(col:SColor8)`
+
+Returns [True](../../../brl/brl.blitz/#true) if the components of this color and <b>col</b> are not equal.
 
 <br/>
 

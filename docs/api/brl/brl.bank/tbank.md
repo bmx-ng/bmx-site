@@ -736,6 +736,26 @@ Next
 ```
 <br/>
 
+### `Method Window:TBank(offset:Size_T, size:Size_T)`
+
+Creates a virtual window into the bank.
+
+#### Returns
+A static bank that references the specified offset and size.
+
+
+<br/>
+
+### `Method Window:TBank(offset:Int, size:Int)`
+
+Creates a virtual window into the bank.
+
+#### Returns
+A static bank that references the specified offset and size.
+
+
+<br/>
+
 ### `Method Save:Int( url:Object )`
 
 Save a bank to a stream

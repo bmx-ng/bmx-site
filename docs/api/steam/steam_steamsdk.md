@@ -58,7 +58,7 @@ to your Steam depot!
 
 ### SteamShutdown
 
-When you are done using the Steamworks API you should call [SteamShutdown](../../steam/steam.steamsdk/#function-steamshutdown) to release the resources used by your application internally within Steam. You should call this during process shutdown
+When you are done using the Steamworks API you must call [SteamShutdown](../../steam/steam.steamsdk/#function-steamshutdown) to release the resources used by your application internally within Steam. You should call this during process shutdown
 if possible.
 
 This will not unhook the Steam Overlay from your game as there's no guarantee that your rendering API is done using it.
@@ -89,9 +89,9 @@ This will not unhook the Steam Overlay from your game as there's no guarantee th
 | [EPersonaChange](../../steam/steam.steamsdk/epersonachange) | Used in [OnPersonaStateChanged](../../steam/steam.steamsdk/isteamfriendslistener/#method-onpersonastatechangedsteamidulong-changeflagsint), <b>changeFlags</b> to describe what's changed about a user. |
 | [ERemoteStoragePublishedFileVisibility](../../steam/steam.steamsdk/eremotestoragepublishedfilevisibility) | Possible visibility states that a Workshop item can be in. |
 | [EWorkshopFileType](../../steam/steam.steamsdk/eworkshopfiletype) | The way that a shared file will be shared with the community. |
-| [EUGCMatchingUGCType](../../steam/steam.steamsdk/eugcmatchingugctype) | Specifies the types of UGC to obtain from a call to [CreateQueryUserUGCRequest](../../steam/steam.steamsdk/tsteamugc/#method-createqueryuserugcrequestulongaccountiduint-listtypeeuserugclist-matchingugctypeeugcmatchingugctype-sortordereuserugclistsortorder-creatorappiduint-consumerappiduint-pageuint) or [CreateQueryAllUGCRequest](../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint). |
+| [EUGCMatchingUGCType](../../steam/steam.steamsdk/eugcmatchingugctype) | Specifies the types of UGC to obtain from a call to [CreateQueryUserUGCRequest](../../steam/steam.steamsdk/tsteamugc/#method-createqueryuserugcrequestulongaccountiduint-listtypeeuserugclist-matchingugctypeeugcmatchingugctype-sortordereuserugclistsortorder-creatorappiduint-consumerappiduint-pageuint) or CreateQueryAllUGCRequest. |
 | [EUserUGCList](../../steam/steam.steamsdk/euserugclist) | Used with [CreateQueryUserUGCRequest](../../steam/steam.steamsdk/tsteamugc/#method-createqueryuserugcrequestulongaccountiduint-listtypeeuserugclist-matchingugctypeeugcmatchingugctype-sortordereuserugclistsortorder-creatorappiduint-consumerappiduint-pageuint) to obtain different lists of published UGC for a user. |
-| [EUGCQuery](../../steam/steam.steamsdk/eugcquery) | Used with [CreateQueryAllUGCRequest](../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint) to specify the sorting and filtering for queries across all available UGC. |
+| [EUGCQuery](../../steam/steam.steamsdk/eugcquery) | Used with CreateQueryAllUGCRequest to specify the sorting and filtering for queries across all available UGC. |
 | [EItemPreviewType](../../steam/steam.steamsdk/eitempreviewtype) | Flags that specify the type of preview an item has. |
 
 ## Functions
@@ -125,6 +125,9 @@ Make sure to remove the `steam_appid.txt` file when uploading the game to your S
 ### `Function SteamShutdown()`
 
 Shuts down Steam.
+
+This should be called before your application closes.
+
 
 <br/>
 

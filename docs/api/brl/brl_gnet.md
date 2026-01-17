@@ -11,11 +11,11 @@ games.
 GNet works a little differently than other networking libraries. Instead of being primarily 'message based', GNet
 works by synchronizing a collection of GNet <i>objects</i> over a network.
 
-Each GNet object contains 32 &slots which are similar in nature to the fields of BlitzMax objects. You can write to these slots using the [SetGNetInt](../../brl/brl.gnet/#function-setgnetint-objtgnetobjectindexintvalueint-), [SetGNetFloat](../../brl/brl.gnet/#function-setgnetfloat-objtgnetobjectindexintvalue-) and [SetGNetString](../../brl/brl.gnet/#function-setgnetstring-objtgnetobjectindexintvalue-) commands, and read from these slots using the [GetGNetInt](../../brl/brl.gnet/#function-getgnetintint-objtgnetobjectindexint-), [GetGNetFloat](../../brl/brl.gnet/#function-getgnetfloat-objtgnetobjectindexint-) and [GetGNetString](../../brl/brl.gnet/#function-getgnetstring-objtgnetobjectindexint-) commands. The actual meaning of the data contained in these slots is completely up to you, but will typically include such information as player position, score, hitpoints and so on.
+Each GNet object contains 32 &slots which are similar in nature to the fields of BlitzMax objects. You can write to these slots using the [SetGNetInt](../../brl/brl.gnet/#function-setgnetint-objtgnetobjectindexintvalueint-), [SetGNetFloat](../../brl/brl.gnet/#function-setgnetfloat-objtgnetobjectindexintvaluefloat-) and [SetGNetString](../../brl/brl.gnet/#function-setgnetstring-objtgnetobjectindexintvaluestring-) commands, and read from these slots using the [GetGNetInt](../../brl/brl.gnet/#function-getgnetintint-objtgnetobjectindexint-), [GetGNetFloat](../../brl/brl.gnet/#function-getgnetfloatfloat-objtgnetobjectindexint-) and [GetGNetString](../../brl/brl.gnet/#function-getgnetstringstring-objtgnetobjectindexint-) commands. The actual meaning of the data contained in these slots is completely up to you, but will typically include such information as player position, score, hitpoints and so on.
 
 Note that you can only modify GNet objects that you have yourself created. Such objects are known as <i>local</i> objects, while objects created elsewhere are known as <i>remote</i> objects.
 
-To start using GNet, you must first create a GNet <i>host</i> with the [CreateGNetHost](../../brl/brl.gnet/#function-creategnethosttgnethost) command. Once you have created a host, you can either connect to other GNet hosts using [GNetConnect](../../brl/brl.gnet/#function-gnetconnectint-hosttgnethostaddressportinttimeoutmsint10000-), or prepare to accept connections from other hosts using [GNetListen](../../brl/brl.gnet/#function-gnetlistenint-hosttgnethostportint-).
+To start using GNet, you must first create a GNet <i>host</i> with the [CreateGNetHost](../../brl/brl.gnet/#function-creategnethosttgnethost) command. Once you have created a host, you can either connect to other GNet hosts using [GNetConnect](../../brl/brl.gnet/#function-gnetconnectint-hosttgnethostaddressstringportinttimeoutmsint10000-), or prepare to accept connections from other hosts using [GNetListen](../../brl/brl.gnet/#function-gnetlistenint-hosttgnethostportint-).
 
 The [GNetSync](../../brl/brl.gnet/#function-gnetsync-hosttgnethost-) command brings all GNet objects up to date. This involves notifying other hosts about any modifications you have made to local GNet objects, and processing notifications from other hosts about any modifications to remote GNet objects.
 
@@ -35,7 +35,7 @@ Create GNet host
 
 
 Once you have created a GNet host, you can use it to create objects with [CreateGNetObject](../../brl/brl.gnet/#function-creategnetobjecttgnetobject-hosttgnethost-),
-connect to other hosts with [GNetConnect](../../brl/brl.gnet/#function-gnetconnectint-hosttgnethostaddressportinttimeoutmsint10000-) and listen for connections from other hosts with
+connect to other hosts with [GNetConnect](../../brl/brl.gnet/#function-gnetconnectint-hosttgnethostaddressstringportinttimeoutmsint10000-) and listen for connections from other hosts with
 [GNetListen](../../brl/brl.gnet/#function-gnetlistenint-hosttgnethostportint-).
 
 
@@ -73,10 +73,10 @@ Listen for connections
 
 
 Causes <b>host</b> to start listening for connection attempts on the specified <b>port</b>.
-Once a host is listening, hosts on other machines can connect using [GNetConnect](../../brl/brl.gnet/#function-gnetconnectint-hosttgnethostaddressportinttimeoutmsint10000-).
+Once a host is listening, hosts on other machines can connect using [GNetConnect](../../brl/brl.gnet/#function-gnetconnectint-hosttgnethostaddressstringportinttimeoutmsint10000-).
 
 [GNetListen](../../brl/brl.gnet/#function-gnetlistenint-hosttgnethostportint-) may fail if <b>port</b> is already in use by another application, or if <b>host</b>
-is already listening or has already connected to a remote host using [GNetConnect](../../brl/brl.gnet/#function-gnetconnectint-hosttgnethostaddressportinttimeoutmsint10000-).
+is already listening or has already connected to a remote host using [GNetConnect](../../brl/brl.gnet/#function-gnetconnectint-hosttgnethostaddressstringportinttimeoutmsint10000-).
 
 
 #### Returns
@@ -85,7 +85,7 @@ True if successful, otherwise false
 
 <br/>
 
-### `Function GNetConnect:Int( host:TGNetHost,address$,port:Int,timeout_ms:Int=10000 )`
+### `Function GNetConnect:Int( host:TGNetHost,address:String,port:Int,timeout_ms:Int=10000 )`
 
 Connect to a remote GNet host
 
@@ -218,22 +218,13 @@ Set GNet object int data
 
 <br/>
 
-### `Function SetGNetFloat( obj:TGNetObject,index:Int,value# )`
+### `Function SetGNetFloat( obj:TGNetObject,index:Int,value:Float )`
 
 Set GNet object float data
 
 <br/>
 
-### `Function SetGNetFloat( obj:TGNetObject,index:Int,value:Double )`
-
-Set GNet object float data
-
-There may be a precision loss during the conversion of [Double](../../brl/brl.blitz/#double) to [Float](../../brl/brl.blitz/#float).
-
-
-<br/>
-
-### `Function SetGNetString( obj:TGNetObject,index:Int,value$ )`
+### `Function SetGNetString( obj:TGNetObject,index:Int,value:String )`
 
 Set GNet object string data
 
@@ -245,13 +236,13 @@ Get GNet object int data
 
 <br/>
 
-### `Function GetGNetFloat#( obj:TGNetObject,index:Int )`
+### `Function GetGNetFloat:Float( obj:TGNetObject,index:Int )`
 
 Get GNet object float data
 
 <br/>
 
-### `Function GetGNetString$( obj:TGNetObject,index:Int )`
+### `Function GetGNetString:String( obj:TGNetObject,index:Int )`
 
 Get GNet object string data
 

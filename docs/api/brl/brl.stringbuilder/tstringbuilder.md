@@ -221,6 +221,12 @@ Print sb.ToString()
 ```
 <br/>
 
+### `Method AppendLine:TStringBuilder(value:String)`
+
+Appends a [String](../../../brl/brl.blitz/#string) onto the string builder with new line at the end.
+
+<br/>
+
 ### `Method AppendByte:TStringBuilder(value:Byte)`
 
 Appends a [Byte](../../../brl/brl.blitz/#byte) value to the string builder.
@@ -320,6 +326,12 @@ MemFree(b)
 
 Print sb.ToString()
 ```
+<br/>
+
+### `Method AppendCStringBytes:TStringBuilder(chars:Byte Ptr, length:Int)`
+
+Appends a C string of <b>length</b> bytes onto the string builder.
+
 <br/>
 
 ### `Method AppendDouble:TStringBuilder(value:Double)`
@@ -606,6 +618,12 @@ Print sb.ToString()
 ```
 <br/>
 
+### `Method AppendUTF8Bytes:TStringBuilder(chars:Byte Ptr, length:Int)`
+
+Appends a UTF-8 string of <b>length</b> bytes onto the string builder.
+
+<br/>
+
 ### `Method AppendShorts:TStringBuilder(shorts:Short Ptr, length:Int)`
 
 Appends an array of shorts onto the string builder.
@@ -648,6 +666,18 @@ Next
 
 Print sb.ToString()
 ```
+<br/>
+
+### `Method AppendUTF32String:TStringBuilder(chars:UInt Ptr)`
+
+Appends a null-terminated UTF-32 string onto the string builder.
+
+<br/>
+
+### `Method AppendUTF32Bytes:TStringBuilder(chars:UInt Ptr, length:Int)`
+
+Appends a UTF-32 string of <b>length</b> characters (n bytes / 4) onto the string builder.
+
 <br/>
 
 ### `Method Compare:Int(o:Object) Override`
@@ -889,7 +919,7 @@ Appends a [Double](../../../brl/brl.blitz/#double) value to the string builder u
 
 <br/>
 
-### `Method Hash:ULong()`
+### `Method HashCode:UInt() Override`
 
 Returns the calculated hash for the content of the string builder.
 
@@ -954,9 +984,9 @@ Print sb.ToString()
 ```
 <br/>
 
-### `Method StartsWith:Int(subString:String)`
+### `Method StartsWith:Int(prefix:String, startIndex:Int = 0)`
 
-Returns true if string starts with <b>subString</b>.
+Returns [True](../../../brl/brl.blitz/#true) if string starts with <b>prefix</b>.
 
 #### Example
 ```blitzmax
@@ -1321,7 +1351,7 @@ Print sb.ToString()
 
 Converts the value of the string builder to a UTF-8 formatted [Byte](../../../brl/brl.blitz/#byte) sequence.
 
-The resulting Byte Ptr must be freed with [MemFree](../../../brl/brl.blitz/#function-memfree-membyte-ptr-).
+The resulting Byte Ptr must be freed with [MemFree](../../../brl/brl.blitz/#function-memfree-membyte-ptr-collectableint-false-).
 
 
 #### Returns
@@ -1334,11 +1364,119 @@ A pointer to a sequence of Bytes, or [Null](../../../brl/brl.blitz/#null) if the
 
 Converts the value of the string builder to a sequence of Shorts.
 
-The resulting Short Ptr must be freed with [MemFree](../../../brl/brl.blitz/#function-memfree-membyte-ptr-).
+The resulting Short Ptr must be freed with [MemFree](../../../brl/brl.blitz/#function-memfree-membyte-ptr-collectableint-false-).
 
 
 #### Returns
 A pointer to a sequence of Shorts, or [Null](../../../brl/brl.blitz/#null) if the string builder is empty.
+
+
+<br/>
+
+### `Method ToInt:Int()`
+
+Returns the string builder as an [Int](../../../brl/brl.blitz/#int).
+
+If the string builder is not a valid [Int](../../../brl/brl.blitz/#int), 0 is returned.
+If the calculated value is out of range for an [Int](../../../brl/brl.blitz/#int), either int max or int min is returned.
+
+
+<br/>
+
+### `Method ToLong:Long()`
+
+Returns the string builder as a [Long](../../../brl/brl.blitz/#long).
+
+If the string builder is not a valid [Long](../../../brl/brl.blitz/#long), 0 is returned.
+If the calculated value is out of range for a [Long](../../../brl/brl.blitz/#long), either long max or long min is returned.
+
+
+<br/>
+
+### `Method ToShort:Short()`
+
+Returns the string builder as a [Short](../../../brl/brl.blitz/#short).
+
+If the string builder is not a valid [Short](../../../brl/brl.blitz/#short), 0 is returned.
+If the calculated value is out of range for a [Short](../../../brl/brl.blitz/#short), short max is returned.
+
+
+<br/>
+
+### `Method ToByte:Byte()`
+
+Returns the string builder as a [Byte](../../../brl/brl.blitz/#byte).
+
+If the string builder is not a valid [Byte](../../../brl/brl.blitz/#byte), 0 is returned.
+If the calculated value is out of range for a [Byte](../../../brl/brl.blitz/#byte), byte max is returned.
+
+
+<br/>
+
+### `Method ToUInt:UInt()`
+
+Returns the string builder as a [UInt](../../../brl/brl.blitz/#uint).
+
+If the string builder is not a valid [UInt](../../../brl/brl.blitz/#uint), 0 is returned.
+If the calculated value is out of range for a [UInt](../../../brl/brl.blitz/#uint), uint max is returned.
+
+
+<br/>
+
+### `Method ToULong:ULong()`
+
+Returns the string builder as a [ULong](../../../brl/brl.blitz/#ulong).
+
+If the string builder is not a valid [ULong](../../../brl/brl.blitz/#ulong), 0 is returned.
+If the calculated value is out of range for a [ULong](../../../brl/brl.blitz/#ulong), ulong max is returned.
+
+
+<br/>
+
+### `Method ToSizeT:Size_T()`
+
+Returns the string builder as a [Size_T](../../../brl/brl.blitz/#sizet).
+
+If the string builder is not a valid [Size_T](../../../brl/brl.blitz/#sizet), 0 is returned.
+If the calculated value is out of range for a [Size_T](../../../brl/brl.blitz/#sizet), Size_T max is returned.
+
+
+<br/>
+
+### `Method ToLongInt:LongInt()`
+
+Returns the string builder as a [LongInt](../../../brl/brl.blitz/#longint).
+
+If the string builder is not a valid [LongInt](../../../brl/brl.blitz/#longint), 0 is returned.
+If the calculated value is out of range for a [LongInt](../../../brl/brl.blitz/#longint), either long int max or long int min is returned.
+
+
+<br/>
+
+### `Method ToULongInt:ULongInt()`
+
+Returns the string builder as a [ULongInt](../../../brl/brl.blitz/#ulongint).
+
+If the string builder is not a valid [ULongInt](../../../brl/brl.blitz/#ulongint), 0 is returned.
+If the calculated value is out of range for a [ULongInt](../../../brl/brl.blitz/#ulongint), either ulong int max or ulong int min is returned.
+
+
+<br/>
+
+### `Method ToFloat:Float()`
+
+Returns the string builder as a [Float](../../../brl/brl.blitz/#float).
+
+If the string builder is not a valid [Float](../../../brl/brl.blitz/#float), 0.0 is returned.
+
+
+<br/>
+
+### `Method ToDouble:Double()`
+
+Returns the string builder as a [Double](../../../brl/brl.blitz/#double).
+
+If the string builder is not a valid [Double](../../../brl/brl.blitz/#double), 0.0 is returned.
 
 
 <br/>

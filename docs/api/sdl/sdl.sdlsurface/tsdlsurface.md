@@ -341,6 +341,16 @@ The new surface that is created or Null if it fails.
 
 <br/>
 
+### `Function CreateRGBWithFormatFrom:TSDLSurface(pixels:Byte Ptr, width:Int, height:Int, depth:Int, pitch:Int, format:UInt)`
+
+Allocates a new RGB surface with existing pixel data.
+
+If depth is 4 or 8 bits, an empty palette is allocated for the surface.
+Note: No copy is made of the pixel data. Pixel data is not managed automatically; you must free the surface before you free the pixel data.
+
+
+<br/>
+
 ### `Function LoadBMP:TSDLSurface(file:String)`
 
 Loads a surface from a BMP file.

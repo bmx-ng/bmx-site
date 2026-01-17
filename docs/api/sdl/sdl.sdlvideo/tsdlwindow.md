@@ -19,7 +19,7 @@ Returns the display containing the center of the window on success or Null on fa
 
 <br/>
 
-### `Method SetDisplayMode:Int(Mode:TSDLDisplayMode)`
+### `Method SetDisplayMode:Int(mode:SDLDisplayMode Var)`
 
 Sets the display mode to use when the window is visible at fullscreen.
 
@@ -33,7 +33,7 @@ use [SetSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-setsizewint-hint)().
 
 <br/>
 
-### `Method GetDisplayMode:TSDLDisplayMode()`
+### `Method GetDisplayMode:Int(mode:SDLDisplayMode Var)`
 
 Gets information about the display mode to use when a window is visible at fullscreen.
 
@@ -101,7 +101,7 @@ Gets the position of the window.
 Sets the size of the window's client area.
 
 The window size in screen coordinates may differ from the size in pixels, if the window was created with
-[SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdlwindowallowhighdpiuint-00002000) on a platform with high-dpi support (e.g. iOS or OS X).
+[SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdlwindowallowhighdpiulong-00002000ulong-shl-32) on a platform with high-dpi support (e.g. iOS or OS X).
 Use [GLGetDrawableSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-glgetdrawablesizewint-var-hint-var)() or SDLGetRendererOutputSize() to get the real client area size in pixels.
 Fullscreen windows automatically match the size of the display mode, and you should use SetWindowDisplayMode() to change their size.
 
@@ -113,7 +113,7 @@ Fullscreen windows automatically match the size of the display mode, and you sho
 Gets the size of the window's client area.
 
 The window size in screen coordinates may differ from the size in pixels, if the window was created with
-[SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdlwindowallowhighdpiuint-00002000) on a platform with high-dpi support (e.g. iOS or OS X).
+[SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdlwindowallowhighdpiulong-00002000ulong-shl-32) on a platform with high-dpi support (e.g. iOS or OS X).
 Use [GLGetDrawableSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-glgetdrawablesizewint-var-hint-var)() or SDLGetRendererOutputSize() to get the real client area size in pixels.
 
 
@@ -188,6 +188,16 @@ Hides the window.
 
 <br/>
 
+### `Method IsScreenKeyboardShown:Int()`
+
+Checks whether the screen keyboard is shown for the window.
+
+#### Returns
+[True](../../../brl/brl.blitz/#true) if screen keyboard is shown or [False](../../../brl/brl.blitz/#false) if not.
+
+
+<br/>
+
 ### `Method Raise()`
 
 Raises the window above other windows and sets the input focus.
@@ -212,11 +222,11 @@ Restores the size and position of a minimized or maximized window.
 
 <br/>
 
-### `Method SetFullScreen:Int(flags:UInt)`
+### `Method SetFullScreen:Int(flags:ULong)`
 
 Sets the window's fullscreen state.
 
-<b>flags</b> may be SDL_WINDOW_FULLSCREEN, for "real" fullscreen with a videomode change; SDL_WINDOW_FULLSCREEN_DESKTOP
+<b>flags</b> may be [SDL_WINDOW_FULLSCREEN](../../../sdl/sdl.sdlvideo/#const-sdlwindowfullscreenulong-00000001ulong-shl-32), for "real" fullscreen with a videomode change; [SDL_WINDOW_FULLSCREEN_DESKTOP](../../../sdl/sdl.sdlvideo/#const-sdlwindowfullscreendesktopulong-sdlwindowfullscreen-00001000ulong-shl-32)
 for "fake" fullscreen that takes the size of the desktop; and 0 for windowed mode.
 
 
@@ -422,8 +432,8 @@ The OpenGL context associated with window or Null on error.
 Gets the size of a window's underlying drawable in pixels (for use with glViewport).
 
 This may differ from [GetSize](../../../sdl/sdl.sdlvideo/tsdlwindow/#method-getsizewint-var-hint-var)() if we're rendering to a high-DPI drawable, i.e. the window was created with
-[SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdlwindowallowhighdpiuint-00002000) on a platform with high-DPI support (Apple calls this "Retina"), and not disabled by
-the SDL_HINT_VIDEO_HIGHDPI_DISABLED hint.
+[SDL_WINDOW_ALLOW_HIGHDPI](../../../sdl/sdl.sdlvideo/#const-sdlwindowallowhighdpiulong-00002000ulong-shl-32) on a platform with high-DPI support (Apple calls this "Retina"), and not disabled by
+the [SDL_HINT_VIDEO_HIGHDPI_DISABLED](../../../sdl/sdl.sdlhints/#const-sdlhintvideohighdpidisabledstring-sdlvideohighdpidisabled) hint.
 
 
 <br/>
@@ -447,9 +457,109 @@ This is used with double-buffered OpenGL contexts, which are the default.
 
 <br/>
 
+### `Method GetHandle:Byte Ptr()`
+
+Returns the native window handle for this window.
+
+<br/>
+
+### `Method GetDisplayHandle:Byte Ptr()`
+
+Returns the native window handle for this window.
+
+<br/>
+
+### `Method WarpMouse(x:Int, y:Int)`
+
+Moves the mouse cursor to the given position within the window.
+
+This method generates a mouse motion event.
+
+Note that this method will appear to succeed, but not actually move the mouse when used over Microsoft Remote Desktop.
+
+
+<br/>
+
+### `Method GetICCProfile:TICCProfile()`
+
+Gets the raw ICC profile data for the screen the window is currently on.
+
+<br/>
+
+### `Method Flash:Int(operation:ESDLFlashOperation)`
+
+Requests a window to demand attention from the user.
+
+#### Returns
+0 on success or a negative error code on failure; call [SDLGetError](../../../sdl/sdl.sdl/#function-sdlgeterrorstring)() for more information.
+
+
+<br/>
+
+### `Method SetAlwaysOnTop(onTop:Int)`
+
+Sets the window to always be above the others.
+
+This will add or remove the window's "SDL_WINDOW_ALWAYS_ON_TOP" flag. This will bring the window to the front and keep the window above the rest.
+
+
+<br/>
+
+### `Method SetKeyboardGrab(grabbed:Int)`
+
+Sets the window's keyboard grab mode.
+
+Keyboard grab enables capture of system keyboard shortcuts like Alt+Tab or the Meta/Super key. Note that not all system keyboard shortcuts can be
+captured by applications (one example is Ctrl+Alt+Del on Windows).
+
+This is primarily intended for specialized applications such as VNC clients or VM frontends. Normal games should not use keyboard grab.
+
+When keyboard grab is enabled, SDL will continue to handle Alt+Tab when the
+window is full-screen to ensure the user is not trapped in your
+application. If you have a custom keyboard shortcut to exit fullscreen
+mode, you may suppress this behavior with `SDL_HINT_ALLOW_ALT_TAB_WHILE_GRABBED`.
+
+If the caller enables a grab while another window is currently grabbed, the
+other window loses its grab in favor of the caller's window.
+
+
+<br/>
+
+### `Method HasSurface:Int()`
+
+Returns whether the window has a surface associated with it.
+
+#### Returns
+[True](../../../brl/brl.blitz/#true) if the window has a surface, [False](../../../brl/brl.blitz/#false) otherwise.
+
+
+<br/>
+
+### `Method DestroySurface:Int()`
+
+Destroys the surface associated with the window.
+
+#### Returns
+0 on success, or a negative error code on failure; call [SDLGetError](../../../sdl/sdl.sdl/#function-sdlgeterrorstring)() for more information.
+
+
+<br/>
+
+### `Method CreateMetalView:TSDLMetalView()`
+
+Creates a Metal view for use with a Metal window.
+
+<br/>
+
+### `Method GetMetalDrawableSize(width:Int Var, height:Int Var)`
+
+Gets the size of a Metal window's drawable in pixels.
+
+<br/>
+
 ## Functions
 
-### `Function Create:TSDLWindow(title:String, x:Int, y:Int, w:Int, h:Int, flags:UInt)`
+### `Function Create:TSDLWindow(title:String, x:Int, y:Int, w:Int, h:Int, flags:ULong)`
 
 Creates a window with the specified position, dimensions, and flags.
 

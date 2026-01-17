@@ -140,11 +140,17 @@
           "api/brl/brl.blitz",
           "api/brl/brl.blitz/tarrayboundsexception",
           "api/brl/brl.blitz/tblitzexception",
+          "api/brl/brl.blitz/tillegalargumentexception",
+          "api/brl/brl.blitz/tinvalidenumexception",
           "api/brl/brl.blitz/tnullfunctionexception",
           "api/brl/brl.blitz/tnullmethodexception",
           "api/brl/brl.blitz/tnullobjectexception",
           "api/brl/brl.blitz/toutofdataexception",
-          "api/brl/brl.blitz/truntimeexception"
+          "api/brl/brl.blitz/truntimeexception",
+          "api/brl/brl.blitz/tunsupportedoperationeexception",
+          "api/brl/brl.blitz/iterable",
+          "api/brl/brl.blitz/iterator",
+          "api/brl/brl.blitz/iclosable"
         ]
       },
       "api/brl/brl.bmploader",
@@ -157,6 +163,14 @@
           "api/brl/brl.clipboard/tclipboardopts",
           "api/brl/brl.clipboard/twin32clipboardopts",
           "api/brl/brl.clipboard/tx11clipboardopts"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Color",
+        "ids": [
+          "api/brl/brl.color",
+          "api/brl/brl.color/scolor8"
         ]
       },
       "api/brl/brl.d3d7max2d",
@@ -172,10 +186,27 @@
         ]
       },
       "api/brl/brl.eventqueue",
-      "api/brl/brl.filesystem",
+      {
+        "type": "subcategory",
+        "label": "FileSystem",
+        "ids": [
+          "api/brl/brl.filesystem",
+          "api/brl/brl.filesystem/ifilewalker",
+          "api/brl/brl.filesystem/sfileattributes"
+        ]
+      },
       "api/brl/brl.freeaudioaudio",
       "api/brl/brl.glgraphics",
       "api/brl/brl.glmax2d",
+      {
+        "type": "subcategory",
+        "label": "Glob",
+        "ids": [
+          "api/brl/brl.glob",
+          "api/brl/brl.glob/egloboptions",
+          "api/brl/brl.glob/tglobiter"
+        ]
+      },
       "api/brl/brl.gnet",
       "api/brl/brl.graphics",
       "api/brl/brl.hook",
@@ -187,7 +218,6 @@
           "api/brl/brl.io/maxio"
         ]
       },
-
       "api/brl/brl.jpgloader",
       "api/brl/brl.keycodes",
       {
@@ -205,31 +235,10 @@
         "label": "Map",
         "ids": [
           "api/brl/brl.map",
-          "api/brl/brl.map/tmap",
-          "api/brl/brl.map/tintmap",
-          "api/brl/brl.map/tintkey",
-          "api/brl/brl.map/tptrmap",
-          "api/brl/brl.map/tptrkey",
-          "api/brl/brl.map/tstringmap"
+          "api/brl/brl.map/tmap"
         ]
       },
       "api/brl/brl.math",
-      {
-        "type": "subcategory",
-        "label": "Matrix",
-        "ids": [
-          "api/brl/brl.matrix",
-          "api/brl/brl.matrix/smat2d",
-          "api/brl/brl.matrix/smat2f",
-          "api/brl/brl.matrix/smat2i",
-          "api/brl/brl.matrix/smat3d",
-          "api/brl/brl.matrix/smat3f",
-          "api/brl/brl.matrix/smat3i",
-          "api/brl/brl.matrix/smat4d",
-          "api/brl/brl.matrix/smat4f",
-          "api/brl/brl.matrix/smat4i"
-        ]
-      },
       {
         "type": "subcategory",
         "label": "Max2D",
@@ -247,16 +256,27 @@
           "api/brl/brl.maxlua/tluaobject"
         ]
       },
+      {
+        "type": "subcategory",
+        "label": "MaxUnit",
+        "ids": [
+          "api/brl/brl.maxunit",
+          "api/brl/brl.maxunit/ttest",
+          "api/brl/brl.maxunit/tassert"
+        ]
+      },
       "api/brl/brl.oggloader",
       "api/brl/brl.openalaudio",
       {
         "type": "subcategory",
-        "label": "ObjectList",
+        "label": "Path",
         "ids": [
-          "api/brl/brl.objectlist",
-          "api/brl/brl.objectlist/tobjectlist",
-          "api/brl/brl.objectlist/tobjectlistenumerator",
-          "api/brl/brl.objectlist/tobjectlistreverseenumerator"
+          "api/brl/brl.path",
+          "api/brl/brl.path/tpath",
+          "api/brl/brl.path/ipathwalker",
+          "api/brl/brl.path/tpathfilewalker",
+          "api/brl/brl.path/spathattributes",
+          "api/brl/brl.path/tpathdiriterator"
         ]
       },
       {
@@ -270,23 +290,24 @@
       },
       "api/brl/brl.pngloader",
       "api/brl/brl.polledinput",
-      {
-        "type": "subcategory",
-        "label": "Quaternion",
-        "ids": [
-          "api/brl/brl.quaternion",
-          "api/brl/brl.quaternion/squatd",
-          "api/brl/brl.quaternion/squatf",
-          "api/brl/brl.quaternion/squati"
-        ]
-      },
       "api/brl/brl.ramstream",
       {
         "type": "subcategory",
         "label": "Random",
         "ids": [
           "api/brl/brl.random",
-          "api/brl/brl.random/trandom"
+          "api/brl/brl.random/trandomdefault"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "RectPacker",
+        "ids": [
+          "api/brl/brl.rectpacker",
+          "api/brl/brl.rectpacker/epackingmethod",
+          "api/brl/brl.rectpacker/spackedrect",
+          "api/brl/brl.rectpacker/tpackedsheet",
+          "api/brl/brl.rectpacker/trectpacker"
         ]
       },
       {
@@ -358,6 +379,15 @@
       },
       {
         "type": "subcategory",
+        "label": "Time",
+        "ids": [
+          "api/brl/brl.time",
+          "api/brl/brl.time/etimeunit",
+          "api/brl/brl.time/ttimeoutexception"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Timer",
         "ids": [
           "api/brl/brl.timer",
@@ -365,22 +395,6 @@
         ]
       },
       "api/brl/brl.timerdefault",
-      {
-        "type": "subcategory",
-        "label": "Vector",
-        "ids": [
-          "api/brl/brl.vector",
-          "api/brl/brl.vector/svec2d",
-          "api/brl/brl.vector/svec2f",
-          "api/brl/brl.vector/svec2i",
-          "api/brl/brl.vector/svec3d",
-          "api/brl/brl.vector/svec3f",
-          "api/brl/brl.vector/svec3i",
-          "api/brl/brl.vector/svec4d",
-          "api/brl/brl.vector/svec4f",
-          "api/brl/brl.vector/svec4i"
-        ]
-      },
       {
         "type": "subcategory",
         "label": "Volumes",
@@ -391,116 +405,7 @@
       },
       "api/brl/brl.wavloader"
     ],
-    "Text": [
-      {
-        "type": "subcategory",
-        "label": "CSV",
-        "ids": [
-          "api/text/text.csv",
-          "api/text/text.csv/tcsvparser",
-          "api/text/text.csv/tcsvheader",
-          "api/text/text.csv/tcsvrow",
-          "api/text/text.csv/tcsvoptions",
-          "api/text/text.csv/scsvcolumn"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Format",
-        "ids": [
-          "api/text/text.format",
-          "api/text/text.format/tformatter"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Ini",
-        "ids": [
-          "api/text/text.ini",
-          "api/text/text.ini/tini",
-          "api/text/text.ini/tiniproperty",
-          "api/text/text.ini/tinisection"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "JConv",
-        "ids": [
-          "api/text/text.jconv",
-          "api/text/text.jconv/tjconv",
-          "api/text/text.jconv/tjconvbuilder",
-          "api/text/text.jconv/tjconvserializer"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Json",
-        "ids": [
-          "api/text/text.json",
-          "api/text/text.json/tjson",
-          "api/text/text.json/tjsonobject",
-          "api/text/text.json/tjsonstring",
-          "api/text/text.json/tjsoninteger",
-          "api/text/text.json/tjsonreal",
-          "api/text/text.json/tjsonbool",
-          "api/text/text.json/tjsonarray",
-          "api/text/text.json/tjsonnull",
-          "api/text/text.json/tjsonerror",
-          "api/text/text.json/tjsonnumber"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Regex",
-        "ids": [
-          "api/text/text.regex",
-          "api/text/text.regex/tregex",
-          "api/text/text.regex/tregexmatch",
-          "api/text/text.regex/tregexoptions",
-          "api/text/text.regex/tregexexception"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "TOML",
-        "ids": [
-          "api/text/text.toml",
-          "api/text/text.toml/etomlnodetype",
-          "api/text/text.toml/ttoml",
-          "api/text/text.toml/itomlnode",
-          "api/text/text.toml/stomldate",
-          "api/text/text.toml/stomldatetime",
-          "api/text/text.toml/stomltime",
-          "api/text/text.toml/ttomlarray",
-          "api/text/text.toml/ttomlinteger",
-          "api/text/text.toml/ttomlstring",
-          "api/text/text.toml/ttomlparsererror",
-          "api/text/text.toml/ttomltable",
-          "api/text/text.toml/ttomlboolean",
-          "api/text/text.toml/ttomlfoatingpoint",
-          "api/text/text.toml/ttomlsoucreregion"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Xml",
-        "ids": [
-          "api/text/text.xml",
-          "api/text/text.xml/txmldoc",
-          "api/text/text.xml/txmlnode",
-          "api/text/text.xml/txmlattribute"
-        ]
-      }
-    ],
-    "MaxGUI": [
-      "api/maxgui/maxgui.maxgui",
-      "api/maxgui/maxgui.drivers",
-      "api/maxgui/maxgui.localization",
-      "api/maxgui/maxgui.proxygadgets",
-      "api/maxgui/maxgui.cocoamaxgui",
-      "api/maxgui/maxgui.win32maxguiex"
-    ],
-    "PUB": [
+    "Pub": [
       "api/pub/pub.freejoy",
       "api/pub/pub.freeprocess",
       "api/pub/pub.glad",
@@ -516,8 +421,60 @@
       "api/pub/pub.lua",
       "api/pub/pub.openal",
       "api/pub/pub.opengles",
+      {
+        "type": "subcategory",
+        "label": "StdC",
+        "ids": [
+          "api/pub/pub.stdc",
+          "api/pub/pub.stdc/sdatetime"
+        ]
+      },
       "api/pub/pub.xmmintrin",
       "api/pub/pub.zlib"
+    ],
+    "Collections": [
+      {
+        "type": "subcategory",
+        "label": "IntMap",
+        "ids": [
+          "api/collections/collections.intmap",
+          "api/collections/collections.intmap/tintmap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "ObjectList",
+        "ids": [
+          "api/collections/collections.objectlist",
+          "api/collections/collections.objectlist/tobjectlist",
+          "api/collections/collections.objectlist/tobjectlistenumerator",
+          "api/collections/collections.objectlist/tobjectlistreverseenumerator"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "ObjectMap",
+        "ids": [
+          "api/collections/collections.objectmap",
+          "api/collections/collections.objectmap/tobjectmap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "PtrMap",
+        "ids": [
+          "api/collections/collections.ptrmap",
+          "api/collections/collections.ptrmap/tptrmap"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "StringMap",
+        "ids": [
+          "api/collections/collections.stringmap",
+          "api/collections/collections.stringmap/tstringmap"
+        ]
+      }
     ],
     "Crypto": [
       {
@@ -757,6 +714,80 @@
         ]
       }
     ],
+    "Math": [
+      {
+        "type": "subcategory",
+        "label": "Matrix",
+        "ids": [
+          "api/math/math.matrix",
+          "api/math/math.matrix/smat2d",
+          "api/math/math.matrix/smat2f",
+          "api/math/math.matrix/smat2i",
+          "api/math/math.matrix/smat3d",
+          "api/math/math.matrix/smat3f",
+          "api/math/math.matrix/smat3i",
+          "api/math/math.matrix/smat4d",
+          "api/math/math.matrix/smat4f",
+          "api/math/math.matrix/smat4i"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Quaternion",
+        "ids": [
+          "api/math/math.quaternion",
+          "api/math/math.quaternion/squatd",
+          "api/math/math.quaternion/squatf",
+          "api/math/math.quaternion/squati"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Vector",
+        "ids": [
+          "api/math/math.vector",
+          "api/math/math.vector/svec2d",
+          "api/math/math.vector/svec2f",
+          "api/math/math.vector/svec2i",
+          "api/math/math.vector/svec3d",
+          "api/math/math.vector/svec3f",
+          "api/math/math.vector/svec3i",
+          "api/math/math.vector/svec4d",
+          "api/math/math.vector/svec4f",
+          "api/math/math.vector/svec4i"
+        ]
+      }
+    ],
+    "MaxGUI": [
+      "api/maxgui/maxgui.maxgui",
+      "api/maxgui/maxgui.drivers",
+      "api/maxgui/maxgui.localization",
+      "api/maxgui/maxgui.proxygadgets",
+      "api/maxgui/maxgui.cocoamaxgui",
+      "api/maxgui/maxgui.win32maxguiex"
+    ],
+    "Random": [
+      {
+        "type": "subcategory",
+        "label": "Core",
+        "ids": [
+          "api/random/random.core",
+          "api/random/random.core/trandom"
+        ]
+      },
+      "api/random/random.prvhash",
+      "api/random/random.secure",
+      {
+        "type": "subcategory",
+        "label": "SFMT",
+        "ids": [
+          "api/random/random.sfmt",
+          "api/random/random.sfmt/tsfmtrandom"
+        ]
+      },
+      "api/random/random.squares",
+      "api/random/random.xoshiro"
+    ],
     "SDL": [
       {
         "type": "subcategory",
@@ -863,6 +894,163 @@
           "api/steam/steam.steamsdk/euserrestriction",
           "api/steam/steam.steamsdk/euserugclist",
           "api/steam/steam.steamsdk/eworkshopfiletype"
+        ]
+      }
+    ],
+    "Text": [
+      {
+        "type": "subcategory",
+        "label": "CP932Encoding",
+        "ids": [
+          "api/text/text.cp932encoding"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "CSV",
+        "ids": [
+          "api/text/text.csv",
+          "api/text/text.csv/tcsvparser",
+          "api/text/text.csv/tcsvheader",
+          "api/text/text.csv/tcsvrow",
+          "api/text/text.csv/tcsvoptions",
+          "api/text/text.csv/scsvcolumn"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Encoding",
+        "ids": [
+          "api/text/text.encoding"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Format",
+        "ids": [
+          "api/text/text.format",
+          "api/text/text.format/tformatter"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Graphviz",
+        "ids": [
+          "api/text/text.graphviz",
+          "api/text/text.graphviz/tgvgraphviz",
+          "api/text/text.graphviz/tagraph"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Ini",
+        "ids": [
+          "api/text/text.ini",
+          "api/text/text.ini/tini",
+          "api/text/text.ini/tiniproperty",
+          "api/text/text.ini/tinisection"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "JConv",
+        "ids": [
+          "api/text/text.jconv",
+          "api/text/text.jconv/tjconv",
+          "api/text/text.jconv/tjconvbuilder",
+          "api/text/text.jconv/tjconvserializer"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Json",
+        "ids": [
+          "api/text/text.json",
+          "api/text/text.json/tjson",
+          "api/text/text.json/tjsonobject",
+          "api/text/text.json/tjsonstring",
+          "api/text/text.json/tjsoninteger",
+          "api/text/text.json/tjsonreal",
+          "api/text/text.json/tjsonbool",
+          "api/text/text.json/tjsonarray",
+          "api/text/text.json/tjsonnull",
+          "api/text/text.json/tjsonerror",
+          "api/text/text.json/tjsonnumber"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Markdown",
+        "ids": [
+          "api/text/text.markdown",
+          "api/text/text.markdown/tmarkdown",
+          "api/text/text.markdown/imdrenderer"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "PDF",
+        "ids": [
+          "api/text/text.pdf",
+          "api/text/text.pdf/tpdfdoc",
+          "api/text/text.pdf/tpdfpage",
+          "api/text/text.pdf/tpdffont",
+          "api/text/text.pdf/tpdfoutline",
+          "api/text/text.pdf/tpdfannotation",
+          "api/text/text.pdf/tpdfencoder",
+          "api/text/text.pdf/tpdfexception",
+          "api/text/text.pdf/epdfcompressionmode",
+          "api/text/text.pdf/epdfpagemode"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Pikchr",
+        "ids": [
+          "api/text/text.pikchr",
+          "api/text/text.pikchr/epikchrflags"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Regex",
+        "ids": [
+          "api/text/text.regex",
+          "api/text/text.regex/tregex",
+          "api/text/text.regex/tregexmatch",
+          "api/text/text.regex/tregexoptions",
+          "api/text/text.regex/tregexexception"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "TOML",
+        "ids": [
+          "api/text/text.toml",
+          "api/text/text.toml/etomlnodetype",
+          "api/text/text.toml/ttoml",
+          "api/text/text.toml/itomlnode",
+          "api/text/text.toml/stomldate",
+          "api/text/text.toml/stomldatetime",
+          "api/text/text.toml/stomltime",
+          "api/text/text.toml/ttomlarray",
+          "api/text/text.toml/ttomlinteger",
+          "api/text/text.toml/ttomlstring",
+          "api/text/text.toml/ttomlparsererror",
+          "api/text/text.toml/ttomltable",
+          "api/text/text.toml/ttomlboolean",
+          "api/text/text.toml/ttomlfoatingpoint",
+          "api/text/text.toml/ttomlsoucreregion"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Xml",
+        "ids": [
+          "api/text/text.xml",
+          "api/text/text.xml/txmldoc",
+          "api/text/text.xml/txmlnode",
+          "api/text/text.xml/txmlattribute"
         ]
       }
     ]

@@ -15,7 +15,7 @@ Gets the implementation dependent name of a sensor.
 
 <br/>
 
-### `Method GetType:Int()`
+### `Method GetType:ESDLSensorType()`
 
 Gets the type of a sensor.
 
@@ -74,7 +74,7 @@ This can be called before any sensors are opened.
 
 <br/>
 
-### `Function GetDeviceType:Int(deviceIndex:Int)`
+### `Function GetDeviceType:ESDLSensorType(deviceIndex:Int)`
 
 Gets the type of a sensor.
 

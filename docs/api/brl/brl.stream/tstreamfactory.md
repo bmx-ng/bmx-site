@@ -22,7 +22,7 @@ To install your stream factory, simply create an instance of it using 'New'.
 
 ## Methods
 
-### `Method CreateStream:TStream( url:Object,proto$,path$,readable:Int,writeMode:Int ) Abstract`
+### `Method CreateStream:TStream( url:Object,proto:String,path:String,readable:Int,writeMode:Int ) Abstract`
 
 Create a stream based on a url object
 

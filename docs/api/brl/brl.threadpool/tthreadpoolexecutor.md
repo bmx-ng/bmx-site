@@ -21,6 +21,12 @@ Initiates an orderly shutdown in which previously submitted tasks are executed, 
 
 <br/>
 
+### `Method getActiveCount:Int()`
+
+Returns the approximate number of threads that are actively executing tasks.
+
+<br/>
+
 ## Functions
 
 ### `Function newSingleThreadExecutor:TThreadPoolExecutor()`

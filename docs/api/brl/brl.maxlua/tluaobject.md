@@ -22,7 +22,7 @@ this method.
 
 <br/>
 
-### `Method Invoke:Object( name$,args:Object[] )`
+### `Method Invoke:Object( name:String,args:Object[] )`
 
 Invoke an object method
 
@@ -40,7 +40,7 @@ Create a lua object
 
 
 Once a lua object has been created, object methods (actually lua functions defined in the
-class) can be invoked using the [Invoke](../../../brl/brl.maxlua/tluaobject/#method-invokeobject-nameargsobject-) method.
+class) can be invoked using the [Invoke](../../../brl/brl.maxlua/tluaobject/#method-invokeobject-namestringargsobject-) method.
 
 
 <br/>

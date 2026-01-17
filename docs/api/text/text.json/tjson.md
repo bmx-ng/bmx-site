@@ -7,6 +7,14 @@ sidebar_label: TJSON
 Base type for JSON objects.
 
 
+## Fields
+
+### `Field key:String`
+
+The key associated with this JSON value, if any.
+
+<br/>
+
 ## Methods
 
 ### `Method SaveString:String(flags:Int = 0, indent:Int = 0, precision:Int = 17)`

@@ -330,7 +330,7 @@ End If
 Search an attribute associated to the node
 
 #### Returns
-the attribute or Null if not found.
+[True](../../../brl/brl.blitz/#true) if the attribute exists, or [False](../../../brl/brl.blitz/#false) otherwise.
 
 
 <br/>
@@ -463,6 +463,16 @@ Reads the value of a node.
 
 #### Returns
 The node content.
+
+
+<br/>
+
+### `Method getContent:TStringBuilder(sb:TStringBuilder)`
+
+Reads the value of a node, optionally appending to an existing [TStringBuilder](../../../brl/brl.stringbuilder/tstringbuilder).
+
+#### Returns
+The node content as a [TStringBuilder](../../../brl/brl.stringbuilder/tstringbuilder).
 
 
 <br/>
