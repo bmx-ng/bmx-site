@@ -13,7 +13,7 @@ and yields a [TPath](../../../brl/brl.path/tpath) for each child.
 
 The iterator holds an open directory handle while iterating. It should be closed
 when no longer needed, either explicitly via [Close](../../../archive/archive.core/twritearchive/#method-closeint) or automatically using a
-Using block.
+[Using](../../../brl/brl.blitz/#using) block.
 
 
 ## Functions
