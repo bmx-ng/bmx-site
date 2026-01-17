@@ -19,7 +19,7 @@ At its core is the [TPath](../../brl/brl.path/tpath) type, which wraps a normali
 
 The module is designed to behave consistently whether using the native filesystem or the virtual filesystem when [BRL.Io](../brl/brl_io.md) / MaxIO is enabled.
 
-### Quick start
+## Quick start
 
 ```blitzmax
 SuperStrict
@@ -36,7 +36,7 @@ Print p.Extension()  ' bmx
 Print p.Parent().ToString() ' src/core
 ```
 
-### Path normalization
+## Path normalization
 
 When a [TPath](../../brl/brl.path/tpath) is created, the path is normalized:
 
@@ -46,7 +46,7 @@ When a [TPath](../../brl/brl.path/tpath) is created, the path is normalized:
 This keeps equality comparisons stable and predictable.
 
 
-### Joining paths
+## Joining paths
 
 Use [Join](../../brl/brl.path/tpath/#method-jointpathpartstring), [Child](../../brl/brl.path/tpath/#method-childtpathnamestring), or the / operator:
 
@@ -65,7 +65,7 @@ Local b:TPath = a / "/x/y"
 Print b.ToString() ' /x/y
 ```
 
-### Resolve and Relativize
+## Resolve and Relativize
 
 Resolve appends a relative path (or replaces the base if the argument is rooted):
 
@@ -93,7 +93,7 @@ p.Relativize(p.Resolve(q)).Equals(q)
 
 A relative path cannot be constructed if only one of the paths is rooted, or if rooted paths have different root components.
 
-### Querying the filesystem
+## Querying the filesystem
 
 [TPath](../../brl/brl.path/tpath) exposes filesystem queries through simple methods:
 
@@ -111,7 +111,7 @@ If p.Exists() Then
 End If
 ```
 
-### Creating, deleting, renaming and copying
+## Creating, deleting, renaming and copying
 
 ```blitzmax
 Local dir:TPath = New TPath("build")
@@ -128,11 +128,11 @@ If file.RenameTo(dir / "moved.txt", moved) Then
 End If
 ```
 
-### Directory listing
+## Directory listing
 
 Use [IterDir](../../brl/brl.path/tpath/#method-iterdirtpathdiriteratorskipdotsint-true) to iterate lazily, or [List](../../brl/brl.path/tpath/#method-listtpathskipdotsint-true) to build an array.
 
-The iterator holds an open directory handle while iterating; if you exit early, close it (or use a Using block).
+The iterator holds an open directory handle while iterating; if you exit early, close it (or use a [Using](../../brl/brl.blitz/#using) block).
 
 ```blitzmax
 Using
@@ -144,7 +144,7 @@ Do
 End Using
 ```
 
-### Globbing
+## Globbing
 
 [Glob](../../brl/brl.path/tpath/#method-globtpathpatternstring-flagsegloboptions-egloboptionsnone) and [GlobIter](../../brl/brl.path/tpath/#method-globitertpathiteratorpatternstring-flagsegloboptions-egloboptionsnone) expand glob patterns to matching filesystem entries.
 
@@ -160,7 +160,7 @@ Supported pattern features include:
 By default, wildcard patterns do not match entries whose names begin with ..
 Enable EGlobOptions.Period to include dotfiles.
 
-#### Iterating results (recommended)
+### Iterating results (recommended)
 
 ```blitzmax
 Using
@@ -172,7 +172,7 @@ Do
 End Using
 ```
 
-#### Including files in the starting directory
+### Including files in the starting directory
 
 A pattern of the form **/pattern matches only files below the starting directory (because the `/` is required).
 
@@ -190,7 +190,7 @@ Do
 End Using
 ```
 
-### Matching without filesystem access
+## Matching without filesystem access
 
 [MatchGlob](../../brl/brl.path/tpath/#method-matchglobintpatternstring-flagsegloboptions-egloboptionsnone) matches a path against a pattern without touching the filesystem.
 
@@ -203,7 +203,7 @@ If p.MatchGlob("sub/*.txt") Then
 End If
 ```
 
-### Walking a file tree
+## Walking a file tree
 
 [Walk](../../brl/brl.path/tpath/#method-walkintpathwalkeripathwalker-optionsefilewalkoption-efilewalkoptionnone-maxdepthint-0) traverses a directory tree and calls an [IPathWalker](../../brl/brl.path/ipathwalker) for each entry.
 
@@ -220,10 +220,10 @@ New TPath(".").Walk(New TPrintWalker)
 
 Traversal can be configured using EFileWalkOption (for example, following symlinks) and the maxDepth parameter.
 
-### Resource management and Using
+## Resource management and Using
 
 Iterators returned by [IterDir](../../brl/brl.path/tpath/#method-iterdirtpathdiriteratorskipdotsint-true) and [GlobIter](../../brl/brl.path/tpath/#method-globitertpathiteratorpatternstring-flagsegloboptions-egloboptionsnone) may hold native resources (directory handles).
-If the iterator is not fully consumed, close it explicitly, or prefer a Using block:
+If the iterator is not fully consumed, close it explicitly, or prefer a [Using](../../brl/brl.blitz/#using) block:
 
 ```blitzmax
 Using
