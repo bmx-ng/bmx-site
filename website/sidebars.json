@@ -148,9 +148,9 @@
           "api/brl/brl.blitz/toutofdataexception",
           "api/brl/brl.blitz/truntimeexception",
           "api/brl/brl.blitz/tunsupportedoperationeexception",
-          "api/brl/brl.blitz/iterable",
-          "api/brl/brl.blitz/iterator",
-          "api/brl/brl.blitz/iclosable"
+          "api/brl/brl.blitz/iiterable",
+          "api/brl/brl.blitz/iiterator",
+          "api/brl/brl.blitz/icloseable"
         ]
       },
       "api/brl/brl.bmploader",
