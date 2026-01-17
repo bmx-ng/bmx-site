@@ -163,7 +163,7 @@ The globbing implementation works consistently for both the native filesystem
 and the virtual filesystem when [BRL.Io](../brl/brl_io.md) / [MaxIO](../../brl/brl.io/maxio) is enabled.
 
 The returned iterator should be closed if not fully consumed, to release any held resources.
-This can be done manually by calling [Close](../../archive/archive.core/twritearchive/#method-closeint)(), or automatically via a Using block.
+This can be done manually by calling [Close](../../archive/archive.core/twritearchive/#method-closeint)(), or automatically via a [Using](../../brl/brl.blitz/#using) block.
 For example:
 ```blitzmax
 Using
