@@ -122,7 +122,7 @@ Until AppTerminate()
 ```
 <br/>
 
-### `Function AllocUserEventId:Int( description$="" )`
+### `Function AllocUserEventId:Int( description:String="" )`
 
 Allocate a user event id
 

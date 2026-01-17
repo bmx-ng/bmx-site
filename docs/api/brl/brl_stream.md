@@ -274,11 +274,11 @@ A Long value
 
 <br/>
 
-### `Function ReadFloat#( stream:TStream )`
+### `Function ReadFloat:Float( stream:TStream )`
 
 Read a Float from a stream
 
-[ReadFloat](../../brl/brl.stream/tstream/#method-readfloat) reads 4 bytes from <b>stream</b>.
+[ReadFloat](../../brl/brl.stream/tstream/#method-readfloatfloat) reads 4 bytes from <b>stream</b>.
 A TStreamReadException is thrown If there is not enough data available.
 
 
@@ -288,11 +288,11 @@ A Float value
 
 <br/>
 
-### `Function ReadDouble!( stream:TStream )`
+### `Function ReadDouble:Double( stream:TStream )`
 
 Read a Double from a stream
 
-[ReadDouble](../../brl/brl.stream/tstream/#method-readdouble) reads 8 bytes from <b>stream</b>.
+[ReadDouble](../../brl/brl.stream/tstream/#method-readdoubledouble) reads 8 bytes from <b>stream</b>.
 A TStreamWriteException is thrown If there is not enough data available.
 
 
@@ -342,27 +342,27 @@ A TStreamWriteException is thrown if not all bytes could be written
 
 <br/>
 
-### `Function WriteFloat( stream:TStream,n# )`
+### `Function WriteFloat( stream:TStream,n:Float )`
 
 Write a Float to a stream
 
-[WriteFloat](../../brl/brl.stream/tstream/#method-writefloat-n-) writes 4 bytes to <b>stream</b>.
+[WriteFloat](../../brl/brl.stream/tstream/#method-writefloat-nfloat-) writes 4 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
 <br/>
 
-### `Function WriteDouble( stream:TStream,n! )`
+### `Function WriteDouble( stream:TStream,n:Double )`
 
 Write a Double to a stream
 
-[WriteDouble](../../brl/brl.stream/tstream/#method-writedouble-n-) writes 8 bytes to <b>stream</b>.
+[WriteDouble](../../brl/brl.stream/tstream/#method-writedouble-ndouble-) writes 8 bytes to <b>stream</b>.
 A TStreamWriteException is thrown if not all bytes could be written
 
 
 <br/>
 
-### `Function ReadString$( stream:TStream,length:Int )`
+### `Function ReadString:String( stream:TStream,length:Int )`
 
 Read a String from a stream
 
@@ -376,7 +376,7 @@ A String of length <b>length</b>
 
 <br/>
 
-### `Function WriteString( stream:TStream,str$ )`
+### `Function WriteString( stream:TStream,str:String )`
 
 Write a String to a stream
 
@@ -388,7 +388,7 @@ A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown 
 
 <br/>
 
-### `Function ReadLine$( stream:TStream )`
+### `Function ReadLine:String( stream:TStream )`
 
 Read a line of text from a stream
 
@@ -408,7 +408,7 @@ A string
 
 <br/>
 
-### `Function WriteLine:Int( stream:TStream,str$ )`
+### `Function WriteLine:Int( stream:TStream,str:String )`
 
 Write a line of text to a stream
 
@@ -423,7 +423,7 @@ True if line successfully written, else False
 
 <br/>
 
-### `Function LoadString$( url:Object )`
+### `Function LoadString:String( url:Object )`
 
 Load a String from a stream
 
@@ -440,7 +440,7 @@ A String
 
 <br/>
 
-### `Function SaveString( str$,url:Object )`
+### `Function SaveString( str:String,url:Object )`
 
 Save a String to a stream
 
@@ -453,13 +453,14 @@ A [TStreamWriteException](../../brl/brl.stream/tstreamwriteexception) is thrown 
 
 <br/>
 
-### `Function LoadByteArray:Byte[]( url:Object )`
+### `Function LoadByteArray:Byte[]( url:Object, closeStream:Int=True )`
 
 Load a Byte array from a stream
 
 
 The specified <b>url</b> is opened for reading, and each byte in the resultant stream
 (until eof of reached) is read into a byte array.
+If <b>url</b> is a TStream, <b>closeStream</b> can be set to False to prevent the stream from being closed after reading.
 
 
 #### Returns
@@ -507,7 +508,7 @@ A [TStreamReadException](../../brl/brl.stream/tstreamreadexception) is thrown if
 
 <br/>
 
-### `Function CasedFileName$(path$)`
+### `Function CasedFileName:String(path:String)`
 
 Returns a case sensitive filename if it exists from a case insensitive file path.
 

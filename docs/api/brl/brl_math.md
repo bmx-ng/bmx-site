@@ -666,6 +666,24 @@ Print "Trunc(-0.0) = " + Trunc(-0.0)
 ```
 <br/>
 
+### `Function Deg2Rad:Double( x:Double )`
+
+Converts a degree value <b>x</b> of type [Double](../../brl/brl.blitz/#double) to its equivalent radiant value.
+
+Takes a degree value and converts it to radiants using the formula: `radiant = degree × (π / 180)`.
+
+
+<br/>
+
+### `Function Rad2Deg:Double( x:Double )`
+
+Converts a radiant value <b>x</b> of type [Double](../../brl/brl.blitz/#double) to its equivalent degree value.
+
+Takes a radiant value and converts it to degrees using the formula: `degree = radiant × (180 / π)`.
+
+
+<br/>
+
 ### `Function SqrF:Float( x:Float )`
 
 Square root of <b>x</b>
@@ -771,6 +789,24 @@ Nearest integral value to <b>x</b>.
 ### `Function TruncF:Float( x:Float )`
 
 Nearest integral not greater in magnitude than <b>x</b>.
+
+<br/>
+
+### `Function Deg2RadF:Float( x:Float )`
+
+Converts a degree value <b>x</b> of type [Float](../../brl/brl.blitz/#float) to its equivalent radiant value.
+
+Takes a degree value and converts it to radiants using the formula: `radiant = degree × (π / 180)`.
+
+
+<br/>
+
+### `Function Rad2DegF:Float( x:Float )`
+
+Converts a radiant value <b>x</b> of type [Float](../../brl/brl.blitz/#float) to its equivalent degree value.
+
+Takes a radiant value and converts it to degrees using the formula: `degree = radiant × (180 / π)`.
+
 
 <br/>
 

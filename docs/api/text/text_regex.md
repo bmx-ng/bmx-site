@@ -1016,7 +1016,7 @@ It matches "abcabc". It does not match "abcABC" because the change of processing
 ## Types
 | Type | Description |
 |---|---|
-| [TRegEx](../../text/text.regex/tregex) | Performs [Find](../../text/text.regex/tregex/#method-findtregexmatchtargetstring-null-startposint-1) and [Replace](../../text/text.regex/tregex/#method-replacestringtargetstring-replacewithstring-startposint-0) / [ReplaceAll](../../text/text.regex/tregex/#method-replaceallstringtargetstring-replacewithstring-startposint-0) on strings using Perl Compatible Regular Expressions. |
+| [TRegEx](../../text/text.regex/tregex) | Performs [Find](../../text/text.regex/tregex/#method-findtregexmatchtargetstring-null) and [Replace](../../text/text.regex/tregex/#method-replacestringtargetstring-replacewithstring-startpossizet-0) / [ReplaceAll](../../text/text.regex/tregex/#method-replaceallstringtargetstring-replacewithstring-startpossizet-0) on strings using Perl Compatible Regular Expressions. |
 | [TRegExMatch](../../text/text.regex/tregexmatch) | Used to extract the matched string when doing a search with regular expressions. |
 | [TRegExOptions](../../text/text.regex/tregexoptions) | Specifies options used when performing searches. |
 | [TRegExException](../../text/text.regex/tregexexception) | A Regular Expression exception. |

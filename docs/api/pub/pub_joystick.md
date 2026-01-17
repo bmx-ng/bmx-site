@@ -72,7 +72,7 @@ Number of times <b>button</b> has been hit.
 
 <br/>
 
-### `Function JoyX#( port:Int=0 )`
+### `Function JoyX:Float( port:Int=0 )`
 
 Reports the horizontal position of the joystick.
 
@@ -82,7 +82,7 @@ Zero if the joystick is centered, -1 if Left, 1 if Right or a value inbetween.
 
 <br/>
 
-### `Function JoyY#( port:Int=0 )`
+### `Function JoyY:Float( port:Int=0 )`
 
 Reports the vertical position of the joystick.
 
@@ -92,7 +92,7 @@ Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 <br/>
 
-### `Function JoyZ#( port:Int=0 )`
+### `Function JoyZ:Float( port:Int=0 )`
 
 Reports the position of the joystick's Z axis if supported.
 
@@ -102,7 +102,7 @@ Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 <br/>
 
-### `Function JoyR#( port:Int=0 )`
+### `Function JoyR:Float( port:Int=0 )`
 
 Reports the position of the joystick's R axis if supported.
 
@@ -112,7 +112,7 @@ Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 <br/>
 
-### `Function JoyU#( port:Int=0 )`
+### `Function JoyU:Float( port:Int=0 )`
 
 Reports the position of the joystick's U axis if supported.
 
@@ -126,7 +126,7 @@ Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 <br/>
 
-### `Function JoyV#( port:Int=0 )`
+### `Function JoyV:Float( port:Int=0 )`
 
 Reports the position of the joystick's V axis if supported.
 
@@ -140,7 +140,7 @@ Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 <br/>
 
-### `Function JoyYaw#( port:Int=0 )`
+### `Function JoyYaw:Float( port:Int=0 )`
 
 Reports the position of the joystick's YAW axis if supported.
 
@@ -150,7 +150,7 @@ Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 <br/>
 
-### `Function JoyPitch#( port:Int=0 )`
+### `Function JoyPitch:Float( port:Int=0 )`
 
 Reports the position of the joystick's PITCH axis if supported.
 
@@ -160,7 +160,7 @@ Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 <br/>
 
-### `Function JoyRoll#( port:Int=0 )`
+### `Function JoyRoll:Float( port:Int=0 )`
 
 Reports the position of the joystick's ROLL axis if supported.
 
@@ -170,7 +170,7 @@ Zero if the joystick is centered, -1.0 if Up, 1.0 if Down or a value inbetween.
 
 <br/>
 
-### `Function JoyHat#( port:Int=0 )`
+### `Function JoyHat:Float( port:Int=0 )`
 
 Reports the position of the joystick's HAT controller if supported.
 
@@ -180,7 +180,7 @@ Reports the position of the joystick's HAT controller if supported.
 
 <br/>
 
-### `Function JoyWheel#( port:Int=0 )`
+### `Function JoyWheel:Float( port:Int=0 )`
 
 Reports the position of the joystick's WHEEL controller if supported.
 

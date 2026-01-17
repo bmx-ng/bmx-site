@@ -11,9 +11,13 @@ Cipher base type.
 
 ### `Method KeySize:Int(size:Int) Abstract`
 
-Returns the appropriate key size for <b>size</b>.
+Determines the appropriate key size for <b>size</b>.
 
 Rounds the input keysize <b>size</b> down to the next appropriate key size for use with the cipher.
+
+
+#### Returns
+The appropriate key size, or -1 if the provided <b>size</b> was not acceptable.
 
 
 <br/>
@@ -21,6 +25,12 @@ Rounds the input keysize <b>size</b> down to the next appropriate key size for u
 ### `Method Name:String() Abstract`
 
 Returns the name of the cipher.
+
+<br/>
+
+### `Method Done() Abstract`
+
+When you are finished with a cipher you can de–initialize it with the done method.
 
 <br/>
 

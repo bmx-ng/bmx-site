@@ -66,51 +66,6 @@ the [EmitEventHook](../../brl/brl.event/#global-emiteventhookintallochookid) hoo
 
 <br/>
 
-### `Function CurrentDate$(_format$="%d <i>b</i> <i>Y</i>")`
-
-Get current date
-
-
-By default, it returns the current date in the format: DD MON YYYY (i.e. 10 DEC 2000).
-You can also specify some parameters to return the date in a format of your choice:
-<table><tr><td> <b>parameter</b></td><td><b>description</b></td></tr><tr><td>  %%a</td><td>Abbreviated day name (sun - mon).</td></tr><tr><td>  %%A</td><td>Long day name (Sunday - Monday).</td></tr><tr><td>  %%b</td><td>Abbreviated month name (jan - feb).</td></tr><tr><td>  %%B</td><td>Long month name (January...).</td></tr><tr><td>  %%c</td><td>Locale date & time.</td></tr><tr><td>  %%d</td><td>day - in number (1..31).</td></tr><tr><td>  %%H</td><td>hour - in number (0..23).</td></tr><tr><td>  %%I</td><td>hour - in number (1..12).</td></tr><tr><td>  %%j</td><td>day of the year (1..366).</td></tr><tr><td>  %%m</td><td>month - in number (1..12).</td></tr><tr><td>  %%M</td><td>minutes - in number (00..59).</td></tr><tr><td>  %%P</td><td>AM / PM.</td></tr><tr><td>  %%S</td><td>seconds - in number (00..59).</td></tr><tr><td>  %%U</td><td>week number</td></tr><tr><td>  %%w</td><td>day of the week (0..6).</td></tr><tr><td>  %%W</td><td>week of the year (0..53).</td></tr><tr><td>  %%x</td><td>locale data representation.</td></tr><tr><td>  %%y</td><td>year without century (2014 --> 14).</td></tr><tr><td>  %%Y</td><td>Year (2014).</td></tr><tr><td>  %%Z</td><td>Time zone name.</td></tr></table>
-
-You can use these parameters together:<br/>
-CurrentDate("Month: %%a Day: %%d")<br/>
-
-
-#### Returns
-The current date as a string
-
-
-#### Example
-```blitzmax
-' currentdate.bmx
-
-Print "The date is "+CurrentDate$()
-```
-<br/>
-
-### `Function CurrentTime$()`
-
-Get current time
-
-
-Returns the current time in the format: HH:MM:SS (i.e. 14:31:57).
-
-
-#### Returns
-The current time as a string
-
-
-#### Example
-```blitzmax
-' currenttime.bmx
-
-Print "The time is "+CurrentTime$()
-```
-<br/>
-
 ### `Function MoveMouse( x,y )`
 
 Move mouse pointer
@@ -134,12 +89,12 @@ Make the mouse pointer invisible
 
 <br/>
 
-### `Function Notify( text$,serious=False )`
+### `Function Notify( text:String,serious=False )`
 
 Notify user
 
 
-[Notify](../../brl/brl.system/#function-notify-textseriousfalse-) activates a simple user interface element informing the user of an event.
+[Notify](../../brl/brl.system/#function-notify-textstringseriousfalse-) activates a simple user interface element informing the user of an event.
 The optional <b>serious</b> flag can be used to indicate a 'critical' event.
 
 Note that a user interface may not be available when in graphics mode on some platforms.
@@ -153,13 +108,13 @@ Notify "Hello World"
 ```
 <br/>
 
-### `Function Confirm( text$,serious=False )`
+### `Function Confirm( text:String,serious=False )`
 
 Request user confirmation.
 
 
-[Confirm](../../brl/brl.system/#function-confirm-textseriousfalse-) activates a simple user interface element requesting the user to select between
-YES and NO options. If the user selects YES, then [Confirm](../../brl/brl.system/#function-confirm-textseriousfalse-) returns True. Otherwise,
+[Confirm](../../brl/brl.system/#function-confirm-textstringseriousfalse-) activates a simple user interface element requesting the user to select between
+YES and NO options. If the user selects YES, then [Confirm](../../brl/brl.system/#function-confirm-textstringseriousfalse-) returns True. Otherwise,
 False is returned.
 
 Note that a user interface may not be available when in graphics mode on some platforms.
@@ -179,14 +134,14 @@ print result
 ```
 <br/>
 
-### `Function Proceed( text$,serious=False )`
+### `Function Proceed( text:String,serious=False )`
 
 Request user confirmation or cancellation.
 
 
-[Proceed](../../brl/brl.system/#function-proceed-textseriousfalse-) activates a simple user interface element requesting the user to select between
-YES, NO and CANCEL options. If the user selects YES, then [Proceed](../../brl/brl.system/#function-proceed-textseriousfalse-) return 1. If the user
-selects NO, then [Proceed](../../brl/brl.system/#function-proceed-textseriousfalse-) returns 0. Otherwise, [Proceed](../../brl/brl.system/#function-proceed-textseriousfalse-) returns -1.
+[Proceed](../../brl/brl.system/#function-proceed-textstringseriousfalse-) activates a simple user interface element requesting the user to select between
+YES, NO and CANCEL options. If the user selects YES, then [Proceed](../../brl/brl.system/#function-proceed-textstringseriousfalse-) return 1. If the user
+selects NO, then [Proceed](../../brl/brl.system/#function-proceed-textstringseriousfalse-) returns 0. Otherwise, [Proceed](../../brl/brl.system/#function-proceed-textstringseriousfalse-) returns -1.
 
 Note that a user interface may not be available when in graphics mode on some platforms.
 
@@ -205,7 +160,7 @@ print result
 ```
 <br/>
 
-### `Function RequestFile$( text$,extensions$="",save_flag=False,initial_path$="" )`
+### `Function RequestFile:String( text:String,extensions:String="",save_flag=False,initial_path:String="" )`
 
 Display system file requester.
 
@@ -230,14 +185,14 @@ The path of the selected file or an empty string if the operation was cancelled.
 ```blitzmax
 ' requestfile.bmx
 
-filter$="Image Files:png,jpg,bmp;Text Files:txt;All Files:*"
-filename$=RequestFile( "Select graphic file to open",filter$ )
+filter:String="Image Files:png,jpg,bmp;Text Files:txt;All Files:*"
+filename:String=RequestFile( "Select graphic file to open",filter )
 
 Print filename
 ```
 <br/>
 
-### `Function RequestDir$( text$,initial_path$="" )`
+### `Function RequestDir:String( text:String,initial_path:String="" )`
 
 Display system folder requester.
 
@@ -257,13 +212,13 @@ The path of the selected folder or an empty string if the operation was cancelle
 ```blitzmax
 ' requestdir.bmx
 
-path$=RequestDir("Select a Folder",CurrentDir())
+path:String=RequestDir("Select a Folder",CurrentDir())
 
 Print "directory selected was "+path
 ```
 <br/>
 
-### `Function OpenURL( url$ )`
+### `Function OpenURL( url:String )`
 
 Opens a URL with the system's default web browser.
 
@@ -272,7 +227,7 @@ Note that a user interface may not be available when in graphics mode on some pl
 
 <br/>
 
-### `Function DesktopWidth()`
+### `Function DesktopWidth(display:Int = 0)`
 
 Get desktop width
 
@@ -282,7 +237,7 @@ Width of the desktop, in pixels
 
 <br/>
 
-### `Function DesktopHeight()`
+### `Function DesktopHeight(display:Int = 0)`
 
 Get desktop height
 
@@ -292,7 +247,7 @@ Height of the desktop, in pixels
 
 <br/>
 
-### `Function DesktopDepth()`
+### `Function DesktopDepth(display:Int = 0)`
 
 Get desktop depth
 
@@ -308,7 +263,7 @@ Bits per pixel depth of the desktop
 
 <br/>
 
-### `Function DesktopHertz()`
+### `Function DesktopHertz(display:Int = 0)`
 
 Get desktop refresh rate
 

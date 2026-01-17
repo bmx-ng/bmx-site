@@ -87,61 +87,163 @@ These may be used instead of the corresponding TTypeId.ForName call. For example
 ## Types
 | Type | Description |
 |---|---|
-| [TMember](../../brl/brl.reflection/tmember) | Type member - Field Or Method. |
-| [TConstant](../../brl/brl.reflection/tconstant) | Type constant |
-| [TField](../../brl/brl.reflection/tfield) | Type field |
-| [TGlobal](../../brl/brl.reflection/tglobal) | Type global |
-| [TFunction](../../brl/brl.reflection/tfunction) | Type function |
-| [TMethod](../../brl/brl.reflection/tmethod) | Type method |
-| [TTypeId](../../brl/brl.reflection/ttypeid) | Type id |
+| [TMember](../../brl/brl.reflection/tmember) | Type member |
+| [TConstant](../../brl/brl.reflection/tconstant) | Type member constant |
+| [TField](../../brl/brl.reflection/tfield) | Type member field |
+| [TGlobal](../../brl/brl.reflection/tglobal) | Type member global variable |
+| [TFunction](../../brl/brl.reflection/tfunction) | Type member function |
+| [TMethod](../../brl/brl.reflection/tmethod) | Type member method |
+| [TTypeId](../../brl/brl.reflection/ttypeid) | Type ID |
 
 ## Globals
 
-### `Global ByteTypeId:TTypeId`
+### `Global ByteTypeId:TTypeId = New TTypeId.Init("Byte", SizeOf Byte Null)`
 
-Primitive byte type
-
-<br/>
-
-### `Global ShortTypeId:TTypeId`
-
-Primitive short type
+Primitive Byte type ID
 
 <br/>
 
-### `Global IntTypeId:TTypeId`
+### `Global ShortTypeId:TTypeId = New TTypeId.Init("Short", SizeOf Short Null)`
 
-Primitive int type
-
-<br/>
-
-### `Global UIntTypeId:TTypeId`
-
-Primitive unsigned int type
+Primitive Short type ID
 
 <br/>
 
-### `Global LongTypeId:TTypeId`
+### `Global IntTypeId:TTypeId = New TTypeId.Init("Int", SizeOf Int Null)`
 
-Primitive long type
-
-<br/>
-
-### `Global ULongTypeId:TTypeId`
-
-Primitive unsigned long type
+Primitive Int type ID
 
 <br/>
 
-### `Global FloatTypeId:TTypeId`
+### `Global UIntTypeId:TTypeId = New TTypeId.Init("UInt", SizeOf UInt Null)`
 
-Primitive float type
+Primitive UInt type ID
 
 <br/>
 
-### `Global DoubleTypeId:TTypeId`
+### `Global LongTypeId:TTypeId = New TTypeId.Init("Long", SizeOf Long Null)`
 
-Primitive double type
+Primitive Long type ID
+
+<br/>
+
+### `Global ULongTypeId:TTypeId = New TTypeId.Init("ULong", SizeOf ULong Null)`
+
+Primitive ULong type ID
+
+<br/>
+
+### `Global SizeTTypeId:TTypeId = New TTypeId.Init("Size_T", SizeOf Size_T Null)`
+
+Primitive Size_T type ID
+
+<br/>
+
+### `Global FloatTypeId:TTypeId = New TTypeId.Init("Float", SizeOf Float Null)`
+
+Primitive Float type ID
+
+<br/>
+
+### `Global DoubleTypeId:TTypeId = New TTypeId.Init("Double", SizeOf Double Null)`
+
+Primitive Double type ID
+
+<br/>
+
+### `Global ObjectTypeId:TTypeId = New TTypeId.Init("Object", SizeOf Byte Ptr Null, bbRefObjectClass, , False)`
+
+Object type ID
+
+<br/>
+
+### `Global StringTypeId:TTypeId = New TTypeId.Init("String", SizeOf Byte Ptr Null, bbRefStringClass, ObjectTypeId)`
+
+String type ID
+
+<br/>
+
+### `Global LParamTypeId:TTypeId = New TTypeId.Init("LParam", SizeOf LParam Null)`
+
+WinAPI LPARAM type ID
+
+Only available on Windows.
+
+
+<br/>
+
+### `Global WParamTypeId:TTypeId = New TTypeId.Init("WParam", SizeOf WParam Null)`
+
+WinAPI WPARAM type ID
+
+Only available on Windows.
+
+
+<br/>
+
+### `Global Int128TypeId:TTypeId = New TTypeId.InitStruct(DebugScopePtrInt128)`
+
+Intrinsic Int128 type ID
+
+Only available on x64.
+
+
+<br/>
+
+### `Global Float64TypeId:TTypeId = New TTypeId.InitStruct(DebugScopePtrFloat64)`
+
+Intrinsic Float64 type ID
+
+Only available on x64.
+
+
+<br/>
+
+### `Global Float128TypeId:TTypeId = New TTypeId.InitStruct(DebugScopePtrFloat128)`
+
+Intrinsic Float128 type ID
+
+Only available on x64.
+
+
+<br/>
+
+### `Global Double128TypeId:TTypeId = New TTypeId.InitStruct(DebugScopePtrDouble128)`
+
+Intrinsic Double128 type ID
+
+Only available on x64.
+
+
+<br/>
+
+### `Global VoidTypeId:TTypeId = New TTypeId.Init("", 0)`
+
+Primitive void type ID<br>Only used as a function/method return type
+
+<br/>
+
+### `Global ArrayTypeId:TTypeId = New TTypeId.Init("Null[]", SizeOf Byte Ptr Null, bbRefArrayClass, ObjectTypeId, False)`
+
+Mock array base type ID
+
+<br/>
+
+### `Global PointerTypeId:TTypeId = New TTypeId.Init("Ptr", SizeOf Byte Ptr Null, , , False)`
+
+Mock pointer base type ID
+
+<br/>
+
+### `Global VarTypeId:TTypeId = New TTypeId.Init("Var", SizeOf Byte Ptr Null, , , False)`
+
+Mock var base type ID
+
+<br/>
+
+### `Global FunctionTypeId:TTypeId = New TTypeId.Init("Null()", SizeOf Byte Ptr Null, , , False)`
+
+Mock function/method base type ID
 
 <br/>
 

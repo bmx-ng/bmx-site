@@ -13,7 +13,7 @@ Strings provide the following methods:
 |---|---|
 | `Find:Int( subString:String,startIndex=0 )` | Finds first occurance of a sub string. Returns -1 if **subString** not found. |
 | `FindLast:Int( subString:String,startIndex=0 )` | Finds last occurance of a sub string. Returns -1 if **subString** not found. |
-| `Hash:ULong()` | Returns the calculated hash for the string. |
+| `HashCode:UInt()` | Returns the calculated hash for the string. |
 | `Trim:String()` | Removes leading and trailing non-printable characters from a string. |
 | `Replace:String( subString:String,withString:String )` | Replaces all occurances of **subString** with **withString**. |
 | `StartsWith:Int( subString:String )` | Returns true if string starts with **subString**. |
@@ -27,7 +27,9 @@ Strings provide the following methods:
 | `ToUInt:UInt()` | Converts string to an unsigned integer. |
 | `ToLong:Long()` | Converts string to a long. |
 | `ToULong:ULong()` | Converts string to an unsigned long. |
-| `ToSizeT:Size_T()` | Converts string to a size_t. |
+| `ToLongInt:LongInt()` | Converts string to a long integer. A LongInt can be 32 or 64 bits in size, depending on the OS and pointer size. |
+| `ToULongInt:ULongInt()` | Converts string to an unsigned long integer. A ULongInt can be 32 or 64 bits in size, depending on the OS and pointer size. |
+| `ToSizeT:Size_T()` | Converts string to a size_t. A Size_T can be 32 or 64 bits in size, depending on the system pointer size. |
 | `ToFloat:Float()` | Converts string to a float. |
 | `ToDouble:Double()` | Converts string to a double. |
 | `ToCString:Byte Ptr()` | Converts string to a null terminated sequence of 8 bit bytes. The returned memory must eventually be freed with a call to [MemFree]. |
@@ -56,6 +58,8 @@ String also provide the following functions to help with the creation of strings
 | `FromUInt:String( value:UInt )` | Creates a string from an unsigned integer. |
 | `FromLong:String( value:Long )` | Creates a string from a long. |
 | `FromULong:String( value:ULong )` | Creates a string from an unsigned long. |
+| `FromLongInt:String( value:LongInt )` | Creates a string from a long integer. |
+| `FromULongInt:String( value:ULongInt )` | Creates a string from an unsigned long integer. |
 | `FromSizeT:String( value:Size_T )` | Creates a string from a size_t. |
 | `FromFloat:String( value:Float )` | Creates a string from a float. |
 | `FromDouble:String( value:Double)` | Creates a string from a double. |
@@ -75,16 +79,16 @@ Print String.FromInt( 10 )
 
 ## String Hashes
 
-A String hash can be used for faster string equality tests. If two strings are equal, the `Hash()` method returns identical values for both strings.
+A String hash can be used for faster string equality tests. If two strings are equal, the `HashCode()` method returns identical values for both strings.
 However, because there is not a unique hash for each unique string value, it is possible for different strings to return the same hash.
 
 By default, all static/const strings will be compiled with their hash value pre-calculated.
-For dynamic strings, the hash is calculated on the first call to `Hash()`. Subsequent calls will return the cached hash value.
+For dynamic strings, the hash is calculated on the first call to `HashCode()`. Subsequent calls will return the cached hash value.
 
 In string equality tests, if both strings have a calculated hash, the hash value is used. Otherwise, the standard process of comparing
 the contents of each string is performed, which involves comparing each character in turn until a difference is found.
 
-In the following example, because the two static/const strings have hashes, the comparison will use the hash values rather than compare the String characters.
+In the following example, because the two static/const strings have hashes, the comparison will compare the hash values first, saving time, rather than having to compare the String characters.
 ```blitzmax
 Local hello:String = "Hello"
 Local help:String = "Help"
@@ -199,5 +203,5 @@ Three
 
 
 [MemFree]: ../../api/brl/brl.blitz/#memfree
-[TStringMap]: ../../api/brl/brl.map/tstringmap
+[TStringMap]: ../../api/collections/collections.stringmap/tstringmap
 [TMap]: ../../api/brl/brl.map/tmap

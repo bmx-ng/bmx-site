@@ -17,7 +17,7 @@ Enable OpenAL Audio
 
 
 After successfully executing this command, OpenAL audio drivers will be added
-to the array of drivers returned by [AudioDrivers](../../brl/brl.audio/#function-audiodrivers).
+to the array of drivers returned by [AudioDrivers](../../brl/brl.audio/#function-audiodriversstring).
 
 
 #### Returns

@@ -21,6 +21,16 @@ providing mouse and keyboard input, since OpenGL comprises only rendering.
 |---|---|
 | [TSDLStream](../../sdl/sdl.sdl/tsdlstream) | An SDL-based data stream type. |
 
+## Structs
+| Struct | Description |
+|---|---|
+| [SSDLRect](../../sdl/sdl.sdl/ssdlrect) | A rectangle, with the origin at the upper left (integer). |
+
+## Enums
+| Enum | Description |
+|---|---|
+| [ESDLHintPriority](../../sdl/sdl.sdl/esdlhintpriority) | The different hint priorities defined by SDL. |
+
 ## Functions
 
 ### `Function OpenSDLStream:TSDLStream( file:String, readable:Int, writeMode:Int )`
@@ -44,15 +54,6 @@ Mac OS X and iOS Specific Functionality: If the application is in a ".app" bundl
 the name SDL_FILESYSTEM_BASE_DIR_TYPE with a supported value will change the behaviour.
 
 
-#### Example
-```blitzmax
-SuperStrict
-
-Framework SDL.SDL
-Import BRL.StandardIO
-
-Print SDLGetBasePath()
-```
 <br/>
 
 ### `Function SDLGetPrefPath:String(org:String, app:String)`
@@ -110,6 +111,36 @@ The path used for internal storage or NULL on failure; call [SDLGetError](../../
 
 <br/>
 
+### `Function SDLGetAndroidSDKVersion:Int()`
+
+Returns the API level of the current device.
+
+<br/>
+
+### `Function SDLIsAndroidTV:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the application is running on Android TV.
+
+<br/>
+
+### `Function SDLIsChromebook:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the application is running on a Chromebook.
+
+<br/>
+
+### `Function SDLIsDeXMode:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) is the application is running on a Samsung DeX docking station.
+
+<br/>
+
+### `Function SDLAndroidBackButton()`
+
+Triggers the Android system back button behavior.
+
+<br/>
+
 ### `Function SDLHasClipboardText:Int()`
 
 Return a flag indicating whether the clipboard exists and contains a text string that is non-empty.
@@ -122,7 +153,7 @@ Returns the clipboard text.
 
 <br/>
 
-### `Function SDLSetClipboardText:Int(Text:String)`
+### `Function SDLSetClipboardText:Int(text:String)`
 
 Puts text into the clipboard.
 
@@ -198,52 +229,12 @@ and perhaps ignore changes until they seem to be stable for a few seconds.
 One of [SDL_POWERSTATE_UNKNOWN](../../sdl/sdl.sdl/#const-sdlpowerstateunknownint-0), [SDL_POWERSTATE_ON_BATTERY](../../sdl/sdl.sdl/#const-sdlpowerstateonbatteryint-1), [SDL_POWERSTATE_NO_BATTERY](../../sdl/sdl.sdl/#const-sdlpowerstatenobatteryint-2), [SDL_POWERSTATE_CHARGING](../../sdl/sdl.sdl/#const-sdlpowerstatechargingint-3), or [SDL_POWERSTATE_CHARGED](../../sdl/sdl.sdl/#const-sdlpowerstatechargedint-4).
 
 
-#### Example
-```blitzmax
-SuperStrict
-
-Framework SDL.SDL
-Import brl.standardio
-
-Local seconds:Int
-Local percent:Int
-
-Local result:Int = SDLGetPowerInfo(seconds, percent)
-
-Local state:String
-Select result
-	Case SDL_POWERSTATE_UNKNOWN
-		state = "Unknown"
-	Case SDL_POWERSTATE_ON_BATTERY
-		state = "On Battery"
-	Case SDL_POWERSTATE_NO_BATTERY
-		state = "No Battery"
-	Case SDL_POWERSTATE_CHARGING
-		state = "Charging"
-	Case SDL_POWERSTATE_CHARGED
-		state = "Charged"
-End Select
-
-Print "State     : " + state
-Print "Remaining : " + seconds + " seconds (" + percent + " %)"
-```
 <br/>
 
 ### `Function SDLGetPixelFormatName:String(format:UInt)`
 
 Gets the human readable name of a pixel format
 
-#### Example
-```blitzmax
-SuperStrict
-
-Framework SDL.SDL
-Import brl.standardio
-
-Print SDLGetPixelFormatName(SDL_PIXELFORMAT_INDEX8)
-Print SDLGetPixelFormatName(SDL_PIXELFORMAT_RGB24)
-Print SDLGetPixelFormatName(SDL_PIXELFORMAT_BGRA8888)
-```
 <br/>
 
 ### `Function SDLGetTicks:UInt()`
@@ -287,6 +278,137 @@ Returns the total number of logical CPU cores.
 
 On CPUs that include technologies such as hyperthreading, the number of logical cores may be more than the number of physical cores.
 
+
+<br/>
+
+### `Function SDLGetCPUCacheLineSize:Int()`
+
+Returns the L1 cache line size of the CPU.
+
+This is useful for determining multi-threaded structure padding or SIMD prefetch sizes.
+
+
+<br/>
+
+### `Function SDLHasRDTSC:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has the RDTSC instruction.
+
+<br/>
+
+### `Function SDLHasAltiVec:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has AltiVec features.
+
+<br/>
+
+### `Function SDLHasMMX:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has MMX features.
+
+<br/>
+
+### `Function SDLHas3DNow:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has 3DNow! features.
+
+<br/>
+
+### `Function SDLHasSSE:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has SSE features.
+
+<br/>
+
+### `Function SDLHasSSE2:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has SSE2 features.
+
+<br/>
+
+### `Function SDLHasSSE3:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has SSE3 features.
+
+<br/>
+
+### `Function SDLHasSSE41:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has SSE4.1 features.
+
+<br/>
+
+### `Function SDLHasSSE42:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has SSE4.2 features.
+
+<br/>
+
+### `Function SDLHasAVX:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has AVX features.
+
+<br/>
+
+### `Function SDLHasAVX2:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has AVX2 features.
+
+<br/>
+
+### `Function SDLHasAVX512F:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has AVX-512F (foundation) features.
+
+<br/>
+
+### `Function SDLHasARMSIMD:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has ARM SIMD (ARMv6) features.
+
+<br/>
+
+### `Function SDLHasNEON:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the CPU has NEON (ARM SIMD) features.
+
+<br/>
+
+### `Function SDLHasLSX:Int()`
+
+Determines whether the CPU has LSX (LOONGARCH SIMD) features.
+
+This always returns [False](../../brl/brl.blitz/#false) on CPUs that aren't using LOONGARCH instruction sets.
+
+
+#### Returns
+[True](../../brl/brl.blitz/#true) if the CPU has LOONGARCH LSX features or [False](../../brl/brl.blitz/#false) if not.
+
+
+<br/>
+
+### `Function SDLHasLASX:Int()`
+
+Determines whether the CPU has LASX (LOONGARCH SIMD) features.
+
+This always returns [False](../../brl/brl.blitz/#false) on CPUs that aren't using LOONGARCH instruction sets.
+
+
+#### Returns
+[True](../../brl/brl.blitz/#true) if the CPU has LOONGARCH LASX features or [False](../../brl/brl.blitz/#false) if not.
+
+
+<br/>
+
+### `Function SDLIsTablet:Int()`
+
+Returns [True](../../brl/brl.blitz/#true) if the current device is a tablet.
+
+<br/>
+
+### `Function SDLSetHintWithPriority:Int(name:String, value:string, priority:ESDLHintPriority)`
+
+Returns [True](../../brl/brl.blitz/#true) if the hint was set.
 
 <br/>
 

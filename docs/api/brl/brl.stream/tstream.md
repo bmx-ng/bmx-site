@@ -153,7 +153,7 @@ If the value could not be written (possibly due to end of file), a [TStreamWrite
 
 <br/>
 
-### `Method ReadFloat#()`
+### `Method ReadFloat:Float()`
 
 Read a float (four bytes) from the stream
 
@@ -167,7 +167,7 @@ The read value
 
 <br/>
 
-### `Method WriteFloat( n# )`
+### `Method WriteFloat( n:Float )`
 
 Write a float (four bytes) to the stream
 
@@ -177,7 +177,7 @@ If the value could not be written (possibly due to end of file), a [TStreamWrite
 
 <br/>
 
-### `Method ReadDouble!()`
+### `Method ReadDouble:Double()`
 
 Read a double (eight bytes) from the stream
 
@@ -191,7 +191,7 @@ The read value
 
 <br/>
 
-### `Method WriteDouble( n! )`
+### `Method WriteDouble( n:Double )`
 
 Write a double (eight bytes) to the stream
 
@@ -201,7 +201,7 @@ If the value could not be written (possibly due to end of file), a [TStreamWrite
 
 <br/>
 
-### `Method ReadLine$()`
+### `Method ReadLine:String()`
 
 Read a line of text from the stream
 
@@ -217,7 +217,7 @@ or null character.
 
 <br/>
 
-### `Method WriteLine:Int( str$ )`
+### `Method WriteLine:Int( str:String )`
 
 Write a line of text to the stream
 
@@ -231,7 +231,7 @@ True if line successfully written, else False
 
 <br/>
 
-### `Method ReadString$( length:Int )`
+### `Method ReadString:String( length:Int )`
 
 Read characters from the stream
 
@@ -245,7 +245,7 @@ A string composed of <b>length</b> bytes read from the stream
 
 <br/>
 
-### `Method WriteString( str$ )`
+### `Method WriteString( str:String )`
 
 Write characters to the stream
 

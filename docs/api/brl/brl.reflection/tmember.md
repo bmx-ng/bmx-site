@@ -4,12 +4,15 @@ title: TMember
 sidebar_label: TMember
 ---
 
-Type member - Field Or Method.
+Type member
+
+
+Common base type of TField, TGlobal, TConstant, TMethod and TFunction
 
 
 ## Methods
 
-### `Method Name$()`
+### `Method Name:String()`
 
 Get member name
 
@@ -21,7 +24,25 @@ Get member type
 
 <br/>
 
-### `Method MetaData$( key$="" )`
+### `Method IsPublic:Int()`
+
+Determine if this member has the "Public" access modifier
+
+<br/>
+
+### `Method IsProtected:Int()`
+
+Determine if this member has the "Protected" access modifier
+
+<br/>
+
+### `Method IsPrivate:Int()`
+
+Determine if this member has the "Private" access modifier
+
+<br/>
+
+### `Method MetaData:String(key:String = "")`
 
 Get member meta data
 

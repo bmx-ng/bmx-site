@@ -626,7 +626,7 @@ Returns the actual ALenum described by a string. Returns NULL if the string does
 
 <br/>
 
-### `Global alListenerf( param,value# )`
+### `Global alListenerf( param,value:Float )`
 
 This function sets a floating point property for the listener. The relevant properties are listed in the table Listener Properties.
 

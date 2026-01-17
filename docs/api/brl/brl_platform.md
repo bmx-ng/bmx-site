@@ -44,3 +44,18 @@ Print "Core count = " + LogicalProcessorCount()
 ```
 <br/>
 
+### `Function PhysicalProcessorCount:Int()`
+
+Returns the number of physical processors available.
+
+#### Example
+```blitzmax
+SuperStrict
+
+Framework brl.standardio
+Import brl.platform
+
+Print "Core count = " + PhysicalProcessorCount()
+```
+<br/>
+

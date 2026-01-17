@@ -12,7 +12,7 @@ The event queue is a simple first-in, first-out queue that is used to collect
 The [PollEvent](../../brl/brl.eventqueue/#function-polleventint) and [WaitEvent](../../brl/brl.eventqueue/#function-waiteventint) commands can be used to receive the next event from the event
 queue, while the [PeekEvent](../../brl/brl.eventqueue/#function-peekeventtevent) command can be used to check if the event queue is empty.
 
-Events are added to the event queue using [PostEvent](../../brl/brl.eventqueue/#function-postevent-eventteventupdateintfalse-).
+Events are added to the event queue using [PostEvent](../../brl/brl.eventqueue/#function-posteventint-eventteventupdateintfalse-).
 
 
 ## Functions
@@ -65,11 +65,11 @@ The id of the next event in the event queue
 
 <br/>
 
-### `Function PostEvent( event:TEvent,update:Int=False )`
+### `Function PostEvent:Int( event:TEvent,update:Int=False )`
 
 Post an event to the event queue
 
-[PostEvent](../../brl/brl.eventqueue/#function-postevent-eventteventupdateintfalse-) adds an event to the end of the event queue.
+[PostEvent](../../brl/brl.eventqueue/#function-posteventint-eventteventupdateintfalse-) adds an event to the end of the event queue.
 
 The <b>update</b> flag can be used to update an existing event. If <b>update</b> is True
 and an event with the same <b>id</b> and <b>source</b> is found in the event
@@ -237,7 +237,7 @@ The <b>extra</b> field of the [CurrentEvent](../../brl/brl.eventqueue/#global-cu
 
 <br/>
 
-### `Function EventText$()`
+### `Function EventText:String()`
 
 Get current event extra value converted to a string
 

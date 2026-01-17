@@ -10,6 +10,7 @@ sidebar_label: Introduction
 | Name          | Block Size (bytes) | Key Range (bytes) | Rounds |
 |---|---|---|---|
 | [Crypto.BlowfishCipher](../crypto/crypto_blowfishcipher.md)   | 8  | 8 ... 56   | 16 |
+| [Crypto.TeaCipher](../crypto/crypto_teacipher.md)        | 8  | 16         | 32 |
 | [Crypto.XteaCipher](../crypto/crypto_xteacipher.md)       | 8  | 16         | 32 |
 | [Crypto.AESCipher](../crypto/crypto_aescipher.md)        | 16 | 16, 24, 32 | 10, 12, 14 |
 | [Crypto.TwofishCipher](../crypto/crypto_twofishcipher.md)    | 16 | 16, 24, 32 | 16 |
@@ -45,4 +46,79 @@ number of rounds provide adequate security for the given block and key size.
 |---|---|
 | [TCipher](../../crypto/crypto.cipher/tcipher) | Cipher base type. |
 | [TCipherMode](../../crypto/crypto.cipher/tciphermode) | Base type for cipher chaining modes. |
+
+## Methods
+
+### `Method BlockSize:Int() Abstract`
+
+The block size for this cipher.
+
+<br/>
+
+### `Method Setup:Int(key:String, rounds:Int = 0) Abstract`
+
+Sets up the cipher to be used with a given number of <b>rounds</b> and a given <b>key</b>.
+
+<br/>
+
+### `Method Setup:Int(key:Byte[], rounds:Int = 0) Abstract`
+
+Sets up the cipher to be used with a given number of <b>rounds</b> and a given <b>key</b>.
+
+<br/>
+
+### `Method Setup:Int(key:Byte Ptr, keylen:Int, rounds:Int = 0) Abstract`
+
+Sets up the cipher to be used with a given number of <b>rounds</b> and a given key length.
+
+<br/>
+
+### `Method Encrypt:Int(pt:Byte Ptr, ct:Byte Ptr) Abstract`
+
+Encrypts a single block of text, <b>pt</b>, storing the result in the <b>ct</b> buffer.
+
+It is possible that the input and output buffer are the same buffer.
+The size of the block can be determined with [BlockSize](../../crypto/crypto.cipher/#method-blocksizeint-abstract).
+
+
+<br/>
+
+### `Method Decrypt:Int(ct:Byte Ptr, pt:Byte Ptr) Abstract`
+
+Decrypts a single block of text, <b>ct</b>, storing the result in the <b>pt</b> buffer.
+
+It is possible that the input and output buffer are the same buffer.
+The size of the block can be determined with [BlockSize](../../crypto/crypto.cipher/#method-blocksizeint-abstract).
+
+
+<br/>
+
+## Functions
+
+### `Function GetCipher:TCipher(name:String)`
+
+Gets a cipher of the specified <b>name</b>.
+
+A TNoSuchAlgorithmException is thrown if the requested cipher is not available.
+
+
+<br/>
+
+### `Function GetBlockCipher:TBlockCipher(name:String)`
+
+Gets a block cipher of the specified <b>name</b>.
+
+A TNoSuchAlgorithmException is thrown if the requested block cipher is not available.
+
+
+<br/>
+
+### `Function GetStreamCipher:TStreamCipher(name:String)`
+
+Gets a stream cipher of the specified <b>name</b>.
+
+A TNoSuchAlgorithmException is thrown if the requested stream cipher is not available.
+
+
+<br/>
 

@@ -4,14 +4,20 @@ title: TConstant
 sidebar_label: TConstant
 ---
 
-Type constant
+Type member constant
 
 
 ## Methods
 
-### `Method GetString:String()`
+### `Method Get:Object()`
 
 Get constant value
+
+<br/>
+
+### `Method GetString:String()`
+
+Get constant value as <b>String</b>
 
 <br/>
 
@@ -21,25 +27,37 @@ Get constant value as <b>Int</b>
 
 <br/>
 
-### `Method GetFloat:Int()`
-
-Get constant value as <b>Float</b>
-
-<br/>
-
 ### `Method GetLong:Long()`
 
 Get constant value as <b>Long</b>
 
 <br/>
 
-### `Method GetSizet:Size_T()`
+### `Method GetSizeT:Size_T()`
 
-Get constant value as <b>size_t</b>
+Get constant value as <b>Size_T</b>
 
 <br/>
 
-### `Method GetDouble:Int()`
+### `Method GetLongInt:LongInt()`
+
+Get constant value as <b>LongInt</b>
+
+<br/>
+
+### `Method GetULongInt:ULongInt()`
+
+Get constant value as <b>ULongInt</b>
+
+<br/>
+
+### `Method GetFloat:Float()`
+
+Get constant value as <b>Float</b>
+
+<br/>
+
+### `Method GetDouble:Double()`
 
 Get constant value as <b>Double</b>
 

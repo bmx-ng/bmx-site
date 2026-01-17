@@ -17,7 +17,7 @@ To actually invoke these functions a lua object must first be created - see [TLu
 
 ## Methods
 
-### `Method SourceCode$()`
+### `Method SourceCode:String()`
 
 Get source code
 
@@ -27,7 +27,7 @@ The lua source code for the class.
 
 <br/>
 
-### `Method SetSourceCode:TLuaClass( source$ )`
+### `Method SetSourceCode:TLuaClass( source:String )`
 
 Set source code
 
@@ -42,7 +42,7 @@ method.
 
 ## Functions
 
-### `Function Create:TLuaClass( source$ )`
+### `Function Create:TLuaClass( source:String )`
 
 Create a lua class
 

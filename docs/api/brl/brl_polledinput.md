@@ -7,12 +7,12 @@ sidebar_label: BRL.PolledInput
 
 The polled input module provides an easy way to detect keyboard and mouse input.
 
-The functions in this module are only available when your program is running in [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthheightdepth0hertz60flags0x1y1-) mode. When working on GUI applications, you should use events instead.
+The functions in this module are only available when your program is running in [Graphics](../../brl/brl.graphics/#function-graphicstgraphics-widthintheightintdepthint0hertzint60flagslong0xint1yint1-) mode. When working on GUI applications, you should use events instead.
 
 
 ## Functions
 
-### `Function AppSuspended()`
+### `Function AppSuspended:Int()`
 
 Get app suspended state
 
@@ -39,7 +39,7 @@ Wend
 ```
 <br/>
 
-### `Function AppTerminate()`
+### `Function AppTerminate:Int()`
 
 Return app terminate state
 
@@ -63,13 +63,13 @@ Wend
 ```
 <br/>
 
-### `Function KeyHit( key )`
+### `Function KeyHit:Int( key:Int )`
 
 Check for key hit
 
 
 The returned value represents the number of the times <b>key</b> has been hit since the last
-call to [KeyHit](../../brl/brl.polledinput/#function-keyhit-key-) with the same <b>key</b>.
+call to [KeyHit](../../brl/brl.polledinput/#function-keyhitint-keyint-) with the same <b>key</b>.
 
 See the key codes module for a list of valid key codes.
 
@@ -98,7 +98,7 @@ Wend
 ```
 <br/>
 
-### `Function KeyDown( key )`
+### `Function KeyDown:Int( key:Int )`
 
 Check for key state
 
@@ -130,7 +130,7 @@ Wend
 ```
 <br/>
 
-### `Function GetChar()`
+### `Function GetChar:Int()`
 
 Get next character
 
@@ -138,7 +138,7 @@ Get next character
 As the user hits keys on the keyboard, BlitzMax records the character codes of these
 keystrokes into an internal 'character queue'.
 
-[GetChar](../../brl/brl.polledinput/#function-getchar) removes the next character code from this queue and returns it the application.
+[GetChar](../../brl/brl.polledinput/#function-getcharint) removes the next character code from this queue and returns it the application.
 
 If the character queue is empty, 0 is returned.
 
@@ -155,12 +155,12 @@ Flush key states and character queue.
 
 
 [FlushKeys](../../brl/brl.polledinput/#function-flushkeysresetstatesint-true) resets the state of all keys to 'off', and resets the character queue
-used by [GetChar](../../brl/brl.polledinput/#function-getchar).
+used by [GetChar](../../brl/brl.polledinput/#function-getcharint).
 
 
 <br/>
 
-### `Function MouseX()`
+### `Function MouseX:Int()`
 
 Get mouse x location
 
@@ -189,7 +189,7 @@ Wend
 ```
 <br/>
 
-### `Function MouseY()`
+### `Function MouseY:Int()`
 
 Get mouse y location
 
@@ -218,7 +218,7 @@ Wend
 ```
 <br/>
 
-### `Function MouseZ()`
+### `Function MouseZ:Int()`
 
 Get mouse wheel
 
@@ -248,7 +248,7 @@ Wend
 ```
 <br/>
 
-### `Function MouseXSpeed()`
+### `Function MouseXSpeed:Int()`
 
 Get mouse x speed
 
@@ -258,7 +258,7 @@ Mouse x speed
 
 <br/>
 
-### `Function MouseYSpeed()`
+### `Function MouseYSpeed:Int()`
 
 Get mouse y speed
 
@@ -268,7 +268,7 @@ Mouse y speed
 
 <br/>
 
-### `Function MouseZSpeed()`
+### `Function MouseZSpeed:Int()`
 
 Get mouse z speed
 
@@ -288,13 +288,13 @@ Flush mouse button states
 
 <br/>
 
-### `Function MouseHit( button )`
+### `Function MouseHit:Int( button:Int )`
 
 Check for mouse button click
 
 
 The returned value represents the number of the times <b>button</b> has been clicked since the
-last call to [MouseHit](../../brl/brl.polledinput/#function-mousehit-button-) with the same <b>button</b>.
+last call to [MouseHit](../../brl/brl.polledinput/#function-mousehitint-buttonint-) with the same <b>button</b>.
 
 <b>button</b> should be 1 for the left mouse button, 2 for the right mouse button or 3 for the
 middle mouse button. Two further buttons, 4 and 5, are also available for mice that support them.
@@ -322,7 +322,7 @@ Wend
 ```
 <br/>
 
-### `Function MouseDown( button )`
+### `Function MouseDown:Int( button:Int )`
 
 Check for mouse button down state
 
@@ -353,12 +353,12 @@ Wend
 ```
 <br/>
 
-### `Function WaitKey()`
+### `Function WaitKey:Int()`
 
 Wait for a key press
 
 
-[WaitKey](../../brl/brl.polledinput/#function-waitkey) suspends program execution until a key has been hit. The keycode of this
+[WaitKey](../../brl/brl.polledinput/#function-waitkeyint) suspends program execution until a key has been hit. The keycode of this
 key is then returned to the application.
 
 See the key codes module for a list of valid keycodes.
@@ -380,12 +380,12 @@ WaitKey()
 ```
 <br/>
 
-### `Function WaitChar()`
+### `Function WaitChar:Int()`
 
 Wait for a key press
 
 
-[WaitChar](../../brl/brl.polledinput/#function-waitchar) suspends program execution until a character is available from [GetChar](../../brl/brl.polledinput/#function-getchar). This
+[WaitChar](../../brl/brl.polledinput/#function-waitcharint) suspends program execution until a character is available from [GetChar](../../brl/brl.polledinput/#function-getcharint). This
 character is then returned to the application.
 
 
@@ -395,15 +395,15 @@ The character code of the pressed key
 
 <br/>
 
-### `Function WaitMouse()`
+### `Function WaitMouse:Int()`
 
 Wait for mouse button click
 
 
-[WaitMouse](../../brl/brl.polledinput/#function-waitmouse) suspends program execution until a mouse button is clicked.
+[WaitMouse](../../brl/brl.polledinput/#function-waitmouseint) suspends program execution until a mouse button is clicked.
 
-[WaitMouse](../../brl/brl.polledinput/#function-waitmouse) returns 1 if the left mouse button was clicked, 2 if the right mouse button was
-clicked or 3 if the middle mouse button was clicked.
+[WaitMouse](../../brl/brl.polledinput/#function-waitmouseint) returns 1 if the left mouse button was clicked, 2 if the right mouse button was
+clicked or 3 if the middle mouse button was clicked. Further buttons (>3) are also checked for mice that support them.
 
 
 #### Returns

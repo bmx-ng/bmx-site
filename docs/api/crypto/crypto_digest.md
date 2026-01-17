@@ -51,7 +51,6 @@ The following is a list of available digests :
 ## Types
 | Type | Description |
 |---|---|
-| [TNoSuchAlgorithmException](../../crypto/crypto.digest/tnosuchalgorithmexception) | This exception is thrown when a particular cryptographic algorithm is requested but is not available in the environment. |
 | [TMessageDigest](../../crypto/crypto.digest/tmessagedigest) | An abstract base type for message digest implementations. |
 | [TDigestRegister](../../crypto/crypto.digest/tdigestregister) | A register of available message digests and cryptographic functions. |
 
@@ -61,7 +60,7 @@ The following is a list of available digests :
 
 Gets a digest of the specified <b>name</b>.
 
-A [TNoSuchAlgorithmException](../../crypto/crypto.digest/tnosuchalgorithmexception) is thrown if the requested digest is not available.
+A TNoSuchAlgorithmException is thrown if the requested digest is not available.
 
 
 #### Example
@@ -81,7 +80,7 @@ End If
 ```
 <br/>
 
-### `Function ListDigests:TArrayList<String>()`
+### `Function ListDigests:TList()`
 
 Returns a list of all currently registered digests.
 

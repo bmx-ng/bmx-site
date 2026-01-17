@@ -51,7 +51,7 @@ If <b>paused</b> is True, the audio channel is paused. Otherwise, the audio chan
 
 <br/>
 
-### `Method SetVolume( volume# )`
+### `Method SetVolume( volume:Float )`
 
 Set audio channel volume
 
@@ -61,7 +61,7 @@ Set audio channel volume
 
 <br/>
 
-### `Method SetPan( pan# )`
+### `Method SetPan( pan:Float )`
 
 Set audio channel stereo pan
 
@@ -71,7 +71,7 @@ Set audio channel stereo pan
 
 <br/>
 
-### `Method SetDepth( depth# )`
+### `Method SetDepth( depth:Float )`
 
 Set audio channel depth
 
@@ -81,7 +81,7 @@ Set audio channel depth
 
 <br/>
 
-### `Method SetRate( rate# )`
+### `Method SetRate( rate:Float )`
 
 Set audio channel playback rate
 

@@ -16,7 +16,7 @@ The Direct3D9 Max2D module provides a Direct3D9 driver for Max2D.
 Get Direct3D9 SDL Max2D Driver
 
 
-The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-drivertgraphicsdriverdefaultflagsgraphicsbackbuffer-) to enable Direct3D9 Max2D rendering.
+The returned driver can be used with [SetGraphicsDriver](../../brl/brl.graphics/#function-setgraphicsdriver-drivertgraphicsdriverdefaultflagslonggraphicsbackbuffer-) to enable Direct3D9 Max2D rendering.
 
 
 <br/>

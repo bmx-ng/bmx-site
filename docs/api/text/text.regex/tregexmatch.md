@@ -95,9 +95,29 @@ The end position, or -1 if <b>matchNumber</b> is out of range.
 
 <br/>
 
+### `Method SubExp:String(name:String)`
+
+Returns the subexpression for the given <b>name</b>.
+
+#### Returns
+The matched string, the subexpression string, or "" if <b>matchNumber</b> is out of range.
+
+
+<br/>
+
 ### `Method SubExpByName:String(name:String)`
 
 Returns the subexpression for the given <b>name</b>.
+
+#### Returns
+The matched string, the subexpression string, or "" if <b>matchNumber</b> is out of range.
+
+
+<br/>
+
+### `Method SubIndex:Int(name:String)`
+
+Returns the index of the subexpression for the given <b>name</b>.
 
 <br/>
 
@@ -107,9 +127,21 @@ Returns the index of the subexpression for the given <b>name</b>.
 
 <br/>
 
+### `Method SubStart:Int(name:String)`
+
+Returns the start position of the subexpression for the given <b>name</b>.
+
+<br/>
+
 ### `Method SubStartByName:Int(name:String)`
 
 Returns the start position of the subexpression for the given <b>name</b>.
+
+<br/>
+
+### `Method SubEnd:Int(name:String)`
+
+Returns the end position of the subexpression for the given <b>name</b>.
 
 <br/>
 

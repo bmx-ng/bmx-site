@@ -75,6 +75,170 @@ A [String](../../../brl/brl.blitz/#string) that has the controller's mapping or 
 
 <br/>
 
+### `Method GetType:ESDLGameControllerType()`
+
+Returns the type of this currently opened controller.
+
+<br/>
+
+### `Method HasAxis:Int(axis:ESDLGameControllerAxis)`
+
+Returns whether the game controller has a given axis.
+
+<br/>
+
+### `Method HasButton:Int(button:ESDLGameControllerButton)`
+
+Returns whether the game controller has a given button.
+
+<br/>
+
+### `Method GetNumTouchpads:Int()`
+
+Gets the number of touchpads on the game controller.
+
+<br/>
+
+### `Method GetNumTouchpadFingers:Int(touchpad:Int)`
+
+Gets the number of supported simultaneous fingers on a touchpad on the game controller.
+
+<br/>
+
+### `Method GetTouchpadFinger:Int(touchpad:Int, finger:Int, state:Byte Var, x:Float Var, y:Float Var, pressure:Float Var)`
+
+Gets the current state of a finger on a touchpad on the game controller.
+
+<br/>
+
+### `Method HasSensor:Int(sensorType:ESDLSensorType)`
+
+Returns whether the game controller has a particular sensor.
+
+#### Returns
+[True](../../../brl/brl.blitz/#true) if the sensor exists, [False](../../../brl/brl.blitz/#false) otherwise.
+
+
+<br/>
+
+### `Method SetSensorEnabled:Int(sensorType:ESDLSensorType, enabled:Int)`
+
+Sets whether data reporting for the game controller sensor is enabled.
+
+#### Returns
+0, or -1 if an error occurred.
+
+
+<br/>
+
+### `Method IsSensorEnabled:Int(sensorType:ESDLSensorType)`
+
+Queries whether sensor data reporting is enabled for the game controller.
+
+#### Returns
+[True](../../../brl/brl.blitz/#true) if the sensor is enabled, [False](../../../brl/brl.blitz/#false) otherwise.
+
+
+<br/>
+
+### `Method SDL_GameControllerGetSensorData:Int(sensorType:ESDLSensorType, data:Float Ptr, numValues:Int)`
+
+Gets the current state of a game controller sensor.
+
+The number of values and interpretation of the data is sensor dependent.
+
+
+#### Returns
+0, or -1 if an error occurred.
+
+
+<br/>
+
+### `Method Rumble:Int(lowFrequencyRumble:Short, highFrequencyRumble:Short, durationMs:UInt)`
+
+Starts a rumble effect.
+
+Each call to this method cancels any previous rumble effect, and calling it with 0 intensity stops any rumbling.
+
+
+#### Returns
+0, or -1 if rumble isn't supported on this controller.
+
+
+<br/>
+
+### `Method RumbleTriggers:Int(leftRumble:Short, rightRumble:Short, durationMs:UInt)`
+
+Starts a rumble effect in the game controller's triggers
+
+Each call to this function cancels any previous trigger rumble effect, and calling it with 0 intensity stops any rumbling.
+
+
+#### Returns
+0, or -1 if rumble isn't supported on this controller.
+
+
+<br/>
+
+### `Method HasLED:Int()`
+
+Returns whether the controller has an LED.
+
+#### Returns
+[True](../../../brl/brl.blitz/#true), or [False](../../../brl/brl.blitz/#false) if this controller does not have a modifiable LED.
+
+
+<br/>
+
+### `Method SDL_GameControllerSetLED:Int(red:Byte, green:Byte, blue:Byte)`
+
+Updates a controller's LED color.
+
+#### Returns
+0, or -1 if this controller does not have a modifiable LED.
+
+
+<br/>
+
+### `Method HasRumble:Int()`
+
+Queries whether the game controller has rumble support.
+
+#### Returns
+[True](../../../brl/brl.blitz/#true), or [False](../../../brl/brl.blitz/#false) if this controller does not have rumble support.
+
+
+<br/>
+
+### `Method HasRumbleTriggers:Int()`
+
+Queries whether the game controller has rumble support on triggers.
+
+#### Returns
+[True](../../../brl/brl.blitz/#true), or [False](../../../brl/brl.blitz/#false) if this controller does not have trigger rumble support.
+
+
+<br/>
+
+### `Method GetPlayerIndex:Int(handle:Byte Ptr)`
+
+Gets the player index of an opened game controller.
+
+For XInput controllers this returns the XInput user index.
+
+
+#### Returns
+The player index for the controller, or -1 if it's not available.
+
+
+<br/>
+
+### `Method SetPlayerIndex(index:Int)`
+
+Sets the player index of an opened game controller.
+
+<br/>
+
 ## Functions
 
 ### `Function Open:TSDLGameController(port:Int)`
@@ -167,5 +331,14 @@ For Local i:Int = 0 Until JoyCount()
 	Print TSDLGameController.NameForIndex(i)
 Next
 ```
+<br/>
+
+### `Function TypeForIndex:ESDLGameControllerType(port:Int)`
+
+Gets the type of a game controller.
+
+This can be called before any controllers are opened.
+
+
 <br/>
 

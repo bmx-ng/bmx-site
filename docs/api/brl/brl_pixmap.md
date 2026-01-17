@@ -8,24 +8,24 @@ sidebar_label: Introduction
 
 Pixmaps provide storage for rectangular regions of pixels.
 
-You can create a new pixmap using the [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthheightformatalignbytes4-) command, or load a pixmap 
+You can create a new pixmap using the [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthintheightintformatintalignbytesint4-) command, or load a pixmap 
 using [LoadPixmap](../../brl/brl.pixmap/tpixmaploader/#method-loadpixmaptpixmap-streamtstream-abstract).
 
 Pixmaps have 5 properties: width, height, a byte pointer to the pixmap's pixels, pitch and
 format.
 
-You can retrieve a pointer to a pixmap's pixels using the [PixmapPixelPtr](../../brl/brl.pixmap/#function-pixmappixelptrbyte-ptr-pixmaptpixmapx0y0-) command.
+You can retrieve a pointer to a pixmap's pixels using the [PixmapPixelPtr](../../brl/brl.pixmap/#function-pixmappixelptrbyte-ptr-pixmaptpixmapxint0yint0-) command.
 
 A pixmap's pitch refers to the number of bytes between one row of pixels in the pixmap
-and the next. To retrieve a pixmap's pitch, use the [PixmapPitch](../../brl/brl.pixmap/#function-pixmappitch-pixmaptpixmap-) command.
+and the next. To retrieve a pixmap's pitch, use the [PixmapPitch](../../brl/brl.pixmap/#function-pixmappitchint-pixmaptpixmap-) command.
 
 A pixmap's pixel format determines how the pixels within a pixmap are stored in memory. This 
 must be taken into account if you want to access pixels directly via a pixmap's pixel pointer.
-You can retrieve the format of a pixmap using the [PixmapFormat](../../brl/brl.pixmap/#function-pixmapformat-pixmaptpixmap-) command, and convert pixmaps
-from one format to another using [ConvertPixmap](../../brl/brl.pixmap/#function-convertpixmaptpixmap-pixmaptpixmapformat-).
+You can retrieve the format of a pixmap using the [PixmapFormat](../../brl/brl.pixmap/#function-pixmapformatint-pixmaptpixmap-) command, and convert pixmaps
+from one format to another using [ConvertPixmap](../../brl/brl.pixmap/#function-convertpixmaptpixmap-pixmaptpixmapformatint-).
 
-You can also use [ResizePixmap](../../brl/brl.pixmap/#function-resizepixmaptpixmap-pixmaptpixmapwidthheight-nodebug) to resize a pixmap and flip a pixmap horizontally or vertically
-with [XFlipPixmap](../../brl/brl.pixmap/#function-xflippixmaptpixmap-pixmaptpixmap-nodebug) and [YFlipPixmap](../../brl/brl.pixmap/#function-yflippixmaptpixmap-pixmaptpixmap-nodebug).
+You can also use [ResizePixmap](../../brl/brl.pixmap/#function-resizepixmaptpixmap-pixmaptpixmapwidthintheightint-) to resize a pixmap and flip a pixmap horizontally or vertically
+with [XFlipPixmap](../../brl/brl.pixmap/#function-xflippixmaptpixmap-pixmaptpixmap-) and [YFlipPixmap](../../brl/brl.pixmap/#function-yflippixmaptpixmap-pixmaptpixmap-nodebug).
 
 
 ## Types
@@ -36,7 +36,7 @@ with [XFlipPixmap](../../brl/brl.pixmap/#function-xflippixmaptpixmap-pixmaptpixm
 
 ## Functions
 
-### `Function CreatePixmap:TPixmap( width,height,format,align_bytes=4 )`
+### `Function CreatePixmap:TPixmap( width:Int,height:Int,format:Int,align_bytes:Int=4 )`
 
 Create a pixmap
 
@@ -46,7 +46,7 @@ Create a pixmap
 <table><tr><td> <b>Format</b></td><td><b>Description</b></td></tr><tr><td>  PF_A8</td><td>8 bit alpha</td></tr><tr><td>  PF_I8</td><td>8 bit intensity</td></tr><tr><td>  PF_RGB888</td><td>24 bit big endian RGB</td></tr><tr><td>  PF_BGR888</td><td>24 bit little endian RGB</td></tr><tr><td>  PF_RGBA8888</td><td>32 bit big endian RGB with alpha</td></tr><tr><td>  PF_BGRA8888</td><td>32 bit little endian RGB with alpha</td></tr></table>
 
 
-Note that the newly created pixmap will contain random data. [ClearPixels](../../brl/brl.pixmap/tpixmap/#method-clearpixels-argb-) can
+Note that the newly created pixmap will contain random data. [ClearPixels](../../brl/brl.pixmap/tpixmap/#method-clearpixels-argbint-) can
 be used to set all pixels to a known value prior to use.
 
 
@@ -56,14 +56,14 @@ A new pixmap object of the specified <b>width</b> and <b>height</b>
 
 <br/>
 
-### `Function CreateStaticPixmap:TPixmap( pixels:Byte Ptr,width,height,pitch,format )`
+### `Function CreateStaticPixmap:TPixmap( pixels:Byte Ptr,width:Int,height:Int,pitch:Int,format:Int )`
 
 Create a pixmap with existing pixel data
 
 
 The memory referenced by a static pixmap is not released when the pixmap is deleted.
 
-See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthheightformatalignbytes4-) for valid pixmap formats.
+See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthintheightintformatintalignbytesint4-) for valid pixmap formats.
 
 
 #### Returns
@@ -103,12 +103,12 @@ Until KeyHit(key_escape) Or AppTerminate()
 ```
 <br/>
 
-### `Function ConvertPixmap:TPixmap( pixmap:TPixmap,format )`
+### `Function ConvertPixmap:TPixmap( pixmap:TPixmap,format:Int )`
 
 Convert pixel format of a pixmap
 
 
-See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthheightformatalignbytes4-) for valid pixmap formats.
+See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthintheightintformatintalignbytesint4-) for valid pixmap formats.
 
 
 #### Returns
@@ -117,7 +117,7 @@ A new pixmap object with the specified pixel format
 
 <br/>
 
-### `Function PixmapWidth( pixmap:TPixmap )`
+### `Function PixmapWidth:Int( pixmap:TPixmap )`
 
 Get pixmap width
 
@@ -147,7 +147,7 @@ Until KeyHit(key_escape) Or AppTerminate()
 ```
 <br/>
 
-### `Function PixmapHeight( pixmap:TPixmap )`
+### `Function PixmapHeight:Int( pixmap:TPixmap )`
 
 Get pixmap width
 
@@ -179,7 +179,7 @@ Until KeyHit(key_escape) Or AppTerminate()
 ```
 <br/>
 
-### `Function PixmapPitch( pixmap:TPixmap )`
+### `Function PixmapPitch:Int( pixmap:TPixmap )`
 
 Get pixmap pitch
 
@@ -193,12 +193,12 @@ The pitch, in bytes, of <b>pixmap</b>
 
 <br/>
 
-### `Function PixmapFormat( pixmap:TPixmap )`
+### `Function PixmapFormat:Int( pixmap:TPixmap )`
 
 Get pixmap format
 
 
-See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthheightformatalignbytes4-) for supported formats.
+See [CreatePixmap](../../brl/brl.pixmap/#function-createpixmaptpixmap-widthintheightintformatintalignbytesint4-) for supported formats.
 
 
 #### Returns
@@ -207,7 +207,7 @@ The format of the pixels stored in <b>pixmap</b>
 
 <br/>
 
-### `Function PixmapPixelPtr:Byte Ptr( pixmap:TPixmap,x=0,y=0 )`
+### `Function PixmapPixelPtr:Byte Ptr( pixmap:TPixmap,x:Int=0,y:Int=0 )`
 
 Get pixmap pixels
 
@@ -217,11 +217,11 @@ A byte pointer to the pixels stored in <b>pixmap</b>
 
 <br/>
 
-### `Function PixmapWindow:TPixmap( pixmap:TPixmap,x,y,width,height )`
+### `Function PixmapWindow:TPixmap( pixmap:TPixmap,x:Int,y:Int,width:Int,height:Int )`
 
 Create a pixmap window
 
-[PixmapWindow](../../brl/brl.pixmap/#function-pixmapwindowtpixmap-pixmaptpixmapxywidthheight-) creates a 'virtual' window into <b>pixmap</b>.
+[PixmapWindow](../../brl/brl.pixmap/#function-pixmapwindowtpixmap-pixmaptpixmapxintyintwidthintheightint-) creates a 'virtual' window into <b>pixmap</b>.
 
 
 #### Returns
@@ -230,7 +230,7 @@ A new pixmap object
 
 <br/>
 
-### `Function MaskPixmap:TPixmap( pixmap:TPixmap,mask_red,mask_green,mask_blue ) NoDebug`
+### `Function MaskPixmap:TPixmap( pixmap:TPixmap,mask_red:Int,mask_green:Int,mask_blue:Int ) NoDebug`
 
 Mask a pixmap
 
@@ -245,7 +245,7 @@ A new pixmap object
 
 <br/>
 
-### `Function XFlipPixmap:TPixmap( pixmap:TPixmap ) NoDebug`
+### `Function XFlipPixmap:TPixmap( pixmap:TPixmap )`
 
 Flip a pixmap horizontally
 
@@ -323,7 +323,7 @@ Until KeyHit(key_escape) Or AppTerminate()
 ```
 <br/>
 
-### `Function ResizePixmap:TPixmap( pixmap:TPixmap,width,height ) NoDebug`
+### `Function ResizePixmap:TPixmap( pixmap:TPixmap,width:Int,height:Int )`
 
 Resize a pixmap
 
@@ -400,7 +400,7 @@ Until KeyHit(key_escape) Or AppTerminate()
 ```
 <br/>
 
-### `Function ReadPixel( pixmap:TPixmap,x,y )`
+### `Function ReadPixel:Int( pixmap:TPixmap,x:Int,y:Int )`
 
 Read a pixel from a pixmap
 
@@ -417,7 +417,7 @@ A 32 bit pixel value
 
 <br/>
 
-### `Function WritePixel( pixmap:TPixmap,x,y,argb )`
+### `Function WritePixel( pixmap:TPixmap,x:Int,y:Int,argb:Int )`
 
 Write a pixel to a pixmap
 
@@ -430,7 +430,7 @@ The 32 bit <b>argb</b> value contains the following components:
 
 <br/>
 
-### `Function ClearPixels( pixmap:TPixmap,argb=0 )`
+### `Function ClearPixels( pixmap:TPixmap,argb:Int=0 )`
 
 Clear a pixmap
 

@@ -636,6 +636,109 @@ Running the above example would result in the following output :
 
 ### RegisterSerializer
 
+Text.JConv can be extended with custom serializers for types which need a specific JSON representation.
+This is useful when:
+
+* A type should be represented differently to the default field-to-object mapping (for example, a vector as an array `[x, y]`).
+* A type is not easily serialised using reflection (for example, it stores its data internally, or exposes it via methods rather than fields).
+* You need to interoperate with an external JSON schema (for example, dates as ISO-8601 strings).
+
+A custom serializer is registered with the builder, and will be used whenever JConv encounters a field of the specified type during serialisation
+(and, where supported by the serializer, during deserialisation too).
+
+#### Signature
+
+    Method RegisterSerializer:TJConvBuilder(sourceType:String, serializer:Object)
+
+* `sourceType` is the name of the BlitzMax `Type` you want to handle (for example `"TVec2"`).
+* `serializer` is an instance of a serializer, typically a type that `Extends TJConvSerializer`.
+
+> **Note:** Serializers must be registered **before** calling `Build()`.  
+> If multiple serializers are registered for the same `sourceType`, the most recently registered serializer will be used.
+
+#### Example : Serialising a vector as an array
+
+By default, this type:
+
+```
+    Type TVec2
+        Field x:Int
+        Field y:Int
+    End Type
+```
+
+would be serialized as an object:
+
+```
+    {"x": 10, "y": 20}
+```
+
+If your JSON schema expects a 2-element array instead (`[10, 20]`), you can register a custom serializer:
+
+```
+    SuperStrict
+
+    Framework BRL.StandardIO
+    Import Text.JConv
+    Import Text.JSON
+
+    Local v:TVec2 = New TVec2(10, 20)
+
+    Local jconv:TJConv = New TJConvBuilder.RegisterSerializer("TVec2", New TVec2Serializer).Build()
+
+    Print jconv.ToJson(v) ' -> [10, 20]
+
+    Type TVec2
+        Field x:Int
+        Field y:Int
+
+        Method New(x:Int, y:Int)
+            Self.x = x
+            Self.y = y
+        End Method
+    End Type
+
+    ' A simple serializer which converts TVec2 <-> JSON array.
+    Type TVec2Serializer Extends TJConvSerializer
+
+        ' Called when serialising a TVec2 instance to JSON.
+        Method Serialize:TJSON(source:Object, sourceType:String) Override
+            Local v:TVec2 = TVec2(source)
+
+			If v Then
+				Local arr:TJSONArray = New TJSONArray
+				arr.AddLast(New TJSONInteger(v.x))
+				arr.AddLast(New TJSONInteger(v.y))
+			End If
+
+            Return arr
+        End Method
+
+        ' Called when deserialising JSON back into a TVec2 (if required).
+        Method Deserialize:Object(json:TJSON, typeId:TTypeId, obj:Object) Override
+            Local arr:TJSONArray = TJSONArray(json)
+            If Not arr Or arr.Count() < 2 Then
+				Return Null
+			End If
+
+			If Not obj Then
+				Local x:Int = TJSONInteger(arr.ValueAtIndex(0)).Value
+				Local y:Int = TJSONInteger(arr.ValueAtIndex(1)).Value
+            	obj = New TVec2(x, y)
+			End If
+
+			Return obj
+        End Method
+
+    End Type
+```
+
+#### Notes
+
+* The example above uses `Text.JSON`'s JSON node types (`TJSONArray`, `TJSONInteger`, etc.) to build and read JSON values.
+* Keep serializers small and focused: ideally, each serializer handles one `sourceType`.
+* If you need to customise the JSON output for a field but you do not control the type (for example, it comes from another module),
+  using `RegisterSerializer` is generally preferable to adding extra wrapper types just for JSON purposes.
 
 ## Types
 | Type | Description |

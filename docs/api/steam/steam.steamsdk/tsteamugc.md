@@ -190,7 +190,7 @@ Up to 50 results will be returned from each query. Paging through more results c
 To track the playtime of Workshop items simply call [StartPlaytimeTracking](../../../steam/steam.steamsdk/tsteamugc/#method-startplaytimetrackingpublishedfileidsulong-ptr-numpublishedfileidsuint) with the ids of the items you want to track. Then when the items are removed from play call [StopPlaytimeTracking](../../../steam/steam.steamsdk/tsteamugc/#method-stopplaytimetrackingpublishedfileidsulong-ptr-numpublishedfileidsuint) with the ids you want to stop tracking or call [StopPlaytimeTrackingForAllItems](../../../steam/steam.steamsdk/tsteamugc/#method-stopplaytimetrackingforallitems) to stop tracking playtime for all items at once.
 When your app shuts down, playtime tracking will automatically stop.
 
-You will also be able to sort items by various playtime metrics in [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint) queries. Here are the playtime based query types you can use:
+You will also be able to sort items by various playtime metrics in CreateQueryAllUGCRequest queries. Here are the playtime based query types you can use:
 * k_EUGCQuery_RankedByPlaytimeTrend - Sort by total playtime in the "trend" period descending (set with [SetRankedByTrendDays](../../../steam/steam.steamsdk/tsteamugc/#method-setrankedbytrenddaysintqueryhandleulong-daysuint))
 * k_EUGCQuery_RankedByTotalPlaytime - Sort by total lifetime playtime descending.
 * k_EUGCQuery_RankedByAveragePlaytimeTrend - Sort by average playtime in the "trend" period descending (set with [SetRankedByTrendDays](../../../steam/steam.steamsdk/tsteamugc/#method-setrankedbytrenddaysintqueryhandleulong-daysuint))
@@ -217,6 +217,21 @@ The majority of [TSteamUGC](../../../steam/steam.steamsdk/tsteamugc) methods ret
 
 
 ## Methods
+
+### `Method SetListener(listener:ISteamUGCListener)`
+
+Sets the UGC callback listener.
+
+Once installed, the listener will receive events via the callback methods.
+
+
+<br/>
+
+### `Method RemoveListener()`
+
+Removes the current UGC callback listener.
+
+<br/>
 
 ### `Method AddAppDependency(publishedFileID:ULong, appID:UInt)`
 
@@ -359,7 +374,7 @@ Creates a new workshop item with no content attached yet.
 
 <br/>
 
-### `Method CreateQueryAllUGCRequest:ULong(queryType:EUGCQuery, matchingeMatchingUGCTypeFileType:EUGCMatchingUGCType, creatorAppID:UInt, consumerAppID:UInt, page:UInt)`
+### `Method CreateQueryAllUGCRequestPage:ULong(queryType:EUGCQuery, matchingeMatchingUGCTypeFileType:EUGCMatchingUGCType, creatorAppID:UInt, consumerAppID:UInt, page:UInt)`
 
 Query for all matching UGC.
 
@@ -386,7 +401,7 @@ This will return up to 50 results per page.
 
 > NOTE: You must release the handle returned by this function by calling [ReleaseQueryUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-releasequeryugcrequestintqueryhandleulong) when you are done with it!
 
-To query all the UGC for your app you can use [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint) instead.
+To query all the UGC for your app you can use CreateQueryAllUGCRequest instead.
 
 
 <br/>
@@ -401,7 +416,7 @@ This will return up to 50 results per page.
 
 > NOTE: You must release the handle returned by this function by calling [ReleaseQueryUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-releasequeryugcrequestintqueryhandleulong) when you are done with it!
 
-To query all the UGC for your app you can use [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint) instead.
+To query all the UGC for your app you can use CreateQueryAllUGCRequest instead.
 
 
 <br/>
@@ -417,7 +432,7 @@ This will return up to 50 results per page. You can make subsequent calls to thi
 
 > NOTE: You must release the handle returned by this function by calling [ReleaseQueryUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-releasequeryugcrequestintqueryhandleulong) when you are done with it!
 
-To query all the UGC for your app you can use [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint) instead.
+To query all the UGC for your app you can use CreateQueryAllUGCRequest instead.
 
 
 <br/>
@@ -747,7 +762,7 @@ Removes an item preview.
 
 Sends a UGC query to Steam.
 
-This must be called with a handle obtained from [CreateQueryUserUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryuserugcrequestulongaccountiduint-listtypeeuserugclist-matchingugctypeeugcmatchingugctype-sortordereuserugclistsortorder-creatorappiduint-consumerappiduint-pageuint), [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint), or [CreateQueryUGCDetailsRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryugcdetailsrequestulongpublishedfileidsulong) to actually send the request to Steam.
+This must be called with a handle obtained from [CreateQueryUserUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryuserugcrequestulongaccountiduint-listtypeeuserugclist-matchingugctypeeugcmatchingugctype-sortordereuserugclistsortorder-creatorappiduint-consumerappiduint-pageuint), CreateQueryAllUGCRequest, or [CreateQueryUGCDetailsRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryugcdetailsrequestulongpublishedfileidsulong) to actually send the request to Steam.
 Before calling this you should use one or more of the following APIs to customize your query:
 [AddRequiredTag](../../../steam/steam.steamsdk/tsteamugc/#method-addrequiredtagintqueryhandleulong-tagnamestring), [AddExcludedTag](../../../steam/steam.steamsdk/tsteamugc/#method-addexcludedtagintqueryhandleulong-tagnamestring), [SetReturnOnlyIDs](../../../steam/steam.steamsdk/tsteamugc/#method-setreturnonlyidsintqueryhandleulong-returnonlyidsint), [SetReturnKeyValueTags](../../../steam/steam.steamsdk/tsteamugc/#method-setreturnkeyvaluetagsintqueryhandleulong-returnkeyvaluetagsint), [SetReturnLongDescription](../../../steam/steam.steamsdk/tsteamugc/#method-setreturnlongdescriptionintqueryhandleulong-returnlongdescriptionint), [SetReturnMetadata](../../../steam/steam.steamsdk/tsteamugc/#method-setreturnmetadataintqueryhandleulong-returnmetadataint), [SetReturnChildren](../../../steam/steam.steamsdk/tsteamugc/#method-setreturnchildrenintqueryhandleulong-returnchildrenint), [SetReturnAdditionalPreviews](../../../steam/steam.steamsdk/tsteamugc/#method-setreturnadditionalpreviewsintqueryhandleulong-returnadditionalpreviewsint),
 [SetReturnTotalOnly](../../../steam/steam.steamsdk/tsteamugc/#method-setreturntotalonlyintqueryhandleulong-returntotalonlyint), [SetLanguage](../../../steam/steam.steamsdk/tsteamugc/#method-setlanguageintqueryhandleulong-languagestring), [SetAllowCachedResponse](../../../steam/steam.steamsdk/tsteamugc/#method-setallowcachedresponseintqueryhandleulong-maxagesecondsuint), [SetCloudFileNameFilter](../../../steam/steam.steamsdk/tsteamugc/#method-setcloudfilenamefilterintqueryhandleulong-matchcloudfilenamestring), [SetMatchAnyTag](../../../steam/steam.steamsdk/tsteamugc/#method-setmatchanytagintqueryhandleulong-matchanytagint), [SetSearchText](../../../steam/steam.steamsdk/tsteamugc/#method-setsearchtextintqueryhandleulong-searchtextstring), [SetRankedByTrendDays](../../../steam/steam.steamsdk/tsteamugc/#method-setrankedbytrenddaysintqueryhandleulong-daysuint),
@@ -947,7 +962,7 @@ See Also: [SetItemUpdateLanguage](../../../steam/steam.steamsdk/tsteamugc/#metho
 Sets whether workshop items will be returned if they have one or more matching tag, or if all tags need to match on a pending UGC Query.
 
 
-> NOTE: This can only be used with [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint)!
+> NOTE: This can only be used with CreateQueryAllUGCRequest!
 
 > NOTE: This must be set before you send a UGC Query handle using [SendQueryUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-sendqueryugcrequestqueryhandleulong).
 
@@ -955,7 +970,7 @@ See Also: [AddRequiredTag](../../../steam/steam.steamsdk/tsteamugc/#method-addre
 
 
 #### Returns
-[True](../../../brl/brl.blitz/#true) upon success, otherwise [False](../../../brl/brl.blitz/#false) if the UGC query handle is invalid or if the UGC query handle is not from [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint).
+[True](../../../brl/brl.blitz/#true) upon success, otherwise [False](../../../brl/brl.blitz/#false) if the UGC query handle is invalid or if the UGC query handle is not from CreateQueryAllUGCRequest.
 
 
 <br/>
@@ -965,13 +980,13 @@ See Also: [AddRequiredTag](../../../steam/steam.steamsdk/tsteamugc/#method-addre
 Sets whether the order of the results will be updated based on the rank of items over a number of days on a pending UGC Query.
 
 
-> NOTE: This can only be used with [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint)!
+> NOTE: This can only be used with CreateQueryAllUGCRequest!
 
 > NOTE: This must be set before you send a UGC Query handle using [SendQueryUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-sendqueryugcrequestqueryhandleulong).
 
 
 #### Returns
-[True](../../../brl/brl.blitz/#true) upon success, otherwise [False](../../../brl/brl.blitz/#false) if the UGC query handle is invalid, if the UGC query handle is not from [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint) or if the [EUGCQuery](../../../steam/steam.steamsdk/eugcquery) of the query is not one of k_PublishedFileQueryType_RankedByTrend, k_PublishedFileQueryType_RankedByPlaytimeTrend, k_PublishedFileQueryType_RankedByAveragePlaytimeTrend, k_PublishedFileQueryType_RankedByVotesUp, or k_PublishedFileQueryType_RankedByPlaytimeSessionsTrend.
+[True](../../../brl/brl.blitz/#true) upon success, otherwise [False](../../../brl/brl.blitz/#false) if the UGC query handle is invalid, if the UGC query handle is not from CreateQueryAllUGCRequest or if the [EUGCQuery](../../../steam/steam.steamsdk/eugcquery) of the query is not one of k_PublishedFileQueryType_RankedByTrend, k_PublishedFileQueryType_RankedByPlaytimeTrend, k_PublishedFileQueryType_RankedByAveragePlaytimeTrend, k_PublishedFileQueryType_RankedByVotesUp, or k_PublishedFileQueryType_RankedByPlaytimeSessionsTrend.
 
 
 <br/>
@@ -1101,13 +1116,13 @@ The actual items will not be returned when [OnSteamUGCQueryCompleted](../../../s
 Sets a string to that items need to match in either the title or the description on a pending UGC Query.
 
 
-> NOTE: This can only be used with [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint)!
+> NOTE: This can only be used with CreateQueryAllUGCRequest!
 
 > NOTE: This must be set before you send a UGC Query handle using [SendQueryUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-sendqueryugcrequestqueryhandleulong).
 
 
 #### Returns
-[True](../../../brl/brl.blitz/#true) upon success, [False](../../../brl/brl.blitz/#false) if the UGC query handle is invalid, if the UGC query handle is not from [CreateQueryAllUGCRequest](../../../steam/steam.steamsdk/tsteamugc/#method-createqueryallugcrequestulongquerytypeeugcquery-matchingematchingugctypefiletypeeugcmatchingugctype-creatorappiduint-consumerappiduint-pageuint) or if <b>searchText</b> is empty.
+[True](../../../brl/brl.blitz/#true) upon success, [False](../../../brl/brl.blitz/#false) if the UGC query handle is invalid, if the UGC query handle is not from CreateQueryAllUGCRequest or if <b>searchText</b> is empty.
 
 
 <br/>

@@ -115,6 +115,16 @@ The value associated with <b>key</b>.
 
 <br/>
 
+### `Method ValueForKey:Int( key:Object, value:Object var )`
+
+Finds a value given a <b>key</b>, returning it via an output parameter.
+
+#### Returns
+[True](../../../brl/brl.blitz/#true) if <b>key</b> was found, otherwise [False](../../../brl/brl.blitz/#false).
+
+
+<br/>
+
 ### `Method Remove:Int( key:Object )`
 
 Remove a key/value pair from the map.

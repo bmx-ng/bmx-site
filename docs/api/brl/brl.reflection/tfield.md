@@ -4,200 +4,319 @@ title: TField
 sidebar_label: TField
 ---
 
-Type field
+Type member field
 
 
 ## Methods
 
-### `Method Get:Object( obj:Object )`
+### `Method IsReadOnly:Int()`
+
+Determine if field is read-only
+
+<br/>
+
+### `Method Get:Object(obj:Object)`
 
 Get field value
+
+
+For reference types, this returns the object. For structs, it returns a <b>TBoxedValue</b>.
+For other value types, it returns a string representation of the value.
+
+
+<br/>
+
+### `Method GetBoxed:Object(obj:Object)`
+
+Get field value
+
+Like <b>Get</b>, but always returns a <b>TBoxedValue</b> for value types instead of converting the value to a string.
+
 
 <br/>
 
 ### `Method GetByte:Byte( obj:Object )`
 
-Get [Byte](../../../brl/brl.blitz/#byte) field value
+Get field value as <b>Byte</b>
 
 <br/>
 
 ### `Method GetShort:Short( obj:Object )`
 
-Get [Short](../../../brl/brl.blitz/#short) field value
+Get field value as <b>Short</b>
 
 <br/>
 
 ### `Method GetInt:Int( obj:Object )`
 
-Get [Int](../../../brl/brl.blitz/#int) field value
+Get field value as <b>Int</b>
 
 <br/>
 
 ### `Method GetUInt:UInt( obj:Object )`
 
-Get [UInt](../../../brl/brl.blitz/#uint) field value
+Get field value as <b>UInt</b>
 
 <br/>
 
 ### `Method GetLong:Long( obj:Object )`
 
-Get long field value
+Get field value as <b>Long</b>
 
 <br/>
 
 ### `Method GetULong:ULong( obj:Object )`
 
-Get [ULong](../../../brl/brl.blitz/#ulong) field value
+Get field value as <b>ULong</b>
 
 <br/>
 
-### `Method GetSizet:Size_T( obj:Object )`
+### `Method GetSizeT:Size_T( obj:Object )`
 
-Get [Size_T](../../../brl/brl.blitz/#sizet) field value
+Get field value as <b>Size_T</b>
 
 <br/>
 
 ### `Method GetFloat:Float( obj:Object )`
 
-Get [Float](../../../brl/brl.blitz/#float) field value
+Get field value as <b>Float</b>
 
 <br/>
 
 ### `Method GetDouble:Double( obj:Object )`
 
-Get [Double](../../../brl/brl.blitz/#double) field value
+Get field value as <b>Double</b>
 
 <br/>
 
-### `Method GetString$( obj:Object )`
+### `Method GetLongInt:LongInt( obj:Object )`
 
-Get [String](../../../brl/brl.blitz/#string) field value
+Get field value as <b>LongInt</b>
 
 <br/>
 
-### `Method Set( obj:Object,value:Object )`
+### `Method GetULongInt:ULongInt( obj:Object )`
 
-Set field value
+Get field value as <b>ULongInt</b>
+
+<br/>
+
+### `Method GetString:String( obj:Object )`
+
+Get field value as <b>String</b>
+
+<br/>
+
+### `Method GetPointer:Byte Ptr(obj:Object)`
+
+Get field value as <b>Byte Ptr</b>
+
+<br/>
+
+### `Method GetStruct(obj:Object, targetPtr:Byte Ptr)`
+
+Get field value as struct
+
+<b>targetPtr</b> must be a pointer to a variable of the correct struct type.
+
+
+<br/>
+
+### `Method GetEnumAsString:String( obj:Object )`
+
+Get enum field value as <b>String</b>
+
+Returns the name of the enum value. If the field value does not correspond to any enum value, throws an error.
+
+
+<br/>
+
+### `Method Set(obj:Object, value:Object)`
+
+Set Field value
 
 <br/>
 
 ### `Method Set( obj:Object,value:Byte )`
 
-Set [Byte](../../../brl/brl.blitz/#byte) field value
+Set field value from <b>Byte</b>
 
 <br/>
 
 ### `Method Set( obj:Object,value:Short )`
 
-Set [Short](../../../brl/brl.blitz/#short) field value
+Set field value from <b>Short</b>
 
 <br/>
 
 ### `Method Set( obj:Object,value:Int )`
 
-Set [Int](../../../brl/brl.blitz/#int) field value
+Set field value from <b>Int</b>
 
 <br/>
 
 ### `Method Set( obj:Object,value:UInt )`
 
-Set [UInt](../../../brl/brl.blitz/#uint) field value
+Set field value from <b>UInt</b>
 
 <br/>
 
 ### `Method Set( obj:Object,value:Long )`
 
-Set [Long](../../../brl/brl.blitz/#long) field value
+Set field value from <b>Long</b>
 
 <br/>
 
 ### `Method Set( obj:Object,value:ULong )`
 
-Set [ULong](../../../brl/brl.blitz/#ulong) field value
+Set field value from <b>ULong</b>
 
 <br/>
 
 ### `Method Set( obj:Object,value:Size_T )`
 
-Set [Size_T](../../../brl/brl.blitz/#sizet) field value
+Set field value from <b>Size_T</b>
 
 <br/>
 
 ### `Method Set( obj:Object,value:Float )`
 
-Set [Float](../../../brl/brl.blitz/#float) field value
+Set field value from <b>Float</b>
 
 <br/>
 
 ### `Method Set( obj:Object,value:Double )`
 
-Set [Double](../../../brl/brl.blitz/#double) field value
+Set field value from <b>Double</b>
+
+<br/>
+
+### `Method Set( obj:Object,value:LongInt )`
+
+Set field value from <b>LongInt</b>
+
+<br/>
+
+### `Method Set( obj:Object,value:ULongInt )`
+
+Set field value from <b>ULongInt</b>
 
 <br/>
 
 ### `Method SetObject( obj:Object,value:Object )`
 
-Set [Object](../../../brl/brl.blitz/#object) field value
+Set field value from <b>Object</b>
 
 <br/>
 
 ### `Method SetByte( obj:Object,value:Byte )`
 
-Set [Byte](../../../brl/brl.blitz/#byte) field value
+Set field value from <b>Byte</b>
 
 <br/>
 
 ### `Method SetShort( obj:Object,value:Short )`
 
-Set [Short](../../../brl/brl.blitz/#short) field value
+Set field value from <b>Short</b>
 
 <br/>
 
 ### `Method SetInt( obj:Object,value:Int )`
 
-Set [Int](../../../brl/brl.blitz/#int) field value
+Set field value from <b>Int</b>
 
 <br/>
 
 ### `Method SetUInt( obj:Object,value:UInt )`
 
-Set [UInt](../../../brl/brl.blitz/#uint) field value
+Set field value from <b>UInt</b>
 
 <br/>
 
 ### `Method SetLong( obj:Object,value:Long )`
 
-Set [Long](../../../brl/brl.blitz/#long) field value
+Set field value from <b>Long</b>
 
 <br/>
 
 ### `Method SetULong( obj:Object,value:ULong )`
 
-Set [ULong](../../../brl/brl.blitz/#ulong) field value
+Set field value from <b>ULong</b>
 
 <br/>
 
 ### `Method SetSizet( obj:Object,value:Size_T )`
 
-Set [Size_T](../../../brl/brl.blitz/#sizet) field value
+Set field value from <b>Size_T</b>
 
 <br/>
 
 ### `Method SetFloat( obj:Object,value:Float )`
 
-Set [Float](../../../brl/brl.blitz/#float) field value
+Set field value from <b>Float</b>
 
 <br/>
 
 ### `Method SetDouble( obj:Object,value:Double )`
 
-Set [Double](../../../brl/brl.blitz/#double) field value
+Set field value from <b>Double</b>
 
 <br/>
 
-### `Method SetString( obj:Object,value$ )`
+### `Method SetLongInt( obj:Object,value:LongInt )`
 
-Set [String](../../../brl/brl.blitz/#string) field value
+Set field value from <b>LongInt</b>
+
+<br/>
+
+### `Method SetULongInt( obj:Object,value:ULongInt )`
+
+Set field value from <b>ULongInt</b>
+
+<br/>
+
+### `Method SetString( obj:Object,value:String )`
+
+Set field value from <b>String</b>
+
+<br/>
+
+### `Method SetPointer(obj:Object, value:Byte Ptr)`
+
+Set field value from <b>Byte Ptr</b>
+
+<br/>
+
+### `Method SetStruct(obj:Object, structPtr:Byte Ptr)`
+
+Set field value from struct
+
+<b>structPtr</b> must be a pointer to a variable of the correct struct type.
+
+
+<br/>
+
+### `Method SetEnum(obj:Object, value:String)`
+
+Set field value from enum name
+
+<b>value</b> must be a valid name for an enum value of the field's enum type.
+
+
+<br/>
+
+### `Method FieldPtr:Byte Ptr(obj:Object)`
+
+Get pointer to the field
+
+<br/>
+
+### `Method Invoke:Object(obj:Object, args:Object[] = Null)`
+
+Invoke field value
+
+Field type must be a function pointer.
+
 
 <br/>
 

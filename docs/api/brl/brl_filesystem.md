@@ -1,7 +1,7 @@
 ---
 id: brl.filesystem
 title: BRL.FileSystem
-sidebar_label: BRL.FileSystem
+sidebar_label: Introduction
 ---
 
 
@@ -13,24 +13,34 @@ files and directories.
 to files.
 
 Directories can be examined file by file using a combination of the
-[ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-path-), [NextFile](../../brl/brl.filesystem/#function-nextfile-dirbyte-ptr-) and [CloseDir](../../brl/brl.filesystem/#function-closedir-dirbyte-ptr-) commands, or [LoadDir](../../brl/brl.filesystem/#function-loaddir-dirskipdotsinttrue-) can be used to read the file names
+[ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-pathstring-), [NextFile](../../brl/brl.filesystem/#function-nextfilestring-dirbyte-ptr-) and [CloseDir](../../brl/brl.filesystem/#function-closedir-dirbyte-ptr-) commands, or [LoadDir](../../brl/brl.filesystem/#function-loaddirstring-dirstringskipdotsinttrue-) can be used to read the file names
 of a directory into a string array.
 
-File properties can be examined with the [FileType](../../brl/brl.filesystem/#function-filetypeint-path-), [FileTime](../../brl/brl.filesystem/#function-filetimelong-path-timetypeintfiletimemodified-), [FileSize](../../brl/brl.filesystem/#function-filesizelong-path-) and [FileMode](../../brl/brl.filesystem/#function-filemodeint-path-) commands.
+File properties can be examined with the [FileType](../../brl/brl.filesystem/#function-filetypeint-pathstring-), [FileTime](../../brl/brl.filesystem/#function-filetimelong-pathstring-timetypeintfiletimemodified-), [FileSize](../../brl/brl.filesystem/#function-filesizelong-pathstring-) and [FileMode](../../brl/brl.filesystem/#function-filemodeint-pathstring-) commands.
 
-Files and directories (folders) can be created and deleted with the [CreateFile](../../brl/brl.filesystem/#function-createfileint-path-), [CreateDir](../../brl/brl.filesystem/#function-createdirint-pathrecurseintfalse-)
-[DeleteFile](../../brl/brl.filesystem/#function-deletefileint-path-) and [DeleteDir](../../brl/brl.filesystem/#function-deletedirint-pathrecurseintfalse-) commands.
+Files and directories (folders) can be created and deleted with the [CreateFile](../../brl/brl.filesystem/#function-createfileint-pathstring-), [CreateDir](../../brl/brl.filesystem/#function-createdirint-pathstringrecurseintfalse-)
+[DeleteFile](../../brl/brl.filesystem/#function-deletefileint-pathstring-) and [DeleteDir](../../brl/brl.filesystem/#function-deletedirint-pathstringrecurseintfalse-) commands.
 
 Finally, the FileSystem module contains various utility functions for handling file paths
-in a system independent manner. These commands include [RealPath](../../brl/brl.filesystem/#function-realpath-path-), [StripDir](../../brl/brl.filesystem/#function-stripdir-path-), [StripExt](../../brl/brl.filesystem/#function-stripext-path-),
-[StripAll](../../brl/brl.filesystem/#function-stripall-path-), [ExtractDir](../../brl/brl.filesystem/#function-extractdir-path-) and [ExtractExt](../../brl/brl.filesystem/#function-extractext-path-).
+in a system independent manner. These commands include [RealPath](../../brl/brl.filesystem/#function-realpathstring-pathstring-), [StripDir](../../brl/brl.filesystem/#function-stripdirstring-pathstring-), [StripExt](../../brl/brl.filesystem/#function-stripextstring-pathstring-),
+[StripAll](../../brl/brl.filesystem/#function-stripallstring-pathstring-), [ExtractDir](../../brl/brl.filesystem/#function-extractdirstring-pathstring-) and [ExtractExt](../../brl/brl.filesystem/#function-extractextstring-pathstring-).
 
+
+## Interfaces
+| Interface | Description |
+|---|---|
+| [IFileWalker](../../brl/brl.filesystem/ifilewalker) | An interface for file tree traversal. |
+
+## Structs
+| Struct | Description |
+|---|---|
+| [SFileAttributes](../../brl/brl.filesystem/sfileattributes) | File attributes |
 
 ## Functions
 
-### `Function StripDir$( path$ )`
+### `Function StripDir:String( path:String )`
 
-Strip directory from a file path
+Strips the directory from a file path
 
 #### Example
 ```blitzmax
@@ -42,9 +52,9 @@ Print StripDir("mypath/myfile.bmx")	' prints myfile.bmx
 ```
 <br/>
 
-### `Function StripExt$( path$ )`
+### `Function StripExt:String( path:String )`
 
-Strip extension from a file path
+Strips the extension from a file path
 
 #### Example
 ```blitzmax
@@ -56,9 +66,9 @@ Print StripExt("mypath/myfile.bmx")	' prints mypath/myfile
 ```
 <br/>
 
-### `Function StripAll$( path$ )`
+### `Function StripAll:String( path:String )`
 
-Strip directory and extension from a file path
+Strips the directory and extension from a file path
 
 #### Example
 ```blitzmax
@@ -70,12 +80,12 @@ Print StripAll("mypath/myfile.bmx")	' prints myfile
 ```
 <br/>
 
-### `Function StripSlash$( path$ )`
+### `Function StripSlash:String( path:String )`
 
-Strip trailing slash from a file path
+Strips trailing slash from a file path
 
 
-[StripSlash](../../brl/brl.filesystem/#function-stripslash-path-) will not remove the trailing slash from a 'root' path. For example, "/"
+[StripSlash](../../brl/brl.filesystem/#function-stripslashstring-pathstring-) will not remove the trailing slash from a 'root' path. For example, "/"
 or (on Win32 only) "C:/".
 
 
@@ -88,9 +98,9 @@ Print StripSlash("mypath/")	' prints mypath
 ```
 <br/>
 
-### `Function ExtractDir$( path$ )`
+### `Function ExtractDir:String( path:String )`
 
-Extract directory from a file path
+Extracts the directory from a file path
 
 #### Example
 ```blitzmax
@@ -102,9 +112,9 @@ Print ExtractDir("mypath/myfile.bmx")	' prints mypath
 ```
 <br/>
 
-### `Function ExtractExt$( path$ )`
+### `Function ExtractExt:String( path:String )`
 
-Extract extension from a file path
+Extracts the extension from a file path
 
 #### Example
 ```blitzmax
@@ -116,9 +126,9 @@ Print ExtractExt("mypath/myfile.bmx")	' prints bmx
 ```
 <br/>
 
-### `Function CurrentDir$()`
+### `Function CurrentDir:String()`
 
-Get Current Directory
+Gets the Current Directory
 
 #### Returns
 The current directory
@@ -134,9 +144,9 @@ Print "CurrentDir()="+cd
 ```
 <br/>
 
-### `Function RealPath$( path$ )`
+### `Function RealPath:String( path:String )`
 
-Get real, absolute path of a file path
+Gets the real, absolute path of a file path
 
 #### Example
 ```blitzmax
@@ -150,9 +160,9 @@ Print RealPath("..") 'prints full path of parent directory
 ```
 <br/>
 
-### `Function FileType:Int( path$ )`
+### `Function FileType:Int( path:String )`
 
-Get file type
+Gets the file type
 
 #### Returns
 0 if file at <b>path</b> doesn't exist, FILETYPE_FILE (1) if the file is a plain file or FILETYPE_DIR (2) if the file is a directory
@@ -170,12 +180,25 @@ Print FileType("notfound.file")	' prints 0 for doesn't exist
 ```
 <br/>
 
-### `Function FileTime:Long( path$, timetype:Int=FILETIME_MODIFIED )`
+### `Function FileExists:Int( path:String )`
 
-Get file time
+Checks if a file or directory exists
+
+Use [FileType](../../brl/brl.filesystem/#function-filetypeint-pathstring-) to check if the file is a directory or a plain file.
+
 
 #### Returns
-The time the file at <b>path</b> was last modified
+[True](../../brl/brl.blitz/#true) if the file or directory at <b>path</b> exists
+
+
+<br/>
+
+### `Function FileTime:Long( path:String, timetype:Int=FILETIME_MODIFIED )`
+
+Gets file time
+
+#### Returns
+The time the file at <b>path</b> was last modified.
 
 
 #### Example
@@ -188,12 +211,89 @@ Print FileTime("filetime.bmx")
 ```
 <br/>
 
-### `Function FileSize:Long( path$ )`
+### `Function SetFileTime( path:String, time:Long, timeType:Int=FILETIME_MODIFIED)`
 
-Get file size
+Sets the file modified or last accessed time.
+
+<b>time</b> should be number of seconds since epoch.
+
+
+#### Example
+```blitzmax
+' setfiletime.bmx
+
+SuperStrict
+
+Const FILENAME:String = "file.txt"
+
+SaveString("Hello", FILENAME)
+
+Local ft:Long = FileTime(FILENAME)
+
+Print ft
+
+ft :- 3600 ' less 1 hour
+
+SetFileTime(FILENAME, ft)
+
+Print FileTime(FILENAME)
+```
+<br/>
+
+### `Function SetFileTime( path:String, dateTime:SDateTime, timeType:Int=FILETIME_MODIFIED)`
+
+Sets the file modified or last accessed time.
+
+<b>dateTime</b> is the basic DateTime struct defined in pub.stdc .
+
+
+#### Example
+```blitzmax
+' setfiletime.bmx
+
+SuperStrict
+
+Const FILENAME:String = "file.txt"
+
+SaveString("Hello", FILENAME)
+
+Local ft:Long = FileTime(FILENAME)
+
+Print ft
+
+ft :- 3600 ' less 1 hour
+
+SetFileTime(FILENAME, ft)
+
+Print FileTime(FILENAME)
+```
+<br/>
+
+### `Function FileDateTime:SDateTime( path:String, timetype:Int=FILETIME_MODIFIED )`
+
+Gets file time
 
 #### Returns
-Size, in bytes, of the file at <b>path</b>, or -1 if the file does not exist
+The time the file at <b>path</b> was last modified as SDatetime struct.
+
+
+<br/>
+
+### `Function SetFileDateTime( path:String, dateTime:SDateTime, timeType:Int=FILETIME_MODIFIED)`
+
+Sets the file modified or last accessed time.
+
+<b>dateTime</b> is the basic DateTime struct defined in pub.stdc .
+
+
+<br/>
+
+### `Function FileSize:Long( path:String )`
+
+Gets the file size
+
+#### Returns
+The size, in bytes, of the file at <b>path</b>, or -1 if the file does not exist
 
 
 #### Example
@@ -208,12 +308,12 @@ Print FileSize("filesize.bmx")
 ```
 <br/>
 
-### `Function FileMode:Int( path$ )`
+### `Function FileMode:Int( path:String )`
 
-Get file mode
+Gets the file mode
 
 #### Returns
-file mode flags
+The file mode flags
 
 
 #### Example
@@ -246,9 +346,9 @@ Print Permissions(FileMode("filemode.bmx"))
 ```
 <br/>
 
-### `Function SetFileMode( path$,Mode:Int )`
+### `Function SetFileMode( path:String,Mode:Int )`
 
-Set file mode
+Sets file mode
 
 #### Example
 ```blitzmax
@@ -269,12 +369,12 @@ SetFileMode("setfilemode.bmx",mode)
 ```
 <br/>
 
-### `Function CreateFile:Int( path$ )`
+### `Function CreateFile:Int( path:String )`
 
-Create a file
+Creates a file
 
 #### Returns
-True if successful
+[True](../../brl/brl.blitz/#true) if successful
 
 
 #### Example
@@ -289,16 +389,16 @@ End If
 ```
 <br/>
 
-### `Function CreateDir:Int( path$,recurse:Int=False )`
+### `Function CreateDir:Int( path:String,recurse:Int=False )`
 
-Create a directory
+Creates a directory
 
 
-If <b>recurse</b> is true, any required subdirectories are also created.
+If <b>recurse</b> is [True](../../brl/brl.blitz/#true), any required subdirectories are also created.
 
 
 #### Returns
-True if successful
+[True](../../brl/brl.blitz/#true) if successful
 
 
 #### Example
@@ -313,12 +413,12 @@ End If
 ```
 <br/>
 
-### `Function DeleteFile:Int( path$ )`
+### `Function DeleteFile:Int( path:String )`
 
-Delete a file
+Deletes a file
 
 #### Returns
-True if successful
+[True](../../brl/brl.blitz/#true) if successful
 
 
 #### Example
@@ -331,12 +431,12 @@ If Not success RuntimeError "error deleting file"
 ```
 <br/>
 
-### `Function RenameFile:Int( oldpath$,newpath$ )`
+### `Function RenameFile:Int( oldpath:String,newpath:String )`
 
 Renames a file
 
 #### Returns
-True if successful
+[True](../../brl/brl.blitz/#true) if successful
 
 
 #### Example
@@ -357,12 +457,12 @@ End If
 ```
 <br/>
 
-### `Function CopyFile:Int( src$,dst$ )`
+### `Function CopyFile:Int( src:String,dst:String )`
 
-Copy a file
+Copies a file
 
 #### Returns
-True if successful
+[True](../../brl/brl.blitz/#true) if successful
 
 
 #### Example
@@ -383,26 +483,26 @@ End If
 ```
 <br/>
 
-### `Function CopyDir:Int( src$,dst$ )`
+### `Function CopyDir:Int( src:String,dst:String )`
 
-Copy a directory
+Copies a directory
 
 #### Returns
-True if successful
+[True](../../brl/brl.blitz/#true) if successful
 
 
 <br/>
 
-### `Function DeleteDir:Int( path$,recurse:Int=False )`
+### `Function DeleteDir:Int( path:String,recurse:Int=False )`
 
-Delete a directory
+Deletes a directory
 
-Set <b>recurse</b> to true to delete all subdirectories and files recursively -
+Set <b>recurse</b> to [True](../../brl/brl.blitz/#true) to delete all subdirectories and files recursively -
 but be careful!
 
 
 #### Returns
-True if successful
+[True](../../brl/brl.blitz/#true) if successful
 
 
 #### Example
@@ -417,9 +517,9 @@ End If
 ```
 <br/>
 
-### `Function ChangeDir:Int( path$ )`
+### `Function ChangeDir:Int( path:String )`
 
-Change current directory
+Changes the current directory
 
 #### Returns
 True if successful
@@ -443,12 +543,16 @@ Print "CurrentDir()="+CurrentDir()
 ```
 <br/>
 
-### `Function ReadDir:Byte Ptr( path$ )`
+### `Function ReadDir:Byte Ptr( path:String )`
 
-Open a directory
+Opens a directory
+
+Use [NextFile](../../brl/brl.filesystem/#function-nextfilestring-dirbyte-ptr-) to get the next file in the directory.
+The directory must be closed with [CloseDir](../../brl/brl.filesystem/#function-closedir-dirbyte-ptr-).
+
 
 #### Returns
-A directory handle, or Null if the directory does not exist
+A directory handle, or [Null](../../brl/brl.blitz/#null) if the directory does not exist
 
 
 #### Example
@@ -471,12 +575,12 @@ CloseDir dir
 ```
 <br/>
 
-### `Function NextFile$( dir:Byte Ptr )`
+### `Function NextFile:String( dir:Byte Ptr )`
 
-Return next file in a directory
+Returns the next file in a directory
 
 #### Returns
-File name of next file in directory opened using [ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-path-), or an empty string if there are no more files to read.
+File name of next file in the directory opened using [ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-pathstring-), or an empty [String](../../brl/brl.blitz/#string) if there are no more files to read.
 
 
 #### Example
@@ -505,7 +609,10 @@ CloseDir(dir)
 
 ### `Function CloseDir( dir:Byte Ptr )`
 
-Close a directory
+Closes a directory.
+
+Closes a directory opened with [ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-pathstring-).
+
 
 #### Example
 ```blitzmax
@@ -531,9 +638,9 @@ CloseDir(dir)
 ```
 <br/>
 
-### `Function LoadDir$[]( dir$,skip_dots:Int=True )`
+### `Function LoadDir:String[]( dir:String,skip_dots:Int=True )`
 
-Load a directory
+Loads a directory
 
 The <b>skip_dots</b> parameter, if true, removes the '.' (current) and '..'
 (parent) directories from the returned array.
@@ -560,7 +667,7 @@ Next
 
 ### `Function OpenFile:TStream( url:Object,readable:Int=True,writeable:Int=True )`
 
-Open a file for input and/or output.
+Opens a file for input and/or output.
 
 
 This command is similar to the [OpenStream](../../brl/brl.stream/#function-openstreamtstream-urlobjectreadableinttruewritemodeintwritemodeoverwrite-) command but will attempt
@@ -589,7 +696,7 @@ CloseStream file
 
 ### `Function ReadFile:TStream( url:Object )`
 
-Open a file For Input.
+Opens a file For Input.
 
 
 This command is similar to the [ReadStream](../../brl/brl.stream/#function-readstreamtstream-urlobject-) command but will attempt
@@ -619,7 +726,7 @@ CloseStream file
 
 ### `Function WriteFile:TStream( url:Object )`
 
-Open a file for output.
+Opens a file for output.
 
 
 This command is identical to the [WriteStream](../../brl/brl.stream/#function-writestreamtstream-urlobject-) command.
@@ -664,5 +771,11 @@ Wend
 
 CloseFile(in) ' can also use CloseStream(in)
 ```
+<br/>
+
+### `Function WalkFileTree:Int(path:String, fileWalker:IFileWalker, options:EFileWalkOption = EFileWalkOption.None, maxDepth:Int = 0)`
+
+Walks a file tree.
+
 <br/>
 

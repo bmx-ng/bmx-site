@@ -384,6 +384,42 @@ Both online and in offline mode.
 
 <br/>
 
+### `Method GetStat:Int(name:String, data:Int Var)`
+
+Gets the current value of the a stat for the current user.
+
+You must have called [RequestCurrentStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestcurrentstatsint) and it needs to return successfully via its callback prior to calling this.
+
+To receive stats for other users use [GetUserStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-getuserstatintsteamidulong-namestring-dataint-var).
+
+This method returns [True](../../../brl/brl.blitz/#true) upon success if all of the following conditions are met; otherwise, [False](../../../brl/brl.blitz/#false).
+* The specified stat exists in App Admin on the Steamworks website, and the changes are published.
+* [RequestCurrentStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestcurrentstatsint) has completed and successfully returned its callback.
+* The type passed to this function must match the type listed in the App Admin panel of the Steamworks website.
+
+See Also: [RequestCurrentStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestcurrentstatsint), [SetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-setstatintnamestring-dataint), [UpdateAvgRateStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-updateavgratestatintnamestring-countthissessionfloat-sessionlengthdouble), [StoreStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-storestatsint), [ResetAllStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-resetallstatsintachievementstooint)
+
+
+<br/>
+
+### `Method GetStat:Int(name:String, data:Float Var)`
+
+Gets the current value of the a stat for the current user.
+
+You must have called [RequestCurrentStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestcurrentstatsint) and it needs to return successfully via its callback prior to calling this.
+
+To receive stats for other users use [GetUserStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-getuserstatintsteamidulong-namestring-dataint-var).
+
+This method returns [True](../../../brl/brl.blitz/#true) upon success if all of the following conditions are met; otherwise, [False](../../../brl/brl.blitz/#false).
+* The specified stat exists in App Admin on the Steamworks website, and the changes are published.
+* [RequestCurrentStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestcurrentstatsint) has completed and successfully returned its callback.
+* The type passed to this function must match the type listed in the App Admin panel of the Steamworks website.
+
+See Also: [RequestCurrentStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestcurrentstatsint), [SetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-setstatintnamestring-dataint), [UpdateAvgRateStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-updateavgratestatintnamestring-countthissessionfloat-sessionlengthdouble), [StoreStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-storestatsint), [ResetAllStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-resetallstatsintachievementstooint)
+
+
+<br/>
+
 ### `Method GetUserAchievement:Int(steamID:ULong, name:String, achieved:Int Var)`
 
 Gets the unlock status of the Achievement.
@@ -421,7 +457,7 @@ If the call is successful then the achieved status and unlock time are provided 
 Gets the current value of the a stat for the specified user.
 
 You must have called [RequestUserStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestuserstatssteamidulong) and it needs to return successfully via its callback prior to calling this.
-The equivalent method for the local user is GetStat.
+The equivalent method for the local user is [GetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-getstatintnamestring-dataint-var).
 
 This method returns [True](../../../brl/brl.blitz/#true) upon success if all of the following conditions are met; otherwise, [False](../../../brl/brl.blitz/#false).
 * The specified stat exists in App Admin on the Steamworks website, and the changes are published.
@@ -436,7 +472,7 @@ This method returns [True](../../../brl/brl.blitz/#true) upon success if all of 
 Gets the current value of the a stat for the specified user.
 
 You must have called [RequestUserStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestuserstatssteamidulong) and it needs to return successfully via its callback prior to calling this.
-The equivalent method for the local user is GetStat.
+The equivalent method for the local user is [GetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-getstatintnamestring-dataint-var).
 
 This method returns [True](../../../brl/brl.blitz/#true) upon success if all of the following conditions are met; otherwise, [False](../../../brl/brl.blitz/#false).
 * The specified stat exists in App Admin on the Steamworks website, and the changes are published.
@@ -473,7 +509,7 @@ Only after the resulting callback comes back can you start calling the rest of t
 
 The equivalent function for other users is [RequestUserStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestuserstatssteamidulong).
 
-See Also: GetStat, [SetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-setstatintnamestring-dataint), [SetAchievement](../../../steam/steam.steamsdk/tsteamuserstats/#method-setachievementintnamestring), [StoreStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-storestatsint)
+See Also: [GetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-getstatintnamestring-dataint-var), [SetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-setstatintnamestring-dataint), [SetAchievement](../../../steam/steam.steamsdk/tsteamuserstats/#method-setachievementintnamestring), [StoreStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-storestatsint)
 
 
 <br/>
@@ -572,7 +608,7 @@ This method returns [True](../../../brl/brl.blitz/#true) upon success if all of 
 * [RequestCurrentStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestcurrentstatsint) has completed and successfully returned its callback.
 * The type passed to this function must match the type listed in the App Admin panel of the Steamworks website.
 
-See Also: GetStat, [UpdateAvgRateStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-updateavgratestatintnamestring-countthissessionfloat-sessionlengthdouble), [ResetAllStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-resetallstatsintachievementstooint)
+See Also: [GetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-getstatintnamestring-dataint-var), [UpdateAvgRateStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-updateavgratestatintnamestring-countthissessionfloat-sessionlengthdouble), [ResetAllStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-resetallstatsintachievementstooint)
 
 
 <br/>
@@ -594,7 +630,7 @@ This method returns [True](../../../brl/brl.blitz/#true) upon success if all of 
 * [RequestCurrentStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-requestcurrentstatsint) has completed and successfully returned its callback.
 * The type passed to this function must match the type listed in the App Admin panel of the Steamworks website.
 
-See Also: GetStat, [UpdateAvgRateStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-updateavgratestatintnamestring-countthissessionfloat-sessionlengthdouble), [ResetAllStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-resetallstatsintachievementstooint)
+See Also: [GetStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-getstatintnamestring-dataint-var), [UpdateAvgRateStat](../../../steam/steam.steamsdk/tsteamuserstats/#method-updateavgratestatintnamestring-countthissessionfloat-sessionlengthdouble), [ResetAllStats](../../../steam/steam.steamsdk/tsteamuserstats/#method-resetallstatsintachievementstooint)
 
 
 <br/>

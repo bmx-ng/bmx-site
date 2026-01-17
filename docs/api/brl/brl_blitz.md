@@ -21,11 +21,20 @@ Much of the functionality provided by this module is hidden from application pro
 | [TOutOfDataException](../../brl/brl.blitz/toutofdataexception) | Out of data exception |
 | [TRuntimeException](../../brl/brl.blitz/truntimeexception) | Runtime exception |
 | [TInvalidEnumException](../../brl/brl.blitz/tinvalidenumexception) | Invalid enum exception |
+| [TIllegalArgumentException](../../brl/brl.blitz/tillegalargumentexception) | Illegal argument exception |
+| [TUnsupportedOperationException](../../brl/brl.blitz/tunsupportedoperationexception) | Unsupported operation exception |
 
 ## Interfaces
 | Interface | Description |
 |---|---|
-| [IDisposable](../../brl/brl.blitz/idisposable) | Provides a mechanism for releasing resources. |
+| [IIterable](../../brl/brl.blitz/iiterable) | Iterable interface |
+| [IIterator](../../brl/brl.blitz/iiterator) | Iterator interface |
+| [ICloseable](../../brl/brl.blitz/icloseable) | An object that can be closed to release resources. |
+
+## Structs
+| Struct | Description |
+|---|---|
+| [SGCStats](../../brl/brl.blitz/sgcstats) | Structure for holding Garbage Collection statistics as provided by [GCGetStats](../../brl/brl.blitz/#function-gcgetstatsstatssgcstats-var)(). |
 
 ## Functions
 
@@ -176,6 +185,42 @@ Print Max(20,10)	'20
 ### `Function Max:Size_T(a:Size_T, b:Size_T) Inline`
 
 Returns the larger of the two [Size_T](../../brl/brl.blitz/#sizet) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:LongInt(a:LongInt, b:LongInt) Inline`
+
+Returns the larger of the two [LongInt](../../brl/brl.blitz/#longint) arguments.
+
+#### Example
+```blitzmax
+Rem
+Max
+Max evaluates to the value of the largest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Max(10,20)	'20
+Print Max(20,10)	'20
+```
+<br/>
+
+### `Function Max:ULongInt(a:ULongInt, b:ULongInt) Inline`
+
+Returns the larger of the two [ULongInt](../../brl/brl.blitz/#ulongint) arguments.
 
 #### Example
 ```blitzmax
@@ -344,6 +389,40 @@ Print Min(20,10)	'10
 ```
 <br/>
 
+### `Function Min:LongInt(a:LongInt, b:LongInt) Inline`
+
+Returns the lesser of the two [LongInt](../../brl/brl.blitz/#longint) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
+### `Function Min:ULongInt(a:ULongInt, b:ULongInt) Inline`
+
+Returns the lesser of the two [ULongInt](../../brl/brl.blitz/#ulongint) arguments.
+
+#### Example
+```blitzmax
+Rem
+Min evaluates to the value of the smallest of the two operators.
+End Rem
+
+SuperStrict
+
+Print Min(10,20)	'10
+Print Min(20,10)	'10
+```
+<br/>
+
 ### `Function Abs:Int(a:Int) Inline`
 
 Returns the absolute value of the [Int](../../brl/brl.blitz/#int) argument.
@@ -488,7 +567,7 @@ Print Sgn -50	'-1
 ```
 <br/>
 
-### `Function RuntimeError( message$ )`
+### `Function RuntimeError( message:String )`
 
 Generate a runtime error
 
@@ -505,6 +584,24 @@ Local a:Int
 
 If a=0 RuntimeError "This program has failed badly."
 ```
+<br/>
+
+### `Function IllegalArgumentError( message:String )`
+
+Generates an illegal argument error
+
+Throws a [TIllegalArgumentException](../../brl/brl.blitz/tillegalargumentexception).
+
+
+<br/>
+
+### `Function UnsupportedOperationError()`
+
+Generates an unsupported operation error
+
+Throws a [TUnsupportedOperationException](../../brl/brl.blitz/tunsupportedoperationexception).
+
+
 <br/>
 
 ### `Function DebugStop()`
@@ -531,7 +628,7 @@ DebugStop
 ```
 <br/>
 
-### `Function DebugLog( message$ )`
+### `Function DebugLog( message:String )`
 
 Write a string to debug log
 
@@ -547,6 +644,46 @@ SuperStrict
 
 DebugLog "My debug text"
 ```
+<br/>
+
+### `Function MemAlloc:Byte Ptr( size:Size_T, collectable:Int = False )`
+
+Allocates memory
+
+Allocates a new block of memory <b>size</b> bytes long. If <b>collectable</b> is [False](../../brl/brl.blitz/#false), the memory is not collectable and must be freed manually with [MemFree](../../brl/brl.blitz/#function-memfree-membyte-ptr-collectableint-false-).
+Otherwise, the memory is collectable and can either be freed with [MemFree](../../brl/brl.blitz/#function-memfree-membyte-ptr-collectableint-false-) (with collectable set to [True](../../brl/brl.blitz/#true)) or will be automatically freed by the garbage collector.
+
+
+#### Returns
+A new block of memory <b>size</b> bytes long
+
+
+<br/>
+
+### `Function MemFree( mem:Byte Ptr, collectable:Int = False )`
+
+Free allocated memory
+
+The memory specified by <b>mem</b> must have been previously allocated by [MemAlloc](../../brl/brl.blitz/#function-memallocbyte-ptr-sizesizet-collectableint-false-) or [MemExtend](../../brl/brl.blitz/#function-memextendbyte-ptr-membyte-ptrsizesizetnewsizesizet-collectableint-false-).
+Note: If the memory was allocated with [MemAlloc](../../brl/brl.blitz/#function-memallocbyte-ptr-sizesizet-collectableint-false-) and <b>collectable</b> is [True](../../brl/brl.blitz/#true), <b>collectable</b> must be [True](../../brl/brl.blitz/#true) when freeing the memory.
+
+
+<br/>
+
+### `Function MemExtend:Byte Ptr( mem:Byte Ptr,size:Size_T,new_size:Size_T, collectable:Int = False )`
+
+Extend a block of memory
+
+An existing block of memory specified by <b>mem</b> and <b>size</b> is copied into a new block
+of memory <b>new_size</b> bytes long. The existing block is released and the new block is returned.
+
+Use <b>collectable</b> set to [True](../../brl/brl.blitz/#true) if the memory you are extending was allocated with [MemAlloc](../../brl/brl.blitz/#function-memallocbyte-ptr-sizesizet-collectableint-false-) and <b>collectable</b> is [True](../../brl/brl.blitz/#true).
+
+
+#### Returns
+A new block of memory <b>new_size</b> bytes long
+
+
 <br/>
 
 ### `Function OnEnd( fun() )`
@@ -573,7 +710,7 @@ End	'the cleanup function will be called at this time
 ```
 <br/>
 
-### `Function ReadStdin$()`
+### `Function ReadStdin:String()`
 
 Read a string from stdin
 
@@ -583,7 +720,7 @@ A string read from stdin. The newline terminator, if any, is included in the ret
 
 <br/>
 
-### `Function WriteStdout( str$ )`
+### `Function WriteStdout( str:String )`
 
 Write a string to stdout
 
@@ -592,7 +729,7 @@ Writes <b>str</b> to stdout and flushes stdout.
 
 <br/>
 
-### `Function WriteStderr( str$ )`
+### `Function WriteStderr( str:String )`
 
 Write a string to stderr
 
@@ -665,39 +802,6 @@ Print "You took "+(MilliSecs()-start)+" milliseconds to type that."
 ```
 <br/>
 
-### `Function MemAlloc:Byte Ptr( size:Size_T )`
-
-Allocate memory
-
-#### Returns
-A new block of memory <b>size</b> bytes long
-
-
-<br/>
-
-### `Function MemFree( mem:Byte Ptr )`
-
-Free allocated memory
-
-The memory specified by <b>mem</b> must have been previously allocated by [MemAlloc](../../brl/brl.blitz/#function-memallocbyte-ptr-sizesizet-) or [MemExtend](../../brl/brl.blitz/#function-memextendbyte-ptr-membyte-ptrsizesizetnewsizesizet-).
-
-
-<br/>
-
-### `Function MemExtend:Byte Ptr( mem:Byte Ptr,size:Size_T,new_size:Size_T )`
-
-Extend a block of memory
-
-An existing block of memory specified by <b>mem</b> and <b>size</b> is copied into a new block
-of memory <b>new_size</b> bytes long. The existing block is released and the new block is returned.
-
-
-#### Returns
-A new block of memory <b>new_size</b> bytes long
-
-
-<br/>
-
 ### `Function MemClear( mem:Byte Ptr,size:Size_T )`
 
 Clear a block of memory to 0
@@ -718,7 +822,21 @@ Copy a potentially overlapping block of memory
 
 ### `Function GCSetMode( Mode:Int )`
 
-Set garbage collector mode
+Sets the garbage collector mode
+
+
+<b>mode</b> can be one of the following:<br/>
+1 : automatic GC - memory will be automatically garbage collected<br/>
+2 : manual GC - no memory will be collected until a call to GCCollect is made<br/>
+<br/>
+The default GC mode is automatic GC.
+
+
+<br/>
+
+### `Function GCGetMode:Int()`
+
+Gets the garbage collector mode
 
 
 <b>mode</b> can be one of the following:<br/>
@@ -852,6 +970,12 @@ accessible after the thread is unregistered.
 
 <br/>
 
+### `Function GCGetStats(stats:SGCStats Var)`
+
+Retrieves GC statistics (various global counters), populating the provided [SGCStats](../../brl/brl.blitz/sgcstats) struct.
+
+<br/>
+
 ### `Function HandleFromObject:Size_T( obj:Object )`
 
 Convert object to integer handle
@@ -913,17 +1037,28 @@ Determines whether the [Object](../../brl/brl.blitz/#object) <b>obj</b> is a [St
 
 <br/>
 
+### `Function AtStart:Int(func(), priority:Int = 0)`
+
+Adds a function to the startup queue, optionally with a priority.
+
+After all modules have been loaded, and before the main loop starts, the functions
+in the startup queue are called in order of priority, with higher priority functions being
+called first.
+
+
+<br/>
+
 ## Globals
 
-### `Global AppDir$="bbAppDir"`
+### `Global AppDir:String="bbAppDir"`
 
 Application directory
 
-The [AppDir](../../brl/brl.blitz/#global-appdirbbappdir) global variable contains the fully qualified directory of the currently
-executing application. An application's initial current directory is also set to [AppDir](../../brl/brl.blitz/#global-appdirbbappdir)
+The [AppDir](../../brl/brl.blitz/#global-appdirstringbbappdir) global variable contains the fully qualified directory of the currently
+executing application. An application's initial current directory is also set to [AppDir](../../brl/brl.blitz/#global-appdirstringbbappdir)
 when an application starts.
 
-In a compiled DLL, the [AppDir](../../brl/brl.blitz/#global-appdirbbappdir) global variable will instead contain the fully qualified
+In a compiled DLL, the [AppDir](../../brl/brl.blitz/#global-appdirstringbbappdir) global variable will instead contain the fully qualified
 directory of the DLL.
 
 
@@ -942,14 +1077,14 @@ Print "file selected was :"+file
 ```
 <br/>
 
-### `Global AppFile$="bbAppFile"`
+### `Global AppFile:String="bbAppFile"`
 
 Application file name
 
-The [AppFile](../../brl/brl.blitz/#global-appfilebbappfile) global variable contains the fully qualified file name of the currently
+The [AppFile](../../brl/brl.blitz/#global-appfilestringbbappfile) global variable contains the fully qualified file name of the currently
 executing application.
 
-In a compiled DLL, the [AppFile](../../brl/brl.blitz/#global-appfilebbappfile) global variable will instead contain the fully qualified
+In a compiled DLL, the [AppFile](../../brl/brl.blitz/#global-appfilestringbbappfile) global variable will instead contain the fully qualified
 file name of the DLL.
 
 
@@ -963,16 +1098,16 @@ Print "This program's executable is located at "+AppFile
 ```
 <br/>
 
-### `Global AppTitle$="bbAppTitle"`
+### `Global AppTitle:String="bbAppTitle"`
 
 Application title
 
-The [AppTitle](../../brl/brl.blitz/#global-apptitlebbapptitle) global variable is used by various commands when a
+The [AppTitle](../../brl/brl.blitz/#global-apptitlestringbbapptitle) global variable is used by various commands when a
 default application title is required - for example, when opening simple
 windows or requesters.<br/>
 <br/>
-Initially, [AppTitle](../../brl/brl.blitz/#global-apptitlebbapptitle) is set to the value "BlitzMax Application". However, you may change
-[AppTitle](../../brl/brl.blitz/#global-apptitlebbapptitle) at any time with a simple assignment.
+Initially, [AppTitle](../../brl/brl.blitz/#global-apptitlestringbbapptitle) is set to the value "BlitzMax Application". However, you may change
+[AppTitle](../../brl/brl.blitz/#global-apptitlestringbbapptitle) at any time with a simple assignment.
 
 
 #### Example
@@ -991,14 +1126,14 @@ Until AppTerminate()
 ```
 <br/>
 
-### `Global AppArgs$[]="bbAppArgs"`
+### `Global AppArgs:String[]="bbAppArgs"`
 
 Arguments passed to the application at startup
 
-The [AppArgs](../../brl/brl.blitz/#global-appargsbbappargs) global array contains the command line parameters sent to an application
-when it was started. The first element of [AppArgs](../../brl/brl.blitz/#global-appargsbbappargs) always contains the name of the
+The [AppArgs](../../brl/brl.blitz/#global-appargsstringbbappargs) global array contains the command line parameters sent to an application
+when it was started. The first element of [AppArgs](../../brl/brl.blitz/#global-appargsstringbbappargs) always contains the name of the
 application. However, the format of the name may change depending on how the application
-was launched. Use [AppDir](../../brl/brl.blitz/#global-appdirbbappdir) or [AppFile](../../brl/brl.blitz/#global-appfilebbappfile) for consistent information about the applications name
+was launched. Use [AppDir](../../brl/brl.blitz/#global-appdirstringbbappdir) or [AppFile](../../brl/brl.blitz/#global-appfilestringbbappfile) for consistent information about the applications name
 or directory.
 
 
@@ -1017,11 +1152,11 @@ Next
 ```
 <br/>
 
-### `Global LaunchDir$="bbLaunchDir"`
+### `Global LaunchDir:String="bbLaunchDir"`
 
 Directory from which application was launched
 
-The [LaunchDir](../../brl/brl.blitz/#global-launchdirbblaunchdir) global variable contains the current directory at the time the
+The [LaunchDir](../../brl/brl.blitz/#global-launchdirstringbblaunchdir) global variable contains the current directory at the time the
 application was launched. This is mostly of use to command line tools which may need to
 access the 'shell' current directory as opposed to the application directory.
 
@@ -1036,11 +1171,73 @@ Print "This program was launched from "+LaunchDir$
 ```
 <br/>
 
+## Consts
+
+### `Const CHARSFORMAT_SCIENTIFIC:ULong = 1 Shl 0`
+
+Enables parsing of scientific notation in extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_FIXED:ULong = 1 Shl 2`
+
+Enables parsing of fixed point notation in extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_HEX:ULong = 1 Shl 3`
+
+Enables parsing of hexadecimal notation in extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_NOINFNAN:ULong = 1 Shl 4`
+
+Do not allow Infinity or NaN in extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_JSON:ULong = 1 Shl 5 | CHARSFORMAT_FIXED | CHARSFORMAT_SCIENTIFIC | CHARSFORMAT_NOINFNAN`
+
+Enforces JSON number format in extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_JSONORINFNAN:ULong = 1 Shl 5 | CHARSFORMAT_FIXED | CHARSFORMAT_SCIENTIFIC`
+
+Parses JSON number format or Infinity or NaN in extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_FORTRAN:ULong = 1 Shl 6 | CHARSFORMAT_FIXED | CHARSFORMAT_SCIENTIFIC`
+
+Allows parsing of Fortran-style numbers in extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_GENERAL:ULong = CHARSFORMAT_FIXED | CHARSFORMAT_SCIENTIFIC`
+
+The default format for extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_ALLOWLEADINGPLUS:ULong = 1 Shl 7`
+
+Allows leading plus sign in extended string to number conversion methods.
+
+<br/>
+
+### `Const CHARSFORMAT_SKIPWHITESPACE:ULong = 1 Shl 8`
+
+Enables skipping leading whitespace in extended string to number conversion methods.
+
+<br/>
+
 ## Keywords
 
 ### `Strict`
 
-Set strict mode
+Set Strict mode (default in BlitzMax-NG)
 
 
 See the <a href="../../../../doc/bmxlang/compatibility.html">BlitzMax Language Reference</a> for more information on Strict mode programming.
@@ -1423,6 +1620,18 @@ Only available on x64.
 
 Only available on x64.
 
+
+<br/>
+
+### `LongInt`
+
+Signed 32/64 bit integer type depending on platform
+
+<br/>
+
+### `ULongInt`
+
+Unsigned 32/64 bit integer type depending on platform
 
 <br/>
 
@@ -2064,6 +2273,15 @@ Print "a="+a
 ```
 <br/>
 
+### `ThreadedGlobal`
+
+Declare a threaded global variable
+
+Each thread will have its own copy of the variable - any changes to the variable will be visible only within the thread the change was made.
+
+
+<br/>
+
 ### `Field`
 
 Declare a field variable
@@ -2132,8 +2350,8 @@ End Rem
 
 SuperStrict
 
-Function RandomName$()
-	Local a$[]=["Bob","Joe","Bill"]
+Function RandomName:String()
+	Local a:String[]=["Bob","Joe","Bill"]
 	Return a[Rnd(Len a)]
 End Function
 
@@ -2206,7 +2424,7 @@ End Rem
 
 SuperStrict
 
-Function CrossProduct#(x0#,y0#,z0#,x1#,y1#,z1#)
+Function CrossProduct:Float(x0:Float,y0:Float,z0:Float,x1:Float,y1:Float,z1:Float)
 	Return x0*x1+y0*y1+z0*z1
 End Function
 
@@ -3368,6 +3586,12 @@ Returns the offset in bytes for a field of the specified [Type](../../brl/brl.bl
 ### `StaticArray`
 
 Denotes an array as a static array, with its content allocated on the stack.
+
+<br/>
+
+### `Inline`
+
+Marks a global function as inline which replaces the function call with the acual code of the function for less overhead.
 
 <br/>
 

@@ -10,7 +10,7 @@ The BlitzMax freeprocess module lets you execute other programs
 
 ## Functions
 
-### `Function CreateProcess:TProcess(cmd$,flags:Int=0)`
+### `Function CreateProcess:TProcess(cmd:String,flags:Int=0)`
 
 Creates a process
 

@@ -31,6 +31,16 @@ Gets the diagonal, horizontal and vertical dots/pixels-per-inch for the display.
 
 <br/>
 
+### `Method GetOrientation:Int()`
+
+Gets the orientation of a display
+
+#### Returns
+The orientation of the display, or [SDL_ORIENTATION_UNKNOWN](../../../sdl/sdl.sdlvideo/#const-sdlorientationunknownint-0) if it isn't available.
+
+
+<br/>
+
 ### `Method GetUsableBounds:Int(w:Int Var, h:Int Var)`
 
 Gets the usable desktop area represented by a display, with the primary display located at 0,0.
@@ -49,7 +59,7 @@ Returns the number of available display modes.
 
 <br/>
 
-### `Method GetDisplayMode:TSDLDisplayMode(modeIndex:Int)`
+### `Method GetDisplayMode:Int(modeIndex:Int, mode:SDLDisplayMode Var)`
 
 Gets information about a specific display mode.
 
@@ -59,7 +69,7 @@ A display mode or Null on failure.
 
 <br/>
 
-### `Method GetDesktopDisplayMode:TSDLDisplayMode()`
+### `Method GetDesktopDisplayMode:Int(mode:SDLDisplayMode Var)`
 
 Gets information about the desktop display mode.
 
@@ -69,12 +79,28 @@ A display mode or Null on failure.
 
 <br/>
 
-### `Method GetCurrentDisplayMode:TSDLDisplayMode()`
+### `Method GetCurrentDisplayMode:Int(mode:SDLDisplayMode Var)`
 
 Gets information about the current display mode.
 
 #### Returns
 A display mode or Null on failure.
+
+
+<br/>
+
+### `Method GetClosestDisplayMode:SDLDisplayMode Ptr(mode:SDLDisplayMode, closest:SDLDisplayMode Var)`
+
+Gets the closest match to this display mode.
+
+The available display modes are scanned and the closest mode matching the requested mode and returned.
+The mode format and refresh rate default to the desktop mode if they are set to 0.
+The modes are scanned with size being first priority, format being second priority, and finally checking the refresh rate.
+If all the available modes are too small, then Null is returned.
+
+
+#### Returns
+The closest mode or Null if no matching display mode was available.
 
 
 <br/>

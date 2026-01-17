@@ -8,11 +8,6 @@ sidebar_label: Introduction
 ## Types
 | Type | Description |
 |---|---|
-| [TIntMap](../../brl/brl.map/tintmap) | A key/value (Int/Object) map. |
-| [TIntKey](../../brl/brl.map/tintkey) | Int holder for key returned by TIntMap.Keys() enumerator. |
-| [TPtrMap](../../brl/brl.map/tptrmap) | A key/value (Byte Ptr/Object) map. |
-| [TPtrKey](../../brl/brl.map/tptrkey) | Byte Ptr holder for key returned by TPtrMap.Keys() enumerator. |
-| [TStringMap](../../brl/brl.map/tstringmap) | A key/value (String/Object) map. |
 | [TMap](../../brl/brl.map/tmap) | An key/value (Object/Object) map backed by a Red/Black tree. |
 
 ## Functions

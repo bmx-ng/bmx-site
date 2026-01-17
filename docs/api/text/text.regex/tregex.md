@@ -4,12 +4,23 @@ title: TRegEx
 sidebar_label: TRegEx
 ---
 
-Performs [Find](../../../text/text.regex/tregex/#method-findtregexmatchtargetstring-null-startposint-1) and [Replace](../../../text/text.regex/tregex/#method-replacestringtargetstring-replacewithstring-startposint-0) / [ReplaceAll](../../../text/text.regex/tregex/#method-replaceallstringtargetstring-replacewithstring-startposint-0) on strings using Perl Compatible Regular Expressions.
+Performs [Find](../../../text/text.regex/tregex/#method-findtregexmatchtargetstring-null) and [Replace](../../../text/text.regex/tregex/#method-replacestringtargetstring-replacewithstring-startpossizet-0) / [ReplaceAll](../../../text/text.regex/tregex/#method-replaceallstringtargetstring-replacewithstring-startpossizet-0) on strings using Perl Compatible Regular Expressions.
 
+
+## Constructors
+
+### `Method New(searchPattern:String, options:TRegExOptions = Null)`
+
+Creates a new [TRegEx](../../../text/text.regex/tregex) object.
+
+<b>searchPattern</b> is the regular expression with which to perform the search.
+
+
+<br/>
 
 ## Methods
 
-### `Method ReplaceAll:String(target:String, replaceWith:String, startPos:Int = 0)`
+### `Method ReplaceAll:String(target:String, replaceWith:String, startPos:Size_T = 0)`
 
 Replaces all occurances of the search Pattern with <b>replaceWith</b> on <b>target</b>, from <b>startPos</b>.
 
@@ -54,7 +65,7 @@ Print "Done."
 ```
 <br/>
 
-### `Method Replace:String(target:String, replaceWith:String, startPos:Int = 0)`
+### `Method Replace:String(target:String, replaceWith:String, startPos:Size_T = 0)`
 
 Replaces the first occurance of the search Pattern with <b>replaceWith</b> on <b>target</b>, from <b>startPos</b>.
 
@@ -101,16 +112,60 @@ Print "Done."
 ```
 <br/>
 
-### `Method Find:TRegExMatch(target:String = Null, startPos:Int = -1)`
+### `Method Find:TRegExMatch(target:String = Null)`
 
 Performs a search on the given <b>target</b> from <b>startPos</b>, using the search Pattern.
 
-Both parameters are optional.<br>
 If <b>target</b> is <b>not</b> set, the search will use the <b>previous</b> <b>target</b>.
 You will want to set <b>target</b> the first time this method is called.<br>
 If you call this method with no parameters it will start the search from the end of the last search, effectively
 iterating through the target string.
 
+
+#### Returns
+A [TRegExMatch](../../../text/text.regex/tregexmatch) object or Null if no matches found.
+
+
+#### Example
+```blitzmax
+' Search for a floating point number in a string
+
+SuperStrict
+
+Framework Text.RegEx
+Import BRL.StandardIO
+
+Local floats:String = "floats are 4.533, -10.232, 1446.2003 and even 100"
+Print "Original : " + floats + "~n"
+
+Local regex:TRegEx = TRegEx.Create("[-+]?[0-9]*\.?[0-9]+")
+
+Try
+
+	Local match:TRegExMatch = regex.Find(floats)
+		
+	' get each match, and print it out.
+	While match
+	
+		Print "Found : " + match.SubExp()
+		
+		match = regex.Find()
+	Wend
+
+Catch e:TRegExException
+
+	Print "Error : " + e.toString()
+	End
+	
+End Try
+
+Print "Done."
+```
+<br/>
+
+### `Method Find:TRegExMatch(target:String, startPos:Size_T)`
+
+Performs a search on the given <b>target</b> from <b>startPos</b>, using the search Pattern.
 
 #### Returns
 A [TRegExMatch](../../../text/text.regex/tregexmatch) object or Null if no matches found.
@@ -159,8 +214,16 @@ Print "Done."
 
 Creates a new [TRegEx](../../../text/text.regex/tregex) object.
 
-<b>searchPattern</b> is the regular expression with which to perform the search.<br>
-<b>options</b> sets the global [TRegExOptions](../../../text/text.regex/tregexoptions). Overrides all previous options.
+<b>searchPattern</b> is the regular expression with which to perform the search.
+
+
+<br/>
+
+### `Function SetDefaultOptions(options:TRegExOptions)`
+
+Sets the default options for all new [TRegEx](../../../text/text.regex/tregex) objects.
+
+This is useful if you want to set the options once and use them for all searches.
 
 
 <br/>
