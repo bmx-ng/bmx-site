@@ -96,8 +96,8 @@ const siteConfig = {
                             'and or shl shr sar end if then else elseif endif while wend repeat until forever for to step ' +
                             'next return alias rem endrem throw assert try catch finally nodebug incbin endselect endmethod ' +
                             'endfunction endtype endextern endtry endwhile pi release defdata readdata restoredata interface ' +
-                            'endinterface implements size_t uint ulong struct endstruct operator where readonly export enum override',
-
+                            'endinterface implements size_t uint ulong struct endstruct operator where readonly export enum override' +
+                            'endenum stackalloc inline fieldoffset staticarray threadedglobal longint ulongint using endusing do',
                         built_in: 'DebugLog DebugStop',
 
                         literal: 'true false null'
