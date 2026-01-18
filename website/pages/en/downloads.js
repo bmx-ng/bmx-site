@@ -45,43 +45,43 @@ class Downloads extends React.Component {
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.51.win32.mingw/BlitzMax_win32_mingw_0.136.3.51.7z">BlitzMax_win32_mingw_0.136.3.51.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.mingw/BlitzMax_win32_mingw_0.154.3.58.7z">BlitzMax_win32_mingw_0.154.3.58.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, with both x86 and x64 MinGW-w64 12.2.0 distributions.
-                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Net, Random, Text and Steam.
+                                        Includes SDL2 backend, mojo2, Crypto, Audio, Archive, Image, Math, Net, Random, Text, Collections and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.51.win32.mingw/BlitzMax_win32_mingw_0.136.3.51.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.mingw/BlitzMax_win32_mingw_0.154.3.58.7z`,
                                     title: "Win32 x86/x64 (mingw)"
                                 },
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.51.win32.x64.mingw/BlitzMax_win32_x64_mingw_0.136.3.51.7z">BlitzMax_win32_x64_mingw_0.136.3.51.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.x64.mingw/BlitzMax_win32_x64_mingw_0.154.3.58.7z">BlitzMax_win32_x64_mingw_0.154.3.58.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, aimed at x64 development, with x64 MinGW-w64 12.2.0.
-                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Net, Random, Text and Steam.
+                                        Includes SDL2 backend, mojo2, Crypto, Audio, Archive, Image, Math, Net, Random, Text, Collections and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.51.win32.x64.mingw/BlitzMax_win32_x64_mingw_0.136.3.51.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.x64.mingw/BlitzMax_win32_x64_mingw_0.154.3.58.7z`,
                                     title: "Win32 x64 (mingw)"
                                 },
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.51.win32.x86.mingw/BlitzMax_win32_x86_mingw_0.136.3.51.7z">BlitzMax_win32_x86_mingw_0.136.3.51.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.x86.mingw/BlitzMax_win32_x86_mingw_0.154.3.58.7z">BlitzMax_win32_x86_mingw_0.154.3.58.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, aimed at x86 development, with x86 MinGW-w64 12.2.0.
-                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Net, Random, Text and Steam.
+                                        Includes SDL2 backend, mojo2, Crypto, Audio, Archive, Image, Math, Net, Random, Text, Collections and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.136.3.51.win32.x86.mingw/BlitzMax_win32_x86_mingw_0.136.3.51.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.x86.mingw/BlitzMax_win32_x86_mingw_0.154.3.58.7z`,
                                     title: "win32 x86 (mingw)"
                                 },
                             ]}
