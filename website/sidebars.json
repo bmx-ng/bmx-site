@@ -766,6 +766,42 @@
       "api/maxgui/maxgui.cocoamaxgui",
       "api/maxgui/maxgui.win32maxguiex"
     ],
+    "Net": [
+      {
+        "type": "subcategory",
+        "label": "Http",
+        "ids": [
+          "api/net/net.http",
+          "api/net/net.http/thttpclient",
+          "api/net/net.http/thttprequest",
+          "api/net/net.http/thttpresponse",
+          "api/net/net.http/thttpresult",
+          "api/net/net.http/turl",
+          "api/net/net.http/icompletelistener",
+          "api/net/net.http/icookie",
+          "api/net/net.http/thttpclientexception",
+          "api/net/net.http/thttpcookie",
+          "api/net/net.http/thttpcookiebuilder",
+          "api/net/net.http/thttpfield",
+          "api/net/net.http/thttpfields",
+          "api/net/net.http/tretrypolicy",
+          "api/net/net.http/turlbuilder",
+          "api/net/net.http/tcontent",
+          "api/net/net.http/tstringcontent",
+          "api/net/net.http/tstreamcontent",
+          "api/net/net.http/tbyteptrcontent",
+          "api/net/net.http/tbytearraycontent",
+          "api/net/net.http/tbankcontent",
+          "api/net/net.http/tcastore",
+          "api/net/net.http/ecookieattribute",
+          "api/net/net.http/ehttpauthmethod",
+          "api/net/net.http/ehttpheader",
+          "api/net/net.http/ehttpmethod",
+          "api/net/net.http/eurlcode",
+          "api/net/net.http/eurlpart"
+        ]
+      }
+    ],
     "Random": [
       {
         "type": "subcategory",
