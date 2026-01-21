@@ -414,6 +414,220 @@ details up to derived types.
 
 Final types and methods are mostly used to prevent modification to a type's behaviour.
 
+## Structs
+
+A [Struct] is a user-defined composite type that is similar in shape to a [Type], but differs
+significantly in how it is created, stored, and managed.
+
+Structs are **value types** rather than reference types. Instead of being allocated on the heap
+and managed by the garbage collector, a struct is typically created on the stack and copied
+by value when passed between scopes.
+
+The syntax for declaring a struct is similar to that of a type:
+
+```blitzmax
+Struct SVec2D
+	Field x:Double
+	Field y:Double
+End Struct
+```
+
+### How structs differ from types
+
+Although structs support fields, methods, and functions, there are important semantic
+differences compared to user defined types:
+
+* Structs are **not garbage collected**
+* Structs are generally **passed by value**
+* Assigning a struct copies its contents
+* Structs do not support inheritance
+* Structs cannot extend other structs or types
+
+Because structs are copied rather than referenced, they are best suited for **small,
+self-contained data structures**.
+
+### Value semantics
+
+When a struct is assigned to another variable or passed to a function, its contents are
+copied:
+
+```blitzmax
+Local a:SVec2D = New SVec2D(1.0, 2.0)
+Local b:SVec2D = a   ' copies x and y
+```
+
+Modifying `b` does not affect `a`, because they are independent copies.
+
+This behaviour is fundamentally different from [Type] instances, which are reference-based
+and shared unless explicitly copied.
+
+You can of course still pass a struct by reference, by defining the argument with [Var] :
+
+```blitzmax
+Local a:SVec2D = New SVec2D(1.0, 2.0)
+
+ShiftVec(a)
+
+Print a.x ' now 3
+
+Function ShiftVec(v:SVec2D Var)
+    v.x = v.x + 2
+	v.y = v.y + 2
+End Function
+```
+In this case, by passing the struct by [Var] we pass the reference into the function, which allows us to
+change the contents of the struct passed into the function.
+
+### When to use structs
+
+Structs are particularly useful when:
+
+* Representing small mathematical or geometric values (vectors, points, colours)
+* Interfacing with C-based libraries or native APIs
+* Avoiding heap allocation in performance-critical code
+* Working with immutable or short-lived data
+
+For example, the `Math.Vector` module uses structs to represent vectors efficiently, allowing
+them to be passed and manipulated without garbage collection overhead.
+
+### Methods and functions in structs
+
+Structs can define methods and functions in the same way as types:
+
+```blitzmax
+Struct SPoint
+	Field x:Int
+	Field y:Int
+
+	Method New(x:Int, y:Int)
+		Self.x = x
+		Self.y = y
+	End Method
+
+	Method Offset:SPoint(dx:Int, dy:Int)
+		Return New SPoint(x + dx, y + dy)
+	End Method
+End Struct
+```
+
+Methods operate on the struct’s current value. Because structs are copied by value, care should
+be taken to understand whether a method modifies the current instance or returns a modified
+copy.
+
+### Structs and C interoperability
+
+Because structs map directly to C-style structures at the compiler level, they are well suited
+for interoperability with C libraries. This makes them a natural choice for representing
+native data layouts or passing structured data across language boundaries.
+
+## Metadata
+
+Metadata provides a way to associate **named attributes** with types, structs, interfaces,
+and their component parts, such as fields, methods, functions, globals, and constants.
+
+Metadata does not affect program execution directly. Instead, it can be queried at runtime
+using the Reflection module, allowing programs to inspect additional declarative information
+attached to definitions.
+
+### Declaring metadata
+
+Metadata is declared using curly braces immediately following a definition. It consists of
+one or more `key=value` pairs, separated by whitespace.
+
+A key without an explicit value is assumed to have the value `"1"`.
+
+Examples:
+
+```blitzmax
+{ justAKey }
+
+{ key=1 }
+
+{ key="hello" }
+```
+
+Multiple metadata entries can be applied at once:
+
+```blitzmax
+{ one two three="third" }
+```
+
+### Where metadata can be applied
+
+Metadata can be attached to:
+
+* Types
+* Structs
+* Interfaces
+* Fields
+* Methods (of Types, Structs and Interfaces)
+* Functions (of Types and Structs)
+* Globals (of Types and Structs)
+* Consts (of Types)
+
+For example:
+
+```blitzmax
+Type TMyType { type1 }
+
+	Field a:Int = 1 { fielda }
+
+	Const b:Int = 2 { fieldb }
+
+	Global c:Int = 3 { fieldc }
+
+	Method meth() { method1 }
+	End Method
+
+	Function func() { func1 }
+	End Function
+
+End Type
+```
+
+Structs and interfaces support metadata in the same way:
+
+```blitzmax
+Struct SMyStruct { struct1 }
+	Field a:Int { fielda }
+End Struct
+
+Interface IMyInterface { interface1 }
+	Method meth() { meth1 }
+End Interface
+```
+
+### Querying metadata with reflection
+
+Metadata is accessed at runtime using the Reflection module.
+
+For example, to query metadata attached to a type:
+
+```blitzmax
+Local ty:TTypeId = TTypeId.ForName("TMyType")
+
+If ty.MetaData("type1") Then
+	Print "Metadata value: " + ty.MetaData("type1")
+End If
+```
+
+The `MetaData` method of the TTypeId instance returns the associated value as a string, or an empty value if the key
+is not present.
+
+### Typical uses of metadata
+
+Metadata is commonly used for:
+
+* Annotation-style configuration
+* Tooling and code generation
+* Serialization and persistence frameworks
+* Runtime inspection and diagnostics
+* Declarative behaviour flags
+
+The concept is similar to annotations in languages such as Java or attributes in C#, although
+it is intentionally lightweight and string-based.
+
+
 [Extends]: ../../api/brl/brl.blitz/#extends
 [Field]: ../../api/brl/brl.blitz/#field
 [Method]: ../../api/brl/brl.blitz/#method
@@ -431,3 +645,5 @@ Final types and methods are mostly used to prevent modification to a type's beha
 [Implements]: ../../api/brl/brl.blitz/#implements
 [Interface]: ../../api/brl/brl.blitz/#interface
 [Public]: ../../api/brl/brl.blitz/#public
+[Struct]: ../../api/brl/brl.blitz/#struct
+[Var]: ../../api/brl/brl.blitz/#var

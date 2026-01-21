@@ -70,6 +70,16 @@ The exit value is only evaluated once at the start of the loop. This means it is
 You may also declare a new local variable to be used as the index variable, by preceding the index variable
 with the Local keyword. Such local variables will not be visible outside of the loop when it terminates.
 
+## For/EachIn/Next loops
+A [For]/[EachIn]/[Next] loops operate over arrays, or types that support object enumeration, or the [IIterable] or [IIterator] interfaces.
+```
+For IndexVariable = EachIn ObjectOrArray
+   statements
+Next
+```
+See the [Collections] section for a more in-depth look at this kind of loop.
+
+
 ## Exit and Continue
 The [Exit] command can be used to exit from a [While], [Repeat] or [For] loop. The loop will be terminated, and program
 flow will be transferred to the first command after the loop.
@@ -146,3 +156,7 @@ Multiple expressions for each case may be used by providing a comma separated se
 [Select]: ../../api/brl/brl.blitz/#select
 [Case]: ../../api/brl/brl.blitz/#case
 [Default]: ../../api/brl/brl.blitz/#default
+[EachIn]: ../../api/brl/brl.blitz/#eachin
+[IIterable]: ../../api/brl/brl.blitz/iiterable
+[IIterator]: ../../api/brl/brl.blitz/iiterator
+[Collections]: collections
