@@ -23,6 +23,7 @@ Much of the functionality provided by this module is hidden from application pro
 | [TInvalidEnumException](../../brl/brl.blitz/tinvalidenumexception) | Invalid enum exception |
 | [TIllegalArgumentException](../../brl/brl.blitz/tillegalargumentexception) | Illegal argument exception |
 | [TUnsupportedOperationException](../../brl/brl.blitz/tunsupportedoperationexception) | Unsupported operation exception |
+| [TInvalidOperationException](../../brl/brl.blitz/tinvalidoperationexception) | Invalid operation exception |
 
 ## Interfaces
 | Interface | Description |
@@ -693,6 +694,15 @@ Throws a [TIllegalArgumentException](../../brl/brl.blitz/tillegalargumentexcepti
 Generates an unsupported operation error
 
 Throws a [TUnsupportedOperationException](../../brl/brl.blitz/tunsupportedoperationexception).
+
+
+<br/>
+
+### `Function InvalidOperationError( message:String )`
+
+Generates an invalid operation error
+
+Throws a [TInvalidOperationException](../../brl/brl.blitz/tinvalidoperationexception).
 
 
 <br/>

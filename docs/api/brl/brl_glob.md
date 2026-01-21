@@ -9,7 +9,7 @@ sidebar_label: Introduction
 
 File globbing is a powerful pattern-matching mechanism used to select files and directories
 based on wildcard expressions. BlitzMax provides comprehensive glob support via the
-[BRL.Glob](../brl/brl_glob.md) and [BRL.FileSystem](../brl/brl_filesystem.md) modules, with integration into higher-level APIs such as
+[BRL.Glob](../brl/brl_glob.md) module, and with integration into higher-level APIs such as
 [TPath](../../brl/brl.path/tpath).
 
 This document describes the supported glob patterns, options, and usage conventions.
@@ -296,7 +296,7 @@ This allows relative patterns to match absolute paths naturally.
 
 ### Rooted patterns
 
-If <b>pattern</b> is rooted (for example, starts with / on Unix),
+If <b>pattern</b> is rooted (for example, starts with / on Linux/macOS),
 then <b>path</b> must also be rooted at the same location for a match to succeed.
 
 Rooted and non-rooted paths cannot be mixed.
