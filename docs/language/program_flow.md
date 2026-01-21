@@ -159,4 +159,4 @@ Multiple expressions for each case may be used by providing a comma separated se
 [EachIn]: ../../api/brl/brl.blitz/#eachin
 [IIterable]: ../../api/brl/brl.blitz/iiterable
 [IIterator]: ../../api/brl/brl.blitz/iiterator
-[Collections]: collections
+[Collections]: ../../language/collections
