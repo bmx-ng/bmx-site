@@ -43,13 +43,13 @@ to integrate naturally with [`EachIn`].
 
 A value can be iterated by [`EachIn`] if it provides **any one** of the following:
 
-- An `ObjectEnumerator` method (legacy mechanism)
+- An `ObjectEnumerator` method
 - The `IIterable<T>` interface
 - The `IIterator<T>` interface
 
 ---
 
-## Using `ObjectEnumerator` (Legacy Mechanism)
+## Using `ObjectEnumerator`
 
 A type may define a method named `ObjectEnumerator` that returns an *enumerator object*.
 
