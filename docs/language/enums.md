@@ -134,7 +134,7 @@ Print "Meeting days are " + meetingDays.ToString()
 ' Output: Meeting days are Tuesday|Thursday|Friday
 
 ' Remove a flag using bitwise XOr.
-meetingDays :~ EDays.Tuesday
+meetingDays :& ~EDays.Tuesday
 Print "Meeting days are " + meetingDays.ToString()
 ' Output: Meeting days are Thursday|Friday
 ```
@@ -177,6 +177,80 @@ Because bit flags are limited to the number of bits for a given type (e.g. 8 bit
 bits for all the elements you require.
 
 If you try to use more bits than the type allows, the compile will fail with an appropriate error message.
+
+## Creating Enums from Strings
+
+Enums can also be created from their textual representation using the `FromString()` function.
+This is particularly useful when deserialising values from configuration files, user input, or other
+text-based formats.
+
+`FromString()` is a Function of the Enum type that takes a case-insensitive [String] representing
+one of the enum elements and returns the corresponding enum value.
+
+```blitzmax
+Local day:EDay = EDay.FromString("Monday")
+```
+
+The string value must match the name of an enum element, but the comparison is case-insensitive:
+
+```blitzmax
+Print EDay.FromString("friday").ToString()
+' Output: Friday
+```
+
+### Using FromString with Bit Flag Enums
+
+For bit flag enums, FromString() also supports pipe-delimited strings, allowing multiple flags
+to be combined in a single call. Each part of the string represents an enum element, and the
+resulting value is the bitwise OR of all specified flags.
+
+> Note: Spaces are not allowed in the string. "A|B|C" is valid, while "A | B | C" is not.
+
+```blitzmax
+Local meetingDays:EDays = EDays.FromString("Tuesday|Thursday")
+Print meetingDays.ToString()
+' Output: Tuesday|Thursday
+```
+
+You can also combine results from multiple FromString() calls:
+
+```blitzmax
+Local beerDays:EDays = EDays.FromString("Thursday") | EDays.FromString("Friday")
+Print beerDays.Ordinal()
+```
+
+### Composite and Alias Values
+
+`FromString()` works with composite values and aliases defined within an Enum. This allows you
+to define meaningful groupings or alternative names for enum values and resolve them from text.
+
+```blitzmax
+Enum EDays Flags
+	Sunday
+	Monday
+	Tuesday
+	Wednesday
+	Thursday
+	Friday
+	Saturday
+	Weekend = Sunday | Saturday
+	Weekday = Monday | Tuesday | Wednesday | Thursday | Friday
+End Enum
+```
+
+```blitzmax
+Print EDays.FromString("weekday").ToString()
+' Output: Monday|Tuesday|Wednesday|Thursday|Friday
+
+Print EDays.FromString("weekend").ToString()
+' Output: Sunday|Saturday
+
+Print EDays.FromString("weekday|weekend").ToString()
+' Output: Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday
+```
+
+This makes `FromString()` especially useful for loading enum values from text while still
+retaining the safety and clarity provided by Enums.
 
 ## Enum vs Const
 
