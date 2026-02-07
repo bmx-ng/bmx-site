@@ -278,7 +278,7 @@ If <b>pattern</b> contains no path separators (/), it is matched only against th
 final path segment (the file or directory name).
 
 Example:
-```
+```blitzmax
 MatchGlob("*.txt", "/data/files/readme.txt") ' True
 ```
 
@@ -286,7 +286,7 @@ If <b>pattern</b> contains path separators, it is matched against the trailing
 segments of <b>path</b>.
 
 Example:
-```
+```blitzmax
 MatchGlob("sub/*.txt", "/root/sub/file.txt") ' True
 ```
 
@@ -315,7 +315,7 @@ Supported syntax
 * Dotfile matching via EGlobOptions.Period
 
 Example:
-```
+```blitzmax
 Local path:String = "/src/core/main.bmx"
 
 If MatchGlob("src/**/main.bmx", path, EGlobOptions.GlobStar) Then

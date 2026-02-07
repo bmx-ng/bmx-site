@@ -192,7 +192,9 @@
         "ids": [
           "api/brl/brl.filesystem",
           "api/brl/brl.filesystem/ifilewalker",
-          "api/brl/brl.filesystem/sfileattributes"
+          "api/brl/brl.filesystem/sfileattributes",
+          "api/brl/brl.filesystem/efilewalkoption",
+          "api/brl/brl.filesystem/efilewalkresult"
         ]
       },
       "api/brl/brl.freeaudioaudio",

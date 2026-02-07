@@ -25,6 +25,63 @@ Finally, the FileSystem module contains various utility functions for handling f
 in a system independent manner. These commands include [RealPath](../../brl/brl.filesystem/#function-realpathstring-pathstring-), [StripDir](../../brl/brl.filesystem/#function-stripdirstring-pathstring-), [StripExt](../../brl/brl.filesystem/#function-stripextstring-pathstring-),
 [StripAll](../../brl/brl.filesystem/#function-stripallstring-pathstring-), [ExtractDir](../../brl/brl.filesystem/#function-extractdirstring-pathstring-) and [ExtractExt](../../brl/brl.filesystem/#function-extractextstring-pathstring-).
 
+## File Walking
+
+The filesystem module also provides a file walking API for recursively traversing
+directory trees.
+
+File walking is performed using the [WalkFileTree](../../brl/brl.filesystem/#function-walkfiletreeintpathstring-filewalkerifilewalker-optionsefilewalkoption-efilewalkoptionnone-maxdepthint-0) function, which starts at a given
+path and visits each file and directory in turn. Instead of returning results directly,
+[WalkFileTree](../../brl/brl.filesystem/#function-walkfiletreeintpathstring-filewalkerifilewalker-optionsefilewalkoption-efilewalkoptionnone-maxdepthint-0) calls back into a user-supplied object that implements the [IFileWalker](../../brl/brl.filesystem/ifilewalker)
+interface.
+
+To use file walking, create a type that implements [IFileWalker](../../brl/brl.filesystem/ifilewalker) and provide an
+implementation of the [WalkFile](../../brl/brl.filesystem/ifilewalker/#method-walkfileefilewalkresultattributessfileattributes-var) method. This method is called once for every file
+and directory encountered during the walk and is passed an [SFileAttributes](../../brl/brl.filesystem/sfileattributes) structure
+containing information about the current entry.
+
+The [SFileAttributes](../../brl/brl.filesystem/sfileattributes) structure provides access to the file or directory name, size,
+timestamps, type information (regular file, directory or symbolic link), and the
+current depth within the directory tree.
+
+The return value of [WalkFile](../../brl/brl.filesystem/ifilewalker/#method-walkfileefilewalkresultattributessfileattributes-var) controls how the traversal proceeds. Returning
+EFileWalkResult.OK continues normally. Returning EFileWalkResult.SkipSubtree
+skips descending into the current directory, while EFileWalkResult.SkipSiblings
+skips remaining entries at the current level. Returning
+EFileWalkResult.Terminate immediately stops the walk.
+
+Traversal behavior can be configured using the [EFileWalkOption](../../brl/brl.filesystem/efilewalkoption) flags passed to
+[WalkFileTree](../../brl/brl.filesystem/#function-walkfiletreeintpathstring-filewalkerifilewalker-optionsefilewalkoption-efilewalkoptionnone-maxdepthint-0). For example, the EFileWalkOption.FollowLinks option enables traversal
+of symbolic links. The maximum recursion depth can also be limited.
+
+### Example
+
+The following example shows a simple file walker that prints the name of each
+file and directory encountered:
+
+```blitzmax
+Type TPrintWalker Implements IFileWalker
+
+    Method WalkFile:EFileWalkResult(attributes:SFileAttributes Var)
+        Print attributes.GetName()
+        Return EFileWalkResult.OK
+    End Method
+
+End Type
+
+Local walker:IFileWalker = New TPrintWalker
+WalkFileTree(“mydirectory”, walker)
+```
+
+More complex walkers can use the information in [SFileAttributes](../../brl/brl.filesystem/sfileattributes) to filter files,
+collect statistics, or selectively control traversal.
+
+### Related APIs
+
+File walking is intended for recursive and event-driven traversal of directory trees.
+For non-recursive directory access, the [ReadDir](../../brl/brl.filesystem/#function-readdirbyte-ptr-pathstring-), [NextFile](../../brl/brl.filesystem/#function-nextfilestring-dirbyte-ptr-) and [CloseDir](../../brl/brl.filesystem/#function-closedir-dirbyte-ptr-) commands,
+or the [LoadDir](../../brl/brl.filesystem/#function-loaddirstring-dirstringskipdotsinttrue-) function, may be more appropriate.
+
 
 ## Interfaces
 | Interface | Description |
@@ -35,6 +92,12 @@ in a system independent manner. These commands include [RealPath](../../brl/brl.
 | Struct | Description |
 |---|---|
 | [SFileAttributes](../../brl/brl.filesystem/sfileattributes) | File attributes |
+
+## Enums
+| Enum | Description |
+|---|---|
+| [EFileWalkOption](../../brl/brl.filesystem/efilewalkoption) | File walk options |
+| [EFileWalkResult](../../brl/brl.filesystem/efilewalkresult) | File walk result codes returned by the [IFileWalker](../../brl/brl.filesystem/ifilewalker) |
 
 ## Functions
 
@@ -776,6 +839,22 @@ CloseFile(in) ' can also use CloseStream(in)
 ### `Function WalkFileTree:Int(path:String, fileWalker:IFileWalker, options:EFileWalkOption = EFileWalkOption.None, maxDepth:Int = 0)`
 
 Walks a file tree.
+
+
+Traverses the file tree starting at <b>path</b>, calling the [IFileWalker](../../brl/brl.filesystem/ifilewalker) interface
+for each file and directory found.
+
+The <b>options</b> parameter can be used to modify the behaviour of the file tree
+walker. See [EFileWalkOption](../../brl/brl.filesystem/efilewalkoption) for available options.
+
+The <b>maxDepth</b> parameter can be used to limit how deep into the file tree
+the walker will traverse. A <b>maxDepth</b> of 0 (the default) means there is
+no limit to the depth of traversal.
+
+The [IFileWalker](../../brl/brl.filesystem/ifilewalker) interface's [WalkFile](../../brl/brl.filesystem/ifilewalker/#method-walkfileefilewalkresultattributessfileattributes-var) method is called for each file and
+directory found, and should return one of the [EFileWalkResult](../../brl/brl.filesystem/efilewalkresult) values to control
+the traversal.
+
 
 <br/>
 

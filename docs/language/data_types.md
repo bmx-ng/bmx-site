@@ -19,6 +19,10 @@ All constants, variables, functions and expressions have an associated type. Bli
 | 16 bit unicode string  | [String]  |   |   |
 | Unsigned integer (32 bit arch)  | [Size_T]  | 0  | +2^32-1  |
 | Unsigned integer (64 bit arch)  | [Size_T]  | 0  | +2^64-1  |
+| Signed long integer (32 bit or Windows ) | [LongInt] | -2^31 | +2^31-1  |
+| Signed long integer (64 bit not Windows ) | [LongInt] | -2^63  | +2^63-1  |
+| Unsigned long integer (32 bit or Windows ) | [ULongInt] | -2^63  | +2^63-1  |
+| Unsigned long integer (64 bit not Windows) | [ULongInt] | 0  | +2^64-1  |
 | 64 bit SIMD float  | [Float64]  |   |   |
 | 128 bit SIMD integer  | [Int128]  |   |   |
 | 128 bit SIMD float  | [Float128]  |   |   |
@@ -114,6 +118,8 @@ The rules governing type balancing are:
 [Double]: ../../api/brl/brl.blitz/#double
 [String]: ../../api/brl/brl.blitz/#string
 [Size_T]: ../../api/brl/brl.blitz/#size_t
+[LongInt]: ../../api/brl/brl.blitz/#longint
+[ULongInt]: ../../api/brl/brl.blitz/#ulongint
 [Float64]: ../../api/brl/brl.blitz/#float64
 [Int128]: ../../api/brl/brl.blitz/#int128
 [Float128]: ../../api/brl/brl.blitz/#float128

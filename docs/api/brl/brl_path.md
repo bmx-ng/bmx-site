@@ -10,12 +10,12 @@ BRL.Path provides an object-oriented, cross-platform way to represent and work w
 At its core is the [TPath](../../brl/brl.path/tpath) type, which wraps a normalized path string and provides convenient operations for:
 
 * Joining and transforming paths (including the / operator).
-* Resolving and relativizing paths (#Resolve and [Relativize](../../brl/brl.path/tpath/#method-relativizetpathothertpath)).
-* Querying the filesystem (#Exists, [IsFile](../../brl/brl.path/tpath/#method-isfileint), [IsDir](../../brl/brl.path/tpath/#method-isdirint), [Size](../../brl/brl.path/tpath/#method-sizelong), timestamps, etc).
+* Resolving and relativizing paths ( [Resolve](../../brl/brl.path/tpath/#method-resolvetpathothertpath) and [Relativize](../../brl/brl.path/tpath/#method-relativizetpathothertpath)).
+* Querying the filesystem ( [Exists](../../brl/brl.path/tpath/#method-existsint), [IsFile](../../brl/brl.path/tpath/#method-isfileint), [IsDir](../../brl/brl.path/tpath/#method-isdirint), [Size](../../brl/brl.path/tpath/#method-sizelong), timestamps, etc).
 * Creating, deleting, renaming and copying files/directories.
-* Iterating directory contents (#IterDir / [List](../../brl/brl.path/tpath/#method-listtpathskipdotsint-true)).
-* Globbing and pattern matching (#Glob, [GlobIter](../../brl/brl.path/tpath/#method-globitertpathiteratorpatternstring-flagsegloboptions-egloboptionsnone), [MatchGlob](../../brl/brl.path/tpath/#method-matchglobintpatternstring-flagsegloboptions-egloboptionsnone)).
-* Walking a directory tree (#Walk).
+* Iterating directory contents ( [IterDir](../../brl/brl.path/tpath/#method-iterdirtpathdiriteratorskipdotsint-true) / [List](../../brl/brl.path/tpath/#method-listtpathskipdotsint-true)).
+* Globbing and pattern matching ( [Glob](../../brl/brl.path/tpath/#method-globtpathpatternstring-flagsegloboptions-egloboptionsnone), [GlobIter](../../brl/brl.path/tpath/#method-globitertpathiteratorpatternstring-flagsegloboptions-egloboptionsnone), [MatchGlob](../../brl/brl.path/tpath/#method-matchglobintpatternstring-flagsegloboptions-egloboptionsnone)).
+* Walking a directory tree ( [Walk](../../brl/brl.path/tpath/#method-walkintpathwalkeripathwalker-optionsefilewalkoption-efilewalkoptionnone-maxdepthint-0)).
 
 The module is designed to behave consistently whether using the native filesystem or the virtual filesystem when [BRL.Io](../brl/brl_io.md) / MaxIO is enabled.
 
@@ -218,7 +218,7 @@ End Type
 New TPath(".").Walk(New TPrintWalker)
 ```
 
-Traversal can be configured using EFileWalkOption (for example, following symlinks) and the maxDepth parameter.
+Traversal can be configured using [EFileWalkOption](../../brl/brl.filesystem/efilewalkoption) (for example, following symlinks) and the maxDepth parameter.
 
 ## Resource management and Using
 

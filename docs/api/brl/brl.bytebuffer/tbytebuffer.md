@@ -159,6 +159,24 @@ The new buffer's position, limit, and mark are independent of this buffer.
 
 <br/>
 
+### `Method Slice:TByteBuffer(start:Int, length:Int) Abstract`
+
+Returns a sliced [TByteBuffer](../../../brl/brl.bytebuffer/tbytebuffer) that shares its content with this one, starting at the specified <b>start</b> position.
+
+The new buffer's position, limit, and mark are independent of this buffer.
+
+
+<br/>
+
+### `Method SliceFrom:TByteBuffer(start:Int) Abstract`
+
+Returns a sliced [TByteBuffer](../../../brl/brl.bytebuffer/tbytebuffer) that shares its content with this one, starting at the specified <b>start</b> position.
+
+The new buffer's position, limit, and mark are independent of this buffer.
+
+
+<br/>
+
 ### `Method Duplicate:TByteBuffer() Abstract`
 
 Creates a duplicate [TByteBuffer](../../../brl/brl.bytebuffer/tbytebuffer) that shares its content with this one.
@@ -168,6 +186,16 @@ Creates a duplicate [TByteBuffer](../../../brl/brl.bytebuffer/tbytebuffer) that 
 ### `Method Compact:TByteBuffer() Abstract`
 
 Compacts this [TByteBuffer](../../../brl/brl.bytebuffer/tbytebuffer).
+
+<br/>
+
+### `Method AsReadOnly:TByteBuffer() Abstract`
+
+Returns a read-only view of this buffer.
+
+The returned buffer shares content with this buffer but does not allow modification.
+The position, limit, mark, and byte order are preserved.
+
 
 <br/>
 
