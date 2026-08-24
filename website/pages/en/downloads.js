@@ -45,7 +45,7 @@ class Downloads extends React.Component {
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.mingw/BlitzMax_win32_mingw_0.154.3.58.7z">BlitzMax_win32_mingw_0.154.3.58.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.win32.mingw/BlitzMax_win32_mingw_0.165.3.61.7z">BlitzMax_win32_mingw_0.165.3.61.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, with both x86 and x64 MinGW-w64 12.2.0 distributions.
@@ -53,13 +53,13 @@ class Downloads extends React.Component {
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.mingw/BlitzMax_win32_mingw_0.154.3.58.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.win32.mingw/BlitzMax_win32_mingw_0.165.3.61.7z`,
                                     title: "Win32 x86/x64 (mingw)"
                                 },
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.x64.mingw/BlitzMax_win32_x64_mingw_0.154.3.58.7z">BlitzMax_win32_x64_mingw_0.154.3.58.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.win32.x64.mingw/BlitzMax_win32_x64_mingw_0.165.3.61.7z">BlitzMax_win32_x64_mingw_0.165.3.61.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, aimed at x64 development, with x64 MinGW-w64 12.2.0.
@@ -67,13 +67,13 @@ class Downloads extends React.Component {
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.x64.mingw/BlitzMax_win32_x64_mingw_0.154.3.58.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.win32.x64.mingw/BlitzMax_win32_x64_mingw_0.165.3.61.7z`,
                                     title: "Win32 x64 (mingw)"
                                 },
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.x86.mingw/BlitzMax_win32_x86_mingw_0.154.3.58.7z">BlitzMax_win32_x86_mingw_0.154.3.58.7z</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.win32.x86.mingw/BlitzMax_win32_x86_mingw_0.165.3.61.7z">BlitzMax_win32_x86_mingw_0.165.3.61.7z</a>
                                          </strong>
                                         <br/><br/>
                                         Windows edition, aimed at x86 development, with x86 MinGW-w64 12.2.0.
@@ -81,7 +81,7 @@ class Downloads extends React.Component {
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/windows.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.154.3.58.win32.x86.mingw/BlitzMax_win32_x86_mingw_0.154.3.58.7z`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.win32.x86.mingw/BlitzMax_win32_x86_mingw_0.165.3.61.7z`,
                                     title: "win32 x86 (mingw)"
                                 },
                             ]}
@@ -99,7 +99,7 @@ class Downloads extends React.Component {
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, Linux edition, aimed at x64 development, with x64 MaxIDE.
-                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Net, Random, Text, Steam and Gtk MaxGUI.
+                                        Includes SDL2 backend, mojo2, Crypto, Audio, Archive, Image, Math, Net, Random, Text, Collections and Steam.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/linux.svg`,
                                     imageAlign: "top",
@@ -117,34 +117,34 @@ class Downloads extends React.Component {
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.138.3.54.macos.arm64/BlitzMax_macos_arm64_0.138.3.54.zip">BlitzMax_macos_arm64_0.138.3.54.zip</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.macos.arm64/BlitzMax_macos_arm64_0.165.3.61.zip">BlitzMax_macos_arm64_0.165.3.61.zip</a>
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, arm64 macOS edition.
-                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Math, Random, Net, Text and Steam.
+                                        Includes SDL2 backend, mojo2, Crypto, Audio, Archive, Image, Math, Net, Random, Text, Collections and Steam.
                                         <br/>
-                                        See the <strong><a href="https://github.com/bmx-ng/bmx-ng/releases/tag/v0.138.3.54.macos.arm64">Release Notes</a></strong> for setup information.
+                                        See the <strong><a href="https://github.com/bmx-ng/bmx-ng/releases/tag/v0.165.3.61.macos.arm64">Release Notes</a></strong> for setup information.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/apple.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.138.3.54.macos.arm64/BlitzMax_macos_arm64_0.138.3.54.zip`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.macos.arm64/BlitzMax_macos_arm64_0.165.3.61.zip`,
                                     title: "macOS arm64"
                                 },
                                 {},
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.138.3.54.macos.x64/BlitzMax_macos_x64_0.138.3.54.zip">BlitzMax_macos_x64_0.138.3.54.zip</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.macos.x64/BlitzMax_macos_x64_0.165.3.61.zip">BlitzMax_macos_x64_0.165.3.61.zip</a>
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, x64 macOS edition.
                                         Includes SDL backend, mojo2, Crypto, Audio, Image, Math, Random, Net, Text and Steam.
                                         <br/>
-                                        See the <strong><a href="https://github.com/bmx-ng/bmx-ng/releases/tag/v0.138.3.54.macos.x64">Release Notes</a></strong> for setup information.
+                                        See the <strong><a href="https://github.com/bmx-ng/bmx-ng/releases/tag/v0.165.3.61.macos.x64">Release Notes</a></strong> for setup information.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/apple.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.138.3.54.macos.x64/BlitzMax_macos_x64_0.138.3.54.zip`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.macos.x64/BlitzMax_macos_x64_0.165.3.61.zip`,
                                     title: "macOS"
                                 },
                             ]}
@@ -157,7 +157,7 @@ class Downloads extends React.Component {
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.138.3.54.rpi.arm/BlitzMax_rpi_arm_0.138.3.54.tar.xz">BlitzMax_rpi_arm_0.138.3.54.tar.xz</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.rpi.arm/BlitzMax_rpi_arm_0.165.3.61.tar.xz">BlitzMax_rpi_arm_0.165.3.61.tar.xz</a>
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, RaspberryPi edition, aimed at 32-bit ARM development, with MaxIDE.
@@ -165,25 +165,25 @@ class Downloads extends React.Component {
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/rpi.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.138.3.54.rpi.arm/BlitzMax_rpi_arm_0.138.3.54.tar.xz`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.rpi.arm/BlitzMax_rpi_arm_0.165.3.61.tar.xz`,
                                     title: "Raspberry Pi"
                                 },
                                 {},
                                 {
                                     content:
                                         `<strong>
-                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.139.3.56.rpi.arm64/BlitzMax_rpi_arm64_0.139.3.56.tar.xz">BlitzMax_rpi_arm64_0.139.3.56.tar.xz</a>
+                                            <a href="https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.rpi.arm64/BlitzMax_rpi_arm64_0.165.3.61.tar.xz">BlitzMax_rpi_arm64_0.165.3.61.tar.xz</a>
                                          </strong>
                                         <br/><br/>
                                         BlitzMax, RaspberryPi edition, aimed at 64-bit ARM development, with MaxIDE.
                                         <br/>
                                         Suitable for the latest 64-bit Raspberry Pi OS.
                                         <br/>
-                                        Includes SDL backend, mojo2, Crypto, Audio, Image, Net, Random, Text and Gtk MaxGUI.
+                                        Includes SDL2 backend, mojo2, Crypto, Audio, Image, Net, Random, Text and Gtk MaxGUI.
                                         `,
                                     image: `${siteConfig.baseUrl}img/platform/rpi.svg`,
                                     imageAlign: "top",
-                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.139.3.56.rpi.arm64/BlitzMax_rpi_arm64_0.139.3.56.tar.xz`,
+                                    imageLink: `https://github.com/bmx-ng/bmx-ng/releases/download/v0.165.3.61.rpi.arm64/BlitzMax_rpi_arm64_0.165.3.61.tar.xz`,
                                     title: "Raspberry Pi arm64"
                                 },
                             ]}
